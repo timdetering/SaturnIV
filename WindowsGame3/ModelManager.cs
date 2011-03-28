@@ -25,15 +25,12 @@ namespace WindowsGame3
         public Vector3 modelVelocity = Vector3.Zero;
         public Matrix modelRotation = Matrix.Identity;// * Matrix.CreateRotationY(MathHelper.ToRadians(90));
         public Matrix worldMatrix = Matrix.Identity;
-        public Matrix viewMatrix = Matrix.Identity;
-        public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+        //public Matrix viewMatrix = Matrix.Identity;
+        //public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
         public Vector3 modellightDirection = new Vector3(0, 0, 0);
         public Vector3 modelScale;
         public string modelFileName;
         public Texture2D modelTexture;
-        public Matrix modelWorldMatrix;
-        public Matrix modelScaleMatrix;
-        public Matrix modelTranslationMatrix;
         public float objectAgility;
         public shipClasses.ClassesEnum objectClass;
         public Vector3 Direction = Vector3.Forward;

@@ -154,11 +154,11 @@ namespace WindowsGame3
             modelPosition += Velocity * elapsed;
             worldMatrix = m * Matrix.CreateTranslation(modelPosition);
             modelBoundingSphere.Center = modelPosition;
-            viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
-            modelFrustum.Matrix = viewMatrix * projectionMatrix;
+            //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
+            //modelFrustum.Matrix = viewMatrix * projectionMatrix;
             screenCords = get2dCoords(this, ourCamera);
-            if (currentTargetObject != null) 
-                 distanceFromTarget = Vector3.Distance(modelPosition, currentTargetObject.modelPosition);
+            if (currentTargetObject != null)
+                distanceFromTarget = Vector3.Distance(modelPosition, currentTargetObject.modelPosition);
         }
 
         /// <summary>
@@ -216,8 +216,8 @@ namespace WindowsGame3
 
             worldMatrix = m * Matrix.CreateTranslation(modelPosition);
             modelBoundingSphere.Center = modelPosition;
-            viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
-            modelFrustum.Matrix = viewMatrix * projectionMatrix;
+            //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
+            //modelFrustum.Matrix = viewMatrix * projectionMatrix;
             //screenCords = get2dCoords(this, ourCamera);
             if (currentTargetObject != null)
                 distanceFromTarget = Vector3.Distance(modelPosition, currentTargetObject.modelPosition);

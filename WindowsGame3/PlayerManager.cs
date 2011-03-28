@@ -116,9 +116,9 @@ namespace WindowsGame3
             worldMatrix = (modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(modelPosition);
             modelBoundingSphere.Center = modelPosition; modelBoundingSphere.Radius = radius;
-            viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
+            //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
 
-            modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
+            //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
          }
 
 
