@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>effects.fx</Source>
+      <Name>effects</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\effects.xnb</Output>
+      <Time>2010-06-11T20:26:56-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effects\SkySphere.fx</Source>
+      <Name>Effects\SkySphere</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Effects\SkySphere.xnb</Output>
+      <Time>2010-06-13T17:22:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>effectslib.fx</Source>
+      <Name>effectslib</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\effectslib.xnb</Output>
+      <Time>2010-06-22T23:22:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effects\pointsprites.fx</Source>
+      <Name>Effects\pointsprites</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Effects\pointsprites.xnb</Output>
+      <Time>2010-06-23T13:43:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effects\laser_shader.fx</Source>
+      <Name>Effects\laser_shader</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Effects\laser_shader.xnb</Output>
+      <Time>2010-07-13T12:16:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effects\explosionEffect.fx</Source>
+      <Name>Effects\explosionEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Effects\explosionEffect.xnb</Output>
+      <Time>2010-07-16T17:09:30-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effects\ParticleEffect.fx</Source>
+      <Name>Effects\ParticleEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Effects\ParticleEffect.xnb</Output>
+      <Time>2010-07-13T19:45:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Thrusters\Thrust.fx</Source>
+      <Name>Thrusters\Thrust</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\Thrust.xnb</Output>
+      <Time>2010-07-01T17:38:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>DemoFont.spritefont</Source>
+      <Name>DemoFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\DemoFont.xnb</Output>
+      <Time>2011-03-28T11:50:55.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Miramonte.spritefont</Source>
+      <Name>Miramonte</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Miramonte.xnb</Output>
+      <Time>2011-03-22T19:18:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\redtexture.png</Source>
+      <Name>textures\redtexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\redtexture.xnb</Output>
+      <Time>2010-06-15T18:53:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\bluetexture.png</Source>
+      <Name>textures\bluetexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bluetexture.xnb</Output>
+      <Time>2010-06-15T21:22:12-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hud.png</Source>
+      <Name>hud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\hud.xnb</Output>
+      <Time>2010-06-24T18:44:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>hud_target.png</Source>
+      <Name>hud_target</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\hud_target.xnb</Output>
+      <Time>2010-06-24T18:43:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\planettexture1.png</Source>
+      <Name>textures\planettexture1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\planettexture1.xnb</Output>
+      <Time>2010-06-17T18:47:52-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\planettexture2.png</Source>
+      <Name>textures\planettexture2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\planettexture2.xnb</Output>
+      <Time>2010-06-17T18:47:52-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\planettexture3.png</Source>
+      <Name>textures\planettexture3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\planettexture3.xnb</Output>
+      <Time>2010-06-17T18:47:52-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\fire.png</Source>
+      <Name>textures\fire</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\fire.xnb</Output>
+      <Time>2010-06-26T16:49:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\star.png</Source>
+      <Name>textures\star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\star.xnb</Output>
+      <Time>2010-06-23T14:41:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\target_icon.png</Source>
+      <Name>textures\target_icon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\target_icon.xnb</Output>
+      <Time>2010-06-26T09:47:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\explosion.png</Source>
+      <Name>textures\explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\explosion.xnb</Output>
+      <Time>2010-07-07T17:40:20-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\smoke.png</Source>
+      <Name>textures\smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke.xnb</Output>
+      <Time>2010-06-26T16:51:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\starfield2.dds</Source>
+      <Name>textures\starfield2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\starfield2.xnb</Output>
+      <Time>2011-03-03T20:32:16-06:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\Sky128.dds</Source>
+      <Name>textures\Sky128</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\Sky128.xnb</Output>
+      <Time>2011-03-02T20:31:34-06:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\OutputCube.dds</Source>
+      <Name>textures\OutputCube</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\OutputCube.xnb</Output>
+      <Time>2011-03-02T18:35:24-06:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\nebula2.dds</Source>
+      <Name>textures\nebula2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\nebula2.xnb</Output>
+      <Time>2011-03-02T18:25:06-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Thrusters\NoiseVolume.dds</Source>
+      <Name>Thrusters\NoiseVolume</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\NoiseVolume.xnb</Output>
+      <Time>2010-07-01T17:38:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\targetlock.png</Source>
+      <Name>textures\targetlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock.xnb</Output>
+      <Time>2010-06-28T17:06:58-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\targetlock1.png</Source>
+      <Name>textures\targetlock1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock1.xnb</Output>
+      <Time>2010-08-07T07:51:32-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\targetlock2.png</Source>
+      <Name>textures\targetlock2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock2.xnb</Output>
+      <Time>2010-06-29T18:48:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\missiletrack.png</Source>
+      <Name>textures\missiletrack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\missiletrack.xnb</Output>
+      <Time>2010-07-05T19:57:14-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\blackDotLarge.png</Source>
+      <Name>textures\blackDotLarge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\blackDotLarge.xnb</Output>
+      <Time>2010-07-07T21:00:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\engine_diff_tex.tga</Source>
+      <Name>textures\engine_diff_tex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\engine_diff_tex.xnb</Output>
+      <Time>2010-07-07T21:00:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\redDotSmall.png</Source>
+      <Name>textures\redDotSmall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\redDotSmall.xnb</Output>
+      <Time>2010-07-07T21:00:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\yellowDotSmall.png</Source>
+      <Name>textures\yellowDotSmall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\yellowDotSmall.xnb</Output>
+      <Time>2010-07-07T21:00:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\bullet.jpg</Source>
+      <Name>textures\bullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bullet.xnb</Output>
+      <Time>2010-07-14T21:36:16-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\explo.png</Source>
+      <Name>textures\explo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\explo.xnb</Output>
+      <Time>2010-07-16T17:06:56-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\HealthBar.png</Source>
+      <Name>textures\HealthBar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\HealthBar.xnb</Output>
+      <Time>2010-07-24T19:54:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\hud_target_new.png</Source>
+      <Name>textures\hud_target_new</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\hud_target_new.xnb</Output>
+      <Time>2011-02-20T20:42:24-06:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\smoke2.jpg</Source>
+      <Name>textures\smoke2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke2.xnb</Output>
+      <Time>2011-03-01T19:17:04-06:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\saturn.jpg</Source>
+      <Name>textures\saturn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\saturn.xnb</Output>
+      <Time>2011-03-15T19:15:44-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\dummy.jpg</Source>
+      <Name>textures\dummy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\dummy.xnb</Output>
+      <Time>2011-03-24T19:23:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\km100.x</Source>
+      <Name>Models\km100</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xnb</Output>
+      <Time>2010-07-18T13:37:48-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\km100_0.xml</Key>
+        <Value>2011-03-28T11:51:04.015625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\km200.x</Source>
+      <Name>Models\km200</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xnb</Output>
+      <Time>2010-07-05T15:06:26-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\km200_0.xml</Key>
+        <Value>2011-03-28T11:51:04.515625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\LaserBolt2.x</Source>
+      <Name>Models\LaserBolt2</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LaserBolt2.xnb</Output>
+      <Time>2010-07-06T12:23:22-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
+        <Value>2011-03-28T11:51:04.796875-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\sphere.x</Source>
+      <Name>Models\sphere</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\sphere.xnb</Output>
+      <Time>2011-03-27T20:57:58-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
+        <Value>2011-03-28T11:51:04.921875-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Thrusters\ThrustCylinderB.x</Source>
+      <Name>Thrusters\ThrustCylinderB</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb</Output>
+      <Time>2010-07-01T17:38:50-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
+        <Value>2011-03-28T11:51:04.984375-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\largeSphere.FBX</Source>
+      <Name>Models\largeSphere</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\largeSphere.xnb</Output>
+      <Time>2010-06-23T19:13:04-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
+        <Value>2011-03-28T11:51:06.375-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Battleship.fbx</Source>
+      <Name>Models\Eriax_Battleship</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Battleship.xnb</Output>
+      <Time>2011-03-09T20:13:10-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Battleship_0.xml</Key>
+        <Value>2011-03-28T11:51:08.0625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\3732_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Light_Crusier.FBX</Source>
+      <Name>Models\Eriax_Light_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Light_Crusier.xnb</Output>
+      <Time>2011-03-09T20:14:52-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Light_Crusier_0.xml</Key>
+        <Value>2011-03-28T11:51:09.703125-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Heavy_Crusier.FBX</Source>
+      <Name>Models\Eriax_Heavy_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Crusier.xnb</Output>
+      <Time>2011-03-07T18:07:28-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Heavy_Crusier_0.xml</Key>
+        <Value>2011-03-28T11:51:10.640625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\E637259B\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Tex_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_SF-1A.FBX</Source>
+      <Name>Models\Fleet_SF-1A</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_SF-1A.xnb</Output>
+      <Time>2011-03-21T19:26:08-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_SF-1A_0.xml</Key>
+        <Value>2011-03-28T11:51:11.390625-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_SF-4B.FBX</Source>
+      <Name>Models\Fleet_SF-4B</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_SF-4B.xnb</Output>
+      <Time>2011-03-09T21:47:04-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_SF-4B_0.xml</Key>
+        <Value>2011-03-28T11:51:12.515625-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Heavy_Battleship.FBX</Source>
+      <Name>Models\Fleet_Heavy_Battleship</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Heavy_Battleship.xnb</Output>
+      <Time>2011-03-21T18:53:30-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_Heavy_Battleship_0.xml</Key>
+        <Value>2011-03-28T11:51:14.5-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_KM100.FBX</Source>
+      <Name>Models\Fleet_KM100</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_KM100.xnb</Output>
+      <Time>2011-03-20T22:41:16-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
+        <Value>2011-03-28T11:51:14.71875-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\km100.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\km100_0.xml</Output>
+      <Time>2010-07-18T13:37:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\km100.xMetal_Steel_Textured.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb</Output>
+      <Time>2010-07-18T13:37:48-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\km200.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\km200_0.xml</Output>
+      <Time>2010-07-05T15:06:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\km200.xTranslucent_Glass_Tinted.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Output>
+      <Time>2010-07-05T15:06:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\LaserBolt2.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\LaserBolt2_0.xml</Output>
+      <Time>2010-07-06T12:23:22-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\sphere.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\sphere_0.xml</Output>
+      <Time>2011-03-27T20:57:58-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Thrusters\ThrustCylinderB.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Output>
+      <Time>2010-07-01T17:38:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\largeSphere.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\largeSphere_0.xml</Output>
+      <Time>2010-06-23T19:13:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Battleship.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Eriax_Battleship_0.xml</Output>
+      <Time>2011-03-09T20:13:10-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\3732.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\3732_0.xnb</Output>
+      <Time>2010-07-21T18:42:44-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Light_Crusier.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Eriax_Light_Crusier_0.xml</Output>
+      <Time>2011-03-09T20:14:52-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Heavy_Crusier.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Eriax_Heavy_Crusier_0.xml</Output>
+      <Time>2011-03-07T18:07:28-06:00</Time>
+    </Item>
+    <Item>
+      <Source>obj\x86\Debug\FBX\E637259B\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Texture.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\E637259B\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Tex_0.xnb</Output>
+      <Time>2011-03-28T11:51:09.8125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_SF-1A.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_SF-1A_0.xml</Output>
+      <Time>2011-03-21T19:26:08-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_SF-4B.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_SF-4B_0.xml</Output>
+      <Time>2011-03-09T21:47:04-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Heavy_Battleship.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_Heavy_Battleship_0.xml</Output>
+      <Time>2011-03-21T18:53:30-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_KM100.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_KM100_0.xml</Output>
+      <Time>2011-03-20T22:41:16-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T00:16:14-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T00:16:06-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T00:16:16-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T00:16:26-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T00:16:12-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T00:16:06-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-03-18T16:06:01.859375-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

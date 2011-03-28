@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="WindowsGame3.shipData">
+    <shipFileName Null="true" />
+    <shipDesc Null="true" />
+    <shipShieldLvl>0</shipShieldLvl>
+    <shipShieldRegenTime>0</shipShieldRegenTime>
+    <shipMass>0</shipMass>
+    <shipThrust>0</shipThrust>
+    <shipSphereRadius>0</shipSphereRadius>
+    <shipScale>0</shipScale>
+    <shipAgility>0</shipAgility>
+    <shipClass Null="true" />
+    <shipBelongsTo Null="true" />
+    <shipWeapons2 Null="true" />
+  </Asset>
+</XnaContent>
