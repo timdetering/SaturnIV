@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// The main component in charge of displaying particles.

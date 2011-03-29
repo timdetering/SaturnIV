@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// Custom particle system for leaving smoke trails behind the rocket projectiles.

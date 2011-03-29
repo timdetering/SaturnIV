@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// Base class for simple geometric primitive models. This provides a vertex

@@ -12,7 +12,7 @@ using System;
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// Helper for objects that want to leave particles behind them as they

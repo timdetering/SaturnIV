@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// Provides a set of methods for rendering BoundingFrustums

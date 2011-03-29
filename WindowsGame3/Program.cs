@@ -1,6 +1,6 @@
 using System;
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     static class Program
     {

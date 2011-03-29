@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace WindowsGame3
+namespace SaturnIV
 {
 
     public enum disposition

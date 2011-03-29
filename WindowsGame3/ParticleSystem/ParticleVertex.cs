@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// Custom vertex structure for drawing point sprite particles.

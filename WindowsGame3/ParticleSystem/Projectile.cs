@@ -12,7 +12,7 @@ using System;
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// This class demonstrates how to combine several different particle systems

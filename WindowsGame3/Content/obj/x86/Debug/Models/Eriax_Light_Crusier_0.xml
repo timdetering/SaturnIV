@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Group01</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -902,7 +902,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>02 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

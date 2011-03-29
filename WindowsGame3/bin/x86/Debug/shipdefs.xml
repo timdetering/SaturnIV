@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Generic="System.Collections.Generic">
-  <Asset Type="Generic:List[WindowsGame3.shipData]">
+  <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
       <shipFileName>Models//Fleet_SF-1A</shipFileName>
       <shipDesc>SF-14A</shipDesc>

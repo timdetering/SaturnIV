@@ -17,7 +17,7 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 
 
-namespace WindowsGame3
+namespace SaturnIV
 {
     /// <summary>
     /// This is the main type for your game
