@@ -45,7 +45,8 @@ namespace SaturnIV
             // TODO: Construct any child components here
         }
 
-        private void ai(GameTime gameTime, ref List<WeaponsManager> missileList,ParticleSystem projectileTrailParticles)
+        private void performAI(GameTime gameTime, ref List<weaponStruct> missileList,ParticleSystem projectileTrailParticles,
+                               weaponStruct thisWeapon,ref List<weaponData> weaponDefList,newShipStruct thisShip,ref ModelManager modelManager)
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
 
@@ -59,15 +60,14 @@ namespace SaturnIV
                 switch (npcDisposition)
                 {
                     case disposition.pursue:
-                        vecToTarget = currentTargetObject.modelPosition - modelPosition;
-                        if (distanceFromTarget < 5000)
+                        thisShip.vecToTarget = thisShip.currentTarget.modelPosition - thisShip.modelPosition;
+                        if (thisShip.distanceFromTarget < 5000)
                             if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex]) // &&
                             //Vector3.Dot(modelRotation.Forward, vecToTarget) < Math.Cos(MathHelper.ToRadians(45)))
                             {
                                 currentWeaponIndex = weaponArray[0];
-                                helperClass.fireWeapon(Game, currentTargetObject, this, ref missileList, modelRotation.Right,
-                                                        projectileTrailParticles
-                                    );
+                                helperClass.fireWeapon(Game, thisShip.currentTarget, thisShip, ref missileList, projectileTrailParticles, ref modelManager, ref weaponDefList);
+
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
                                 isEvading = false;
@@ -88,8 +88,7 @@ namespace SaturnIV
                         {
                             if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex])
                             {
-                                helperClass.fireWeapon(Game, currentTargetObject, this, ref missileList,
-                                currentTargetObject.modelPosition - modelPosition, projectileTrailParticles);
+                                helperClass.fireWeapon(Game, thisShip.currentTarget, thisShip, ref missileList, projectileTrailParticles, ref modelManager, ref weaponDefList);
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
                             }
@@ -101,7 +100,7 @@ namespace SaturnIV
             }
         }
 
-        public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip)
+        public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,ref List<weaponData> weaponDefList, ref List<shipData> shipDefList)
         {
             // update models 2d coords
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;

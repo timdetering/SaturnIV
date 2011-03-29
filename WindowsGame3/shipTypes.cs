@@ -21,6 +21,7 @@ namespace SaturnIV
     public class newShipStruct
     {
         public string objectFileName;
+        public string objectAlias;
         public float objectMass;
         public float objectThrust;
         public float objectScale;
@@ -33,10 +34,6 @@ namespace SaturnIV
         public weaponTypes[] weaponArray;
         public Matrix worldMatrix;
         public Vector3 modelPosition;
-       // {
-         //   get {return modelPosition;}
-        //}
-
         public Matrix modelRotation;
         public Vector3 vecToTarget;
         public BoundingSphere modelBoundingSphere;
@@ -44,7 +41,7 @@ namespace SaturnIV
         public Vector3 screenCords;
         public disposition npcDisposition;
         public Vector3 destination;
-        //public newShipStruct currentTarget;
+        public newShipStruct currentTarget;
         public Model shipModel;
         public float thrustAmount;
         public bool isVisable;
@@ -54,10 +51,20 @@ namespace SaturnIV
         public Vector3 Direction;
         public Vector3 Up;
         public Vector3 right;
-        public Vector3 Right
-        {
-            get { return right; }
-        }
+        public Vector3 Right;
+    }
+    public class weaponStruct : newShipStruct
+    {
+        public bool isProjectile;
+        public bool isHoming;
+        public int regenTime;
+        public int damageFactor;
+        public Vector3 missileOrigin;
+        public float distanceFromOrigin;
+        public float range;
+        public Color objectColor;
+        public ParticleEmitter trailEmitter;
+        public newShipStruct missileTarget;
     }
 
     [Serializable]
@@ -75,9 +82,16 @@ namespace SaturnIV
         public string shipClass;
         public string shipBelongsTo;
         public weaponTypes.MissileType[] shipWeapons2;
+    }
 
-
-        
+    public class weaponData : shipData
+    {
+        public bool isProjectile;
+        public bool isHoming;
+        public int regenTime;
+        public int damageFactor;
+        public float range;
+        public Color weaponColor;
     }
 
     public struct classData

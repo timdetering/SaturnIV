@@ -1,4 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent>
-  <Asset Type="WindowsGame3.weaponTypes" />
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.weaponData]">
+    <Item>
+      <shipFileName>Models//KM-100</shipFileName>
+      <shipDesc>KM-100</shipDesc>
+      <shipMass>2</shipMass>
+      <shipThrust>500</shipThrust>
+      <shipSphereRadius>5</shipSphereRadius>
+      <shipScale>1</shipScale>
+      <shipAgility>4</shipAgility>
+      <isProjectile>True</isProjectile>
+      <shipBelongsTo>Fleet</shipBelongsTo>
+      <weaponColor>Blue</weaponColor>
+      <regenTime>100</regenTime>
+      <damageFactor>5</damageFactor>
+    </Item>
+  </Asset>
 </XnaContent>

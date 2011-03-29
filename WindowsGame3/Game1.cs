@@ -54,15 +54,17 @@ namespace SaturnIV
         RadarClass radar;
 
         public newShipStruct playerShip;
-        HealthBarClass playerShipHealthBar;
         EditModeComponent editModeClass;
-        public List<newShipStruct> npcList = new List<newShipStruct>();
+        public List<newShipStruct> activeShipList = new List<newShipStruct>();
+        public List<weaponStruct> activeWeaponList = new List<weaponStruct>();
         public NPCManager npcManager;
         public PlayerManager playerManager;
         public ModelManager modelManager;
+        public WeaponsManager weaponsManager;
         //public List<WeaponsManager> missileList = new List<WeaponsManager>();
         public List<saveObject> saveList = new List<saveObject>();
         public List<shipData> shipDefList = new List<shipData>();
+        public List<weaponData> weaponDefList = new List<weaponData>();
         ExplosionClass ourExplosion;
         public PlanetManager planetManager;
         public Effect effect;
@@ -78,7 +80,6 @@ namespace SaturnIV
         VertexDeclaration vertexDeclaration;
         public float gameSpeed = 5.0f;
 
-        public PlayerManager thisPlayer;
         public Camera ourCamera;
         bool isEditMode = false;
 
@@ -114,36 +115,37 @@ namespace SaturnIV
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
             playerShip = new newShipStruct();
-            playerThruster1 = new Athruster();
+            //playerThruster1 = new Athruster();
             ourExplosion = new ExplosionClass();
             skySphere = new SkySphere(this);
-            npcList = new List<newShipStruct>();
+            activeShipList = new List<newShipStruct>();
+            //Initialize Manager Classes
             modelManager = new ModelManager(this);
             modelManager.Initialize();
             playerManager = new PlayerManager(this);
             playerManager.Initialize();
             npcManager = new NPCManager(this);
             npcManager.Initialize();
-            //npcList = new List<NPCManager>();
-            currentAutoTarget = new NPCManager(this);
+            weaponsManager = new WeaponsManager(this);
+            //Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
+            
             ourExplosion.initExplosionClass(this);
-            playerShipHealthBar = new HealthBarClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
+            
             editModeClass = new EditModeComponent(this);
             Gui = new guiClass();
             Gui.initalize(this);
+            
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
             originalMouseState = Mouse.GetState();
 
             // Add Components
             Components.Add(projectileTrailParticles);
-            Components.Add(playerShipHealthBar);
+            //Components.Add(playerShipHealthBar);
             Components.Add(editModeClass);
-
-
             base.Initialize();
         }
 
@@ -175,6 +177,21 @@ namespace SaturnIV
             device = graphics.GraphicsDevice;
             //effect = Content.Load<Effect>("effects");
             loadShipData();
+            initPlayer();
+
+            spriteFont = this.Content.Load<SpriteFont>("DemoFont");
+            HUD = this.Content.Load<Texture2D>("hud");
+            HUD_Target = this.Content.Load<Texture2D>("textures//hud_target_new");
+            HUDAutoTargetIcon = this.Content.Load<Texture2D>("textures/target_icon");
+            HUDTargetLockIcon1 = this.Content.Load<Texture2D>("textures/targetlock1");
+            HUDTargetLockIcon2 = this.Content.Load<Texture2D>("textures/targetlock2");
+            HUDMissileTrackIcon = this.Content.Load<Texture2D>("textures/missiletrack");
+            skySphere.LoadSkySphere(this);
+            starField.LoadStarFieldAssets(this);
+        }
+
+        private void initPlayer()
+        {
             playerShip.objectFileName = shipDefList[0].shipFileName;
             playerShip.radius = shipDefList[0].shipSphereRadius;
             playerShip.shipModel = modelManager.LoadModel(playerShip.objectFileName);
@@ -183,26 +200,7 @@ namespace SaturnIV
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;
             playerShip.Up = Vector3.Up;
-            //Direction = HelperClass.RandomDirection();
             playerShip.modelBoundingSphere = new BoundingSphere(playerShip.modelPosition, playerShip.radius);
-
-            //generateEnemies();
-            //playerShip.currentTargetObject = npcList[0];
-            spriteFont = this.Content.Load<SpriteFont>("DemoFont");
-            HUD = this.Content.Load<Texture2D>("hud");
-            HUD_Target = this.Content.Load<Texture2D>("textures//hud_target_new");
-            HUDAutoTargetIcon = this.Content.Load<Texture2D>("textures/target_icon");
-            HUDTargetLockIcon1 = this.Content.Load<Texture2D>("textures/targetlock1");
-            HUDTargetLockIcon2 = this.Content.Load<Texture2D>("textures/targetlock2");
-            HUDMissileTrackIcon = this.Content.Load<Texture2D>("textures/missiletrack");
-            //ourCamera.SetUpCamera();
-            skySphere.LoadSkySphere(this);
-            starField.LoadStarFieldAssets(this);
-            playerThruster1.LoadContent(this, spriteBatch);
-
-            vertexDeclaration = new VertexDeclaration(
-            graphics.GraphicsDevice,
-            VertexPositionNormalTexture.VertexElements);
         }
 
         private void loadShipData()
@@ -210,6 +208,8 @@ namespace SaturnIV
             XmlReaderSettings xmlSettings = new XmlReaderSettings();
             XmlReader xmlReader = XmlReader.Create("shipdefs.xml");
                 shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
+            xmlReader = XmlReader.Create("weapondefs.xml");
+                weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
 
         }
 
@@ -217,7 +217,6 @@ namespace SaturnIV
         {
             // Create the data to save
             saveObject saveMe;
-            shipData exportMe;
             shipTypes exportShipDefs;
             shipClasses exportShipClasses;
             weaponTypes exportWeaponDefs;
@@ -232,44 +231,21 @@ namespace SaturnIV
             XmlWriterSettings xmlSettings = new XmlWriterSettings();
             xmlSettings.Indent = true;
 
-        //    foreach (NPCManager ship in npcList)
-  //          {
- ///               exportMe = new shipData();
- //               saveMe = new saveObject();
- //               saveMe.shipPosition = ship.modelPosition;
- //               saveMe.shipDirection = ship.vecToTarget;
- //               saveMe.shipName = ship.objectName;
-//                saveMe.shipType = ship.objectDesc;
-//                saveList.Add(saveMe);
-
-      //  exportMe.shipFileName = "Models//SF-14A";
-     //   exportMe.shipDesc = "SF-14A";
-    //    exportMe.shipShieldLvl = 100;
-    //    exportMe.shipShieldRegenTime = 100;
-   //     exportMe.shipMass = 2;
-  //      exportMe.shipThrust = 4;
-  //      exportMe.shipSphereRadius = 17;
- //      exportMe.shipAgility = 4;
- //       exportMe.shipClass = "Fighter";
- //       exportMe.shipWeapons2 = new weaponTypes.MissileType[] {weaponTypes.MissileType.AC10,weaponTypes.MissileType.KM100};
-        //exportList.Add(exportMe);
-
-                // Convert the object to XML data and put it in the stream
-               // serializer.Serialize(stream, saveMe);
- //           }
+            foreach (newShipStruct ship in activeShipList)
+            {
+                saveMe = new saveObject();
+                saveMe.shipPosition = ship.modelPosition;
+                saveMe.shipDirection = ship.vecToTarget;
+                saveMe.shipName = ship.objectAlias;
+                saveMe.shipType = ship.objectDesc;
+                saveList.Add(saveMe);
+            }
 
             using (XmlWriter xmlWriter = XmlWriter.Create("scene.xml", xmlSettings))
             {
               IntermediateSerializer.Serialize(xmlWriter, saveList, null);
             }
 
-            //   // Close the file
-            //    stream.Close();
-
-                //using (XmlWriter xmlWriter = XmlWriter.Create("shipdefsTest.xml", xmlSettings))
-               // {
-              //      IntermediateSerializer.Serialize(xmlWriter, exportList, null);
-             //   }
                 using (XmlWriter xmlWriter = XmlWriter.Create("classdefs.xml", xmlSettings))
                 {
                     IntermediateSerializer.Serialize(xmlWriter, exportShipClasses, null);
@@ -278,11 +254,6 @@ namespace SaturnIV
                 {
                     IntermediateSerializer.Serialize(xmlWriter, exportWeaponDefs, null);
                 }
-                using (XmlWriter xmlWriter = XmlWriter.Create("shipDef2.xml", xmlSettings))
-                {
-                    IntermediateSerializer.Serialize(xmlWriter, exportShipDefs2, null);
-                }
-
         }
 
         /// <summary>
@@ -306,17 +277,17 @@ namespace SaturnIV
             if (!isEditMode)
                 updateObjects(gameTime);
             else
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref npcList, isLclicked,isLdown, ref npcManager);                                 
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, ref npcManager);                                 
 
             ourCamera.Update(playerShip.worldMatrix);
 
-            playerThruster1.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
-                                        - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
-                                        playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
-                                        Color.White, Color.Blue, ourCamera.position);
-            playerThruster1.heat = 3.0f;
+            //playerThruster1.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
+            //                            - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
+            //                            playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
+            //                            Color.White, Color.Blue, ourCamera.position);
+            //playerThruster1.heat = 3.0f;
 
-         //   helperClass.CheckForCollision(gameTime, npcList, missileList, ref missileList, ref ourExplosion);
+         //   helperClass.CheckForCollision(gameTime, activeShipList, missileList, ref missileList, ref ourExplosion);
         //    helperClass.CheckForCollision(gameTime, playerShip, missileList, ref missileList, ref ourExplosion);
             
            
@@ -325,66 +296,14 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        Vector3 mouse3dVector
-        {
-            get
-            {
-                MouseState mouseState = Mouse.GetState();
-
-                int mouseX = mouseState.X;
-                int mouseY = mouseState.Y;
-
-                Vector3 nearsource = new Vector3((float)mouseX, (float)mouseY, 0f);
-                Vector3 farsource = new Vector3((float)mouseX, (float)mouseY, 1f);
-
-                Matrix world = Matrix.CreateTranslation(0, 0, 0);
-
-                nearpoint = GraphicsDevice.Viewport.Unproject(nearsource,
-                 ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
-
-                farpoint = GraphicsDevice.Viewport.Unproject(farsource,
-                    ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
-                // Create a ray from the near clip plane to the far clip plane.
-                Vector3 direction = farpoint - nearpoint;
-                direction.Normalize();
-                currentMouseRay = new Ray(nearpoint, direction);
-
-                //Check if the ray is pointing down towards the ground
-                //(aka will it intersect the plane)
-                if (currentMouseRay.Direction.Y < 0)
-                {
-                    float xPos = 0f;
-                    float zPos = 0f;
-
-                    //Move the ray lower along its direction vector
-                    while (currentMouseRay.Position.Y > 0)
-                    {
-                        currentMouseRay.Position += currentMouseRay.Direction;
-                        xPos = currentMouseRay.Position.X;
-                        zPos = currentMouseRay.Position.Z;
-                    }
-
-                    //Once it has move pass y=0, stop and record the X
-                    // and Y position of the ray, return new Vector3
-                    
-                    return new Vector3(xPos, 0, zPos);
-                }
-                else
-                    return new Vector3(0, 0, 0);
-                    //throw new Exception("No intersection!");
-        }
-    }
-
-        
-
         protected void updateObjects(GameTime gameTime)
         {
             //playerShip.updateShipMovement(gameTime, ourCamera, gameSpeed, Keyboard.GetState(), new Vector3(nearpoint.X,0,nearpoint.Y));
             playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip);
 
-            for (int i = 0; i < npcList.Count; i++)
+            for (int i = 0; i < activeShipList.Count; i++)
             {
-                npcManager.updateShipMovement(gameTime,gameSpeed,npcList[i]);
+                npcManager.updateShipMovement(gameTime,gameSpeed,activeShipList[i],ref weaponDefList,ref shipDefList);
             }
 
       //      for (int i = 0; i < missileList.Count; i++)
@@ -457,7 +376,7 @@ namespace SaturnIV
             }
 
             if (isRclicked && isEditMode)
-                npcList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime));
+                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime));
 
             if (keyboardState.IsKeyDown(Keys.D1))
                 playerShip.radius = playerShip.radius + 0.5f;
@@ -488,7 +407,7 @@ namespace SaturnIV
 
         private void buildvisableTargetList()
         {
-        //    foreach (NPCManager enemy in npcList)
+        //    foreach (NPCManager enemy in activeShipList)
         //    {
         //        if (enemy.screenCords.Z < 1 && enemy.distanceFromPlayer < 15000)
         ////            enemy.isVisable = true;
@@ -500,19 +419,10 @@ namespace SaturnIV
         private void InitializeStarFieldEffect()
         {
             vertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
-            basicEffect = new BasicEffect(GraphicsDevice, null);
-            basicEffect.VertexColorEnabled = true;
             Matrix wvp = (Matrix.CreateScale(5.0f) * Matrix.CreateFromQuaternion(Quaternion.Identity) *
                 Matrix.CreateTranslation(Vector3.Zero)) * ourCamera.viewMatrix * ourCamera.projectionMatrix;
             Matrix worldMatrix = Matrix.CreateTranslation(GraphicsDevice.Viewport.Width / 4f - 150,
                 GraphicsDevice.Viewport.Height / 4f - 50, 0);
-            basicEffect.World = worldMatrix;
-            basicEffect.View = ourCamera.viewMatrix;
-            basicEffect.Projection = ourCamera.projectionMatrix;
-
-            //ourCamera.AspectRatio = (float)graphics.GraphicsDevice.Viewport.Width /
-            //    graphics.GraphicsDevice.Viewport.Height;
-
         }
 
         protected override void Draw(GameTime gameTime)
@@ -521,22 +431,18 @@ namespace SaturnIV
             graphics.GraphicsDevice.Clear(Color.Black);
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
-            if (isEditMode) editModeClass.Draw(gameTime,ref npcList,ourCamera);
+            if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
-            foreach (newShipStruct npcship in npcList)
+
+            foreach (newShipStruct npcship in activeShipList)
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
 
-        //    foreach (WeaponsManager missile in missileList)
-        //    {
-        //        if (missile.isProjectile)
-        //        {
-        //            missile.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-        //            BoundingSphereRenderer.Render(missile.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                    // missile.DrawModel(ourCamera);
-        //        }
-         //   }
+            foreach (weaponStruct weapon in activeWeaponList)
+            {
+                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix,weapon.objectColor,weapon.worldMatrix,weapon.shipModel);
+            }
             
             //lanetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
@@ -549,7 +455,7 @@ namespace SaturnIV
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref npcList);
+            //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
             Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
             //if (playerShip.currentTargetObject.screenCords.Z < 1)
@@ -585,7 +491,7 @@ namespace SaturnIV
         {
             StringBuilder messageBuffer = new StringBuilder();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            foreach (newShipStruct enemy in npcList)
+            foreach (newShipStruct enemy in activeShipList)
             {
                 if (enemy.isVisable == true)
                 {
@@ -649,6 +555,56 @@ namespace SaturnIV
                                     (screenX / 6) - 150, screenCenterY - (screenY / 3)), Color.White);
             spriteBatch.End();
 
+        }
+
+        Vector3 mouse3dVector
+        {
+            get
+            {
+                MouseState mouseState = Mouse.GetState();
+
+                int mouseX = mouseState.X;
+                int mouseY = mouseState.Y;
+
+                Vector3 nearsource = new Vector3((float)mouseX, (float)mouseY, 0f);
+                Vector3 farsource = new Vector3((float)mouseX, (float)mouseY, 1f);
+
+                Matrix world = Matrix.CreateTranslation(0, 0, 0);
+
+                nearpoint = GraphicsDevice.Viewport.Unproject(nearsource,
+                 ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
+
+                farpoint = GraphicsDevice.Viewport.Unproject(farsource,
+                    ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
+                // Create a ray from the near clip plane to the far clip plane.
+                Vector3 direction = farpoint - nearpoint;
+                direction.Normalize();
+                currentMouseRay = new Ray(nearpoint, direction);
+
+                //Check if the ray is pointing down towards the ground
+                //(aka will it intersect the plane)
+                if (currentMouseRay.Direction.Y < 0)
+                {
+                    float xPos = 0f;
+                    float zPos = 0f;
+
+                    //Move the ray lower along its direction vector
+                    while (currentMouseRay.Position.Y > 0)
+                    {
+                        currentMouseRay.Position += currentMouseRay.Direction;
+                        xPos = currentMouseRay.Position.X;
+                        zPos = currentMouseRay.Position.Z;
+                    }
+
+                    //Once it has move pass y=0, stop and record the X
+                    // and Y position of the ray, return new Vector3
+
+                    return new Vector3(xPos, 0, zPos);
+                }
+                else
+                    return new Vector3(0, 0, 0);
+                //throw new Exception("No intersection!");
+            }
         }
 
     }

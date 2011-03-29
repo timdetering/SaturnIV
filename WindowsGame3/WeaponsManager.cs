@@ -20,20 +20,6 @@ namespace SaturnIV
     public class WeaponsManager : ModelManager
     {
 
-        public Vector3 missileOrigin;
-        public Vector3 missileTarget;
-        public int targetIndex;
-        public int weaponRange;
-        public int shipTypeIndex;
-        public shipTypes NPCShipData;
-        public float distanceFromPlayer;
-        public float distanceFromTarget;
-        public bool fromPlayer;
-        Color laserColor;
-        public bool isHoming;
-        public bool isProjectile;
-        public int regenTime;
-        public int damageFactor;
         // Laser Setup info
         EffectParameter effect_center_to_viewer;
         EffectParameter effect_color;
@@ -71,29 +57,13 @@ namespace SaturnIV
             // TODO: Construct any child components here
         }
 
-        public void InitializeWeapon(int shipTypesIndex)
-        {
-            objectFilename = weaponTypes.ModelFileName[shipTypesIndex];
-            objectMass = weaponTypes.mass[shipTypesIndex];
-            objectThrust = weaponTypes.thrust[shipTypesIndex];
-            weaponRange = weaponTypes.weaponMaxRange[shipTypesIndex];
-            modelScale = weaponTypes.scale[shipTypesIndex];
-            isHoming = weaponTypes.isGudied[shipTypesIndex];
-            isProjectile = weaponTypes.isProjectile[shipTypesIndex];
-            laserColor = weaponTypes.laserColor[shipTypesIndex];
-            objectAgility = weaponTypes.agility[shipTypesIndex];
-            regenTime = weaponTypes.regenTime[shipTypesIndex];
-            damageFactor = weaponTypes.damage[shipTypeIndex];
-            modelPosition = Vector3.Zero;
-           // if (isProjectile)
-          //      LoadModel(objectFilename);
-          //  else
-                LaserModelLoad(objectFilename);
+    public void InitializeWeapon()
+    {
+                    base.Initialize();
+    }
 
-            base.Initialize();
-        }
 
-        public void LaserModelLoad(string modelFileName)
+        public Model LaserModelLoad(string modelFileName)
         {
             laserEffect = Game.Content.Load<Effect>("Effects//laser_shader"); // load effect before laserbolt
             myModel = Game.Content.Load<Model>(modelFileName);
@@ -106,6 +76,7 @@ namespace SaturnIV
             effect_center_to_viewer = laserEffect.Parameters["center_to_viewer"];
             effect_technique = laserEffect.Techniques["laserbolt_technique"];
             effect_matrices_combined = laserEffect.Parameters["world_matrices"];
+            return myModel;
         }
 
         /// <summary>
@@ -113,14 +84,14 @@ namespace SaturnIV
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
         
-        public void updateMissileMovement(GameTime gameTime, float gameSpeed, Camera ourCamera)
+        public void updateMissileMovement(GameTime gameTime, float gameSpeed, Camera ourCamera, weaponStruct thisObject)
         {
             Vector3 vecToTarget = Vector3.Zero;
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= objectAgility * gameSpeed;
 
-            if (isHoming) // && distanceFromPlayer > 1000)
+            if (thisObject.isHoming) // && distanceFromPlayer > 1000)
             {
                 //vecToTarget = missileTarget - missileOrigin;
                 vecToTarget = currentTargetObject.modelPosition - modelPosition;
@@ -132,43 +103,37 @@ namespace SaturnIV
 
             Vector3 scale, translation;
             Quaternion rotation;
-            Matrix rotationMatrix = Matrix.CreateWorld(modelPosition, vecToTarget, Vector3.Up);
+            Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, vecToTarget, Vector3.Up);
             rotationMatrix.Decompose(out scale, out rotation, out translation);
-            Up = Vector3.TransformNormal(Up, rotationMatrix);
-            Up.Normalize();
-            right = Vector3.Cross(vecToTarget, Up);
-            Up = Vector3.Cross(right, modelRotation.Forward);
-            modelRotation = Matrix.CreateFromQuaternion(rotation);
+            thisObject.Up = Vector3.TransformNormal(thisObject.Up, rotationMatrix);
+            thisObject.Up.Normalize();
+            thisObject.right = Vector3.Cross(vecToTarget, thisObject.Up);
+            thisObject.Up = Vector3.Cross(right, modelRotation.Forward);
+            thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            modelRotation.Forward = Vector3.Lerp(modelRotation.Forward, vecToTarget, 0.01f); ;
+            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, vecToTarget, 0.01f); ;
             thrustAmount = 0.15f;
-            Direction = modelRotation.Forward;
-            Vector3 force = Direction * thrustAmount * objectThrust;
+            thisObject.Direction = thisObject.modelRotation.Forward;
+            Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
             // Apply acceleration
             Vector3 acceleration = force / objectMass;
-            Velocity += acceleration * elapsed;
+            thisObject.Velocity += acceleration * elapsed;
             // Apply psuedo drag
             //if (distanceFromPlayer > 1000)
-           Velocity *= DragFactor;
+            thisObject.Velocity *= DragFactor;
             // Apply velocity
-            modelPosition += Velocity * elapsed;
-            worldMatrix = rotationMatrix;
+            thisObject.modelPosition += thisObject.Velocity * elapsed;
+            thisObject.worldMatrix = rotationMatrix;
 
            // screenCords = get2dCoords(this, ourCamera);
-            distanceFromPlayer = Vector3.Distance(modelPosition, missileOrigin);
-            distanceFromTarget = Vector3.Distance(modelPosition, missileTarget);
+            thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin);
+            thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             if (trailEmitter != null)
                 trailEmitter.Update(gameTime, modelPosition);
             modelBoundingSphere.Center = modelPosition;
         }
 
-        public void calcInitalPath(Vector3 mMissileTarget)
-        {
-            //missileTarget = originShipPosition + originShipDirection;
-            missileTarget = mMissileTarget;
-        }
-
-        public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection)
+        public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,Matrix worldMatrix,Model myModel)
         {
                 // the previous method used a mesh.Draw() call for each laserbolt mesh.
                 // that was pretty inefficient because it 1: Sets the effect, 2: sets the mesh on the gpu
@@ -188,11 +153,11 @@ namespace SaturnIV
 
                 laserEffect.Begin();
                 laserEffect.CurrentTechnique.Passes[0].Begin();
-//shader_matrices_combined[0] = worldMatrix;
-  //                      shader_matrices_combined[1] = worldMatrix * view * projection;
+                shader_matrices_combined[0] = worldMatrix;
+                shader_matrices_combined[1] = worldMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
-                        effect_center_to_viewer.SetValue(modelRotation.Up);
+                        effect_center_to_viewer.SetValue(Vector3.Up);
                         laserEffect.CommitChanges();
                         draw_set_mesh(myModel.Meshes[0], device);
                 laserEffect.CurrentTechnique.Passes[0].End();
