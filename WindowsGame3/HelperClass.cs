@@ -100,12 +100,12 @@ namespace SaturnIV
         public weaponStruct InitializeWeapon(int weaponTypeIndex,ref ModelManager modelManager,ref List<weaponData> weaponDefList)
         {
             weaponStruct newWeapon = new weaponStruct();
-            newWeapon.objectFileName = weaponDefList[0].shipFileName;
-            newWeapon.radius = weaponDefList[0].shipSphereRadius;
+            newWeapon.objectFileName = weaponDefList[0].FileName;
+            newWeapon.radius = weaponDefList[0].SphereRadius;
             newWeapon.shipModel = modelManager.LoadModel(newWeapon.objectFileName);
-            newWeapon.objectAgility = weaponDefList[0].shipAgility;
+            newWeapon.objectAgility = weaponDefList[0].Agility;
             newWeapon.isProjectile = weaponDefList[0].isProjectile;
-            newWeapon.objectColor = weaponDefList[0].weaponColor;
+            newWeapon.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
             newWeapon.modelBoundingSphere = new BoundingSphere(newWeapon.modelPosition, newWeapon.radius);
             return newWeapon;
         }

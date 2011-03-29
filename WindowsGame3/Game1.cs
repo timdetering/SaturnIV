@@ -192,10 +192,12 @@ namespace SaturnIV
 
         private void initPlayer()
         {
-            playerShip.objectFileName = shipDefList[0].shipFileName;
-            playerShip.radius = shipDefList[0].shipSphereRadius;
-            playerShip.shipModel = modelManager.LoadModel(playerShip.objectFileName);
-            playerShip.objectAgility = shipDefList[0].shipAgility;
+            playerShip.objectFileName = shipDefList[0].FileName;
+            playerShip.radius = shipDefList[0].SphereRadius;
+            playerShip.shipModel = modelManager.LoadModel(shipDefList[0].FileName);
+            playerShip.objectAgility = shipDefList[0].Agility;
+            playerShip.objectMass = shipDefList[0].Mass;
+
             playerShip.modelPosition = Vector3.Zero;
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;

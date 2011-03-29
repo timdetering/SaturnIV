@@ -151,18 +151,18 @@ namespace SaturnIV
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,GameTime gameTime)
         {
             newShipStruct tempData = new newShipStruct();
-            tempData.objectFileName = shipDefList[0].shipFileName;
-            tempData.shipModel = modelManager.LoadModel(shipDefList[0].shipFileName);
-            tempData.objectAgility = shipDefList[0].shipAgility;
-            tempData.objectMass = shipDefList[0].shipMass;
-            tempData.objectThrust = shipDefList[0].shipThrust;
-            tempData.radius = shipDefList[0].shipSphereRadius;
+            tempData.objectFileName = shipDefList[0].FileName;
+            tempData.shipModel = modelManager.LoadModel(shipDefList[0].FileName);
+            tempData.objectAgility = shipDefList[0].Agility;
+            tempData.objectMass = shipDefList[0].Mass;
+            tempData.objectThrust = shipDefList[0].Thrust;
+            tempData.radius = shipDefList[0].SphereRadius;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Direction = Vector3.Forward;
             tempData.vecToTarget = Vector3.Forward;
             tempData.Up = Vector3.Up;
-            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].shipSphereRadius);
+            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
             modelManager.editModeUpdate(gameTime, tempData);
             return tempData;
         }

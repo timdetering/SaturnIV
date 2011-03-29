@@ -2,68 +2,17 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
-      <shipFileName>Models//Fleet_SF-1A</shipFileName>
-      <shipDesc>SF-14A</shipDesc>
-      <shipShieldLvl>100</shipShieldLvl>
-      <shipShieldRegenTime>100</shipShieldRegenTime>
-      <shipMass>2</shipMass>
-      <shipThrust>500</shipThrust>
-      <shipSphereRadius>17</shipSphereRadius>
-      <shipScale>1</shipScale>
-      <shipAgility>4</shipAgility>
+      <FileName>Models//Fleet_SF-1A</FileName>
+      <Desc>SF-14A</Desc>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>
       <shipClass>Fighter</shipClass>
-      <shipBelongsTo>Fleet</shipBelongsTo>
-      <shipWeapons2>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
-      </shipWeapons2>
-    </Item>
-    <Item>
-      <shipFileName>Models//eriax_battleship</shipFileName>
-      <shipDesc>Eriax Battleship</shipDesc>
-      <shipShieldLvl>100</shipShieldLvl>
-      <shipShieldRegenTime>100</shipShieldRegenTime>
-      <shipMass>10</shipMass>
-      <shipThrust>1000</shipThrust>
-      <shipSphereRadius>285</shipSphereRadius>
-      <shipScale>1</shipScale>
-      <shipAgility>1.5</shipAgility>
-      <shipClass>capitalship</shipClass>
-      <shipBelongsTo>Eriax</shipBelongsTo>
-      <shipWeapons2>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
-      </shipWeapons2>
-    </Item>
-    <Item>
-      <shipFileName>Models//eriax_light_crusier</shipFileName>
-      <shipDesc>Eriax Light Crusier</shipDesc>
-      <shipShieldLvl>100</shipShieldLvl>
-      <shipShieldRegenTime>100</shipShieldRegenTime>
-      <shipMass>8</shipMass>
-      <shipThrust>700</shipThrust>
-      <shipSphereRadius>285</shipSphereRadius>
-      <shipScale>1</shipScale>
-      <shipAgility>2.0</shipAgility>
-      <shipClass>capitalship</shipClass>
-      <shipBelongsTo>Eriax</shipBelongsTo>
-      <shipWeapons2>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
-      </shipWeapons2>
-    </Item>
-    <Item>
-      <shipFileName>Models//fleet_heavy_battleship</shipFileName>
-      <shipDesc>Fleet Battleship</shipDesc>
-      <shipShieldLvl>100</shipShieldLvl>
-      <shipShieldRegenTime>100</shipShieldRegenTime>
-      <shipMass>10</shipMass>
-      <shipThrust>1200</shipThrust>
-      <shipSphereRadius>285</shipSphereRadius>
-      <shipScale>1</shipScale>
-      <shipAgility>2.0</shipAgility>
-      <shipClass>capitalship</shipClass>
-      <shipBelongsTo>Fleet</shipBelongsTo>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
       <shipWeapons2>
         <Item>AC10</Item>
         <Item>KM100</Item>

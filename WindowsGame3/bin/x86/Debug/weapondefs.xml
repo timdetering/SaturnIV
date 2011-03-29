@@ -2,18 +2,19 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
     <Item>
-      <shipFileName>Models//KM-100</shipFileName>
-      <shipDesc>KM-100</shipDesc>
-      <shipMass>2</shipMass>
-      <shipThrust>500</shipThrust>
-      <shipSphereRadius>5</shipSphereRadius>
-      <shipScale>1</shipScale>
-      <shipAgility>4</shipAgility>
-      <isProjectile>True</isProjectile>
-      <shipBelongsTo>Fleet</shipBelongsTo>
-      <weaponColor>Blue</weaponColor>
+      <FileName>Models//KM-100</FileName>
+      <Desc>KM-100</Desc>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <isProjectile>1</isProjectile>
+      <isHoming>1</isHoming>
       <regenTime>100</regenTime>
       <damageFactor>5</damageFactor>
+      <range>7000</range>
     </Item>
   </Asset>
 </XnaContent>

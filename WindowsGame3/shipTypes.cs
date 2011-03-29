@@ -68,30 +68,34 @@ namespace SaturnIV
     }
 
     [Serializable]
-    public class shipData
+    public class genericObjectLoadClass
     {
-        public string shipFileName;
-        public string shipDesc;
-        public int shipShieldLvl;
-        public int shipShieldRegenTime;
-        public float shipMass;
-        public float shipThrust;
-        public float shipSphereRadius;
-        public float shipScale;
-        public float shipAgility;
+        public string FileName;
+        public string Desc;
+        public float Mass;
+        public float Thrust;
+        public float SphereRadius;
+        public float Scale;
+        public float Agility;
+        public string BelongsTo;
+    }
+
+    public class shipData : genericObjectLoadClass
+    {
         public string shipClass;
-        public string shipBelongsTo;
+        public int ShieldLvl;
+        public int ShieldRegenTime;
         public weaponTypes.MissileType[] shipWeapons2;
     }
 
-    public class weaponData : shipData
+    public class weaponData : genericObjectLoadClass
     {
-        public bool isProjectile;
-        public bool isHoming;
-        public int regenTime;
-        public int damageFactor;
+        public bool  isProjectile;
+        public bool  isHoming;
+        public int   regenTime;
+        public int   damageFactor;
         public float range;
-        public Color weaponColor;
+        
     }
 
     public struct classData
