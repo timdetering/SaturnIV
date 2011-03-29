@@ -61,7 +61,6 @@ namespace WindowsGame3
 
             fullScreenVertices = SetUpFullscreenVertices();
             fullScreenVertexDeclaration = new VertexDeclaration(game.GraphicsDevice, VertexPositionTexture.VertexElements);
-            cloudStaticMap = CreateStaticMap(32);
             // create the SpriteBatch object
             SkySphereModel = game.Content.Load<Model>("Models/sphere");
             SkySphereModel.Meshes[0].MeshParts[0].Effect = effect.Clone(game.GraphicsDevice);
@@ -87,20 +86,7 @@ namespace WindowsGame3
             generateStarField(game, 5000);
         }
 
-        private Texture2D CreateStaticMap(int resolution)
-        {
-            Random rand = new Random();
-            Color[] noisyColors = new Color[resolution * resolution];
-            for (int x = 0; x < resolution; x++)
-                for (int y = 0; y < resolution; y++)
-                    noisyColors[x + y * resolution] = new Color(new Vector3((float)rand.Next(1000) / 1000.0f, 0, 0));
-
-            Texture2D noiseImage = new Texture2D(Game.GraphicsDevice, resolution, resolution, 1, TextureUsage.None, SurfaceFormat.Color);
-            noiseImage.SetData(noisyColors);
-            return noiseImage;
-        }
-
-        private VertexPositionTexture[] SetUpFullscreenVertices()
+         private VertexPositionTexture[] SetUpFullscreenVertices()
         {
             VertexPositionTexture[] vertices = new VertexPositionTexture[4];
 

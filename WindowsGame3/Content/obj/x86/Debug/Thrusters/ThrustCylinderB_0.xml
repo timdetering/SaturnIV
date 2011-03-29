@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>ThrustCylinder</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Thrusters\ThrustCylinderB.x</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Thrusters\ThrustCylinderB.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>

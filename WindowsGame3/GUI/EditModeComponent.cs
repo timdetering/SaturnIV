@@ -49,7 +49,8 @@ namespace WindowsGame3
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Ray currentMouseRay, Vector3 mouse3dVector, 
-                                    ref List<NPCManager> objectList,bool isClicked, bool isRDepressed)
+                                    ref List<newShipStruct> objectList,bool isClicked, bool isRDepressed, 
+                                    ref NPCManager npcManager)
         {
             // TODO: Add your update code here
             bool checkResult = false;
@@ -62,7 +63,7 @@ namespace WindowsGame3
            
             if (isClicked && !isDirectionSphere)
             {
-                foreach (ModelManager ourShip in objectList)
+                foreach (newShipStruct ourShip in objectList)
                 {
                     checkResult = checkIsSelected(currentMouseRay, mouse3dVector, ourShip.modelBoundingSphere);
                     if (checkResult && isClicked)
@@ -79,13 +80,13 @@ namespace WindowsGame3
 
             if (isRDepressed && !isDirectionSphere && !ischangingDirection)
             {
-                foreach (NPCManager ourShip in objectList)
+                foreach (newShipStruct ourShip in objectList)
                 {
                     if (ourShip.isSelected)
                     {
                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                      //  ourShip.vecToTarget = mouse3dVector;
-                        ourShip.editModeUpdate(gameTime);
+                        //ourShip.vecToTarget = mouse3dVector;
+                        npcManager.editModeUpdate(gameTime,ourShip);
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
                     }
                 }
@@ -96,13 +97,13 @@ namespace WindowsGame3
                 ischangingDirection = true;
                 //if (mouseCurrent != originalMouseState)
                 // {
-                foreach (NPCManager ourShip in objectList)
+                foreach (newShipStruct ourShip in objectList)
                 {
                     if (ourShip.isSelected)
                     {
                         ourShip.vecToTarget = mouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
-                        ourShip.editModeUpdate(gameTime);
+                        npcManager.editModeUpdate(gameTime,ourShip);
                     }
                 }
             }
@@ -147,25 +148,29 @@ namespace WindowsGame3
                 return false;
         }
 
-        public void spawnNPC(GameTime gameTime,Camera ourCamera,float gameSpeed, Vector3 mouse3dVector,ref List<NPCManager> npcList)
+        public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,GameTime gameTime)
         {
-            Random rand = new Random();
-            NPCManager tempData;
-            //Vector3 waypoint = helperClass.randomPosition(10000,10000);
-            tempData = new NPCManager(Game);
-            tempData.Initialize(4);
-            tempData.initModelPosition(mouse3dVector);
-            tempData.vecToTarget = HelperClass.RandomPosition(-10000, 10000);
-            tempData.npcDisposition = NPCManager.disposition.patrol;
-            tempData.isHostile = true;
-            tempData.updateShipMovement(gameTime, ourCamera, gameSpeed);
-            npcList.Add(tempData);
+            newShipStruct tempData = new newShipStruct();
+            tempData.objectFileName = shipDefList[0].shipFileName;
+            tempData.shipModel = modelManager.LoadModel(shipDefList[0].shipFileName);
+            tempData.objectAgility = shipDefList[0].shipAgility;
+            tempData.objectMass = shipDefList[0].shipMass;
+            tempData.objectThrust = shipDefList[0].shipThrust;
+            tempData.radius = shipDefList[0].shipSphereRadius;
+            tempData.modelPosition = mouse3dVector;
+            tempData.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            tempData.Direction = Vector3.Forward;
+            tempData.vecToTarget = Vector3.Forward;
+            tempData.Up = Vector3.Up;
+            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].shipSphereRadius);
+            modelManager.editModeUpdate(gameTime, tempData);
+            return tempData;
         }
 
-        public void Draw(GameTime gameTime, ref List<NPCManager> shipList,Camera ourCamera)
+        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
             grid.drawLines();
-            foreach (NPCManager enemy in shipList)
+            foreach (newShipStruct enemy in shipList)
                {
                    fLine.Draw(enemy.modelPosition + enemy.Direction * 25,
                           enemy.modelPosition + enemy.Direction * 100,

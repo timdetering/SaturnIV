@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootFrame</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\sphere.x</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Models\sphere.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 -1 0 0 0 0 1</Transform>

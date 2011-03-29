@@ -21,10 +21,7 @@ namespace WindowsGame3
     {
         public shipTypes NPCShipData;
         public Model myModel;
-        public Vector3 modelPosition;
-        public Vector3 modelVelocity = Vector3.Zero;
-        public Matrix modelRotation = Matrix.Identity;// * Matrix.CreateRotationY(MathHelper.ToRadians(90));
-        public Matrix worldMatrix = Matrix.Identity;
+
         //public Matrix viewMatrix = Matrix.Identity;
         //public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
         public Vector3 modellightDirection = new Vector3(0, 0, 0);
@@ -61,12 +58,13 @@ namespace WindowsGame3
         public int missileCount;
         public int cMissileCount;
         public int weaponCnt;
-
+        public Vector3 modelPosition;
+        public Matrix modelRotation;
         public float objectArmorLvl = 100;
         public int shipShieldHealth = 100;
         public float objectShieldLvl, objectShieldRegenTime;
 
-
+        public Matrix worldMatrix;
         public Vector3[] turretArray;
         public int currentPylon = 1;
         public Vector3 targetPosition;
@@ -99,34 +97,8 @@ namespace WindowsGame3
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
-        public void Initialize(int shipTypesIndex)
+        public override void Initialize()
         {
-            NPCShipData = new shipTypes();
-            isFirstRun = true;
-            objectFilename = NPCShipData.ShipModelFileName[shipTypesIndex];
-            objectMass = NPCShipData.mass[shipTypesIndex];
-            objectThrust = NPCShipData.thrust[shipTypesIndex];
-            modelScale = NPCShipData.scale[shipTypesIndex];
-            objectDesc = NPCShipData.objectDesc[shipTypesIndex];
-            objectAgility = NPCShipData.agility[shipTypesIndex];
-            objectClass = NPCShipData.objectClass[shipTypesIndex];
-            objectArmorFactor = NPCShipData.ShipArmorFactor[shipTypesIndex];
-            objectArmorLvl = NPCShipData.ShipArmorLvl[shipTypesIndex];
-            objectShieldLvl = NPCShipData.ShipShieldLvl[shipTypesIndex];
-            objectShieldRegenTime = NPCShipData.ShipShieldRegenTime[shipTypesIndex];
-            radius = NPCShipData.sphereRadius[shipTypesIndex];
-            //Load Weapon information for ship
-            weaponCnt = NPCShipData.shipWeapons[shipTypesIndex].Length;
-            missileCount = NPCShipData.missileCount[shipTypesIndex];
-            cMissileCount = missileCount;
-            weaponArray = new weaponTypes.MissileType[weaponCnt];
-            weaponArray = NPCShipData.shipWeapons[shipTypesIndex];
-            primaryWeaponIndex = weaponArray[0];
-            currentWeaponIndex = primaryWeaponIndex;
-            //Load Weapon Firing Positions
-            turretArray = new Vector3[NPCShipData.turretLocations[shipTypesIndex].Length];
-            turretArray = NPCShipData.turretLocations[shipTypesIndex];
-            LoadModel(objectFilename);
             base.Initialize();
         }
 
@@ -134,38 +106,6 @@ namespace WindowsGame3
         protected override void LoadContent()
         {
             base.LoadContent();
-        }
-
-        public void updateModelBoundingSphere(Matrix worldMatrix)
-        {
-           // worldMatrix = modelRotation * Matrix.CreateTranslation(modelPosition);
-
-            modelBoundingSphere = new BoundingSphere();
-            foreach (ModelMesh mesh in myModel.Meshes)
-            {
-                modelBoundingSphere = BoundingSphere.CreateMerged(modelBoundingSphere, mesh.BoundingSphere);
-            }
-            
-            modelBoundingSphere = new BoundingSphere(modelPosition, radius);
-            modelBoundingSphere = modelBoundingSphere.Transform(worldMatrix);
-        }
-
-        public void updateModelBoundingSphere(Matrix worldMatrix, float extraScale)
-        {
-            //Matrix worldMatrix = Matrix.CreateScale(extraScale) * Matrix.CreateScale(modelScale) * modelRotation * Matrix.CreateTranslation(modelPosition);
-
-            modelBoundingSphere = new BoundingSphere(modelPosition, radius);
-            //modelBoundingSphere = modelBoundingSphere.Transform(worldMatrix);
-        }
-
-
-        public void initModelPosition(Vector3 initPosition)
-        {
-           modelPosition = initPosition;
-           modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
-           //Direction = HelperClass.RandomDirection();
-           updateModelBoundingSphere(worldMatrix);
-
         }
 
         public void loadModelCustomEffects(String myModelFile, string  myEffects)
@@ -183,13 +123,6 @@ namespace WindowsGame3
             myModel = Game.Content.Load<Model>(assetName);
             return myModel;
         }
-
-        public Vector3 get2dCoords(ModelManager ex, Camera ourCamera)
-        {
-            return Game.GraphicsDevice.Viewport.Project(ex.modelPosition, ourCamera.projectionMatrix, 
-                    ourCamera.viewMatrix, Matrix.Identity);
-        }
-
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
@@ -204,7 +137,7 @@ namespace WindowsGame3
         public void DrawModelWithTexture(Matrix worldMatrix, Camera myCamera, Texture2D myTexture)
         {
 
-            worldMatrix = Matrix.CreateScale(modelScale) * modelRotation * Matrix.CreateTranslation(modelPosition);
+           // worldMatrix = Matrix.CreateScale(modelScale) * modelRotation * Matrix.CreateTranslation(modelPosition);
             Matrix[] targetTransforms = new Matrix[myModel.Bones.Count];
             myModel.CopyAbsoluteBoneTransformsTo(targetTransforms);
             foreach (ModelMesh mesh in myModel.Meshes)
@@ -225,28 +158,23 @@ namespace WindowsGame3
             //base.Draw(gameTime);
         }
 
-        public void DrawModel (Camera myCamera)
+        public void DrawModel (Camera myCamera,Model shipModel,Matrix worldMatrix)
         {
 
-            //Matrix worldMatrix = modelScale * modelRotation * Matrix.CreateTranslation(modelPosition);
-            // Copy any parent transforms.
-            Matrix[] transforms = new Matrix[myModel.Bones.Count];
-            myModel.CopyAbsoluteBoneTransformsTo(transforms);
+            Matrix[] transforms = new Matrix[shipModel.Bones.Count];
+            shipModel.CopyAbsoluteBoneTransformsTo(transforms);
 
             // Draw the model. A model can have multiple meshes, so loop.
-            foreach (ModelMesh mesh in myModel.Meshes)
+            foreach (ModelMesh mesh in shipModel.Meshes)
             {
-                // This is where the mesh orientation is set, as well 
-                // as our camera and projection.
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-
                     effect.EnableDefaultLighting();
                     effect.DirectionalLight0.DiffuseColor = new Vector3(0.5f, 0.5f, 0.5f); // a red light
                     if(isSelected) effect.AmbientLightColor = Color.Green.ToVector3();
-                    effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
+                   // effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
                     effect.DirectionalLight0.SpecularColor = new Vector3(0, 1, 0); // with green highlights
-                   // effect.AmbientLightColor = Color.White.ToVector3();
+                    //effect.AmbientLightColor = Color.White.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;

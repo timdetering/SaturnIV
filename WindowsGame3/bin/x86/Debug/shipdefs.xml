@@ -2,7 +2,7 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[WindowsGame3.shipData]">
     <Item>
-      <shipFileName>Models//SF-14A</shipFileName>
+      <shipFileName>Models//Fleet_SF-1A</shipFileName>
       <shipDesc>SF-14A</shipDesc>
       <shipShieldLvl>100</shipShieldLvl>
       <shipShieldRegenTime>100</shipShieldRegenTime>

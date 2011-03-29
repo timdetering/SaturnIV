@@ -101,34 +101,33 @@ namespace WindowsGame3
             }
         }
 
-
-        public void updateShipMovement(GameTime gameTime, Camera ourCamera, float gameSpeed)
+        public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip)
         {
             // update models 2d coords
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            turningSpeed *= objectAgility * gameSpeed;
+            turningSpeed *= thisShip.objectAgility * gameSpeed;
             Vector3 rotationAmount = Vector3.Zero;
-            thrustAmount = 1.0f;
+            thrustAmount = 2.0f;
             int roll = 0;
             
 
             Vector3 newDirection = Vector3.Zero;
             isFirstRun = false;
-            Matrix rot = modelRotation;
+            Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
             Vector3 right = rot.Forward;
             Vector3 up = rot.Up;
-            vecToTarget.Normalize();
+            thisShip.vecToTarget.Normalize();
             rotationAmount = rotationAmount * turningSpeed * elapsed;
 
-            if (Vector3.Dot(forward, vecToTarget) > -0.99f)
+            if (Vector3.Dot(forward, thisShip.vecToTarget) > -0.99f)
             {
-                forward = Vector3.SmoothStep(forward, vecToTarget, objectAgility * 0.05f);
+                forward = Vector3.SmoothStep(forward, thisShip.vecToTarget, thisShip.objectAgility * 0.05f);
             }
             else
             {
-                forward = Vector3.SmoothStep(forward, right, objectAgility * 0.05f);
+                forward = Vector3.SmoothStep(forward, right, thisShip.objectAgility * 0.05f);
             }
 
             right = Vector3.Cross(forward, Vector3.Up);
@@ -142,23 +141,23 @@ namespace WindowsGame3
             m.Forward = right;
             m.Right = forward;
             m.Up = up;
-            modelRotation = m;
-            Direction = modelRotation.Right;
-            Vector3 force = Direction * thrustAmount * objectThrust;
+            thisShip.modelRotation = m;
+            thisShip.Direction = thisShip.modelRotation.Right;
+            Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
-            Vector3 acceleration = force / objectMass;
-            Velocity += acceleration * elapsed;
+            Vector3 acceleration = force / thisShip.objectMass;
+            thisShip.Velocity += acceleration * elapsed;
             // Apply psuedo drag
-            Velocity *= DragFactor;
+            thisShip.Velocity *= DragFactor;
             // Apply velocity
-            modelPosition += Velocity * elapsed;
-            worldMatrix = m * Matrix.CreateTranslation(modelPosition);
-            modelBoundingSphere.Center = modelPosition;
+            thisShip.modelPosition += thisShip.Velocity * elapsed;
+            thisShip.worldMatrix = m * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
-            screenCords = get2dCoords(this, ourCamera);
+             //screenCords = get2dCoords(this, ourCamera);
             if (currentTargetObject != null)
-                distanceFromTarget = Vector3.Distance(modelPosition, currentTargetObject.modelPosition);
+                thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, currentTargetObject.modelPosition);
         }
 
         /// <summary>
@@ -173,32 +172,24 @@ namespace WindowsGame3
             base.Update(gameTime);
         }
 
-        public void editModeUpdate(GameTime gameTime)
+        public void editModeUpdate(GameTime gameTime,newShipStruct thisShip)
         {
             //vecToTarget = currentTargetObject.modelPosition - modelPosition;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             // update models 2d coords
             float turningSpeed = 2.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            turningSpeed *= objectAgility * turningSpeed;
+            turningSpeed *= thisShip.objectAgility * turningSpeed;
             Vector3 rotationAmount = Vector3.Zero;
          
             Vector3 newDirection = Vector3.Zero;
             isFirstRun = false;
-            Matrix rot = modelRotation;
+            Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
             Vector3 right = rot.Forward;
             Vector3 up = rot.Up;
             rotationAmount = rotationAmount * turningSpeed * elapsed;
-            forward = vecToTarget;
-         //   if (Vector3.Dot(forward, vecToTarget) > -0.99f)
-       //     {
-      //          forward = Vector3.SmoothStep(forward, vecToTarget, objectAgility * 0.05f);
-      //      }
-      //      else
-      //      {
-      //          forward = Vector3.SmoothStep(forward, right, objectAgility * 0.05f);
-       //     }
+            forward = thisShip.vecToTarget;
 
             right = Vector3.Cross(forward, Vector3.Up);
             up = Vector3.Cross(right, forward);
@@ -211,11 +202,11 @@ namespace WindowsGame3
             m.Forward = right;
             m.Right = forward;
             m.Up = up;
-            modelRotation = m;
-            Direction = modelRotation.Right;
-
-            worldMatrix = m * Matrix.CreateTranslation(modelPosition);
-            modelBoundingSphere.Center = modelPosition;
+            thisShip.modelRotation = m;
+            thisShip.Direction = thisShip.modelRotation.Right;
+            
+            thisShip.worldMatrix = m * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
             //screenCords = get2dCoords(this, ourCamera);

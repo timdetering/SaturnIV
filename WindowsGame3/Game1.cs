@@ -53,15 +53,16 @@ namespace WindowsGame3
         Ray currentMouseRay;
         RadarClass radar;
 
-        public PlayerManager playerShip;
+        public newShipStruct playerShip;
         HealthBarClass playerShipHealthBar;
         EditModeComponent editModeClass;
-        //public NPCManager npcList;
-        public List<NPCManager> npcList = new List<NPCManager>();
-        public List<WeaponsManager> missileList = new List<WeaponsManager>();
+        public List<newShipStruct> npcList = new List<newShipStruct>();
+        public NPCManager npcManager;
+        public PlayerManager playerManager;
+        public ModelManager modelManager;
+        //public List<WeaponsManager> missileList = new List<WeaponsManager>();
         public List<saveObject> saveList = new List<saveObject>();
         public List<shipData> shipDefList = new List<shipData>();
-       // public shipData shipDefList;
         ExplosionClass ourExplosion;
         public PlanetManager planetManager;
         public Effect effect;
@@ -77,9 +78,6 @@ namespace WindowsGame3
         VertexDeclaration vertexDeclaration;
         public float gameSpeed = 5.0f;
 
-        public Matrix worldMatrix;
-        public Matrix viewMatrix;
-        public Matrix projectionMatrix;
         public PlayerManager thisPlayer;
         public Camera ourCamera;
         bool isEditMode = false;
@@ -115,12 +113,18 @@ namespace WindowsGame3
 
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            playerShip = new PlayerManager(this);
+            playerShip = new newShipStruct();
             playerThruster1 = new Athruster();
-            planetManager = new PlanetManager(this);
             ourExplosion = new ExplosionClass();
             skySphere = new SkySphere(this);
-            npcList = new List<NPCManager>();
+            npcList = new List<newShipStruct>();
+            modelManager = new ModelManager(this);
+            modelManager.Initialize();
+            playerManager = new PlayerManager(this);
+            playerManager.Initialize();
+            npcManager = new NPCManager(this);
+            npcManager.Initialize();
+            //npcList = new List<NPCManager>();
             currentAutoTarget = new NPCManager(this);
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
@@ -138,6 +142,7 @@ namespace WindowsGame3
             Components.Add(projectileTrailParticles);
             Components.Add(playerShipHealthBar);
             Components.Add(editModeClass);
+
 
             base.Initialize();
         }
@@ -170,11 +175,17 @@ namespace WindowsGame3
             device = graphics.GraphicsDevice;
             //effect = Content.Load<Effect>("effects");
             loadShipData();
-            planetManager.generatSpaceObjects(1);
-            
-            playerShip.Initialize((int)shipTypes.Ships.banshee);
-            playerShip.initModelPosition(Vector3.Zero);
-            playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
+            playerShip.objectFileName = shipDefList[0].shipFileName;
+            playerShip.radius = shipDefList[0].shipSphereRadius;
+            playerShip.shipModel = modelManager.LoadModel(playerShip.objectFileName);
+            playerShip.objectAgility = shipDefList[0].shipAgility;
+            playerShip.modelPosition = Vector3.Zero;
+            playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            playerShip.Direction = Vector3.Forward;
+            playerShip.Up = Vector3.Up;
+            //Direction = HelperClass.RandomDirection();
+            playerShip.modelBoundingSphere = new BoundingSphere(playerShip.modelPosition, playerShip.radius);
+
             //generateEnemies();
             //playerShip.currentTargetObject = npcList[0];
             spriteFont = this.Content.Load<SpriteFont>("DemoFont");
@@ -197,9 +208,6 @@ namespace WindowsGame3
         private void loadShipData()
         {
             XmlReaderSettings xmlSettings = new XmlReaderSettings();
-
-
-
             XmlReader xmlReader = XmlReader.Create("shipdefs.xml");
                 shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
 
@@ -224,15 +232,15 @@ namespace WindowsGame3
             XmlWriterSettings xmlSettings = new XmlWriterSettings();
             xmlSettings.Indent = true;
 
-            foreach (NPCManager ship in npcList)
-            {
-                exportMe = new shipData();
-                saveMe = new saveObject();
-                saveMe.shipPosition = ship.modelPosition;
-                saveMe.shipDirection = ship.vecToTarget;
-                saveMe.shipName = ship.objectName;
-                saveMe.shipType = ship.objectDesc;
-                saveList.Add(saveMe);
+        //    foreach (NPCManager ship in npcList)
+  //          {
+ ///               exportMe = new shipData();
+ //               saveMe = new saveObject();
+ //               saveMe.shipPosition = ship.modelPosition;
+ //               saveMe.shipDirection = ship.vecToTarget;
+ //               saveMe.shipName = ship.objectName;
+//                saveMe.shipType = ship.objectDesc;
+//                saveList.Add(saveMe);
 
       //  exportMe.shipFileName = "Models//SF-14A";
      //   exportMe.shipDesc = "SF-14A";
@@ -248,11 +256,11 @@ namespace WindowsGame3
 
                 // Convert the object to XML data and put it in the stream
                // serializer.Serialize(stream, saveMe);
-            }
+ //           }
 
             using (XmlWriter xmlWriter = XmlWriter.Create("scene.xml", xmlSettings))
             {
-                IntermediateSerializer.Serialize(xmlWriter, saveList, null);
+              IntermediateSerializer.Serialize(xmlWriter, saveList, null);
             }
 
             //   // Close the file
@@ -277,7 +285,6 @@ namespace WindowsGame3
 
         }
 
-        
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -299,19 +306,18 @@ namespace WindowsGame3
             if (!isEditMode)
                 updateObjects(gameTime);
             else
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref npcList, isLclicked,isLdown);                                 
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref npcList, isLclicked,isLdown, ref npcManager);                                 
 
             ourCamera.Update(playerShip.worldMatrix);
 
-            buildvisableTargetList();
             playerThruster1.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
                                         - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
                                         playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
                                         Color.White, Color.Blue, ourCamera.position);
             playerThruster1.heat = 3.0f;
 
-            helperClass.CheckForCollision(gameTime, npcList, missileList, ref missileList, ref ourExplosion);
-            helperClass.CheckForCollision(gameTime, playerShip, missileList, ref missileList, ref ourExplosion);
+         //   helperClass.CheckForCollision(gameTime, npcList, missileList, ref missileList, ref ourExplosion);
+        //    helperClass.CheckForCollision(gameTime, playerShip, missileList, ref missileList, ref ourExplosion);
             
            
            // BoundingFrustum viewFrustum = new BoundingFrustum();
@@ -373,23 +379,22 @@ namespace WindowsGame3
 
         protected void updateObjects(GameTime gameTime)
         {
-            playerShip.updateShipMovement(gameTime, ourCamera, gameSpeed, Keyboard.GetState(), new Vector3(nearpoint.X,0,nearpoint.Y));
-            //playerShip.updateModelBoundingSphere(ourCamera);
+            //playerShip.updateShipMovement(gameTime, ourCamera, gameSpeed, Keyboard.GetState(), new Vector3(nearpoint.X,0,nearpoint.Y));
+            playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip);
 
-            foreach (NPCManager enemy in npcList)
+            for (int i = 0; i < npcList.Count; i++)
             {
-                enemy.updateShipMovement(gameTime, ourCamera, gameSpeed);
-                //enemy.updateModelBoundingSphere(ourCamera);
+                npcManager.updateShipMovement(gameTime,gameSpeed,npcList[i]);
             }
 
-            for (int i = 0; i < missileList.Count; i++)
-                {
-                missileList[i].updateMissileMovement(gameTime, gameSpeed, ourCamera);
+      //      for (int i = 0; i < missileList.Count; i++)
+       //         {
+                //missileList[i].updateMissileMovement(gameTime, gameSpeed, ourCamera);
                 //missileList[i].updateModelBoundingSphere(ourCamera, 1.0f);
 
-                if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
-                    missileList.Remove(missileList[i]);
-            }
+       //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
+                   // missileList.Remove(missileList[i]);
+       //     }
         }
 
         protected void processInput(GameTime gameTime)
@@ -452,7 +457,7 @@ namespace WindowsGame3
             }
 
             if (isRclicked && isEditMode)
-                editModeClass.spawnNPC(gameTime, ourCamera,gameSpeed, mouse3dVector, ref npcList);
+                npcList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime));
 
             if (keyboardState.IsKeyDown(Keys.D1))
                 playerShip.radius = playerShip.radius + 0.5f;
@@ -464,32 +469,32 @@ namespace WindowsGame3
                 playerShip.thrustAmount = 1.0f;
 
 
-            if (oldkeyboardState.IsKeyDown(Keys.Q) && keyboardState.IsKeyUp(Keys.Q))
-            {
-                if (playerShip.currentWeaponIndex == playerShip.primaryWeaponIndex)
-                    playerShip.currentWeaponIndex = weaponTypes.MissileType.KM200;
-                else
-                    playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
-            }
+        //    if (oldkeyboardState.IsKeyDown(Keys.Q) && keyboardState.IsKeyUp(Keys.Q))
+       //     {
+       //         if (playerShip.currentWeaponIndex == playerShip.primaryWeaponIndex)
+       //             playerShip.currentWeaponIndex = weaponTypes.MissileType.KM200;
+       //         else
+       //             playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
+       //     }
 
-            if (keyboardState.IsKeyDown(Keys.R))
-            {
-                playerShip.Initialize((int)shipTypes.Ships.procyon);
-                playerShip.initModelPosition(playerShip.modelPosition);
-                playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
-            }
+       //     if (keyboardState.IsKeyDown(Keys.R))
+      //      {
+      ///          playerShip.Initialize((int)shipTypes.Ships.procyon);
+      //          playerShip.initModelPosition(playerShip.modelPosition);
+      //          playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
+      //      }
                 mouseStatePrevious = mouseStateCurrent;
 }
 
         private void buildvisableTargetList()
         {
-            foreach (NPCManager enemy in npcList)
-            {
-                if (enemy.screenCords.Z < 1 && enemy.distanceFromPlayer < 15000)
-                    enemy.isVisable = true;
-                else
-                    enemy.isVisable = false;
-            }
+        //    foreach (NPCManager enemy in npcList)
+        //    {
+        //        if (enemy.screenCords.Z < 1 && enemy.distanceFromPlayer < 15000)
+        ////            enemy.isVisable = true;
+        //        else
+        //            enemy.isVisable = false;
+        //    }
         }
 
         private void InitializeStarFieldEffect()
@@ -499,7 +504,7 @@ namespace WindowsGame3
             basicEffect.VertexColorEnabled = true;
             Matrix wvp = (Matrix.CreateScale(5.0f) * Matrix.CreateFromQuaternion(Quaternion.Identity) *
                 Matrix.CreateTranslation(Vector3.Zero)) * ourCamera.viewMatrix * ourCamera.projectionMatrix;
-            worldMatrix = Matrix.CreateTranslation(GraphicsDevice.Viewport.Width / 4f - 150,
+            Matrix worldMatrix = Matrix.CreateTranslation(GraphicsDevice.Viewport.Width / 4f - 150,
                 GraphicsDevice.Viewport.Height / 4f - 50, 0);
             basicEffect.World = worldMatrix;
             basicEffect.View = ourCamera.viewMatrix;
@@ -517,28 +522,27 @@ namespace WindowsGame3
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
             if (isEditMode) editModeClass.Draw(gameTime,ref npcList,ourCamera);
-            planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
-            playerShip.DrawModel(ourCamera);
-               foreach (NPCManager enemy in npcList)
-                   enemy.DrawModel(ourCamera);
+            modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
+            foreach (newShipStruct npcship in npcList)
+                npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
 
-            foreach (WeaponsManager missile in missileList)
-            {
-                if (missile.isProjectile)
-                {
-                    missile.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                    BoundingSphereRenderer.Render(missile.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+        //    foreach (WeaponsManager missile in missileList)
+        //    {
+        //        if (missile.isProjectile)
+        //        {
+        //            missile.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+        //            BoundingSphereRenderer.Render(missile.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                     // missile.DrawModel(ourCamera);
-                }
-            }
+        //        }
+         //   }
             
             //lanetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
             if (ourExplosion.expList.Count > 10)
                 ourExplosion.expList = new List<VertexExplosion[]>();
-            playerThruster1.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            //playerThruster1.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             spriteBatch.End();
             //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             DrawHUD(gameTime);
@@ -581,7 +585,7 @@ namespace WindowsGame3
         {
             StringBuilder messageBuffer = new StringBuilder();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            foreach (NPCManager enemy in npcList)
+            foreach (newShipStruct enemy in npcList)
             {
                 if (enemy.isVisable == true)
                 {
@@ -591,7 +595,7 @@ namespace WindowsGame3
                     spriteBatch.Draw(HUDAutoTargetIcon, new Vector2(enemy.screenCords.X - 24,
                                             enemy.screenCords.Y - 24), null, Color.White, 0, Vector2.Zero,
                                             1.0f, SpriteEffects.None, 0);
-                    buffer.AppendFormat("{0}", enemy.distanceFromPlayer);
+                    buffer.AppendFormat("{0}", enemy.distanceFromTarget);
                     buffer.AppendFormat("\n" + enemy.npcDisposition);
                     messageBuffer.AppendFormat(" X {0}", enemy.modelPosition.X + "\n");
                     messageBuffer.AppendFormat(" Y {0}", enemy.modelPosition.Y + "\n");
@@ -637,7 +641,7 @@ namespace WindowsGame3
             messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
             messageBuffer.AppendFormat("\nRight Click " + isLclicked + "\n");
             messageBuffer.AppendFormat("\nRight Down " + isLdown + "\n");
-            messageBuffer.AppendFormat(" Direction X {0}", playerShip.Direction.X + "\n");
+            messageBuffer.AppendFormat(" Direction X {0}", playerShip.Direction + "\n");
             messageBuffer.AppendFormat(" Direction Y {0}", playerShip.Direction.Y + "\n");
             messageBuffer.AppendFormat(" Direction Z {0}", playerShip.Direction.Z + "\n");
 

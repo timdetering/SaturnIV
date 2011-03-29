@@ -9,6 +9,57 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame3
 {
+
+    public enum disposition
+    {
+        pursue = 0,
+        patrol = 1,
+        evade = 2,
+        loiter = 3
+    }
+
+    public class newShipStruct
+    {
+        public string objectFileName;
+        public float objectMass;
+        public float objectThrust;
+        public float objectScale;
+        public string objectDesc;
+        public float objectAgility;
+        public string objectClass;
+        public float objectArmorFactor;
+        public float objectArmorLvl;
+        public float radius;
+        public weaponTypes[] weaponArray;
+        public Matrix worldMatrix;
+        public Vector3 modelPosition;
+       // {
+         //   get {return modelPosition;}
+        //}
+
+        public Matrix modelRotation;
+        public Vector3 vecToTarget;
+        public BoundingSphere modelBoundingSphere;
+        public BoundingFrustum modelFrustum;
+        public Vector3 screenCords;
+        public disposition npcDisposition;
+        public Vector3 destination;
+        //public newShipStruct currentTarget;
+        public Model shipModel;
+        public float thrustAmount;
+        public bool isVisable;
+        public bool isSelected;
+        public float distanceFromTarget;
+        public Vector3 Velocity;
+        public Vector3 Direction;
+        public Vector3 Up;
+        public Vector3 right;
+        public Vector3 Right
+        {
+            get { return right; }
+        }
+    }
+
     [Serializable]
     public class shipData
     {
@@ -24,6 +75,7 @@ namespace WindowsGame3
         public string shipClass;
         public string shipBelongsTo;
         public weaponTypes.MissileType[] shipWeapons2;
+
 
         
     }

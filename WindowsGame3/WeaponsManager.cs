@@ -154,7 +154,7 @@ namespace WindowsGame3
             modelPosition += Velocity * elapsed;
             worldMatrix = rotationMatrix;
 
-            screenCords = get2dCoords(this, ourCamera);
+           // screenCords = get2dCoords(this, ourCamera);
             distanceFromPlayer = Vector3.Distance(modelPosition, missileOrigin);
             distanceFromTarget = Vector3.Distance(modelPosition, missileTarget);
             if (trailEmitter != null)
@@ -179,7 +179,7 @@ namespace WindowsGame3
                 // But you have to set the mesh on the GPU and use drawindexedprimitives to draw the 
                 // meshes.  Thats what the two static functions set_mesh and draw_mesh do.
 
-            worldMatrix = Matrix.CreateScale(modelScale) * worldMatrix;
+            //worldMatrix = Matrix.CreateScale(modelScale) * worldMatrix;
                 // set the effect
                 laserEffect.CurrentTechnique = effect_technique;
 
@@ -188,8 +188,8 @@ namespace WindowsGame3
 
                 laserEffect.Begin();
                 laserEffect.CurrentTechnique.Passes[0].Begin();
-                        shader_matrices_combined[0] = worldMatrix;
-                        shader_matrices_combined[1] = worldMatrix * view * projection;
+//shader_matrices_combined[0] = worldMatrix;
+  //                      shader_matrices_combined[1] = worldMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
                         effect_center_to_viewer.SetValue(modelRotation.Up);

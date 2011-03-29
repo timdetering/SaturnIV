@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Group02</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Crusier.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Models\Eriax_Heavy_Crusier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -132,7 +132,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>20 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\Models\Eriax_Heavy_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -156,6 +156,6 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\E637259B\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Texture.jpg</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\81B02744\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Texture.jpg</ExternalReference>
   </ExternalReferences>
 </XnaContent>

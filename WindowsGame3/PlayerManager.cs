@@ -34,88 +34,56 @@ namespace WindowsGame3
             // TODO: Construct any child components here
         }
 
-        public void weaponPylonInit()
-        {
-            Vector3 plyonPoint = (modelRotation.Right * 6) - (modelRotation.Up * 5);
-            shipWeaponPylons.Add(plyonPoint);
-            plyonPoint = (modelRotation.Right * -6) - (modelRotation.Up * 5);
-            shipWeaponPylons.Add(plyonPoint);
-
-        }
-
-        public void updateShipMovement(GameTime gameTime, Camera ourCamera, float gameSpeed,KeyboardState keyboardState,
-                                        Vector3 vecToTarget)
+       public void updateShipMovement(GameTime gameTime, float gameSpeed,KeyboardState keyboardState,newShipStruct playerShip)
         {
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float roll = 0;
-            turningSpeed *= objectAgility * gameSpeed * 2.0f;
+            turningSpeed *= playerShip.objectAgility * gameSpeed * 2.0f;
             Vector2 rotationAmount = Vector2.Zero;
             // Keyboard checks
             //Vector2 rotationAmount = -gamePadState.ThumbSticks.Left;
             if (keyboardState.IsKeyDown(Keys.A))
             {
                 rotationAmount.X = 2.0f;
-              //  if (right.Z < maxTurningAngle)
-             //   {
-             //   roll = -0.033f;
-             //   }
             }
             if (keyboardState.IsKeyDown(Keys.D))
             {
                 rotationAmount.X = -2.0f;
-           //     if (right.Z > -1 * maxTurningAngle)
-           //     {
-          //      roll = 0.033f;
-           //     }
             }
-            //if (keyboardState.IsKeyDown(Keys.S))
-            //    rotationAmount.Y = 1.0f;
-
-            //if (keyboardState.IsKeyDown(Keys.W))
-            //    rotationAmount.Y = -1.0f;
-
-            //if (keyboardState.IsKeyDown(Keys.Z))
-            //    roll = -0.033f;
-            //if (keyboardState.IsKeyDown(Keys.X))
-            //    roll = 0.033f;
-
-            //if (Up.Y < 0)
-            //    rotationAmount.X = +rotationAmount.X;
 
             // Scale rotation amount to radians per second
             rotationAmount = rotationAmount * turningSpeed * elapsed;
 
             Matrix rotationMatrix =
-                Matrix.CreateFromAxisAngle(Right, rotationAmount.Y) *
-                ((Matrix.CreateFromAxisAngle(Direction, roll) *
-                Matrix.CreateFromAxisAngle(Up, rotationAmount.X)));
+                Matrix.CreateFromAxisAngle(playerShip.Right, rotationAmount.Y) *
+                ((Matrix.CreateFromAxisAngle(playerShip.Direction, roll) *
+                Matrix.CreateFromAxisAngle(playerShip.Up, rotationAmount.X)));
 
-            Direction = Vector3.TransformNormal(Direction, rotationMatrix);
-            Up = Vector3.TransformNormal(Up, rotationMatrix);
-            Direction.Normalize();
-            Up.Normalize();
-            right = Vector3.Cross(Direction, Up);
-            Up = Vector3.Cross(right, Direction);
+            playerShip.Direction = Vector3.TransformNormal(playerShip.Direction, rotationMatrix);
+            playerShip.Up = Vector3.TransformNormal(playerShip.Up, rotationMatrix);
+            playerShip.Direction.Normalize();
+            playerShip.Up.Normalize();
+            playerShip.right = Vector3.Cross(playerShip.Direction, playerShip.Up);
+            playerShip.Up = Vector3.Cross(playerShip.right, playerShip.Direction);
 
             thrustAmount = 0.75f;
 
             // Calculate force from thrust amount
-            Vector3 force = Direction * thrustAmount * objectThrust;
-
+            Vector3 force = playerShip.Direction * 10;
             // Apply acceleration
-            Vector3 acceleration = force / objectMass;
-            Velocity += acceleration * elapsed;
+            Vector3 acceleration = force / 2.0f;
+            playerShip.Velocity += acceleration * elapsed;
 
             // Apply psuedo drag
-            Velocity *= DragFactor;
+            playerShip.Velocity *= DragFactor;
 
             // Apply velocity
-            modelPosition += Velocity * elapsed;
-            modelRotation = modelRotation * rotationMatrix;
-            worldMatrix = (modelRotation * rotationMatrix) *
-                          Matrix.CreateTranslation(modelPosition);
-            modelBoundingSphere.Center = modelPosition; modelBoundingSphere.Radius = radius;
+            playerShip.modelPosition += playerShip.Velocity * elapsed;
+            playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
+            playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
+                          Matrix.CreateTranslation(playerShip.modelPosition);
+            playerShip.modelBoundingSphere.Center = playerShip.modelPosition; modelBoundingSphere.Radius = 17;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
 
             //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;

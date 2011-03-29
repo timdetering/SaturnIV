@@ -56,4 +56,4 @@ Content\Models\Fleet_KM100.xnb
 Content\Models\km100.xMetal_Steel_Textured_0.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\3732_0.xnb
-Content\FBX\E637259B\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Tex_0.xnb
+Content\FBX\81B02744\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Tex_0.xnb
