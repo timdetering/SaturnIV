@@ -53,9 +53,6 @@ namespace SaturnIV
             return direction;
         }
 
-
-        
-
         public bool CheckForCollision(GameTime gameTime, List<newShipStruct> shipList, List<weaponStruct> missileBSList, 
                                        ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
@@ -77,38 +74,47 @@ namespace SaturnIV
             }
             return false;
         }
-
-        public bool CheckForCollision(GameTime gameTime, newShipStruct player, List<weaponStruct> missileBSList,
-                               ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
+        //CheckForCollision give to object lists
+        public bool CheckForCollision(GameTime gameTime, ref List<newShipStruct> thisShipList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
-                foreach (weaponStruct missile in missileBSList)
+            for (int j = 0; j < thisShipList.Count; j++)
+            {
+                for (int i = 0; i < missileList.Count; i++)
                 {
-                    //if (player.modelBoundingSphere.Intersects(missile.modelBoundingSphere))
-                    if (player.modelBoundingSphere.Contains(missile.modelBoundingSphere) == ContainmentType.Contains
-                        && missile.distanceFromOrigin > 200)
+                    if (thisShipList[j].modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
+                        && missileList[i].distanceFromOrigin > 200)
                     {
-                        Vector3 currentExpLocation = missile.modelPosition;
-                        missileList.Remove(missile);
+                        Vector3 currentExpLocation = missileList[i].modelPosition;
+                        missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation);
-                        player.objectArmorLvl -= (player.objectArmorFactor / 100) * missile.damageFactor;
+                        thisShipList[j].objectArmorLvl -= (thisShipList[j].objectArmorFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }
+                }
             }
             return false;
         }
 
-        public bool CheckForCollision(GameTime gameTime, NPCManager myShip, List<NPCManager> shipList2)
+        //CheckForCollision given a single object and list of objects
+        public bool CheckForCollision(GameTime gameTime, newShipStruct thisShip, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
-                foreach (NPCManager ship2 in shipList2)
+                for (int i = 0; i < missileList.Count; i++)
                 {
-                    if (myShip.modelBoundingSphere.Intersects(ship2.modelBoundingSphere))
+                    if (thisShip.modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
+                        && missileList[i].distanceFromOrigin > 200)
                     {
+                        Vector3 currentExpLocation = missileList[i].modelPosition;
+                        missileList.Remove(missileList[i]);
+                        ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
+                                                        currentExpLocation);
+                        thisShip.objectArmorLvl -= (thisShip.objectArmorFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }
                 }
             return false;
         }
+
 
         public void DrawFPS(GameTime gameTime, GraphicsDevice device, SpriteBatch spriteBatch, SpriteFont spriteFont)
         {

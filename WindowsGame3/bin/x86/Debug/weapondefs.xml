@@ -4,8 +4,8 @@
     <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Desc>KM-100</Desc>
-      <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Mass>0.25</Mass>
+      <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>

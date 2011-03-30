@@ -45,8 +45,8 @@ namespace SaturnIV
             // TODO: Construct any child components here
         }
 
-        private void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ref List<weaponStruct> missileList,ParticleSystem projectileTrailParticles,
-                               weaponStruct thisWeapon,ref List<weaponData> weaponDefList,newShipStruct thisShip,ref ModelManager modelManager)
+        public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ParticleSystem projectileTrailParticles,
+                               ref List<weaponData> weaponDefList,newShipStruct thisShip)
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
 
@@ -57,7 +57,7 @@ namespace SaturnIV
             }
             else
             {
-                switch (npcDisposition)
+                switch (thisShip.currentDisposition)
                 {
                     case disposition.pursue:
                         thisShip.vecToTarget = thisShip.currentTarget.modelPosition - thisShip.modelPosition;
@@ -65,8 +65,8 @@ namespace SaturnIV
                             if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex]) // &&
                             //Vector3.Dot(modelRotation.Forward, vecToTarget) < Math.Cos(MathHelper.ToRadians(45)))
                             {
-                                currentWeaponIndex = weaponArray[0];
-                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
+                                //currentWeaponIndex = weaponArray[0];
+                                //weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
 
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
@@ -107,7 +107,7 @@ namespace SaturnIV
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
             Vector3 rotationAmount = Vector3.Zero;
-            thrustAmount = 2.0f;
+            thrustAmount = 1.0f;
             int roll = 0;
             
 

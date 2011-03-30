@@ -20,8 +20,7 @@ namespace SaturnIV
         public shipTypes playerShipData;
         //public float playerShipHealth;
 
-        public float thrustAmount = 0.25f;
-        private const float ThrustForce = 500.0f;
+        public float thrustAmount = 0.0f;
 
         /// <summary>
         /// Velocity scalar to approximate drag.
@@ -52,6 +51,11 @@ namespace SaturnIV
                 rotationAmount.X = -2.0f;
             }
 
+            if (keyboardState.IsKeyDown(Keys.S))
+                thrustAmount = 1.0f;
+            else
+                thrustAmount = 0.0f;
+
             // Scale rotation amount to radians per second
             rotationAmount = rotationAmount * turningSpeed * elapsed;
 
@@ -66,8 +70,6 @@ namespace SaturnIV
             playerShip.Up.Normalize();
             playerShip.right = Vector3.Cross(playerShip.Direction, playerShip.Up);
             playerShip.Up = Vector3.Cross(playerShip.right, playerShip.Direction);
-
-            thrustAmount = 0.75f;
 
             Vector3 force = playerShip.Direction * thrustAmount * playerShip.objectThrust;
             // Apply acceleration

@@ -76,14 +76,6 @@ namespace SaturnIV
         public bool isFirstRun;
         Effect effect;
 
-        public enum disposition
-        {
-            pursue = 0,
-            patrol = 1,
-            evade = 2,
-            loiter = 3
-        }
-
         // The aspect ratio determines how to scale 3d to 2d projection.
         public float aspectRatio;
 

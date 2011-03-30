@@ -10,9 +10,12 @@
       <Scale>1</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <shipClass>Fighter</shipClass>
+      <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>50 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+	
       <shipWeapons2>
         <Item>AC10</Item>
         <Item>KM100</Item>

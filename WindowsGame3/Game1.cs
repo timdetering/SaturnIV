@@ -45,9 +45,6 @@ namespace SaturnIV
         String HUDMessage;
 
         public Vector3[] plyonOffset;
-        int currentAutoTargetIndex;
-        NPCManager currentAutoTarget;
-        NPCManager selectedObject;
         Athruster playerThruster1;
 
         Ray currentMouseRay;
@@ -75,7 +72,6 @@ namespace SaturnIV
 
         SkySphere skySphere;
         RenderStarfield starField;
-        BasicEffect basicEffect;
         VertexDeclaration vertexDeclaration;
         public float gameSpeed = 5.0f;
 
@@ -285,11 +281,13 @@ namespace SaturnIV
             //                            - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
             //                            playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
             //                            Color.White, Color.Blue, ourCamera.position);
-            //playerThruster1.heat = 3.0f;
-
-         //   helperClass.CheckForCollision(gameTime, activeShipList, missileList, ref missileList, ref ourExplosion);
-        //    helperClass.CheckForCollision(gameTime, playerShip, missileList, ref missileList, ref ourExplosion);
-            
+            //playerThruster1.heat = 1.5f;
+            if (weaponsManager.activeWeaponList.Count > 0)
+            {
+                helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList, ref ourExplosion);
+                helperClass.CheckForCollision(gameTime, playerShip, ref weaponsManager.activeWeaponList, ref ourExplosion);
+            }
+                       
            
            // BoundingFrustum viewFrustum = new BoundingFrustum();
            // planetManager.Update(gameTime);
@@ -303,7 +301,10 @@ namespace SaturnIV
 
             for (int i = 0; i < activeShipList.Count; i++)
             {
+                activeShipList[i].currentTarget = playerShip;
+                npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i]);
                 npcManager.updateShipMovement(gameTime,gameSpeed,activeShipList[i],ref weaponDefList,ref shipDefList);
+
             }
 
             weaponsManager.Update(gameTime, gameSpeed);
@@ -510,36 +511,21 @@ namespace SaturnIV
             messageBuffer.AppendFormat("Hull Integrity");
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("Shields");
             //playerShipHealthBar.DrawHbar(gameTime, spriteBatch, Color.Blue, 0,0, 500, 20, (int)playerShip.objectArmorLvl);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("Player Position: {0}", playerShip.modelPosition + "\n");
             //messageBuffer.AppendFormat("\nCurrent Target\n" + playerShip.currentTargetObject.objectDesc);
-            messageBuffer.AppendFormat("\nEdit Mode\n" + isEditMode);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
             messageBuffer = new StringBuilder();
-            if (selectedObject !=null)
+       //     if (selectedObject !=null)
        //     messageBuffer.AppendFormat("Zoom {0}",ourCamera.zoomFactor + "\n");
       //      messageBuffer.AppendFormat("CameraOffset Y {0}", ourCamera.cameraOffset2.Y + "\n");
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
-            messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
-            if (weaponsManager.activeWeaponList.Count > 0)
-            {
-                messageBuffer.AppendFormat("weapon pos: {0}", weaponsManager.activeWeaponList[0].modelPosition);
-                messageBuffer.AppendFormat("weapon vel: {0}", weaponsManager.activeWeaponList[0].Velocity);
-            }
-
-            messageBuffer.AppendFormat("\nRight Click " + isLclicked + "\n");
-            messageBuffer.AppendFormat("\nRight Down " + isLdown + "\n");
-            messageBuffer.AppendFormat("\nActive Weapons {0}", weaponsManager.activeWeaponList.Count);
-            messageBuffer.AppendFormat(" Direction X {0}", playerShip.Direction + "\n");
-            messageBuffer.AppendFormat(" Direction Y {0}", playerShip.Direction.Y + "\n");
-            messageBuffer.AppendFormat(" Direction Z {0}", playerShip.Direction.Z + "\n");
-
+           // messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
+           
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY - (screenY / 3)), Color.White);
             spriteBatch.End();

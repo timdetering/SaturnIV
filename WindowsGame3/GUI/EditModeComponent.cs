@@ -24,6 +24,7 @@ namespace SaturnIV
         BoundingSphere directionSphere;
         Color sphereColor;
         bool ischangingDirection = false;
+        MouseState mouseOld;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -85,7 +86,6 @@ namespace SaturnIV
                     if (ourShip.isSelected)
                     {
                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                        //ourShip.vecToTarget = mouse3dVector;
                         npcManager.editModeUpdate(gameTime,ourShip);
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
                     }
@@ -95,15 +95,22 @@ namespace SaturnIV
             {
                 sphereColor = Color.Red;
                 ischangingDirection = true;
+                mouseCurrent = Mouse.GetState();
                 //if (mouseCurrent != originalMouseState)
                 // {
                 foreach (newShipStruct ourShip in objectList)
                 {
                     if (ourShip.isSelected)
                     {
+                        //ourShip.vecToTarget = mouse3dVector;
+                        //float xDifference = mouseCurrent.X - mouseOld.X;
+                       // float yDifference = mouseCurrent.Y - mouseOld.Y;
+                       // ourShip.vecToTarget.X -= xDifference * MathHelper.ToRadians(45) * 2.0f;
+                       // ourShip.vecToTarget.Z -= yDifference * MathHelper.ToRadians(45) * 2.0f;
                         ourShip.vecToTarget = mouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
                         npcManager.editModeUpdate(gameTime,ourShip);
+                        mouseOld = mouseCurrent;
                     }
                 }
             }
@@ -161,6 +168,7 @@ namespace SaturnIV
             tempData.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Direction = Vector3.Forward;
             tempData.vecToTarget = Vector3.Forward;
+            tempData.currentDisposition = disposition.patrol;
             tempData.Up = Vector3.Up;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
             modelManager.editModeUpdate(gameTime, tempData);
