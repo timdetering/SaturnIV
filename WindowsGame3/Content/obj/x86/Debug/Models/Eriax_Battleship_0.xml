@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Group01</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -118,7 +118,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>07 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -135,7 +135,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>19 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -166,14 +166,14 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>blu</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
     </Resource>
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>07 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -190,14 +190,14 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>blu_ncl1_1</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
     </Resource>
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>09 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Battleship.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
     </Resource>

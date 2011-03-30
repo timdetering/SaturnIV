@@ -45,7 +45,7 @@ namespace SaturnIV
             // TODO: Construct any child components here
         }
 
-        private void performAI(GameTime gameTime, ref List<weaponStruct> missileList,ParticleSystem projectileTrailParticles,
+        private void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ref List<weaponStruct> missileList,ParticleSystem projectileTrailParticles,
                                weaponStruct thisWeapon,ref List<weaponData> weaponDefList,newShipStruct thisShip,ref ModelManager modelManager)
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
@@ -66,7 +66,7 @@ namespace SaturnIV
                             //Vector3.Dot(modelRotation.Forward, vecToTarget) < Math.Cos(MathHelper.ToRadians(45)))
                             {
                                 currentWeaponIndex = weaponArray[0];
-                                helperClass.fireWeapon(Game, thisShip.currentTarget, thisShip, ref missileList, projectileTrailParticles, ref modelManager, ref weaponDefList);
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
 
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
@@ -88,7 +88,7 @@ namespace SaturnIV
                         {
                             if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex])
                             {
-                                helperClass.fireWeapon(Game, thisShip.currentTarget, thisShip, ref missileList, projectileTrailParticles, ref modelManager, ref weaponDefList);
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
                             }

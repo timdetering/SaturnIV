@@ -1,2 +1,3 @@
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3_new\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -54,61 +54,7 @@ namespace SaturnIV
         }
 
 
-        public void fireWeapon(Game game, newShipStruct targetObject, newShipStruct weaponOrigin,
-                               ref List<weaponStruct> missileList,ParticleSystem projectileTrailParticles, ref ModelManager modelManager,ref List<weaponData> weaponDefList)
-        {
-            weaponStruct tempData;
-            ParticleEmitter trailEmitter;
-            tempData = new weaponStruct();
-            
-            //tempData.InitializeWeapon((int)weaponOrigin.currentWeaponIndex);
-            //if (weaponOrigin.currentPylon <= weaponOrigin.turretArray.Length)
-            //{
-           //     tempData.modelPosition = weaponOrigin.modelPosition - ((weaponOrigin.modelRotation.Right *
-          //                          weaponOrigin.turretArray[weaponOrigin.currentPylon - 1].X)
-          //                          - (weaponOrigin.modelRotation.Up * weaponOrigin.turretArray[weaponOrigin.currentPylon - 1].Y)
-          //                          - (weaponOrigin.modelRotation.Forward * weaponOrigin.turretArray[weaponOrigin.currentPylon - 1].Z));
-          //      weaponOrigin.currentPylon++;
-           // }
-            //if (weaponOrigin.currentPylon < weaponOrigin.turretArray.Length) weaponOrigin.currentPylon++;
-          //  else
-                //weaponOrigin.currentPylon = 1;
-            Vector3 vecToTarget = targetObject.modelPosition - weaponOrigin.modelPosition;
-            tempData = InitializeWeapon(0,ref modelManager, ref weaponDefList);
-
-            //Calculate path
-            //tempData.calcInitalPath(originDirection);
-            tempData.missileTarget = targetObject;
-            tempData.missileOrigin = weaponOrigin.modelPosition;
-            tempData.Velocity = weaponOrigin.Velocity;
-            tempData.modelRotation = weaponOrigin.modelRotation;
-            tempData.Up = Vector3.Up;
-            tempData.Direction = Vector3.Forward;
-
-            if (tempData.isProjectile)
-            {
-                trailEmitter = new ParticleEmitter(projectileTrailParticles,
-                                               200, weaponOrigin.modelPosition, weaponOrigin.Velocity);
-                tempData.trailEmitter = trailEmitter;
-                //weaponOrigin.cMissileCount -= 1;
-            }
-            //if (weaponOrigin.cMissileCount >0)
-                    missileList.Add(tempData);
-            //isMissileHit = true;
-        }
-
-        public weaponStruct InitializeWeapon(int weaponTypeIndex,ref ModelManager modelManager,ref List<weaponData> weaponDefList)
-        {
-            weaponStruct newWeapon = new weaponStruct();
-            newWeapon.objectFileName = weaponDefList[0].FileName;
-            newWeapon.radius = weaponDefList[0].SphereRadius;
-            newWeapon.shipModel = modelManager.LoadModel(newWeapon.objectFileName);
-            newWeapon.objectAgility = weaponDefList[0].Agility;
-            newWeapon.isProjectile = weaponDefList[0].isProjectile;
-            newWeapon.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
-            newWeapon.modelBoundingSphere = new BoundingSphere(newWeapon.modelPosition, newWeapon.radius);
-            return newWeapon;
-        }
+        
 
         public bool CheckForCollision(GameTime gameTime, List<newShipStruct> shipList, List<weaponStruct> missileBSList, 
                                        ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)

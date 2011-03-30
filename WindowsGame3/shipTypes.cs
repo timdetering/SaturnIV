@@ -53,6 +53,7 @@ namespace SaturnIV
         public Vector3 right;
         public Vector3 Right;
     }
+
     public class weaponStruct : newShipStruct
     {
         public bool isProjectile;

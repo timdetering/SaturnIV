@@ -56,7 +56,6 @@ namespace SaturnIV
         public newShipStruct playerShip;
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
-        public List<weaponStruct> activeWeaponList = new List<weaponStruct>();
         public NPCManager npcManager;
         public PlayerManager playerManager;
         public ModelManager modelManager;
@@ -127,6 +126,7 @@ namespace SaturnIV
             npcManager = new NPCManager(this);
             npcManager.Initialize();
             weaponsManager = new WeaponsManager(this);
+            weaponsManager.Initialize();
             //Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
@@ -197,7 +197,7 @@ namespace SaturnIV
             playerShip.shipModel = modelManager.LoadModel(shipDefList[0].FileName);
             playerShip.objectAgility = shipDefList[0].Agility;
             playerShip.objectMass = shipDefList[0].Mass;
-
+            playerShip.objectThrust = shipDefList[0].Thrust;
             playerShip.modelPosition = Vector3.Zero;
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;
@@ -227,9 +227,7 @@ namespace SaturnIV
             exportShipDefs = new shipTypes();
             exportShipClasses = new shipClasses();
             exportWeaponDefs = new weaponTypes();
-            // Open the file, creating it if necessary
-           // FileStream stream = File.Open("assets.xml", FileMode.OpenOrCreate);
-           // XmlSerializer serializer = new XmlSerializer(typeof(saveObject));
+
             XmlWriterSettings xmlSettings = new XmlWriterSettings();
             xmlSettings.Indent = true;
 
@@ -254,7 +252,7 @@ namespace SaturnIV
                 }
                 using (XmlWriter xmlWriter = XmlWriter.Create("weapondefs.xml", xmlSettings))
                 {
-                    IntermediateSerializer.Serialize(xmlWriter, exportWeaponDefs, null);
+                   // IntermediateSerializer.Serialize(xmlWriter, exportWeaponDefs, null);
                 }
         }
 
@@ -308,14 +306,9 @@ namespace SaturnIV
                 npcManager.updateShipMovement(gameTime,gameSpeed,activeShipList[i],ref weaponDefList,ref shipDefList);
             }
 
-      //      for (int i = 0; i < missileList.Count; i++)
-       //         {
-                //missileList[i].updateMissileMovement(gameTime, gameSpeed, ourCamera);
-                //missileList[i].updateModelBoundingSphere(ourCamera, 1.0f);
-
-       //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
+            weaponsManager.Update(gameTime, gameSpeed);
+             //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
                    // missileList.Remove(missileList[i]);
-       //     }
         }
 
         protected void processInput(GameTime gameTime)
@@ -380,15 +373,8 @@ namespace SaturnIV
             if (isRclicked && isEditMode)
                 activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime));
 
-            if (keyboardState.IsKeyDown(Keys.D1))
-                playerShip.radius = playerShip.radius + 0.5f;
-            if (keyboardState.IsKeyDown(Keys.D2))
-                playerShip.thrustAmount = 0.50f;
-            if (keyboardState.IsKeyDown(Keys.D3))
-                playerShip.thrustAmount = 0.75f;
-            if (keyboardState.IsKeyDown(Keys.D4))
-                playerShip.thrustAmount = 1.0f;
-
+            if (keyboardState.IsKeyDown(Keys.R))
+                weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList);
 
         //    if (oldkeyboardState.IsKeyDown(Keys.Q) && keyboardState.IsKeyUp(Keys.Q))
        //     {
@@ -441,12 +427,8 @@ namespace SaturnIV
             foreach (newShipStruct npcship in activeShipList)
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
 
-            foreach (weaponStruct weapon in activeWeaponList)
-            {
-                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix,weapon.objectColor,weapon.worldMatrix,weapon.shipModel);
-            }
-            
-            //lanetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+
             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
             if (ourExplosion.expList.Count > 10)
                 ourExplosion.expList = new List<VertexExplosion[]>();
@@ -458,13 +440,11 @@ namespace SaturnIV
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            Gui.drawGUI(spriteBatch,spriteFont);
+            //Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
-            //if (playerShip.currentTargetObject.screenCords.Z < 1)
-             //   DrawAutoTarget(gameTime);
             // Pass camera matrices through to the particle system components.
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                base.Draw(gameTime);
+            base.Draw(gameTime);
         }
 
         private void DrawAutoTarget(GameTime gameTime)
@@ -547,8 +527,15 @@ namespace SaturnIV
       //      messageBuffer.AppendFormat("CameraOffset Y {0}", ourCamera.cameraOffset2.Y + "\n");
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
             messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
+            if (weaponsManager.activeWeaponList.Count > 0)
+            {
+                messageBuffer.AppendFormat("weapon pos: {0}", weaponsManager.activeWeaponList[0].modelPosition);
+                messageBuffer.AppendFormat("weapon vel: {0}", weaponsManager.activeWeaponList[0].Velocity);
+            }
+
             messageBuffer.AppendFormat("\nRight Click " + isLclicked + "\n");
             messageBuffer.AppendFormat("\nRight Down " + isLdown + "\n");
+            messageBuffer.AppendFormat("\nActive Weapons {0}", weaponsManager.activeWeaponList.Count);
             messageBuffer.AppendFormat(" Direction X {0}", playerShip.Direction + "\n");
             messageBuffer.AppendFormat(" Direction Y {0}", playerShip.Direction.Y + "\n");
             messageBuffer.AppendFormat(" Direction Z {0}", playerShip.Direction.Z + "\n");

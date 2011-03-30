@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Fighter Maqrk II</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_SF-1A.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_SF-1A.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -558,7 +558,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>13 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_SF-1A.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_SF-1A.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
     </Resource>

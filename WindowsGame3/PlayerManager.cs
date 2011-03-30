@@ -69,11 +69,11 @@ namespace SaturnIV
 
             thrustAmount = 0.75f;
 
-            // Calculate force from thrust amount
-            Vector3 force = playerShip.Direction * 10;
+            Vector3 force = playerShip.Direction * thrustAmount * playerShip.objectThrust;
             // Apply acceleration
-            Vector3 acceleration = force / 2.0f;
-            playerShip.Velocity += acceleration * elapsed;
+            Vector3 acceleration = force / playerShip.objectMass;
+
+            playerShip.Velocity += acceleration * thrustAmount * elapsed;
 
             // Apply psuedo drag
             playerShip.Velocity *= DragFactor;
@@ -83,7 +83,7 @@ namespace SaturnIV
             playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
             playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(playerShip.modelPosition);
-            playerShip.modelBoundingSphere.Center = playerShip.modelPosition; modelBoundingSphere.Radius = 17;
+            playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
 
             //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
