@@ -15,6 +15,12 @@ namespace SaturnIV
         Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5;
         Color opt1Color, opt2Color, opt3Color, opt4Color,opt5Color;
         editOptions currentSelection;
+        int verticalStartY = 5;
+        int horizontalStartX = 5;
+        int verticalItemSpacing = 20;
+        int horizontalItemWidth = 150;
+
+        MenuItem menuItem = new MenuItem();
 
         public enum editOptions
         {
@@ -24,11 +30,10 @@ namespace SaturnIV
             exit
         }
 
-        public struct menuItem
+        public struct MenuItem
         {
             public string itemText;
             public Rectangle itemRectangle;
-            public Vector2 itemPosition;
         }
 
         

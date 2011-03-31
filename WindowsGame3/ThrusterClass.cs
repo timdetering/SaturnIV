@@ -19,7 +19,7 @@ namespace SaturnIV
 		public class Athruster
 		{
         
-            Effect effect;
+        Effect effect;
         float rotx = 0;
         float roty = MathHelper.ToRadians(90);
 

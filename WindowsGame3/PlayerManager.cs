@@ -25,7 +25,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.98f;
+        private const float DragFactor = 0.97f;
 
         public PlayerManager(Game game)
             : base(game)
@@ -59,7 +59,7 @@ namespace SaturnIV
             else
             {
                 playerShip.ThrusterEngaged = false;
-                thrustAmount = 0.0f;
+                thrustAmount = 1.0f;
             }
 
             // Scale rotation amount to radians per second
@@ -89,11 +89,16 @@ namespace SaturnIV
                           Matrix.CreateTranslation(playerShip.modelPosition);
             playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
-            playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
-                                        - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
-                                        playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
-                                        Color.White, Color.Blue,ourCamera.position);
-            playerShip.shipThruster.heat = 1.5f;
+            if (playerShip.ThrusterEngaged)
+            {
+                playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
+                                        - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20),
+                                        playerShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
+                                        Color.White, Color.Blue, ourCamera.position);
+
+                playerShip.shipThruster.heat = 1.5f;
+            }
+
             //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
          }
 

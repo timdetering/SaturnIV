@@ -300,7 +300,6 @@ namespace SaturnIV
                 activeShipList[i].currentTarget = playerShip;
                 npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i]);
                 npcManager.updateShipMovement(gameTime,gameSpeed,activeShipList[i],ref weaponDefList,ref shipDefList);
-
             }
             weaponsManager.Update(gameTime, gameSpeed);
              //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
@@ -419,8 +418,8 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
-            if (playerShip.ThrusterEngaged)
-                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+          //  if (playerShip.ThrusterEngaged)
+          //      playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
 
             foreach (newShipStruct npcship in activeShipList)
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
