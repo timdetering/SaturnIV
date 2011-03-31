@@ -107,7 +107,7 @@ namespace SaturnIV
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
             Vector3 rotationAmount = Vector3.Zero;
-            thrustAmount = 1.0f;
+            thrustAmount = 0.50f;
             int roll = 0;
             
 

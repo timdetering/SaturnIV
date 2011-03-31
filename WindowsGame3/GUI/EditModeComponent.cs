@@ -25,6 +25,7 @@ namespace SaturnIV
         Color sphereColor;
         bool ischangingDirection = false;
         MouseState mouseOld;
+        SpriteBatch spriteBatch;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -171,6 +172,8 @@ namespace SaturnIV
             tempData.currentDisposition = disposition.patrol;
             tempData.Up = Vector3.Up;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
+            tempData.shipThruster = new Athruster();
+            tempData.shipThruster.LoadContent(Game, spriteBatch);
             modelManager.editModeUpdate(gameTime, tempData);
             return tempData;
         }

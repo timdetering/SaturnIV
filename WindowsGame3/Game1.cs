@@ -45,7 +45,6 @@ namespace SaturnIV
         String HUDMessage;
 
         public Vector3[] plyonOffset;
-        Athruster playerThruster1;
 
         Ray currentMouseRay;
         RadarClass radar;
@@ -110,7 +109,6 @@ namespace SaturnIV
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
             playerShip = new newShipStruct();
-            //playerThruster1 = new Athruster();
             ourExplosion = new ExplosionClass();
             skySphere = new SkySphere(this);
             activeShipList = new List<newShipStruct>();
@@ -199,6 +197,8 @@ namespace SaturnIV
             playerShip.Direction = Vector3.Forward;
             playerShip.Up = Vector3.Up;
             playerShip.modelBoundingSphere = new BoundingSphere(playerShip.modelPosition, playerShip.radius);
+            playerShip.shipThruster = new Athruster();
+            playerShip.shipThruster.LoadContent(this, spriteBatch);
         }
 
         private void loadShipData()
@@ -208,7 +208,6 @@ namespace SaturnIV
                 shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
             xmlReader = XmlReader.Create("weapondefs.xml");
                 weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
-
         }
 
         private void serializeClass()
@@ -287,8 +286,6 @@ namespace SaturnIV
                 helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList, ref ourExplosion);
                 helperClass.CheckForCollision(gameTime, playerShip, ref weaponsManager.activeWeaponList, ref ourExplosion);
             }
-                       
-           
            // BoundingFrustum viewFrustum = new BoundingFrustum();
            // planetManager.Update(gameTime);
             base.Update(gameTime);
@@ -296,8 +293,7 @@ namespace SaturnIV
 
         protected void updateObjects(GameTime gameTime)
         {
-            //playerShip.updateShipMovement(gameTime, ourCamera, gameSpeed, Keyboard.GetState(), new Vector3(nearpoint.X,0,nearpoint.Y));
-            playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip);
+            playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);
 
             for (int i = 0; i < activeShipList.Count; i++)
             {
@@ -306,7 +302,6 @@ namespace SaturnIV
                 npcManager.updateShipMovement(gameTime,gameSpeed,activeShipList[i],ref weaponDefList,ref shipDefList);
 
             }
-
             weaponsManager.Update(gameTime, gameSpeed);
              //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
                    // missileList.Remove(missileList[i]);
@@ -332,7 +327,7 @@ namespace SaturnIV
             else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
                 isEditMode = false;
 
-          if (keyboardState.IsKeyDown(Keys.S) && isEditMode)
+          if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
                 serializeClass();
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
@@ -424,6 +419,8 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
+            if (playerShip.ThrusterEngaged)
+                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
 
             foreach (newShipStruct npcship in activeShipList)
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
@@ -441,7 +438,7 @@ namespace SaturnIV
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            //Gui.drawGUI(spriteBatch,spriteFont);
+            Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
             // Pass camera matrices through to the particle system components.
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
@@ -493,7 +490,6 @@ namespace SaturnIV
                 }
 
             }
-            
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             spriteBatch.End();
         }
@@ -515,19 +511,25 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
+            for (int i=0;i < weaponsManager.activeWeaponList.Count; i++)
+            {
+                messageBuffer.AppendFormat("\nDistance From Origin\n" + weaponsManager.activeWeaponList[i].distanceFromOrigin);
+                messageBuffer.AppendFormat("\nRange\n" + weaponsManager.activeWeaponList[i].range);
+            }   
             //messageBuffer.AppendFormat("\nCurrent Target\n" + playerShip.currentTargetObject.objectDesc);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
             messageBuffer = new StringBuilder();
+            //System.GC.GetTotalMemory(true);
+            messageBuffer.AppendFormat("Memory {0}", System.GC.GetTotalMemory(true) + "\n");
        //     if (selectedObject !=null)
        //     messageBuffer.AppendFormat("Zoom {0}",ourCamera.zoomFactor + "\n");
       //      messageBuffer.AppendFormat("CameraOffset Y {0}", ourCamera.cameraOffset2.Y + "\n");
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
            // messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
            
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
-                                    (screenX / 6) - 150, screenCenterY - (screenY / 3)), Color.White);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos2, Color.White);
             spriteBatch.End();
 
         }

@@ -33,7 +33,7 @@ namespace SaturnIV
             // TODO: Construct any child components here
         }
 
-       public void updateShipMovement(GameTime gameTime, float gameSpeed,KeyboardState keyboardState,newShipStruct playerShip)
+       public void updateShipMovement(GameTime gameTime, float gameSpeed,KeyboardState keyboardState,newShipStruct playerShip,Camera ourCamera)
         {
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -52,9 +52,15 @@ namespace SaturnIV
             }
 
             if (keyboardState.IsKeyDown(Keys.S))
+            {
+                playerShip.ThrusterEngaged = true;
                 thrustAmount = 1.0f;
+            }
             else
+            {
+                playerShip.ThrusterEngaged = false;
                 thrustAmount = 0.0f;
+            }
 
             // Scale rotation amount to radians per second
             rotationAmount = rotationAmount * turningSpeed * elapsed;
@@ -70,16 +76,12 @@ namespace SaturnIV
             playerShip.Up.Normalize();
             playerShip.right = Vector3.Cross(playerShip.Direction, playerShip.Up);
             playerShip.Up = Vector3.Cross(playerShip.right, playerShip.Direction);
-
             Vector3 force = playerShip.Direction * thrustAmount * playerShip.objectThrust;
             // Apply acceleration
             Vector3 acceleration = force / playerShip.objectMass;
-
             playerShip.Velocity += acceleration * thrustAmount * elapsed;
-
             // Apply psuedo drag
             playerShip.Velocity *= DragFactor;
-
             // Apply velocity
             playerShip.modelPosition += playerShip.Velocity * elapsed;
             playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
@@ -87,7 +89,11 @@ namespace SaturnIV
                           Matrix.CreateTranslation(playerShip.modelPosition);
             playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
-
+            playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
+                                        - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20), 
+                                        playerShip.Direction, new Vector3(6,6,6), 40.0f, 10.0f,
+                                        Color.White, Color.Blue,ourCamera.position);
+            playerShip.shipThruster.heat = 1.5f;
             //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
          }
 
