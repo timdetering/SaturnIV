@@ -186,12 +186,12 @@ namespace SaturnIV
 
         private void initPlayer()
         {
-            playerShip.objectFileName = shipDefList[0].FileName;
-            playerShip.radius = shipDefList[0].SphereRadius;
-            playerShip.shipModel = modelManager.LoadModel(shipDefList[0].FileName);
-            playerShip.objectAgility = shipDefList[0].Agility;
-            playerShip.objectMass = shipDefList[0].Mass;
-            playerShip.objectThrust = shipDefList[0].Thrust;
+            playerShip.objectFileName = shipDefList[1].FileName;
+            playerShip.radius = shipDefList[1].SphereRadius;
+            playerShip.shipModel = modelManager.LoadModel(shipDefList[1].FileName);
+            playerShip.objectAgility = shipDefList[1].Agility;
+            playerShip.objectMass = shipDefList[1].Mass;
+            playerShip.objectThrust = shipDefList[1].Thrust;
             playerShip.modelPosition = Vector3.Zero;
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;
@@ -208,6 +208,7 @@ namespace SaturnIV
                 shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
             xmlReader = XmlReader.Create("weapondefs.xml");
                 weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
+                Gui.buildShipMenu(ref shipDefList);
         }
 
         private void serializeClass()
@@ -268,7 +269,7 @@ namespace SaturnIV
         protected override void Update(GameTime gameTime)
         {
             processInput(gameTime);
-            Gui.update(mouseStateCurrent.X, mouseStateCurrent.Y);
+            Gui.update(mouseStateCurrent,mouseStatePrevious);
             if (!isEditMode)
                 updateObjects(gameTime);
             else
@@ -418,8 +419,8 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
-          //  if (playerShip.ThrusterEngaged)
-          //      playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+           if (playerShip.ThrusterEngaged)
+                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
 
             foreach (newShipStruct npcship in activeShipList)
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);

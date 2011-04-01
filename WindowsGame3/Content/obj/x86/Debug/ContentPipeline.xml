@@ -703,6 +703,42 @@
       <Output>obj\x86\Debug\Models\Fleet_KM100_0.xml</Output>
       <Time>2011-03-29T19:05:37.703125-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\SF-15C.FBX</Source>
+      <Name>Models\SF-15C</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-15C.xnb</Output>
+      <Time>2011-03-31T20:51:41.1145-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\SF-15C_0.xml</Key>
+        <Value>2011-03-31T20:51:46.20825-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\fighter_1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\SF-15C.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\SF-15C_0.xml</Output>
+      <Time>2011-03-31T20:51:41.1145-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\fighter_1\fighter_1.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\fighter_1_0.xnb</Output>
+      <Time>2010-04-06T23:44:32.796875-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

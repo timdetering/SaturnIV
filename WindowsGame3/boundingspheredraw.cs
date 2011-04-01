@@ -196,5 +196,53 @@ namespace SaturnIV
             }
             effect.End();
         }
+
+        public static void Render3dCircle(
+            BoundingSphere sphere,
+            GraphicsDevice graphicsDevice,
+            Matrix view,
+            Matrix projection,
+            Color color)
+        {
+            if (vertBuffer == null)
+                InitializeGraphics(graphicsDevice, 30);
+
+            graphicsDevice.VertexDeclaration = vertDecl;
+            graphicsDevice.Vertices[0].SetSource(
+                  vertBuffer,
+                  0,
+                  VertexPositionColor.SizeInBytes);
+
+            effect.World =
+                  Matrix.CreateScale(sphere.Radius) *
+                  Matrix.CreateTranslation(sphere.Center);
+            effect.View = view;
+            effect.Projection = projection;
+            effect.DiffuseColor = color.ToVector3();
+
+            effect.Begin();
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Begin();
+
+                //render each circle individually
+         //       graphicsDevice.DrawPrimitives(
+         //             PrimitiveType.LineStrip,
+         //             0,
+         //             sphereResolution);
+                graphicsDevice.DrawPrimitives(
+                      PrimitiveType.LineStrip,
+                      sphereResolution + 1,
+                      sphereResolution);
+         //       graphicsDevice.DrawPrimitives(
+        //              PrimitiveType.LineStrip,
+        //              (sphereResolution + 1) * 2,
+        //              sphereResolution);
+
+                pass.End();
+            }
+            effect.End();
+        }
+
     }
 }

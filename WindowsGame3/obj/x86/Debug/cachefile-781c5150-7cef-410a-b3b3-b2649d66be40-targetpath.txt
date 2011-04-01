@@ -57,3 +57,5 @@ Content\Models\km100.xMetal_Steel_Textured_0.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\3732_0.xnb
 Content\FBX\51FC2958\Eriax_Heavy_Crusier.fbm\destroyer.xcygnus.xSpaceship_Tex_0.xnb
+Content\Models\SF-15C.xnb
+Content\fighter_1_0.xnb

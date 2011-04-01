@@ -15,7 +15,63 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>50 300 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
-	
+      <shipWeapons2>
+        <Item>AC10</Item>
+        <Item>KM100</Item>
+      </shipWeapons2>
+    </Item>
+    <Item>
+      <FileName>Models//SF-15C</FileName>
+      <Desc>SF-15C</Desc>
+      <Mass>1.5</Mass>
+      <Thrust>550</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>5.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>50 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <shipWeapons2>
+        <Item>AC10</Item>
+        <Item>KM100</Item>
+      </shipWeapons2>
+    </Item>
+  <Item>
+      <FileName>Models//Fleet_Heavy_Battleship</FileName>
+      <Desc>Heavy Battleship</Desc>
+      <Mass>12</Mass>
+      <Thrust>1550</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldLvl>400</ShieldLvl>
+      <ShieldRegenTime>50</ShieldRegenTime>
+      <EvadeDist>0 1000 500 0</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <shipWeapons2>
+        <Item>AC10</Item>
+        <Item>KM100</Item>
+      </shipWeapons2>
+    </Item>
+<Item>
+      <FileName>Models//Eriax_Light_Crusier</FileName>
+      <Desc>Eriax Light Crusier</Desc>
+      <Mass>6</Mass>
+      <Thrust>1050</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>3.0</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldLvl>400</ShieldLvl>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>0 1000 500 0</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <shipWeapons2>
         <Item>AC10</Item>
         <Item>KM100</Item>

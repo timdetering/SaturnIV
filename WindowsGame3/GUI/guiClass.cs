@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -15,12 +16,13 @@ namespace SaturnIV
         Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5;
         Color opt1Color, opt2Color, opt3Color, opt4Color,opt5Color;
         editOptions currentSelection;
-        int verticalStartY = 5;
-        int horizontalStartX = 5;
+        int verticalStartY = 25;
+        int horizontalStartX = 150;
         int verticalItemSpacing = 20;
         int horizontalItemWidth = 150;
+        bool AddRemove = false;
 
-        MenuItem menuItem = new MenuItem();
+        List<MenuItem> menuItemList = new List<MenuItem>();
 
         public enum editOptions
         {
@@ -36,9 +38,21 @@ namespace SaturnIV
             public Rectangle itemRectangle;
         }
 
-        
+        public void buildShipMenu(ref List<shipData> shipList)
+        {
+            for (int i=0; i < shipList.Count; i++)
+            {
+                MenuItem tempItem = new MenuItem();
+                tempItem.itemText = shipList[i].Desc;
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, horizontalItemWidth, verticalItemSpacing);
+                verticalStartY += verticalItemSpacing;
+                menuItemList.Add(tempItem);
+            }
+        }
+
         public void initalize(Game game) 
         {
+            currentSelection = editOptions.load;
             rectangle1 = new Rectangle(5, 5, 150, 20);
             rectangle2 = new Rectangle(150, 5, 150, 20);
             rectangle3 = new Rectangle(300, 5, 70, 20);
@@ -50,16 +64,16 @@ namespace SaturnIV
             opt4Color = Color.Gray;
             opt5Color = Color.Gray;
 
-
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
 
         }
 
-        public void update(int mouseX, int mouseY)
+        public void update(MouseState currentMouse,MouseState oldMouse)
         {
-            currentSelection = editOptions.addremove;
+            int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
+
             if (rectangle2.Contains(new Point(mouseX, mouseY)))
-            {
+            {    
                 currentSelection = editOptions.addremove;
                 opt2Color = Color.Black;
             }
@@ -67,7 +81,7 @@ namespace SaturnIV
                 opt2Color = Color.White;
             if (rectangle3.Contains(new Point(mouseX, mouseY)))
             {
-                currentSelection = editOptions.addremove;
+                currentSelection = editOptions.save;
                 opt3Color = Color.Black;
             }
             else
@@ -87,6 +101,11 @@ namespace SaturnIV
             else
                 opt5Color = Color.Gray;
 
+            if (currentMouse.LeftButton == ButtonState.Pressed) //&& oldMouse.LeftButton == ButtonState.Released)
+            {
+                if (currentSelection == editOptions.addremove)
+                    AddRemove = true;
+            }
         }
 
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
@@ -99,12 +118,28 @@ namespace SaturnIV
             mBatch.Draw(dummyTexture, rectangle5, Color.Gray);
 
             StringBuilder messageBuffer = new StringBuilder();
+            messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Edit Mode");          
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(10,7), Color.Black);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Add/Remove");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(150, 7), opt2Color);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("Save");
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(300, 7), opt3Color);
+            messageBuffer = new StringBuilder();
+            if (AddRemove == true)
+            {
+                foreach (MenuItem mItem in menuItemList)
+                {
+                    mBatch.Draw(dummyTexture, mItem.itemRectangle, Color.Gray);
+                    messageBuffer.AppendFormat(mItem.itemText);
+                    mBatch.DrawString(spriteFont, messageBuffer,
+                                    new Vector2(mItem.itemRectangle.X, mItem.itemRectangle.Y), Color.White);
+                    messageBuffer = new StringBuilder();
+
+                }
+            }
         }
     }
-
 }
