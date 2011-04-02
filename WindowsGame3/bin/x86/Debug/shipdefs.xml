@@ -19,6 +19,7 @@
         <Item>AC10</Item>
         <Item>KM100</Item>
       </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
       <FileName>Models//SF-4B</FileName>
@@ -38,6 +39,7 @@
         <Item>AC10</Item>
         <Item>KM100</Item>
       </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
       <FileName>Models//SF-6</FileName>
@@ -57,6 +59,7 @@
         <Item>AC10</Item>
         <Item>KM100</Item>
       </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
   <Item>
       <FileName>Models//Fleet_Heavy_Battleship</FileName>
@@ -76,6 +79,7 @@
         <Item>AC10</Item>
         <Item>KM100</Item>
       </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
       <FileName>Models//Eriax_Light_Crusier</FileName>
@@ -95,6 +99,7 @@
         <Item>AC10</Item>
         <Item>KM100</Item>
       </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
   </Asset>
 </XnaContent>

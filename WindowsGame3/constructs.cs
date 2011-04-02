@@ -65,6 +65,7 @@ namespace SaturnIV
         public Vector3 right;
         public Vector3 Right;
         public Athruster shipThruster;
+        public Vector3 ThrusterPosition;
         public bool ThrusterEngaged = false;
     }
 
@@ -103,6 +104,7 @@ namespace SaturnIV
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public WeaponTypeEnum[] AvailableWeapons;
+        public Vector3 ThrusterPosition;
     }
 
     public class weaponData : genericObjectLoadClass

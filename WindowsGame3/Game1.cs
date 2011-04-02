@@ -207,10 +207,10 @@ namespace SaturnIV
         {
             XmlReaderSettings xmlSettings = new XmlReaderSettings();
             XmlReader xmlReader = XmlReader.Create("shipdefs.xml");
-                shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
+            shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
             xmlReader = XmlReader.Create("weapondefs.xml");
-                weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
-                Gui.buildShipMenu(ref shipDefList);
+            weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
+            Gui.buildShipMenu(ref shipDefList);
         }
 
         private void serializeClass()
@@ -402,21 +402,29 @@ namespace SaturnIV
         {
             float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;
             graphics.GraphicsDevice.Clear(Color.Black);
+            
+            //Draw Skybox and Starfield
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
+
             if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
-           if (playerShip.ThrusterEngaged)
+            if (playerShip.ThrusterEngaged)
                 playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
 
             foreach (newShipStruct npcship in activeShipList)
+            {
                 npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
+                npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            }
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
-            //weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
-            modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
-            ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
+            {
+                modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
+            }
+
+                ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
             if (ourExplosion.expList.Count > 10)
                 ourExplosion.expList = new List<VertexExplosion[]>();
             spriteBatch.End();

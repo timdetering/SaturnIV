@@ -153,15 +153,15 @@ namespace SaturnIV
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
              //screenCords = get2dCoords(this, ourCamera);
-            if (thisShip.ThrusterEngaged)
-            {
+           // if (thisShip.ThrusterEngaged)
+         //   {
                 thisShip.shipThruster.update(thisShip.modelPosition + (thisShip.modelRotation.Forward)
                                         - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * -20),
                                         thisShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
                                         Color.White, Color.Blue, ourCamera.position);
 
                 thisShip.shipThruster.heat = 1.5f;
-            }
+          //  }
 
             if (thisShip.currentTarget != null)
                 thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);

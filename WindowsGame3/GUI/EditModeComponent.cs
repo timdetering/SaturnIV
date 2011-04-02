@@ -170,6 +170,7 @@ namespace SaturnIV
             tempData.Direction = Vector3.Forward;
             tempData.vecToTarget = Vector3.Forward;
             tempData.currentDisposition = disposition.patrol;
+            tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
             tempData.shipThruster = new Athruster();

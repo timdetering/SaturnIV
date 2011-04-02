@@ -62,9 +62,7 @@ namespace SaturnIV
             public void LoadContent(Game game, SpriteBatch spriteBatch)
             {
                 spriteBatch = new SpriteBatch(game.GraphicsDevice);
-
                 effect = game.Content.Load<Effect>("Thrusters/Thrust");
-
                 this.load_and_assign_effects(game.Content, "Thrusters/ThrustCylinderB", "Thrusters/NoiseVolume", effect);
             }
 
@@ -168,7 +166,6 @@ namespace SaturnIV
 				effect_noise.SetValue(Noise);
 
 				effect.CommitChanges();
-
 			}
 
 			#endregion
@@ -192,7 +189,6 @@ namespace SaturnIV
 				effect_noise.SetValue(Noise);
 
 				model.Meshes[0].Draw();
-
 			}
 			#endregion
 		}

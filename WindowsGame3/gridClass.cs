@@ -55,12 +55,11 @@ namespace SaturnIV
  	        /// </summary> 
  	        private void InitializePoints() 
  	        { 
- 	 
  	            for (int x = 0; x < this.side; x++) 
  	            { 
  	                for (int y = 0; y < this.side; y++) 
  	                { 
- 	                     pointList[(x * this.side) + y] = new VertexPositionColor(new Vector3((x * this.interval)-this.posX, this.posY, (y * this.interval)-this.posZ), Color.Red); 
+ 	                     pointList[(x * this.side) + y] = new VertexPositionColor(new Vector3((x * this.interval)-this.posX, this.posY, (y * this.interval)-this.posZ), Color.Gray); 
  	                } 
  	            } 
  	        } 
@@ -79,9 +78,6 @@ namespace SaturnIV
  	                lineListIndices[(i * 4) + 2] = i * this.side; 
  	                lineListIndices[(i * 4) + 3] = ((i+1) * this.side) - 1; 
  	            } 
- 	 
- 	 
- 	 
  	        } 
  	 
  	        /// <summary> 
