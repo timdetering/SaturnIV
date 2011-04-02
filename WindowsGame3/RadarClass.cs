@@ -43,7 +43,7 @@ namespace SaturnIV
             // If enemy is in range
             foreach (NPCManager thisEnemy in enemies)
             {
-                Vector2 diffVect = new Vector2(thisEnemy.modelPosition.X - playerPos.X, thisEnemy.modelPosition.Z - playerPos.Z);
+                Vector2 diffVect = new Vector2(0,0); //thisEnemy.modelPosition.X - playerPos.X, thisEnemy.modelPosition.Z - playerPos.Z);
                 float distance = diffVect.LengthSquared();
 
                 // Check if enemy is within RadarRange

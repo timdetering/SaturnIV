@@ -114,8 +114,6 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Battleship.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Light_Crusier.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Crusier.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_SF-1A.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_SF-4B.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Heavy_Battleship.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_KM100.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb
@@ -128,5 +126,11 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\R
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\WindowsGame3.exe
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\WindowsGame3.pdb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-4B\fighter_1_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-1A.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-4B.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-15C.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\fighter_1_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-6.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\cygnus.xSpaceship_Texture_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-6\color_0_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb

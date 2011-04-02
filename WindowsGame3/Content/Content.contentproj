@@ -200,16 +200,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Fleet_SF-1A.FBX">
-      <Name>Fleet_SF-1A</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Fleet_SF-4B.FBX">
-      <Name>Fleet_SF-4B</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_Heavy_Battleship.FBX">
       <Name>Fleet_Heavy_Battleship</Name>
       <Importer>FbxImporter</Importer>
@@ -230,8 +220,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\SF-15C.FBX">
-      <Name>SF-15C</Name>
+    <Compile Include="Models\SF-1A.FBX">
+      <Name>SF-1A</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\SF-4B.FBX">
+      <Name>SF-4B</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -367,6 +362,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\SF-15C.FBX">
+      <Name>SF-15C</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\SF-6.FBX">
+      <Name>SF-6</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="textures\dummy.jpg">
       <Name>dummy</Name>
       <Importer>TextureImporter</Importer>

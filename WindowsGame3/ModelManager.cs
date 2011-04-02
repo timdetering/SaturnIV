@@ -19,61 +19,17 @@ namespace SaturnIV
     /// </summary>
     public class ModelManager : Microsoft.Xna.Framework.DrawableGameComponent
     {
-        public shipTypes NPCShipData;
         public Model myModel;
 
         //public Matrix viewMatrix = Matrix.Identity;
         //public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-        public Vector3 modellightDirection = new Vector3(0, 0, 0);
-        public Vector3 modelScale;
-        public string modelFileName;
         public Texture2D modelTexture;
-        public float objectAgility;
-        public shipClasses.ClassesEnum objectClass;
-        public Vector3 Direction = Vector3.Forward;
-        public Vector3 Up = Vector3.Up;
-        public Vector3 right;
-        public float radius = 1.0f;
-        public Vector3 Right
-        {
-            get { return right; }
-        }
-        public Vector3 Velocity = Vector3.Zero;
-        public BoundingSphere modelBoundingSphere = new BoundingSphere();
-        public BoundingFrustum modelFrustum = new BoundingFrustum(Matrix.Identity);
-        public Vector3 screenCords = Vector3.Zero;
-        public bool isVisable;
-        public bool isSelected = false;
-        public List<Vector3> shipWeaponPylons = new List<Vector3>();
 
-        public string objectFilename;
-        public float objectMass, objectThrust;
-        public string objectDesc;
-        public string objectName;
-        public float objectArmorFactor;
-        public weaponTypes.MissileType primaryWeaponIndex;
-        public weaponTypes.MissileType secondaryWeaponIndex;
-        public weaponTypes.MissileType currentWeaponIndex;
-        public weaponTypes.MissileType[] weaponArray;
-        public int missileCount;
-        public int cMissileCount;
-        public int weaponCnt;
-        public Vector3 modelPosition;
-        public Matrix modelRotation;
-        public float objectArmorLvl = 100;
-        public int shipShieldHealth = 100;
-        public float objectShieldLvl, objectShieldRegenTime;
+        public Vector3 screenCords = Vector3.Zero;
+
 
         public Matrix worldMatrix;
-        public Vector3[] turretArray;
-        public int currentPylon = 1;
-        public Vector3 targetPosition;
-        public float distanceFromTarget;
-        public ModelManager currentTargetObject;
-        public disposition npcDisposition;
-        public Vector3 destination = Vector3.Zero;
-        public Vector3 vecToTarget = Vector3.Zero;
-        public bool isFirstRun;
+
         Effect effect;
 
         // The aspect ratio determines how to scale 3d to 2d projection.
@@ -141,7 +97,7 @@ namespace SaturnIV
                     currentEffect.Parameters["xView"].SetValue(myCamera.viewMatrix);
                     currentEffect.Parameters["xProjection"].SetValue(myCamera.projectionMatrix);
                     currentEffect.Parameters["xEnableLighting"].SetValue(true);
-                    currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
+                    //currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
                     currentEffect.Parameters["xAmbient"].SetValue(1.5f);
                     //currentEffect.Parameters["xTexture"].SetValue(myTexture);
                 }
@@ -152,7 +108,6 @@ namespace SaturnIV
 
         public void DrawModel (Camera myCamera,Model shipModel,Matrix worldMatrix)
         {
-
             Matrix[] transforms = new Matrix[shipModel.Bones.Count];
             shipModel.CopyAbsoluteBoneTransformsTo(transforms);
 
@@ -164,9 +119,9 @@ namespace SaturnIV
                     effect.EnableDefaultLighting();
                     effect.DirectionalLight0.DiffuseColor = new Vector3(0.5f, 0.5f, 0.5f); // a red light
                     //if(isSelected) effect.AmbientLightColor = Color.Green.ToVector3();
-                    effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
+                    //effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
                     //effect.DirectionalLight0.SpecularColor = new Vector3(0, 1, 0); // with green highlights
-                   effect.AmbientLightColor = Color.White.ToVector3();
+                    effect.AmbientLightColor = Color.White.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;

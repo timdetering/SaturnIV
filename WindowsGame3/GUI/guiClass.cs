@@ -19,9 +19,10 @@ namespace SaturnIV
         int verticalStartY = 25;
         int horizontalStartX = 150;
         int verticalItemSpacing = 20;
-        int horizontalItemWidth = 150;
+        int horizontalItemWidth = 200;
         bool AddRemove = false;
-
+        Vector4 transGray = new Vector4(255, 255, 255, 128);
+        
         List<MenuItem> menuItemList = new List<MenuItem>();
 
         public enum editOptions
@@ -43,7 +44,7 @@ namespace SaturnIV
             for (int i=0; i < shipList.Count; i++)
             {
                 MenuItem tempItem = new MenuItem();
-                tempItem.itemText = shipList[i].Desc;
+                tempItem.itemText = shipList[i].Type;
                 tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, horizontalItemWidth, verticalItemSpacing);
                 verticalStartY += verticalItemSpacing;
                 menuItemList.Add(tempItem);
@@ -111,7 +112,7 @@ namespace SaturnIV
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
         {
  
-            mBatch.Draw(dummyTexture, rectangle1, Color.Gray);
+            mBatch.Draw(dummyTexture, rectangle1, Color.TransparentBlack);
             mBatch.Draw(dummyTexture, rectangle2, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle3, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle4, Color.Gray);

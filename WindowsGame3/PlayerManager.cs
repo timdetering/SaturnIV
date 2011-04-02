@@ -17,7 +17,7 @@ namespace SaturnIV
     public class PlayerManager : ModelManager
     {
         public int shipTypeIndex;
-        public shipTypes playerShipData;
+
         //public float playerShipHealth;
 
         public float thrustAmount = 0.0f;

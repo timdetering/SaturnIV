@@ -22,7 +22,6 @@ namespace SaturnIV
         
         public bool isHostile = false;
         public int shipTypeIndex;
-        public shipTypes NPCShipData;
         public float distanceFromPlayer;
         public bool isTargeted = false;
         float thrustAmount;
@@ -62,7 +61,7 @@ namespace SaturnIV
                     case disposition.pursue:
                         thisShip.vecToTarget = thisShip.currentTarget.modelPosition - thisShip.modelPosition;
                         if (thisShip.distanceFromTarget < 5000)
-                            if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex]) // &&
+                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
                             //Vector3.Dot(modelRotation.Forward, vecToTarget) < Math.Cos(MathHelper.ToRadians(45)))
                             {
                                 //currentWeaponIndex = weaponArray[0];
@@ -84,9 +83,9 @@ namespace SaturnIV
                         break;
 
                     case disposition.patrol:
-                        if (distanceFromTarget < 5000 && currentTargetObject != null)
+                        if (thisShip.distanceFromTarget < 5000 && thisShip.currentTarget != null)
                         {
-                            if (currentTime - lastWeaponFireTime > weaponTypes.regenTime[(int)currentWeaponIndex])
+                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
                             {
                                 weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
                                 lastWeaponFireTime = currentTime;
@@ -100,7 +99,9 @@ namespace SaturnIV
             }
         }
 
-        public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,ref List<weaponData> weaponDefList, ref List<shipData> shipDefList)
+        public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
+                               ref List<weaponData> weaponDefList, ref List<shipData> shipDefList,
+                                Camera ourCamera)
         {
             // update models 2d coords
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
@@ -109,10 +110,7 @@ namespace SaturnIV
             Vector3 rotationAmount = Vector3.Zero;
             thrustAmount = 0.50f;
             int roll = 0;
-            
-
             Vector3 newDirection = Vector3.Zero;
-            isFirstRun = false;
             Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
             Vector3 right = rot.Forward;
@@ -155,8 +153,18 @@ namespace SaturnIV
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
              //screenCords = get2dCoords(this, ourCamera);
-            if (currentTargetObject != null)
-                thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, currentTargetObject.modelPosition);
+            if (thisShip.ThrusterEngaged)
+            {
+                thisShip.shipThruster.update(thisShip.modelPosition + (thisShip.modelRotation.Forward)
+                                        - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * -20),
+                                        thisShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
+                                        Color.White, Color.Blue, ourCamera.position);
+
+                thisShip.shipThruster.heat = 1.5f;
+            }
+
+            if (thisShip.currentTarget != null)
+                thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
         }
 
         /// <summary>
@@ -182,7 +190,6 @@ namespace SaturnIV
             Vector3 rotationAmount = Vector3.Zero;
          
             Vector3 newDirection = Vector3.Zero;
-            isFirstRun = false;
             Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
             Vector3 right = rot.Forward;
@@ -209,8 +216,8 @@ namespace SaturnIV
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
             //screenCords = get2dCoords(this, ourCamera);
-            if (currentTargetObject != null)
-                distanceFromTarget = Vector3.Distance(modelPosition, currentTargetObject.modelPosition);
+            if (thisShip.currentTarget != null)
+                thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
         }
 
     }

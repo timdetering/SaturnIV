@@ -174,6 +174,7 @@ namespace SaturnIV
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
+            tempData.weaponArray = shipDefList[0].AvailableWeapons;
             modelManager.editModeUpdate(gameTime, tempData);
             return tempData;
         }

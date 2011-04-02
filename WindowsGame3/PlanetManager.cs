@@ -20,7 +20,6 @@ namespace SaturnIV
     public class PlanetManager : ModelManager
     {
         public int planetTypeIndex;
-        public shipTypes planetData;
         public PlanetManager tempData;
 
         //Space Object Variables
@@ -82,7 +81,7 @@ namespace SaturnIV
                 int tTextureIndex = Position.Next(2);
                 tempData.planetRadius = Position.Next(200,planetRadiusBoundry);
                 tempData.modelTexture = planetTextureArray[0];
-                tempData.modelPosition = new Vector3(0,0,1);
+               // tempData.modelPosition = new Vector3(0,0,1);
                 planetList.Add(tempData);
             }
         }
@@ -98,27 +97,12 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void UpdatePlanetRotation()
-        {
-            
-            foreach (PlanetManager planet in planetList)
-            {
-                rotationAmount.Y = rotationAmount.Y + 1.0f;
-                rotationMatrix =
-                Matrix.CreateFromAxisAngle(Right, rotationAmount.Y) *
-                Matrix.CreateFromAxisAngle(Up, rotationAmount.X);
-                rotationMatrix.Up += new Vector3(0, 10, 0);
-                planet.modelRotation *= rotationMatrix;
-            }
-        }
-
         public void DrawPlanets(GameTime gameTime, Matrix viewMatrix, Matrix projectionMatrix)
         {
             foreach (PlanetManager planet in planetList)
             {
                 float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius) * 
-                                     Matrix.CreateTranslation(planet.modelPosition);
+                Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius);
                 Matrix[] targetTransforms = new Matrix[myModel.Bones.Count];
                 myModel.CopyAbsoluteBoneTransformsTo(targetTransforms);
                 foreach (ModelMesh mesh in myModel.Meshes)
@@ -130,7 +114,7 @@ namespace SaturnIV
                         currentEffect.Parameters["xView"].SetValue(viewMatrix);
                         currentEffect.Parameters["xProjection"].SetValue(projectionMatrix);
                         currentEffect.Parameters["xEnableLighting"].SetValue(true);
-                        currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
+                       // currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
                         currentEffect.Parameters["xAmbient"].SetValue(0.5f);
                         currentEffect.Parameters["xTexture"].SetValue(planet.modelTexture);
                     }
