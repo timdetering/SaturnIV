@@ -8,12 +8,12 @@
       <Thrust>500</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>4</Agility>
+      <Agility>2.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 200 50</EvadeDist>
+      <EvadeDist>150 300 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
         <Item>AC10</Item>

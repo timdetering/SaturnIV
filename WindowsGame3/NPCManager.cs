@@ -24,7 +24,7 @@ namespace SaturnIV
         public int shipTypeIndex;
         public float distanceFromPlayer;
         public bool isTargeted = false;
-        float thrustAmount;
+        float thrustAmount = 0.75f;
         private const float ThrustForce = 500.0f;
         double lastWeaponFireTime;
         bool isEngaging, isEvading, hasEvadeVector;
@@ -45,46 +45,41 @@ namespace SaturnIV
         }
 
         public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ParticleSystem projectileTrailParticles,
-                               ref List<weaponData> weaponDefList,newShipStruct thisShip)
+                               ref List<weaponData> weaponDefList,newShipStruct thisShip, newShipStruct otherShip)
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
-
-            if (isEvading)
+            Random rand = new Random();
             {
-                //vecToTarget = (currentTargetObject.modelPosition * rand.Next(500, 10000)) - modelPosition;
-                isEvading = false;
-            }
-            else
-            {
-                switch (thisShip.currentDisposition)
+            // First check for Evading state and act on that first and for most!
+                if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10, 2200) + otherShip.EvadeDist[(int)otherShip.objectClass])
                 {
+                    if (!isEvading)
+                        thisShip.vecToTarget = new Vector3(thisShip.Direction.X * rand.Next(10, 2200), 0, thisShip.Direction.Z * rand.Next(10, 2200));
+                    isEvading = true;
+                    thrustAmount = (float)rand.NextDouble();
+                }
+                else
+                    isEvading = false;
+                switch (thisShip.currentDisposition)
+                {   
                     case disposition.pursue:
-                        thisShip.vecToTarget = thisShip.currentTarget.modelPosition - thisShip.modelPosition;
-                        if (thisShip.distanceFromTarget < 5000)
-                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
-                            //Vector3.Dot(modelRotation.Forward, vecToTarget) < Math.Cos(MathHelper.ToRadians(45)))
+                        thisShip.vecToTarget = (thisShip.currentTarget.modelPosition - thisShip.modelPosition) * (float)rand.NextDouble();
+                        if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
+                        {
+                            if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
                             {
-                                //currentWeaponIndex = weaponArray[0];
-                                //weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
-
-                                lastWeaponFireTime = currentTime;
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
+                                thisShip.lastWeaponFireTime = currentTime;
                                 isEngaging = true;
-                                isEvading = false;
                             }
-                        break;
-                    case disposition.evade:
-                        if (isEvading)
-                        {
-                            //vecToTarget = (currentTargetObject.modelPosition * rand.Next(500, 10000)) - modelPosition;
-                            isEvading = true;
+                            thrustAmount = (float)rand.NextDouble();
                         }
-                        // thrustAmount = 0.25f;
-                        isEngaging = false;
                         break;
-
-                    case disposition.patrol:
-                        if (thisShip.distanceFromTarget < 5000 && thisShip.currentTarget != null)
+                     case disposition.patrol:
+                        if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
                         {
+                            thisShip.currentTarget = otherShip;
+                            thisShip.currentDisposition = disposition.pursue;
                             if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
                             {
                                 weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
@@ -92,7 +87,6 @@ namespace SaturnIV
                                 isEngaging = true;
                             }
                         }
-
                         // thrustAmount = 0.20f;
                         break;
                 }
@@ -108,7 +102,6 @@ namespace SaturnIV
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
             Vector3 rotationAmount = Vector3.Zero;
-            thrustAmount = 0.50f;
             int roll = 0;
             Vector3 newDirection = Vector3.Zero;
             Matrix rot = thisShip.modelRotation;
@@ -150,9 +143,12 @@ namespace SaturnIV
             thisShip.modelPosition += thisShip.Velocity * elapsed;
             thisShip.worldMatrix = m * Matrix.CreateTranslation(thisShip.modelPosition);
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
-            //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
-            //modelFrustum.Matrix = viewMatrix * projectionMatrix;
-             //screenCords = get2dCoords(this, ourCamera);
+            thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + 
+                                                      thisShip.Direction * 2.0f, thisShip.Up);
+            //thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+            thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
+          
+            //screenCords = get2dCoords(this, ourCamera);
            // if (thisShip.ThrusterEngaged)
          //   {
                 thisShip.shipThruster.update(thisShip.modelPosition + (thisShip.modelRotation.Forward)

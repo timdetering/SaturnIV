@@ -17,6 +17,7 @@ namespace SaturnIV
     public class PlayerManager : ModelManager
     {
         public int shipTypeIndex;
+        public Line3D fArc1,fArc2;
 
         //public float playerShipHealth;
 
@@ -87,8 +88,10 @@ namespace SaturnIV
             playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
             playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(playerShip.modelPosition);
+            playerShip.modelFrustum = new BoundingFrustum(viewMatrix);
             playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
-            //viewMatrix = Matrix.CreateLookAt(modelPosition, modelRotation.Down , Up);
+            playerShip.viewMatrix = Matrix.CreateLookAt(playerShip.modelPosition, playerShip.modelPosition 
+                                                        + playerShip.Direction * 2.0f, playerShip.Up);
             if (playerShip.ThrusterEngaged)
             {
                 playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
@@ -99,8 +102,20 @@ namespace SaturnIV
                 playerShip.shipThruster.heat = 1.5f;
             }
 
-            //modelFrustum.Matrix = Matrix.Transpose(viewMatrix) * projectionMatrix;
-         }
+            playerShip.modelFrustum.Matrix = playerShip.viewMatrix * projectionMatrix;
+           }
+
+        public void DrawFiringArc(GraphicsDevice device, newShipStruct playerShip, Camera ourCamera)
+        {
+            fArc1 = new Line3D(device);
+            fArc2 = new Line3D(device);
+            fArc1.Draw(playerShip.modelPosition + playerShip.Direction * 1,
+                playerShip.modelPosition + playerShip.Direction * 100 + playerShip.right * 25,
+                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            fArc2.Draw(playerShip.modelPosition + playerShip.Direction * 1,
+                playerShip.modelPosition + playerShip.Direction * 100 + playerShip.right * -25,
+                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+        }
 
 
         /// <summary>

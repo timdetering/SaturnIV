@@ -26,6 +26,7 @@ namespace SaturnIV
         bool ischangingDirection = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
+        int selected = 1;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -159,23 +160,29 @@ namespace SaturnIV
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,GameTime gameTime)
         {
             newShipStruct tempData = new newShipStruct();
-            tempData.objectFileName = shipDefList[0].FileName;
-            tempData.shipModel = modelManager.LoadModel(shipDefList[0].FileName);
-            tempData.objectAgility = shipDefList[0].Agility;
-            tempData.objectMass = shipDefList[0].Mass;
-            tempData.objectThrust = shipDefList[0].Thrust;
-            tempData.radius = shipDefList[0].SphereRadius;
+            tempData.objectFileName = shipDefList[selected].FileName;
+            tempData.shipModel = modelManager.LoadModel(shipDefList[selected].FileName);
+            tempData.objectAgility = shipDefList[selected].Agility;
+            tempData.objectMass = shipDefList[selected].Mass;
+            tempData.objectThrust = shipDefList[selected].Thrust;
+            tempData.team = shipDefList[selected].BelongsTo;
+            tempData.radius = shipDefList[selected].SphereRadius;
+            tempData.objectClass = shipDefList[selected].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            tempData.viewMatrix = Matrix.Identity;
             tempData.Direction = Vector3.Forward;
             tempData.vecToTarget = Vector3.Forward;
             tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
-            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[0].SphereRadius);
+            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[selected].SphereRadius);
+            tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
-            tempData.weaponArray = shipDefList[0].AvailableWeapons;
+            tempData.weaponArray = shipDefList[selected].AvailableWeapons;
+            tempData.EvadeDist = shipDefList[selected].EvadeDist;
+            tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             modelManager.editModeUpdate(gameTime, tempData);
             return tempData;
         }

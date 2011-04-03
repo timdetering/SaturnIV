@@ -2,7 +2,7 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
     <Item>
-      <FileName>Models//Fleet_KM100</FileName>
+      <FileName>Models//Laserbolt2</FileName>
       <Type>KM-100</Type>
       <Mass>0.25</Mass>
       <Thrust>700</Thrust>
@@ -12,7 +12,7 @@
       <BelongsTo>Fleet</BelongsTo>
       <isProjectile>1</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>100</regenTime>
+      <regenTime>250</regenTime>
       <damageFactor>5</damageFactor>
       <range>7000</range>
     </Item>

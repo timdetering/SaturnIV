@@ -35,7 +35,7 @@ namespace SaturnIV
         public float objectScale;
         public string objectType;
         public float objectAgility;
-        public string objectClass;
+        public ClassesEnum objectClass;
         public float objectArmorFactor;
         public float objectArmorLvl;
         public float objectShieldFactor;
@@ -56,8 +56,6 @@ namespace SaturnIV
         public disposition currentDisposition;
         public Model shipModel;
         public float thrustAmount;
-        public bool isVisable;
-        public bool isSelected;
         public float distanceFromTarget;
         public Vector3 Velocity;
         public Vector3 Direction;
@@ -66,7 +64,15 @@ namespace SaturnIV
         public Vector3 Right;
         public Athruster shipThruster;
         public Vector3 ThrusterPosition;
+        public Matrix viewMatrix;
+        public Matrix projectionMatrix;
         public bool ThrusterEngaged = false;
+        public bool isVisable;
+        public bool isSelected;
+        public string team;
+        public float[] EvadeDist;
+        public float[] TargetPrefs;
+        public double lastWeaponFireTime;
     }
 
     public class weaponStruct : newShipStruct
@@ -98,7 +104,7 @@ namespace SaturnIV
 
     public class shipData : genericObjectLoadClass
     {
-        public string ShipClass;
+        public ClassesEnum ShipClass;
         public int ShieldLvl;
         public int ShieldRegenTime;
         public float[] EvadeDist;

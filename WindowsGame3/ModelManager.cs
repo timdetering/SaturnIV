@@ -21,11 +21,10 @@ namespace SaturnIV
     {
         public Model myModel;
 
-        //public Matrix viewMatrix = Matrix.Identity;
-        //public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+        public Matrix viewMatrix = Matrix.Identity;
+        public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 1.0f / 1.0f, .5f, 500f);
         public Texture2D modelTexture;
         public Vector3 screenCords = Vector3.Zero;
-        public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), 4.0f / 3.0f, .5f, 3000f);
         Effect effect;
 
         // The aspect ratio determines how to scale 3d to 2d projection.
