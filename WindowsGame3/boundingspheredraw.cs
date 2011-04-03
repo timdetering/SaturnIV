@@ -198,7 +198,7 @@ namespace SaturnIV
         }
 
         public static void Render3dCircle(
-            BoundingSphere sphere,
+            Vector3 center, float radius,
             GraphicsDevice graphicsDevice,
             Matrix view,
             Matrix projection,
@@ -214,8 +214,8 @@ namespace SaturnIV
                   VertexPositionColor.SizeInBytes);
 
             effect.World =
-                  Matrix.CreateScale(sphere.Radius) *
-                  Matrix.CreateTranslation(sphere.Center);
+                  Matrix.CreateScale(radius) *
+                  Matrix.CreateTranslation(center);
             effect.View = view;
             effect.Projection = projection;
             effect.DiffuseColor = color.ToVector3();

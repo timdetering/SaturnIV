@@ -195,16 +195,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Heavy_Crusier.FBX">
-      <Name>Eriax_Heavy_Crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Fleet_Heavy_Battleship.FBX">
-      <Name>Fleet_Heavy_Battleship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_KM100.FBX">
       <Name>Fleet_KM100</Name>
       <Importer>FbxImporter</Importer>
@@ -227,6 +217,16 @@
     </Compile>
     <Compile Include="Models\SF-4B.FBX">
       <Name>SF-4B</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_Heavy_Battleship.FBX">
+      <Name>Fleet_Heavy_Battleship</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_Carrier.FBX">
+      <Name>Fleet_Carrier</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

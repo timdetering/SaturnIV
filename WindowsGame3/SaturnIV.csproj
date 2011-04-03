@@ -89,7 +89,8 @@
   <ItemGroup>
     <Compile Include="boundingspheredraw.cs" />
     <Compile Include="CameraClass.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="boundingFrustumRender.cs" />
+    <Compile Include="TriangleRender.cs" />
     <Compile Include="ExplosionClass.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="gridClass.cs" />

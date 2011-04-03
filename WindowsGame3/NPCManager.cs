@@ -66,7 +66,7 @@ namespace SaturnIV
                         thisShip.vecToTarget = (thisShip.currentTarget.modelPosition - thisShip.modelPosition) * (float)rand.NextDouble();
                         if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
                         {
-                            if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
+                            if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
                                 weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
                                 thisShip.lastWeaponFireTime = currentTime;
@@ -80,7 +80,7 @@ namespace SaturnIV
                         {
                             thisShip.currentTarget = otherShip;
                             thisShip.currentDisposition = disposition.pursue;
-                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon].regenTime)
+                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
                                 weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
                                 lastWeaponFireTime = currentTime;
@@ -160,7 +160,8 @@ namespace SaturnIV
           //  }
 
             if (thisShip.currentTarget != null)
-                thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
+               thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
+            thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void editModeUpdate(GameTime gameTime,newShipStruct thisShip)
+        public void editModeUpdate(GameTime gameTime,newShipStruct thisShip,Camera ourCamera)
         {
             //vecToTarget = currentTargetObject.modelPosition - modelPosition;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
@@ -211,7 +212,7 @@ namespace SaturnIV
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
             //modelFrustum.Matrix = viewMatrix * projectionMatrix;
-            //screenCords = get2dCoords(this, ourCamera);
+            thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
             if (thisShip.currentTarget != null)
                 thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
         }

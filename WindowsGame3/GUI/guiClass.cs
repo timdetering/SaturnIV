@@ -13,8 +13,8 @@ namespace SaturnIV
     public class guiClass
     {
         Texture2D dummyTexture;
-        Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5;
-        Color opt1Color, opt2Color, opt3Color, opt4Color,opt5Color;
+        Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5,rectangle6;
+        Color opt1Color, opt2Color, opt3Color, opt4Color,opt5Color,opt6Color;
         editOptions currentSelection;
         int verticalStartY = 25;
         int horizontalStartX = 150;
@@ -28,6 +28,7 @@ namespace SaturnIV
         public enum editOptions
         {
             addremove,
+            changeplayership,
             save,
             load,
             exit
@@ -59,14 +60,15 @@ namespace SaturnIV
             rectangle3 = new Rectangle(300, 5, 70, 20);
             rectangle4 = new Rectangle(370, 5, 67, 20);
             rectangle5 = new Rectangle(437, 5, 75, 20);
+            rectangle6 = new Rectangle(587, 5, 75, 20);
             opt1Color = Color.Gray;
             opt2Color = Color.Gray;
             opt3Color = Color.Gray;
             opt4Color = Color.Gray;
             opt5Color = Color.Gray;
+            opt6Color = Color.Gray;
 
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
-
         }
 
         public void update(MouseState currentMouse,MouseState oldMouse)
@@ -82,25 +84,25 @@ namespace SaturnIV
                 opt2Color = Color.White;
             if (rectangle3.Contains(new Point(mouseX, mouseY)))
             {
-                currentSelection = editOptions.save;
+                currentSelection = editOptions.changeplayership;
                 opt3Color = Color.Black;
             }
             else
                 opt3Color = Color.White;
             if (rectangle4.Contains(new Point(mouseX, mouseY)))
             {
-                currentSelection = editOptions.addremove;
+                currentSelection = editOptions.save;
                 opt4Color = Color.Black;
             }
             else
-                opt4Color = Color.Gray;
+                opt4Color = Color.White;
             if (rectangle5.Contains(new Point(mouseX, mouseY)))
             {
                 currentSelection = editOptions.addremove;
                 opt5Color = Color.Black;
             }
             else
-                opt5Color = Color.Gray;
+                opt5Color = Color.White;
 
             if (currentMouse.LeftButton == ButtonState.Pressed) //&& oldMouse.LeftButton == ButtonState.Released)
             {
@@ -112,11 +114,12 @@ namespace SaturnIV
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
         {
  
-            mBatch.Draw(dummyTexture, rectangle1, Color.TransparentBlack);
+            mBatch.Draw(dummyTexture, rectangle1, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle2, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle3, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle4, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle5, Color.Gray);
+            mBatch.Draw(dummyTexture, rectangle6, Color.Gray);
 
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
@@ -126,8 +129,11 @@ namespace SaturnIV
             messageBuffer.AppendFormat("Add/Remove");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(150, 7), opt2Color);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("Save");
+            messageBuffer.AppendFormat("Change Player Ship");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(300, 7), opt3Color);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("Save");
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(450, 7), opt4Color);
             messageBuffer = new StringBuilder();
             if (AddRemove == true)
             {

@@ -1,0 +1,5 @@
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\ContentPipelineExtension1\bin\x86\Debug\ContentPipelineExtension1.dll
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\ContentPipelineExtension1\bin\x86\Debug\ContentPipelineExtension1.pdb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\ContentPipelineExtension1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\ContentPipelineExtension1\obj\x86\Debug\ContentPipelineExtension1.dll
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\ContentPipelineExtension1\obj\x86\Debug\ContentPipelineExtension1.pdb

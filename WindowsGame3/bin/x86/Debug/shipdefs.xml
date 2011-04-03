@@ -3,32 +3,35 @@
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
       <FileName>Models//SF-1A</FileName>
-      <Type>SF-14A Lynx</Type>
+      <Type>SF-1A Lynx</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.0</Agility>
+      <Agility>2.5</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 300 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
       <AvailableWeapons>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>0 0 0</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
-    <Item>
+  <Item>
       <FileName>Models//SF-4B</FileName>
       <Type>SF-4B Intercept</Type>
       <Mass>1.5</Mass>
       <Thrust>550</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>5.5</Agility>
+      <Agility>4.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -36,8 +39,16 @@
       <EvadeDist>50 300 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
@@ -56,8 +67,44 @@
       <EvadeDist>50 300 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//SF-15C</FileName>
+      <Type>SF-15C Raptor</Type>
+      <Mass>1.5</Mass>
+      <Thrust>550</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>50 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
@@ -76,28 +123,44 @@
       <EvadeDist>0 1000 500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
-      <FileName>Models//Eriax_Light_Crusier</FileName>
-      <Type>Eriax Light Crusier</Type>
-      <Mass>6</Mass>
+      <FileName>Models//Fleet_Carrier</FileName>
+      <Type>Orion Class Carrier</Type>
+      <Mass>10</Mass>
       <Thrust>1050</Thrust>
       <SphereRadius>285</SphereRadius>
       <Scale>1</Scale>
-      <Agility>3.0</Agility>
-      <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Capitalship</ShipClass>
+      <Agility>2.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Carrier</ShipClass>
       <ShieldLvl>400</ShieldLvl>
       <ShieldRegenTime>150</ShieldRegenTime>
       <EvadeDist>0 1000 500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
-        <Item>AC10</Item>
-        <Item>KM100</Item>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>

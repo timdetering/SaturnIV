@@ -53,7 +53,7 @@ namespace SaturnIV
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Ray currentMouseRay, Vector3 mouse3dVector, 
                                     ref List<newShipStruct> objectList,bool isClicked, bool isRDepressed, 
-                                    ref NPCManager npcManager)
+                                    ref NPCManager npcManager,Camera ourCamera)
         {
             // TODO: Add your update code here
             bool checkResult = false;
@@ -88,7 +88,7 @@ namespace SaturnIV
                     if (ourShip.isSelected)
                     {
                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                        npcManager.editModeUpdate(gameTime,ourShip);
+                        npcManager.editModeUpdate(gameTime,ourShip,ourCamera);
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
                     }
                 }
@@ -104,14 +104,9 @@ namespace SaturnIV
                 {
                     if (ourShip.isSelected)
                     {
-                        //ourShip.vecToTarget = mouse3dVector;
-                        //float xDifference = mouseCurrent.X - mouseOld.X;
-                       // float yDifference = mouseCurrent.Y - mouseOld.Y;
-                       // ourShip.vecToTarget.X -= xDifference * MathHelper.ToRadians(45) * 2.0f;
-                       // ourShip.vecToTarget.Z -= yDifference * MathHelper.ToRadians(45) * 2.0f;
                         ourShip.vecToTarget = mouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
-                        npcManager.editModeUpdate(gameTime,ourShip);
+                        npcManager.editModeUpdate(gameTime,ourShip,ourCamera);
                         mouseOld = mouseCurrent;
                     }
                 }
@@ -157,7 +152,8 @@ namespace SaturnIV
                 return false;
         }
 
-        public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,GameTime gameTime)
+        public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
+                                    GameTime gameTime,Camera ourCamera)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectFileName = shipDefList[selected].FileName;
@@ -183,7 +179,7 @@ namespace SaturnIV
             tempData.weaponArray = shipDefList[selected].AvailableWeapons;
             tempData.EvadeDist = shipDefList[selected].EvadeDist;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-            modelManager.editModeUpdate(gameTime, tempData);
+            modelManager.editModeUpdate(gameTime, tempData,ourCamera);
             return tempData;
         }
 
@@ -197,7 +193,7 @@ namespace SaturnIV
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                    BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * 100, 5);
                    //BoundingFrustumRenderer.Render(enemy.modelFrustum, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix,Color.Yellow);
-                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    if (enemy.isSelected)
                         BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, sphereColor);
                     

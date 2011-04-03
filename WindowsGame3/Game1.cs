@@ -75,6 +75,7 @@ namespace SaturnIV
         VertexDeclaration vertexDeclaration;
         public float gameSpeed = 5.0f;
 
+        public renderTriangle firingArc;
         public Camera ourCamera;
         bool isEditMode = false;
 
@@ -125,7 +126,9 @@ namespace SaturnIV
             //Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
-            
+
+            firingArc = new renderTriangle();
+
             ourExplosion.initExplosionClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
@@ -187,12 +190,13 @@ namespace SaturnIV
 
         private void initPlayer()
         {
-            playerShip.objectFileName = shipDefList[1].FileName;
-            playerShip.radius = shipDefList[1].SphereRadius;
-            playerShip.shipModel = modelManager.LoadModel(shipDefList[1].FileName);
-            playerShip.objectAgility = shipDefList[1].Agility;
-            playerShip.objectMass = shipDefList[1].Mass;
-            playerShip.objectThrust = shipDefList[1].Thrust;
+            int shipType = 0;
+            playerShip.objectFileName = shipDefList[shipType].FileName;
+            playerShip.radius = shipDefList[shipType].SphereRadius;
+            playerShip.shipModel = modelManager.LoadModel(shipDefList[shipType].FileName);
+            playerShip.objectAgility = shipDefList[shipType].Agility;
+            playerShip.objectMass = shipDefList[shipType].Mass;
+            playerShip.objectThrust = shipDefList[shipType].Thrust;
             playerShip.modelPosition = Vector3.Zero;
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;
@@ -200,7 +204,7 @@ namespace SaturnIV
             playerShip.modelBoundingSphere = new BoundingSphere(playerShip.modelPosition, playerShip.radius);
             playerShip.shipThruster = new Athruster();
             playerShip.shipThruster.LoadContent(this, spriteBatch);
-            playerShip.weaponArray = shipDefList[1].AvailableWeapons;
+           playerShip.weaponArray = shipDefList[shipType].AvailableWeapons;
         }
 
         private void loadShipData()
@@ -219,8 +223,7 @@ namespace SaturnIV
             saveObject saveMe;
 
             //weaponTypes exportWeaponDefs;
-            shipData exportShipDefs2;
-            exportShipDefs2 = new shipData();
+            shipData exportShipDefs = new shipData();
            // exportWeaponDefs = new weaponTypes();
 
             XmlWriterSettings xmlSettings = new XmlWriterSettings();
@@ -235,10 +238,14 @@ namespace SaturnIV
                 saveMe.shipType = ship.objectType;
                 saveList.Add(saveMe);
             }
-
             using (XmlWriter xmlWriter = XmlWriter.Create("scene.xml", xmlSettings))
             {
               IntermediateSerializer.Serialize(xmlWriter, saveList, null);
+            }
+
+            using (XmlWriter xmlWriter = XmlWriter.Create("shipdeftest.xml", xmlSettings))
+            {
+                IntermediateSerializer.Serialize(xmlWriter, playerShip, null);
             }
         }
 
@@ -263,7 +270,7 @@ namespace SaturnIV
             if (!isEditMode)
                 updateObjects(gameTime);
             else
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, ref npcManager);                                 
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, ref npcManager,ourCamera);                                 
 
             ourCamera.Update(playerShip.worldMatrix);
 
@@ -289,8 +296,6 @@ namespace SaturnIV
                     if (thisShip != activeShipList[i])
                         npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], thisShip);
                 }
-
-
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ref weaponDefList, ref shipDefList, ourCamera);
             }
             weaponsManager.Update(gameTime, gameSpeed);
@@ -359,9 +364,9 @@ namespace SaturnIV
             }
 
             if (isRclicked && isEditMode)
-                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime));
+                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime, ourCamera));
 
-            if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon].regenTime))
+            if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime))
             {
                 weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList);
                 lastWeaponFireTime = currentTime;
@@ -417,8 +422,9 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
 
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
+            //modelManager.DrawWithCustomEffect(playerShip.shipModel, playerShip.worldMatrix, ourCamera.viewMatrix, ourCamera.projectionMatrix, Vector3.Zero);
             //BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-            playerManager.DrawFiringArc(device, playerShip, ourCamera);
+            //playerManager.DrawFiringArc(device, playerShip, ourCamera);
             if (playerShip.ThrusterEngaged)
                 playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
 
@@ -443,10 +449,14 @@ namespace SaturnIV
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            //Gui.drawGUI(spriteBatch,spriteFont);
+            Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
             // Pass camera matrices through to the particle system components.
             //projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
+                            playerShip.modelPosition + playerShip.Direction * 10, playerShip.modelPosition + playerShip.Direction * 100
+                            + playerShip.right * 25, playerShip.modelPosition + playerShip.Direction * 100
+                            + playerShip.right * -25);
             base.Draw(gameTime);
         }
 
@@ -478,8 +488,6 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             foreach (newShipStruct enemy in activeShipList)
             {
-                if (enemy.isVisable == true)
-                {
                     StringBuilder buffer = new StringBuilder();
                     Vector2 fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y);
 
@@ -492,7 +500,6 @@ namespace SaturnIV
                     messageBuffer.AppendFormat(" Y {0}", enemy.modelPosition.Y + "\n");
                     messageBuffer.AppendFormat(" Z {0}", enemy.modelPosition.Z + "\n");
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
-                }
 
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);

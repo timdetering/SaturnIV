@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SaturnIV
 {
-
     public enum disposition
     {
         pursue = 0,
@@ -41,8 +40,6 @@ namespace SaturnIV
         public float objectShieldFactor;
         public float objectShieldLvl;
         public float radius;
-        public WeaponTypeEnum[] weaponArray;
-        public WeaponTypeEnum currentWeapon;
         public Matrix worldMatrix;
         public Vector3 modelPosition;
         public Matrix modelRotation;
@@ -73,6 +70,8 @@ namespace SaturnIV
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public double lastWeaponFireTime;
+        public WeaponModule[] weaponArray;
+        public WeaponModule currentWeapon;
     }
 
     public class weaponStruct : newShipStruct
@@ -109,7 +108,7 @@ namespace SaturnIV
         public int ShieldRegenTime;
         public float[] EvadeDist;
         public float[] TargetPrefs;
-        public WeaponTypeEnum[] AvailableWeapons;
+        public WeaponModule[] AvailableWeapons;
         public Vector3 ThrusterPosition;
     }
 
@@ -120,6 +119,14 @@ namespace SaturnIV
         public int   regenTime;
         public int   damageFactor;
         public float range;
+    }
+
+    [Serializable]
+    public class WeaponModule
+    {
+        public WeaponTypeEnum weaponType;
+        public Vector3 ModulePositionOnShip;
+        public float FiringEnvelopeAngle;
     }
 
         public enum ClassesEnum
