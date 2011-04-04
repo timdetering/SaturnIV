@@ -68,7 +68,13 @@ namespace SaturnIV
                         {
                             if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
-                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
+                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0))
+                                    thisShip.pylonIndex = 0;
+                                
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList,thisShip.pylonIndex);
+                                thisShip.pylonIndex++;
+                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
+                                    thisShip.pylonIndex = 0;
                                 thisShip.lastWeaponFireTime = currentTime;
                                 isEngaging = true;
                             }
@@ -82,7 +88,10 @@ namespace SaturnIV
                             thisShip.currentDisposition = disposition.pursue;
                             if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
-                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList);
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
+                                thisShip.pylonIndex++;
+                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
+                                    thisShip.pylonIndex = 0;
                                 lastWeaponFireTime = currentTime;
                                 isEngaging = true;
                             }

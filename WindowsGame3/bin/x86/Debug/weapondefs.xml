@@ -3,13 +3,15 @@
   <Asset Type="Generic:List[SaturnIV.weaponData]">
     <Item>
       <FileName>Models//Laserbolt2</FileName>
-      <Type>KM-100</Type>
+      <Type>KM100</Type>
       <Mass>0.25</Mass>
       <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
+      <wType>AC10</wType>
+      <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>250</regenTime>
@@ -18,16 +20,35 @@
     </Item>
     <Item>
       <FileName>Models//Laserbolt2</FileName>
-      <Type>Cannon</Type>
+      <Type>KM200G</Type>
       <Mass>0.25</Mass>
       <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
+      <wType>AC10</wType>
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>1</isHoming>
+      <regenTime>250</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>7000</range>
+    </Item>
+    <Item>
+      <FileName>Models//Laserbolt2</FileName>
+      <Type>AC10</Type>
+      <Mass>0.25</Mass>
+      <Thrust>700</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <wType>AC10</wType>
+      <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>100</regenTime>
+      <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
       <range>7000</range>
     </Item>

@@ -108,13 +108,12 @@ namespace SaturnIV
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation);
-                        thisShip.objectArmorLvl -= (thisShip.objectArmorFactor / 100) * missileList[i].damageFactor;
+                        //thisShip.objectArmorLvl -= (thisShip.objectArmorFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }
                 }
             return false;
         }
-
 
         public void DrawFPS(GameTime gameTime, GraphicsDevice device, SpriteBatch spriteBatch, SpriteFont spriteFont)
         {

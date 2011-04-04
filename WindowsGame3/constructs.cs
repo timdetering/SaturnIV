@@ -17,12 +17,19 @@ namespace SaturnIV
         loiter = 3
     }
 
+    public enum WeaponClassEnum
+    {
+        Cannon = 0,
+        Missile = 0,
+        Torpedo = 0,
+        Energy = 0
+    }
+
     public enum WeaponTypeEnum
     {
         KM100 = 0,
         KM200G = 1,
-        AC10 = 2,
-        LargeIonCanon = 3
+        AC10 = 2
     }
 
     public class newShipStruct
@@ -72,6 +79,7 @@ namespace SaturnIV
         public double lastWeaponFireTime;
         public WeaponModule[] weaponArray;
         public WeaponModule currentWeapon;
+        public int pylonIndex = 0;
     }
 
     public class weaponStruct : newShipStruct
@@ -114,6 +122,8 @@ namespace SaturnIV
 
     public class weaponData : genericObjectLoadClass
     {
+        public WeaponTypeEnum wType;
+        public WeaponClassEnum wClass;
         public bool  isProjectile;
         public bool  isHoming;
         public int   regenTime;
@@ -125,7 +135,7 @@ namespace SaturnIV
     public class WeaponModule
     {
         public WeaponTypeEnum weaponType;
-        public Vector3 ModulePositionOnShip;
+        public Vector3[] ModulePositionOnShip;
         public float FiringEnvelopeAngle;
     }
 

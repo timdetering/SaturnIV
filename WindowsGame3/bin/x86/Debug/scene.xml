@@ -1,4 +1,365 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Generic="System.Collections.Generic">
-  <Asset Type="Generic:List[SaturnIV.saveObject]" />
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-142.051987 0 -72.14405</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-49.70154 0 279.9244</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>163.504974 0 330.6341</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>304.319244 0 -82.07446</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-36.1724663 0 -191.7677</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+    <Item>
+      <shipType Null="true" />
+      <shipName Null="true" />
+      <shipPosition>-252.1952 0 -231.752884</shipPosition>
+      <shipDirection>0 0 -1</shipDirection>
+    </Item>
+  </Asset>
 </XnaContent>

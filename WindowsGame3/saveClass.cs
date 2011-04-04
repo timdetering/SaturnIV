@@ -16,4 +16,11 @@ namespace SaturnIV
         public Vector3 shipDirection;
 
     }
+
+    [Serializable]
+    public struct randomNames
+    {
+        
+    }
+
 }

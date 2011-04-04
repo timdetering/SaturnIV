@@ -105,19 +105,6 @@ namespace SaturnIV
             playerShip.modelFrustum.Matrix = playerShip.viewMatrix * projectionMatrix;
            }
 
-        public void DrawFiringArc(GraphicsDevice device, newShipStruct playerShip, Camera ourCamera)
-        {
-            fArc1 = new Line3D(device);
-            fArc2 = new Line3D(device);
-            fArc1.Draw(playerShip.modelPosition + playerShip.Direction * 1,
-                playerShip.modelPosition + playerShip.Direction * 100 + playerShip.right * 25,
-                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            fArc2.Draw(playerShip.modelPosition + playerShip.Direction * 1,
-                playerShip.modelPosition + playerShip.Direction * 100 + playerShip.right * -25,
-                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-        }
-
-
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>

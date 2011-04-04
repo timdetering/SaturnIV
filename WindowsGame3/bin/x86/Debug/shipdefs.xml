@@ -18,7 +18,15 @@
       <AvailableWeapons>
       <Item>
 	 <weaponType>AC10</weaponType>
-	 <ModulePositionOnShip>0 0 0</ModulePositionOnShip>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
       </Item>
       </AvailableWeapons>
