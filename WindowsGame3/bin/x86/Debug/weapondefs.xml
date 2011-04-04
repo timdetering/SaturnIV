@@ -39,7 +39,7 @@
       <FileName>Models//Laserbolt2</FileName>
       <Type>AC10</Type>
       <Mass>0.25</Mass>
-      <Thrust>700</Thrust>
+      <Thrust>900</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>
@@ -48,9 +48,9 @@
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>7000</range>
+      <range>1000</range>
     </Item>
   </Asset>
 </XnaContent>

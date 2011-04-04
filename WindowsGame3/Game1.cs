@@ -191,7 +191,7 @@ namespace SaturnIV
 
         private void initPlayer()
         {
-            int shipType = 0;
+            int shipType = 3;
             playerShip.objectFileName = shipDefList[shipType].FileName;
             playerShip.radius = shipDefList[shipType].SphereRadius;
             playerShip.shipModel = modelManager.LoadModel(shipDefList[shipType].FileName);

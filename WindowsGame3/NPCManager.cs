@@ -82,20 +82,20 @@ namespace SaturnIV
                         }
                         break;
                      case disposition.patrol:
-                        if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
-                        {
-                            thisShip.currentTarget = otherShip;
-                            thisShip.currentDisposition = disposition.pursue;
-                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
+                            if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
                             {
-                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
-                                thisShip.pylonIndex++;
-                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
-                                    thisShip.pylonIndex = 0;
-                                lastWeaponFireTime = currentTime;
-                                isEngaging = true;
+                                thisShip.currentTarget = otherShip;
+                                thisShip.currentDisposition = disposition.pursue;
+                                if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
+                                {
+                                    weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
+                                    thisShip.pylonIndex++;
+                                    if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
+                                        thisShip.pylonIndex = 0;
+                                    lastWeaponFireTime = currentTime;
+                                    isEngaging = true;
+                                }
                             }
-                        }
                         // thrustAmount = 0.20f;
                         break;
                 }

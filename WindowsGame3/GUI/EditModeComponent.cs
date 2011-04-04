@@ -26,7 +26,7 @@ namespace SaturnIV
         bool ischangingDirection = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
-        int selected = 0;
+        int selected = 3;
         
         public EditModeComponent(Game game)
             : base(game)
