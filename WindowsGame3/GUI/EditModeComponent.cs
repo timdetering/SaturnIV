@@ -26,7 +26,8 @@ namespace SaturnIV
         bool ischangingDirection = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
-        int selected = 3;
+        string[] NameList;
+        int selected = 2;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -153,10 +154,11 @@ namespace SaturnIV
         }
 
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
-                                    GameTime gameTime,Camera ourCamera)
+                                    GameTime gameTime,Camera ourCamera,string shipName)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectFileName = shipDefList[selected].FileName;
+            tempData.objectAlias = shipName;
             tempData.shipModel = modelManager.LoadModel(shipDefList[selected].FileName);
             tempData.objectAgility = shipDefList[selected].Agility;
             tempData.objectMass = shipDefList[selected].Mass;

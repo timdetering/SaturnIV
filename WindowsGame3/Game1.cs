@@ -26,7 +26,7 @@ namespace SaturnIV
     {
         SpriteFont spriteFont;
         GraphicsDeviceManager graphics;
-
+        Random rand;
         public GraphicsDevice device;
         KeyboardState oldkeyboardState;
         MouseState mouseStateCurrent, mouseStatePrevious, originalMouseState;
@@ -61,7 +61,8 @@ namespace SaturnIV
         public List<saveObject> saveList = new List<saveObject>();
         public List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
-        public List<String> rNameList = new List<string>();
+        public randomNames rNameList = new randomNames();
+        public string tmpShipName;
         ExplosionClass ourExplosion;
         public PlanetManager planetManager;
         public Effect effect;
@@ -108,7 +109,7 @@ namespace SaturnIV
         {
             ourCamera.ResetCamera();
             this.IsMouseVisible = true;
-
+            rand = new Random();
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
             playerShip = new newShipStruct();
@@ -177,7 +178,6 @@ namespace SaturnIV
             //effect = Content.Load<Effect>("effects");
             loadShipData();
             initPlayer();
-
             spriteFont = this.Content.Load<SpriteFont>("DemoFont");
             HUD = this.Content.Load<Texture2D>("hud");
             HUD_Target = this.Content.Load<Texture2D>("textures//hud_target_new");
@@ -216,8 +216,8 @@ namespace SaturnIV
             shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
             xmlReader = XmlReader.Create("weapondefs.xml");
             weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
-            xmlReader = XmlReader.Create("names.xml");
-            //rNameList = IntermediateSerializer.Deserialize<List<string>>(xmlReader, null);
+            xmlReader = XmlReader.Create("listofnames.xml");
+            rNameList = IntermediateSerializer.Deserialize<randomNames>(xmlReader, null);
             Gui.buildShipMenu(ref shipDefList);
         }
 
@@ -228,6 +228,7 @@ namespace SaturnIV
             //weaponTypes exportWeaponDefs;
             shipData exportShipDefs = new shipData();
            // exportWeaponDefs = new weaponTypes();
+            randomNames nameList = new randomNames();
 
             XmlWriterSettings xmlSettings = new XmlWriterSettings();
             xmlSettings.Indent = true;
@@ -246,6 +247,11 @@ namespace SaturnIV
             {
               IntermediateSerializer.Serialize(xmlWriter, saveList, null);
             }
+            
+           // using (XmlWriter xmlWriter = XmlWriter.Create("listofnames.xml", xmlSettings))
+          //  {
+          //      IntermediateSerializer.Serialize(xmlWriter, nameList, null);
+          //  }
         }
 
         /// <summary>
@@ -269,7 +275,8 @@ namespace SaturnIV
             if (!isEditMode)
                 updateObjects(gameTime);
             else
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, ref npcManager,ourCamera);                                 
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, 
+                    ref npcManager,ourCamera);                                 
 
             ourCamera.Update(playerShip.worldMatrix);
 
@@ -363,8 +370,13 @@ namespace SaturnIV
             }
 
             if (isRclicked && isEditMode)
-                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime, ourCamera));
-
+            {
+                int rLen = rNameList.capitalShipNames.Count;
+                int i = rand.Next(0, rLen);
+                tmpShipName = rNameList.capitalShipNames[i];
+                rNameList.capitalShipNames.Remove(tmpShipName);
+                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime, ourCamera, tmpShipName));
+            }
             if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime))
             {
                 weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList, playerShip.pylonIndex);
@@ -450,7 +462,7 @@ namespace SaturnIV
                 ourExplosion.expList = new List<VertexExplosion[]>();
             spriteBatch.End();
             //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            DrawHUD(gameTime);
+           // DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -494,10 +506,9 @@ namespace SaturnIV
             {
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y);
-                    buffer.AppendFormat("\n" + enemy.objectType);
+                    buffer.AppendFormat("\n" + enemy.objectAlias);
                     buffer.AppendFormat("\n" + enemy.npcDisposition);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
-
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             spriteBatch.End();
@@ -513,18 +524,12 @@ namespace SaturnIV
             //                            GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height/2-96), Color.White);
             //playerShipHealthBar.DrawHbar(gameTime, spriteBatch,Color.Green, screenCenterX-(screenX/3),screenCenterY-(screenY/3)-50,
             //                            500, 20, (int)playerShip.objectArmorLvl);
-            messageBuffer.AppendFormat("Hull Integrity");
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             messageBuffer = new StringBuilder();
             //playerShipHealthBar.DrawHbar(gameTime, spriteBatch, Color.Blue, 0,0, 500, 20, (int)playerShip.objectArmorLvl);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
-            for (int i=0;i < weaponsManager.activeWeaponList.Count; i++)
-            {
-                messageBuffer.AppendFormat("\nDistance From Origin\n" + weaponsManager.activeWeaponList[i].distanceFromOrigin);
-                messageBuffer.AppendFormat("\nRange\n" + weaponsManager.activeWeaponList[i].range);
-            }   
             //messageBuffer.AppendFormat("\nCurrent Target\n" + playerShip.currentTargetObject.objectType);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);

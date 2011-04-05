@@ -18,9 +18,12 @@ namespace SaturnIV
     }
 
     [Serializable]
-    public struct randomNames
+    public class randomNames
     {
-        
+        public List<string> capitalShipNames; // = { "Stormhawk","Senlac","Vanguard","Vendetta","Ultima","Relentless","Relentless",
+                                         //"Stalker","Skyhook","Reckoning","Malice","Red Gauntlet","Nitsa","Kreiger",
+                                         //"Hydra","Leonides","Grey Wolf","Freedom","Intrepid","Tyrant","Tecumseh","Inexorable","Devastator","Vengeance",
+                                         //"Thunderflare","Red October","Nova Scotia","Manticore","Bismark","Steadfast","Direption" };
     }
 
 }
