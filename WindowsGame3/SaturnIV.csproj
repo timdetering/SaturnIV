@@ -120,9 +120,6 @@
     </Compile>
     <Compile Include="ThrusterClass.cs" />
     <Compile Include="VertexPositionNormal.cs" />
-    <Compile Include="..\..\..\..\..\WeaponsManager.cs">
-      <Link>WeaponsManager.cs</Link>
-    </Compile>
     <Compile Include="HelperClass.cs" />
     <Compile Include="NPCManager.cs" />
     <Compile Include="ModelManager.cs" />
@@ -131,6 +128,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="constructs.cs" />
+    <Compile Include="WeaponsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
