@@ -389,7 +389,7 @@
       <Time>2011-03-29T19:05:37.859375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\km100_0.xml</Key>
-        <Value>2011-04-03T16:18:15.234375-05:00</Value>
+        <Value>2011-04-05T21:22:18.625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb</Request>
     </Item>
@@ -403,7 +403,7 @@
       <Time>2011-03-29T19:05:37.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\km200_0.xml</Key>
-        <Value>2011-04-03T16:18:15.640625-05:00</Value>
+        <Value>2011-04-05T21:22:18.953125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -417,7 +417,7 @@
       <Time>2011-03-29T19:05:37.859375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2011-04-03T16:18:15.921875-05:00</Value>
+        <Value>2011-04-05T21:22:19.25-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -430,7 +430,7 @@
       <Time>2011-03-29T19:05:37.921875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2011-04-03T16:18:16.03125-05:00</Value>
+        <Value>2011-04-05T21:22:19.578125-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -443,7 +443,7 @@
       <Time>2011-03-29T19:05:37.96875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2011-04-03T16:18:16.078125-05:00</Value>
+        <Value>2011-04-05T21:22:19.640625-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -456,7 +456,7 @@
       <Time>2011-03-29T19:05:37.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2011-04-03T16:18:16.625-05:00</Value>
+        <Value>2011-04-05T21:22:20.1875-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -469,7 +469,7 @@
       <Time>2011-03-29T19:05:37.28125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Battleship_0.xml</Key>
-        <Value>2011-04-03T16:18:18.515625-05:00</Value>
+        <Value>2011-04-05T21:22:22.484375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\3732_0.xnb</Request>
     </Item>
@@ -483,7 +483,7 @@
       <Time>2011-03-29T19:05:37.515625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Light_Crusier_0.xml</Key>
-        <Value>2011-04-03T16:18:20.40625-05:00</Value>
+        <Value>2011-04-05T21:22:24.578125-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -496,7 +496,7 @@
       <Time>2011-04-01T21:32:34.052-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2011-04-03T16:18:20.59375-05:00</Value>
+        <Value>2011-04-05T21:22:24.75-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb</Request>
     </Item>
@@ -510,7 +510,7 @@
       <Time>2011-04-03T11:21:52.078125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\SF-1A_0.xml</Key>
-        <Value>2011-04-03T16:18:21.359375-05:00</Value>
+        <Value>2011-04-05T21:22:27.1875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Request>
     </Item>
@@ -524,23 +524,9 @@
       <Time>2011-04-03T11:25:40.609375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\SF-4B_0.xml</Key>
-        <Value>2011-04-03T16:18:21.75-05:00</Value>
+        <Value>2011-04-05T21:22:27.75-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-4B\fighter_1_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Fleet_Heavy_Battleship.FBX</Source>
-      <Name>Models\Fleet_Heavy_Battleship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Heavy_Battleship.xnb</Output>
-      <Time>2011-04-03T10:54:12.71875-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Fleet_Heavy_Battleship_0.xml</Key>
-        <Value>2011-04-03T16:18:26.03125-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Fleet_Carrier.FBX</Source>
@@ -549,26 +535,46 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Carrier.xnb</Output>
-      <Time>2011-04-03T11:03:18.609375-05:00</Time>
+      <Time>2011-04-05T19:06:26.671875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Carrier_0.xml</Key>
-        <Value>2011-04-03T16:18:27.234375-05:00</Value>
+        <Value>2011-04-05T21:22:29.9375-05:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hull_0.xnb</Request>
     </Item>
     <Item>
-      <Source>Models\SF-15C.FBX</Source>
-      <Name>Models\SF-15C</Name>
+      <Source>Models\Fleet_Antares_Battleship.FBX</Source>
+      <Name>Models\Fleet_Antares_Battleship</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateTangentFrames">True</Data>
+      </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-15C.xnb</Output>
-      <Time>2011-04-03T11:28:43.078125-05:00</Time>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Antares_Battleship.xnb</Output>
+      <Time>2011-04-05T21:17:09.953125-05:00</Time>
       <Dependency>
-        <Key>obj\x86\Debug\Models\SF-15C_0.xml</Key>
-        <Value>2011-04-03T16:18:28.921875-05:00</Value>
+        <Key>obj\x86\Debug\Models\Fleet_Antares_Battleship_0.xml</Key>
+        <Value>2011-04-05T21:22:30.984375-05:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_battlecruiser_main_export[1]_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Orion_Destroyer.FBX</Source>
+      <Name>Models\Fleet_Orion_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Parameters>
+        <Data Key="GenerateTangentFrames">True</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Orion_Destroyer.xnb</Output>
+      <Time>2011-04-05T20:55:15.328125-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_Orion_Destroyer_0.xml</Key>
+        <Value>2011-04-05T21:22:31.84375-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull2_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\SF-6.FBX</Source>
@@ -580,7 +586,7 @@
       <Time>2011-04-01T20:32:51.223875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\SF-6_0.xml</Key>
-        <Value>2011-04-03T16:18:29.25-05:00</Value>
+        <Value>2011-04-05T21:22:34.359375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-6\color_0_0.xnb</Request>
     </Item>
@@ -705,7 +711,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb</Output>
-      <Time>2011-04-03T16:18:20.578125-05:00</Time>
+      <Time>2011-04-05T21:22:24.734375-05:00</Time>
     </Item>
     <Item>
       <Source>Models\SF-1A.FBX</Source>
@@ -752,25 +758,70 @@
       <Time>2010-04-06T23:44:32.796875-05:00</Time>
     </Item>
     <Item>
-      <Source>Models\Fleet_Heavy_Battleship.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Fleet_Heavy_Battleship_0.xml</Output>
-      <Time>2011-04-03T10:54:12.71875-05:00</Time>
-    </Item>
-    <Item>
       <Source>Models\Fleet_Carrier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_Carrier_0.xml</Output>
-      <Time>2011-04-03T11:03:18.609375-05:00</Time>
+      <Time>2011-04-05T19:06:26.671875-05:00</Time>
     </Item>
     <Item>
-      <Source>Models\SF-15C.FBX</Source>
+      <Source>C:\Documents and Settings\bryan\Desktop\FinalCapital\Hull.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hull_0.xnb</Output>
+      <Time>2003-05-29T19:30:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Antares_Battleship.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\SF-15C_0.xml</Output>
-      <Time>2011-04-03T11:28:43.078125-05:00</Time>
+      <Output>obj\x86\Debug\Models\Fleet_Antares_Battleship_0.xml</Output>
+      <Time>2011-04-05T21:17:09.953125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\hgm_cruzer_lwo\Hgn_battlecruiser_main_export[1].bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_battlecruiser_main_export[1]_0.xnb</Output>
+      <Time>2003-10-07T05:14:12-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Orion_Destroyer.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_Orion_Destroyer_0.xml</Output>
+      <Time>2011-04-05T20:55:15.328125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Anna-V Variations\Anna-V Variations\Anna Textures\ship_hull2.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull2_0.xnb</Output>
+      <Time>2010-01-03T00:43:32-06:00</Time>
     </Item>
     <Item>
       <Source>Models\SF-6.FBX</Source>
@@ -793,6 +844,42 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\SF-6\color_0_0.xnb</Output>
       <Time>2011-02-24T11:36:22.296875-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\test.X</Source>
+      <Name>Models\test</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\test.xnb</Output>
+      <Time>2011-04-05T21:21:17.59375-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\test_0.xml</Key>
+        <Value>2011-04-05T21:22:43.765625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Hgn_battlecruiser_main_export[1]_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\test.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\test_0.xml</Output>
+      <Time>2011-04-05T21:21:17.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Hgn_battlecruiser_main_export[1].bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Hgn_battlecruiser_main_export[1]_0.xnb</Output>
+      <Time>2003-10-07T05:14:12-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

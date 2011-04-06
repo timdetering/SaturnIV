@@ -27,7 +27,7 @@ namespace SaturnIV
         MouseState mouseOld;
         SpriteBatch spriteBatch;
         string[] NameList;
-        int selected = 2;
+    int selected = 3;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -168,8 +168,7 @@ namespace SaturnIV
             tempData.radius = shipDefList[selected].SphereRadius;
             tempData.objectClass = shipDefList[selected].ShipClass;
             tempData.modelPosition = mouse3dVector;
-            tempData.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
-            tempData.viewMatrix = Matrix.Identity;
+            tempData.modelRotation = Matrix.Identity *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Direction = Vector3.Forward;
             tempData.vecToTarget = Vector3.Forward;
             tempData.currentDisposition = disposition.patrol;
@@ -182,8 +181,8 @@ namespace SaturnIV
             tempData.weaponArray = shipDefList[selected].AvailableWeapons;
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[selected].EvadeDist;
-            tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-            modelManager.editModeUpdate(gameTime, tempData,ourCamera);
+            //tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+            //modelManager.editModeUpdate(gameTime, tempData,ourCamera);
             return tempData;
         }
 

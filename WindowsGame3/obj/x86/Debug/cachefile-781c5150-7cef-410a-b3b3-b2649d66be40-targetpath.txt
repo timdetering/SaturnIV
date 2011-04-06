@@ -51,9 +51,9 @@ Content\Models\Eriax_Light_Crusier.xnb
 Content\Models\Fleet_KM100.xnb
 Content\Models\SF-1A.xnb
 Content\Models\SF-4B.xnb
-Content\Models\Fleet_Heavy_Battleship.xnb
 Content\Models\Fleet_Carrier.xnb
-Content\Models\SF-15C.xnb
+Content\Models\Fleet_Antares_Battleship.xnb
+Content\Models\Fleet_Orion_Destroyer.xnb
 Content\Models\SF-6.xnb
 Content\Models\km100.xMetal_Steel_Textured_0.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
@@ -61,4 +61,9 @@ Content\Models\3732_0.xnb
 Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb
 Content\Models\metal-hull_0.xnb
 Content\Models\SF-4B\fighter_1_0.xnb
+Content\Hull_0.xnb
+Content\Hgn_battlecruiser_main_export[1]_0.xnb
+Content\ship_hull2_0.xnb
 Content\Models\SF-6\color_0_0.xnb
+Content\Models\test.xnb
+Content\Models\Hgn_battlecruiser_main_export[1]_0.xnb

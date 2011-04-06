@@ -195,13 +195,13 @@ namespace SaturnIV
             turningSpeed *= thisShip.objectAgility * turningSpeed;
             Vector3 rotationAmount = Vector3.Zero;
          
-            Vector3 newDirection = Vector3.Zero;
+            //Vector3 newDirection = Vector3.Zero;
             Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
             Vector3 right = rot.Forward;
             Vector3 up = rot.Up;
             rotationAmount = rotationAmount * turningSpeed * elapsed;
-            forward = thisShip.vecToTarget;
+            //forward = thisShip.vecToTarget;
 
             right = Vector3.Cross(forward, Vector3.Up);
             up = Vector3.Cross(right, forward);
@@ -214,14 +214,14 @@ namespace SaturnIV
             m.Forward = right;
             m.Right = forward;
             m.Up = up;
-            thisShip.modelRotation = m;
+            //thisShip.modelRotation = m;
             thisShip.Direction = thisShip.modelRotation.Right;
-            
-            thisShip.worldMatrix = m * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.worldMatrix = (thisShip.modelRotation * m) * Matrix.CreateTranslation(thisShip.modelPosition);
+
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
-            //viewMatrix = Matrix.CreateLookAt(modelPosition, forward, up);
-            //modelFrustum.Matrix = viewMatrix * projectionMatrix;
-            thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
+            viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, forward, up);
+            //thisShip.modelFrustum.Matrix = viewMatrix * projectionMatrix;
+            //thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
             if (thisShip.currentTarget != null)
                 thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
         }

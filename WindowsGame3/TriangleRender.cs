@@ -44,7 +44,7 @@ namespace SaturnIV
                 effect.LightingEnabled = false;
                 vertDecl = new VertexDeclaration(device, VertexPositionColor.VertexElements);
             }
-            device.RenderState.CullMode = CullMode.None;
+           // device.RenderState.CullMode = CullMode.None;
             //device.RenderState.DepthBufferEnable = true;
 
             //device.RenderState.AlphaBlendEnable = true;
@@ -61,7 +61,7 @@ namespace SaturnIV
                 pass.End();
            }
             effect.End();
-            device.RenderState.CullMode = CullMode.CullClockwiseFace;
+          //  device.RenderState.CullMode = CullMode.CullClockwiseFace;
         }
     }
 }

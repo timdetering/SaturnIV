@@ -88,36 +88,8 @@
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
-    <Item>
-      <FileName>Models//SF-15C</FileName>
-      <Type>SF-15C Raptor</Type>
-      <Mass>1.5</Mass>
-      <Thrust>550</Thrust>
-      <SphereRadius>17</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>4.0</Agility>
-      <BelongsTo>Fleet</BelongsTo>
-      <ShipClass>Fighter</ShipClass>
-      <ShieldLvl>100</ShieldLvl>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
-      <AvailableWeapons>
-	<Item>
-		<weaponType>AC10</weaponType>
-		<ModulePositionOnShip> -10 0 0 10 0 0</ModulePositionOnShip>
-			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-        </Item>
-	<Item>
-		<weaponType>KM100</weaponType>
-		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
-			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-        </Item>
-      </AvailableWeapons>
-      <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>
   <Item>
-      <FileName>Models//Fleet_Heavy_Battleship</FileName>
+      <FileName>Models//Fleet_Antares_Battleship</FileName>
       <Type>Antares Class Heavy Battleship</Type>
       <Mass>12</Mass>
       <Thrust>1550</Thrust>
@@ -145,8 +117,36 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
+      <FileName>Models//Fleet_Orion_Destroyer</FileName>
+      <Type>Orion Class Destroyer</Type>
+      <Mass>10</Mass>
+      <Thrust>1050</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Carrier</ShipClass>
+      <ShieldLvl>400</ShieldLvl>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>0 1000 500 0</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
       <FileName>Models//Fleet_Carrier</FileName>
-      <Type>Orion Class Carrier</Type>
+      <Type>Avenger Class Carrier</Type>
       <Mass>10</Mass>
       <Thrust>1050</Thrust>
       <SphereRadius>285</SphereRadius>

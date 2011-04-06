@@ -297,11 +297,11 @@ namespace SaturnIV
  
             for (int i = 0; i < activeShipList.Count; i++)
             {
-                for (int j = 0; j < activeShipList.Count; j++)
-                {
-                    if (activeShipList[j] != activeShipList[i])
-                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j]);
-                }
+            //    for (int j = 0; j < activeShipList.Count; j++)
+           //     {
+            //        if (activeShipList[j] != activeShipList[i])
+            //            npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j]);
+             //   }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ref weaponDefList, ref shipDefList, ourCamera);
             }
             weaponsManager.Update(gameTime, gameSpeed);
@@ -433,14 +433,13 @@ namespace SaturnIV
             starField.DrawStars(this, ourCamera);
 
             if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
-            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-
+            
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
             //modelManager.DrawWithCustomEffect(playerShip.shipModel, playerShip.worldMatrix, ourCamera.viewMatrix, ourCamera.projectionMatrix, Vector3.Zero);
             //BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //playerManager.DrawFiringArc(device, playerShip, ourCamera);
-            if (playerShip.ThrusterEngaged)
-                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+          //  if (playerShip.ThrusterEngaged)
+               // playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 //firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
                 //            playerShip.currentWeapon.ModulePositionOnShip[playerShip.pylonIndex] + playerShip.Direction * 10, 
                 //            playerShip.currentWeapon.ModulePositionOnShip[playerShip.pylonIndex] + playerShip.Direction * 100
@@ -448,7 +447,7 @@ namespace SaturnIV
                 //            + playerShip.right * -25);
             foreach (newShipStruct npcship in activeShipList)
             {
-                npcManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
+                modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
             }
@@ -460,7 +459,7 @@ namespace SaturnIV
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
             if (ourExplosion.expList.Count > 5)
                 ourExplosion.expList = new List<VertexExplosion[]>();
-            spriteBatch.End();
+            //spriteBatch.End();
             //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
            // DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
