@@ -135,7 +135,7 @@ namespace SaturnIV
             forward.Normalize();
             right.Normalize();
             up.Normalize();
-                      
+
             Matrix m = Matrix.Identity;
             m.Forward = right;
             m.Right = forward;
@@ -150,11 +150,12 @@ namespace SaturnIV
             thisShip.Velocity *= DragFactor;
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
-            thisShip.worldMatrix = m * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.worldMatrix = rot * Matrix.CreateTranslation(thisShip.modelPosition);
+           
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + 
                                                       thisShip.Direction * 2.0f, thisShip.Up);
-            //thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+            thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
           
             //screenCords = get2dCoords(this, ourCamera);
@@ -194,7 +195,7 @@ namespace SaturnIV
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * turningSpeed;
             Vector3 rotationAmount = Vector3.Zero;
-         
+            thisShip.worldMatrix = Matrix.Identity;
             //Vector3 newDirection = Vector3.Zero;
             Matrix rot = thisShip.modelRotation;
             Vector3 forward = rot.Right;
@@ -216,7 +217,7 @@ namespace SaturnIV
             m.Up = up;
             //thisShip.modelRotation = m;
             thisShip.Direction = thisShip.modelRotation.Right;
-            thisShip.worldMatrix = (thisShip.modelRotation * m) * Matrix.CreateTranslation(thisShip.modelPosition);
+            //thisShip.worldMatrix = (thisShip.modelRotation * m) * Matrix.CreateTranslation(thisShip.modelPosition);
 
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, forward, up);

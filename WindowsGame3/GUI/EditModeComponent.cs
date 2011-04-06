@@ -182,7 +182,7 @@ namespace SaturnIV
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[selected].EvadeDist;
             //tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-            //modelManager.editModeUpdate(gameTime, tempData,ourCamera);
+            modelManager.editModeUpdate(gameTime, tempData,ourCamera);
             return tempData;
         }
 
