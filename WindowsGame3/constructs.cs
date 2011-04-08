@@ -73,6 +73,7 @@ namespace SaturnIV
         public bool ThrusterEngaged = false;
         public bool isVisable;
         public bool isSelected;
+        public bool isEngaging;
         public string team;
         public float[] EvadeDist;
         public float[] TargetPrefs;

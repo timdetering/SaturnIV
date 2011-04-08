@@ -185,16 +185,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Battleship.fbx">
-      <Name>Eriax_Battleship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Eriax_Light_Crusier.FBX">
-      <Name>Eriax_Light_Crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_KM100.FBX">
       <Name>Fleet_KM100</Name>
       <Importer>FbxImporter</Importer>
@@ -210,29 +200,8 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\SF-1A.FBX">
-      <Name>SF-1A</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\SF-4B.FBX">
-      <Name>SF-4B</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Fleet_Carrier.FBX">
-      <Name>Fleet_Carrier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_Antares_Battleship.FBX">
       <Name>Fleet_Antares_Battleship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <ProcessorParameters_GenerateTangentFrames>True</ProcessorParameters_GenerateTangentFrames>
-    </Compile>
-    <Compile Include="Models\Fleet_Orion_Destroyer.FBX">
-      <Name>Fleet_Orion_Destroyer</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <ProcessorParameters_GenerateTangentFrames>True</ProcessorParameters_GenerateTangentFrames>
@@ -240,6 +209,76 @@
     <Compile Include="Models\test.X">
       <Name>test</Name>
       <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Carrier.FBX">
+      <Name>Eriax_Carrier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_EC1_SWACS.FBX">
+      <Name>Eriax_EC1_SWACS</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Heavy_Destroyer.FBX">
+      <Name>Eriax_Heavy_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Medium_Crusier.FBX">
+      <Name>Eriax_Medium_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_MK1_Fighter.FBX">
+      <Name>Eriax_MK1_Fighter</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_MK2_Fighter.FBX">
+      <Name>Eriax_MK2_Fighter</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_MK3_Corvette.FBX">
+      <Name>Eriax_MK3_Corvette</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_Berlin_Destroyer.FBX">
+      <Name>Fleet_Berlin_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_Orion_Carrier.FBX">
+      <Name>Fleet_Orion_Carrier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_SB-1_Lancer.FBX">
+      <Name>Fleet_SB-1_Lancer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_SF-6_Hornet.FBX">
+      <Name>Fleet_SF-6_Hornet</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_SF-14AB_Tomcat.FBX">
+      <Name>Fleet_SF-14AB_Tomcat</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Light_Crusier.FBX">
+      <Name>Eriax_Light_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Procyon_Frigate.FBX">
+      <Name>Eriax_Procyon_Frigate</Name>
+      <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
     <None Include="neuropol.spritefont">
@@ -374,11 +413,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\SF-6.FBX">
-      <Name>SF-6</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="textures\dummy.jpg">
       <Name>dummy</Name>
       <Importer>TextureImporter</Importer>

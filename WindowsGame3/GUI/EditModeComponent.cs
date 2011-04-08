@@ -27,7 +27,7 @@ namespace SaturnIV
         MouseState mouseOld;
         SpriteBatch spriteBatch;
         string[] NameList;
-    int selected = 3;
+    int selected = 1;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -89,7 +89,7 @@ namespace SaturnIV
                     if (ourShip.isSelected)
                     {
                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                        npcManager.editModeUpdate(gameTime,ourShip,ourCamera);
+                        npcManager.updateShipMovement(gameTime,5.0f,ourShip,ourCamera,true);
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
                     }
                 }
@@ -107,7 +107,7 @@ namespace SaturnIV
                     {
                         ourShip.vecToTarget = mouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
-                        npcManager.editModeUpdate(gameTime,ourShip,ourCamera);
+                        npcManager.updateShipMovement(gameTime,5.0f,ourShip,ourCamera,true);
                         mouseOld = mouseCurrent;
                     }
                 }
@@ -169,8 +169,8 @@ namespace SaturnIV
             tempData.objectClass = shipDefList[selected].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity *Matrix.CreateRotationY(MathHelper.ToRadians(90));
-            tempData.Direction = Vector3.Forward;
-            tempData.vecToTarget = Vector3.Forward;
+            tempData.Direction = Vector3.Right;
+            tempData.vecToTarget = Vector3.Right;
             tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
@@ -181,8 +181,8 @@ namespace SaturnIV
             tempData.weaponArray = shipDefList[selected].AvailableWeapons;
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[selected].EvadeDist;
-            //tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-            modelManager.editModeUpdate(gameTime, tempData,ourCamera);
+            tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+            modelManager.updateShipMovement(gameTime, 5.0f,tempData,ourCamera,true);
             return tempData;
         }
 

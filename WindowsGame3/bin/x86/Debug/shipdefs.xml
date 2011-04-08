@@ -2,8 +2,225 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
-      <FileName>Models//SF-1A</FileName>
-      <Type>SF-1A Lynx</Type>
+      <FileName>Models//Eriax_MK1_Fighter</FileName>
+      <Type>Eriax MK1 Fighter</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_MK2_Fighter</FileName>
+      <Type>Eriax MK2 Fighter</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_MK3_Fighter</FileName>
+      <Type>Eriax MK3 Fighter</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_Procyon_Frigate</FileName>
+      <Type>Eriax Procyon Frigate</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_Heavy_Destroyer</FileName>
+      <Type>Eriax Heavy Destroyer</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_Medium_crusier</FileName>
+      <Type>Eriax Medium Crusier</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_MK3_Corvette</FileName>
+      <Type>Eriax MK3 Corvette</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//SF-14AB_Tomcat</FileName>
+      <Type>SF-14AB Tomcat</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -33,8 +250,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
   <Item>
-      <FileName>Models//SF-4B</FileName>
-      <Type>SF-4B Intercept</Type>
+      <FileName>Models//Fleet_SB-1_Lancer</FileName>
+      <Type>SB-1 Lancer Gunship</Type>
       <Mass>1.5</Mass>
       <Thrust>550</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -61,8 +278,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models//SF-6</FileName>
-      <Type>SF-6M Raider</Type>
+      <FileName>Models//Fleet_SF-6_Hornet</FileName>
+      <Type>SF-6 Hornet</Type>
       <Mass>1.5</Mass>
       <Thrust>550</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -117,8 +334,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
-      <FileName>Models//Fleet_Orion_Destroyer</FileName>
-      <Type>Orion Class Destroyer</Type>
+      <FileName>Models//Fleet_Berlin_Destroyer</FileName>
+      <Type>Berlin Class Destroyer</Type>
       <Mass>10</Mass>
       <Thrust>1050</Thrust>
       <SphereRadius>285</SphereRadius>
@@ -145,8 +362,36 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
-      <FileName>Models//Fleet_Carrier</FileName>
-      <Type>Avenger Class Carrier</Type>
+      <FileName>Models//Fleet_Orion_Carrier</FileName>
+      <Type>Orion Class Carrier</Type>
+      <Mass>10</Mass>
+      <Thrust>1050</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Carrier</ShipClass>
+      <ShieldLvl>400</ShieldLvl>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>0 1000 500 0</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AC10</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+	<Item>
+		<weaponType>KM100</weaponType>
+		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
+		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Fleet_Procyon_Frigate</FileName>
+      <Type>Procyon Class Frigate</Type>
       <Mass>10</Mass>
       <Thrust>1050</Thrust>
       <SphereRadius>285</SphereRadius>

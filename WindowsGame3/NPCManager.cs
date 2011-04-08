@@ -19,7 +19,6 @@ namespace SaturnIV
     /// </summary>
     public class NPCManager : ModelManager
     {
-        
         public bool isHostile = false;
         public int shipTypeIndex;
         public float distanceFromPlayer;
@@ -27,7 +26,7 @@ namespace SaturnIV
         float thrustAmount = 0.75f;
         private const float ThrustForce = 500.0f;
         double lastWeaponFireTime;
-        bool isEngaging, isEvading, hasEvadeVector;
+        bool isEvading, hasEvadeVector;
         //disposition predisposition = new disposition();
         Random rand = new Random();
 
@@ -49,12 +48,11 @@ namespace SaturnIV
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             Random rand = new Random();
-            {
             // First check for Evading state and act on that first and for most!
-                if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10, 2200) + otherShip.EvadeDist[(int)otherShip.objectClass])
+                if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10, 100) + otherShip.EvadeDist[(int)otherShip.objectClass])
                 {
-                    if (!isEvading)
-                        thisShip.vecToTarget = new Vector3(thisShip.Direction.X * rand.Next(10, 2200), 0, thisShip.Direction.Z * rand.Next(10, 2200));
+                    //if (!isEvading)
+                        //thisShip.vecToTarget = new Vector3(thisShip.Direction.X * rand.Next(10, 2200), 0, thisShip.Direction.Z * rand.Next(10, 2200));
                     isEvading = true;
                     thrustAmount = (float)rand.NextDouble();
                 }
@@ -76,35 +74,36 @@ namespace SaturnIV
                                 if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
                                     thisShip.pylonIndex = 0;
                                 thisShip.lastWeaponFireTime = currentTime;
-                                isEngaging = true;
+                                thisShip.isEngaging = true;
                             }
                             thrustAmount = (float)rand.NextDouble();
                         }
                         break;
                      case disposition.patrol:
-                            if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
+                        //thisShip.vecToTarget = thisShip.Direction;
+                        if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
+                        {
+                            thisShip.isEngaging = true;
+                            thisShip.currentTarget = otherShip;
+                            thisShip.currentDisposition = disposition.pursue;
+                            if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
-                                thisShip.currentTarget = otherShip;
-                                thisShip.currentDisposition = disposition.pursue;
-                                if (currentTime - lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
-                                {
-                                    weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
-                                    thisShip.pylonIndex++;
-                                    if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
-                                        thisShip.pylonIndex = 0;
-                                    lastWeaponFireTime = currentTime;
-                                    isEngaging = true;
-                                }
+                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
+                                thisShip.pylonIndex++;
+                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
+                                    thisShip.pylonIndex = 0;
+                                lastWeaponFireTime = currentTime;
                             }
+                        }
+                        else
+                            thisShip.isEngaging = false;
                         // thrustAmount = 0.20f;
                         break;
                 }
-            }
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
-                               ref List<weaponData> weaponDefList, ref List<shipData> shipDefList,
-                                Camera ourCamera)
+                                       Camera ourCamera, bool isEdit)
         {
             // update models 2d coords
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
@@ -112,35 +111,23 @@ namespace SaturnIV
             turningSpeed *= thisShip.objectAgility * gameSpeed;
             Vector3 rotationAmount = Vector3.Zero;
             int roll = 0;
-            Vector3 newDirection = Vector3.Zero;
-            Matrix rot = thisShip.modelRotation;
-            Vector3 forward = rot.Right;
-            Vector3 right = rot.Forward;
-            Vector3 up = rot.Up;
             thisShip.vecToTarget.Normalize();
             rotationAmount = rotationAmount * turningSpeed * elapsed;
 
-            if (Vector3.Dot(forward, thisShip.vecToTarget) > -0.99f)
-            {
-                forward = Vector3.SmoothStep(forward, thisShip.vecToTarget, thisShip.objectAgility * 0.05f);
-            }
+            Vector3 scale, translation;
+            Quaternion rotation;
+            Matrix rotationMatrix = Matrix.CreateWorld(thisShip.modelPosition, thisShip.vecToTarget, Vector3.Up);
+            rotationMatrix.Decompose(out scale, out rotation, out translation);
+            thisShip.Up = Vector3.TransformNormal(thisShip.Up, rotationMatrix);
+            thisShip.Up.Normalize();
+            thisShip.right = Vector3.Cross(thisShip.Direction, thisShip.Up);
+            thisShip.Up = Vector3.Cross(thisShip.right, thisShip.Direction);
+            thisShip.modelRotation = Matrix.CreateFromQuaternion(rotation);
+            thisShip.modelRotation.Forward = Vector3.Lerp(thisShip.modelRotation.Forward, thisShip.vecToTarget, turningSpeed * 0.50f); ;
+            if (!isEdit)
+                thrustAmount = 1.0f;
             else
-            {
-                forward = Vector3.SmoothStep(forward, right, thisShip.objectAgility * 0.05f);
-            }
-
-            right = Vector3.Cross(forward, Vector3.Up);
-            up = Vector3.Cross(right, forward);
-
-            forward.Normalize();
-            right.Normalize();
-            up.Normalize();
-
-            Matrix m = Matrix.Identity;
-            m.Forward = right;
-            m.Right = forward;
-            m.Up = up;
-            thisShip.modelRotation = m;
+                thrustAmount = 0.0f;
             thisShip.Direction = thisShip.modelRotation.Right;
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
@@ -150,23 +137,21 @@ namespace SaturnIV
             thisShip.Velocity *= DragFactor;
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
-            thisShip.worldMatrix = rot * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.worldMatrix = rotationMatrix;
            
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + 
                                                       thisShip.Direction * 2.0f, thisShip.Up);
-            thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
           
-            //screenCords = get2dCoords(this, ourCamera);
            // if (thisShip.ThrusterEngaged)
          //   {
-                thisShip.shipThruster.update(thisShip.modelPosition + (thisShip.modelRotation.Forward)
-                                        - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * -20),
-                                        thisShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
-                                        Color.White, Color.Blue, ourCamera.position);
+          //      thisShip.shipThruster.update(thisShip.modelPosition + (thisShip.modelRotation.Forward)
+          //                              - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * -20),
+          //                              thisShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
+          //                              Color.White, Color.Blue, ourCamera.position);
 
-                thisShip.shipThruster.heat = 1.5f;
+          //      thisShip.shipThruster.heat = 1.5f;
           //  }
 
             if (thisShip.currentTarget != null)
@@ -194,35 +179,34 @@ namespace SaturnIV
             float turningSpeed = 2.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * turningSpeed;
-            Vector3 rotationAmount = Vector3.Zero;
-            thisShip.worldMatrix = Matrix.Identity;
-            //Vector3 newDirection = Vector3.Zero;
-            Matrix rot = thisShip.modelRotation;
-            Vector3 forward = rot.Right;
-            Vector3 right = rot.Forward;
-            Vector3 up = rot.Up;
-            rotationAmount = rotationAmount * turningSpeed * elapsed;
-            //forward = thisShip.vecToTarget;
-
-            right = Vector3.Cross(forward, Vector3.Up);
-            up = Vector3.Cross(right, forward);
-
-            forward.Normalize();
-            right.Normalize();
-            up.Normalize();
-
-            Matrix m = Matrix.Identity;
-            m.Forward = right;
-            m.Right = forward;
-            m.Up = up;
-            //thisShip.modelRotation = m;
+            Vector3 scale, translation;
+            Quaternion rotation;
+            Matrix rotationMatrix = Matrix.CreateWorld(thisShip.modelPosition, thisShip.vecToTarget, Vector3.Up);
+            rotationMatrix.Decompose(out scale, out rotation, out translation);
+            thisShip.Up = Vector3.TransformNormal(thisShip.Up, rotationMatrix);
+            thisShip.Up.Normalize();
+            thisShip.right = Vector3.Cross(thisShip.vecToTarget, thisShip.Up);
+            thisShip.Up = Vector3.Cross(thisShip.right, thisShip.modelRotation.Forward);
+            thisShip.modelRotation = Matrix.CreateFromQuaternion(rotation); 
+            thisShip.modelRotation.Forward = thisShip.vecToTarget;
+            // thisShip.modelRotation.Forward = Vector3.Lerp(thisShip.modelRotation.Forward, thisShip.vecToTarget, turningSpeed * 0.5f); ;
+           
             thisShip.Direction = thisShip.modelRotation.Right;
-            //thisShip.worldMatrix = (thisShip.modelRotation * m) * Matrix.CreateTranslation(thisShip.modelPosition);
+            
+            thisShip.worldMatrix = rotationMatrix;
 
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
-            viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, forward, up);
-            //thisShip.modelFrustum.Matrix = viewMatrix * projectionMatrix;
-            //thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
+            thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition +
+                                                      thisShip.Direction * 2.0f, thisShip.Up);
+            thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 1.0f / 1.0f, .5f, 500f);
+            thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
+
+            thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
+            thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition +
+                                                       thisShip.Direction * 2.0f, thisShip.Up);
+            thisShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+            thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
+            thisShip.screenCords = get2dCoords(thisShip.modelPosition, ourCamera);
             if (thisShip.currentTarget != null)
                 thisShip.distanceFromTarget = Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition);
         }

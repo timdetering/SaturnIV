@@ -191,7 +191,7 @@ namespace SaturnIV
 
         private void initPlayer()
         {
-            int shipType = 3;
+            int shipType = 1;
             playerShip.objectFileName = shipDefList[shipType].FileName;
             playerShip.radius = shipDefList[shipType].SphereRadius;
             playerShip.shipModel = modelManager.LoadModel(shipDefList[shipType].FileName);
@@ -292,7 +292,6 @@ namespace SaturnIV
         protected void updateObjects(GameTime gameTime)
         {
             playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);            
-            List<newShipStruct> activeMinusCurrent = activeShipList;
  
             for (int i = 0; i < activeShipList.Count; i++)
             {
@@ -301,7 +300,7 @@ namespace SaturnIV
                     if (activeShipList[j] != activeShipList[i])
                         npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j]);
                 }
-                npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ref weaponDefList, ref shipDefList, ourCamera);
+                npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
             }
             weaponsManager.Update(gameTime, gameSpeed);
              //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
@@ -447,7 +446,7 @@ namespace SaturnIV
             {
             modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                // npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
+                BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
             }
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
@@ -504,7 +503,8 @@ namespace SaturnIV
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y);
                     buffer.AppendFormat("\n" + enemy.objectAlias);
-                    buffer.AppendFormat("\n" + enemy.npcDisposition);
+                    buffer.AppendFormat("\n" + enemy.currentDisposition);
+                    buffer.AppendFormat("\n" + enemy.isEngaging);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
