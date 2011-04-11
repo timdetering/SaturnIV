@@ -42,7 +42,7 @@ namespace SaturnIV
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            grid = new Grid(100, 350, Game.GraphicsDevice, Game);
+            grid = new Grid(100, 250, Game.GraphicsDevice, Game);
             fLine = new Line3D(Game.GraphicsDevice);
             sphereColor = Color.Blue;
             base.Initialize();
@@ -73,7 +73,7 @@ namespace SaturnIV
                     if (checkResult && isClicked)
                     {
                         ourShip.isSelected = true;
-                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * 100, 10);
+                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * 200, 20);
                     }
                     else
                     {
@@ -154,19 +154,19 @@ namespace SaturnIV
         }
 
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
-                                    GameTime gameTime,Camera ourCamera,string shipName)
+                                    GameTime gameTime,Camera ourCamera,string shipName,int shipIndex)
         {
             newShipStruct tempData = new newShipStruct();
-            tempData.objectFileName = shipDefList[selected].FileName;
+            tempData.objectFileName = shipDefList[shipIndex].FileName;
             tempData.objectAlias = shipName;
-            tempData.shipModel = modelManager.LoadModel(shipDefList[selected].FileName);
-            tempData.objectAgility = shipDefList[selected].Agility;
-            tempData.objectMass = shipDefList[selected].Mass;
-            tempData.objectThrust = shipDefList[selected].Thrust;
-            tempData.objectType = shipDefList[selected].Type;
-            tempData.team = shipDefList[selected].BelongsTo;
-            tempData.radius = shipDefList[selected].SphereRadius;
-            tempData.objectClass = shipDefList[selected].ShipClass;
+            tempData.shipModel = modelManager.LoadModel(shipDefList[shipIndex].FileName);
+            tempData.objectAgility = shipDefList[shipIndex].Agility;
+            tempData.objectMass = shipDefList[shipIndex].Mass;
+            tempData.objectThrust = shipDefList[shipIndex].Thrust;
+            tempData.objectType = shipDefList[shipIndex].Type;
+            tempData.team = shipDefList[shipIndex].BelongsTo;
+            tempData.radius = shipDefList[shipIndex].SphereRadius;
+            tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Direction = Vector3.Right;
@@ -174,13 +174,13 @@ namespace SaturnIV
             tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
-            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[selected].SphereRadius);
+            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[shipIndex].SphereRadius);
             tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
-            tempData.weaponArray = shipDefList[selected].AvailableWeapons;
+            tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;
             tempData.currentWeapon = tempData.weaponArray[0];
-            tempData.EvadeDist = shipDefList[selected].EvadeDist;
+            tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             modelManager.updateShipMovement(gameTime, 5.0f,tempData,ourCamera,true);
             return tempData;
@@ -192,7 +192,7 @@ namespace SaturnIV
             foreach (newShipStruct enemy in shipList)
                {
                    fLine.Draw(enemy.modelPosition + enemy.Direction * 25,
-                          enemy.modelPosition + enemy.Direction * 100,
+                          enemy.modelPosition + enemy.Direction * 300,
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                    BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * 100, 5);
                    //BoundingFrustumRenderer.Render(enemy.modelFrustum, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix,Color.Yellow);

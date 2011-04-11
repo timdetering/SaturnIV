@@ -64,8 +64,39 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models//Eriax_MK3_Fighter</FileName>
-      <Type>Eriax MK3 Fighter</Type>
+      <FileName>Models//Eriax_MK3_Corvette</FileName>
+      <Type>Eriax MK3 Corvette</Type>
+      <Mass>2</Mass>
+      <Thrust>500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 300 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 
+            4 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>25 1 1</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Eriax_MK4_Fighter</FileName>
+      <Type>Eriax MK4 Fighter</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -95,8 +126,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models//Eriax_Procyon_Frigate</FileName>
-      <Type>Eriax Procyon Frigate</Type>
+      <FileName>Models//Fleet_Procyon_Frigate</FileName>
+      <Type>Fleet Procyon Frigate</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -219,7 +250,7 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models//SF-14AB_Tomcat</FileName>
+      <FileName>Models//Fleet_SF-14AB_Tomcat</FileName>
       <Type>SF-14AB Tomcat</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>

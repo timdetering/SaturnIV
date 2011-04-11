@@ -18,9 +18,9 @@ namespace SaturnIV
         editOptions currentSelection;
         int verticalStartY = 25;
         int horizontalStartX = 150;
-        int verticalItemSpacing = 20;
-        int horizontalItemWidth = 200;
         bool AddRemove = false;
+        public int thisItem;
+        Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         
         List<MenuItem> menuItemList = new List<MenuItem>();
@@ -38,22 +38,25 @@ namespace SaturnIV
         {
             public string itemText;
             public Rectangle itemRectangle;
+            public int itemIndex;
         }
 
-        public void buildShipMenu(ref List<shipData> shipList)
+        public void buildShipMenu(List<shipData> shipList)
         {
             for (int i=0; i < shipList.Count; i++)
             {
                 MenuItem tempItem = new MenuItem();
                 tempItem.itemText = shipList[i].Type;
-                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, horizontalItemWidth, verticalItemSpacing);
-                verticalStartY += verticalItemSpacing;
+                tempItem.itemIndex = i;
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 200,20);
+                verticalStartY += 20;
                 menuItemList.Add(tempItem);
             }
         }
 
-        public void initalize(Game game) 
+        public void initalize(Game game, ref List<shipData> shipList) 
         {
+            buildShipMenu(shipList);
             currentSelection = editOptions.load;
             rectangle1 = new Rectangle(5, 5, 150, 20);
             rectangle2 = new Rectangle(150, 5, 150, 20);
@@ -67,6 +70,7 @@ namespace SaturnIV
             opt4Color = Color.Gray;
             opt5Color = Color.Gray;
             opt6Color = Color.Gray;
+            itemColor = Color.White;
 
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
         }
@@ -74,7 +78,7 @@ namespace SaturnIV
         public void update(MouseState currentMouse,MouseState oldMouse)
         {
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
-
+            AddRemove = false;
             if (rectangle2.Contains(new Point(mouseX, mouseY)))
             {    
                 currentSelection = editOptions.addremove;
@@ -108,12 +112,23 @@ namespace SaturnIV
             {
                 if (currentSelection == editOptions.addremove)
                     AddRemove = true;
+                else
+                    AddRemove = false;
             }
+            if (AddRemove)
+            {
+                for (int i = 0; i < menuItemList.Count; i++)
+                {
+                    if (menuItemList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                        thisItem = i;
+                }
+            }
+
         }
 
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
         {
- 
+            
             mBatch.Draw(dummyTexture, rectangle1, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle2, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle3, Color.Gray);
@@ -137,12 +152,17 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             if (AddRemove == true)
             {
-                foreach (MenuItem mItem in menuItemList)
+                for (int i=0;i<menuItemList.Count;i++)
                 {
-                    mBatch.Draw(dummyTexture, mItem.itemRectangle, Color.Gray);
-                    messageBuffer.AppendFormat(mItem.itemText);
+                    if (thisItem == i)
+                        itemColor = Color.Black;
+                    else
+                        itemColor = Color.White;
+
+                    mBatch.Draw(dummyTexture, menuItemList[i].itemRectangle, Color.Gray);
+                    messageBuffer.AppendFormat(menuItemList[i].itemText);
                     mBatch.DrawString(spriteFont, messageBuffer,
-                                    new Vector2(mItem.itemRectangle.X, mItem.itemRectangle.Y), Color.White);
+                                    new Vector2(menuItemList[i].itemRectangle.X, menuItemList[i].itemRectangle.Y),itemColor);
                     messageBuffer = new StringBuilder();
 
                 }

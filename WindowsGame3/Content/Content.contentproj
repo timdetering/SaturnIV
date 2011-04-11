@@ -276,8 +276,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Procyon_Frigate.FBX">
-      <Name>Eriax_Procyon_Frigate</Name>
+    <Compile Include="Models\Fleet_Procyon_Frigate.FBX">
+      <Name>Fleet_Procyon_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_MK4_Fighter.FBX">
+      <Name>Eriax_MK4_Fighter</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
