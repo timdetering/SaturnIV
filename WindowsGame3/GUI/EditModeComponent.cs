@@ -195,10 +195,10 @@ namespace SaturnIV
                           enemy.modelPosition + enemy.Direction * 300,
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                    BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * 100, 5);
-                   //BoundingFrustumRenderer.Render(enemy.modelFrustum, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix,Color.Yellow);
-                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius, 
+                                                        GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    if (enemy.isSelected)
-                        BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, sphereColor);
+                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
                     
               }
 

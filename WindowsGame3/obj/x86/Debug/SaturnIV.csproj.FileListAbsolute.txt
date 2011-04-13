@@ -210,3 +210,5 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_Interceptor_EXPORT[1]_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\spark.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\31.xnb

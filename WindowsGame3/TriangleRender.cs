@@ -36,6 +36,7 @@ namespace SaturnIV
             Vector3 pos1, Vector3 pos2, Vector3 pos3
             )
         {
+
             SetUpVertices(pos1,pos2,pos3);
             if (effect == null)
             {
@@ -61,7 +62,7 @@ namespace SaturnIV
                 pass.End();
            }
             effect.End();
-          //  device.RenderState.CullMode = CullMode.CullClockwiseFace;
+          
         }
     }
 }

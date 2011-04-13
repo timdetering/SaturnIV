@@ -414,10 +414,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LaserBolt2.xnb</Output>
-      <Time>2011-03-29T19:05:37.859375-05:00</Time>
+      <Time>2009-11-25T17:05:02-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2011-04-05T21:22:19.25-05:00</Value>
+        <Value>2011-04-12T21:20:51.375-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -539,7 +539,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\LaserBolt2_0.xml</Output>
-      <Time>2011-03-29T19:05:37.859375-05:00</Time>
+      <Time>2009-11-25T17:05:02-06:00</Time>
     </Item>
     <Item>
       <Source>Models\sphere.x</Source>
@@ -2029,6 +2029,24 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb</Output>
       <Time>2011-04-08T22:27:30.8825-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\spark.png</Source>
+      <Name>textures\spark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\spark.xnb</Output>
+      <Time>2011-04-12T20:45:57.296875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\31.jpg</Source>
+      <Name>textures\31</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\31.xnb</Output>
+      <Time>2011-04-12T20:49:36.53125-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

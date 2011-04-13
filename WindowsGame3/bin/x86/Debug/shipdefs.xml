@@ -159,11 +159,11 @@
     <Item>
       <FileName>Models//Eriax_Heavy_Destroyer</FileName>
       <Type>Eriax Heavy Destroyer</Type>
-      <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Mass>8</Mass>
+      <Thrust>900</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>0.5</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -221,11 +221,11 @@
     <Item>
       <FileName>Models//Eriax_MK3_Corvette</FileName>
       <Type>Eriax MK3 Corvette</Type>
-      <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Mass>3</Mass>
+      <Thrust>600</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>2.0</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>

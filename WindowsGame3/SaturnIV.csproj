@@ -96,6 +96,7 @@
     <Compile Include="boundingFrustumRender.cs" />
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
+    <Compile Include="ParticleSystem\SparkParticleSystem.cs" />
     <Compile Include="TriangleRender.cs" />
     <Compile Include="ExplosionClass.cs" />
     <Compile Include="Game1.cs" />

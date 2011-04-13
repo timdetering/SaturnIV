@@ -425,6 +425,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="textures\spark.png">
+      <Name>spark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\31.jpg">
+      <Name>31</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="GUI\" />
   </ItemGroup>

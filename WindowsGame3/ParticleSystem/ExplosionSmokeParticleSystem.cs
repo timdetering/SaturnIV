@@ -28,7 +28,7 @@ namespace SaturnIV
 
         protected override void InitializeSettings(ParticleSettings settings)
         {
-            settings.TextureName = "textures//smoke";
+            settings.TextureName = "textures//spark";
 
             settings.MaxParticles = 200;
 

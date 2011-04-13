@@ -81,7 +81,9 @@ namespace SaturnIV
         bool isEditMode = false;
 
         int screenX, screenY, screenCenterX, screenCenterY;
-        ParticleSystem projectileTrailParticles;
+        ParticleSystem projectileTrailParticles, sparkParticles;
+        ParticleEmitter sparkEmitter;
+
         
         guiClass Gui;
 
@@ -128,14 +130,17 @@ namespace SaturnIV
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
             firingArc = new renderTriangle();
+            editModeClass = new EditModeComponent(this);
             ourExplosion.initExplosionClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
-            editModeClass = new EditModeComponent(this);
+            sparkParticles = new SparkParticleSystem(this, Content);
+
             Gui = new guiClass();
 
             // Add Components
             Components.Add(projectileTrailParticles);
+            Components.Add(sparkParticles);
             //Components.Add(playerShipHealthBar);
             Components.Add(editModeClass);
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
@@ -290,8 +295,9 @@ namespace SaturnIV
 
         protected void updateObjects(GameTime gameTime)
         {
-            playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);            
- 
+            playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);
+            if (sparkEmitter != null)
+                sparkEmitter.Update(gameTime, playerShip.modelPosition * 10);
             for (int i = 0; i < activeShipList.Count; i++)
             {
                 for (int j = 0; j < activeShipList.Count; j++)
@@ -302,8 +308,6 @@ namespace SaturnIV
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
             }
             weaponsManager.Update(gameTime, gameSpeed);
-             //         if (Vector3.Distance(missileList[i].modelPosition, missileList[i].missileOrigin) > missileList[i].weaponRange)
-                   // missileList.Remove(missileList[i]);
         }
 
         protected void processInput(GameTime gameTime)
@@ -445,11 +449,14 @@ namespace SaturnIV
             {
             modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
+                //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
             }
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
-               modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
+                if (theList.isProjectile)
+                    modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
+                else
+                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,theList);
             }
 
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
@@ -462,10 +469,14 @@ namespace SaturnIV
             DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            Gui.drawGUI(spriteBatch,spriteFont);
+            if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
             // Pass camera matrices through to the particle system components.
-            //projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            //projectileTrailParticles.Draw(gameTime);
+
+            sparkParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            sparkParticles.Draw(gameTime);
             
             base.Draw(gameTime);
         }

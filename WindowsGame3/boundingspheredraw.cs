@@ -34,11 +34,11 @@ namespace SaturnIV
         public static void InitializeGraphics(GraphicsDevice graphicsDevice, int sphereResolution)
         {
             BoundingSphereRenderer.sphereResolution = sphereResolution;
-
+            Color mColor = new Color(new Vector4(0f, 1f, 0f, 1.0f));
             vertDecl = new VertexDeclaration(graphicsDevice, VertexPositionColor.VertexElements);
             effect = new BasicEffect(graphicsDevice, null);
             effect.LightingEnabled = false;
-            effect.VertexColorEnabled = false;
+            effect.VertexColorEnabled = true;
 
             VertexPositionColor[] verts = new VertexPositionColor[(sphereResolution + 1) * 3];
 
@@ -51,7 +51,7 @@ namespace SaturnIV
             {
                 verts[index++] = new VertexPositionColor(
                     new Vector3((float)Math.Cos(a), (float)Math.Sin(a), 0f),
-                    Color.White);
+                    mColor);
             }
 
             //next on the XZ plane
@@ -59,7 +59,7 @@ namespace SaturnIV
             {
                 verts[index++] = new VertexPositionColor(
                     new Vector3((float)Math.Cos(a), 0f, (float)Math.Sin(a)),
-                    Color.White);
+                    mColor);
             }
 
             //finally on the YZ plane
@@ -67,7 +67,7 @@ namespace SaturnIV
             {
                 verts[index++] = new VertexPositionColor(
                     new Vector3(0f, (float)Math.Cos(a), (float)Math.Sin(a)),
-                    Color.White);
+                    mColor);
             }
 
             vertBuffer = new VertexBuffer(
@@ -75,71 +75,6 @@ namespace SaturnIV
                 verts.Length * VertexPositionColor.SizeInBytes,
                 BufferUsage.None);
             vertBuffer.SetData(verts);
-        }
-
-        /// <summary>
-        /// Renders a bounding sphere using different colors for each axis.
-        /// </summary>
-        /// <param name="sphere">The sphere to render.</param>
-        /// <param name="graphicsDevice">The graphics device to use when rendering.</param>
-        /// <param name="view">The current view matrix.</param>
-        /// <param name="projection">The current projection matrix.</param>
-        /// <param name="xyColor">The color for the XY circle.</param>
-        /// <param name="xzColor">The color for the XZ circle.</param>
-        /// <param name="yzColor">The color for the YZ circle.</param>
-        public static void Render(
-            BoundingSphere sphere,
-            GraphicsDevice graphicsDevice,
-            Matrix view,
-            Matrix projection,
-            Color xyColor,
-            Color xzColor,
-            Color yzColor)
-        {
-            if (vertBuffer == null)
-                InitializeGraphics(graphicsDevice, 30);
-
-            graphicsDevice.VertexDeclaration = vertDecl;
-            graphicsDevice.Vertices[0].SetSource(
-                vertBuffer,
-                0,
-                VertexPositionColor.SizeInBytes);
-
-            effect.World =
-                Matrix.CreateScale(sphere.Radius) *
-                Matrix.CreateTranslation(sphere.Center);
-            effect.View = view;
-            effect.Projection = projection;
-            effect.DiffuseColor = xyColor.ToVector3();
-
-            effect.Begin();
-            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-            {
-                pass.Begin();
-
-                //render each circle individually
-                graphicsDevice.DrawPrimitives(
-                      PrimitiveType.LineStrip,
-                      0,
-                      sphereResolution);
-
-                effect.DiffuseColor = xzColor.ToVector3();
-                effect.CommitChanges();
-                graphicsDevice.DrawPrimitives(
-                      PrimitiveType.LineStrip,
-                      sphereResolution + 1,
-                      sphereResolution);
-
-                effect.DiffuseColor = yzColor.ToVector3();
-                effect.CommitChanges();
-                graphicsDevice.DrawPrimitives(
-                      PrimitiveType.LineStrip,
-                      (sphereResolution + 1) * 2,
-                      sphereResolution);
-
-                pass.End();
-            }
-            effect.End();
         }
 
         /// <summary>
@@ -212,33 +147,23 @@ namespace SaturnIV
                   vertBuffer,
                   0,
                   VertexPositionColor.SizeInBytes);
-
             effect.World =
                   Matrix.CreateScale(radius) *
                   Matrix.CreateTranslation(center);
+            effect.VertexColorEnabled = true;
+            effect.LightingEnabled = false;
             effect.View = view;
             effect.Projection = projection;
-            effect.DiffuseColor = color.ToVector3();
+            //effect.DiffuseColor = color.ToVector3();
 
             effect.Begin();
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
                 pass.Begin();
-
-                //render each circle individually
-         //       graphicsDevice.DrawPrimitives(
-         //             PrimitiveType.LineStrip,
-         //             0,
-         //             sphereResolution);
                 graphicsDevice.DrawPrimitives(
                       PrimitiveType.LineStrip,
                       sphereResolution + 1,
                       sphereResolution);
-         //       graphicsDevice.DrawPrimitives(
-        //              PrimitiveType.LineStrip,
-        //              (sphereResolution + 1) * 2,
-        //              sphereResolution);
-
                 pass.End();
             }
             effect.End();

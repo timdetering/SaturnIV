@@ -54,7 +54,7 @@ namespace SaturnIV
 
         public void CreateExplosionVertices(float time, Vector3 expPosition)
         {
-            int particles = 40;
+            int particles = 10;
             explosionVertices = new VertexExplosion[particles * 6];
             rand = new Random();
             int i = 0;

@@ -132,21 +132,21 @@ namespace SaturnIV
             if (trailEmitter != null)
                 trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
+            if (thisObject.isProjectile)
+                thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
         }
 
-        public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor)
+        public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
         {
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
-                    foreach (weaponStruct weapon in activeWeaponList)
-                    {
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
 
                         laserEffect.Begin();
                         laserEffect.CurrentTechnique.Passes[0].Begin();
-                        shader_matrices_combined[0] = weapon.worldMatrix;// *Matrix.CreateScale(5);
+                        shader_matrices_combined[0] = weapon.worldMatrix*Matrix.CreateScale(5);
                         shader_matrices_combined[1] = weapon.worldMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
@@ -155,7 +155,6 @@ namespace SaturnIV
                         draw_set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.CurrentTechnique.Passes[0].End();
                         laserEffect.End();
-                    }
                 }
         }
 
@@ -191,13 +190,16 @@ namespace SaturnIV
             //tempData.calcInitalPath(originDirection);
             tempData.objectFileName = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].FileName;
             tempData.radius = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].SphereRadius;
-            tempData.shipModel = LoadModel(tempData.objectFileName);
+            tempData.isProjectile = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].isProjectile;
+            tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
+            if (tempData.isProjectile)
+                tempData.shipModel = LoadModel(tempData.objectFileName);
+            else
+                tempData.shipModel = LaserModelLoad(tempData.objectFileName);
             //tempData.shipModel = LaserModelLoad(tempData.objectFileName);
             tempData.objectAgility = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Agility;
             tempData.objectMass = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Mass;
-            tempData.objectThrust = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Thrust;
-            tempData.isProjectile = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].isProjectile;
-            tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
+            tempData.objectThrust = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Thrust;           
             tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius);
             tempData.missileTarget = targetObject;
             tempData.missileOrigin = weaponOrigin.modelPosition;
@@ -210,13 +212,13 @@ namespace SaturnIV
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.Direction = weaponOrigin.Direction;
             tempData.vecToTarget = weaponOrigin.Direction;
-           // if (tempData.isProjectile)
-           // {
+          if (tempData.isProjectile)
+           {
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
-                                               200, weaponOrigin.modelPosition, weaponOrigin.Velocity);
+                                               400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
                 tempData.trailEmitter = trailEmitter;
                 //weaponOrigin.cMissileCount -= 1;
-         //   }
+            }
             //if (weaponOrigin.cMissileCount >0)
             activeWeaponList.Add(tempData);
             //isMissileHit = true;
