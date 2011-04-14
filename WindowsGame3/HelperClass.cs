@@ -140,27 +140,31 @@ namespace SaturnIV
             spriteBatch.End();
         }
 
-        private void UpdateInput()
+        public string UpdateInput()
         {
             oldKeyboardState = currentKeyboardState;
             currentKeyboardState = Keyboard.GetState();
-
+            textString = "";
             Keys[] pressedKeys;
+            
             pressedKeys = currentKeyboardState.GetPressedKeys();
+            if (pressedKeys.Count() > 0)
+                textString = pressedKeys[0].ToString();
+            //foreach (Keys key in pressedKeys)
+            //{
+               // if (oldKeyboardState.IsKeyUp(key))
+               // {
+                 //   if (key == Keys.Back) // overflows
+                   //     textString = textString.Remove(textString.Length - 1, 1);
+                   // else
+                     //   if (key == Keys.Space)
+                       //     textString = textString.Insert(textString.Length, " ");
+                       // else
+                         //   textString += key.ToString();
 
-            foreach (Keys key in pressedKeys)
-            {
-                if (oldKeyboardState.IsKeyUp(key))
-                {
-                    if (key == Keys.Back) // overflows
-                        textString = textString.Remove(textString.Length - 1, 1);
-                    else
-                        if (key == Keys.Space)
-                            textString = textString.Insert(textString.Length, " ");
-                        else
-                            textString += key.ToString();
-                }
-            }
+                //}
+            //}
+                return textString;
         } 
 
     }
