@@ -16,6 +16,9 @@ namespace SaturnIV
 {
     class HelperClass
     {
+        KeyboardState oldKeyboardState;
+        KeyboardState currentKeyboardState;
+        string textString;
         private float _FPS = 0f, _TotalTime = 0f, _DisplayFPS = 0f;
         Random rand = new Random();
         /// <summary>
@@ -136,6 +139,29 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, FpsText, FPSPos, Color.White);
             spriteBatch.End();
         }
+
+        private void UpdateInput()
+        {
+            oldKeyboardState = currentKeyboardState;
+            currentKeyboardState = Keyboard.GetState();
+
+            Keys[] pressedKeys;
+            pressedKeys = currentKeyboardState.GetPressedKeys();
+
+            foreach (Keys key in pressedKeys)
+            {
+                if (oldKeyboardState.IsKeyUp(key))
+                {
+                    if (key == Keys.Back) // overflows
+                        textString = textString.Remove(textString.Length - 1, 1);
+                    else
+                        if (key == Keys.Space)
+                            textString = textString.Insert(textString.Length, " ");
+                        else
+                            textString += key.ToString();
+                }
+            }
+        } 
 
     }
 
