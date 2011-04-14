@@ -323,9 +323,54 @@ namespace SaturnIV
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
-            setMouseState();
             mouseStateCurrent = Mouse.GetState();
             // Slow Wayyyyy Down the Key Stroke Input!!!!!!!!!! //
+
+            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                mouseStatePrevious.LeftButton == ButtonState.Released)
+            {
+                isLclicked = true;
+                isLdown = false;
+            }
+            else if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                     mouseStatePrevious.LeftButton == ButtonState.Pressed)
+            {
+                isLclicked = false;
+                isLdown = true;
+            }
+            else
+            {
+                isLclicked = false;
+                isLdown = false;
+            }
+
+            if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
+    mouseStatePrevious.RightButton == ButtonState.Released)
+            {
+                isRclicked = true;
+                isRdown = false;
+            }
+            else if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
+         mouseStatePrevious.RightButton == ButtonState.Pressed)
+            {
+                isRclicked = false;
+                isRdown = true;
+            }
+            else
+            {
+                isRclicked = false;
+                isRdown = false;
+            }
+
+            if (isRclicked && isEditMode)
+            {
+                int rLen = rNameList.capitalShipNames.Count;
+                int i = rand.Next(0, rLen);
+                tmpShipName = rNameList.capitalShipNames[i];
+                rNameList.capitalShipNames.Remove(tmpShipName);
+                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
+            }
+
             if (currentTime - lastKeyPressTime > 100)
             {
                 if (keyboardState.IsKeyDown(Keys.E) && !isEditMode)
@@ -335,14 +380,7 @@ namespace SaturnIV
                 }
                 else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
                     isEditMode = false;
-                if (isRclicked && isEditMode)
-                {
-                    int rLen = rNameList.capitalShipNames.Count;
-                    int i = rand.Next(0, rLen);
-                    tmpShipName = rNameList.capitalShipNames[i];
-                    rNameList.capitalShipNames.Remove(tmpShipName);
-                    activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
-                }
+
 
                 // Chat Mode Handler //
                 if (keyboardState.IsKeyDown(Keys.C) && !oldkeyboardState.IsKeyDown(Keys.C))
@@ -389,6 +427,8 @@ namespace SaturnIV
                     playerShip.pylonIndex = 0;
                 lastWeaponFireTime = currentTime;
             }
+
+            
                 mouseStatePrevious = mouseStateCurrent;
                 oldkeyboardState = keyboardState;
 }
@@ -532,7 +572,8 @@ namespace SaturnIV
 
             messageBuffer = new StringBuilder();
             //System.GC.GetTotalMemory(true);
-            messageBuffer.AppendFormat("Memory {0}", System.GC.GetTotalMemory(true) + "\n");
+            messageBuffer.AppendFormat("Right Click"+ isRclicked + "\n");
+            messageBuffer.AppendFormat("Left Click "+ isLclicked + "\n");
        //     if (selectedObject !=null)
        //     messageBuffer.AppendFormat("Zoom {0}",ourCamera.zoomFactor + "\n");
       //      messageBuffer.AppendFormat("CameraOffset Y {0}", ourCamera.cameraOffset2.Y + "\n");
@@ -550,44 +591,10 @@ namespace SaturnIV
 
         }
 
-        private void setMouseState()
+        public void setMouseState()
         {
 
-            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                mouseStatePrevious.LeftButton == ButtonState.Released)
-            {
-                isLclicked = true;
-                isLdown = false;
-            }
-            else if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                     mouseStatePrevious.LeftButton == ButtonState.Pressed)
-            {
-                isLclicked = false;
-                isLdown = true;
-            }
-            else
-            {
-                isLclicked = false;
-                isLdown = false;
-            }
-
-            if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-    mouseStatePrevious.RightButton == ButtonState.Released)
-            {
-                isRclicked = true;
-                isRdown = false;
-            }
-            else if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-         mouseStatePrevious.RightButton == ButtonState.Pressed)
-            {
-                isRclicked = false;
-                isRdown = true;
-            }
-            else
-            {
-                isRclicked = false;
-                isRdown = false;
-            }
+            
         }
 
         Vector3 mouse3dVector
