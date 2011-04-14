@@ -35,6 +35,7 @@ namespace SaturnIV
         HelperClass helperClass;
         double lastWeaponFireTime;
         gameServer gServer;
+        gameClient gClient;
         Texture2D HUD;
         Texture2D HUD_Target;
         Texture2D HUDAutoTargetIcon;
@@ -79,6 +80,8 @@ namespace SaturnIV
         public renderTriangle firingArc;
         public Camera ourCamera;
         bool isEditMode = false;
+        bool isServer = false;
+        bool isClient = false;
 
         int screenX, screenY, screenCenterX, screenCenterY;
         ParticleSystem projectileTrailParticles, sparkParticles;
@@ -148,7 +151,7 @@ namespace SaturnIV
 
             //Network Stuff
             gServer = new gameServer();
-            gServer.initializeServer();
+            gClient = new gameClient();
 
             base.Initialize();
         }
@@ -333,6 +336,12 @@ namespace SaturnIV
 
           if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
                 serializeClass();
+
+          if (keyboardState.IsKeyDown(Keys.F1))
+          {
+              isServer = true;
+              gServer.initializeServer();
+          }
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
                 mouseStatePrevious.LeftButton == ButtonState.Released)
