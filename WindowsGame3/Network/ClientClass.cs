@@ -13,46 +13,16 @@ namespace SaturnIV
         {
             config = new NetPeerConfiguration("saturniv"); // needs to be same on client and server!
             client = new NetClient(config);
-            client.Connect("127.0.0.1", 14242);
+            client.Start();
+            client.Connect("192.168.0.5", 14242);
+
         }
 
         public void Update()
         {
-            //
-            // Collect input
-            //
-            int xinput = 0;
-            int yinput = 0;
-
-            if (xinput != 0 || yinput != 0)
-            {
-                //
-                // If there's input; send it to server
-                //
-                NetOutgoingMessage om = client.CreateMessage();
-                om.Write(xinput); // very inefficient to send a full Int32 (4 bytes) but we'll use this for simplicity
-                om.Write(yinput);
-                client.SendMessage(om, NetDeliveryMethod.Unreliable);
-            }
-
-            // read messages
-            NetIncomingMessage msg;
-            while ((msg = client.ReadMessage()) != null)
-            {
-                switch (msg.MessageType)
-                {
-                    case NetIncomingMessageType.DiscoveryResponse:
-                        // just connect to first server discovered
-                        client.Connect(msg.SenderEndpoint);
-                        break;
-                    case NetIncomingMessageType.Data:
-                        // server sent a position update
-                        long who = msg.ReadInt64();
-                        int x = msg.ReadInt32();
-                        int y = msg.ReadInt32();
-                        break;
-                }
-            }
+            NetOutgoingMessage sendMsg = client.CreateMessage();
+            sendMsg.Write("Chat");
+            client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
         }
     }
 }
