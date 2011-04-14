@@ -7,6 +7,7 @@ namespace SaturnIV
 {
     class gameClient
     {
+        String newChatMsg;
         NetClient client;
         NetPeerConfiguration config;
         public void initializeNetwork()
@@ -18,11 +19,15 @@ namespace SaturnIV
 
         }
 
-        public void Update()
+        public void Update(String send)
         {
-            NetOutgoingMessage sendMsg = client.CreateMessage();
-            sendMsg.Write("Chat");
-            client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
-        }
+            if (send != null)
+            {
+                NetOutgoingMessage sendMsg = client.CreateMessage();
+                sendMsg.Write(send);
+                client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
+            }
+
+       }
     }
 }
