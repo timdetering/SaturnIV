@@ -50,15 +50,18 @@ namespace SaturnIV
                         break;
                 }
                 server.Recycle(msg);
-
             }
         }
-        //
-        // send position updates 30 times per second
-        //
-        //double now = NetTime.Now;
-        //  if (now > nextSendUpdates)
-        //  {
-
+        public void SendChat(String send)
+        {
+            if (send != null)
+            {
+                if (send.Length > 0)
+                    send = send.Substring(0, 1);
+                NetOutgoingMessage sendMsg = server.CreateMessage();
+                sendMsg.Write(send);
+                //server.SendMessage(sendMsg,
+            }
+        }
     }
 }

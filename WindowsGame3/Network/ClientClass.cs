@@ -21,6 +21,10 @@ namespace SaturnIV
 
         public void Update(String send)
         {
+        }
+
+        public void SendChat(String send)
+        {
             if (send != null)
             {
                 if (send.Length > 0)
@@ -29,7 +33,6 @@ namespace SaturnIV
                 sendMsg.Write(send);
                 client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
             }
-
-       }
+        }
     }
 }

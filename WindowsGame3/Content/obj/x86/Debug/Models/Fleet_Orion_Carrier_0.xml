@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Carrier</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -273,7 +273,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_Carrier_Badge_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -319,7 +319,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_Carrier_Engine_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -365,7 +365,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Innate_ResourceEXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -411,7 +411,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_Carrier_LOD2_TEX_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -457,7 +457,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Fighter_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -503,7 +503,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Fighter_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -549,7 +549,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Corvette_EXPOR</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -595,7 +595,7 @@
     <Resource ID="#Resource8" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Corvette_EXPOR0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -641,7 +641,7 @@
     <Resource ID="#Resource9" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_Carrier_Engine_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -687,7 +687,7 @@
     <Resource ID="#Resource10" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Innate_ResourceEXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -733,7 +733,7 @@
     <Resource ID="#Resource11" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_Carrier_Badge_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -779,7 +779,7 @@
     <Resource ID="#Resource12" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Frigate_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -825,7 +825,7 @@
     <Resource ID="#Resource13" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Production_Frigate_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -871,7 +871,7 @@
     <Resource ID="#Resource14" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Module_PlatformControl_EX</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -917,7 +917,7 @@
     <Resource ID="#Resource15" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Module_Hyperspace_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -963,7 +963,7 @@
     <Resource ID="#Resource16" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Sensors_AdvancedArray_EXP</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1009,7 +1009,7 @@
     <Resource ID="#Resource17" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_C_Sensors_AdvancedArray_EXP0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Orion_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

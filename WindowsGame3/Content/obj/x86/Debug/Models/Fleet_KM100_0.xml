@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>rocket</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_KM100.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_KM100.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>03 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_KM100.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_KM100.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -55,6 +55,6 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed.jpg</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\BED02182\Fleet_KM100.fbm\Metal_Seamed.jpg</ExternalReference>
   </ExternalReferences>
 </XnaContent>

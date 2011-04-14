@@ -206,11 +206,6 @@
       <Processor>ModelProcessor</Processor>
       <ProcessorParameters_GenerateTangentFrames>True</ProcessorParameters_GenerateTangentFrames>
     </Compile>
-    <Compile Include="Models\test.X">
-      <Name>test</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Eriax_Carrier.FBX">
       <Name>Eriax_Carrier</Name>
       <Importer>FbxImporter</Importer>

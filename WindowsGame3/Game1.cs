@@ -34,6 +34,7 @@ namespace SaturnIV
         SpriteBatch spriteBatch;
         HelperClass helperClass;
         double lastWeaponFireTime;
+        double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
         Texture2D HUD;
@@ -86,7 +87,7 @@ namespace SaturnIV
         int screenX, screenY, screenCenterX, screenCenterY;
         ParticleSystem projectileTrailParticles, sparkParticles;
         ParticleEmitter sparkEmitter;
-
+        public string chatMessage;
         
         guiClass Gui;
 
@@ -278,6 +279,7 @@ namespace SaturnIV
         protected override void Update(GameTime gameTime)
         {
             processInput(gameTime);
+
             Gui.update(mouseStateCurrent,mouseStatePrevious);
             if (!isEditMode)
                 updateObjects(gameTime);
@@ -319,94 +321,66 @@ namespace SaturnIV
 
         protected void processInput(GameTime gameTime)
         {
-            String keypress;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
+            setMouseState();
             mouseStateCurrent = Mouse.GetState();
-
-            // Get the game pad state.
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back ==
-                ButtonState.Pressed)
-                this.Exit();
-
-            if (keyboardState.IsKeyDown(Keys.E) && !isEditMode)
+            // Slow Wayyyyy Down the Key Stroke Input!!!!!!!!!! //
+            if (currentTime - lastKeyPressTime > 100)
             {
-                isEditMode = true;
-                ourCamera.offsetDistance = new Vector3(0, 2000, 100);
-           }
-            else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
-                isEditMode = false;
+                if (keyboardState.IsKeyDown(Keys.E) && !isEditMode)
+                {
+                    isEditMode = true;
+                    ourCamera.offsetDistance = new Vector3(0, 2000, 100);
+                }
+                else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
+                    isEditMode = false;
+                if (isRclicked && isEditMode)
+                {
+                    int rLen = rNameList.capitalShipNames.Count;
+                    int i = rand.Next(0, rLen);
+                    tmpShipName = rNameList.capitalShipNames[i];
+                    rNameList.capitalShipNames.Remove(tmpShipName);
+                    activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
+                }
 
+                // Chat Mode Handler //
+                if (keyboardState.IsKeyDown(Keys.C) && !oldkeyboardState.IsKeyDown(Keys.C))
+                {
+                    if (isChat)
+                        isChat = false;
+                    else
+                        isChat = true;
+                }
+                else if (isChat)
+                    chatMessage += helperClass.UpdateInput();
 
-            if (keyboardState.IsKeyDown(Keys.C) &&  !oldkeyboardState.IsKeyDown(Keys.C))
-            {
-                isChat = true;
-            } else
-            if (isChat)
-                gClient.Update(helperClass.UpdateInput());
-                
-          if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
-                serializeClass();
+                if (isChat && keyboardState.IsKeyDown(Keys.Enter) && !oldkeyboardState.IsKeyDown(Keys.Enter))
+                {
+                    if (isClient)
+                        gClient.SendChat(chatMessage);
+                    chatMessage = "";
+                }
+                // Edit mode save Handler
+                if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
+                    serializeClass();
 
-          if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
-          {
-              isServer = true;
-              isClient = false;
-              gServer.initializeServer();
-          }
-          else if (keyboardState.IsKeyDown(Keys.F2) && !isServer && !isClient)
-          {
-              isServer = false;
-              isClient = true;
-              gClient.initializeNetwork();
-          }
-
-            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                mouseStatePrevious.LeftButton == ButtonState.Released)
-            {
-                isLclicked = true;
-                isLdown = false;
-            }
-            else if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                     mouseStatePrevious.LeftButton == ButtonState.Pressed)
-            {
-                isLclicked = false;
-                isLdown = true;
-            }
-            else
-            {
-                isLclicked = false;
-                isLdown = false;
+                // Turn on/off Server/Client Mode
+                if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
+                {
+                    isServer = true;
+                    isClient = false;
+                    gServer.initializeServer();
+                }
+                else if (keyboardState.IsKeyDown(Keys.F2) && !isServer && !isClient)
+                {
+                    isServer = false;
+                    isClient = true;
+                    gClient.initializeNetwork();
+                }
+                lastKeyPressTime = currentTime;
             }
 
-            if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-    mouseStatePrevious.RightButton == ButtonState.Released)
-            {
-                isRclicked = true;
-                isRdown = false;
-            }
-            else if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-         mouseStatePrevious.RightButton == ButtonState.Pressed)
-            {
-                isRclicked = false;
-                isRdown = true;
-            }
-            else
-            {
-                isRclicked = false;
-                isRdown = false;
-            }
-
-            if (isRclicked && isEditMode)
-            {
-                int rLen = rNameList.capitalShipNames.Count;
-                int i = rand.Next(0, rLen);
-                tmpShipName = rNameList.capitalShipNames[i];
-                rNameList.capitalShipNames.Remove(tmpShipName);
-                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList,gameTime, ourCamera, tmpShipName,Gui.thisItem));
-            }
             if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime))
             {
                 weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList, playerShip.pylonIndex);
@@ -415,21 +389,6 @@ namespace SaturnIV
                     playerShip.pylonIndex = 0;
                 lastWeaponFireTime = currentTime;
             }
-
-        //    if (oldkeyboardState.IsKeyDown(Keys.Q) && keyboardState.IsKeyUp(Keys.Q))
-       //     {
-       //         if (playerShip.currentWeaponIndex == playerShip.primaryWeaponIndex)
-       //             playerShip.currentWeaponIndex = weaponTypes.MissileType.KM200;
-       //         else
-       //             playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
-       //     }
-
-       //     if (keyboardState.IsKeyDown(Keys.R))
-      //      {
-      ///          playerShip.Initialize((int)shipTypes.Ships.procyon);
-      //          playerShip.initModelPosition(playerShip.modelPosition);
-      //          playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
-      //      }
                 mouseStatePrevious = mouseStateCurrent;
                 oldkeyboardState = keyboardState;
 }
@@ -589,6 +548,46 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos2, Color.White);
             spriteBatch.End();
 
+        }
+
+        private void setMouseState()
+        {
+
+            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                mouseStatePrevious.LeftButton == ButtonState.Released)
+            {
+                isLclicked = true;
+                isLdown = false;
+            }
+            else if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                     mouseStatePrevious.LeftButton == ButtonState.Pressed)
+            {
+                isLclicked = false;
+                isLdown = true;
+            }
+            else
+            {
+                isLclicked = false;
+                isLdown = false;
+            }
+
+            if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
+    mouseStatePrevious.RightButton == ButtonState.Released)
+            {
+                isRclicked = true;
+                isRdown = false;
+            }
+            else if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
+         mouseStatePrevious.RightButton == ButtonState.Pressed)
+            {
+                isRclicked = false;
+                isRdown = true;
+            }
+            else
+            {
+                isRclicked = false;
+                isRdown = false;
+            }
         }
 
         Vector3 mouse3dVector
