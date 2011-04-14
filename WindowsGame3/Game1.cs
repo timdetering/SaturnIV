@@ -292,7 +292,11 @@ namespace SaturnIV
                 helperClass.CheckForCollision(gameTime, playerShip, ref weaponsManager.activeWeaponList, ref ourExplosion);
             }
 
-            gServer.update();
+            if (isServer)
+                gServer.update();
+            if (isClient)
+                gClient.Update();
+
             base.Update(gameTime);
         }
 
@@ -337,10 +341,17 @@ namespace SaturnIV
           if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
                 serializeClass();
 
-          if (keyboardState.IsKeyDown(Keys.F1))
+          if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
           {
               isServer = true;
+              isClient = false;
               gServer.initializeServer();
+          }
+          else if (keyboardState.IsKeyDown(Keys.F1) && isServer && !isClient)
+          {
+              isServer = false;
+              isClient = true;
+              gClient.initializeNetwork();
           }
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
@@ -559,8 +570,10 @@ namespace SaturnIV
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
            // messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
            // Net Diags
-            messageBuffer.AppendFormat("Client Connected to Server: {0}", gServer.clientsConnected);
-            messageBuffer.AppendFormat("Client Output: " + gServer.fromClient);
+            messageBuffer.AppendFormat("\nClient Connected to Server: {0}", gServer.clientsConnected);
+            messageBuffer.AppendFormat("\nClient Output: " + gServer.fromClient);
+            messageBuffer.AppendFormat("\nServer Mode " + isServer);
+
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos2, Color.White);
             spriteBatch.End();
 
