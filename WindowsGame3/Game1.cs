@@ -82,7 +82,7 @@ namespace SaturnIV
         bool isEditMode = false;
         bool isServer = false;
         bool isClient = false;
-
+        bool isChat = false;
         int screenX, screenY, screenCenterX, screenCenterY;
         ParticleSystem projectileTrailParticles, sparkParticles;
         ParticleEmitter sparkEmitter;
@@ -295,7 +295,7 @@ namespace SaturnIV
             if (isServer)
                 gServer.update();
             if (isClient)
-                gClient.Update();
+                gClient.Update(null);
 
             base.Update(gameTime);
         }
@@ -319,6 +319,7 @@ namespace SaturnIV
 
         protected void processInput(GameTime gameTime)
         {
+            String keypress;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
@@ -338,6 +339,14 @@ namespace SaturnIV
             else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
                 isEditMode = false;
 
+
+            if (keyboardState.IsKeyDown(Keys.C) &&  !oldkeyboardState.IsKeyDown(Keys.C))
+            {
+                isChat = true;
+            } else
+            if (isChat)
+                gClient.Update(helperClass.UpdateInput());
+                
           if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
                 serializeClass();
 
@@ -347,7 +356,7 @@ namespace SaturnIV
               isClient = false;
               gServer.initializeServer();
           }
-          else if (keyboardState.IsKeyDown(Keys.F1) && isServer && !isClient)
+          else if (keyboardState.IsKeyDown(Keys.F2) && !isServer && !isClient)
           {
               isServer = false;
               isClient = true;
@@ -422,6 +431,7 @@ namespace SaturnIV
       //          playerShip.currentWeaponIndex = playerShip.primaryWeaponIndex;
       //      }
                 mouseStatePrevious = mouseStateCurrent;
+                oldkeyboardState = keyboardState;
 }
 
         private void buildvisableTargetList()
@@ -573,6 +583,8 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\nClient Connected to Server: {0}", gServer.clientsConnected);
             messageBuffer.AppendFormat("\nClient Output: " + gServer.fromClient);
             messageBuffer.AppendFormat("\nServer Mode " + isServer);
+            messageBuffer.AppendFormat("\nClient Mode " + isClient);
+            messageBuffer.AppendFormat("\nChat " + isChat);
 
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos2, Color.White);
             spriteBatch.End();
