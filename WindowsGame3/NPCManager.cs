@@ -62,7 +62,25 @@ namespace SaturnIV
                 {   
                     case disposition.pursue:
                         thisShip.vecToTarget = (thisShip.currentTarget.modelPosition - thisShip.modelPosition) * (float)rand.NextDouble();
-                        if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
+                        if (thisShip.objectClass == ClassesEnum.Fighter)
+                        {
+                            if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
+                            {
+                                if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
+                                {
+                                    if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0))
+                                        thisShip.pylonIndex = 0;
+                                
+                                    weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList,thisShip.pylonIndex);
+                                    thisShip.pylonIndex++;
+                                    if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
+                                        thisShip.pylonIndex = 0;
+                                    thisShip.lastWeaponFireTime = currentTime;
+                                    thisShip.isEngaging = true;
+                                }
+                            //thrustAmount = (float)rand.NextDouble();
+                            }
+                        } else if (thisShip.objectClass == ClassesEnum.Capitalship)
                         {
                             if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
                             {
@@ -76,7 +94,6 @@ namespace SaturnIV
                                 thisShip.lastWeaponFireTime = currentTime;
                                 thisShip.isEngaging = true;
                             }
-                            thrustAmount = (float)rand.NextDouble();
                         }
                         break;
                      case disposition.patrol:
@@ -112,7 +129,6 @@ namespace SaturnIV
             Vector3 rotationAmount = Vector3.Zero;
             int roll = 0;
             thisShip.vecToTarget.Normalize();
-            rotationAmount = rotationAmount * turningSpeed * elapsed;
 
             Vector3 scale, translation;
             Quaternion rotation;
@@ -123,7 +139,7 @@ namespace SaturnIV
             thisShip.right = Vector3.Cross(thisShip.Direction, thisShip.Up);
             thisShip.Up = Vector3.Cross(thisShip.right, thisShip.Direction);
             thisShip.modelRotation = Matrix.CreateFromQuaternion(rotation);
-            thisShip.modelRotation.Forward = Vector3.Lerp(thisShip.modelRotation.Forward, thisShip.vecToTarget, turningSpeed * 0.50f); ;
+            thisShip.modelRotation.Forward = Vector3.Lerp(thisShip.modelRotation.Forward, thisShip.vecToTarget, turningSpeed); ;
             if (!isEdit)
                 thrustAmount = 1.0f;
             else

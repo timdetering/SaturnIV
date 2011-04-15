@@ -98,14 +98,11 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke2.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\saturn.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\dummy.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LaserBolt2.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\sphere.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\largeSphere.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_KM100.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\WindowsGame3.exe
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\WindowsGame3.pdb
@@ -113,7 +110,6 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\R
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\WindowsGame3.exe
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\obj\x86\Debug\WindowsGame3.pdb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_battlecruiser_main_export[1]_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Antares_Battleship.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Carrier.xnb
@@ -290,3 +286,5 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FB
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\976E2476\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\976E2476\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Lidgren.Network.dll
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LRGMISSILE.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\basic_bullet.xnb

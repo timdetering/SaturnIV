@@ -370,16 +370,15 @@ namespace SaturnIV
                 activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
             }
 
-            if (currentTime - lastKeyPressTime > 20)
+            if (currentTime - lastKeyPressTime > 100)
             {
-                if (keyboardState.IsKeyDown(Keys.E) && !isEditMode)
+                if (keyboardState.IsKeyDown(Keys.E) && !isEditMode && !isChat)
                 {
                     isEditMode = true;
                     ourCamera.offsetDistance = new Vector3(0, 2000, 100);
                 }
-                else if (keyboardState.IsKeyDown(Keys.E) && isEditMode)
+                else if (keyboardState.IsKeyDown(Keys.E) && isEditMode && !isChat)
                     isEditMode = false;
-
 
                 // Chat Mode Handler //
                 if (keyboardState.IsKeyDown(Keys.Tab) && !oldkeyboardState.IsKeyDown(Keys.Tab))
@@ -396,6 +395,8 @@ namespace SaturnIV
                 {
                     if (isClient)
                         gClient.SendChat(chatMessage);
+                    if (isServer)
+                        gServer.SendChat(chatMessage);
                     chatMessage = "";
                     systemMessagePos.Y += 10;
                 }
@@ -419,7 +420,7 @@ namespace SaturnIV
                 lastKeyPressTime = currentTime;
             }
 
-            if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime))
+            if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime) && !isChat)
             {
                 weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList, playerShip.pylonIndex);
                 playerShip.pylonIndex++;

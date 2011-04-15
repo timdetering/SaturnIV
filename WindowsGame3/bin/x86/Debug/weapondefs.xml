@@ -4,8 +4,8 @@
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
       <Type>KM100</Type>
-      <Mass>1.0</Mass>
-      <Thrust>700</Thrust>
+      <Mass>0.75</Mass>
+      <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>
@@ -14,29 +14,29 @@
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>400</regenTime>
+      <regenTime>800</regenTime>
       <damageFactor>5</damageFactor>
       <range>7000</range>
     </Item>
     <Item>
-      <FileName>Models//Fleet_KM100</FileName>
+      <FileName>Models//LRGMISSILE</FileName>
       <Type>KM200G</Type>
-      <Mass>1.0</Mass>
-      <Thrust>700</Thrust>
+      <Mass>0.75</Mass>
+      <Thrust>900</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
-      <Agility>4</Agility>
+      <Agility>12</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wType>AC10</wType>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>400</regenTime>
+      <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
       <range>7000</range>
     </Item>
     <Item>
-      <FileName>Models//Laserbolt2</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>AC10</Type>
       <Mass>0.25</Mass>
       <Thrust>900</Thrust>

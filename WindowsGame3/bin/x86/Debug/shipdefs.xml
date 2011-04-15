@@ -4,11 +4,11 @@
     <Item>
       <FileName>Models//Eriax_MK1_Fighter</FileName>
       <Type>Eriax MK1 Fighter</Type>
-      <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Mass>2.0</Mass>
+      <Thrust>1200</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>10.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -17,7 +17,7 @@
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
       <AvailableWeapons>
       <Item>
-	 <weaponType>AC10</weaponType>
+	 <weaponType>KM100</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 
             4 0 0
@@ -36,10 +36,10 @@
       <FileName>Models//Eriax_MK2_Fighter</FileName>
       <Type>Eriax MK2 Fighter</Type>
       <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Thrust>800</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>6.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -203,7 +203,7 @@
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
       <AvailableWeapons>
       <Item>
-	 <weaponType>AC10</weaponType>
+	 <weaponType>KM100</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 
             4 0 0
@@ -253,10 +253,10 @@
       <FileName>Models//Fleet_SF-14AB_Tomcat</FileName>
       <Type>SF-14AB Tomcat</Type>
       <Mass>2</Mass>
-      <Thrust>500</Thrust>
+      <Thrust>900</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>6.5</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -339,11 +339,11 @@
   <Item>
       <FileName>Models//Fleet_Antares_Battleship</FileName>
       <Type>Antares Class Heavy Battleship</Type>
-      <Mass>12</Mass>
-      <Thrust>1550</Thrust>
+      <Mass>15</Mass>
+      <Thrust>1000</Thrust>
       <SphereRadius>285</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.0</Agility>
+      <Agility>1.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>400</ShieldLvl>
@@ -380,7 +380,7 @@
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
       <AvailableWeapons>
 	<Item>
-		<weaponType>AC10</weaponType>
+		<weaponType>KM200G</weaponType>
 		<ModulePositionOnShip> 0 0 0</ModulePositionOnShip>
 		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>

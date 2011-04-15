@@ -93,15 +93,15 @@ namespace SaturnIV
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisObject.objectAgility * gameSpeed;
 
-      //      if (thisObject.isHoming) // && distanceFromPlayer > 1000)
-      //      {
-                //vecToTarget = missileTarget - missileOrigin;
-             //   thisObject.vecToTarget = thisObject.missileTarget.modelPosition - thisObject.modelPosition;
-                //Direction = Vector3.Lerp(Direction, vecToTarget, 0.25f); ;
-        //    } 
-       //     else
+          if (thisObject.isHoming && thisObject.distanceFromOrigin > 1000)
+         {
 
-               // thisObject.vecToTarget = thisObject.Direction;
+                thisObject.vecToTarget = thisObject.missileTarget.modelPosition - thisObject.modelPosition;
+                thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.vecToTarget, 0.25f); ;
+           } 
+         //   else
+
+           //     thisObject.vecToTarget = thisObject.Direction;
 
             Vector3 scale, translation;
             Quaternion rotation;
@@ -113,7 +113,7 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, thisObject.vecToTarget, turningSpeed); ;
+            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, thisObject.vecToTarget, turningSpeed);
             thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
@@ -125,15 +125,15 @@ namespace SaturnIV
             thisObject.Velocity *= DragFactor;
             // Apply velocity
             thisObject.modelPosition += thisObject.Velocity * elapsed;
-            thisObject.worldMatrix = rotationMatrix;
+            thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
 
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin);
             thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             if (trailEmitter != null)
                 trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
-            if (thisObject.isProjectile)
-                thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
+          //  if (thisObject.isProjectile)
+            //    thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
         }
 
         public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
@@ -143,10 +143,9 @@ namespace SaturnIV
                 {
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
-
                         laserEffect.Begin();
                         laserEffect.CurrentTechnique.Passes[0].Begin();
-                        shader_matrices_combined[0] = weapon.worldMatrix*Matrix.CreateScale(5);
+                        shader_matrices_combined[0] = weapon.worldMatrix;
                         shader_matrices_combined[1] = weapon.worldMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
@@ -192,6 +191,7 @@ namespace SaturnIV
             tempData.radius = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].SphereRadius;
             tempData.isProjectile = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].isProjectile;
             tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
+            tempData.objectScale = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Scale;
             if (tempData.isProjectile)
                 tempData.shipModel = LoadModel(tempData.objectFileName);
             else
@@ -207,11 +207,12 @@ namespace SaturnIV
             //int highEnd = weaponOrigin.currentWeapon.ModulePositionOnShip.Count;
            // int whichPosition = rand.Next(0,weaponOrigin.currentWeapon.ModulePositionOnShip.Count);
             tempData.modelPosition = weaponOrigin.modelPosition + weaponOrigin.currentWeapon.ModulePositionOnShip[pylon];
-            //tempData.modelRotation = weaponOrigin.modelRotation;
+            tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Up = weaponOrigin.Up;
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.Direction = weaponOrigin.Direction;
             tempData.vecToTarget = weaponOrigin.Direction;
+
           if (tempData.isProjectile)
            {
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,

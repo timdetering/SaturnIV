@@ -42,8 +42,6 @@ Content\textures\saturn.xnb
 Content\textures\dummy.xnb
 Content\textures\spark.xnb
 Content\textures\31.xnb
-Content\Models\km100.xnb
-Content\Models\km200.xnb
 Content\Models\LaserBolt2.xnb
 Content\Models\sphere.xnb
 Content\Thrusters\ThrustCylinderB.xnb
@@ -65,9 +63,7 @@ Content\Models\Fleet_SF-14AB_Tomcat.xnb
 Content\Models\Eriax_Light_Crusier.xnb
 Content\Models\Fleet_Procyon_Frigate.xnb
 Content\Models\Eriax_MK4_Fighter.xnb
-Content\Models\km100.xMetal_Steel_Textured_0.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
-Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb
 Content\Hgn_battlecruiser_main_export[1]_0.xnb
 Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb
 Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb
@@ -137,3 +133,5 @@ Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1]1_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_Interceptor_EXPORT[1]_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb
+Content\Models\LRGMISSILE.xnb
+Content\Models\basic_bullet.xnb

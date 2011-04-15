@@ -398,34 +398,6 @@
       <Time>2011-04-12T20:49:36.53125-05:00</Time>
     </Item>
     <Item>
-      <Source>Models\km100.x</Source>
-      <Name>Models\km100</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xnb</Output>
-      <Time>2011-03-29T19:05:37.859375-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\km100_0.xml</Key>
-        <Value>2011-04-14T17:43:45.015625-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\km200.x</Source>
-      <Name>Models\km200</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xnb</Output>
-      <Time>2011-03-29T19:05:37.90625-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\km200_0.xml</Key>
-        <Value>2011-04-14T17:43:45.65625-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
-    </Item>
-    <Item>
       <Source>Models\LaserBolt2.x</Source>
       <Name>Models\LaserBolt2</Name>
       <Importer>XImporter</Importer>
@@ -484,12 +456,12 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_KM100.xnb</Output>
-      <Time>2011-04-01T21:32:34.052-05:00</Time>
+      <Time>2011-04-14T21:18:21.4375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2011-04-14T17:43:47.609375-05:00</Value>
+        <Value>2011-04-14T21:18:23.90625-05:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Fleet_Antares_Battleship.FBX</Source>
@@ -772,35 +744,6 @@
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb</Request>
     </Item>
     <Item>
-      <Source>Models\km100.x</Source>
-      <Importer>XImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\km100_0.xml</Output>
-      <Time>2011-03-29T19:05:37.859375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\km100.xMetal_Steel_Textured.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb</Output>
-      <Time>2011-03-29T19:05:37.890625-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\km200.x</Source>
-      <Importer>XImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\km200_0.xml</Output>
-      <Time>2011-03-29T19:05:37.90625-05:00</Time>
-    </Item>
-    <Item>
       <Source>Models\km200.xTranslucent_Glass_Tinted.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -848,22 +791,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_KM100_0.xml</Output>
-      <Time>2011-04-01T21:32:34.052-05:00</Time>
-    </Item>
-    <Item>
-      <Source>obj\x86\Debug\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CAD253F\Fleet_KM100.fbm\Metal_Seamed_0.xnb</Output>
-      <Time>2011-04-14T17:43:47.578125-05:00</Time>
+      <Time>2011-04-14T21:18:21.4375-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_Antares_Battleship.FBX</Source>
@@ -2011,6 +1939,47 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb</Output>
       <Time>2011-04-14T17:43:57.28125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\LRGMISSILE.FBX</Source>
+      <Name>Models\LRGMISSILE</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LRGMISSILE.xnb</Output>
+      <Time>2011-04-14T21:18:03.90625-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\LRGMISSILE_0.xml</Key>
+        <Value>2011-04-14T21:18:23.96875-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\LRGMISSILE.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\LRGMISSILE_0.xml</Output>
+      <Time>2011-04-14T21:18:03.90625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\basic_bullet.FBX</Source>
+      <Name>Models\basic_bullet</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\basic_bullet.xnb</Output>
+      <Time>2011-04-14T22:21:54.828125-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
+        <Value>2011-04-14T22:21:57.78125-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\basic_bullet.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
+      <Time>2011-04-14T22:21:54.828125-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

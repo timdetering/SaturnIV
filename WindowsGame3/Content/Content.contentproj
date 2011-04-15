@@ -148,18 +148,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\km100.x">
-      <Name>km100</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\km200.x">
-      <Name>km200</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\LaserBolt2.x">
       <Name>LaserBolt2</Name>
       <Importer>XImporter</Importer>
@@ -278,6 +266,16 @@
     </Compile>
     <Compile Include="Models\Eriax_MK4_Fighter.FBX">
       <Name>Eriax_MK4_Fighter</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\LRGMISSILE.FBX">
+      <Name>LRGMISSILE</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\basic_bullet.FBX">
+      <Name>basic_bullet</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

@@ -85,7 +85,7 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if (thisShipList[j].modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
-                        && missileList[i].distanceFromOrigin > 200)
+                        && missileList[i].distanceFromOrigin > 500)
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
