@@ -160,7 +160,10 @@ namespace SaturnIV
                         if (key == Keys.Space)
                             textString = textString.Insert(textString.Length, " ");
                         else
-                            textString += key.ToString();
+                            if (key == Keys.Enter)
+                                textString = textString.Insert(textString.Length, "\n");
+                            else
+                                textString += key.ToString();
 
                 }
             }
