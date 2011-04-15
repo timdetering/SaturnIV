@@ -370,7 +370,7 @@ namespace SaturnIV
                 activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
             }
 
-            if (currentTime - lastKeyPressTime > 100)
+            if (currentTime - lastKeyPressTime > 20)
             {
                 if (keyboardState.IsKeyDown(Keys.E) && !isEditMode)
                 {
@@ -382,7 +382,7 @@ namespace SaturnIV
 
 
                 // Chat Mode Handler //
-                if (keyboardState.IsKeyDown(Keys.Separator) && !oldkeyboardState.IsKeyDown(Keys.Separator))
+                if (keyboardState.IsKeyDown(Keys.Tab) && !oldkeyboardState.IsKeyDown(Keys.Tab))
                 {
                     if (isChat)
                         isChat = false;
@@ -578,24 +578,19 @@ namespace SaturnIV
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
            // messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
            // Net Diags
-            messageBuffer.AppendFormat("\nClient Connected to Server: {0}", gServer.clientsConnected);
-            messageBuffer.AppendFormat("\nClient Output: " + gServer.fromClient);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos1, Color.White);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("\nClients Connected to Server: {0}", gServer.clientsConnected);
             messageBuffer.AppendFormat("\nServer Mode " + isServer);
             messageBuffer.AppendFormat("\nClient Mode " + isClient);
             messageBuffer.AppendFormat("\nChat " + isChat);
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos1, Color.White);
-            messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("Peer: " + gServer.fromClient);
+            messageBuffer.AppendFormat("\n" + gServer.fromClient);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Blue);
-
             spriteBatch.End();
-
         }
 
         public void setMouseState()
         {
-
-            
         }
 
         Vector3 mouse3dVector
