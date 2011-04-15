@@ -43,7 +43,7 @@ namespace SaturnIV
         Texture2D HUDTargetLockIcon1, HUDTargetLockIcon2;
         Texture2D HUDMissileTrackIcon;
         Vector2 messagePos1 = new Vector2(0,0);
-        Vector2 messagePos2 = new Vector2(0,0);
+        Vector2 systemMessagePos = new Vector2(30,20);
         String HUDMessage;
 
         public Vector3[] plyonOffset;
@@ -175,8 +175,7 @@ namespace SaturnIV
             graphics.IsFullScreen = false;
             messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY 
                                       - (graphics.PreferredBackBufferHeight / 3));
-            messagePos2 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY 
-                                      + (graphics.PreferredBackBufferHeight / 3));
+           
 #endif
         }
 
@@ -383,7 +382,7 @@ namespace SaturnIV
 
 
                 // Chat Mode Handler //
-                if (keyboardState.IsKeyDown(Keys.C) && !oldkeyboardState.IsKeyDown(Keys.C))
+                if (keyboardState.IsKeyDown(Keys.Separator) && !oldkeyboardState.IsKeyDown(Keys.Separator))
                 {
                     if (isChat)
                         isChat = false;
@@ -398,6 +397,7 @@ namespace SaturnIV
                     if (isClient)
                         gClient.SendChat(chatMessage);
                     chatMessage = "";
+                    systemMessagePos.Y += 10;
                 }
                 // Edit mode save Handler
                 if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
@@ -572,8 +572,6 @@ namespace SaturnIV
 
             messageBuffer = new StringBuilder();
             //System.GC.GetTotalMemory(true);
-            messageBuffer.AppendFormat("Right Click"+ isRclicked + "\n");
-            messageBuffer.AppendFormat("Left Click "+ isLclicked + "\n");
        //     if (selectedObject !=null)
        //     messageBuffer.AppendFormat("Zoom {0}",ourCamera.zoomFactor + "\n");
       //      messageBuffer.AppendFormat("CameraOffset Y {0}", ourCamera.cameraOffset2.Y + "\n");
@@ -585,8 +583,11 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\nServer Mode " + isServer);
             messageBuffer.AppendFormat("\nClient Mode " + isClient);
             messageBuffer.AppendFormat("\nChat " + isChat);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos1, Color.White);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("Peer: " + gServer.fromClient);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Blue);
 
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos2, Color.White);
             spriteBatch.End();
 
         }
