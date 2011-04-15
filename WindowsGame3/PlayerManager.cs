@@ -89,7 +89,6 @@ namespace SaturnIV
             playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(playerShip.modelPosition);
 
-            playerShip.modelFrustum = new BoundingFrustum(viewMatrix);
             playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
             playerShip.viewMatrix = Matrix.CreateLookAt(playerShip.modelPosition, playerShip.modelPosition 
                                                         + playerShip.Direction * 2.0f, playerShip.Up);
@@ -103,7 +102,7 @@ namespace SaturnIV
                 playerShip.shipThruster.heat = 1.5f;
             }
 
-            //playerShip.modelFrustum.Matrix = playerShip.viewMatrix * projectionMatrix;
+            playerShip.modelFrustum.Matrix = playerShip.viewMatrix * playerShip.projectionMatrix;
            }
 
         /// <summary>

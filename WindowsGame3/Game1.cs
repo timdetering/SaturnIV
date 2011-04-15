@@ -88,6 +88,8 @@ namespace SaturnIV
         ParticleSystem projectileTrailParticles, sparkParticles;
         ParticleEmitter sparkEmitter;
         public string chatMessage;
+        Vector3 isFacing;
+        Vector3 isRight;
         
         guiClass Gui;
 
@@ -210,11 +212,13 @@ namespace SaturnIV
             playerShip.modelRotation = Matrix.Identity * Matrix.CreateRotationY(MathHelper.ToRadians(90));
             playerShip.Direction = Vector3.Forward;
             playerShip.Up = Vector3.Up;
+            playerShip.modelFrustum = new BoundingFrustum(Matrix.Identity);
             playerShip.modelBoundingSphere = new BoundingSphere(playerShip.modelPosition, playerShip.radius);
             playerShip.shipThruster = new Athruster();
             playerShip.shipThruster.LoadContent(this, spriteBatch);
             playerShip.weaponArray = shipDefList[shipType].AvailableWeapons;
             playerShip.currentWeapon = playerShip.weaponArray[0];
+            playerShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
         }
 
         private void loadShipData()
@@ -466,7 +470,7 @@ namespace SaturnIV
             if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
             //modelManager.DrawWithCustomEffect(playerShip.shipModel, playerShip.worldMatrix, ourCamera.viewMatrix, ourCamera.projectionMatrix, Vector3.Zero);
-            //BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+            BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //playerManager.DrawFiringArc(device, playerShip, ourCamera);
           if (playerShip.ThrusterEngaged)
                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
@@ -477,9 +481,44 @@ namespace SaturnIV
                 //            + playerShip.right * -25);
             foreach (newShipStruct npcship in activeShipList)
             {
-            modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
-               npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix,ourCamera.projectionMatrix,Color.White);
+                modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
+                npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                foreach (BoundingFrustum bf in npcship.weaponFrustum)
+                    BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+
+                for (int i = 0; i < npcship.weaponArray.Count(); i++)
+                {
+                   for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
+                   {
+                       switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
+                       {
+                           case 0:
+                               isFacing = npcship.modelRotation.Right;
+                               isRight = npcship.modelRotation.Forward;
+                               break;
+                           case 1:
+                               isFacing = npcship.modelRotation.Left;
+                               isRight = npcship.modelRotation.Backward;
+                               break;
+                           case 2:
+                               isFacing = npcship.modelRotation.Forward;
+                               isRight = npcship.modelRotation.Right;
+                               break;
+                           case 3:
+                               isFacing = npcship.modelRotation.Backward;
+                               isRight = npcship.modelRotation.Left;
+                               break;
+                       }
+                       Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
+                                                        npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
+                                                        npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
+                       firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
+                           tVec3,tVec3 + isFacing * 500 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle,
+                           tVec3 + isFacing * 500 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle);
+                   }
+               }
+                
             }
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {

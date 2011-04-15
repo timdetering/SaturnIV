@@ -179,6 +179,11 @@ namespace SaturnIV
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
             tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;
+            tempData.weaponFrustum = new List<BoundingFrustum>();
+            foreach (WeaponModule thisWeapon in tempData.weaponArray)
+                foreach (Vector4 thisOne in thisWeapon.ModulePositionOnShip)
+                    tempData.weaponFrustum.Add(new BoundingFrustum(Matrix.Identity));
+
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;

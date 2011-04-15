@@ -88,20 +88,19 @@ namespace SaturnIV
         
         public void updateMissileMovement(GameTime gameTime, float gameSpeed, weaponStruct thisObject)
         {
-            //Vector3 vecToTarget = Vector3.Zero;
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisObject.objectAgility * gameSpeed;
 
-          if (thisObject.isHoming && thisObject.distanceFromOrigin > 1000)
-         {
+          //if (thisObject.isHoming && thisObject.distanceFromOrigin > 1000)
+         //{
 
-                thisObject.vecToTarget = thisObject.missileTarget.modelPosition - thisObject.modelPosition;
-                thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.vecToTarget, 0.25f); ;
-           } 
-         //   else
+                //thisObject.vecToTarget = thisObject.missileTarget.modelPosition - thisObject.modelPosition;
+                //thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.vecToTarget, turningSpeed);
+          //} 
+          //else
 
-           //     thisObject.vecToTarget = thisObject.Direction;
+                thisObject.vecToTarget = thisObject.Direction;
 
             Vector3 scale, translation;
             Quaternion rotation;
@@ -205,17 +204,35 @@ namespace SaturnIV
             tempData.missileTarget = targetObject;
             tempData.missileOrigin = weaponOrigin.modelPosition;
             tempData.Velocity = weaponOrigin.Velocity;
-            //int highEnd = weaponOrigin.currentWeapon.ModulePositionOnShip.Count;
-           // int whichPosition = rand.Next(0,weaponOrigin.currentWeapon.ModulePositionOnShip.Count);
             Vector3 plyonVector3 = new Vector3(weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].X, 
                                                weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].Y, 
                                                weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].Z);
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
-            tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
-            tempData.Up = weaponOrigin.Up;
+            tempData.modelRotation = Matrix.Identity;
+            switch ((int)weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].W)
+            {
+                case 0:
+                    tempData.Direction = weaponOrigin.modelRotation.Right;
+                    tempData.vecToTarget = tempData.Direction;
+                    break;
+                case 1:
+                    tempData.Direction = weaponOrigin.modelRotation.Left;
+                    tempData.vecToTarget = tempData.Direction;
+                    break;
+                case 2:
+                    tempData.Direction = weaponOrigin.modelRotation.Forward;
+                    tempData.vecToTarget = tempData.Direction;
+                    break;
+                case 3:
+                    tempData.Direction = weaponOrigin.modelRotation.Backward;
+                    tempData.vecToTarget = tempData.Direction;
+                    break;
+            }
+
+            //tempData.Up = weaponOrigin.Up;
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
-            tempData.Direction = weaponOrigin.Direction;
-            tempData.vecToTarget = weaponOrigin.Direction;
+            //tempData.Direction = weaponOrigin.Direction;
+            //tempData.vecToTarget = weaponOrigin.Direction;
 
           if (tempData.isProjectile)
            {

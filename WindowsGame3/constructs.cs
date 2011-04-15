@@ -53,6 +53,7 @@ namespace SaturnIV
         public Vector3 vecToTarget;
         public BoundingSphere modelBoundingSphere;
         public BoundingFrustum modelFrustum;
+        public List<BoundingFrustum> weaponFrustum;
         public Vector3 screenCords;
         public disposition npcDisposition;
         public Vector3 destination;
