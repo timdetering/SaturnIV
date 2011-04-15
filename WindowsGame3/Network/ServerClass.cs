@@ -46,7 +46,7 @@ namespace SaturnIV
                         Console.WriteLine(msg.ReadString());
                         break;
                     case NetIncomingMessageType.Data:
-                        fromClient += msg.ReadString() + "\n";
+                        fromClient += msg.ReadString();
                         break;
                 }
                 server.Recycle(msg);
