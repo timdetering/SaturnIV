@@ -190,6 +190,7 @@ namespace SaturnIV
             tempData.objectFileName = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].FileName;
             tempData.radius = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].SphereRadius;
             tempData.isProjectile = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].isProjectile;
+            tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Scale;
             if (tempData.isProjectile)
@@ -206,7 +207,10 @@ namespace SaturnIV
             tempData.Velocity = weaponOrigin.Velocity;
             //int highEnd = weaponOrigin.currentWeapon.ModulePositionOnShip.Count;
            // int whichPosition = rand.Next(0,weaponOrigin.currentWeapon.ModulePositionOnShip.Count);
-            tempData.modelPosition = weaponOrigin.modelPosition + weaponOrigin.currentWeapon.ModulePositionOnShip[pylon];
+            Vector3 plyonVector3 = new Vector3(weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].X, 
+                                               weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].Y, 
+                                               weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].Z);
+            tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             tempData.Up = weaponOrigin.Up;
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;

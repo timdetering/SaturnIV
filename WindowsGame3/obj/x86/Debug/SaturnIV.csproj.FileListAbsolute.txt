@@ -40,15 +40,12 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\te
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke2.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\saturn.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\dummy.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LaserBolt2.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\sphere.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\largeSphere.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Light_Crusier.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_KM100.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km100.xMetal_Steel_Textured_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\WindowsGame3.exe
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\WindowsGame3.pdb
@@ -215,7 +212,6 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Mo
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_SF-14AB_Tomcat.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Procyon_Frigate.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_MK4_Fighter.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\BED02182\Fleet_KM100.fbm\Metal_Seamed_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_battlecruiser_main_export[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb
@@ -288,3 +284,5 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FB
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Lidgren.Network.dll
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LRGMISSILE.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\basic_bullet.xnb
+C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LRGMISSILE.xnb
+C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\basic_bullet.xnb

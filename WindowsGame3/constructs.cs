@@ -77,10 +77,12 @@ namespace SaturnIV
         public string team;
         public float[] EvadeDist;
         public float[] TargetPrefs;
+        public int[] ChasePrefs;
         public double lastWeaponFireTime;
         public WeaponModule[] weaponArray;
         public WeaponModule currentWeapon;
         public int pylonIndex = 0;
+        public float angleOfAttack;
     }
 
     public class weaponStruct : newShipStruct
@@ -117,6 +119,7 @@ namespace SaturnIV
         public int ShieldRegenTime;
         public float[] EvadeDist;
         public float[] TargetPrefs;
+        public int[] Chase;
         public WeaponModule[] AvailableWeapons;
         public Vector3 ThrusterPosition;
     }
@@ -136,7 +139,7 @@ namespace SaturnIV
     public class WeaponModule
     {
         public WeaponTypeEnum weaponType;
-        public Vector3[] ModulePositionOnShip;
+        public Vector4[] ModulePositionOnShip;
         public float FiringEnvelopeAngle;
     }
 
@@ -146,5 +149,13 @@ namespace SaturnIV
             Capitalship = 1,
             Carrier = 2,
             SWACS = 3
+        }
+
+        public enum DirectionEnum
+        {
+            front = 0, // Bow
+            rear = 1, // Stern
+            left = 2, // Port
+            right = 3 // Starboard
         }
 }

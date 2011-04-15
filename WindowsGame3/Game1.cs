@@ -168,8 +168,8 @@ namespace SaturnIV
 #else
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            screenX = 1280; // graphics.PreferredBackBufferWidth;
-            screenY = 720; //graphics.PreferredBackBufferHeight;
+            screenX = 800; // graphics.PreferredBackBufferWidth;
+            screenY = 600; //graphics.PreferredBackBufferHeight;
             screenCenterX = graphics.PreferredBackBufferWidth / 2;
             screenCenterY = graphics.PreferredBackBufferHeight/2;
             graphics.IsFullScreen = false;
@@ -545,6 +545,7 @@ namespace SaturnIV
                     buffer.AppendFormat("\n" + enemy.objectAlias);
                     buffer.AppendFormat("\n" + enemy.currentDisposition);
                     buffer.AppendFormat("\n" + enemy.isEngaging);
+                    buffer.AppendFormat("\nAngle Of Attack {0}:", enemy.angleOfAttack);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
