@@ -27,10 +27,9 @@ namespace SaturnIV
         {
             if (send != null)
             {
- 
                 NetOutgoingMessage sendMsg = client.CreateMessage();
                 sendMsg.Write("theDude: "+send);
-                client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
+                client.SendMessage(sendMsg, NetDeliveryMethod.Unreliable);
             }
         }
     }
