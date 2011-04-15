@@ -200,7 +200,7 @@ namespace SaturnIV
                             break;
                     }
                     thisShip.weaponFrustum[j].Matrix = Matrix.CreateLookAt(new Vector3(thisShip.modelPosition.X + thisOne.X,
-                                                        thisShip.modelPosition.Y + thisOne.Y, thisShip.modelPosition.Z + thisOne.Z), isFacing, thisShip.Up) *
+                                                        thisShip.modelPosition.Y + thisOne.Y, thisShip.modelPosition.Z + thisOne.Z), thisShip.modelPosition + isFacing, thisShip.Up) *
                                                         Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisShip.weaponArray[i].FiringEnvelopeAngle),
                                                         4.0f / 3.0f, .5f, 500f);
                     j++;

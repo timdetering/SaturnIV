@@ -483,7 +483,7 @@ namespace SaturnIV
             {
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 foreach (BoundingFrustum bf in npcship.weaponFrustum)
                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
@@ -499,15 +499,15 @@ namespace SaturnIV
                                break;
                            case 1:
                                isFacing = npcship.modelRotation.Left;
-                               isRight = npcship.modelRotation.Backward;
+                               isRight = npcship.modelRotation.Forward;
                                break;
                            case 2:
                                isFacing = npcship.modelRotation.Forward;
-                               isRight = npcship.modelRotation.Right;
+                               isRight = npcship.modelRotation.Forward;
                                break;
                            case 3:
                                isFacing = npcship.modelRotation.Backward;
-                               isRight = npcship.modelRotation.Left;
+                               isRight = npcship.modelRotation.Forward;
                                break;
                        }
                        Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
