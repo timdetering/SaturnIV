@@ -27,10 +27,9 @@ namespace SaturnIV
         {
             if (send != null)
             {
-                if (send.Length > 0)
-                    send = send.Substring(0, 1);
+ 
                 NetOutgoingMessage sendMsg = client.CreateMessage();
-                sendMsg.Write(send);
+                sendMsg.Write("theDude: "+send);
                 client.SendMessage(sendMsg, NetDeliveryMethod.ReliableOrdered);
             }
         }
