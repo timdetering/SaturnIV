@@ -29,6 +29,7 @@ namespace SaturnIV
         bool isEvading, hasEvadeVector;
         float currentTargetLevel;
         Vector3 isFacing;
+        Vector3 isRight;
         //disposition predisposition = new disposition();
         Random rand = new Random();
 
@@ -53,10 +54,10 @@ namespace SaturnIV
             // First check for Evading state and act on that first and for most!
                 if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10, 100) + otherShip.EvadeDist[(int)otherShip.objectClass])
                 {
-                  //  if (!isEvading)
-                    //    thisShip.vecToTarget = new Vector3(thisShip.Direction.X * rand.Next(10, 2200), 0, thisShip.Direction.Z * rand.Next(10, 2200));
+                    if (!isEvading)
+                        thisShip.vecToTarget = thisShip.Direction * (float)rand.NextDouble();
                     isEvading = true;
-                    thrustAmount = (float)rand.NextDouble();
+                    thrustAmount = 1.0f;
                 }
                 else
                     isEvading = false;
@@ -65,16 +66,16 @@ namespace SaturnIV
                     switch (thisShip.currentDisposition)
                     {
                         case disposition.pursue:
-                            thisShip.angleOfAttack = MathHelper.ToDegrees((float)GetSignedAngleBetween2DVectors(thisShip.Direction, thisShip.vecToTarget, thisShip.modelRotation.Right));
+                            thisShip.angleOfAttack = MathHelper.ToDegrees((float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.vecToTarget, thisShip.modelRotation.Right));
+                            thisShip.vecToTarget = Vector3.Normalize(thisShip.currentTarget.modelPosition - thisShip.modelPosition);// *(float)rand.NextDouble();
                             if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(10, 100) + weaponDefList[(int)thisShip.currentWeapon.weaponType].range)
                             {
-                                thisShip.currentDisposition = disposition.patrol;
-                                thisShip.isEngaging = false;
+                                //thisShip.currentDisposition = disposition.patrol;
+                                //thisShip.isEngaging = false;
+                                //thisShip.vecToTarget = (thisShip.currentTarget.modelPosition - thisShip.modelPosition) * (float)rand.NextDouble();
                                 break;
-                            }
-                            thisShip.vecToTarget = (thisShip.currentTarget.modelPosition - thisShip.modelPosition); // *(float)rand.NextDouble();
+                            } else
                             // Cycle Through Weapons
-
                             if (thisShip.modelFrustum.Intersects(otherShip.modelFrustum))
                             {
                                 if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
@@ -88,22 +89,9 @@ namespace SaturnIV
                                         thisShip.pylonIndex = 0;
                                     thisShip.lastWeaponFireTime = currentTime;
                                     thisShip.isEngaging = true;
+                                    break;
                                 }
-                                //thrustAmount = (float)rand.NextDouble();
-                            }
-
-                            if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisShip.currentWeapon.weaponType].regenTime)
-                            {
-                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0))
-                                    thisShip.pylonIndex = 0;
-
-                                weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisShip.pylonIndex);
-                                thisShip.pylonIndex++;
-                                if (thisShip.pylonIndex > thisShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
-                                    thisShip.pylonIndex = 0;
-                                thisShip.lastWeaponFireTime = currentTime;
-                                thisShip.isEngaging = true;
-                            }
+                            }                            
                             break;
                         case disposition.patrol:
                             //thisShip.vecToTarget = thisShip.Direction;
@@ -146,32 +134,41 @@ namespace SaturnIV
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
-            Vector3 rotationAmount = Vector3.Zero;
-            thisShip.vecToTarget.Normalize();
-            Vector3 scale, translation;
-            Quaternion rotation;
-            Matrix rotationMatrix = Matrix.CreateWorld(thisShip.modelPosition, thisShip.vecToTarget, Vector3.Up);
-            rotationMatrix.Decompose(out scale, out rotation, out translation);
+            Vector2 rotationAmount = new Vector2(0,0);
+            int roll = 0;
+            // Scale rotation amount to radians per second
+
+            if (GetSignedAngleBetweenTwoVectors(thisShip.Direction, Vector3.Normalize(thisShip.vecToTarget - thisShip.modelPosition), thisShip.modelRotation.Right)
+                < 1)
+            {
+                rotationAmount.X -= 2.0f;
+            }
+            else
+                rotationAmount.X += 2.0f;
+
+            rotationAmount = rotationAmount * turningSpeed * elapsed;
+            Matrix rotationMatrix =
+                Matrix.CreateFromAxisAngle(thisShip.Right, rotationAmount.Y) *
+                ((Matrix.CreateFromAxisAngle(thisShip.Direction, roll) *
+                Matrix.CreateFromAxisAngle(thisShip.Up, rotationAmount.X)));
+
+            thisShip.Direction = Vector3.TransformNormal(thisShip.Direction, rotationMatrix);
             thisShip.Up = Vector3.TransformNormal(thisShip.Up, rotationMatrix);
+            thisShip.Direction.Normalize();
             thisShip.Up.Normalize();
             thisShip.right = Vector3.Cross(thisShip.Direction, thisShip.Up);
             thisShip.Up = Vector3.Cross(thisShip.right, thisShip.Direction);
-            thisShip.modelRotation = Matrix.CreateFromQuaternion(rotation);
-            thisShip.modelRotation.Forward = Vector3.SmoothStep(thisShip.modelRotation.Right, thisShip.vecToTarget, turningSpeed);
-            if (!isEdit)
-                thrustAmount = 1.0f;
-            else
-                thrustAmount = 0.0f;
-            thisShip.Direction = thisShip.modelRotation.Right;
+
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
             Vector3 acceleration = force / thisShip.objectMass;
-            thisShip.Velocity += acceleration * elapsed;
+            thisShip.Velocity += acceleration * thrustAmount * elapsed;
             // Apply psuedo drag
             thisShip.Velocity *= DragFactor;
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
-            thisShip.worldMatrix = rotationMatrix;
+            thisShip.modelRotation = thisShip.modelRotation * rotationMatrix;
+            thisShip.worldMatrix = thisShip.modelRotation * rotationMatrix * Matrix.CreateTranslation(thisShip.modelPosition);
 
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition +
@@ -179,7 +176,7 @@ namespace SaturnIV
             thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
 
             //Update all Weapon Module Firing Frustums
-            int i = 0; int j = 0;
+            int i = 0; int j = 0; 
             foreach (WeaponModule thisWeapon in thisShip.weaponArray)
             {
                 foreach (Vector4 thisOne in thisWeapon.ModulePositionOnShip)
@@ -187,20 +184,24 @@ namespace SaturnIV
                     switch ((int)thisOne.W)
                     {
                         case 0:
-                            isFacing = thisShip.modelRotation.Right;
+                            isFacing = thisShip.Direction;
+                            isRight = thisShip.modelRotation.Forward;
                             break;
                         case 1:
-                            isFacing = thisShip.modelRotation.Left;
+                            isFacing = -thisShip.Direction;
+                            isRight = thisShip.modelRotation.Backward;
                             break;
                         case 2:
-                            isFacing = thisShip.modelRotation.Forward;
+                            isFacing = thisShip.right;
+                           isRight = thisShip.modelRotation.Right;
                             break;
                         case 3:
-                            isFacing = thisShip.modelRotation.Backward;
+                            isFacing = -thisShip.right;
+                            isRight = thisShip.modelRotation.Left;
                             break;
                     }
-                    thisShip.weaponFrustum[j].Matrix = Matrix.CreateLookAt(new Vector3(thisShip.modelPosition.X + thisOne.X,
-                                                        thisShip.modelPosition.Y + thisOne.Y, thisShip.modelPosition.Z + thisOne.Z), thisShip.modelPosition + isFacing, thisShip.Up) *
+                    thisShip.weaponFrustum[j].Matrix = Matrix.CreateLookAt(new Vector3(thisShip.modelPosition.X,
+                                                        thisShip.modelPosition.Y, thisShip.modelPosition.Z),thisShip.modelPosition + isFacing,thisShip.Up) *
                                                         Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisShip.weaponArray[i].FiringEnvelopeAngle),
                                                         4.0f / 3.0f, .5f, 500f);
                     j++;
@@ -234,25 +235,26 @@ namespace SaturnIV
         /// <returns>Signed angle, in radians</returns>        
         /// <remarks>All three vectors must lie along the same plane.</remarks>
 
-        public static double GetSignedAngleBetween2DVectors(Vector3 FromVector, Vector3 DestVector, Vector3 DestVectorsRight)
+        public double GetSignedAngleBetweenTwoVectors(Vector3 Source, Vector3 Dest, Vector3 DestsRight)
         {
-            FromVector.Normalize();
-            DestVector.Normalize();
-            DestVectorsRight.Normalize();
+            // We make sure all of our vectors are unit length
+            Source.Normalize();
+            Dest.Normalize();
+            DestsRight.Normalize();
 
-            float forwardDot = Vector3.Dot(FromVector, DestVector);
-            float rightDot = Vector3.Dot(FromVector, DestVectorsRight);
+            float forwardDot = Vector3.Dot(Source, Dest);
+            float rightDot = Vector3.Dot(Source, DestsRight);
 
-            // Keep dot in range to prevent rounding errors
+            // Make sure we stay in range no matter what, so Acos doesn't fail later
             forwardDot = MathHelper.Clamp(forwardDot, -1.0f, 1.0f);
 
-            double angleBetween = Math.Acos(forwardDot);
+            double angleBetween = Math.Acos((float)forwardDot);
 
             if (rightDot < 0.0f)
                 angleBetween *= -1.0f;
 
             return angleBetween;
-        }
+        } 
 
         /// <summary>
         /// Allows the game component to update itself.

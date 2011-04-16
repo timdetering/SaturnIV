@@ -486,7 +486,7 @@ namespace SaturnIV
                 //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 foreach (BoundingFrustum bf in npcship.weaponFrustum)
                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-
+                isRight = npcship.modelRotation.Right;
                 for (int i = 0; i < npcship.weaponArray.Count(); i++)
                 {
                    for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
@@ -495,27 +495,28 @@ namespace SaturnIV
                        {
                            case 0:
                                isFacing = npcship.modelRotation.Right;
-                               isRight = npcship.modelRotation.Forward;
+                             isRight = npcship.modelRotation.Forward;
                                break;
                            case 1:
                                isFacing = npcship.modelRotation.Left;
-                               isRight = npcship.modelRotation.Forward;
+                             isRight = npcship.modelRotation.Backward;
                                break;
                            case 2:
                                isFacing = npcship.modelRotation.Forward;
-                               isRight = npcship.modelRotation.Forward;
+                              isRight = npcship.modelRotation.Right;
                                break;
                            case 3:
                                isFacing = npcship.modelRotation.Backward;
-                               isRight = npcship.modelRotation.Forward;
+                             isRight = npcship.modelRotation.Left;
                                break;
                        }
                        Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
                                                         npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
                                                         npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
                        firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
-                           tVec3,tVec3 + isFacing * 500 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle,
-                           tVec3 + isFacing * 500 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle);
+                          tVec3 + isFacing * 100, 
+                           tVec3 + isFacing * 500 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 10,
+                           tVec3 + isFacing * 500 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 10);
                    }
                }
                 
