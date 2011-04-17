@@ -382,12 +382,16 @@
 	<Item>
 		<weaponType>AC10</weaponType>
 	 <ModulePositionOnShip>
-	    20 1 1 2
-	   -20 1 1 2
-	   -40 1 1 3
-	    40 1 1 3
+	    20 20 1 2
+	   -20 20 1 2
+	   -40 10 1 3
+	    40 10 1 3
+	    30 20 1 2
+	   -30 20 1 2
+	   -10 10 1 3
+	    10 10 1 3
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM200G</weaponType>

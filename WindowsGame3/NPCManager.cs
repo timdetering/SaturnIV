@@ -31,9 +31,10 @@ namespace SaturnIV
         Vector3 isFacing;
         Vector3 isRight;
         int moduleCount = 0;
+        double[] regentime;
         //disposition predisposition = new disposition();
         Random rand = new Random();
-
+       
         HelperClass helperClass = new HelperClass();
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace SaturnIV
         public NPCManager(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
+                regentime = new double[20];
         }
 
         public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ParticleSystem projectileTrailParticles,
@@ -58,7 +59,7 @@ namespace SaturnIV
                 {
                     if (!isEvading)
                         thisShip.vecToTarget = thisShip.Direction * (float)rand.NextDouble();
-                    isEvading = true;
+                    //isEvading = true;
                     thrustAmount = 1.0f;
                 }
                 else
@@ -84,10 +85,10 @@ namespace SaturnIV
                                     {
                                         if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelFrustum))
                                         {
-                                            if (currentTime - thisShip.lastWeaponFireTime > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                                            if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
                                             {
                                                 weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisWeapon,i);
-                                                thisShip.lastWeaponFireTime = currentTime;
+                                                regentime[moduleCount] = currentTime;
                                                 thisShip.isEngaging = true;
                                                 break;
                                             }

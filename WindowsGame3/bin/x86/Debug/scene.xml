@@ -2,58 +2,382 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.saveObject]">
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
-      <shipName>Red Gauntlet</shipName>
-      <shipPosition>-286.657318 0 -174.318817</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>-0.0234876871 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694974326 0.00694279373 582.9789 0 287.648346 287.8607</Matrix>
-      </shipFrustrum>
+      <shipType>Berlin Class Destroyer</shipType>
+      <shipName>Freedom</shipName>
+      <shipPosition>202.353134 0 -53.0236244</shipPosition>
+      <shipDirection>-0.8719608 0 -0.489575833</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
+      <shipType>Berlin Class Destroyer</shipType>
       <shipName>Avarice</shipName>
-      <shipPosition>-82.57833 0 76.79692</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>-0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694969 0.00694274064 -261.7397 0 81.62479 82.04316</Matrix>
-      </shipFrustrum>
+      <shipPosition>67.6141052 0 -199.8306</shipPosition>
+      <shipDirection>-0.93710494 0 -0.3490477</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
-      <shipName>Vengeance</shipName>
-      <shipPosition>158.0786 0 -229.063416</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 -0.00694969 -0.00694274064 771.197144 0 -160.325439 -159.665115</Matrix>
-      </shipFrustrum>
+      <shipType>Antares Class Heavy Battleship</shipType>
+      <shipName>Relentless</shipName>
+      <shipPosition>-314.628784 0 -340.8756</shipPosition>
+      <shipDirection>-31.1758842 0 -26.37341</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
+      <shipType>Antares Class Heavy Battleship</shipType>
+      <shipName>Intrepid</shipName>
+      <shipPosition>-405.0765 0 -758.99</shipPosition>
+      <shipDirection>0.8986975 0 0.438569039</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Leonides</shipName>
+      <shipPosition>373.98053 0 373.490967</shipPosition>
+      <shipDirection>-0.8620764 0 0.506778359</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Gauntlet</shipName>
+      <shipPosition>470.323517 0 -161.284546</shipPosition>
+      <shipDirection>-0.9858307 0 0.167743176</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Malice</shipName>
+      <shipPosition>247.83139 0 539.29425</shipPosition>
+      <shipDirection>-0.5610769 0 -0.827763736</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Gorgon</shipName>
+      <shipPosition>257.708984 0 462.966949</shipPosition>
+      <shipDirection>0.6159258 0 -0.7878042</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Firestorm</shipName>
+      <shipPosition>382.482 0 364.1093</shipPosition>
+      <shipDirection>-0.8554138 0 0.517945349</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Emancipator</shipName>
+      <shipPosition>353.495453 0 -391.964722</shipPosition>
+      <shipDirection>-0.06260063 0 0.99803865</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Conquest</shipName>
+      <shipPosition>279.820862 0 -447.8739</shipPosition>
+      <shipDirection>0.0247079581 0 0.9996947</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Crynyd</shipName>
+      <shipPosition>312.811 0 426.793457</shipPosition>
+      <shipDirection>-0.646808147 0 -0.7626528</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Adarga</shipName>
+      <shipPosition>146.788712 0 511.0359</shipPosition>
+      <shipDirection>0.4202238 0 0.9074205</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Ultima</shipName>
+      <shipPosition>163.770386 0 547.28595</shipPosition>
+      <shipDirection>-0.2590317 0 -0.965868831</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Stormhawk</shipName>
+      <shipPosition>510.337341 0 131.032</shipPosition>
+      <shipDirection>-0.544552267 0 0.838726938</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Vanguard</shipName>
+      <shipPosition>-528.2671 0 22.3176785</shipPosition>
+      <shipDirection>-0.2713537 0 -0.9624797</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Devastator</shipName>
+      <shipPosition>1473.38147 0 2618.44</shipPosition>
+      <shipDirection>-0.428772926 0 -0.9034123</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Nova Scotia</shipName>
+      <shipPosition>204.6566 0 2016.98413</shipPosition>
+      <shipDirection>0.000165593039 0 -1</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Red October</shipName>
+      <shipPosition>-1047.8103 0 445.288635</shipPosition>
+      <shipDirection>0.9294431 0 -0.368965238</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Agonizer</shipName>
+      <shipPosition>-1132.74561 0 -572.35675</shipPosition>
+      <shipDirection>0.931985855 0 0.3624945</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
       <shipName>Red Gauntlet</shipName>
-      <shipPosition>-286.657318 0 -174.318817</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>-0.0234876871 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694974326 0.00694279373 582.9789 0 287.648346 287.8607</Matrix>
-      </shipFrustrum>
+      <shipPosition>-578.968567 0 -1149.17017</shipPosition>
+      <shipDirection>0.582077 0 0.813133538</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Senlac</shipName>
+      <shipPosition>984.7441 0 -1069.36377</shipPosition>
+      <shipDirection>-0.609072 0 0.7931149</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Tyrant</shipName>
+      <shipPosition>1264.51355 0 -340.9634</shipPosition>
+      <shipDirection>-0.9652247 0 0.261421621</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Reckoning</shipName>
+      <shipPosition>1300.50122 0 1306.45581</shipPosition>
+      <shipDirection>-0.62768805 0 -0.778465</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Inexorable</shipName>
+      <shipPosition>433.157562 0 576.8684</shipPosition>
+      <shipDirection>-0.9740765 0 -0.226218671</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Tecumseh</shipName>
+      <shipPosition>-395.479828 0 -399.5786</shipPosition>
+      <shipDirection>-0.0217950922 0 -0.9997625</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Stalker</shipName>
+      <shipPosition>-726.0821 0 -691.296448</shipPosition>
+      <shipDirection>0.8244465 0 0.565939963</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Berlin Class Destroyer</shipType>
+      <shipName>Freedom</shipName>
+      <shipPosition>202.353134 0 -53.0236244</shipPosition>
+      <shipDirection>-0.8719608 0 -0.489575833</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Berlin Class Destroyer</shipType>
       <shipName>Avarice</shipName>
-      <shipPosition>-82.57833 0 76.79692</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>-0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694969 0.00694274064 -261.7397 0 81.62479 82.04316</Matrix>
-      </shipFrustrum>
+      <shipPosition>67.6141052 0 -199.8306</shipPosition>
+      <shipDirection>-0.93710494 0 -0.3490477</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
     <Item>
-      <shipType>Eriax MK3 Corvette</shipType>
-      <shipName>Vengeance</shipName>
-      <shipPosition>158.0786 0 -229.063416</shipPosition>
-      <shipDirection>1 0 0</shipDirection>
-      <shipFrustrum>
-        <Matrix>0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 -0.00694969 -0.00694274064 771.197144 0 -160.325439 -159.665115</Matrix>
-      </shipFrustrum>
+      <shipType>Antares Class Heavy Battleship</shipType>
+      <shipName>Relentless</shipName>
+      <shipPosition>-314.628784 0 -340.8756</shipPosition>
+      <shipDirection>-31.1758842 0 -26.37341</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Antares Class Heavy Battleship</shipType>
+      <shipName>Intrepid</shipName>
+      <shipPosition>-405.0765 0 -758.99</shipPosition>
+      <shipDirection>0.8986975 0 0.438569039</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Leonides</shipName>
+      <shipPosition>373.98053 0 373.490967</shipPosition>
+      <shipDirection>-0.8620764 0 0.506778359</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Gauntlet</shipName>
+      <shipPosition>470.323517 0 -161.284546</shipPosition>
+      <shipDirection>-0.9858307 0 0.167743176</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Malice</shipName>
+      <shipPosition>247.83139 0 539.29425</shipPosition>
+      <shipDirection>-0.5610769 0 -0.827763736</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Gorgon</shipName>
+      <shipPosition>257.708984 0 462.966949</shipPosition>
+      <shipDirection>0.6159258 0 -0.7878042</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Firestorm</shipName>
+      <shipPosition>382.482 0 364.1093</shipPosition>
+      <shipDirection>-0.8554138 0 0.517945349</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Emancipator</shipName>
+      <shipPosition>353.495453 0 -391.964722</shipPosition>
+      <shipDirection>-0.06260063 0 0.99803865</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Conquest</shipName>
+      <shipPosition>279.820862 0 -447.8739</shipPosition>
+      <shipDirection>0.0247079581 0 0.9996947</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Crynyd</shipName>
+      <shipPosition>312.811 0 426.793457</shipPosition>
+      <shipDirection>-0.646808147 0 -0.7626528</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Adarga</shipName>
+      <shipPosition>146.788712 0 511.0359</shipPosition>
+      <shipDirection>0.4202238 0 0.9074205</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Ultima</shipName>
+      <shipPosition>163.770386 0 547.28595</shipPosition>
+      <shipDirection>-0.2590317 0 -0.965868831</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Stormhawk</shipName>
+      <shipPosition>510.337341 0 131.032</shipPosition>
+      <shipDirection>-0.544552267 0 0.838726938</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK1 Fighter</shipType>
+      <shipName>Vanguard</shipName>
+      <shipPosition>-528.2671 0 22.3176785</shipPosition>
+      <shipDirection>-0.2713537 0 -0.9624797</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Devastator</shipName>
+      <shipPosition>1473.38147 0 2618.44</shipPosition>
+      <shipDirection>-0.428772926 0 -0.9034123</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Nova Scotia</shipName>
+      <shipPosition>204.6566 0 2016.98413</shipPosition>
+      <shipDirection>0.000165593039 0 -1</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Red October</shipName>
+      <shipPosition>-1047.8103 0 445.288635</shipPosition>
+      <shipDirection>0.9294431 0 -0.368965238</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Agonizer</shipName>
+      <shipPosition>-1132.74561 0 -572.35675</shipPosition>
+      <shipDirection>0.931985855 0 0.3624945</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>-578.968567 0 -1149.17017</shipPosition>
+      <shipDirection>0.582077 0 0.813133538</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Senlac</shipName>
+      <shipPosition>984.7441 0 -1069.36377</shipPosition>
+      <shipDirection>-0.609072 0 0.7931149</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax MK2 Fighter</shipType>
+      <shipName>Tyrant</shipName>
+      <shipPosition>1264.51355 0 -340.9634</shipPosition>
+      <shipDirection>-0.9652247 0 0.261421621</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Reckoning</shipName>
+      <shipPosition>1300.50122 0 1306.45581</shipPosition>
+      <shipDirection>-0.62768805 0 -0.778465</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Inexorable</shipName>
+      <shipPosition>433.157562 0 576.8684</shipPosition>
+      <shipDirection>-0.9740765 0 -0.226218671</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Tecumseh</shipName>
+      <shipPosition>-395.479828 0 -399.5786</shipPosition>
+      <shipDirection>-0.0217950922 0 -0.9997625</shipDirection>
+      <shipFrustrum Null="true" />
+    </Item>
+    <Item>
+      <shipType>Eriax Medium Crusier</shipType>
+      <shipName>Stalker</shipName>
+      <shipPosition>-726.0821 0 -691.296448</shipPosition>
+      <shipDirection>0.8244465 0 0.565939963</shipDirection>
+      <shipFrustrum Null="true" />
     </Item>
   </Asset>
 </XnaContent>

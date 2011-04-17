@@ -301,7 +301,7 @@ namespace SaturnIV
                     break;
             }
 
-            tempData.missileOrigin = weaponOrigin.modelPosition;
+            tempData.missileOrigin = weaponOrigin.modelPosition + plyonVector3;
             tempData.Velocity = weaponOrigin.Velocity;
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;

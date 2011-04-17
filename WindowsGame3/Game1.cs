@@ -527,7 +527,7 @@ namespace SaturnIV
                                                          npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
                                                          npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
                         firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
-                           tVec3 + isFacing * 10,
+                           tVec3 + isFacing,
                             tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
                             tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
                     }
