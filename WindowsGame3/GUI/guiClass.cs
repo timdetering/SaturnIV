@@ -22,6 +22,7 @@ namespace SaturnIV
         public int thisItem;
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
+        Rectangle entireItemRec = new Rectangle();
         
         List<MenuItem> menuItemList = new List<MenuItem>();
 
@@ -31,7 +32,8 @@ namespace SaturnIV
             changeplayership,
             save,
             load,
-            exit
+            exit,
+            none
         }
 
         public struct MenuItem
@@ -52,6 +54,7 @@ namespace SaturnIV
                 verticalStartY += 20;
                 menuItemList.Add(tempItem);
             }
+            entireItemRec = new Rectangle(horizontalStartX, 10, 200, 20 * menuItemList.Count());
         }
 
         public void initalize(Game game, ref List<shipData> shipList) 
@@ -79,51 +82,52 @@ namespace SaturnIV
         {
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
             AddRemove = false;
+            opt2Color = Color.White;
+            opt3Color = Color.White;
+            opt4Color = Color.White;
+            opt5Color = Color.White;
+
             if (rectangle2.Contains(new Point(mouseX, mouseY)))
-            {    
+            {
                 currentSelection = editOptions.addremove;
                 opt2Color = Color.Black;
             }
             else
-                opt2Color = Color.White;
-            if (rectangle3.Contains(new Point(mouseX, mouseY)))
-            {
-                currentSelection = editOptions.changeplayership;
-                opt3Color = Color.Black;
-            }
-            else
-                opt3Color = Color.White;
-            if (rectangle4.Contains(new Point(mouseX, mouseY)))
-            {
-                currentSelection = editOptions.save;
-                opt4Color = Color.Black;
-            }
-            else
-                opt4Color = Color.White;
-            if (rectangle5.Contains(new Point(mouseX, mouseY)))
-            {
-                currentSelection = editOptions.addremove;
-                opt5Color = Color.Black;
-            }
-            else
-                opt5Color = Color.White;
+                if (rectangle3.Contains(new Point(mouseX, mouseY)))
+                {
+                    currentSelection = editOptions.changeplayership;
+                    opt3Color = Color.Black;
+                }
+                else
+                    if (rectangle4.Contains(new Point(mouseX, mouseY)))
+                    {
+                        currentSelection = editOptions.save;
+                        opt4Color = Color.Black;
+                    }
+                    else
+                        if (rectangle5.Contains(new Point(mouseX, mouseY)))
+                        {
+                            currentSelection = editOptions.load;
+                            opt5Color = Color.Black;
+                        }
 
             if (currentMouse.LeftButton == ButtonState.Pressed) //&& oldMouse.LeftButton == ButtonState.Released)
             {
-                if (currentSelection == editOptions.addremove)
+                if (currentSelection == editOptions.addremove && entireItemRec.Contains(new Point(mouseX, mouseY)))
+                {
                     AddRemove = true;
+                    for (int i = 0; i < menuItemList.Count; i++)
+                    {
+                        if (menuItemList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                        {
+                            thisItem = i;
+                            break;
+                        }
+                    }
+                }
                 else
                     AddRemove = false;
             }
-            if (AddRemove)
-            {
-                for (int i = 0; i < menuItemList.Count; i++)
-                {
-                    if (menuItemList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
-                        thisItem = i;
-                }
-            }
-
         }
 
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)

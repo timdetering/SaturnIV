@@ -21,7 +21,7 @@
 	 <weaponType>KM100</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 0
-        4 0 0 0
+            4 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
       </Item>
@@ -76,7 +76,7 @@
       <Type>Eriax MK3 Corvette</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>100</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.5</Agility>
       <BelongsTo>Fleet</BelongsTo>
@@ -146,7 +146,7 @@
       <Type>Fleet Procyon Frigate</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>170</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.5</Agility>
       <BelongsTo>Eriax</BelongsTo>
@@ -181,7 +181,7 @@
       <Type>Eriax Heavy Destroyer</Type>
       <Mass>8</Mass>
       <Thrust>900</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>100</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.5</Agility>
       <BelongsTo>Eriax</BelongsTo>
@@ -220,7 +220,7 @@
       <Type>Eriax Medium Crusier</Type>
       <Mass>2</Mass>
       <Thrust>500</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>170</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.5</Agility>
       <BelongsTo>Eriax</BelongsTo>
@@ -233,45 +233,6 @@
       <AvailableWeapons>
       <Item>
 	 <weaponType>KM100</weaponType>
-	 <ModulePositionOnShip>
-	    4 0 0 2
-	   -4 0 0 2
-	   -8 0 0 3
-		8 0 0 3
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-      </Item>
-      <Item>
-	 <weaponType>KM100</weaponType>
-	 <ModulePositionOnShip>
-	    4 0 0 2
-	   -4 0 0 2
-	   -8 0 0 3
-		8 0 0 3
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-      </Item>
-      </AvailableWeapons>
-      <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>
-    <Item>
-      <FileName>Models//Eriax_MK3_Corvette</FileName>
-      <Type>Eriax MK3 Corvette</Type>
-      <Mass>3</Mass>
-      <Thrust>600</Thrust>
-      <SphereRadius>17</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>2.0</Agility>
-      <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Fighter</ShipClass>
-      <ShieldLvl>100</ShieldLvl>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
-	  <Chase> 0 1 1 0 </Chase>
-      <AvailableWeapons>
-      <Item>
-	 <weaponType>AC10</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 2
 	   -4 0 0 2
@@ -389,7 +350,7 @@
 		-6 0 0 0 
 		6 0 0 0
 		</ModulePositionOnShip>
-			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+		 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM100</weaponType>
@@ -397,7 +358,7 @@
 		4 0 0 0
 		-4 0 0 0
 		</ModulePositionOnShip>
-			 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	        <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -426,7 +387,7 @@
 	   -40 1 1 3
 	    40 1 1 3
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM200G</weaponType>
@@ -436,7 +397,7 @@
 	   -8 0 0 3
 	    8 0 0 3
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -465,7 +426,7 @@
 	   -8 0 0 3
 		8 0 0 3
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM100</weaponType>
@@ -475,7 +436,7 @@
 	   -8 0 0 3
 		8 0 0 3
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -533,7 +494,7 @@
 	   -6 0 0 0
 		6 0 0 0
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM100</weaponType>
@@ -543,7 +504,7 @@
 	   -8 0 0 0
 		8 0 0 3
 	 </ModulePositionOnShip>
-		<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>

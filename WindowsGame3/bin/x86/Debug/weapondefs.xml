@@ -16,7 +16,7 @@
       <isHoming>0</isHoming>
       <regenTime>800</regenTime>
       <damageFactor>5</damageFactor>
-      <range>7000</range>
+      <range>4000</range>
     </Item>
     <Item>
       <FileName>Models//LRGMISSILE</FileName>
@@ -33,7 +33,7 @@
       <isHoming>1</isHoming>
       <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
-      <range>7000</range>
+      <range>4000</range>
     </Item>
     <Item>
       <FileName>Models//LaserBolt2</FileName>
@@ -41,7 +41,7 @@
       <Mass>0.25</Mass>
       <Thrust>900</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>5</Scale>
+      <Scale>10</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wType>AC10</wType>
@@ -50,7 +50,7 @@
       <isHoming>0</isHoming>
       <regenTime>250</regenTime>
       <damageFactor>5</damageFactor>
-      <range>1000</range>
+      <range>2000</range>
     </Item>
   </Asset>
 </XnaContent>

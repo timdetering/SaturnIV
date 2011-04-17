@@ -76,9 +76,7 @@ namespace SaturnIV
                         directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * 200, 20);
                     }
                     else
-                    {
                         ourShip.isSelected = false;
-                    }
                 }
             }
 
@@ -99,8 +97,6 @@ namespace SaturnIV
                 sphereColor = Color.Red;
                 ischangingDirection = true;
                 mouseCurrent = Mouse.GetState();
-                //if (mouseCurrent != originalMouseState)
-                // {
                 foreach (newShipStruct ourShip in objectList)
                 {
                     if (ourShip.isSelected)
@@ -125,31 +121,10 @@ namespace SaturnIV
                         BoundingSphere sphere)
         {
             MouseState currentState = Mouse.GetState();
-            //Get Mouse Ray
-            Ray ray = currentMouseRay;
             BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 10);
 
-            //Set the K value (Tutorial 1) to high number
-            float intersectionK = float.MaxValue;
+            if (sphere.Intersects(mouseSphere)) return true;
 
-            //Loop through all characters in list stored as game variable
-            ///foreach (NPCManager npcobject in objectList)
-           // {
-                //BoundingSphere sphere = thisObject.modelBoundingSphere;
-
-                if (sphere.Intersects(mouseSphere))
-                {
-                    //if the ray intersects the transformed sphere, grab the K value
-                    //float intersectionValue = ray.Intersects(sphere).Value;
-
-                    //if k value is less (object was intersected closer than previous)
-                    //if (intersectionValue < intersectionK)
-                    // {
-                    return true;
-                    //intersectionK = intersectionValue;
-                    // }
-                }
-           // }
                 return false;
         }
 
@@ -179,16 +154,22 @@ namespace SaturnIV
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
             tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;
-            tempData.weaponFrustum = new List<BoundingFrustum>();
-            foreach (WeaponModule thisWeapon in tempData.weaponArray)
-                foreach (Vector4 thisOne in thisWeapon.ModulePositionOnShip)
-                    tempData.weaponFrustum.Add(new BoundingFrustum(Matrix.Identity));
-
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;
             tempData.ChasePrefs = shipDefList[shipIndex].Chase;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+
+            //Build Bounding Frustrum for all Weapon Modules on ship
+            tempData.moduleFrustum = new List<BoundingFrustum>();
+             int moduleCount = 0;
+             foreach (WeaponModule thisWeapon in tempData.weaponArray)
+                 for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
+                 {
+                     tempData.moduleFrustum.Add(new BoundingFrustum(Matrix.Identity));
+                     moduleCount++;
+                 }
+
             modelManager.updateShipMovement(gameTime, 5.0f,tempData,ourCamera,true);
             return tempData;
         }

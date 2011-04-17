@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+
 
 namespace SaturnIV
 {
@@ -53,7 +53,6 @@ namespace SaturnIV
         public Vector3 vecToTarget;
         public BoundingSphere modelBoundingSphere;
         public BoundingFrustum modelFrustum;
-        public List<BoundingFrustum> weaponFrustum;
         public Vector3 screenCords;
         public disposition npcDisposition;
         public Vector3 destination;
@@ -81,6 +80,7 @@ namespace SaturnIV
         public int[] ChasePrefs;
         public double lastWeaponFireTime;
         public WeaponModule[] weaponArray;
+        public List<BoundingFrustum> moduleFrustum;
         public WeaponModule currentWeapon;
         public int pylonIndex = 0;
         public float angleOfAttack;
@@ -136,7 +136,6 @@ namespace SaturnIV
         public float range;
     }
 
-    [Serializable]
     public class WeaponModule
     {
         public WeaponTypeEnum weaponType;

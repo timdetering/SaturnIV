@@ -407,7 +407,7 @@
       <Time>2009-11-25T17:05:02-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2011-04-15T19:12:25.90625-05:00</Value>
+        <Value>2011-04-16T21:35:04.484375-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -420,7 +420,7 @@
       <Time>2011-03-29T19:05:37.921875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2011-04-15T19:12:26.046875-05:00</Value>
+        <Value>2011-04-16T21:35:04.59375-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -433,7 +433,7 @@
       <Time>2011-03-29T19:05:37.96875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2011-04-15T19:12:26.125-05:00</Value>
+        <Value>2011-04-16T21:35:04.640625-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -446,7 +446,7 @@
       <Time>2011-03-29T19:05:37.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2011-04-15T19:12:26.859375-05:00</Value>
+        <Value>2011-04-16T21:35:05.1875-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -459,7 +459,7 @@
       <Time>2011-04-14T21:18:21.4375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2011-04-15T19:12:27.09375-05:00</Value>
+        <Value>2011-04-16T21:35:05.21875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -476,7 +476,7 @@
       <Time>2011-04-05T21:17:09.953125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Antares_Battleship_0.xml</Key>
-        <Value>2011-04-15T19:12:27.84375-05:00</Value>
+        <Value>2011-04-16T21:35:05.6875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_battlecruiser_main_export[1]_0.xnb</Request>
     </Item>
@@ -490,7 +490,7 @@
       <Time>2011-04-07T20:34:43.8827062-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Carrier_0.xml</Key>
-        <Value>2011-04-15T19:12:29.40625-05:00</Value>
+        <Value>2011-04-16T21:35:07.1875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb</Request>
@@ -518,7 +518,7 @@
       <Time>2011-04-07T18:04:44.2108312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_EC1_SWACS_0.xml</Key>
-        <Value>2011-04-15T19:12:31.1875-05:00</Value>
+        <Value>2011-04-16T21:35:08.28125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb</Request>
@@ -534,7 +534,7 @@
       <Time>2011-04-07T20:37:07.1483312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Heavy_Destroyer_0.xml</Key>
-        <Value>2011-04-15T19:12:31.59375-05:00</Value>
+        <Value>2011-04-16T21:35:08.609375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Request>
@@ -550,7 +550,7 @@
       <Time>2011-04-07T20:41:38.7420812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Medium_Crusier_0.xml</Key>
-        <Value>2011-04-15T19:12:31.984375-05:00</Value>
+        <Value>2011-04-16T21:35:08.921875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Request>
@@ -566,7 +566,7 @@
       <Time>2011-04-07T18:03:12.0233312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK1_Fighter_0.xml</Key>
-        <Value>2011-04-15T19:12:32.265625-05:00</Value>
+        <Value>2011-04-16T21:35:09.15625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Scout_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_Scout_Badge_EXPORT[1]_0.xnb</Request>
@@ -581,7 +581,7 @@
       <Time>2011-04-07T18:00:15.6795812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK2_Fighter_0.xml</Key>
-        <Value>2011-04-15T19:12:32.53125-05:00</Value>
+        <Value>2011-04-16T21:35:09.34375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_LF_MetaSkin_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_LF_BigGun_EXPORT[1]_0.xnb</Request>
@@ -597,7 +597,7 @@
       <Time>2011-04-07T18:02:15.9920812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK3_Corvette_0.xml</Key>
-        <Value>2011-04-15T19:12:32.953125-05:00</Value>
+        <Value>2011-04-16T21:35:09.59375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MissVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_1.xnb</Request>
@@ -613,7 +613,7 @@
       <Time>2011-04-07T21:01:31.0233312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Berlin_Destroyer_0.xml</Key>
-        <Value>2011-04-15T19:12:33.484375-05:00</Value>
+        <Value>2011-04-16T21:35:09.9375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\LeftoverUV_EXPORT[1]_0.xnb</Request>
@@ -630,7 +630,7 @@
       <Time>2011-04-07T18:10:56.1170812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Orion_Carrier_0.xml</Key>
-        <Value>2011-04-15T19:12:34.171875-05:00</Value>
+        <Value>2011-04-16T21:35:10.515625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_C_Innate_ResourceEXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Carrier_EXPORT[2]_0.xnb</Request>
@@ -653,7 +653,7 @@
       <Time>2011-04-07T18:38:15.5545812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SB-1_Lancer_0.xml</Key>
-        <Value>2011-04-15T19:12:35.109375-05:00</Value>
+        <Value>2011-04-16T21:35:11.3125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Request>
@@ -670,7 +670,7 @@
       <Time>2011-04-07T18:07:11.1014562-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SF-6_Hornet_0.xml</Key>
-        <Value>2011-04-15T19:12:35.4375-05:00</Value>
+        <Value>2011-04-16T21:35:11.546875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Scout_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\H_Scout_Badge_EXPORT[1]_0.xnb</Request>
@@ -685,7 +685,7 @@
       <Time>2011-04-07T18:09:11.8514562-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SF-14AB_Tomcat_0.xml</Key>
-        <Value>2011-04-15T19:12:35.921875-05:00</Value>
+        <Value>2011-04-16T21:35:11.890625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AssaultCorvette_Front_EXPORT_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AssaultCorvette_Burner_EXPOR_0.xnb</Request>
@@ -702,7 +702,7 @@
       <Time>2011-04-07T20:43:44.7733312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Light_Crusier_0.xml</Key>
-        <Value>2011-04-15T19:12:36.5-05:00</Value>
+        <Value>2011-04-16T21:35:12.171875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Request>
@@ -718,7 +718,7 @@
       <Time>2011-04-07T21:23:04.8358312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Procyon_Frigate_0.xml</Key>
-        <Value>2011-04-15T19:12:37.1875-05:00</Value>
+        <Value>2011-04-16T21:35:12.796875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\tex[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\badge[1]_0.xnb</Request>
@@ -737,7 +737,7 @@
       <Time>2011-04-07T20:29:27.2577062-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK4_Fighter_0.xml</Key>
-        <Value>2011-04-15T19:12:37.703125-05:00</Value>
+        <Value>2011-04-16T21:35:13.234375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_Interceptor_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb</Request>
@@ -753,7 +753,7 @@
       <Time>2011-04-14T21:18:03.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LRGMISSILE_0.xml</Key>
-        <Value>2011-04-15T19:12:37.890625-05:00</Value>
+        <Value>2011-04-16T21:35:13.375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -767,7 +767,7 @@
       <Time>2011-04-14T22:21:54.828125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
-        <Value>2011-04-15T19:12:37.984375-05:00</Value>
+        <Value>2011-04-16T21:35:13.390625-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -862,7 +862,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.59375-05:00</Time>
+      <Time>2011-04-16T21:35:06.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3].png</Source>
@@ -877,7 +877,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.59375-05:00</Time>
+      <Time>2011-04-16T21:35:06.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1].png</Source>
@@ -892,7 +892,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.59375-05:00</Time>
+      <Time>2011-04-16T21:35:06.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1].png</Source>
@@ -907,7 +907,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.609375-05:00</Time>
+      <Time>2011-04-16T21:35:06.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1].png</Source>
@@ -922,7 +922,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.609375-05:00</Time>
+      <Time>2011-04-16T21:35:06.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1].png</Source>
@@ -937,7 +937,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.65625-05:00</Time>
+      <Time>2011-04-16T21:35:06.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT[1].png</Source>
@@ -952,7 +952,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.65625-05:00</Time>
+      <Time>2011-04-16T21:35:06.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPORT[1].png</Source>
@@ -967,7 +967,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPOR_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.671875-05:00</Time>
+      <Time>2011-04-16T21:35:06.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT[1].png</Source>
@@ -982,7 +982,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.671875-05:00</Time>
+      <Time>2011-04-16T21:35:06.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPORT[1].png</Source>
@@ -997,7 +997,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPOR_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.671875-05:00</Time>
+      <Time>2011-04-16T21:35:06.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT[1].png</Source>
@@ -1012,7 +1012,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.671875-05:00</Time>
+      <Time>2011-04-16T21:35:06.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EXPORT[1].png</Source>
@@ -1027,7 +1027,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EX_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.671875-05:00</Time>
+      <Time>2011-04-16T21:35:06.46875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXPORT[1].png</Source>
@@ -1042,7 +1042,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXP_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.6875-05:00</Time>
+      <Time>2011-04-16T21:35:06.46875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[1].png</Source>
@@ -1057,7 +1057,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.6875-05:00</Time>
+      <Time>2011-04-16T21:35:06.46875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibitor_EXPORT[1].png</Source>
@@ -1072,7 +1072,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibito_0.xnb</Output>
-      <Time>2011-04-15T19:12:28.6875-05:00</Time>
+      <Time>2011-04-16T21:35:06.46875-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_EC1_SWACS.FBX</Source>
@@ -1146,7 +1146,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.4375-05:00</Time>
+      <Time>2011-04-16T21:35:08.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1].png</Source>
@@ -1161,7 +1161,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.4375-05:00</Time>
+      <Time>2011-04-16T21:35:08.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1].png</Source>
@@ -1176,7 +1176,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.4375-05:00</Time>
+      <Time>2011-04-16T21:35:08.4375-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_Medium_Crusier.FBX</Source>
@@ -1198,7 +1198,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.828125-05:00</Time>
+      <Time>2011-04-16T21:35:08.78125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\VetteBurner_EXPORT[1].png</Source>
@@ -1213,7 +1213,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.828125-05:00</Time>
+      <Time>2011-04-16T21:35:08.78125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_Badge_EXPORT[1].png</Source>
@@ -1228,7 +1228,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:31.828125-05:00</Time>
+      <Time>2011-04-16T21:35:08.78125-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_MK1_Fighter.FBX</Source>
@@ -1391,7 +1391,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:33.3125-05:00</Time>
+      <Time>2011-04-16T21:35:09.765625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\LeftoverUV_EXPORT[1].png</Source>
@@ -1406,7 +1406,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\LeftoverUV_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:33.296875-05:00</Time>
+      <Time>2011-04-16T21:35:09.75-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\Hgn_AssaultFrigate_Engine_EXPORT[5].png</Source>
@@ -1421,7 +1421,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\Hgn_AssaultFrigate_Engine_EXPORT_0.xnb</Output>
-      <Time>2011-04-15T19:12:33.296875-05:00</Time>
+      <Time>2011-04-16T21:35:09.75-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_Badge_EXPORT[1].png</Source>
@@ -1436,7 +1436,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:33.3125-05:00</Time>
+      <Time>2011-04-16T21:35:09.75-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_Orion_Carrier.FBX</Source>
@@ -1615,7 +1615,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:34.953125-05:00</Time>
+      <Time>2011-04-16T21:35:11.15625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1].png</Source>
@@ -1630,7 +1630,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:34.953125-05:00</Time>
+      <Time>2011-04-16T21:35:11.15625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Leftover_ EXPORT[1].png</Source>
@@ -1645,7 +1645,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Leftover_ EXPOR_0.xnb</Output>
-      <Time>2011-04-15T19:12:34.953125-05:00</Time>
+      <Time>2011-04-16T21:35:11.15625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Burner_EXPORT[3].png</Source>
@@ -1660,7 +1660,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Burner_EXPORT[3_0.xnb</Output>
-      <Time>2011-04-15T19:12:34.953125-05:00</Time>
+      <Time>2011-04-16T21:35:11.15625-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_SF-6_Hornet.FBX</Source>
@@ -1786,7 +1786,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.375-05:00</Time>
+      <Time>2011-04-16T21:35:12.046875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1].png</Source>
@@ -1801,7 +1801,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.375-05:00</Time>
+      <Time>2011-04-16T21:35:12.046875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1].png</Source>
@@ -1816,7 +1816,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.375-05:00</Time>
+      <Time>2011-04-16T21:35:12.046875-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_Procyon_Frigate.FBX</Source>
@@ -1838,7 +1838,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\tex[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.828125-05:00</Time>
+      <Time>2011-04-16T21:35:12.421875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\badge[1].png</Source>
@@ -1853,7 +1853,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\badge[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.828125-05:00</Time>
+      <Time>2011-04-16T21:35:12.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\gun[1].png</Source>
@@ -1868,7 +1868,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\gun[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.828125-05:00</Time>
+      <Time>2011-04-16T21:35:12.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\gun[1]1.png</Source>
@@ -1883,7 +1883,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\gun[1]1_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.828125-05:00</Time>
+      <Time>2011-04-16T21:35:12.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1].png</Source>
@@ -1898,7 +1898,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.84375-05:00</Time>
+      <Time>2011-04-16T21:35:12.4375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1]1.png</Source>
@@ -1913,7 +1913,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1]1_0.xnb</Output>
-      <Time>2011-04-15T19:12:36.84375-05:00</Time>
+      <Time>2011-04-16T21:35:12.4375-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_MK4_Fighter.FBX</Source>
@@ -1935,7 +1935,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_Interceptor_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:37.59375-05:00</Time>
+      <Time>2011-04-16T21:35:13.140625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1].png</Source>
@@ -1950,7 +1950,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:37.59375-05:00</Time>
+      <Time>2011-04-16T21:35:13.140625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1].png</Source>
@@ -1965,7 +1965,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-15T19:12:37.59375-05:00</Time>
+      <Time>2011-04-16T21:35:13.140625-05:00</Time>
     </Item>
     <Item>
       <Source>Models\LRGMISSILE.FBX</Source>

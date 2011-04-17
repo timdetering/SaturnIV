@@ -1,4 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Generic="System.Collections.Generic">
-  <Asset Type="Generic:List[SaturnIV.saveObject]" />
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>-286.657318 0 -174.318817</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>-0.0234876871 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694974326 0.00694279373 582.9789 0 287.648346 287.8607</Matrix>
+      </shipFrustrum>
+    </Item>
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Avarice</shipName>
+      <shipPosition>-82.57833 0 76.79692</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>-0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694969 0.00694274064 -261.7397 0 81.62479 82.04316</Matrix>
+      </shipFrustrum>
+    </Item>
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Vengeance</shipName>
+      <shipPosition>158.0786 0 -229.063416</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 -0.00694969 -0.00694274064 771.197144 0 -160.325439 -159.665115</Matrix>
+      </shipFrustrum>
+    </Item>
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>-286.657318 0 -174.318817</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>-0.0234876871 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694974326 0.00694279373 582.9789 0 287.648346 287.8607</Matrix>
+      </shipFrustrum>
+    </Item>
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Avarice</shipName>
+      <shipPosition>-82.57833 0 76.79692</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>-0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 0.00694969 0.00694274064 -261.7397 0 81.62479 82.04316</Matrix>
+      </shipFrustrum>
+    </Item>
+    <Item>
+      <shipType>Eriax MK3 Corvette</shipType>
+      <shipName>Vengeance</shipName>
+      <shipPosition>158.0786 0 -229.063416</shipPosition>
+      <shipDirection>1 0 0</shipDirection>
+      <shipFrustrum>
+        <Matrix>0.0234875083 0 1.00097692 0.9999759 0 4.51070833 0 0 3.38294959 0 -0.00694969 -0.00694274064 771.197144 0 -160.325439 -159.665115</Matrix>
+      </shipFrustrum>
+    </Item>
+  </Asset>
 </XnaContent>

@@ -84,6 +84,7 @@ namespace SaturnIV
         bool isServer = false;
         bool isClient = false;
         bool isChat = false;
+        bool isDebug = false;
         int screenX, screenY, screenCenterX, screenCenterY;
         ParticleSystem projectileTrailParticles, sparkParticles;
         ParticleEmitter sparkEmitter;
@@ -170,8 +171,8 @@ namespace SaturnIV
 #else
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            screenX = 800; // graphics.PreferredBackBufferWidth;
-            screenY = 600; //graphics.PreferredBackBufferHeight;
+            screenX = 1280; // graphics.PreferredBackBufferWidth;
+            screenY = 720; //graphics.PreferredBackBufferHeight;
             screenCenterX = graphics.PreferredBackBufferWidth / 2;
             screenCenterY = graphics.PreferredBackBufferHeight/2;
             graphics.IsFullScreen = false;
@@ -225,7 +226,9 @@ namespace SaturnIV
         {
             XmlReaderSettings xmlSettings = new XmlReaderSettings();
             XmlReader xmlReader = XmlReader.Create("shipdefs.xml");
+
             shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
+
             xmlReader = XmlReader.Create("weapondefs.xml");
             weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
             xmlReader = XmlReader.Create("listofnames.xml");
@@ -283,12 +286,14 @@ namespace SaturnIV
         {
             processInput(gameTime);
 
-            Gui.update(mouseStateCurrent,mouseStatePrevious);
             if (!isEditMode)
                 updateObjects(gameTime);
             else
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked,isLdown, 
-                    ref npcManager,ourCamera);
+            {
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isLdown,
+                    ref npcManager, ourCamera);
+                Gui.update(mouseStateCurrent, mouseStatePrevious);
+            }
                 ourCamera.Update(playerShip.worldMatrix);
 
             if (weaponsManager.activeWeaponList.Count > 0)
@@ -424,6 +429,11 @@ namespace SaturnIV
                 lastKeyPressTime = currentTime;
             }
 
+            if (keyboardState.IsKeyDown(Keys.Q) && !oldkeyboardState.IsKeyDown(Keys.Q) && !isDebug)
+                isDebug = true;
+            else if (keyboardState.IsKeyDown(Keys.Q) && !oldkeyboardState.IsKeyDown(Keys.Q) && isDebug)
+                isDebug = false;
+                
             if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime) && !isChat)
             {
                 weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList, playerShip.pylonIndex);
@@ -470,7 +480,7 @@ namespace SaturnIV
             if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
             modelManager.DrawModel(ourCamera,playerShip.shipModel,playerShip.worldMatrix);
             //modelManager.DrawWithCustomEffect(playerShip.shipModel, playerShip.worldMatrix, ourCamera.viewMatrix, ourCamera.projectionMatrix, Vector3.Zero);
-            BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+           // BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //playerManager.DrawFiringArc(device, playerShip, ourCamera);
           if (playerShip.ThrusterEngaged)
                playerShip.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
@@ -484,39 +494,43 @@ namespace SaturnIV
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                foreach (BoundingFrustum bf in npcship.weaponFrustum)
-                    BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+
+                if (isDebug)
+                {
+                   //foreach (BoundingFrustum bf in npcship.moduleFrustum)
+                  // BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 isRight = npcship.modelRotation.Right;
                 for (int i = 0; i < npcship.weaponArray.Count(); i++)
                 {
-                   for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
-                   {
-                       switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
-                       {
-                           case 0:
-                               isFacing = npcship.modelRotation.Right;
-                             isRight = npcship.modelRotation.Forward;
-                               break;
-                           case 1:
-                               isFacing = npcship.modelRotation.Left;
-                             isRight = npcship.modelRotation.Backward;
-                               break;
-                           case 2:
-                               isFacing = npcship.modelRotation.Forward;
-                              isRight = npcship.modelRotation.Right;
-                               break;
-                           case 3:
-                               isFacing = npcship.modelRotation.Backward;
-                             isRight = npcship.modelRotation.Left;
-                               break;
-                       }
-                       Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
-                                                        npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
-                                                        npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
-                       firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
-                          tVec3 + isFacing * 100, 
-                           tVec3 + isFacing * 500 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 10,
-                           tVec3 + isFacing * 500 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 10);
+                    for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
+                    {
+                        switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
+                        {
+                            case 0:
+                                isFacing = npcship.modelRotation.Right;
+                                isRight = npcship.modelRotation.Forward;
+                                break;
+                            case 1:
+                                isFacing = npcship.modelRotation.Left;
+                                isRight = npcship.modelRotation.Backward;
+                                break;
+                            case 2:
+                                isFacing = npcship.modelRotation.Forward;
+                                isRight = npcship.modelRotation.Right;
+                                break;
+                            case 3:
+                                isFacing = npcship.modelRotation.Backward;
+                                isRight = npcship.modelRotation.Left;
+                                break;
+                        }
+                        Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
+                                                         npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
+                                                         npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
+                        firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
+                           tVec3 + isFacing * 10,
+                            tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
+                            tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
+                    }
                    }
                }
                 
@@ -526,7 +540,7 @@ namespace SaturnIV
                 if (theList.isProjectile)
                     modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
                 else
-                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,theList);
+                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor,theList);
             }
 
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
@@ -534,9 +548,9 @@ namespace SaturnIV
                 ourExplosion.expList = new List<VertexExplosion[]>();
             //spriteBatch.End();
             //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-           DrawHUD(gameTime);
+            DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
-            DrawHUDTargets();
+            //DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);

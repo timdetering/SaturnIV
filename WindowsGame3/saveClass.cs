@@ -14,6 +14,7 @@ namespace SaturnIV
         public string shipName;
         public Vector3 shipPosition;
         public Vector3 shipDirection;
+        public BoundingFrustum[] shipFrustrum;
 
     }
 
