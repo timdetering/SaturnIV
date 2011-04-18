@@ -277,9 +277,9 @@ namespace SaturnIV
             tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius);
             tempData.missileTarget = targetObject;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
-            Vector3 plyonVector3 = new Vector3(weaponOrigin.currentWeapon.ModulePositionOnShip[modIndex].X,
-                                   weaponOrigin.currentWeapon.ModulePositionOnShip[modIndex].Y,
-                                   weaponOrigin.currentWeapon.ModulePositionOnShip[modIndex].Z);
+            Vector3 plyonVector3 = new Vector3(thisWeapon.ModulePositionOnShip[modIndex].X,
+                                   thisWeapon.ModulePositionOnShip[modIndex].Y,
+                                   thisWeapon.ModulePositionOnShip[modIndex].Z);
 
             switch ((int)thisWeapon.ModulePositionOnShip[modIndex].W)
             {
@@ -305,8 +305,8 @@ namespace SaturnIV
             tempData.Velocity = weaponOrigin.Velocity;
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;
-            tempData.modelRotation.Forward = tempData.vecToTarget;
-            tempData.Direction = tempData.Direction;
+        //    tempData.modelRotation.Forward = tempData.vecToTarget;
+           // tempData.Direction = tempData.Direction;
 
             if (tempData.isProjectile)
             {

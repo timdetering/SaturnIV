@@ -85,9 +85,6 @@ Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibito_0.xnb
 Content\MineVette_EXPORT[1]_0.xnb
 Content\VetteBurner_EXPORT[1]_0.xnb
 Content\MineVette_Badge_EXPORT[1]_0.xnb
-Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
-Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
-Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb
 Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_EXPORT[1]_0.xnb
 Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb
 Content\FBX\7BA229BC\Eriax_Medium_Crusier.fbm\LaserVette_Badge_EXPORT[1]_0.xnb
@@ -135,3 +132,6 @@ Content\FBX\A6672A21\Fleet_Procyon_Frigate.fbm\turret[1]1_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_Interceptor_EXPORT[1]_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\Vgr_interceptor_gun_EXPORT[1]_0.xnb
 Content\FBX\FBAA2833\Eriax_MK4_Fighter.fbm\V_Interceptor_Badge_EXPORT[1]_0.xnb
+Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
+Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
+Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb

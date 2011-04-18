@@ -320,9 +320,11 @@ namespace SaturnIV
                 for (int j = 0; j < activeShipList.Count; j++)
                 {
                     if (activeShipList[j] != activeShipList[i])
-                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j]);
+                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j],j);
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
+               // activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
+                
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }
@@ -494,43 +496,43 @@ namespace SaturnIV
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-
+               // BoundingBoxRenderer.Render(npcship.modelBB, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 if (isDebug)
                 {
-                   //foreach (BoundingFrustum bf in npcship.moduleFrustum)
-                  // BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                isRight = npcship.modelRotation.Right;
-                for (int i = 0; i < npcship.weaponArray.Count(); i++)
-                {
-                    for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
+                    foreach (BoundingFrustum bf in npcship.moduleFrustum)
+                    BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                    isRight = npcship.modelRotation.Right;
+                    for (int i = 0; i < npcship.weaponArray.Count(); i++)
                     {
-                        switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
+                        for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
                         {
+                            switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
+                            {
                             case 0:
-                                isFacing = npcship.modelRotation.Right;
-                                isRight = npcship.modelRotation.Forward;
+                                isFacing = npcship.Direction;
+                                isRight = npcship.right;
                                 break;
                             case 1:
-                                isFacing = npcship.modelRotation.Left;
-                                isRight = npcship.modelRotation.Backward;
+                                isFacing = -npcship.Direction;
+                                isRight = -npcship.right;
                                 break;
                             case 2:
-                                isFacing = npcship.modelRotation.Forward;
+                                isFacing = npcship.right;
                                 isRight = npcship.modelRotation.Right;
                                 break;
                             case 3:
-                                isFacing = npcship.modelRotation.Backward;
+                                isFacing = -npcship.right;
                                 isRight = npcship.modelRotation.Left;
                                 break;
-                        }
-                        Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
+                            }
+                            Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
                                                          npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
                                                          npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
-                        firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
-                           tVec3 + isFacing,
-                            tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
-                            tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
-                    }
+                            //firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
+                            //    tVec3 + isFacing,
+                            //    tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
+                           //     tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
+                       }
                    }
                }
                 
@@ -550,7 +552,7 @@ namespace SaturnIV
             //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
-            //DrawHUDTargets();
+            DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
@@ -592,15 +594,25 @@ namespace SaturnIV
             StringBuilder messageBuffer = new StringBuilder();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             Vector2 fontPos = new Vector2(0,0);
+            int i=0;
             foreach (newShipStruct enemy in activeShipList)
             {
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y);
-                    buffer.AppendFormat("\n" + enemy.objectAlias);
-                    buffer.AppendFormat("\n" + enemy.currentDisposition);
-                    buffer.AppendFormat("\n" + enemy.isEngaging);
-                    buffer.AppendFormat("\nAngle Of Attack {0}:", enemy.angleOfAttack);
+                    buffer.AppendFormat("\n" + i);
+                    if (enemy.currentTarget != null)
+                    {
+                        buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
+                        buffer.AppendFormat("\n{0} ",enemy.vecToTarget);
+                        buffer.AppendFormat("\n[TArget Index]{0} ", enemy.currentTargetIndex);
+                        buffer.AppendFormat("\n[Attack Angle]{0} ", enemy.angleOfAttack);
+                    }
+                    buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
+                    buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
+                    buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
+                    buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
+                    i++;
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             spriteBatch.End();

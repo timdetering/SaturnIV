@@ -531,14 +531,14 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.xnb</Output>
-      <Time>2011-04-07T20:37:07.1483312-05:00</Time>
+      <Time>2011-04-17T20:16:09.5-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Heavy_Destroyer_0.xml</Key>
-        <Value>2011-04-16T21:35:08.609375-05:00</Value>
+        <Value>2011-04-17T20:16:16.296875-05:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Eriax_Medium_Crusier.FBX</Source>
@@ -1131,52 +1131,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Eriax_Heavy_Destroyer_0.xml</Output>
-      <Time>2011-04-07T20:37:07.1483312-05:00</Time>
-    </Item>
-    <Item>
-      <Source>obj\x86\Debug\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-16T21:35:08.4375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>obj\x86\Debug\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-16T21:35:08.4375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>obj\x86\Debug\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\A69F2A3C\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-16T21:35:08.4375-05:00</Time>
+      <Time>2011-04-17T20:16:09.5-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_Medium_Crusier.FBX</Source>
@@ -1980,6 +1935,51 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
       <Time>2011-04-14T22:21:54.828125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Output>
+      <Time>2011-04-17T20:15:17.078125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Output>
+      <Time>2011-04-17T20:15:17.0625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
+      <Time>2011-04-17T20:15:17.0625-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

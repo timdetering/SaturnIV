@@ -6,7 +6,7 @@
       <Type>Eriax MK1 Fighter</Type>
       <Mass>2.0</Mass>
       <Thrust>1200</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>10.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
@@ -18,12 +18,12 @@
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
       <Item>
-	 <weaponType>KM100</weaponType>
+	 <weaponType>AC10</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 0
             4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
 	 <weaponType>KM100</weaponType>
@@ -31,7 +31,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -41,14 +41,14 @@
       <Type>Eriax MK2 Fighter</Type>
       <Mass>2</Mass>
       <Thrust>800</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>6.0</Agility>
-      <BelongsTo>Fleet</BelongsTo>
+      <Agility>9.0</Agility>
+      <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>200 500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -75,17 +75,17 @@
       <FileName>Models//Eriax_MK3_Corvette</FileName>
       <Type>Eriax MK3 Corvette</Type>
       <Mass>2</Mass>
-      <Thrust>500</Thrust>
-      <SphereRadius>100</SphereRadius>
+      <Thrust>600</Thrust>
+      <SphereRadius>75</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.5</Agility>
+      <Agility>3.5</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>150 500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
-	  <Chase> 1 1 1 1 </Chase>
+	  <Chase> 1 1 1 0 </Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>AC10</weaponType>
@@ -93,7 +93,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
 	 <weaponType>KM100</weaponType>
@@ -101,7 +101,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -128,7 +128,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
 	 <weaponType>KM100</weaponType>
@@ -136,59 +136,24 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>
-    <Item>
-      <FileName>Models//Fleet_Procyon_Frigate</FileName>
-      <Type>Fleet Procyon Frigate</Type>
-      <Mass>2</Mass>
-      <Thrust>500</Thrust>
-      <SphereRadius>170</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>2.5</Agility>
-      <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Fighter</ShipClass>
-      <ShieldLvl>100</ShieldLvl>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
-	  <Chase> 1 1 1 1 </Chase>
-      <AvailableWeapons>
-      <Item>
-	 <weaponType>AC10</weaponType>
-	 <ModulePositionOnShip>
-	    4 0 0 0
-	   -4 0 0 0
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-      </Item>
-      <Item>
-	 <weaponType>KM100</weaponType>
-	 <ModulePositionOnShip>
-	    4 0 0 0
-	   -4 0 0 0
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-      </Item>
-      </AvailableWeapons>
-      <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>
+    </Item>  
     <Item>
       <FileName>Models//Eriax_Heavy_Destroyer</FileName>
       <Type>Eriax Heavy Destroyer</Type>
       <Mass>8</Mass>
       <Thrust>900</Thrust>
-      <SphereRadius>100</SphereRadius>
+      <SphereRadius>200</SphereRadius>
       <Scale>1</Scale>
-      <Agility>0.5</Agility>
+      <Agility>4.0</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>150 1000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 0 1 0 0 </Chase>
       <AvailableWeapons>
@@ -227,7 +192,7 @@
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>300 1000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 0 1 1 0 </Chase>
       <AvailableWeapons>
@@ -259,14 +224,14 @@
       <Type>SF-14AB Tomcat</Type>
       <Mass>2</Mass>
       <Thrust>900</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <SphereRadius>45</SphereRadius>
       <Scale>1</Scale>
       <Agility>6.5</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>100 900 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -278,7 +243,7 @@
 	   -8 0 0 3
 		8 0 0 3
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
 	 <weaponType>KM100</weaponType>
@@ -288,7 +253,7 @@
 	   -8 0 0 3
 		8 0 0 3
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -297,15 +262,15 @@
       <FileName>Models//Fleet_SB-1_Lancer</FileName>
       <Type>SB-1 Lancer Gunship</Type>
       <Mass>1.5</Mass>
-      <Thrust>550</Thrust>
-      <SphereRadius>17</SphereRadius>
+      <Thrust>750</Thrust>
+      <SphereRadius>35</SphereRadius>
       <Scale>1</Scale>
-      <Agility>4.0</Agility>
+      <Agility>7.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 200 50</EvadeDist>
+      <EvadeDist>100 800 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -315,7 +280,7 @@
 		-6 0 0 0
 		6 0 0 0
 		</ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM100</weaponType>
@@ -323,7 +288,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -335,12 +300,12 @@
       <Thrust>550</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
-      <Agility>4.0</Agility>
+      <Agility>8.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 200 50</EvadeDist>
+      <EvadeDist>500 1500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
 	  	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -382,8 +347,8 @@
 	<Item>
 		<weaponType>AC10</weaponType>
 	 <ModulePositionOnShip>
-	    20 20 1 2
-	   -20 20 1 2
+	    20 40 1 2
+	   -20 40 1 2
 	   -40 10 1 3
 	    40 10 1 3
 	    30 20 1 2
@@ -391,17 +356,17 @@
 	   -10 10 1 3
 	    10 10 1 3
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>25</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM200G</weaponType>
 	 <ModulePositionOnShip>
-	    4 0 0 2
-	   -4 0 0 2
-	   -8 0 0 3
-	    8 0 0 3
+	    4 0 0 0
+	   -4 0 0 0
+	   -8 0 0 1
+	    8 0 0 1
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>25</FiringEnvelopeAngle>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -415,10 +380,10 @@
       <Scale>1</Scale>
       <Agility>2.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <ShipClass>Carrier</ShipClass>
+      <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>400</ShieldLvl>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>0 1000 500 0</EvadeDist>
+      <EvadeDist>0 2000 500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
 	  <Chase> 0 1 1 0 </Chase>
       <AvailableWeapons>
@@ -457,7 +422,7 @@
       <ShipClass>Carrier</ShipClass>
       <ShieldLvl>400</ShieldLvl>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>0 1000 500 0</EvadeDist>
+      <EvadeDist>0 4000 500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
 	  <Chase>0 0 0 0</Chase>
       <AvailableWeapons>
@@ -479,14 +444,14 @@
       <Type>Procyon Class Frigate</Type>
       <Mass>10</Mass>
       <Thrust>1050</Thrust>
-      <SphereRadius>285</SphereRadius>
+      <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <ShipClass>Carrier</ShipClass>
-      <ShieldLvl>400</ShieldLvl>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldLvl>200</ShieldLvl>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>0 1000 500 0</EvadeDist>
+      <EvadeDist>0 3000 500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
 	  <Chase> 0 1 1 0 </Chase>
       <AvailableWeapons>

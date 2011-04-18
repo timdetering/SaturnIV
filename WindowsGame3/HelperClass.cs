@@ -43,7 +43,7 @@ namespace SaturnIV
                      RandomBetween(minBoxPos, maxBoxPos));
         }
 
-        public static Vector3 RandomDirection()
+        public Vector3 RandomDirection()
         {
             Random random = new Random();
 
@@ -56,27 +56,7 @@ namespace SaturnIV
             return direction;
         }
 
-        public bool CheckForCollision(GameTime gameTime, List<newShipStruct> shipList, List<weaponStruct> missileBSList, 
-                                       ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
-        {
-            foreach (newShipStruct ship in shipList)
-            {
-                foreach (weaponStruct missile in missileBSList)
-                {
-                    if (ship.modelBoundingSphere.Contains(missile.modelBoundingSphere) == ContainmentType.Contains 
-                        && missile.distanceFromOrigin > 200)
-                    {
-                        Vector3 currentExpLocation = missile.modelPosition;
-                        missileList.Remove(missile);
-                        ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                        currentExpLocation);
-                        ship.objectArmorLvl -= (ship.objectArmorFactor / 100) * missile.damageFactor;
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+
         //CheckForCollision give to object lists
         public bool CheckForCollision(GameTime gameTime, ref List<newShipStruct> thisShipList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
@@ -85,7 +65,7 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if (thisShipList[j].modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
-                        && missileList[i].distanceFromOrigin > 500)
+                        && missileList[i].distanceFromOrigin > 300)
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
@@ -168,10 +148,66 @@ namespace SaturnIV
                 }
             }
                 return textString;
-        } 
+        }
 
-    }
+        public static BoundingBox updateBB(Vector3 min,Vector3 max,Vector3 position)
+        {
+            Vector3 min1 = Vector3.Transform(min, Matrix.CreateTranslation(position));
+            Vector3 max1 = Vector3.Transform(max, Matrix.CreateTranslation(position));
+            return new BoundingBox(min1, max1);
+        }
 
-   
-        
+        public static BoundingBox ComputeBoundingBox(Model _model,Vector3 position)
+        {
+            Vector3 min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
+            Vector3 max = new Vector3(float.MinValue, float.MinValue, float.MinValue);
+
+            Matrix[] bones = new Matrix[_model.Bones.Count];
+            _model.CopyAbsoluteBoneTransformsTo(bones);
+
+            List<Vector3> vertices = new List<Vector3>();
+
+            foreach (ModelMesh mesh in _model.Meshes)
+            {
+                //get the transform of the current mesh
+                Matrix transform = bones[mesh.ParentBone.Index];// *worldMatrix;
+
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    //get the current mesh info
+                    int stride = part.VertexStride;
+                    int numVertices = part.NumVertices;
+                    byte[] verticesData = new byte[stride * numVertices];
+
+                    mesh.VertexBuffer.GetData(verticesData);
+
+                    for (int i = 0; i < verticesData.Length; i += stride)
+                    {
+                        float x = BitConverter.ToSingle(verticesData, i);
+                        float y = BitConverter.ToSingle(verticesData, i + sizeof(float));
+                        float z = BitConverter.ToSingle(verticesData, i + 2 * sizeof(float));
+
+                        Vector3 vector = new Vector3(x, y, z);
+                        //apply transform to the current point
+                        vector = Vector3.Transform(vector, transform);
+
+                        vertices.Add(vector);
+
+                        if (vector.X < min.X) min.X = vector.X;
+                        if (vector.Y < min.Y) min.Y = vector.Y;
+                        if (vector.Z < min.Z) min.Z = vector.Z;
+                        if (vector.X > max.X) max.X = vector.X;
+                        if (vector.Y > max.Y) max.Y = vector.Y;
+                        if (vector.Z > max.Z) max.Z = vector.Z;
+                    }
+                }
+            }
+
+            //_VerticesCount = vertices.Count;
+            //_Vertices = vertices.ToArray();
+            min = Vector3.Transform(min, Matrix.CreateTranslation(position));
+           max = Vector3.Transform(max, Matrix.CreateTranslation(position));
+            return new BoundingBox(min, max);
+        }
+    }      
 }

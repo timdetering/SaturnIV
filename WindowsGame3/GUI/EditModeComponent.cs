@@ -73,7 +73,7 @@ namespace SaturnIV
                     if (checkResult && isClicked)
                     {
                         ourShip.isSelected = true;
-                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * 200, 20);
+                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * ourShip.radius*2, 15);
                     }
                     else
                         ourShip.isSelected = false;
@@ -88,7 +88,7 @@ namespace SaturnIV
                     {
                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
                         npcManager.updateShipMovement(gameTime,5.0f,ourShip,ourCamera,true);
-                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
+                        directionSphere.Center = ourShip.modelPosition +  ourShip.Direction * ourShip.radius*2;
                     }
                 }
             }
@@ -102,7 +102,7 @@ namespace SaturnIV
                     if (ourShip.isSelected)
                     {
                         ourShip.vecToTarget = mouse3dVector;
-                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * 100;
+                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 2;
                         npcManager.updateShipMovement(gameTime,5.0f,ourShip,ourCamera,true);
                         mouseOld = mouseCurrent;
                     }
@@ -150,6 +150,7 @@ namespace SaturnIV
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[shipIndex].SphereRadius);
+            tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel,tempData.modelPosition);
             tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
@@ -179,10 +180,10 @@ namespace SaturnIV
             grid.drawLines();
             foreach (newShipStruct enemy in shipList)
                {
-                   fLine.Draw(enemy.modelPosition + enemy.Direction * 25,
-                          enemy.modelPosition + enemy.Direction * 300,
+                   fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
+                          enemy.modelPosition + enemy.Direction * enemy.radius * 3,
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                   BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * 100, 5);
+                   BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius * 2, 15);
                    BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius, 
                                                         GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    if (enemy.isSelected)

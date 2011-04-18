@@ -63,7 +63,7 @@ namespace SaturnIV
             for (int i = 0; i < 8; i++)
             {
                 verts[i].Position = corners[i];
-                verts[i].Color = color;
+                verts[i].Color = new Color(new Vector4(0f, 1f, 0f, 0.25f));
             }
 
             graphicsDevice.VertexDeclaration = vertDecl;

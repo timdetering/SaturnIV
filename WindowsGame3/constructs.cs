@@ -52,6 +52,7 @@ namespace SaturnIV
         public Matrix modelRotation;
         public Vector3 vecToTarget;
         public BoundingSphere modelBoundingSphere;
+        public BoundingBox modelBB;
         public BoundingFrustum modelFrustum;
         public Vector3 screenCords;
         public disposition npcDisposition;
@@ -74,6 +75,7 @@ namespace SaturnIV
         public bool isVisable;
         public bool isSelected;
         public bool isEngaging;
+        public bool isEvading;
         public string team;
         public float[] EvadeDist;
         public float[] TargetPrefs;
@@ -84,6 +86,8 @@ namespace SaturnIV
         public WeaponModule currentWeapon;
         public int pylonIndex = 0;
         public float angleOfAttack;
+        public float currentTargetLevel;
+        public int currentTargetIndex;
     }
 
     public class weaponStruct : newShipStruct
