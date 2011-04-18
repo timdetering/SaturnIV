@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Minelayer Corvette</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -93,7 +93,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>MineVette_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -139,7 +139,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>VetteBurner_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -185,7 +185,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>MineVette_Badge_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -231,7 +231,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>VetteBurner_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -277,7 +277,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>MineVette_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Light_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -322,9 +322,9 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\E6102596\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1].png</ExternalReference>
     <ExternalReference ID="#External2" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\..\Desktop\Vaygr\Minelayer Corvette\default</ExternalReference>
-    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\E6102596\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\E6102596\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1].png</ExternalReference>
   </ExternalReferences>
 </XnaContent>

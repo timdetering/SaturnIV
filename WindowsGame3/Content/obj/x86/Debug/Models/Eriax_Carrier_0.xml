@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Flagship</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -423,7 +423,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Inside_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -469,7 +469,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Badge_L_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -515,7 +515,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Badge_R_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -561,7 +561,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Burner_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -607,7 +607,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>Explorer_Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -653,7 +653,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Back_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -699,7 +699,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Back_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -745,7 +745,7 @@
     <Resource ID="#Resource8" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Inside_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -791,7 +791,7 @@
     <Resource ID="#Resource9" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Badge_R_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -837,7 +837,7 @@
     <Resource ID="#Resource10" Type="Graphics:BasicMaterialContent">
       <Name>V_MS_Burner_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -883,7 +883,7 @@
     <Resource ID="#Resource11" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Fighter_EXPOR</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -929,7 +929,7 @@
     <Resource ID="#Resource12" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Fighter_EXPOR0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -975,7 +975,7 @@
     <Resource ID="#Resource13" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Corvette_EXPO</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1021,7 +1021,7 @@
     <Resource ID="#Resource14" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Corvette_EXPO0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1067,7 +1067,7 @@
     <Resource ID="#Resource15" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Frigate_EXPOR</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1113,7 +1113,7 @@
     <Resource ID="#Resource16" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_Frigate_EXPOR0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1159,7 +1159,7 @@
     <Resource ID="#Resource17" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_CapShip__EXPO</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1205,7 +1205,7 @@
     <Resource ID="#Resource18" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Production_CapShip__EXPO0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1251,7 +1251,7 @@
     <Resource ID="#Resource19" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_FireControl_EXPOR</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1297,7 +1297,7 @@
     <Resource ID="#Resource20" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_FireControl_EXPOR0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1343,7 +1343,7 @@
     <Resource ID="#Resource21" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_PlatformControl_E</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1389,7 +1389,7 @@
     <Resource ID="#Resource22" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_PlatformControl_E0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1435,7 +1435,7 @@
     <Resource ID="#Resource23" Type="Graphics:BasicMaterialContent">
       <Name>Vgr_MS_Sensors_AdvancedArray_EX</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1481,7 +1481,7 @@
     <Resource ID="#Resource24" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_Hyperspace_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1527,7 +1527,7 @@
     <Resource ID="#Resource25" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_Hyperspace_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1573,7 +1573,7 @@
     <Resource ID="#Resource26" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_HyperspaceInhibit</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1619,7 +1619,7 @@
     <Resource ID="#Resource27" Type="Graphics:BasicMaterialContent">
       <Name>Hgn_MS_Module_HyperspaceInhibit0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Carrier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -1664,21 +1664,21 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1].png</ExternalReference>
     <ExternalReference ID="#External2" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\..\Desktop\Vaygr\Flagship\default</ExternalReference>
-    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3].png</ExternalReference>
-    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External5" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External6" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External7" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External8" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External9" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External10" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External11" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External12" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External13" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External14" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External15" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External16" TargetType="Graphics:TextureContent">..\FBX\93E230A\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibitor_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3].png</ExternalReference>
+    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External5" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External6" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External7" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External8" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External9" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External10" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External11" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External12" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External13" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External14" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External15" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External16" TargetType="Graphics:TextureContent">..\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibitor_EXPORT[1].png</ExternalReference>
   </ExternalReferences>
 </XnaContent>

@@ -85,9 +85,10 @@ namespace SaturnIV
         public List<BoundingFrustum> moduleFrustum;
         public WeaponModule currentWeapon;
         public int pylonIndex = 0;
-        public float angleOfAttack;
+        public double angleOfAttack;
         public float currentTargetLevel;
         public int currentTargetIndex;
+            public float runDistance;
     }
 
     public class weaponStruct : newShipStruct

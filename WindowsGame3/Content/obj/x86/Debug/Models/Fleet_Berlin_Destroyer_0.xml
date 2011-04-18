@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Ion Cannon Frigate</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -108,7 +108,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>FrontUV_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -154,7 +154,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>FrontUV_Badge_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -200,7 +200,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>LeftoverUV_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -246,7 +246,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>FrontUV_LOD2_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -292,7 +292,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>FrontUV_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -338,7 +338,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>LeftoverUV_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Berlin_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -383,10 +383,10 @@
     </Resource>
   </Resources>
   <ExternalReferences>
-    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\58EA26D5\Fleet_Berlin_Destroyer.fbm\FrontUV_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_EXPORT[1].png</ExternalReference>
     <ExternalReference ID="#External2" TargetType="Graphics:TextureContent">..\..\..\..\..\..\..\..\Desktop\Hiigaran\Ion Cannon Frigate\default</ExternalReference>
-    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\58EA26D5\Fleet_Berlin_Destroyer.fbm\LeftoverUV_EXPORT[1].png</ExternalReference>
-    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\58EA26D5\Fleet_Berlin_Destroyer.fbm\Hgn_AssaultFrigate_Engine_EXPORT[5].png</ExternalReference>
-    <ExternalReference ID="#External5" TargetType="Graphics:TextureContent">..\FBX\58EA26D5\Fleet_Berlin_Destroyer.fbm\FrontUV_Badge_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\LeftoverUV_EXPORT[1].png</ExternalReference>
+    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\Hgn_AssaultFrigate_Engine_EXPORT[5].png</ExternalReference>
+    <ExternalReference ID="#External5" TargetType="Graphics:TextureContent">..\FBX\CFD72A92\Fleet_Berlin_Destroyer.fbm\FrontUV_Badge_EXPORT[1].png</ExternalReference>
   </ExternalReferences>
 </XnaContent>
