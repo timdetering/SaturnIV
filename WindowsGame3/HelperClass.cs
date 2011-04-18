@@ -49,7 +49,7 @@ namespace SaturnIV
 
             Vector3 direction = new Vector3(
                     RandomBetween(-1.0f, 1.0f),
-                    RandomBetween(-1.0f, 1.0f),
+                    0.0f,
                     RandomBetween(-1.0f, 1.0f));
             direction.Normalize();
 

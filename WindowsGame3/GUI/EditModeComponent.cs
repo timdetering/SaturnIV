@@ -101,7 +101,7 @@ namespace SaturnIV
                 {
                     if (ourShip.isSelected)
                     {
-                        ourShip.vecToTarget = mouse3dVector;
+                        ourShip.targetPosition = mouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 2;
                         npcManager.updateShipMovement(gameTime,5.0f,ourShip,ourCamera,true);
                         mouseOld = mouseCurrent;
@@ -145,7 +145,8 @@ namespace SaturnIV
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));
             tempData.Direction = Vector3.Right;
-            tempData.vecToTarget = HelperClass.RandomPosition(-5000,5000); //Vector3.Right * HelperClass.RandomDirection();
+            tempData.targetPosition = HelperClass.RandomPosition(-5000,5000);
+            tempData.wayPointPosition = tempData.targetPosition;
             tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;

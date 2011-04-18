@@ -50,13 +50,13 @@ namespace SaturnIV
         public Matrix worldMatrix;
         public Vector3 modelPosition;
         public Matrix modelRotation;
-        public Vector3 vecToTarget;
         public BoundingSphere modelBoundingSphere;
         public BoundingBox modelBB;
         public BoundingFrustum modelFrustum;
         public Vector3 screenCords;
         public disposition npcDisposition;
-        public Vector3 destination;
+        public Vector3 targetPosition;
+        public Vector3 wayPointPosition;
         public newShipStruct currentTarget;
         public disposition currentDisposition;
         public Model shipModel;

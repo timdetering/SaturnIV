@@ -251,7 +251,7 @@ namespace SaturnIV
             {
                 saveMe = new saveObject();
                 saveMe.shipPosition = ship.modelPosition;
-                saveMe.shipDirection = ship.vecToTarget;
+                saveMe.shipDirection = ship.targetPosition;
                 saveMe.shipName = ship.objectAlias;
                 saveMe.shipType = ship.objectType;
                 saveList.Add(saveMe);
@@ -603,12 +603,13 @@ namespace SaturnIV
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
-                        buffer.AppendFormat("Waypoint {0} ",enemy.vecToTarget);
+                        buffer.AppendFormat("[Target Pos]{0}-",enemy.targetPosition);
                         buffer.AppendFormat("\n[TArget Index]{0} ", enemy.currentTargetIndex);
-                        buffer.AppendFormat("\n[Attack Angle]{0} ", enemy.angleOfAttack);
+                        buffer.AppendFormat("\n[Attack Angle]{0}\n", enemy.angleOfAttack);
                     }
-                    buffer.AppendFormat("Waypoint {0} ", enemy.vecToTarget);
+                    buffer.AppendFormat("Waypoint {0} ", enemy.targetPosition);
                     buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
+                    
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");

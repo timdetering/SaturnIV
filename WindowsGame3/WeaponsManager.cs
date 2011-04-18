@@ -95,23 +95,23 @@ namespace SaturnIV
           if (thisObject.isHoming)
           {
 
-               thisObject.vecToTarget = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
-               thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.vecToTarget, turningSpeed);
+               thisObject.targetPosition = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
+               thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.targetPosition, turningSpeed);
           } 
           else
-                thisObject.vecToTarget = thisObject.Direction;
+                thisObject.targetPosition = thisObject.Direction;
 
             Vector3 scale, translation;
             Quaternion rotation;
-            Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.vecToTarget, Vector3.Up);
+            Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
             rotationMatrix.Decompose(out scale, out rotation, out translation);
             thisObject.Up = Vector3.TransformNormal(thisObject.Up, rotationMatrix);
             thisObject.Up.Normalize();
-            thisObject.right = Vector3.Cross(thisObject.vecToTarget, thisObject.Up);
+            thisObject.right = Vector3.Cross(thisObject.targetPosition, thisObject.Up);
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, thisObject.vecToTarget, turningSpeed);
+            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, thisObject.targetPosition, turningSpeed);
             thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
@@ -177,10 +177,10 @@ namespace SaturnIV
             weaponStruct tempData;
             ParticleEmitter trailEmitter;
             tempData = new weaponStruct();
-            tempData.vecToTarget = Vector3.Zero;
+            tempData.targetPosition = Vector3.Zero;
             
             if (targetObject != null)
-                tempData.vecToTarget = targetObject.modelPosition - weaponOrigin.modelPosition;
+                tempData.targetPosition = targetObject.modelPosition - weaponOrigin.modelPosition;
 
             //Calculate path
             //tempData.calcInitalPath(originDirection);
@@ -211,26 +211,26 @@ namespace SaturnIV
             {
                 case 0:
                     tempData.Direction = weaponOrigin.modelRotation.Right;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 1:
                     tempData.Direction = weaponOrigin.modelRotation.Left;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 2:
                     tempData.Direction = weaponOrigin.modelRotation.Forward;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 3:
                     tempData.Direction = weaponOrigin.modelRotation.Backward;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
             }
 
             //tempData.Up = weaponOrigin.Up;
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.Direction = weaponOrigin.Direction;
-            tempData.vecToTarget = weaponOrigin.Direction;
+            tempData.targetPosition = weaponOrigin.Direction;
 
           if (tempData.isProjectile)
            {
@@ -253,10 +253,10 @@ namespace SaturnIV
             weaponStruct tempData;
             ParticleEmitter trailEmitter;
             tempData = new weaponStruct();
-            tempData.vecToTarget = Vector3.Zero;
+            tempData.targetPosition = Vector3.Zero;
 
             if (targetObject != null)
-                tempData.vecToTarget = targetObject.modelPosition - weaponOrigin.modelPosition;
+                tempData.targetPosition = targetObject.modelPosition - weaponOrigin.modelPosition;
 
             //Calculate path
             //tempData.calcInitalPath(originDirection);
@@ -285,19 +285,19 @@ namespace SaturnIV
             {
                 case 0:
                     tempData.Direction = weaponOrigin.Direction;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 1:
                     tempData.Direction = -weaponOrigin.Direction;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 2:
                     tempData.Direction = -weaponOrigin.modelRotation.Forward;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
                 case 3:
                     tempData.Direction = weaponOrigin.modelRotation.Forward;
-                    tempData.vecToTarget = tempData.Direction;
+                    tempData.targetPosition = tempData.Direction;
                     break;
             }
 
@@ -305,7 +305,7 @@ namespace SaturnIV
             tempData.Velocity = weaponOrigin.Velocity;
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;
-        //    tempData.modelRotation.Forward = tempData.vecToTarget;
+        //    tempData.modelRotation.Forward = tempData.targetPosition;
            // tempData.Direction = tempData.Direction;
 
             if (tempData.isProjectile)

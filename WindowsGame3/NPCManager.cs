@@ -57,12 +57,12 @@ namespace SaturnIV
                 if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10,100) + otherShip.EvadeDist[(int)otherShip.objectClass])
                 {
                     if (!thisShip.isEvading)
-                        thisShip.vecToTarget = HelperClass.RandomPosition(-15000,15000);
+                        thisShip.targetPosition = thisShip.wayPointPosition;
                     thisShip.isEvading = true;
                     thrustAmount = 1.0f;
-                  //thisShip.currentDisposition = disposition.patrol;
+                 // thisShip.currentDisposition = disposition.patrol;
                 }
-                else
+                else if (thisShip.modelPosition == thisShip.targetPosition)
                     thisShip.isEvading = false;
                 if (!thisShip.isEvading)
                 {
@@ -77,22 +77,21 @@ namespace SaturnIV
                                     thisShip.currentTarget = otherShip;
                                     thisShip.currentTargetIndex = targetIndex;
                                     thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
-                                    thisShip.vecToTarget = Vector3.Normalize(thisShip.modelPosition);// *(float)rand.NextDouble();
+                                    thisShip.targetPosition = otherShip.modelPosition;
                                 }
                             }
                             if (targetIndex == thisShip.currentTargetIndex)
                             {
-                                thisShip.vecToTarget = otherShip.modelPosition;
-                                // thisShip.angleOfAttack = MathHelper.ToDegrees((float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.vecToTarget, thisShip.modelRotation.Right));
+                                
+                                    thisShip.targetPosition = otherShip.modelPosition;
+                            
 
                                 // Cycle Through Weapons
                                 foreach (WeaponModule thisWeapon in thisShip.weaponArray)
                                 {
                                     for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
-                                    {
-                                        // thisShip.angleOfAttack = MathHelper.ToDegrees((float)GetSignedAngleBetweenTwoVectors(thisShip.modelPosition,thisShip.currentTarget.modelPosition,isRight));
-                                        if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
-                                        //if (thisShip.angleOfAttack < thisWeapon.FiringEnvelopeAngle && thisShip.angleOfAttack > -thisWeapon.FiringEnvelopeAngle)
+                                    {                                       
+                                        if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))  
                                         {
                                             if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
                                             {
@@ -108,7 +107,7 @@ namespace SaturnIV
                             }
                             break;
                         case disposition.patrol:
-                            //thisShip.vecToTarget = thisShip.modelPosition + thisShip.Direction*10;
+                            //thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction*10;
                             if (thisShip.currentTarget != null)
                                 thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
                             if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000)
@@ -180,7 +179,7 @@ namespace SaturnIV
             Vector3 shipRight; // = thisShip.modelRotation.Right ;
             Vector3 shipUp = thisShip.modelRotation.Up;
 
-            shipFront = Vector3.SmoothStep(shipFront, (thisShip.vecToTarget - thisShip.modelPosition), thisShip.objectAgility * 0.5f);
+            shipFront = Vector3.SmoothStep(shipFront, (thisShip.targetPosition - thisShip.modelPosition), thisShip.objectAgility * 0.5f);
 
             Vector3.Cross(ref shipFront, ref shipUp, out shipRight);
             Vector3.Cross(ref shipRight, ref shipFront, out shipUp);
