@@ -4,11 +4,11 @@
     <Item>
       <FileName>Models//Eriax_MK1_Fighter</FileName>
       <Type>Eriax MK1 Fighter</Type>
-      <Mass>2.0</Mass>
+      <Mass>1.0</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>10.0</Agility>
+      <Agility>12.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>

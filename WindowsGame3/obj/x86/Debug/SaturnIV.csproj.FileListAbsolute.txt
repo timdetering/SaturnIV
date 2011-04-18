@@ -228,9 +228,6 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FB
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_Badge_EXPORT[1]_0.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\336F267F\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\336F267F\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
-C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\336F267F\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\C2F25FF\Eriax_Medium_Crusier.fbm\LaserVette_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\C2F25FF\Eriax_Medium_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\C2F25FF\Eriax_Medium_Crusier.fbm\LaserVette_Badge_EXPORT[1]_0.xnb
@@ -286,3 +283,6 @@ C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Mo
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb
+C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
+C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
+C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb

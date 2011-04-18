@@ -292,11 +292,11 @@ namespace SaturnIV
                     tempData.vecToTarget = tempData.Direction;
                     break;
                 case 2:
-                    tempData.Direction = weaponOrigin.right;
+                    tempData.Direction = -weaponOrigin.modelRotation.Forward;
                     tempData.vecToTarget = tempData.Direction;
                     break;
                 case 3:
-                    tempData.Direction = -weaponOrigin.right;
+                    tempData.Direction = weaponOrigin.modelRotation.Forward;
                     tempData.vecToTarget = tempData.Direction;
                     break;
             }

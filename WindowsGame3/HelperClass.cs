@@ -43,7 +43,7 @@ namespace SaturnIV
                      RandomBetween(minBoxPos, maxBoxPos));
         }
 
-        public Vector3 RandomDirection()
+        public static Vector3 RandomDirection()
         {
             Random random = new Random();
 

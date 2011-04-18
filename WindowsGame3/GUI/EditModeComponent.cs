@@ -143,9 +143,9 @@ namespace SaturnIV
             tempData.radius = shipDefList[shipIndex].SphereRadius;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
-            tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));
             tempData.Direction = Vector3.Right;
-            tempData.vecToTarget = Vector3.Right;
+            tempData.vecToTarget = HelperClass.RandomPosition(-5000,5000); //Vector3.Right * HelperClass.RandomDirection();
             tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
