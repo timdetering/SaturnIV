@@ -54,16 +54,16 @@ namespace SaturnIV
             Random rand = new Random();
             moduleCount = 0;
             // First check for Evading state and act on that first and for most!
-                if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10,100) + otherShip.EvadeDist[(int)otherShip.objectClass])
-                {
-                    if (!thisShip.isEvading)
-                        thisShip.targetPosition = thisShip.wayPointPosition;
-                    thisShip.isEvading = true;
-                    thrustAmount = 1.0f;
-                 // thisShip.currentDisposition = disposition.patrol;
-                }
-                else if (thisShip.modelPosition == thisShip.targetPosition)
-                    thisShip.isEvading = false;
+            if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < rand.Next(10, 100) + otherShip.EvadeDist[(int)otherShip.objectClass])
+            {
+                //if (!thisShip.isEvading)
+                //         thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * 10;
+                //     thisShip.isEvading = true;
+                //     thrustAmount = 1.0f;
+                // thisShip.currentDisposition = disposition.patrol;
+            }
+                   
+              //      thisShip.isEvading = false;
                 if (!thisShip.isEvading)
                 {
                     switch (thisShip.currentDisposition)
@@ -107,21 +107,21 @@ namespace SaturnIV
                             }
                             break;
                         case disposition.patrol:
-                            //thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction*10;
+                            thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction*10;
                             if (thisShip.currentTarget != null)
                                 thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
                             if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000)
                             {
                                 thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                                 //Decide weather or Not to Pursue based on this ships TargetPrefs values;  Ex. A capitalship is not going to chase a fighter!
-                               // if (thisShip.ChasePrefs[(int)otherShip.objectClass] > 0)
-                                //{
+                               if (thisShip.ChasePrefs[(int)otherShip.objectClass] > 0)
+                                {
                                     thisShip.isEngaging = true;
                                     thisShip.currentDisposition = disposition.pursue;
                                     thisShip.currentTarget = otherShip;
                                     thisShip.currentTargetIndex = targetIndex;
                                    
-                               // }
+                               }
                                 //if (thisShip.currentTarget != null)
                                     if (thisShip.TargetPrefs[(int)otherShip.objectClass] > thisShip.currentTargetLevel)
                                     {
@@ -156,7 +156,7 @@ namespace SaturnIV
                             // thrustAmount = 0.20f;
                             break;
                     }
-                }
+               }
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,

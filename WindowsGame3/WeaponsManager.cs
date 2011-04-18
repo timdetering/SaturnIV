@@ -126,7 +126,7 @@ namespace SaturnIV
             thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
 
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin);
-            thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
+           // thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             if (trailEmitter != null)
                 trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
