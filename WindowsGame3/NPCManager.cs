@@ -53,20 +53,20 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             Random rand = new Random();
             moduleCount = 0;
-           thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * 100;
-            thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
+          // thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * 100;
+         //   thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
             // First check for Evading state and act on that first and for most!
            if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < otherShip.EvadeDist[(int)otherShip.objectClass])
             {
                 if (!thisShip.isEvading)
                {
-                    //thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * MathHelper.ToRadians(15);
+                    thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * MathHelper.ToRadians(45);
                     thisShip.wayPointPosition = thisShip.modelPosition;
                     thisShip.runDistance = rand.Next(100, 1400);
                     thisShip.isEvading = true;
                 }
                      thrustAmount = rand.Next(1, 2);
-                 thisShip.currentDisposition = disposition.patrol;
+                 //thisShip.currentDisposition = disposition.patrol;
             } else 
                     thisShip.isEvading = false;
       //      
@@ -179,32 +179,31 @@ namespace SaturnIV
                 thrustAmount = 0.0f;
 
 
-           thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition,thisShip.targetPosition,thisShip.right);
-         //   float dotProduct = 0.0f;
-         //   dotProduct = Vector3.Dot(thisShip.modelPosition, thisShip.targetPosition);
-           // thisShip.angleOfAttack = Math.Acos((double)dotProduct);
-
-            if (thisShip.angleOfAttack > .10)
+          // thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition,thisShip.targetPosition,thisShip.right);
+            
+            if (thisShip.angleOfAttack > .99)
             {
-                rotationAmount.X = 1.5f;
+                rotationAmount.X = -2.0f;
             }
-            else if (thisShip.angleOfAttack < .05)
-                rotationAmount.X = -1.5f;
+        //    else //if (thisShip.angleOfAttack < 0.0)
+      //          rotationAmount.X = -2.0f;
             if (isEdit)
-                    rotationAmount.X = 4.0f;
-
+                    rotationAmount.X = 4.0f; 
             rotationAmount = rotationAmount * turningSpeed * elapsed;
-            Matrix rotationMatrix =
-                Matrix.CreateFromAxisAngle(thisShip.Right, rotationAmount.Y) *
-                ((Matrix.CreateFromAxisAngle(thisShip.Direction, roll) *
-                Matrix.CreateFromAxisAngle(thisShip.Up, rotationAmount.X)));
+          //  Matrix rotationMatrix =
+          //      Matrix.CreateFromAxisAngle(thisShip.Right, rotationAmount.Y) *
+          //      ((Matrix.CreateFromAxisAngle(thisShip.Direction, roll) *
+          //      Matrix.CreateFromAxisAngle(thisShip.Up, rotationAmount.X)));
+            //if (thisShip.modelPosition.Z < thisShip.targetPosition.Z) thisShip.angleOfAttack = (float)Math.PI - thisShip.angleOfAttack; 
 
-            thisShip.Direction = Vector3.TransformNormal(thisShip.Direction, rotationMatrix);
-            thisShip.Up = Vector3.TransformNormal(thisShip.Up, rotationMatrix);
-            thisShip.Direction.Normalize();
-            thisShip.Up.Normalize();
-            thisShip.right = Vector3.Cross(thisShip.Direction, thisShip.Up);
-            thisShip.Up = Vector3.Cross(thisShip.right, thisShip.Direction);
+
+            Matrix rotationMatrix = Matrix.Identity;
+
+            rotationMatrix.Forward = Vector3.Normalize(thisShip.modelRotation.Forward - thisShip.targetPosition);
+            rotationMatrix.Right = Vector3.Normalize(Vector3.Cross(rotationMatrix.Forward, Vector3.Up));
+            rotationMatrix.Up = Vector3.Normalize(Vector3.Cross(rotationMatrix.Right, rotationMatrix.Forward));
+            thisShip.Direction = rotationMatrix.Right;
+            thisShip.modelRotation = rotationMatrix;
 
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
@@ -214,7 +213,7 @@ namespace SaturnIV
             thisShip.Velocity *= DragFactor;
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
-            thisShip.modelRotation = thisShip.modelRotation * rotationMatrix;
+            //thisShip.modelRotation = thisShip.modelRotation;// *rotationMatrix;
             thisShip.worldMatrix = thisShip.modelRotation  * Matrix.CreateTranslation(thisShip.modelPosition);
 
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
