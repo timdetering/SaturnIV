@@ -54,7 +54,7 @@ namespace SaturnIV
             Random rand = new Random();
             moduleCount = 0;
            thisShip.targetPosition = thisShip.modelPosition + thisShip.Direction * 100;
-            thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
+            thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
             // First check for Evading state and act on that first and for most!
            if ((Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition)) < otherShip.EvadeDist[(int)otherShip.objectClass])
             {
@@ -179,14 +179,17 @@ namespace SaturnIV
                 thrustAmount = 0.0f;
 
 
-            thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.modelPosition,thisShip.targetPosition,thisShip.right);
+           thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition,thisShip.targetPosition,thisShip.right);
+         //   float dotProduct = 0.0f;
+         //   dotProduct = Vector3.Dot(thisShip.modelPosition, thisShip.targetPosition);
+           // thisShip.angleOfAttack = Math.Acos((double)dotProduct);
 
-            if (thisShip.angleOfAttack > .99)
+            if (thisShip.angleOfAttack > .10)
             {
-                rotationAmount.X = 2.0f;
+                rotationAmount.X = 1.5f;
             }
-            else 
-                rotationAmount.X = -2.0f;
+            else if (thisShip.angleOfAttack < .05)
+                rotationAmount.X = -1.5f;
             if (isEdit)
                     rotationAmount.X = 4.0f;
 
