@@ -603,12 +603,13 @@ namespace SaturnIV
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
-                        buffer.AppendFormat("[Target Pos]{0}-",enemy.targetPosition);
+                        //buffer.AppendFormat("[Target Pos]{0}-",enemy.targetPosition);
                         buffer.AppendFormat("\n[Target Index]{0} ", enemy.currentTargetIndex);
                     }
                     buffer.AppendFormat("- [Attack Angle]{0}\n", enemy.angleOfAttack);
-                    buffer.AppendFormat("Waypoint {0} ", enemy.targetPosition);
-                    buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
+                    buffer.AppendFormat("Target Pos {0} ", enemy.targetPosition);
+                    buffer.AppendFormat("Pos {0} ", enemy.modelPosition);
+                   // buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
                     
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
