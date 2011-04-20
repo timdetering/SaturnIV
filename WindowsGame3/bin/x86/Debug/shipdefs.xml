@@ -5,10 +5,10 @@
       <FileName>Models//Eriax_MK1_Fighter</FileName>
       <Type>Eriax MK1 Fighter</Type>
       <Mass>2.0</Mass>
-      <Thrust>1600</Thrust>
+      <Thrust>2000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>14.0</Agility>
+      <Agility>10.00</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -39,11 +39,11 @@
     <Item>
       <FileName>Models//Eriax_MK2_Fighter</FileName>
       <Type>Eriax MK2 Fighter</Type>
-      <Mass>2</Mass>
-      <Thrust>1000</Thrust>
+      <Mass>1.5</Mass>
+      <Thrust>1200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>10.0</Agility>
+      <Agility>8.0</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
@@ -442,11 +442,11 @@
 <Item>
       <FileName>Models//Fleet_Procyon_Frigate</FileName>
       <Type>Procyon Class Frigate</Type>
-      <Mass>10</Mass>
-      <Thrust>1050</Thrust>
+      <Mass>5</Mass>
+      <Thrust>850</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.0</Agility>
+      <Agility>4.0</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>200</ShieldLvl>

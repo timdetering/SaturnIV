@@ -89,6 +89,7 @@ namespace SaturnIV
         public float currentTargetLevel;
         public int currentTargetIndex;
             public float runDistance;
+            public Vector3 vecToTarget;
     }
 
     public class weaponStruct : newShipStruct

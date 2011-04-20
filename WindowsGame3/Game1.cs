@@ -324,7 +324,7 @@ namespace SaturnIV
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
                // activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-                
+                npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }
@@ -609,6 +609,7 @@ namespace SaturnIV
                     buffer.AppendFormat("- [Attack Angle]{0}\n", enemy.angleOfAttack);
                     buffer.AppendFormat("Target Pos {0} ", enemy.targetPosition);
                     buffer.AppendFormat("Pos {0} ", enemy.modelPosition);
+                    buffer.AppendFormat("Vec {0} ", enemy.vecToTarget);
                    // buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
                     
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
@@ -638,7 +639,8 @@ namespace SaturnIV
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nCurrent Menu Item {0} ", Gui.thisItem);
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
+            messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
+                        spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
             messageBuffer = new StringBuilder();
