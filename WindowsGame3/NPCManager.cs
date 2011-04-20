@@ -123,12 +123,18 @@ namespace SaturnIV
             else
                 thrustAmount = 1.0f;
 
-            //if (isEdit)
+            thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
+                       
+
+            if (isEdit)
                 thisShip.Direction = thisShip.vecToTarget;
-            //else
-            //thisShip.Direction = Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 0.50f);
+            else
+                if (thisShip.angleOfAttack > rand.NextDouble()|| thisShip.angleOfAttack < -rand.NextDouble())
+                    thisShip.Direction = thisShip.vecToTarget;
+
             thisShip.modelRotation.Forward = thisShip.Direction;
-            thisShip.modelRotation.Right = Vector3.Cross(thisShip.vecToTarget,Vector3.Up);
+
+            thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
             thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
 
