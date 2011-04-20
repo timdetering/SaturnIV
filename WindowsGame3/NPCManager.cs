@@ -112,28 +112,23 @@ namespace SaturnIV
                                       Camera ourCamera, bool isEdit)
         {            
             // update models 2d coords
-            thisShip.vecToTarget = thisShip.targetPosition - thisShip.modelPosition;
+            thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);// / 
+                                    //Vector3.Distance(thisShip.targetPosition, thisShip.modelPosition);
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
-            Vector2 rotationAmount = Vector2.Zero;
+            Vector2 rotationAmount = new Vector2(0, 0);
+            int roll = 0;
+            // Scale rotation amount to radians per second
 
-            if (isEdit)
-                thrustAmount = 0.0f;
-            else
-                thrustAmount = 0.75f;
 
-            Vector3 D = thisShip.vecToTarget;
-            Vector3 U = Vector3.Up;
-            Vector3 Right = Vector3.Cross(U, D);
-            Vector3.Normalize(ref Right, out Right);
-            Vector3 Backwards = Vector3.Cross(Right, U);
-            Vector3.Normalize(ref Backwards, out Backwards);
-            Vector3 Up = Vector3.Cross(Backwards, Right);
-            Matrix rot = new Matrix(Right.X, Right.Y, Right.Z, 0, Up.X, Up.Y, Up.Z, 0, Backwards.X, Backwards.Y, Backwards.Z, 0, 0, 0, 0, 1);
 
-            thisShip.modelRotation = rot;
-            thisShip.Direction = rot.Right;
+
+            thisShip.Direction = thisShip.vecToTarget;
+            thisShip.modelRotation.Forward = thisShip.Direction;
+            thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
+            thisShip.modelRotation.Up = Vector3.Up;
+            thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
 
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration

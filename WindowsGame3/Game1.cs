@@ -606,10 +606,10 @@ namespace SaturnIV
                         //buffer.AppendFormat("[Target Pos]{0}-",enemy.targetPosition);
                         buffer.AppendFormat("\n[Target Index]{0} ", enemy.currentTargetIndex);
                     }
-                    buffer.AppendFormat("- [Attack Angle]{0}\n", enemy.angleOfAttack);
                     buffer.AppendFormat("Target Pos {0} ", enemy.targetPosition);
-                    buffer.AppendFormat("Pos {0} ", enemy.modelPosition);
+                    buffer.AppendFormat("Angle {0} ", enemy.angleOfAttack);
                     buffer.AppendFormat("Vec {0} ", enemy.vecToTarget);
+                    buffer.AppendFormat("Direction {0} ", enemy.Direction);
                    // buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
                     
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
