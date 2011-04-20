@@ -124,19 +124,19 @@ namespace SaturnIV
                 thrustAmount = 1.0f;
 
             thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
-                       
+          //if (thisShip.angleOfAttack > rand.NextDouble()|| thisShip.angleOfAttack < -rand.NextDouble())
+           //     thisShip.Direction = thisShip.vecToTarget;
+                
 
             if (isEdit)
                 thisShip.Direction = thisShip.vecToTarget;
             else
-                if (thisShip.angleOfAttack > rand.NextDouble()|| thisShip.angleOfAttack < -rand.NextDouble())
-                    thisShip.Direction = thisShip.vecToTarget;
-
+                thisShip.Direction = Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, turningSpeed * 0.099f);
             thisShip.modelRotation.Forward = thisShip.Direction;
 
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
-            thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            //thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
 
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
@@ -146,7 +146,8 @@ namespace SaturnIV
             thisShip.Velocity *= DragFactor;
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
-            thisShip.worldMatrix = thisShip.modelRotation * Matrix.CreateTranslation(thisShip.modelPosition);
+            //thisShip.worldMatrix = thisShip.modelRotation * Matrix.CreateTranslation(thisShip.modelPosition);
+            thisShip.worldMatrix = Matrix.CreateRotationY(MathHelper.ToRadians(90)) * Matrix.CreateWorld(thisShip.modelPosition, thisShip.Direction, Vector3.Up);
 
             thisShip.modelBoundingSphere.Center = thisShip.modelPosition;
             thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition +
