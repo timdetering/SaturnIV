@@ -39,7 +39,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.96f;
+        private const float DragFactor = 0.97f;
 
         public NPCManager(Game game)
             : base(game)
@@ -117,16 +117,18 @@ namespace SaturnIV
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
-            Vector2 rotationAmount = new Vector2(0, 0);
-            int roll = 0;
-            // Scale rotation amount to radians per second
 
+            if (isEdit)
+                thrustAmount = 0.0f;
+            else
+                thrustAmount = 1.0f;
 
-
-
-            thisShip.Direction = thisShip.vecToTarget;
+            //if (isEdit)
+                thisShip.Direction = thisShip.vecToTarget;
+            //else
+            //thisShip.Direction = Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 0.50f);
             thisShip.modelRotation.Forward = thisShip.Direction;
-            thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
+            thisShip.modelRotation.Right = Vector3.Cross(thisShip.vecToTarget,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
             thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
 

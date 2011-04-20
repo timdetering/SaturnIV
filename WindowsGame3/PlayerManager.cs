@@ -59,8 +59,8 @@ namespace SaturnIV
             }
             else
             {
-                playerShip.ThrusterEngaged = false;
-                thrustAmount = 0.0f;
+                playerShip.ThrusterEngaged = true;
+                thrustAmount = 0.15f;
             }
 
             // Scale rotation amount to radians per second
