@@ -13,7 +13,7 @@
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 300 200 50</EvadeDist>
+      <EvadeDist>150 1000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -48,7 +48,7 @@
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>200 500 200 50</EvadeDist>
+      <EvadeDist>50 1500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 1 </Chase>
       <AvailableWeapons>
@@ -83,7 +83,7 @@
       <ShipClass>Fighter</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 500 200 50</EvadeDist>
+      <EvadeDist>650 1500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 0 </Chase>
       <AvailableWeapons>
@@ -335,14 +335,14 @@
       <Thrust>1000</Thrust>
       <SphereRadius>285</SphereRadius>
       <Scale>1</Scale>
-      <Agility>1.0</Agility>
+      <Agility>0.25</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>400</ShieldLvl>
       <ShieldRegenTime>50</ShieldRegenTime>
-      <EvadeDist>0 1000 500 0</EvadeDist>
+      <EvadeDist>0 3000 1500 0</EvadeDist>
       <TargetPrefs>0.5 1 1 0.2 </TargetPrefs>
-	  <Chase> 0 1 1 0 </Chase>
+	  <Chase> 0 0 1 0 </Chase>
       <AvailableWeapons>
 	<Item>
 		<weaponType>AC10</weaponType>
@@ -356,7 +356,7 @@
 	   -10 10 1 3
 	    10 10 1 3
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>25</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>35</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>KM200G</weaponType>

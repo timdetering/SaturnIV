@@ -64,7 +64,7 @@ namespace SaturnIV
             {
                 for (int i = 0; i < missileList.Count; i++)
                 {
-                    if (thisShipList[j].modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
+                    if ((thisShipList[j].portFrustum.Intersects(missileList[i].modelBoundingSphere) || thisShipList[j].starboardFrustum.Intersects(missileList[i].modelBoundingSphere))
                         && missileList[i].distanceFromOrigin > 300)
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;

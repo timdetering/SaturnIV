@@ -55,58 +55,89 @@ namespace SaturnIV
             moduleCount = 0;
             Random rand = new Random();
 
-          switch (thisShip.currentDisposition)
-               {
-                   case disposition.pursue:
+            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(10, 100) + thisShip.EvadeDist[(int)otherShip.objectClass] || otherShip.currentTarget == thisShip)
+            {
+                if (!thisShip.isEvading)
+                {
+                    thisShip.targetPosition = thisShip.targetPosition + otherShip.modelRotation.Right * rand.Next(500,1500);
+                    thisShip.isEvading = true;
+                    thrustAmount = 1.25f;
+                }
+            }
+            else
+                thisShip.isEvading = false;
+            if (!thisShip.isEvading)
+            {
+                switch (thisShip.currentDisposition)
+                {
+                    case disposition.pursue:
 
-                       thisShip.targetPosition = thisShip.currentTarget.modelPosition;
-                               foreach (WeaponModule thisWeapon in thisShip.weaponArray)
-                           {
-                               for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
-                               {
-                                   if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
-                                   {
-                                       if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
-                                       {
-                                           weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisWeapon, i);
-                                           regentime[moduleCount] = currentTime;
-                                           thisShip.isEngaging = true;
-                                           break;
-                                       }
-                                   }
-                                   moduleCount++;
-                               }
-                         //  }
-                       }
-                       break;
-                   case disposition.patrol:
-                       
-                           thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
-                       
-                               thisShip.currentTarget = otherShip;
-                               thisShip.currentDisposition = disposition.pursue;
-                           // Cycle Through Weapons
-                           foreach (WeaponModule thisWeapon in thisShip.weaponArray)
-                           {
-                               for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
-                               {
-                                   if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
-                                   {
-                                       if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
-                                       {
-                                           weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisWeapon, i);
-                                           regentime[moduleCount] = currentTime;
-                                           thisShip.isEngaging = true;
-                                           break;
-                                       }
-                                   }
-                                   moduleCount++;
-                               }
-                           }
-                       // thrustAmount = 0.20f;
-                       break;
-               }
-         }
+                        thisShip.targetPosition = thisShip.currentTarget.modelPosition;
+                        foreach (WeaponModule thisWeapon in thisShip.weaponArray)
+                        {
+                            for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
+                            {
+                                if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
+                                {
+                                    if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                                    {
+                                        weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisWeapon, i);
+                                        regentime[moduleCount] = currentTime;
+                                        thisShip.isEngaging = true;
+                                        break;
+                                    }
+                                }
+                                moduleCount++;
+                            }
+                            //  }
+                        }
+                        break;
+                    case disposition.patrol:
+                        thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                         if (thisShip.currentTarget != null)
+                                thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
+                         if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000)
+                         {
+                             thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                             //Decide weather or Not to Pursue based on this ships TargetPrefs values; Ex. A capitalship is not going to chase a fighter!
+                             if (thisShip.ChasePrefs[(int)otherShip.objectClass] > 0)
+                             {
+                                thisShip.isEngaging = true;
+                                thisShip.currentDisposition = disposition.pursue;
+                                thisShip.currentTarget = otherShip;
+                                thisShip.currentTargetIndex = targetIndex;
+                             }
+                             //if (thisShip.currentTarget != null)
+                             if (thisShip.TargetPrefs[(int)otherShip.objectClass] > thisShip.currentTargetLevel)
+                             {
+                                 thisShip.currentTarget = otherShip;
+                                 thisShip.currentTargetIndex = targetIndex;
+                             }
+                         }
+                        
+                        // Cycle Through Weapons
+                        foreach (WeaponModule thisWeapon in thisShip.weaponArray)
+                        {
+                            for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
+                            {
+                                if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
+                                {
+                                    if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                                    {
+                                        weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, projectileTrailParticles, ref weaponDefList, thisWeapon, i);
+                                        regentime[moduleCount] = currentTime;
+                                        thisShip.isEngaging = true;
+                                        break;
+                                    }
+                                }
+                                moduleCount++;
+                            }
+                        }
+                        // thrustAmount = 0.20f;
+                        break;
+                }
+            }
+       }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
                                       Camera ourCamera, bool isEdit)
@@ -123,11 +154,6 @@ namespace SaturnIV
             else
                 thrustAmount = 1.0f;
 
-            thisShip.angleOfAttack = GetSignedAngleBetweenTwoVectors(thisShip.modelPosition, thisShip.targetPosition, thisShip.modelRotation.Right);
-          //if (thisShip.angleOfAttack > rand.NextDouble()|| thisShip.angleOfAttack < -rand.NextDouble())
-           //     thisShip.Direction = thisShip.vecToTarget;
-                
-
             if (isEdit)
                 thisShip.Direction = thisShip.vecToTarget;
             else
@@ -136,7 +162,6 @@ namespace SaturnIV
 
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
-            //thisShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
 
             Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
             // Apply acceleration
@@ -153,6 +178,14 @@ namespace SaturnIV
             thisShip.viewMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition +
                                                       thisShip.Direction * 2.0f, thisShip.Up);
             thisShip.modelFrustum.Matrix = thisShip.viewMatrix * thisShip.projectionMatrix;
+            Matrix cMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + thisShip.modelRotation.Right * thisShip.modelWidth, Vector3.Up);
+            thisShip.portFrustum = new BoundingFrustum(cMatrix * Matrix.CreatePerspectiveFieldOfView(2.00f,
+                                                    16.0f / 9.0f, .5f, thisShip.modelWidth / 2));
+
+            cMatrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + -thisShip.modelRotation.Right * thisShip.modelWidth, Vector3.Up);
+            thisShip.starboardFrustum = new BoundingFrustum(cMatrix * Matrix.CreatePerspectiveFieldOfView(2.00f,
+                                                    16.0f / 9.0f, .5f, thisShip.modelWidth / 2));
+
 
             //Update all Weapon Module Firing Frustums
             moduleCount = 0;
@@ -171,16 +204,16 @@ namespace SaturnIV
                             isRight = thisShip.modelRotation.Backward;
                             break;
                         case 2:
-                            isFacing = -thisShip.modelRotation.Forward;
-                            isRight = thisShip.modelRotation.Right;
+                            isFacing = -thisShip.modelRotation.Right;
+                            isRight = thisShip.modelRotation.Forward;
                             break;
                         case 3:
-                            isFacing = thisShip.modelRotation.Forward;
-                            isRight = -thisShip.modelRotation.Right;
+                            isFacing = thisShip.modelRotation.Right;
+                            isRight = -thisShip.modelRotation.Forward;
                             break;
                     }
-                    thisShip.moduleFrustum[moduleCount].Matrix = Matrix.CreateLookAt(new Vector3(thisShip.modelPosition.X,
-                                                        thisShip.modelPosition.Y, thisShip.modelPosition.Z), thisShip.modelPosition + isFacing, Vector3.Up) *
+                    Vector3 tVec = new Vector3(thisWeapon.ModulePositionOnShip[i].X, 1, thisWeapon.ModulePositionOnShip[i].Y);
+                    thisShip.moduleFrustum[moduleCount].Matrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + isFacing, Vector3.Up) *
                                                         Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisWeapon.FiringEnvelopeAngle),
                                                         4.0f / 3.0f, .5f, 500f);
                     moduleCount++;
@@ -216,12 +249,12 @@ namespace SaturnIV
                     isRight = thisShip.modelRotation.Backward;
                     break;
                 case 2:
-                    isFacing = -thisShip.modelRotation.Forward;
-                    isRight = thisShip.modelRotation.Right;
+                    isFacing = -thisShip.modelRotation.Right;
+                    isRight = thisShip.modelRotation.Forward;
                     break;
                 case 3:
-                    isFacing = thisShip.modelRotation.Forward;
-                    isRight = -thisShip.modelRotation.Right;
+                    isFacing = thisShip.modelRotation.Right;
+                    isRight = -thisShip.modelRotation.Forward;
                     break;
             }
             return isFacing;
@@ -240,12 +273,12 @@ namespace SaturnIV
                     isRight = thisShip.modelRotation.Backward;
                     break;
                 case 2:
-                    isFacing = -thisShip.modelRotation.Forward;
-                    isRight = thisShip.modelRotation.Right;
+                    isFacing = -thisShip.modelRotation.Right;
+                    isRight = thisShip.modelRotation.Forward;
                     break;
                 case 3:
-                    isFacing = thisShip.modelRotation.Forward;
-                    isRight = -thisShip.modelRotation.Right;
+                    isFacing = thisShip.modelRotation.Right;
+                    isRight = -thisShip.modelRotation.Forward;
                     break;
             }
             return isRight;

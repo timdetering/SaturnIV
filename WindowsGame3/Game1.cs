@@ -323,8 +323,9 @@ namespace SaturnIV
                         npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j],j);
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
-               // activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-                npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
+               //activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
+              
+               npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }
@@ -495,12 +496,14 @@ namespace SaturnIV
             {
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                //BoundingFrustumRenderer.Render(npcship.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-               // BoundingBoxRenderer.Render(npcship.modelBB, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                // BoundingBoxRenderer.Render(npcship.modelBB, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 if (isDebug)
                 {
                     foreach (BoundingFrustum bf in npcship.moduleFrustum)
                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                    BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+
                     isRight = npcship.modelRotation.Right;
                     for (int i = 0; i < npcship.weaponArray.Count(); i++)
                     {
@@ -603,18 +606,12 @@ namespace SaturnIV
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
-                        //buffer.AppendFormat("[Target Pos]{0}-",enemy.targetPosition);
-                        buffer.AppendFormat("\n[Target Index]{0} ", enemy.currentTargetIndex);
                     }
-                    buffer.AppendFormat("Target Pos {0} ", enemy.targetPosition);
                     buffer.AppendFormat("Angle {0} ", enemy.angleOfAttack);
-                    buffer.AppendFormat("Vec {0} ", enemy.vecToTarget);
-                    buffer.AppendFormat("Direction {0} ", enemy.Direction);
-                   // buffer.AppendFormat("[Target Level]" + enemy.currentTargetLevel + "-");
-                    
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
+                    buffer.AppendFormat("[model Len] {0}", enemy.modelBB.Max.X - enemy.modelBB.Min.X);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
             }

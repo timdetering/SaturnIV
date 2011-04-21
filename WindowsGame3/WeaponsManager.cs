@@ -210,19 +210,19 @@ namespace SaturnIV
             switch ((int)weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].W)
             {
                 case 0:
-                    tempData.Direction = weaponOrigin.modelRotation.Right;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-                case 1:
-                    tempData.Direction = weaponOrigin.modelRotation.Left;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-                case 2:
                     tempData.Direction = weaponOrigin.modelRotation.Forward;
                     tempData.targetPosition = tempData.Direction;
                     break;
+                case 1:
+                    tempData.Direction = -weaponOrigin.modelRotation.Forward;
+                    tempData.targetPosition = tempData.Direction;
+                    break;
+                case 2:
+                    tempData.Direction = -weaponOrigin.modelRotation.Right;
+                    tempData.targetPosition = tempData.Direction;
+                    break;
                 case 3:
-                    tempData.Direction = weaponOrigin.modelRotation.Backward;
+                    tempData.Direction = -weaponOrigin.modelRotation.Right;
                     tempData.targetPosition = tempData.Direction;
                     break;
             }
@@ -292,11 +292,11 @@ namespace SaturnIV
                     tempData.targetPosition = tempData.Direction;
                     break;
                 case 2:
-                    tempData.Direction = -weaponOrigin.modelRotation.Forward;
+                    tempData.Direction = -weaponOrigin.modelRotation.Right;
                     tempData.targetPosition = tempData.Direction;
                     break;
                 case 3:
-                    tempData.Direction = weaponOrigin.modelRotation.Forward;
+                    tempData.Direction = weaponOrigin.modelRotation.Right;
                     tempData.targetPosition = tempData.Direction;
                     break;
             }

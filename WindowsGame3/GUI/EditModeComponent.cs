@@ -140,7 +140,6 @@ namespace SaturnIV
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
             tempData.objectType = shipDefList[shipIndex].Type;
             tempData.team = shipDefList[shipIndex].BelongsTo;
-            tempData.radius = shipDefList[shipIndex].SphereRadius;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));
@@ -152,7 +151,12 @@ namespace SaturnIV
             tempData.Up = Vector3.Up;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, shipDefList[shipIndex].SphereRadius);
             tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel,tempData.modelPosition);
+            tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;
+            tempData.modelWidth = tempData.modelBB.Max.Z - tempData.modelBB.Min.Z;
+            tempData.radius = tempData.modelLen;
             tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);
+            tempData.portFrustum = new BoundingFrustum(Matrix.Identity);
+            tempData.starboardFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
             tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;

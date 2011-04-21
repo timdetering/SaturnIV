@@ -53,6 +53,8 @@ namespace SaturnIV
         public BoundingSphere modelBoundingSphere;
         public BoundingBox modelBB;
         public BoundingFrustum modelFrustum;
+        public BoundingFrustum starboardFrustum;
+        public BoundingFrustum portFrustum;
         public Vector3 screenCords;
         public disposition npcDisposition;
         public Vector3 targetPosition;
@@ -88,8 +90,10 @@ namespace SaturnIV
         public double angleOfAttack;
         public float currentTargetLevel;
         public int currentTargetIndex;
-            public float runDistance;
-            public Vector3 vecToTarget;
+        public float runDistance;
+        public Vector3 vecToTarget;
+        public float modelLen;
+        public float modelWidth;
     }
 
     public class weaponStruct : newShipStruct
