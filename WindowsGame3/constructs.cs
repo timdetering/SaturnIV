@@ -78,7 +78,6 @@ namespace SaturnIV
         public bool isSelected;
         public bool isEngaging;
         public bool isEvading;
-        public string team;
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public int[] ChasePrefs;
@@ -97,6 +96,7 @@ namespace SaturnIV
         public float speed;
         public bool isSquad;
         public bool isSquadLeader;
+        public int team;
         public newShipStruct threat;
 
     }
@@ -156,6 +156,12 @@ namespace SaturnIV
         public WeaponTypeEnum weaponType;
         public Vector4[] ModulePositionOnShip;
         public float FiringEnvelopeAngle;
+    }
+
+    public class squadClass
+    {
+        public int squadNum;
+        public List<newShipStruct> squadmate;
     }
 
         public enum ClassesEnum

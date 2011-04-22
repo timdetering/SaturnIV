@@ -54,6 +54,7 @@ namespace SaturnIV
         public newShipStruct playerShip;
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
+        public List<squadClass> squadList = new List<squadClass>();
         public NPCManager npcManager;
         public PlayerManager playerManager;
         public ModelManager modelManager;
@@ -203,6 +204,7 @@ namespace SaturnIV
         private void initPlayer()
         {
             int shipType = 1;
+            playerShip.team = 1;
             playerShip.objectFileName = shipDefList[shipType].FileName;
             playerShip.radius = shipDefList[shipType].SphereRadius;
             playerShip.shipModel = modelManager.LoadModel(shipDefList[shipType].FileName);
@@ -324,7 +326,9 @@ namespace SaturnIV
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
                //activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-               npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
+              // npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
+                activeShipList[i].targetPosition = playerShip.modelPosition + playerShip.Velocity * 10000;
+                activeShipList[i].Velocity = playerShip.Velocity;
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }

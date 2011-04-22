@@ -139,7 +139,7 @@ namespace SaturnIV
             tempData.objectMass = shipDefList[shipIndex].Mass;
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
             tempData.objectType = shipDefList[shipIndex].Type;
-            tempData.team = shipDefList[shipIndex].BelongsTo;
+            tempData.team = 1;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));

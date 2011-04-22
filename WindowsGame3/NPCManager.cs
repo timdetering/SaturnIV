@@ -61,8 +61,8 @@ namespace SaturnIV
             {
                 if (!thisShip.isEvading)
                 {
-                    thisShip.targetPosition = AIClass.AvoidVector(300, thisShip, otherShip);
-                    thisShip.isEvading = true;
+                    //thisShip.targetPosition = AIClass.AvoidVector(300, thisShip, otherShip);
+                    //thisShip.isEvading = true;
                     thrustAmount = 1.00f;
                 }
             }
@@ -99,31 +99,32 @@ namespace SaturnIV
                         thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                          if (thisShip.currentTarget != null)
                                 thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
-                         if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000)
+                         if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000 && thisShip.team != otherShip.team)
                          {
                              thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                              //Decide weather or Not to Pursue based on this ships TargetPrefs values; Ex. A capitalship is not going to chase a fighter!
                              if (thisShip.ChasePrefs[(int)otherShip.objectClass] > 0)
                              {
-                                thisShip.isEngaging = true;
-                                thisShip.currentDisposition = disposition.pursue;
-                                thisShip.currentTarget = otherShip;
-                                thisShip.currentTargetIndex = targetIndex;
+                              //  thisShip.isEngaging = true;
+                              //  thisShip.currentDisposition = disposition.pursue;
+                               // thisShip.currentTarget = otherShip;
+                                //thisShip.currentTargetIndex = targetIndex;
                              }
                              //if (thisShip.currentTarget != null)
                              if (thisShip.TargetPrefs[(int)otherShip.objectClass] > thisShip.currentTargetLevel)
                              {
-                                 thisShip.currentTarget = otherShip;
-                                 thisShip.currentTargetIndex = targetIndex;
+                                // thisShip.currentTarget = otherShip;
+                               //  thisShip.currentTargetIndex = targetIndex;
                              }
                          }
+                         
                         
                         // Cycle Through Weapons
                         foreach (WeaponModule thisWeapon in thisShip.weaponArray)
                         {
                             for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                             {
-                                if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere))
+                                if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
                                 {
                                     if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
                                     {
@@ -140,11 +141,15 @@ namespace SaturnIV
                         break;
                 }
             }
+            thisShip.targetPosition = AIClass.SteerForCohesion(thisShip, otherShip.radius * 2, 0.45f, otherShip);
+            thisShip.targetPosition = AIClass.SteerForAlignment(thisShip, otherShip.radius * 2, 0.25f, otherShip);
+            thisShip.targetPosition = otherShip.Direction;
        }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
                                       Camera ourCamera, bool isEdit)
-        {            
+        {
+            thrustAmount = 0.75f;
             // update models 2d coords
             thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);// / 
                                     //Vector3.Distance(thisShip.targetPosition, thisShip.modelPosition);
