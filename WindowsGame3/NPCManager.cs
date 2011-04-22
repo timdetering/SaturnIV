@@ -50,32 +50,49 @@ namespace SaturnIV
         }
 
         public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ParticleSystem projectileTrailParticles,
-                               ref List<weaponData> weaponDefList,newShipStruct thisShip, newShipStruct otherShip, int targetIndex)
+                               ref List<weaponData> weaponDefList,newShipStruct thisShip, newShipStruct otherShip, int targetIndex,squadClass boidList)
         {
-            //thisShip.targetPosition += thisShip.Direction * 10000;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             moduleCount = 0;
             Random rand = new Random();
-            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(5, 10) *
-                        thisShip.EvadeDist[(int)otherShip.objectClass])
+            if (otherShip == boidList.leader)
             {
-                if (!thisShip.isEvading)
-                {
+                thisShip.targetPosition = otherShip.modelPosition + otherShip.Velocity * 10000;
+                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) > otherShip.radius * 10)
+                    thisShip.thrustAmount = 1.00f;
+                else
+                    thisShip.thrustAmount = .75f;
+            }
+            //List<newShipStruct> boidList = new List<newShipStruct>();
+            //boidList.Add(otherShip);
+            //thisShip.targetPosition = BoidClass.SteerForSeparation(thisShip, thisShip.radius * 4, 0.10f, boidList);
+            float projection = Vector3.Dot(Vector3.Normalize(thisShip.Direction), Vector3.Normalize(otherShip.Direction));
+            thisShip.angleOfAttack = projection;
+            if (thisShip.angleOfAttack < -.25)
+                thisShip.targetPosition = BoidClass.SteerForAlignment(thisShip, thisShip.radius * 10, 0.15f, boidList) * 1000;
+            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.radius*4)
+                thisShip.targetPosition = BoidClass.SteerForCohesion(thisShip, thisShip.radius * 3, 0.15f, boidList) * 1000;
+
+            //if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(5, 10) *
+            //            thisShip.EvadeDist[(int)otherShip.objectClass])
+           // {
+           //     if (!thisShip.isEvading)
+           //     {
                     //thisShip.targetPosition = AIClass.AvoidVector(300, thisShip, otherShip);
                     //thisShip.isEvading = true;
-                    thrustAmount = 1.00f;
-                }
-            }
-            else
-                thisShip.isEvading = false;
+                    //thrustAmount = 1.00f;
+           //     }
+           // }
+          //  else
+          //      thisShip.isEvading = false;
 
-            if (!thisShip.isEvading)
+            if (thisShip.isEvading)
             {
                 switch (thisShip.currentDisposition)
                 {
                     case disposition.pursue:
                         thrustAmount = (float)rand.NextDouble() * 1.5f;
-                        thisShip.targetPosition = thisShip.currentTarget.modelPosition;
+                        //thisShip.targetPosition = thisShip.currentTarget.modelPosition;
                         foreach (WeaponModule thisWeapon in thisShip.weaponArray)
                         {
                             for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
@@ -141,10 +158,10 @@ namespace SaturnIV
                         break;
                 }
             }
-            thisShip.targetPosition = AIClass.SteerForCohesion(thisShip, otherShip.radius * 2, 0.45f, otherShip);
-            thisShip.targetPosition = AIClass.SteerForAlignment(thisShip, otherShip.radius * 2, 0.25f, otherShip);
-            thisShip.targetPosition = otherShip.Direction;
+           
        }
+
+
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
                                       Camera ourCamera, bool isEdit)
@@ -158,7 +175,7 @@ namespace SaturnIV
             turningSpeed *= thisShip.objectAgility * gameSpeed;
 
             if (isEdit)
-                thrustAmount = 0.0f;
+                thisShip.thrustAmount = 0.0f;
             //else
             //    thrustAmount = 1.0f;
 
@@ -171,7 +188,7 @@ namespace SaturnIV
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
 
-            Vector3 force = thisShip.Direction * thrustAmount * thisShip.objectThrust;
+            Vector3 force = thisShip.Direction * thisShip.thrustAmount * thisShip.objectThrust;
             // Apply acceleration
             Vector3 acceleration = force / thisShip.objectMass;
             thisShip.Velocity += acceleration * thrustAmount * elapsed;

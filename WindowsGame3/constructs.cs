@@ -162,6 +162,7 @@ namespace SaturnIV
     {
         public int squadNum;
         public List<newShipStruct> squadmate;
+        public newShipStruct leader;
     }
 
         public enum ClassesEnum

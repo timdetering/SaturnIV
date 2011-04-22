@@ -222,6 +222,13 @@ namespace SaturnIV
             playerShip.weaponArray = shipDefList[shipType].AvailableWeapons;
             playerShip.currentWeapon = playerShip.weaponArray[0];
             playerShip.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
+
+            squadClass createSquad = new squadClass();
+            createSquad.squadmate = new List<newShipStruct>();
+            createSquad.squadmate.Add(playerShip);
+            createSquad.squadNum = 1;
+            createSquad.leader = playerShip;
+            squadList.Add(createSquad);
         }
 
         private void loadShipData()
@@ -322,13 +329,12 @@ namespace SaturnIV
                 for (int j = 0; j < activeShipList.Count; j++)
                 {
                     if (activeShipList[j] != activeShipList[i])
-                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j],j);
+                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j],j,squadList[0]);
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
                //activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-              // npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
-                activeShipList[i].targetPosition = playerShip.modelPosition + playerShip.Velocity * 10000;
-                activeShipList[i].Velocity = playerShip.Velocity;
+              npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0,squadList[0]);
+
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }
@@ -382,7 +388,10 @@ namespace SaturnIV
                 int i = rand.Next(0, rLen);
                 tmpShipName = rNameList.capitalShipNames[i];
                 rNameList.capitalShipNames.Remove(tmpShipName);
-                activeShipList.Add(editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem));
+
+                newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem);
+                activeShipList.Add(newShip);
+                squadList[0].squadmate.Add(newShip);
             }
 
             if (currentTime - lastKeyPressTime > 100)
@@ -614,6 +623,7 @@ namespace SaturnIV
                     buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     buffer.AppendFormat("[Speed] {0}", enemy.speed);
+                    buffer.AppendFormat("[Angle] {0}", enemy.angleOfAttack);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
             }
@@ -637,7 +647,7 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("\nCurrent Menu Item {0} ", Gui.thisItem);
+            messageBuffer.AppendFormat("\nMembers in Squad 1 {0} ", squadList[0].squadmate.Count());
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
                         spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
