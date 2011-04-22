@@ -57,36 +57,35 @@ namespace SaturnIV
             Random rand = new Random();
             if (otherShip == boidList.leader)
             {
-                thisShip.targetPosition = otherShip.modelPosition + otherShip.Velocity * 10000;
+                //thisShip.targetPosition = otherShip.modelPosition + otherShip.Velocity * 10000;
                 if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) > otherShip.radius * 10)
                     thisShip.thrustAmount = 1.00f;
                 else
                     thisShip.thrustAmount = .75f;
             }
-            //List<newShipStruct> boidList = new List<newShipStruct>();
-            //boidList.Add(otherShip);
-            //thisShip.targetPosition = BoidClass.SteerForSeparation(thisShip, thisShip.radius * 4, 0.10f, boidList);
+            
+            float distance = Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition);
             float projection = Vector3.Dot(Vector3.Normalize(thisShip.Direction), Vector3.Normalize(otherShip.Direction));
             thisShip.angleOfAttack = projection;
-            if (thisShip.angleOfAttack < -.25)
-                thisShip.targetPosition = BoidClass.SteerForAlignment(thisShip, thisShip.radius * 10, 0.15f, boidList) * 1000;
-            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.radius*4)
-                thisShip.targetPosition = BoidClass.SteerForCohesion(thisShip, thisShip.radius * 3, 0.15f, boidList) * 1000;
 
-            //if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(5, 10) *
-            //            thisShip.EvadeDist[(int)otherShip.objectClass])
-           // {
-           //     if (!thisShip.isEvading)
-           //     {
-                    //thisShip.targetPosition = AIClass.AvoidVector(300, thisShip, otherShip);
-                    //thisShip.isEvading = true;
-                    //thrustAmount = 1.00f;
-           //     }
-           // }
-          //  else
-          //      thisShip.isEvading = false;
+           if (thisShip.angleOfAttack < 0)
+                thisShip.targetPosition = boidList.leader.modelPosition + BoidClass.SteerForAlignment(thisShip, thisShip.radius * 10, 0.15f, boidList) * 1000;
+           
+            //thisShip.Velocity = boidList.leader.Velocity;
+            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(5, 10) *
+                        thisShip.EvadeDist[(int)otherShip.objectClass])
+            {
+                if (!thisShip.isEvading)
+                {
+                    thisShip.targetPosition = thisShip.modelPosition + BoidClass.SteerForSeparation(thisShip, thisShip.radius * 10, 0.15f, boidList) * 1000;
+                    thisShip.isEvading = true;
+                    thrustAmount = 1.00f;
+                }
+            }
+            else
+                thisShip.isEvading = false;
 
-            if (thisShip.isEvading)
+            if (!thisShip.isEvading)
             {
                 switch (thisShip.currentDisposition)
                 {
@@ -166,10 +165,8 @@ namespace SaturnIV
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
                                       Camera ourCamera, bool isEdit)
         {
-            thrustAmount = 0.75f;
-            // update models 2d coords
             thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);// / 
-                                    //Vector3.Distance(thisShip.targetPosition, thisShip.modelPosition);
+               //                     //Vector3.Distance(thisShip.targetPosition, thisShip.modelPosition);
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;

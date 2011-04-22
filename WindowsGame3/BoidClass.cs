@@ -57,16 +57,14 @@ namespace SaturnIV
             for (int i = 0; i < flock.squadmate.Count; i++)
             {
                 newShipStruct other = flock.squadmate[i];
+                Vector3 offset = other.modelPosition - thisShip.modelPosition;
+                float distanceSquared = Vector3.Dot(offset, offset);
+                steering += (offset);
+                // count neighbors
+                neighbors++;
+            }
 
-                    Vector3 offset = other.modelPosition - thisShip.modelPosition;
-                    float distanceSquared = Vector3.Dot(offset, offset);
-                    steering += (offset / -distanceSquared);
-
-                    // count neighbors
-                    neighbors++;
-          }
-
-                steering = (steering / (float)neighbors);
+            steering = (steering / neighbors);
                 steering.Normalize();
 
             return steering;
@@ -84,8 +82,11 @@ namespace SaturnIV
             {
                 newShipStruct other = flock.squadmate[i];
                 if (other == flock.leader)
-                    steering = (other.Direction - thisShip.Direction) * 0.10f;
+                {
+                    steering = (other.Direction - thisShip.Direction);
                     steering.Normalize();
+                    return steering;
+                }
             }
 
             return steering;
@@ -103,7 +104,7 @@ namespace SaturnIV
             for (int i = 0; i < flock.squadmate.Count; i++)
             {
                 newShipStruct other = flock.squadmate[i];
-                if (other == flock.leader)
+                //if (other == flock.leader)
                     steering += other.modelPosition;
 
                     // count neighbors
