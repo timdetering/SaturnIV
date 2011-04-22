@@ -324,7 +324,6 @@ namespace SaturnIV
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
                //activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-              
                npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0);
             }
             weaponsManager.Update(gameTime, gameSpeed);
@@ -607,11 +606,10 @@ namespace SaturnIV
                     {
                         buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
                     }
-                    buffer.AppendFormat("Angle {0} ", enemy.angleOfAttack);
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
-                    buffer.AppendFormat("[model Len] {0}", enemy.modelBB.Max.X - enemy.modelBB.Min.X);
+                    buffer.AppendFormat("[Speed] {0}", enemy.speed);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
             }

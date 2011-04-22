@@ -94,6 +94,11 @@ namespace SaturnIV
         public Vector3 vecToTarget;
         public float modelLen;
         public float modelWidth;
+        public float speed;
+        public bool isSquad;
+        public bool isSquadLeader;
+        public newShipStruct threat;
+
     }
 
     public class weaponStruct : newShipStruct

@@ -31,6 +31,8 @@ namespace SaturnIV
         Vector3 isRight;
         int moduleCount = 0;
         double[] regentime;
+        double speedTime;
+        float lastTime;
         //disposition predisposition = new disposition();
         Random rand = new Random();
        
@@ -54,24 +56,25 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             moduleCount = 0;
             Random rand = new Random();
-
-            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(10, 100) + thisShip.EvadeDist[(int)otherShip.objectClass] || otherShip.currentTarget == thisShip)
+            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < rand.Next(5, 10) *
+                        thisShip.EvadeDist[(int)otherShip.objectClass])
             {
                 if (!thisShip.isEvading)
                 {
-                    thisShip.targetPosition = thisShip.targetPosition + otherShip.modelRotation.Right * rand.Next(500,1500);
+                    thisShip.targetPosition = AIClass.AvoidVector(300, thisShip, otherShip);
                     thisShip.isEvading = true;
-                    thrustAmount = 1.25f;
+                    thrustAmount = 1.00f;
                 }
             }
             else
                 thisShip.isEvading = false;
+
             if (!thisShip.isEvading)
             {
                 switch (thisShip.currentDisposition)
                 {
                     case disposition.pursue:
-
+                        thrustAmount = (float)rand.NextDouble() * 1.5f;
                         thisShip.targetPosition = thisShip.currentTarget.modelPosition;
                         foreach (WeaponModule thisWeapon in thisShip.weaponArray)
                         {
@@ -151,13 +154,13 @@ namespace SaturnIV
 
             if (isEdit)
                 thrustAmount = 0.0f;
-            else
-                thrustAmount = 1.0f;
+            //else
+            //    thrustAmount = 1.0f;
 
             if (isEdit)
                 thisShip.Direction = thisShip.vecToTarget;
             else
-                thisShip.Direction = Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, turningSpeed * 0.099f);
+                thisShip.Direction = Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, turningSpeed * 0.025f);
             thisShip.modelRotation.Forward = thisShip.Direction;
 
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
@@ -169,6 +172,11 @@ namespace SaturnIV
             thisShip.Velocity += acceleration * thrustAmount * elapsed;
             // Apply psuedo drag
             thisShip.Velocity *= DragFactor;
+            //Calc speed per second
+            if ((float)gameTime.TotalGameTime.TotalMilliseconds - lastTime > 600)
+                thisShip.speed = Vector3.Distance(thisShip.modelPosition, thisShip.modelPosition + thisShip.Velocity * elapsed) * 100;
+            lastTime = elapsed;
+
             // Apply velocity
             thisShip.modelPosition += thisShip.Velocity * elapsed;
             //thisShip.worldMatrix = thisShip.modelRotation * Matrix.CreateTranslation(thisShip.modelPosition);

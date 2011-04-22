@@ -94,6 +94,7 @@
     <Compile Include="boundingspheredraw.cs" />
     <Compile Include="CameraClass.cs" />
     <Compile Include="boundingFrustumRender.cs" />
+    <Compile Include="AIClass.cs" />
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
     <Compile Include="ParticleSystem\SparkParticleSystem.cs" />
