@@ -39,7 +39,7 @@ namespace SaturnIV
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float roll = 0;
-            turningSpeed *= playerShip.objectAgility * gameSpeed * 2.0f;
+            turningSpeed *= playerShip.objectAgility * gameSpeed;
             Vector2 rotationAmount = Vector2.Zero;
             // Keyboard checks
             //Vector2 rotationAmount = -gamePadState.ThumbSticks.Left;
@@ -55,7 +55,7 @@ namespace SaturnIV
             if (keyboardState.IsKeyDown(Keys.S))
             {
                 playerShip.ThrusterEngaged = true;
-                thrustAmount = 1.0f;
+                thrustAmount = 0.85f;
             }
             else
             {

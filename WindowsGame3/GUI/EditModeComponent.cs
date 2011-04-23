@@ -27,7 +27,7 @@ namespace SaturnIV
         MouseState mouseOld;
         SpriteBatch spriteBatch;
         string[] NameList;
-    int selected = 1;
+        public static bool selected = false;
         
         public EditModeComponent(Game game)
             : base(game)
@@ -73,6 +73,7 @@ namespace SaturnIV
                     if (checkResult && isClicked)
                     {
                         ourShip.isSelected = true;
+                        selected = true;
                         directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * ourShip.radius*2, 15);
                     }
                     else
@@ -129,7 +130,7 @@ namespace SaturnIV
         }
 
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
-                                    GameTime gameTime,Camera ourCamera,string shipName,int shipIndex)
+                                    GameTime gameTime,Camera ourCamera,string shipName,int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectFileName = shipDefList[shipIndex].FileName;
@@ -139,7 +140,7 @@ namespace SaturnIV
             tempData.objectMass = shipDefList[shipIndex].Mass;
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
             tempData.objectType = shipDefList[shipIndex].Type;
-            tempData.team = 1;
+            tempData.team = team;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));

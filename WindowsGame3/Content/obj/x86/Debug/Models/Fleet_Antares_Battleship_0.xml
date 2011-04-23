@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Antares_Battleship.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Antares_Battleship.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -300,7 +300,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>01 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Fleet_Antares_Battleship.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Fleet_Antares_Battleship.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

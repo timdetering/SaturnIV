@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Command Corvette</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -138,7 +138,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>CommandVette_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -184,7 +184,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>CommandBadge_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -230,7 +230,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>VetteBurner_EXPORT</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -276,7 +276,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>CommandVette_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -322,7 +322,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>VetteBurner_EXPORT0</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -368,7 +368,7 @@ MapChannel:5 = UVChannel_1
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>CommandVette_EXPORT1</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
+        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Heavy_Destroyer.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

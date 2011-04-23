@@ -389,7 +389,7 @@ namespace SaturnIV
                 tmpShipName = rNameList.capitalShipNames[i];
                 rNameList.capitalShipNames.Remove(tmpShipName);
 
-                newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem);
+                newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem,Gui.thisTeam);
                 activeShipList.Add(newShip);
                 squadList[0].squadmate.Add(newShip);
             }
@@ -614,15 +614,15 @@ namespace SaturnIV
             {
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y);
-                    buffer.AppendFormat("\n" + i);
+                    buffer.AppendFormat(enemy.objectAlias);
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
                     }
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
-                    buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
-                    buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
-                    buffer.AppendFormat("[Speed] {0}", enemy.speed);
+                    //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
+                    //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
+                    buffer.AppendFormat("[Team]"+ enemy.team);
                     buffer.AppendFormat("[Angle] {0}", enemy.angleOfAttack);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
@@ -649,6 +649,7 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nMembers in Squad 1 {0} ", squadList[0].squadmate.Count());
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
+            messageBuffer.AppendFormat("\nCurrent Menu " +guiClass.currentSelection);
                         spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
