@@ -33,6 +33,8 @@ namespace SaturnIV
         MouseState prevMouseState;
         MouseState mouseCurrent; 
         public Rectangle selectionRect;
+        public BoundingBox selectionBB;
+        Vector3 mouse3dStart;
         List<newShipStruct> selectedGroup = new List<newShipStruct>();
 
         public EditModeComponent(Game game)
@@ -50,7 +52,7 @@ namespace SaturnIV
             // TODO: Add your initialization code here
             grid = new Grid(100, 250, Game.GraphicsDevice, Game);
             fLine = new Line3D(Game.GraphicsDevice);
-            sphereColor = Color.Blue;
+            selectionBB = new BoundingBox();
             base.Initialize();
         }
 
@@ -93,17 +95,21 @@ namespace SaturnIV
 
             if (isLDepressed && !isDirectionSphere && !ischangingDirection)
             {
-                foreach (newShipStruct ourShip in objectList)
+                if (!isGroupSelect)
                 {
-                    if (ourShip.isSelected)
+                    foreach (newShipStruct ourShip in objectList)
                     {
-                        isDragging = true;
-                        ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                        npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
-                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 1.5f;
+                        if (ourShip.isSelected)
+                        {
+                            isDragging = true;
+                            ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
+                            npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
+                            directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 1.5f;
+                        }
                     }
                 }
             }
+
             else if ((isLDepressed && isDirectionSphere && !isDragging) || (isLDepressed && ischangingDirection && !isDragging && !isGroupSelect))
             {
                 isDragging = false;
@@ -135,7 +141,7 @@ namespace SaturnIV
             if (isLDepressed && !isDragging && !isDirectionSphere && !ischangingDirection && !selected)
             {
                 isGroupSelect = true;
-                selectRectangle(mouseCurrent);
+                selectRectangle(mouseCurrent,mouse3dVector);
                 RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
             }
 
@@ -143,18 +149,7 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public bool checkIsSelected(Ray currentMouseRay, Vector3 mouse3dVector, 
-                        BoundingSphere sphere)
-        {
-            MouseState currentState = Mouse.GetState();
-            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 7.5f);
-
-            if (sphere.Intersects(mouseSphere)) return true;
-
-                return false;
-        }
-
-        public Rectangle selectRectangle(MouseState mouseState)
+        public Rectangle selectRectangle(MouseState mouseState, Vector3 mouse3d)
         {
              // Creating and ajdusting the selection box
            // if (mouseState.LeftButton == ButtonState.Pressed)
@@ -162,7 +157,9 @@ namespace SaturnIV
            //     if (prevMouseState.LeftButton == ButtonState.Released)
            //     {
             if (selectionRect == Rectangle.Empty)
+            {
                 selectionRect = new Rectangle((int)mouseState.X, (int)mouseState.Y, 0, 0);
+            }
             else if (selectionRect != Rectangle.Empty)
             {
                 //    }
@@ -173,21 +170,21 @@ namespace SaturnIV
                 // Calculate new width,height
                 selectionRect.Width = mouseState.X - selectionRect.X;
                 selectionRect.Height = mouseState.Y - selectionRect.Y;
+
             } //else
                     // We want the selection box to be relative to the viewport we're using
-                  //  selectionRect.Width -= rightViewport.X;
-                   // selectionRect.Height -= rightViewport.Y;
+                //  selectionRect.Width -= viewport.X;
+                  //selectionRect.Height -= viewport.Y;
                 //}
            // }
            // else //if (prevMouseState.LeftButton == ButtonState.Released)
            // {   
                 // Mouse was released a frame ago
-               //selectionRect = Rectangle.Empty;
+            //   selectionRect = Rectangle.Empty;
            // }
 
             return selectionRect;
         }
-
 
         public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
                                     GameTime gameTime,Camera ourCamera,string shipName,int shipIndex, int team)
@@ -255,7 +252,6 @@ namespace SaturnIV
             }
         }
 
-
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
             grid.drawLines();
@@ -265,14 +261,27 @@ namespace SaturnIV
                           enemy.modelPosition + enemy.Direction * enemy.radius * 1,
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                    BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius * 1.5f, enemy.radius /3);
-                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius, 
-                                                        GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    if (enemy.isSelected)
+                   {
                        BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
+                       BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
+                                                          GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   }
                     
               }
 
             base.Draw(gameTime);
+        }
+        
+        public bool checkIsSelected(Ray currentMouseRay, Vector3 mouse3dVector,
+                BoundingSphere sphere)
+        {
+            MouseState currentState = Mouse.GetState();
+            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 7.5f);
+
+            if (sphere.Intersects(mouseSphere)) return true;
+
+            return false;
         }
     }
 }

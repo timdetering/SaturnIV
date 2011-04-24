@@ -643,6 +643,7 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
             messageBuffer.AppendFormat("\nCurrent Menu " +guiClass.currentSelection);
             messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
+            messageBuffer.AppendFormat("\nisGroupSelect: " + editModeClass.isGroupSelect);
                         spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
