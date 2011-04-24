@@ -27,6 +27,7 @@ namespace SaturnIV
         GraphicsDeviceManager graphics;
         Random rand;
         public GraphicsDevice device;
+        public Viewport viewport;
         KeyboardState oldkeyboardState;
         MouseState mouseStateCurrent, mouseStatePrevious, originalMouseState;
         bool isRclicked, isLclicked, isRdown, isLdown;
@@ -175,13 +176,14 @@ namespace SaturnIV
             graphics.IsFullScreen = false;
             messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY 
                                       - (graphics.PreferredBackBufferHeight / 3));
-           
+         
 #endif
         }
 
         protected override void LoadContent()
         {
             device = graphics.GraphicsDevice;
+            viewport = device.Viewport;
             //effect = Content.Load<Effect>("effects");
             loadShipData();
             Gui.initalize(this, ref shipDefList);
@@ -291,7 +293,7 @@ namespace SaturnIV
             else
             {
                 editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isLdown,
-                    ref npcManager, ourCamera);
+                    ref npcManager, ourCamera,ref viewport);
                 Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
                 ourCamera.Update(playerShip.worldMatrix);

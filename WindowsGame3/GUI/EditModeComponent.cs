@@ -25,12 +25,15 @@ namespace SaturnIV
         Color sphereColor;
         public bool ischangingDirection = false;
         public bool isDragging = false;
+        public bool isGroupSelect = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
         string[] NameList;
         public static bool selected = false;
         MouseState prevMouseState;
+        MouseState mouseCurrent; 
         public Rectangle selectionRect;
+        List<newShipStruct> selectedGroup = new List<newShipStruct>();
 
         public EditModeComponent(Game game)
             : base(game)
@@ -57,13 +60,12 @@ namespace SaturnIV
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Ray currentMouseRay, Vector3 mouse3dVector, 
                                     ref List<newShipStruct> objectList,bool isLClicked, bool isLDepressed, 
-                                    ref NPCManager npcManager,Camera ourCamera)
+                                    ref NPCManager npcManager,Camera ourCamera, ref Viewport viewport)
         {
             // TODO: Add your update code here
             bool checkResult = false;
             bool isDirectionSphere = false;
-
-            MouseState mouseCurrent; 
+            selected = false;
             mouseCurrent = Mouse.GetState();
 
             isDirectionSphere = checkIsSelected(currentMouseRay, mouse3dVector, directionSphere);
@@ -73,6 +75,7 @@ namespace SaturnIV
             if (isLClicked && !isDirectionSphere)
             {
                 isDragging = false;
+
                 foreach (newShipStruct ourShip in objectList)
                 {
                     checkResult = checkIsSelected(currentMouseRay, mouse3dVector, ourShip.modelBoundingSphere);
@@ -85,6 +88,7 @@ namespace SaturnIV
                     else
                         ourShip.isSelected = false;
                 }
+                
             }
 
             if (isLDepressed && !isDirectionSphere && !ischangingDirection)
@@ -100,20 +104,23 @@ namespace SaturnIV
                     }
                 }
             }
-            else if ((isLDepressed && isDirectionSphere && !isDragging) || (isLDepressed && ischangingDirection && !isDragging))
+            else if ((isLDepressed && isDirectionSphere && !isDragging) || (isLDepressed && ischangingDirection && !isDragging && !isGroupSelect))
             {
                 isDragging = false;
                 sphereColor = Color.Red;
                 ischangingDirection = true;
                 mouseCurrent = Mouse.GetState();
-                foreach (newShipStruct ourShip in objectList)
+                if (!isGroupSelect)
                 {
-                    if (ourShip.isSelected)
+                    foreach (newShipStruct ourShip in objectList)
                     {
-                        ourShip.targetPosition = mouse3dVector;
-                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 1.5f;
-                        npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
-                        mouseOld = mouseCurrent;
+                        if (ourShip.isSelected)
+                        {
+                            ourShip.targetPosition = mouse3dVector;
+                            directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius * 1.5f;
+                            npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
+                            mouseOld = mouseCurrent;
+                        }
                     }
                 }
             }
@@ -122,9 +129,17 @@ namespace SaturnIV
                 sphereColor = Color.Blue;
                 ischangingDirection = false;
             }
-            //if (isLDepressed && !isDragging && !isDirectionSphere && !ischangingDirection)
-                selectRectangle();
+            if (prevMouseState.LeftButton == ButtonState.Released)
+                selectionRect = Rectangle.Empty;
 
+            if (isLDepressed && !isDragging && !isDirectionSphere && !ischangingDirection && !selected)
+            {
+                isGroupSelect = true;
+                selectRectangle(mouseCurrent);
+                RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
+            }
+
+            prevMouseState = mouseCurrent;
             base.Update(gameTime);
         }
 
@@ -139,37 +154,37 @@ namespace SaturnIV
                 return false;
         }
 
-        public Rectangle selectRectangle()
+        public Rectangle selectRectangle(MouseState mouseState)
         {
-            MouseState mouseState = Mouse.GetState();
-
              // Creating and ajdusting the selection box
-            if (mouseState.LeftButton == ButtonState.Pressed)
+           // if (mouseState.LeftButton == ButtonState.Pressed)
+           // {
+           //     if (prevMouseState.LeftButton == ButtonState.Released)
+           //     {
+            if (selectionRect == Rectangle.Empty)
+                selectionRect = new Rectangle((int)mouseState.X, (int)mouseState.Y, 0, 0);
+            else if (selectionRect != Rectangle.Empty)
             {
-                if (prevMouseState.LeftButton == ButtonState.Released)
-                {
-                    selectionRect = new Rectangle((int)mouseState.X, (int)mouseState.Y, 0, 0);
-                }
-                else
-                {
-                    // Mouse left button is being held down ( dragging )
+                //    }
+                //    else
+                //    {
+                // Mouse left button is being held down ( dragging )
 
-                    // Calculate new width,height
-                    selectionRect.Width = mouseState.X - selectionRect.X;
-                    selectionRect.Height = mouseState.Y - selectionRect.Y;
-
+                // Calculate new width,height
+                selectionRect.Width = mouseState.X - selectionRect.X;
+                selectionRect.Height = mouseState.Y - selectionRect.Y;
+            } //else
                     // We want the selection box to be relative to the viewport we're using
                   //  selectionRect.Width -= rightViewport.X;
                    // selectionRect.Height -= rightViewport.Y;
-                }
-            }
-            else if (prevMouseState.LeftButton == ButtonState.Released)
-            {   
+                //}
+           // }
+           // else //if (prevMouseState.LeftButton == ButtonState.Released)
+           // {   
                 // Mouse was released a frame ago
-                selectionRect = Rectangle.Empty;
-            }
+               //selectionRect = Rectangle.Empty;
+           // }
 
-            prevMouseState = mouseState;
             return selectionRect;
         }
 
@@ -226,22 +241,18 @@ namespace SaturnIV
             return tempData;
         }
 
-        List<newShipStruct> RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
+        public void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
         {
-            // Create a new list to return it
-            List<newShipStruct> selectedObj = new List<newShipStruct>();
             foreach (newShipStruct o in objectsList)
             {
                 // Getting the 2D position of the object
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
 
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y))
-                {
-                    // Add object to selected objects list
-                    selectedObj.Add(o);
-                }
+                    o.isSelected = true;
+                else
+                    o.isSelected = false;
             }
-            return selectedObj;
         }
 
 

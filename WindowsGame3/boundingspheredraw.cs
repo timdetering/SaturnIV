@@ -31,10 +31,10 @@ namespace SaturnIV
         /// <param name="graphicsDevice">The graphics device to use when rendering.</param>
         /// <param name="sphereResolution">The number of line segments 
         ///     to use for each of the three circles.</param>
-        public static void InitializeGraphics(GraphicsDevice graphicsDevice, int sphereResolution)
+        public static void InitializeGraphics(GraphicsDevice graphicsDevice, int sphereResolution, Color mColor)
         {
             BoundingSphereRenderer.sphereResolution = sphereResolution;
-            Color mColor = new Color(new Vector4(0f, 1f, 0f, 1.0f));
+            //Color mColor = new Color(new Vector4(0f, 1f, 0f, 1.0f));
             vertDecl = new VertexDeclaration(graphicsDevice, VertexPositionColor.VertexElements);
             effect = new BasicEffect(graphicsDevice, null);
             effect.LightingEnabled = false;
@@ -93,7 +93,7 @@ namespace SaturnIV
             Color color)
         {
             if (vertBuffer == null)
-                InitializeGraphics(graphicsDevice, 30);
+                InitializeGraphics(graphicsDevice, 30,color);
 
             graphicsDevice.VertexDeclaration = vertDecl;
             graphicsDevice.Vertices[0].SetSource(
@@ -140,7 +140,7 @@ namespace SaturnIV
             Color color)
         {
             if (vertBuffer == null)
-                InitializeGraphics(graphicsDevice, 30);
+                InitializeGraphics(graphicsDevice, 30,color);
 
             graphicsDevice.VertexDeclaration = vertDecl;
             graphicsDevice.Vertices[0].SetSource(
