@@ -96,11 +96,11 @@ namespace SaturnIV
           {
 
                thisObject.targetPosition = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
-               thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.targetPosition, turningSpeed);
+               //thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.targetPosition, turningSpeed);
+               thisObject.vecToTarget = Vector3.Normalize(thisObject.currentTarget.targetPosition - thisObject.modelPosition);// / 
           } 
           else
                 thisObject.targetPosition = thisObject.Direction;
-
             Vector3 scale, translation;
             Quaternion rotation;
             Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
@@ -111,7 +111,7 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.Lerp(thisObject.modelRotation.Forward, thisObject.targetPosition, turningSpeed);
+            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed);
             thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
@@ -263,6 +263,7 @@ namespace SaturnIV
             tempData.objectFileName = weaponDefList[(int)thisWeapon.weaponType].FileName;
             tempData.radius = weaponDefList[(int)thisWeapon.weaponType].SphereRadius;
             tempData.isProjectile = weaponDefList[(int)thisWeapon.weaponType].isProjectile;
+            tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
             tempData.objectColor = Color.White; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
@@ -276,6 +277,7 @@ namespace SaturnIV
             tempData.objectThrust = weaponDefList[(int)thisWeapon.weaponType].Thrust;
             tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius);
             tempData.missileTarget = targetObject;
+            tempData.currentTarget = targetObject;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
             Vector3 plyonVector3 = new Vector3(thisWeapon.ModulePositionOnShip[modIndex].X,
                                    thisWeapon.ModulePositionOnShip[modIndex].Y,

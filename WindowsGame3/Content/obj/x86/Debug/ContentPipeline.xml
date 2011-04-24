@@ -101,15 +101,6 @@
       <Time>2011-03-29T19:05:41.359375-05:00</Time>
     </Item>
     <Item>
-      <Source>textures\bluetexture.png</Source>
-      <Name>textures\bluetexture</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bluetexture.xnb</Output>
-      <Time>2011-03-29T19:05:40.78125-05:00</Time>
-    </Item>
-    <Item>
       <Source>hud.png</Source>
       <Name>hud</Name>
       <Importer>TextureImporter</Importer>
@@ -171,15 +162,6 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\star.xnb</Output>
       <Time>2011-03-29T19:05:41.359375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\target_icon.png</Source>
-      <Name>textures\target_icon</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\target_icon.xnb</Output>
-      <Time>2011-03-29T19:05:41.75-05:00</Time>
     </Item>
     <Item>
       <Source>textures\explosion.png</Source>
@@ -245,33 +227,6 @@
       <Time>2011-03-29T19:05:37.96875-05:00</Time>
     </Item>
     <Item>
-      <Source>textures\targetlock.png</Source>
-      <Name>textures\targetlock</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock.xnb</Output>
-      <Time>2011-03-29T19:05:41.765625-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\targetlock1.png</Source>
-      <Name>textures\targetlock1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock1.xnb</Output>
-      <Time>2011-03-29T19:05:41.765625-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\targetlock2.png</Source>
-      <Name>textures\targetlock2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock2.xnb</Output>
-      <Time>2011-03-29T19:05:41.765625-05:00</Time>
-    </Item>
-    <Item>
       <Source>textures\missiletrack.png</Source>
       <Name>textures\missiletrack</Name>
       <Importer>TextureImporter</Importer>
@@ -317,15 +272,6 @@
       <Time>2011-03-29T19:05:41.765625-05:00</Time>
     </Item>
     <Item>
-      <Source>textures\bullet.jpg</Source>
-      <Name>textures\bullet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bullet.xnb</Output>
-      <Time>2011-03-29T19:05:40.78125-05:00</Time>
-    </Item>
-    <Item>
       <Source>textures\explo.png</Source>
       <Name>textures\explo</Name>
       <Importer>TextureImporter</Importer>
@@ -359,15 +305,6 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke2.xnb</Output>
-      <Time>2011-03-29T19:05:41.359375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\saturn.jpg</Source>
-      <Name>textures\saturn</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\saturn.xnb</Output>
       <Time>2011-03-29T19:05:41.359375-05:00</Time>
     </Item>
     <Item>
@@ -1980,6 +1917,15 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
       <Time>2011-04-14T22:21:54.828125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\SelectionBox.png</Source>
+      <Name>textures\SelectionBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\SelectionBox.xnb</Output>
+      <Time>2010-11-25T21:43:43.0151432-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

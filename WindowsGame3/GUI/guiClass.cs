@@ -67,13 +67,13 @@ namespace SaturnIV
             horizontalStartX = 500;
             verticalStartY = 25;
             MenuItem tempItem = new MenuItem();
-            tempItem.itemText = "One";
+            tempItem.itemText = "Fleet";
             tempItem.itemIndex = 0;
             tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 100, 20);
             verticalStartY += 20;
             menuTeamList.Add(tempItem);
             tempItem = new MenuItem();
-            tempItem.itemText = "Two";
+            tempItem.itemText = "Eriax";
             tempItem.itemIndex = 1;
             tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 100, 20);
             verticalStartY += 20;
@@ -200,6 +200,9 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Team");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(500, 7), opt4Color);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("Save - F10");
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(800, 7), opt4Color);
             messageBuffer = new StringBuilder();
             if (AddRemove == true)
             {

@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIClass.cs" />
     <Compile Include="boundingspheredraw.cs" />
     <Compile Include="CameraClass.cs" />
     <Compile Include="boundingFrustumRender.cs" />

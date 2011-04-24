@@ -64,7 +64,6 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\DemoFont.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Miramonte.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\redtexture.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bluetexture.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\hud.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\hud_target.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\planettexture1.xnb
@@ -72,7 +71,6 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\planettexture3.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\fire.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\star.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\target_icon.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\explosion.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\starfield2.xnb
@@ -80,20 +78,15 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\OutputCube.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\nebula2.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Thrusters\NoiseVolume.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock1.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\targetlock2.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\missiletrack.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\blackDotLarge.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\engine_diff_tex.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\redDotSmall.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\yellowDotSmall.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\bullet.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\explo.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\HealthBar.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\hud_target_new.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\smoke2.xnb
-C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\saturn.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\dummy.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\LaserBolt2.xnb
 C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\sphere.xnb
@@ -286,3 +279,4 @@ C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\C
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb
 C:\Documents and Settings\bhaase\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\VetteBurner_EXPORT[1]_0.xnb
+C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\SelectionBox.xnb

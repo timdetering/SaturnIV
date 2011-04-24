@@ -55,7 +55,7 @@ namespace SaturnIV
         public void loadPlanetTextures()
         {
             planetTextureArray = new Texture2D[5];
-            planetTextureArray[0] = Game.Content.Load<Texture2D>("textures/saturn");
+            planetTextureArray[0] = Game.Content.Load<Texture2D>("textures/planettexture2");
             planetTextureArray[1] = Game.Content.Load<Texture2D>("textures/planettexture2");
             planetTextureArray[2] = Game.Content.Load<Texture2D>("textures/planettexture3");
 

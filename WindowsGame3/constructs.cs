@@ -95,6 +95,7 @@ namespace SaturnIV
         public float modelWidth;
         public float speed;
         public bool isSquad;
+        public int squadNo = -1;
         public bool isSquadLeader;
         public int team;
         public newShipStruct threat;

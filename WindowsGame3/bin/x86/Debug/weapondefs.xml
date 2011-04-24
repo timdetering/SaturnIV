@@ -21,19 +21,19 @@
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
       <Type>KM200G</Type>
-      <Mass>0.75</Mass>
-      <Thrust>900</Thrust>
+      <Mass>0.50</Mass>
+      <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
-      <Agility>12</Agility>
+      <Agility>10</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wType>AC10</wType>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>500</regenTime>
+      <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>2000</range>
+      <range>1000</range>
     </Item>
     <Item>
       <FileName>Models//LaserBolt2</FileName>

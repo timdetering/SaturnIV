@@ -37,14 +37,9 @@ namespace SaturnIV
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D HUD;
-        Texture2D HUD_Target;
-        Texture2D HUDAutoTargetIcon;
-        Texture2D HUDTargetLockIcon1, HUDTargetLockIcon2;
-        Texture2D HUDMissileTrackIcon;
+        Texture2D rectTex;
         Vector2 messagePos1 = new Vector2(0,0);
         Vector2 systemMessagePos = new Vector2(30,20);
-        String HUDMessage;
 
         public Vector3[] plyonOffset;
 
@@ -55,6 +50,7 @@ namespace SaturnIV
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
         public List<squadClass> squadList = new List<squadClass>();
+        squadClass thisSquad;
         public NPCManager npcManager;
         public PlayerManager playerManager;
         public ModelManager modelManager;
@@ -191,12 +187,7 @@ namespace SaturnIV
             Gui.initalize(this, ref shipDefList);
             initPlayer();
             spriteFont = this.Content.Load<SpriteFont>("DemoFont");
-            HUD = this.Content.Load<Texture2D>("hud");
-            HUD_Target = this.Content.Load<Texture2D>("textures//hud_target_new");
-            HUDAutoTargetIcon = this.Content.Load<Texture2D>("textures/target_icon");
-            HUDTargetLockIcon1 = this.Content.Load<Texture2D>("textures/targetlock1");
-            HUDTargetLockIcon2 = this.Content.Load<Texture2D>("textures/targetlock2");
-            HUDMissileTrackIcon = this.Content.Load<Texture2D>("textures/missiletrack");
+            rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
         }
@@ -228,7 +219,7 @@ namespace SaturnIV
             createSquad.squadmate.Add(playerShip);
             createSquad.squadNum = 1;
             createSquad.leader = playerShip;
-            squadList.Add(createSquad);
+            //squadList.Add(createSquad);
         }
 
         private void loadShipData()
@@ -326,15 +317,19 @@ namespace SaturnIV
                 sparkEmitter.Update(gameTime, playerShip.modelPosition * 10);
             for (int i = 0; i < activeShipList.Count; i++)
             {
+                if (activeShipList[i].squadNo >-1)
+                    thisSquad = squadList[activeShipList[i].squadNo];
+                else
+                    thisSquad = null;
                 for (int j = 0; j < activeShipList.Count; j++)
                 {
                     if (activeShipList[j] != activeShipList[i])
-                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], activeShipList[j],j,squadList[0]);
+                        npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, 
+                                            activeShipList[i], activeShipList[j], j,thisSquad);
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
-               //activeShipList[i].modelBB = HelperClass.updateBB(activeShipList[i].modelBB.Min, activeShipList[i].modelBB.Max, activeShipList[i].modelPosition);
-              npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, activeShipList[i], playerShip, 0,squadList[0]);
-
+                npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, 
+                                            activeShipList[i], playerShip, 0,thisSquad);
             }
             weaponsManager.Update(gameTime, gameSpeed);
         }
@@ -391,7 +386,7 @@ namespace SaturnIV
 
                 newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem,Gui.thisTeam);
                 activeShipList.Add(newShip);
-                squadList[0].squadmate.Add(newShip);
+                //squadList[0].squadmate.Add(newShip);
             }
 
             if (currentTime - lastKeyPressTime > 100)
@@ -576,32 +571,28 @@ namespace SaturnIV
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             //projectileTrailParticles.Draw(gameTime);
 
-            sparkParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            sparkParticles.Draw(gameTime);
+            if (isEditMode)
+            {
+                spriteBatch.Begin();
+                // We need to fix the selection rectangle in case one of its dimensions is negative
+                Rectangle selectionRect = editModeClass.selectionRect;
+                Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
+                if (r.Width < 0)
+                {
+                    r.Width = -r.Width;
+                    r.X -= r.Width;
+                }
+                if (r.Height < 0)
+                {
+                    r.Height = -r.Height;
+                    r.Y -= r.Height;
+                }
+
+                spriteBatch.Draw(rectTex, r, Color.White);
+                spriteBatch.End();
+            }
             
             base.Draw(gameTime);
-        }
-
-        private void DrawAutoTarget(GameTime gameTime)
-        {
-            // The time since Update was called last.
-            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //modelX = playerShip.currentTargetObject.screenCords.X;
-            //modelY = playerShip.currentTargetObject.screenCords.Y;
-            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            _RotationAngle += elapsed * 5.0f;
-            float circle = MathHelper.Pi * 2;
-            _RotationAngle = _RotationAngle % circle;
-            _RotationAngle2 = -_RotationAngle;
-            Vector2 spriteCenter = new Vector2(64,64);
-            spriteBatch.Draw(HUDTargetLockIcon1, new Vector2(_currentPos.X, _currentPos.Y), 
-                null, Color.White, _RotationAngle, spriteCenter, _currentScale, SpriteEffects.None, 0);
-            spriteBatch.Draw(HUDTargetLockIcon2, new Vector2(_currentPos.X, _currentPos.Y),
-                null, Color.White, _RotationAngle2, spriteCenter, _currentScale, SpriteEffects.None, 0);
-          //  playerShipHealthBar.DrawHbar(gameTime, spriteBatch, Color.Green, (int)modelX, (int)modelY-10,
-          //                              100, 10, (int)playerShip.currentTargetObject.objectArmorLvl);
-
-            spriteBatch.End();
         }
 
         private void DrawHUDTargets()
@@ -617,13 +608,13 @@ namespace SaturnIV
                     buffer.AppendFormat(enemy.objectAlias);
                     if (enemy.currentTarget != null)
                     {
-                        buffer.AppendFormat("[Target]" + activeShipList[enemy.currentTargetIndex].objectAlias + "-");
+                        buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
                     }
                     buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     buffer.AppendFormat("[Team]"+ enemy.team);
-                    buffer.AppendFormat("[Angle] {0}", enemy.angleOfAttack);
+                    //buffer.AppendFormat("[Angle] {0}", enemy.angleOfAttack);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
             }
@@ -647,9 +638,9 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
                                     (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("\nMembers in Squad 1 {0} ", squadList[0].squadmate.Count());
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
             messageBuffer.AppendFormat("\nCurrent Menu " +guiClass.currentSelection);
+            messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
                         spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
@@ -670,10 +661,6 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\n" + gServer.fromClient);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Blue);
             spriteBatch.End();
-        }
-
-        public void setMouseState()
-        {
         }
 
         Vector3 mouse3dVector
