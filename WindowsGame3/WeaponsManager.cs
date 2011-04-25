@@ -33,6 +33,8 @@ namespace SaturnIV
         Vector3 turretDirection = Vector3.Zero;
         public ParticleEmitter trailEmitter;
         float thrustAmount;
+        double elapsedTime;
+        double currentTime;
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
@@ -88,8 +90,10 @@ namespace SaturnIV
         
         public void updateMissileMovement(GameTime gameTime, float gameSpeed, weaponStruct thisObject)
         {
+            currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
             turningSpeed *= thisObject.objectAgility * gameSpeed;
 
           if (thisObject.isHoming)
@@ -100,7 +104,7 @@ namespace SaturnIV
                thisObject.vecToTarget = Vector3.Normalize(thisObject.currentTarget.targetPosition - thisObject.modelPosition);// / 
           } 
           else
-                thisObject.targetPosition = thisObject.Direction;
+            thisObject.targetPosition = thisObject.Direction;
             Vector3 scale, translation;
             Quaternion rotation;
             Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
@@ -132,6 +136,8 @@ namespace SaturnIV
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
           //  if (thisObject.isProjectile)
             //    thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
+            thisObject.timer += currentTime - elapsedTime;
+            elapsedTime = currentTime;
         }
 
         public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
@@ -165,7 +171,7 @@ namespace SaturnIV
             for (int i=0; i < activeWeaponList.Count; i++)
             {
                 updateMissileMovement(gameTime, gameSpeed, activeWeaponList[i]);
-                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range)
+                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 1000)
                    activeWeaponList.Remove(activeWeaponList[i]);
             }
             base.Update(gameTime);
@@ -231,6 +237,7 @@ namespace SaturnIV
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.Direction = weaponOrigin.Direction;
             tempData.targetPosition = weaponOrigin.Direction;
+            tempData.timeToLive = 1000;
 
           if (tempData.isProjectile)
            {
@@ -243,7 +250,6 @@ namespace SaturnIV
             activeWeaponList.Add(tempData);
             //isMissileHit = true;
         }
-
 
 //////////////////////// NEW FIRE WEAPON CLASS
         public void fireWeapon(newShipStruct targetObject, newShipStruct weaponOrigin,
@@ -315,8 +321,8 @@ namespace SaturnIV
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
                                                400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
                 tempData.trailEmitter = trailEmitter;
-                //weaponOrigin.cMissileCount -= 1;
             }
+            tempData.timeToLive = 1000;
             //if (weaponOrigin.cMissileCount >0)
             activeWeaponList.Add(tempData);
             //isMissileHit = true;

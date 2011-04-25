@@ -114,6 +114,8 @@ namespace SaturnIV
         public Color objectColor;
         public ParticleEmitter trailEmitter;
         public newShipStruct missileTarget;
+        public double timeToLive;
+        public double timer;
     }
 
     [Serializable]
