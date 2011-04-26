@@ -187,11 +187,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_EC1_SWACS.FBX">
-      <Name>Eriax_EC1_SWACS</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Eriax_Heavy_Destroyer.FBX">
       <Name>Eriax_Heavy_Destroyer</Name>
       <Importer>FbxImporter</Importer>
@@ -264,6 +259,31 @@
     </Compile>
     <Compile Include="Models\basic_bullet.FBX">
       <Name>basic_bullet</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Battlecrusier.FBX">
+      <Name>Eriax_Battlecrusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Frigate.FBX">
+      <Name>Eriax_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Missile_Frigate.FBX">
+      <Name>Eriax_Missile_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_SWACS.FBX">
+      <Name>Eriax_SWACS</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_MR-80_Striker.FBX">
+      <Name>Fleet_MR-80_Striker</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

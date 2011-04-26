@@ -263,10 +263,12 @@ namespace SaturnIV
                             isRight = -thisShip.modelRotation.Forward;
                             break;
                     }
-                    Vector3 tVec = new Vector3(thisWeapon.ModulePositionOnShip[i].X, 1, thisWeapon.ModulePositionOnShip[i].Y);
+                    Vector3 tVec = thisShip.modelPosition;
+                    tVec = thisShip.modelPosition + (thisShip.modelRotation.Forward)
+                        - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * 1);
                     thisShip.moduleFrustum[moduleCount].Matrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + isFacing, Vector3.Up) *
                                                         Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisWeapon.FiringEnvelopeAngle),
-                                                        16.0f / 9.0f, .5f, 500f);
+                                                        16.0f / 9.0f, .5f, 1000f);
                     moduleCount++;
                 }
             }
@@ -345,7 +347,7 @@ namespace SaturnIV
         /// <returns>Signed angle, in radians</returns>        
         /// <remarks>All three vectors must lie along the same plane.</remarks>
 
-        public double GetSignedAngleBetweenTwoVectors(Vector3 Source, Vector3 Dest, Vector3 DestsRight)
+        public static double GetSignedAngleBetweenTwoVectors(Vector3 Source, Vector3 Dest, Vector3 DestsRight)
         {
             // We make sure all of our vectors are unit length
             Source.Normalize();

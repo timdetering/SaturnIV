@@ -38,7 +38,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.98f;
+        private const float DragFactor = 0.97f;
 
         public static void set_mesh(ModelMesh mesh, GraphicsDevice device)
         {
@@ -96,7 +96,7 @@ namespace SaturnIV
             
             turningSpeed *= thisObject.objectAgility * gameSpeed;
 
-          if (thisObject.isHoming)
+          if (thisObject.isHoming && thisObject.distanceFromOrigin > 500)
           {
 
                thisObject.targetPosition = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
@@ -105,6 +105,12 @@ namespace SaturnIV
           } 
           else
             thisObject.targetPosition = thisObject.Direction;
+           if (thisObject.isHoming)
+                thisObject.angleOfAttack = NPCManager.GetSignedAngleBetweenTwoVectors(thisObject.modelPosition, thisObject.currentTarget.modelPosition,
+                                           thisObject.currentTarget.modelRotation.Right);
+          // if (thisObject.angleOfAttack < -0 || thisObject.angleOfAttack > .99)
+          //      thisObject.targetPosition = thisObject.Direction;
+
             Vector3 scale, translation;
             Quaternion rotation;
             Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
@@ -131,13 +137,22 @@ namespace SaturnIV
 
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin);
            // thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
-            if (trailEmitter != null)
-                trailEmitter.Update(gameTime, thisObject.modelPosition);
+            if (thisObject.trailEmitter != null)
+                thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
           //  if (thisObject.isProjectile)
             //    thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.timer += currentTime - elapsedTime;
             elapsedTime = currentTime;
+            //if (thisObject.ThrusterEngaged)
+           //  {
+           //  thisObject.shipThruster.update(thisObject.modelPosition + (thisObject.modelRotation.Forward)
+          //   - (thisObject.modelRotation.Up) + (thisObject.modelRotation.Right * 0),
+          //   thisObject.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
+          //   Color.White, Color.Blue, ourCamera.position);
+
+            // thisShip.shipThruster.heat = 1.5f;
+            // }
         }
 
         public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
@@ -277,7 +292,6 @@ namespace SaturnIV
                 tempData.shipModel = LoadModel(tempData.objectFileName);
             else
                 tempData.shipModel = LaserModelLoad(tempData.objectFileName);
-            //tempData.shipModel = LaserModelLoad(tempData.objectFileName);
             tempData.objectAgility = weaponDefList[(int)thisWeapon.weaponType].Agility;
             tempData.objectMass = weaponDefList[(int)thisWeapon.weaponType].Mass;
             tempData.objectThrust = weaponDefList[(int)thisWeapon.weaponType].Thrust;

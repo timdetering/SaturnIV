@@ -1,9 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
+<Item>
+      <FileName>Models//Eriax_SWACS</FileName>
+      <Type>Eriax Recon/SWACS</Type>
+      <Mass>2.0</Mass>
+      <Thrust>1500</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>9.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 1000 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+	  <Chase> 1 1 1 1 </Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 0
+            4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
     <Item>
       <FileName>Models//Eriax_MK1_Fighter</FileName>
       <Type>Eriax MK1 Fighter</Type>
+      <Mass>2.0</Mass>
+      <Thrust>1500</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>9.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 1000 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+	  <Chase> 1 1 1 1 </Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AC10</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 0
+            4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 0
+	   -4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Eriax_Missile_Frigate</FileName>
+      <Type>Eriax Missile Frigate</Type>
+      <Mass>2.0</Mass>
+      <Thrust>1500</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>9.00</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldLvl>100</ShieldLvl>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 1000 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 0.2</TargetPrefs>
+	  <Chase> 1 1 1 1 </Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 2
+            4 0 0 2
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+      </Item>
+      <Item>
+	 <weaponType>KM100</weaponType>
+	 <ModulePositionOnShip>
+	    10 0 0 3
+	   -10 0 0 3
+	    5  0 0 3
+ 	   -5  0 0 3
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Fleet_MR-80_Striker</FileName>
+      <Type>Fleet MR-80 Striker</Type>
       <Mass>2.0</Mass>
       <Thrust>1500</Thrust>
       <SphereRadius>25</SphereRadius>

@@ -25,13 +25,13 @@
       <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
-      <Agility>10</Agility>
+      <Agility>8</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wType>AC10</wType>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>400</regenTime>
+      <regenTime>600</regenTime>
       <damageFactor>5</damageFactor>
       <range>1000</range>
     </Item>
@@ -41,7 +41,24 @@
       <Mass>0.25</Mass>
       <Thrust>900</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>10</Scale>
+      <Scale>15</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <wType>AC10</wType>
+      <wClass>Cannon</wClass>	
+      <isProjectile>0</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>300</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>2000</range>
+    </Item>
+<Item>
+      <FileName>Models//LaserBolt2</FileName>
+      <Type>Large Ion</Type>
+      <Mass>0.25</Mass>
+      <Thrust>900</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>30</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wType>AC10</wType>

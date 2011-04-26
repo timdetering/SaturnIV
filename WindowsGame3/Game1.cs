@@ -540,10 +540,10 @@ namespace SaturnIV
                             Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
                                                          npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
                                                          npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
-                            //firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
-                            //    tVec3 + isFacing,
-                            //    tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
-                           //     tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
+                            firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White,
+                                tVec3 + isFacing,
+                                tVec3 + isFacing * 300 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
+                                tVec3 + isFacing * 300 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
                        }
                    }
                }
@@ -571,7 +571,7 @@ namespace SaturnIV
             spriteBatch.End();
             // Pass camera matrices through to the particle system components.
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            //projectileTrailParticles.Draw(gameTime);
+            projectileTrailParticles.Draw(gameTime);
 
             if (isEditMode)
             {
@@ -610,12 +610,12 @@ namespace SaturnIV
                     buffer.AppendFormat(enemy.objectAlias);
                     if (enemy.currentTarget != null)
                     {
-                        buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
+                        //buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
                     }
-                    buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
+                    //buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
                     //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
-                    buffer.AppendFormat("[Team]"+ enemy.team);
+                    //buffer.AppendFormat("[Team]"+ enemy.team);
                     //buffer.AppendFormat("[Angle] {0}", enemy.angleOfAttack);
                     spriteBatch.DrawString(spriteFont, buffer.ToString(), fontPos, Color.Yellow);
                     i++;
