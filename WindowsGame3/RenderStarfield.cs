@@ -164,7 +164,7 @@ namespace SaturnIV
             Matrix[] modelTransforms = new Matrix[SkySphereModel.Bones.Count];
             SkySphereModel.CopyAbsoluteBoneTransformsTo(modelTransforms);
             Matrix wMatrix = Matrix.CreateTranslation(0, -0.3f, 5) * Matrix.CreateScale(5) *
-                             Matrix.CreateTranslation(ourCamera.position);
+                             Matrix.CreateTranslation(Camera.position);
             foreach (ModelMesh mesh in SkySphereModel.Meshes)
             {
                 foreach (Effect currentEffect in mesh.Effects)

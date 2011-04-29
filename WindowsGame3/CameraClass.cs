@@ -15,7 +15,7 @@ namespace SaturnIV
         }
         public CameraMode currentCameraMode = CameraMode.orbit;
 
-        public Vector3 position;
+        public static Vector3 position;
         private Vector3 desiredPosition;
         private Vector3 target;
         private Vector3 desiredTarget;

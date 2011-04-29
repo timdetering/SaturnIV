@@ -335,6 +335,15 @@
       <Time>2011-04-12T20:49:36.53125-05:00</Time>
     </Item>
     <Item>
+      <Source>textures\SelectionBox.png</Source>
+      <Name>textures\SelectionBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\SelectionBox.xnb</Output>
+      <Time>2011-04-23T22:21:37.4735-05:00</Time>
+    </Item>
+    <Item>
       <Source>Models\LaserBolt2.x</Source>
       <Name>Models\LaserBolt2</Name>
       <Importer>XImporter</Importer>
@@ -344,7 +353,7 @@
       <Time>2009-11-25T17:05:02-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2011-04-22T18:32:30.4735-05:00</Value>
+        <Value>2011-04-26T18:57:47.3125-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -357,7 +366,7 @@
       <Time>2011-03-29T19:05:37.921875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2011-04-22T18:32:30.7235-05:00</Value>
+        <Value>2011-04-26T18:57:47.5-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -370,7 +379,7 @@
       <Time>2011-03-29T19:05:37.96875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2011-04-22T18:32:30.801625-05:00</Value>
+        <Value>2011-04-26T18:57:47.578125-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -383,7 +392,7 @@
       <Time>2011-03-29T19:05:37.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2011-04-22T18:32:32.661-05:00</Value>
+        <Value>2011-04-26T18:57:48.59375-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -396,7 +405,7 @@
       <Time>2011-04-14T21:18:21.4375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2011-04-22T18:32:32.739125-05:00</Value>
+        <Value>2011-04-26T18:57:48.671875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -413,9 +422,9 @@
       <Time>2011-04-25T19:34:56.171875-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Antares_Battleship_0.xml</Key>
-        <Value>2011-04-25T19:35:00.875-05:00</Value>
+        <Value>2011-04-26T18:57:50.34375-05:00</Value>
       </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Main_EXPORT[1]_1.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Main_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Engine_EXPORT[_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Thruster_EXPOR_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Badge_EXPORT[1_0.xnb</Request>
@@ -433,7 +442,7 @@
       <Time>2011-04-07T20:34:43.8827062-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Carrier_0.xml</Key>
-        <Value>2011-04-22T18:32:34.94225-05:00</Value>
+        <Value>2011-04-26T18:57:52.171875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb</Request>
@@ -461,7 +470,7 @@
       <Time>2011-04-17T20:16:09.5-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Heavy_Destroyer_0.xml</Key>
-        <Value>2011-04-22T18:32:36.645375-05:00</Value>
+        <Value>2011-04-26T18:57:53.4375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Heavy_Destroyer.fbm\CommandBadge_EXPORT[1]_0.xnb</Request>
@@ -477,7 +486,7 @@
       <Time>2011-04-25T19:11:54.375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Medium_Crusier_0.xml</Key>
-        <Value>2011-04-25T19:25:02.390625-05:00</Value>
+        <Value>2011-04-26T18:57:55.140625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bow_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Stern_EXPORT[1]_0.xnb</Request>
@@ -499,7 +508,7 @@
       <Time>2011-04-07T18:03:12.0233312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK1_Fighter_0.xml</Key>
-        <Value>2011-04-22T18:32:37.426625-05:00</Value>
+        <Value>2011-04-26T18:57:56.03125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Scout_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_Scout_Badge_EXPORT[1]_0.xnb</Request>
@@ -514,7 +523,7 @@
       <Time>2011-04-07T18:00:15.6795812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK2_Fighter_0.xml</Key>
-        <Value>2011-04-22T18:32:37.707875-05:00</Value>
+        <Value>2011-04-26T18:57:56.296875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_LF_MetaSkin_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_LF_BigGun_EXPORT[1]_0.xnb</Request>
@@ -530,10 +539,10 @@
       <Time>2011-04-07T18:02:15.9920812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK3_Corvette_0.xml</Key>
-        <Value>2011-04-22T18:32:38.176625-05:00</Value>
+        <Value>2011-04-26T18:57:56.640625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MissVette_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_1.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MissBadge_EXPORT[1]_0.xnb</Request>
     </Item>
     <Item>
@@ -546,7 +555,7 @@
       <Time>2011-04-25T19:31:59.4375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Berlin_Destroyer_0.xml</Key>
-        <Value>2011-04-25T19:35:01.8125-05:00</Value>
+        <Value>2011-04-26T18:57:58.421875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Leftover_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Burner_EXPORT[4]_0.xnb</Request>
@@ -566,7 +575,7 @@
       <Time>2011-04-07T18:10:56.1170812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Orion_Carrier_0.xml</Key>
-        <Value>2011-04-22T18:32:39.270375-05:00</Value>
+        <Value>2011-04-26T18:57:59.5-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_C_Innate_ResourceEXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Carrier_EXPORT[2]_0.xnb</Request>
@@ -589,7 +598,7 @@
       <Time>2011-04-07T18:38:15.5545812-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SB-1_Lancer_0.xml</Key>
-        <Value>2011-04-22T18:32:40.364125-05:00</Value>
+        <Value>2011-04-26T18:58:00.546875-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Request>
@@ -606,7 +615,7 @@
       <Time>2011-04-25T19:05:18.734375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SF-6_Hornet_0.xml</Key>
-        <Value>2011-04-25T19:25:03.8125-05:00</Value>
+        <Value>2011-04-26T18:58:00.953125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_L_EXPORT[1_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_EXPORT[1]_0.xnb</Request>
@@ -623,7 +632,7 @@
       <Time>2011-04-25T19:06:21.828125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SF-14AB_Tomcat_0.xml</Key>
-        <Value>2011-04-25T19:25:04.71875-05:00</Value>
+        <Value>2011-04-26T18:58:01.90625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AssaultCorvette_Front_EXPORT_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AssaultCorvette_Burner_EXPOR_0.xnb</Request>
@@ -640,7 +649,7 @@
       <Time>2011-04-07T20:43:44.7733312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_Light_Crusier_0.xml</Key>
-        <Value>2011-04-22T18:32:41.614125-05:00</Value>
+        <Value>2011-04-26T18:58:02.28125-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Request>
@@ -656,7 +665,7 @@
       <Time>2011-04-25T19:16:22.109375-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Procyon_Frigate_0.xml</Key>
-        <Value>2011-04-25T19:25:04.984375-05:00</Value>
+        <Value>2011-04-26T18:58:02.890625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_DefenseFrigate_Front_EXPORT[_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_DefenseFrigate_Leftover_EXPO_0.xnb</Request>
@@ -674,7 +683,7 @@
       <Time>2011-04-25T19:08:30.890625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Eriax_MK4_Fighter_0.xml</Key>
-        <Value>2011-04-25T19:25:05.640625-05:00</Value>
+        <Value>2011-04-26T18:58:03.609375-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_Bomber_EXPORT[1]_0.xnb</Request>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_Bomber_Badge_EXPORT[1]_0.xnb</Request>
@@ -692,7 +701,7 @@
       <Time>2011-04-14T21:18:03.90625-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LRGMISSILE_0.xml</Key>
-        <Value>2011-04-22T18:32:43.25475-05:00</Value>
+        <Value>2011-04-26T18:58:03.90625-05:00</Value>
       </Dependency>
       <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -706,8 +715,108 @@
       <Time>2011-04-14T22:21:54.828125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
-        <Value>2011-04-22T18:32:43.286-05:00</Value>
+        <Value>2011-04-26T18:58:03.9375-05:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Battlecrusier.FBX</Source>
+      <Name>Models\Eriax_Battlecrusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Battlecrusier.xnb</Output>
+      <Time>2011-04-25T19:14:15.78125-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Battlecrusier_0.xml</Key>
+        <Value>2011-04-26T18:58:05.5625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Back_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Burner_EXPORT[3]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Inside_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Badge-R_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Badge-L_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Front_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Fighter_EXPORT_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Corvette_EXPOR_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Frigate_EXPORT_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_CapShip_ EXPOR_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_FireControl_EXPORT_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_PlatformControl_EX_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_MS_Sensors_AdvancedArray_EXP_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_Hyperspace_EXPORT[_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_HyperspaceInhibito_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Frigate.FBX</Source>
+      <Name>Models\Eriax_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Frigate.xnb</Output>
+      <Time>2011-04-25T19:11:43.3125-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Frigate_0.xml</Key>
+        <Value>2011-04-26T18:58:08.71875-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bow_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Stern_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bay_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Badge_EXPORT[2]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]1_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]1_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Missile_Frigate.FBX</Source>
+      <Name>Models\Eriax_Missile_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Missile_Frigate.xnb</Output>
+      <Time>2011-04-25T19:13:14-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Missile_Frigate_0.xml</Key>
+        <Value>2011-04-26T18:58:09.5625-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Front_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_1.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Back_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Door_EXPORT[1]_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_SWACS.FBX</Source>
+      <Name>Models\Eriax_SWACS</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_SWACS.xnb</Output>
+      <Time>2011-04-07T18:04:44.2108312-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_SWACS_0.xml</Key>
+        <Value>2011-04-26T18:58:10.078125-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_1.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_Badge_EXPORT[1]_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_MR-80_Striker.FBX</Source>
+      <Name>Models\Fleet_MR-80_Striker</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_MR-80_Striker.xnb</Output>
+      <Time>2011-04-25T19:07:30.984375-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_MR-80_Striker_0.xml</Key>
+        <Value>2011-04-26T18:58:10.875-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Leftover_ EXPOR_0.xnb</Request>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Burner_EXPORT[3_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
@@ -767,6 +876,111 @@
       <Time>2011-04-25T19:34:56.171875-05:00</Time>
     </Item>
     <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Main_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Main_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Engine_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Engine_EXPORT[_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Thruster_EXPORT[3].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Thruster_EXPOR_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Badge_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Badge_EXPORT[1_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserKineticBurstCannon_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserKineticBurstCan_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserKineticBurstCannon_EXPORT[1]1.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserKineticBurstCan_1.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserIonBeamTurret_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserIonBeamTurret_E_0.xnb</Output>
+      <Time>2009-07-06T23:00:10-05:00</Time>
+    </Item>
+    <Item>
       <Source>Models\Eriax_Carrier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
@@ -786,7 +1000,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Back_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.19225-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3].png</Source>
@@ -801,7 +1015,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Burner_EXPORT[3]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.19225-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1].png</Source>
@@ -816,7 +1030,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Inside_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.19225-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1].png</Source>
@@ -831,7 +1045,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-R_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.19225-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1].png</Source>
@@ -846,7 +1060,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Badge-L_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.19225-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1].png</Source>
@@ -861,7 +1075,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\V_MS_Front_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.207875-05:00</Time>
+      <Time>2011-04-26T18:57:51.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT[1].png</Source>
@@ -876,7 +1090,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Fighter_EXPORT_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.207875-05:00</Time>
+      <Time>2011-04-26T18:57:51.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPORT[1].png</Source>
@@ -891,7 +1105,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Corvette_EXPOR_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.40625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT[1].png</Source>
@@ -906,7 +1120,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_Frigate_EXPORT_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.421875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPORT[1].png</Source>
@@ -921,7 +1135,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Production_CapShip_ EXPOR_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.421875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT[1].png</Source>
@@ -936,7 +1150,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_FireControl_EXPORT_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.421875-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EXPORT[1].png</Source>
@@ -951,7 +1165,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_PlatformControl_EX_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXPORT[1].png</Source>
@@ -966,7 +1180,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Vgr_MS_Sensors_AdvancedArray_EXP_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[1].png</Source>
@@ -981,7 +1195,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_Hyperspace_EXPORT[_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.2235-05:00</Time>
+      <Time>2011-04-26T18:57:51.453125-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibitor_EXPORT[1].png</Source>
@@ -996,52 +1210,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\5E8626C7\Eriax_Carrier.fbm\Hgn_MS_Module_HyperspaceInhibito_0.xnb</Output>
-      <Time>2011-04-22T18:32:34.239125-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\MineVette_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-08T10:41:22-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\VetteBurner_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-08T10:41:22-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\MineVette_Badge_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-08T10:41:22-05:00</Time>
+      <Time>2011-04-26T18:57:51.453125-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_Heavy_Destroyer.FBX</Source>
@@ -1101,6 +1270,141 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Eriax_Medium_Crusier_0.xml</Output>
       <Time>2011-04-25T19:11:54.375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Bow_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bow_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Stern_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Stern_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Bay_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bay_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Engine_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Badge_EXPORT[2].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Badge_EXPORT[2]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_a0_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_b0_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_a0_EXPORT[1]1.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]1_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_b0_EXPORT[1]1.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]1_0.xnb</Output>
+      <Time>2009-07-10T07:44:24-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_MK1_Fighter.FBX</Source>
@@ -1225,7 +1529,7 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_1.xnb</Output>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb</Output>
       <Time>2009-07-08T10:21:42-05:00</Time>
     </Item>
     <Item>
@@ -1249,6 +1553,111 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_Berlin_Destroyer_0.xml</Output>
       <Time>2011-04-25T19:31:59.4375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Leftover_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Leftover_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-06T22:32:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Burner_EXPORT[4].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Burner_EXPORT[4]_0.xnb</Output>
+      <Time>2009-07-06T22:32:00-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Front_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Front_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-06T22:32:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Badge_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Badge_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-06T22:32:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Badge2_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Badge2_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-06T22:32:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Turret_EXPORT[2].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Turret_EXPORT[2]_0.xnb</Output>
+      <Time>2009-07-06T22:32:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Turret_EXPORT[2]1.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Turret_EXPORT[2]1_0.xnb</Output>
+      <Time>2009-07-06T22:32:02-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_Orion_Carrier.FBX</Source>
@@ -1427,7 +1836,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:40.19225-05:00</Time>
+      <Time>2011-04-26T18:58:00.375-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1].png</Source>
@@ -1442,7 +1851,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:40.19225-05:00</Time>
+      <Time>2011-04-26T18:58:00.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Leftover_ EXPORT[1].png</Source>
@@ -1457,7 +1866,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Leftover_ EXPOR_0.xnb</Output>
-      <Time>2011-04-22T18:32:40.19225-05:00</Time>
+      <Time>2011-04-26T18:58:00.390625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Burner_EXPORT[3].png</Source>
@@ -1472,7 +1881,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\F7AC27DD\Fleet_SB-1_Lancer.fbm\Hgn_AttackBomber_Burner_EXPORT[3_0.xnb</Output>
-      <Time>2011-04-22T18:32:40.19225-05:00</Time>
+      <Time>2011-04-26T18:58:00.390625-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_SF-6_Hornet.FBX</Source>
@@ -1480,6 +1889,66 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_SF-6_Hornet_0.xml</Output>
       <Time>2011-04-25T19:05:18.734375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_BADGE_L_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_L_EXPORT[1_0.xnb</Output>
+      <Time>2009-06-27T23:30:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_BADGE_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_EXPORT[1]_0.xnb</Output>
+      <Time>2009-06-27T23:30:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_InterceptorA_EXPORT[2].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_InterceptorA_EXPORT[2]_0.xnb</Output>
+      <Time>2009-06-27T23:30:46-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_B_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_B_EXPORT[1]_0.xnb</Output>
+      <Time>2009-06-27T23:30:46-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_SF-14AB_Tomcat.FBX</Source>
@@ -1568,7 +2037,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:41.489125-05:00</Time>
+      <Time>2011-04-26T18:58:02.15625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1].png</Source>
@@ -1583,7 +2052,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\VetteBurner_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:41.489125-05:00</Time>
+      <Time>2011-04-26T18:58:02.15625-05:00</Time>
     </Item>
     <Item>
       <Source>obj\x86\Debug\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1].png</Source>
@@ -1598,7 +2067,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\FBX\51D52953\Eriax_Light_Crusier.fbm\MineVette_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2011-04-22T18:32:41.489125-05:00</Time>
+      <Time>2011-04-26T18:58:02.15625-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_Procyon_Frigate.FBX</Source>
@@ -1606,541 +2075,6 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_Procyon_Frigate_0.xml</Output>
       <Time>2011-04-25T19:16:22.109375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Eriax_MK4_Fighter.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Eriax_MK4_Fighter_0.xml</Output>
-      <Time>2011-04-25T19:08:30.890625-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\LRGMISSILE.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\LRGMISSILE_0.xml</Output>
-      <Time>2011-04-14T21:18:03.90625-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\basic_bullet.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
-      <Time>2011-04-14T22:21:54.828125-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\SelectionBox.png</Source>
-      <Name>textures\SelectionBox</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\SelectionBox.xnb</Output>
-      <Time>2011-04-23T22:21:37.4735-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Main_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Main_EXPORT[1]_1.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Engine_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Engine_EXPORT[_0.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Thruster_EXPORT[3].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Thruster_EXPOR_0.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiser_Badge_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiser_Badge_EXPORT[1_0.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserKineticBurstCannon_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserKineticBurstCan_0.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserKineticBurstCannon_EXPORT[1]1.png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserKineticBurstCan_1.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Battlecruiser\Hgn_BattleCruiserIonBeamTurret_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_BattleCruiserIonBeamTurret_E_0.xnb</Output>
-      <Time>2009-07-06T23:00:10-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Leftover_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Leftover_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-06T22:32:00-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Burner_EXPORT[4].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Burner_EXPORT[4]_0.xnb</Output>
-      <Time>2009-07-06T22:32:00-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Front_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Front_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-06T22:32:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Badge_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Badge_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-06T22:32:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Badge2_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Badge2_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-06T22:32:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Turret_EXPORT[2].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Turret_EXPORT[2]_0.xnb</Output>
-      <Time>2009-07-06T22:32:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Destroyer\Hgn_Destroyer_Turret_EXPORT[2]1.png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Destroyer_Turret_EXPORT[2]1_0.xnb</Output>
-      <Time>2009-07-06T22:32:02-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Eriax_Battlecrusier.FBX</Source>
-      <Name>Models\Eriax_Battlecrusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Battlecrusier.xnb</Output>
-      <Time>2011-04-25T19:14:15.78125-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Eriax_Battlecrusier_0.xml</Key>
-        <Value>2011-04-25T19:25:06.671875-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Back_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Burner_EXPORT[3]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Inside_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Badge-R_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Badge-L_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\V_MS_Front_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Fighter_EXPORT_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Corvette_EXPOR_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_Frigate_EXPORT_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Production_CapShip_ EXPOR_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_FireControl_EXPORT_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_PlatformControl_EX_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_MS_Sensors_AdvancedArray_EXP_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_Hyperspace_EXPORT[_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_MS_Module_HyperspaceInhibito_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Eriax_Frigate.FBX</Source>
-      <Name>Models\Eriax_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Frigate.xnb</Output>
-      <Time>2011-04-25T19:11:43.3125-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Eriax_Frigate_0.xml</Key>
-        <Value>2011-04-25T19:25:08.65625-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bow_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Stern_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bay_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Badge_EXPORT[2]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]1_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]1_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Eriax_Missile_Frigate.FBX</Source>
-      <Name>Models\Eriax_Missile_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Missile_Frigate.xnb</Output>
-      <Time>2011-04-25T19:13:14-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Eriax_Missile_Frigate_0.xml</Key>
-        <Value>2011-04-25T19:25:09-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Front_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_1.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Back_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Door_EXPORT[1]_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Eriax_SWACS.FBX</Source>
-      <Name>Models\Eriax_SWACS</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_SWACS.xnb</Output>
-      <Time>2011-04-07T18:04:44.2108312-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Eriax_SWACS_0.xml</Key>
-        <Value>2011-04-25T19:25:09.40625-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_Badge_EXPORT[1]_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Fleet_MR-80_Striker.FBX</Source>
-      <Name>Models\Fleet_MR-80_Striker</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_MR-80_Striker.xnb</Output>
-      <Time>2011-04-25T19:07:30.984375-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Fleet_MR-80_Striker_0.xml</Key>
-        <Value>2011-04-25T19:25:09.84375-05:00</Value>
-      </Dependency>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Front_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Badge_EXPORT[1]_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Leftover_ EXPOR_0.xnb</Request>
-      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Burner_EXPORT[3_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Bow_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bow_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Stern_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Stern_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Bay_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Bay_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Engine_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Engine_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Badge_EXPORT[2].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Badge_EXPORT[2]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_a0_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_b0_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_a0_EXPORT[1]1.png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_a0_EXPORT[1]1_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Infintration Frigate\Vgr_InfPod_b0_EXPORT[1]1.png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_InfPod_b0_EXPORT[1]1_0.xnb</Output>
-      <Time>2009-07-10T07:44:24-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_BADGE_L_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_L_EXPORT[1_0.xnb</Output>
-      <Time>2009-06-27T23:30:46-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_BADGE_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_BADGE_EXPORT[1]_0.xnb</Output>
-      <Time>2009-06-27T23:30:46-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_InterceptorA_EXPORT[2].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_InterceptorA_EXPORT[2]_0.xnb</Output>
-      <Time>2009-06-27T23:30:46-05:00</Time>
-    </Item>
-    <Item>
-      <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Interceptor\Hgn_Interceptor_B_EXPORT[1].png</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_Interceptor_B_EXPORT[1]_0.xnb</Output>
-      <Time>2009-06-27T23:30:46-05:00</Time>
     </Item>
     <Item>
       <Source>C:\Documents and Settings\bryan\Desktop\Hiigaran\Defense Field Frigate\Hgn_DefenseFrigate_Front_EXPORT[2].png</Source>
@@ -2218,6 +2152,13 @@
       <Time>2009-07-06T18:40:18-05:00</Time>
     </Item>
     <Item>
+      <Source>Models\Eriax_MK4_Fighter.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Eriax_MK4_Fighter_0.xml</Output>
+      <Time>2011-04-25T19:08:30.890625-05:00</Time>
+    </Item>
+    <Item>
       <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Bomber\Vgr_Bomber_EXPORT[1].png</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -2291,6 +2232,20 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Vgr_Bomber_Launcher_EXPORT[1]_0.xnb</Output>
       <Time>2009-07-08T10:10:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\LRGMISSILE.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\LRGMISSILE_0.xml</Output>
+      <Time>2011-04-14T21:18:03.90625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\basic_bullet.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
+      <Time>2011-04-14T22:21:54.828125-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Eriax_Battlecrusier.FBX</Source>
@@ -2604,6 +2559,51 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Eriax_SWACS_0.xml</Output>
       <Time>2011-04-07T18:04:44.2108312-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\MineVette_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-08T10:41:22-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\VetteBurner_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\VetteBurner_EXPORT[1]_1.xnb</Output>
+      <Time>2009-07-08T10:41:22-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\Vaygr\Minelayer Corvette\MineVette_Badge_EXPORT[1].png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MineVette_Badge_EXPORT[1]_0.xnb</Output>
+      <Time>2009-07-08T10:41:22-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_MR-80_Striker.FBX</Source>

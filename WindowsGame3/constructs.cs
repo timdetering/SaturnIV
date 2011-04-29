@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace SaturnIV
 {
     public enum disposition
@@ -20,16 +19,20 @@ namespace SaturnIV
     public enum WeaponClassEnum
     {
         Cannon = 0,
-        Missile = 0,
-        Torpedo = 0,
-        Energy = 0
+        Missile = 1,
+        Torpedo = 2,
+        Energy = 3
     }
 
     public enum WeaponTypeEnum
     {
-        KM100 = 0,
-        KM200G = 1,
-        AC10 = 2
+        SRM = 0,
+        SRMH = 1,
+        LRM = 2,
+        LRMH = 3,
+        AutoCannon = 4,
+        LargeIon = 5,
+        MedIon = 6
     }
 
     public class newShipStruct
@@ -99,7 +102,6 @@ namespace SaturnIV
         public bool isSquadLeader;
         public int team;
         public newShipStruct threat;
-
     }
 
     public class weaponStruct : newShipStruct
@@ -145,7 +147,6 @@ namespace SaturnIV
 
     public class weaponData : genericObjectLoadClass
     {
-        public WeaponTypeEnum wType;
         public WeaponClassEnum wClass;
         public bool  isProjectile;
         public bool  isHoming;
@@ -171,9 +172,10 @@ namespace SaturnIV
         public enum ClassesEnum
         {
             Fighter = 0,
-            Capitalship = 1,
-            Carrier = 2,
-            SWACS = 3
+            Frigate = 1,
+            Capitalship = 2,
+            Carrier = 3,
+            SWACS = 4
         }
 
         public enum DirectionEnum

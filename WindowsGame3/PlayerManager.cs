@@ -97,7 +97,7 @@ namespace SaturnIV
                 playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
                                         - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20),
                                         playerShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
-                                        Color.White, Color.Blue, ourCamera.position);
+                                        Color.White, Color.Blue, Camera.position);
 
                 playerShip.shipThruster.heat = 1.5f;
             }

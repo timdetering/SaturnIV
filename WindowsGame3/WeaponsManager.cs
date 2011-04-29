@@ -32,6 +32,7 @@ namespace SaturnIV
         Effect laserEffect;
         Vector3 turretDirection = Vector3.Zero;
         public ParticleEmitter trailEmitter;
+        SpriteBatch spriteBatch;
         float thrustAmount;
         double elapsedTime;
         double currentTime;
@@ -96,18 +97,17 @@ namespace SaturnIV
             
             turningSpeed *= thisObject.objectAgility * gameSpeed;
 
-          if (thisObject.isHoming && thisObject.distanceFromOrigin > 500)
+          if (thisObject.isHoming && thisObject.distanceFromOrigin > rand.Next(100,400) && thisObject.missileTarget !=null)
           {
-
                thisObject.targetPosition = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
                //thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.targetPosition, turningSpeed);
                thisObject.vecToTarget = Vector3.Normalize(thisObject.currentTarget.targetPosition - thisObject.modelPosition);// / 
           } 
           else
             thisObject.targetPosition = thisObject.Direction;
-           if (thisObject.isHoming)
-                thisObject.angleOfAttack = NPCManager.GetSignedAngleBetweenTwoVectors(thisObject.modelPosition, thisObject.currentTarget.modelPosition,
-                                           thisObject.currentTarget.modelRotation.Right);
+         //  if (thisObject.isHoming)
+         //       thisObject.angleOfAttack = NPCManager.GetSignedAngleBetweenTwoVectors(thisObject.modelPosition, thisObject.currentTarget.modelPosition,
+         //                                  thisObject.currentTarget.modelRotation.Right);
           // if (thisObject.angleOfAttack < -0 || thisObject.angleOfAttack > .99)
           //      thisObject.targetPosition = thisObject.Direction;
 
@@ -144,15 +144,14 @@ namespace SaturnIV
             //    thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
             thisObject.timer += currentTime - elapsedTime;
             elapsedTime = currentTime;
-            //if (thisObject.ThrusterEngaged)
-           //  {
-           //  thisObject.shipThruster.update(thisObject.modelPosition + (thisObject.modelRotation.Forward)
-          //   - (thisObject.modelRotation.Up) + (thisObject.modelRotation.Right * 0),
-          //   thisObject.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
-          //   Color.White, Color.Blue, ourCamera.position);
-
-            // thisShip.shipThruster.heat = 1.5f;
-            // }
+         //   if (thisObject.shipThruster != null)
+          //   {
+         //    thisObject.shipThruster.update(thisObject.modelPosition,
+         //    -thisObject.Direction, new Vector3(2, 50, 2), 80.0f, 10.0f,
+         //    Color.White, Color.Orange, Camera.position);
+////
+        //     thisObject.shipThruster.heat = 1.5f;
+         //    }
         }
 
         public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
@@ -180,14 +179,17 @@ namespace SaturnIV
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime,float gameSpeed)
+        public void Update(GameTime gameTime, float gameSpeed, ExplosionClass ourExplosion)
         {
             // TODO: Add your update code here
             for (int i=0; i < activeWeaponList.Count; i++)
             {
                 updateMissileMovement(gameTime, gameSpeed, activeWeaponList[i]);
-                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 1000)
-                   activeWeaponList.Remove(activeWeaponList[i]);
+                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 2000)
+                {
+                    ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,activeWeaponList[i].modelPosition,0.25f);                                                      
+                    activeWeaponList.Remove(activeWeaponList[i]);
+                }
             }
             base.Update(gameTime);
         }
@@ -256,6 +258,8 @@ namespace SaturnIV
 
           if (tempData.isProjectile)
            {
+                 tempData.shipThruster = new Athruster();
+                 tempData.shipThruster.LoadContent(Game, spriteBatch);
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
                                                400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
                 tempData.trailEmitter = trailEmitter;
@@ -286,7 +290,7 @@ namespace SaturnIV
             tempData.isProjectile = weaponDefList[(int)thisWeapon.weaponType].isProjectile;
             tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
-            tempData.objectColor = Color.White; // weaponDefList[0].weaponColor;
+            tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
             if (tempData.isProjectile)
                 tempData.shipModel = LoadModel(tempData.objectFileName);
@@ -332,6 +336,8 @@ namespace SaturnIV
 
             if (tempData.isProjectile)
             {
+                //tempData.shipThruster = new Athruster();
+                //tempData.shipThruster.LoadContent(Game, spriteBatch);
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
                                                400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
                 tempData.trailEmitter = trailEmitter;

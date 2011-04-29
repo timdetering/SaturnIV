@@ -154,7 +154,7 @@ namespace SaturnIV
             effect.LightingEnabled = false;
             effect.View = view;
             effect.Projection = projection;
-            //effect.DiffuseColor = color.ToVector3();
+            effect.DiffuseColor = color.ToVector3();
 
             effect.Begin();
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)

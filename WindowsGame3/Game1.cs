@@ -333,7 +333,7 @@ namespace SaturnIV
                 npcManager.performAI(gameTime, ref weaponsManager, projectileTrailParticles, ref weaponDefList, 
                                             activeShipList[i], playerShip, 0,thisSquad);
             }
-            weaponsManager.Update(gameTime, gameSpeed);
+            weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
         }
 
         protected void processInput(GameTime gameTime)
@@ -554,7 +554,7 @@ namespace SaturnIV
                 if (theList.isProjectile)
                     modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix);
                 else
-                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor,theList);
+                    weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
             }
 
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
@@ -570,8 +570,8 @@ namespace SaturnIV
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
             // Pass camera matrices through to the particle system components.
-            projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            projectileTrailParticles.Draw(gameTime);
+           // projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
+           // projectileTrailParticles.Draw(gameTime);
 
             if (isEditMode)
             {

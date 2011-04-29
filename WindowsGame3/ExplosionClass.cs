@@ -33,7 +33,7 @@ namespace SaturnIV
         public static readonly int SizeInBytes = sizeof(float) * (3 + 4 + 4);
     }
 
-    class ExplosionClass
+    public class ExplosionClass
     {
         Texture2D myTexture;
         public VertexExplosion[] explosionVertices;
@@ -52,9 +52,9 @@ namespace SaturnIV
             myVertexDeclaration = new VertexDeclaration(game.GraphicsDevice, VertexExplosion.VertexElements);
         }
 
-        public void CreateExplosionVertices(float time, Vector3 expPosition)
+        public void CreateExplosionVertices(float time, Vector3 expPosition,float eSize)
         {
-            int particles = 10;
+            int particles = 20;
             explosionVertices = new VertexExplosion[particles * 6];
             rand = new Random();
             int i = 0;
@@ -72,7 +72,7 @@ namespace SaturnIV
 
                 float r4 = (float)rand.NextDouble();
                 //r4 = r4 / 4.0f * 3.0f + 0.25f;
-                r4 = 0.75f;
+                r4 = eSize;
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(1, 1, time, 250), new Vector4(moveDirection, r4));
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(0, 0, time, 250), new Vector4(moveDirection, r4));
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(1, 0, time, 250), new Vector4(moveDirection, r4));
@@ -95,7 +95,7 @@ namespace SaturnIV
                 expEffect.Parameters["xProjection"].SetValue(myCamera.projectionMatrix);
                 expEffect.Parameters["xView"].SetValue(myCamera.viewMatrix);
 
-                expEffect.Parameters["xCamPos"].SetValue(myCamera.position);
+                expEffect.Parameters["xCamPos"].SetValue(Camera.position);
                 expEffect.Parameters["xExplosionTexture"].SetValue(myTexture);
                 expEffect.Parameters["xCamUp"].SetValue(myCamera.cameraRotation.Up);
                 expEffect.Parameters["xTime"].SetValue((float)gameTime.TotalGameTime.TotalMilliseconds);

@@ -70,7 +70,7 @@ namespace SaturnIV
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                        currentExpLocation);
+                                                        currentExpLocation,(float)rand.NextDouble());
                         //thisShipList[j].objectArmorLvl -= (thisShipList[j].objectArmorFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }
@@ -90,7 +90,7 @@ namespace SaturnIV
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                        currentExpLocation);
+                                                        currentExpLocation, (float)rand.NextDouble());
                         //thisShip.objectArmorLvl -= (thisShip.objectArmorFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }

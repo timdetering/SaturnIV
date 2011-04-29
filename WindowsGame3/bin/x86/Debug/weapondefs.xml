@@ -3,31 +3,29 @@
   <Asset Type="Generic:List[SaturnIV.weaponData]">
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
-      <Type>KM100</Type>
+      <Type>SRM</Type>
       <Mass>0.75</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <wType>AC10</wType>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
-      <isHoming>1</isHoming>
-      <regenTime>400</regenTime>
+      <isHoming>0</isHoming>
+      <regenTime>600</regenTime>
       <damageFactor>5</damageFactor>
-      <range>1500</range>
+      <range>1000</range>
     </Item>
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
-      <Type>KM200G</Type>
+      <Type>SRMH</Type>
       <Mass>0.50</Mass>
       <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
       <Agility>8</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <wType>AC10</wType>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
@@ -35,16 +33,47 @@
       <damageFactor>5</damageFactor>
       <range>1000</range>
     </Item>
+   <Item>
+      <FileName>Models//Fleet_KM100</FileName>
+      <Type>LRM</Type>
+      <Mass>0.75</Mass>
+      <Thrust>1200</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>800</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>1500</range>
+    </Item>
+    <Item>
+      <FileName>Models//Fleet_KM100</FileName>
+      <Type>LRMH</Type>
+      <Mass>0.50</Mass>
+      <Thrust>700</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>8</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>1</isHoming>
+      <regenTime>800</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>15000</range>
+    </Item>
     <Item>
       <FileName>Models//LaserBolt2</FileName>
-      <Type>AC10</Type>
+      <Type>AutoCannon</Type>
       <Mass>0.25</Mass>
-      <Thrust>900</Thrust>
+      <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>15</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <wType>AC10</wType>
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
@@ -53,15 +82,14 @@
       <range>2000</range>
     </Item>
 <Item>
-      <FileName>Models//LaserBolt2</FileName>
-      <Type>Large Ion</Type>
+      <FileName>Models//sphere</FileName>
+      <Type>LargeIon</Type>
       <Mass>0.25</Mass>
-      <Thrust>900</Thrust>
+      <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>30</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <wType>AC10</wType>
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>

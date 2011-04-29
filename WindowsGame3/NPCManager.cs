@@ -47,7 +47,7 @@ namespace SaturnIV
         public NPCManager(Game game)
             : base(game)
         {
-                regentime = new double[20];
+                regentime = new double[100];
         }
 
         public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ParticleSystem projectileTrailParticles,
@@ -84,7 +84,7 @@ namespace SaturnIV
             {
                 if (!thisShip.isEvading)
                 {
-                    thisShip.targetPosition = AIClass.AvoidVector(600, thisShip, otherShip);
+                    thisShip.targetPosition = AIClass.AvoidVector(1200, thisShip, otherShip) * 10000;
                     thisShip.isEvading = true;
                     thisShip.thrustAmount = 1.00f;
                 }
@@ -93,17 +93,17 @@ namespace SaturnIV
                 thisShip.isEvading = false;
 
           //  if (!thisShip.isEvading)
-        //    {
+          //  {
                 switch (thisShip.currentDisposition)
                 {
                     case disposition.pursue:
-                        if (!isEvading)
+                        if (!thisShip.isEvading && thisShip.currentTarget != null)
                             thisShip.targetPosition = thisShip.currentTarget.modelPosition;
 
                         //Am I still pursing the best Target??
                         if (thisShip.currentTarget != null)
                             thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
-                        if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000 && thisShip.team != otherShip.team)
+                        if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 2000 && thisShip.team != otherShip.team)
                         {
                             thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                             //Decide weather or Not to Pursue based on this ships TargetPrefs values; Ex. A capitalship is not going to chase a fighter!
@@ -119,7 +119,11 @@ namespace SaturnIV
                                     thisShip.currentTarget = otherShip;
                                 }
                         }
-
+                        else
+                        {
+                            //thisShip.currentDisposition = disposition.patrol;
+                            //thisShip.currentTarget = null;
+                        }
                         foreach (WeaponModule thisWeapon in thisShip.weaponArray)
                         {
                             for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
@@ -182,7 +186,7 @@ namespace SaturnIV
                         // thrustAmount = 0.20f;
                         break;
                 }
-           // }
+        //    }
            
        }
 
