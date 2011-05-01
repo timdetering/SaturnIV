@@ -66,18 +66,18 @@
 <Item>
       <FileName>Models//Eriax_Missile_Frigate</FileName>
       <Type>Eriax Missile Frigate</Type>
-      <Mass>4.0</Mass>
-      <Thrust>1200</Thrust>
+      <Mass>5.0</Mass>
+      <Thrust>1000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>7.00</Agility>
+      <Agility>4.00</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Frigate</ShipClass>
       <ShieldLvl>100</ShieldLvl>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 900 1300 200 50</EvadeDist>
       <TargetPrefs>0 0.6 0.4 0.2</TargetPrefs>
-	  <Chase>0 1 1 1 0 </Chase>
+	  <Chase>1 1 1 1 0 </Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -94,16 +94,12 @@
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 2
             4 0 0 2
-	   -8 0 0 2
-            8 0 0 2
 	   -12 0 0 3
             12 0 0 3
-	   -16 0 0 3
-            16 0 0 3
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
@@ -159,7 +155,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>50 500 1500 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
-	  <Chase> 1 1 1 0 0</Chase>
+	  <Chase> 1 1 1 1 0</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -229,7 +225,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 400 300 200 50</EvadeDist>
       <TargetPrefs>0.5 0.4 1 1 0.2</TargetPrefs>
-	  <Chase> 1 1 0 1 0</Chase>
+	  <Chase> 1 1 1 1 0</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -264,7 +260,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 5000 1000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
-	  <Chase> 0 0 1 0 1</Chase>
+	  <Chase> 0 1 1 0 1</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -277,12 +273,12 @@
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
       <Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>SRMH</weaponType>
 		 <ModulePositionOnShip>
 	    4 0 0 2
 	   -4 0 0 2
 	   -8 0 0 3
-		8 0 0 3
+	    8 0 0 3
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
       </Item>
@@ -303,7 +299,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>300 500 1000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
-	  <Chase> 0 1 1 0 1</Chase>
+	  <Chase> 1 1 1 0 1</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -454,7 +450,7 @@
       <Chase> 0 1 1 0 1</Chase>
       <AvailableWeapons>
 	<Item>
-		<weaponType>AutoCannon</weaponType>
+		<weaponType>LargeIon</weaponType>
 	 <ModulePositionOnShip>
 	    20 40 1 2
 	   -20 40 1 2
@@ -470,10 +466,14 @@
 	<Item>
 		<weaponType>LRMH</weaponType>
 	 <ModulePositionOnShip>
-	    4 0 0 0
-	   -4 0 0 0
-	   -8 0 0 1
-	    8 0 0 1
+	    10 0 0 0
+	   -30 0 0 0
+	   -10 0 0 1
+	    30 0 0 1
+	    40 0 0 0
+	   -40 0 0 0
+	   -80 0 0 1
+	    80 0 0 1
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>25</FiringEnvelopeAngle>
         </Item>
@@ -497,7 +497,7 @@
 	  <Chase> 0 1 1 0 1</Chase>
       <AvailableWeapons>
 	<Item>
-	 <weaponType>LRM</weaponType>
+	 <weaponType>LargeIon</weaponType>
 	 <ModulePositionOnShip>
 	    20 0 0 2
 	   -20 0 0 2
@@ -515,7 +515,7 @@
 	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
         </Item>
 	<Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	    20 0 0 2
 	   -20 0 0 2
@@ -567,7 +567,7 @@
 <Item>
       <FileName>Models//Fleet_Procyon_Frigate</FileName>
       <Type>Procyon Class Frigate</Type>
-      <Mass>5</Mass>
+      <Mass>7</Mass>
       <Thrust>850</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
@@ -576,9 +576,9 @@
       <ShipClass>Capitalship</ShipClass>
       <ShieldLvl>200</ShieldLvl>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>0 1500 3000 500 0</EvadeDist>
+      <EvadeDist>0 1000 2000 500 0</EvadeDist>
       <TargetPrefs>0.5 0.3 1 1 0.2 </TargetPrefs>
-	  <Chase> 0 1 1 0 1</Chase>
+	  <Chase> 1 1 1 0 1</Chase>
       <AvailableWeapons>
 	<Item>
 		<weaponType>AutoCannon</weaponType>
@@ -586,9 +586,9 @@
 	    4 0 0 2
 	   -4 0 0 2
 	   -6 0 0 0
-		6 0 0 0
+	    6 0 0 0
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
         </Item>
 	<Item>
 		<weaponType>SRM</weaponType>
@@ -596,7 +596,7 @@
 	    4 0 0 2
 	   -4 0 0 2
 	   -8 0 0 0
-		8 0 0 3
+	    8 0 0 3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
         </Item>

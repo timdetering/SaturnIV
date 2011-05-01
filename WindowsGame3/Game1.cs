@@ -39,9 +39,11 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex;
+        MessageClass messageClass;
         Vector2 messagePos1 = new Vector2(0,0);
-        Vector2 systemMessagePos = new Vector2(30,20);
-
+        public Vector2 systemMessagePos = new Vector2(30,20);
+        public StringBuilder messageBuffer = new StringBuilder();
+        public static List<string> messageLog = new List<string>();
         public Vector3[] plyonOffset;
 
         Ray currentMouseRay;
@@ -118,6 +120,7 @@ namespace SaturnIV
             rand = new Random();
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            messageClass = new MessageClass();
             playerShip = new newShipStruct();
             ourExplosion = new ExplosionClass();
             skySphere = new SkySphere(this);
@@ -185,10 +188,11 @@ namespace SaturnIV
             device = graphics.GraphicsDevice;
             viewport = device.Viewport;
             //effect = Content.Load<Effect>("effects");
+            spriteFont = this.Content.Load<SpriteFont>("DemoFont");
+            messageClass.sendSystemMsg(spriteFont,spriteBatch,"Loading Content",systemMessagePos);
             loadShipData();
             Gui.initalize(this, ref shipDefList);
             initPlayer();
-            spriteFont = this.Content.Load<SpriteFont>("DemoFont");
             rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
@@ -385,7 +389,7 @@ namespace SaturnIV
                 int i = rand.Next(0, rLen);
                 tmpShipName = rNameList.capitalShipNames[i];
                 rNameList.capitalShipNames.Remove(tmpShipName);
-
+                messageClass.sendSystemMsg(spriteFont,spriteBatch,tmpShipName + " Added",systemMessagePos);
                 newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem,Gui.thisTeam);
                 activeShipList.Add(newShip);
                 //squadList[0].squadmate.Add(newShip);
@@ -396,6 +400,8 @@ namespace SaturnIV
                 if (keyboardState.IsKeyDown(Keys.E) && !isEditMode && !isChat)
                 {
                     isEditMode = true;
+                    string msg = "Edit Mode";
+                    messageClass.sendSystemMsg(spriteFont, spriteBatch,msg, systemMessagePos);
                     ourCamera.offsetDistance = new Vector3(0, 2000, 100);
                 }
                 else if (keyboardState.IsKeyDown(Keys.E) && isEditMode && !isChat)
@@ -460,18 +466,7 @@ namespace SaturnIV
                 oldkeyboardState = keyboardState;
 }
 
-        private void buildvisableTargetList()
-        {
-        //    foreach (NPCManager enemy in activeShipList)
-        //    {
-        //        if (enemy.screenCords.Z < 1 && enemy.distanceFromPlayer < 15000)
-        ////            enemy.isVisable = true;
-        //        else
-        //            enemy.isVisable = false;
-        //    }
-        }
-
-        private void InitializeStarFieldEffect()
+         private void InitializeStarFieldEffect()
         {
             vertexDeclaration = new VertexDeclaration(GraphicsDevice, VertexPositionColor.VertexElements);
             Matrix wvp = (Matrix.CreateScale(5.0f) * Matrix.CreateFromQuaternion(Quaternion.Identity) *
@@ -506,6 +501,17 @@ namespace SaturnIV
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix);
                 npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 // BoundingBoxRenderer.Render(npcship.modelBB, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                // Draw shield and Hull integrity bars
+                firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,
+                                npcship.modelPosition + (npcship.Direction * ((npcship.modelLen / 2) * npcship.shieldLvl/100)) + (npcship.modelRotation.Right * npcship.modelWidth*2.0f),
+                                npcship.modelPosition + (-npcship.Direction * npcship.modelLen / 2) + (npcship.modelRotation.Right * npcship.modelWidth*2.0f),
+                                npcship.modelPosition + (-npcship.Direction * npcship.modelLen / 2) + (npcship.modelRotation.Right * npcship.modelWidth));
+
+                firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen,
+                                npcship.modelPosition + (-npcship.Direction * npcship.modelLen / 2) + (npcship.modelRotation.Right * npcship.modelWidth),
+                                npcship.modelPosition + (npcship.Direction * npcship.modelLen / 2) + (npcship.modelRotation.Right * npcship.modelWidth*2.0f),
+                                npcship.modelPosition + (npcship.Direction * npcship.modelLen / 2) + (npcship.modelRotation.Right * npcship.modelWidth));
+                             
                 if (isDebug)
                 {
                     foreach (BoundingFrustum bf in npcship.moduleFrustum)
@@ -593,13 +599,13 @@ namespace SaturnIV
                 spriteBatch.Draw(rectTex, r, Color.White);
                 spriteBatch.End();
             }
-            
+            messageClass.sendSystemMsg(spriteFont, spriteBatch,null, systemMessagePos);
             base.Draw(gameTime);
         }
 
         private void DrawHUDTargets()
         {
-            StringBuilder messageBuffer = new StringBuilder();
+            StringBuilder messageBuffer = new StringBuilder(); 
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             Vector2 fontPos = new Vector2(0,0);
             int i=0;
@@ -612,7 +618,7 @@ namespace SaturnIV
                     {
                         //buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
                     }
-                    //buffer.AppendFormat("[State]" + enemy.currentDisposition + "-");
+                    buffer.AppendFormat("["+enemy.currentDisposition+"]");
                     //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     //buffer.AppendFormat("[Team]"+ enemy.team);
@@ -626,8 +632,7 @@ namespace SaturnIV
 
         private void DrawHUD(GameTime gameTime)
         {
-            StringBuilder messageBuffer = new StringBuilder();
-
+            StringBuilder messageBuffer = new StringBuilder(); 
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //spriteBatch.Draw(HUD, new Vecto    r2(0,0), Color.White);
             //spriteBatch.Draw(HUD_Target, new Vector2(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2-96,
@@ -644,7 +649,7 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\nCurrent Menu " +guiClass.currentSelection);
             messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
             messageBuffer.AppendFormat("\nisGroupSelect: " + editModeClass.isGroupSelect);
-                        spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
 
             messageBuffer = new StringBuilder();
@@ -655,13 +660,13 @@ namespace SaturnIV
       //      messageBuffer.AppendFormat("CameraOffset X {0}", ourCamera.cameraOffset2.X + "\n");
            // messageBuffer.AppendFormat("Bounding Sphere Radius {0}", playerShip.radius + "\n");
            // Net Diags
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos1, Color.White);
-            messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("\nClients Connected to Server: {0}", gServer.clientsConnected);
-            messageBuffer.AppendFormat("\nServer Mode " + isServer);
-            messageBuffer.AppendFormat("\nClient Mode " + isClient);
-            messageBuffer.AppendFormat("\nChat " + isChat);
-            messageBuffer.AppendFormat("\n" + gServer.fromClient);
+           // spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), messagePos1, Color.White);
+         //   messageBuffer = new StringBuilder();
+         //   messageBuffer.AppendFormat("\nClients Connected to Server: {0}", gServer.clientsConnected);
+         //   messageBuffer.AppendFormat("\nServer Mode " + isServer);
+         //   messageBuffer.AppendFormat("\nClient Mode " + isClient);
+         //   messageBuffer.AppendFormat("\nChat " + isChat);
+         //   messageBuffer.AppendFormat("\n" + gServer.fromClient);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Blue);
             spriteBatch.End();
         }

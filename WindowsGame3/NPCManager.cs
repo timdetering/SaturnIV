@@ -84,7 +84,7 @@ namespace SaturnIV
             {
                 if (!thisShip.isEvading)
                 {
-                    thisShip.targetPosition = AIClass.AvoidVector(1200, thisShip, otherShip) * 10000;
+                    thisShip.targetPosition = AIClass.AvoidVector(1200, thisShip, otherShip) * 9000;
                     thisShip.isEvading = true;
                     thisShip.thrustAmount = 1.00f;
                 }
@@ -98,8 +98,15 @@ namespace SaturnIV
                 {
                     case disposition.pursue:
                         if (!thisShip.isEvading && thisShip.currentTarget != null)
+                        {
                             thisShip.targetPosition = thisShip.currentTarget.modelPosition;
-
+                            break;
+                        }
+                        else
+                        {
+                            thisShip.targetPosition = -thisShip.currentTarget.modelPosition;
+                            thisShip.currentDisposition = disposition.patrol;
+                        }
                         //Am I still pursing the best Target??
                         if (thisShip.currentTarget != null)
                             thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
@@ -147,7 +154,7 @@ namespace SaturnIV
                         thisShip.thrustAmount = 0.85f;
                          if (thisShip.currentTarget != null)
                                 thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
-                         if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000 && thisShip.team != otherShip.team)
+                         if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1500 && thisShip.team != otherShip.team)
                          {
                              thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                              //Decide weather or Not to Pursue based on this ships TargetPrefs values; Ex. A capitalship is not going to chase a fighter!

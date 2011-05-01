@@ -170,6 +170,8 @@ namespace SaturnIV
             tempData.objectMass = shipDefList[shipIndex].Mass;
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
             tempData.objectType = shipDefList[shipIndex].Type;
+            tempData.hullLvl = 100;
+            tempData.shieldLvl = 100;
             tempData.team = team;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
@@ -227,7 +229,7 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-            //grid.drawLines();
+            grid.drawLines();
             foreach (newShipStruct enemy in shipList)
                {
                    fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,

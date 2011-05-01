@@ -16,16 +16,16 @@ namespace SaturnIV
         static BasicEffect effect;
         VertexPositionColor[] vertices;
 
-        private void SetUpVertices(Vector3 pos1, Vector3 pos2, Vector3 pos3)
+        private void SetUpVertices(Vector3 pos1, Vector3 pos2, Vector3 pos3, Color color)
         {
             vertices = new VertexPositionColor[3];
-
+            Vector3 color4 = color.ToVector3();
             vertices[0].Position = pos1;
-            vertices[0].Color = new Color(new Vector4(0f, 1f,0f,0.25f));
+            vertices[0].Color = new Color(color4);
             vertices[1].Position = pos2;
-            vertices[1].Color = new Color(new Vector4(0f, 1f, 0f, 0.25f));
+            vertices[0].Color = new Color(color4);
             vertices[2].Position = pos3;
-            vertices[2].Color = new Color(new Vector4(0f, 1f, 0f, 0.25f));
+            vertices[0].Color = new Color(color4);
         }
 
         public void Render(
@@ -37,18 +37,17 @@ namespace SaturnIV
             )
         {
 
-            SetUpVertices(pos1,pos2,pos3);
+            SetUpVertices(pos1,pos2,pos3,color);
             if (effect == null)
             {
                 effect = new BasicEffect(device, null);
                 effect.VertexColorEnabled = true;
-                effect.LightingEnabled = false;
+                //effect.LightingEnabled = true;
                 vertDecl = new VertexDeclaration(device, VertexPositionColor.VertexElements);
             }
             device.RenderState.CullMode = CullMode.None;
-            //device.RenderState.DepthBufferEnable = true;
-
-            //device.RenderState.AlphaBlendEnable = true;
+            device.RenderState.DepthBufferEnable = true;
+            device.RenderState.AlphaBlendEnable = false;
             device.VertexDeclaration = vertDecl;
 
             effect.View = view;

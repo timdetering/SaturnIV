@@ -47,6 +47,7 @@ namespace SaturnIV
                         break;
                     case NetIncomingMessageType.Data:
                         fromClient += msg.ReadString();
+                        MessageClass.messageLog.Add("Client:" + fromClient);
                         break;
                 }
                 server.Recycle(msg);
@@ -58,7 +59,7 @@ namespace SaturnIV
             {
                 NetOutgoingMessage sendMsg = server.CreateMessage();
                 sendMsg.Write(send);
-                //server.SendMessage(sendMsg,
+                //server.SendMessage(sendMsg,NetDeliveryMethod.Unreliable);
             }
         }
     }

@@ -45,10 +45,10 @@ namespace SaturnIV
         public string objectType;
         public float objectAgility;
         public ClassesEnum objectClass;
-        public float objectArmorFactor;
-        public float objectArmorLvl;
-        public float objectShieldFactor;
-        public float objectShieldLvl;
+        public float hullFactor;
+        public float hullLvl;
+        public float shieldFactor;
+        public float shieldLvl;
         public float radius;
         public Matrix worldMatrix;
         public Vector3 modelPosition;

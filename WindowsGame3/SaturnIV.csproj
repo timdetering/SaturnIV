@@ -96,6 +96,7 @@
     <Compile Include="CameraClass.cs" />
     <Compile Include="boundingFrustumRender.cs" />
     <Compile Include="BoidClass.cs" />
+    <Compile Include="MessageClass.cs" />
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
     <Compile Include="ParticleSystem\SparkParticleSystem.cs" />

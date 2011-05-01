@@ -185,7 +185,8 @@ namespace SaturnIV
             for (int i=0; i < activeWeaponList.Count; i++)
             {
                 updateMissileMovement(gameTime, gameSpeed, activeWeaponList[i]);
-                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 2000)
+                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 2000 
+                    || activeWeaponList[i].currentTarget == null)
                 {
                     ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,activeWeaponList[i].modelPosition,0.25f);                                                      
                     activeWeaponList.Remove(activeWeaponList[i]);

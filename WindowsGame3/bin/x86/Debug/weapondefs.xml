@@ -71,7 +71,7 @@
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>15</Scale>
+      <Scale>10</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Cannon</wClass>	
@@ -82,12 +82,12 @@
       <range>2000</range>
     </Item>
 <Item>
-      <FileName>Models//sphere</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>LargeIon</Type>
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>30</Scale>
+      <Scale>25</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Cannon</wClass>	

@@ -56,7 +56,6 @@ namespace SaturnIV
             return direction;
         }
 
-
         //CheckForCollision give to object lists
         public bool CheckForCollision(GameTime gameTime, ref List<newShipStruct> thisShipList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
@@ -71,7 +70,17 @@ namespace SaturnIV
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation,(float)rand.NextDouble());
-                        //thisShipList[j].objectArmorLvl -= (thisShipList[j].objectArmorFactor / 100) * missileList[i].damageFactor;
+                        thisShipList[j].shieldLvl -= 5.0f;
+                        if (thisShipList[j].shieldLvl < 0)
+                            thisShipList[j].hullLvl -= 5.0f;// *missileList[i].damageFactor;
+                        if (thisShipList[j].hullLvl < 0)
+                        {
+                            for (int y=0; y< 50;y++)
+                                ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
+                                                           currentExpLocation, (float)rand.NextDouble());
+                            MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
+                            thisShipList.Remove(thisShipList[j]);
+                         }                       
                         return true;
                     }
                 }
@@ -91,7 +100,9 @@ namespace SaturnIV
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation, (float)rand.NextDouble());
-                        //thisShip.objectArmorLvl -= (thisShip.objectArmorFactor / 100) * missileList[i].damageFactor;
+                        thisShip.shieldLvl = 5.0f; // 1.0f * missileList[i].damageFactor;
+                        if (thisShip.shieldLvl<0)
+                            thisShip.hullLvl -= (thisShip.hullFactor / 100) * missileList[i].damageFactor;
                         return true;
                     }
                 }
