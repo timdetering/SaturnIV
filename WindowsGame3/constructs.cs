@@ -13,7 +13,17 @@ namespace SaturnIV
         pursue = 0,
         patrol = 1,
         evade = 2,
-        loiter = 3
+        idle = 3,
+        moving = 4,
+        onstation = 5,
+        defensive = 6
+    }
+
+    public enum SquadDisposition
+    {
+        tight = 0,
+        regroup = 1,
+        engage = 2
     }
 
     public enum WeaponClassEnum
@@ -136,7 +146,7 @@ namespace SaturnIV
     public class shipData : genericObjectLoadClass
     {
         public ClassesEnum ShipClass;
-        public int ShieldLvl;
+        public float ShieldFactor;
         public int ShieldRegenTime;
         public float[] EvadeDist;
         public float[] TargetPrefs;
@@ -167,6 +177,7 @@ namespace SaturnIV
         public int squadNum;
         public List<newShipStruct> squadmate;
         public newShipStruct leader;
+        public SquadDisposition squadOrders;
     }
 
         public enum ClassesEnum

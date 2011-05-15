@@ -27,6 +27,7 @@ namespace SaturnIV
         public bool isDragging = false;
         public bool isGroupSelect = false;
         public bool isGroupObjectSelected = false;
+        public bool isCameraSet = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
         string[] NameList;
@@ -34,12 +35,18 @@ namespace SaturnIV
         MouseState prevMouseState;
         MouseState mouseCurrent;
         KeyboardState keyboardState;
+        KeyboardState prevKeyboardState;
         Vector3 mousePosOld;
         Vector3 mousePos;
         public Rectangle selectionRect;
         public BoundingBox selectionBB;
         Vector3 mouse3dStart;
         List<newShipStruct> selectedGroup = new List<newShipStruct>();
+
+        //Define edit mode "Rings"
+        BoundingSphere ring1 = new BoundingSphere(Vector3.Zero, 1000);
+        BoundingSphere ring2 = new BoundingSphere(Vector3.Zero, 2000);
+        BoundingSphere ring3 = new BoundingSphere(Vector3.Zero, 3000);
 
         public EditModeComponent(Game game)
             : base(game)
@@ -73,12 +80,12 @@ namespace SaturnIV
             bool isDirectionSphere = false;
             selected = false;
             mouseCurrent = Mouse.GetState();
+            keyboardState = Keyboard.GetState();
 
             isDirectionSphere = checkIsSelected(currentMouseRay, mouse3dVector, directionSphere);
             if (isDirectionSphere)
                 isDragging = false;
-            //checkResult = checkIsSelected(currentMouseRay, mouse3dVector, ourShip.modelBoundingSphere);
-            if (isLClicked && !isDirectionSphere)
+            if (isLClicked && !isDirectionSphere && !isGroupSelect)
             {
                 isDragging = false;
                 foreach (newShipStruct ourShip in objectList)
@@ -88,15 +95,20 @@ namespace SaturnIV
                     {
                         ourShip.isSelected = true;
                         selected = true;
-                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * ourShip.radius, ourShip.radius/4);
+
+                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * ourShip.radius, ourShip.radius / 4);
                     }
                     else
                         ourShip.isSelected = false;
                 }
-
             }
-            //else if (isLDepressed && !isDirectionSphere)
-             //   selectRectangle(mouseCurrent,mouse3dVector);
+           //if (isLClicked && !isDirectionSphere && !isGroupSelect && !selected)
+            //    Game1.cameraTarget = Matrix.CreateWorld(mouse3dVector, Vector3.Forward, Vector3.Up);
+            if (isLDepressed && !isDirectionSphere && !isDragging)
+            {
+         //     isGroupSelect = true;
+             // selectRectangle(mouseCurrent, mouse3dVector);
+            }
    
             if (isLDepressed && !isDirectionSphere && !ischangingDirection)
             {
@@ -111,7 +123,11 @@ namespace SaturnIV
                     }
                }
             }
-            else if ((isLDepressed && isDirectionSphere && !isDragging) 
+       //     else if (isLDepressed && !isDirectionSphere && !ischangingDirection && isGroupSelect)
+     //       {
+     //           
+     //       }
+            else if ((isLDepressed && isDirectionSphere && !isDragging)
                       || (isLDepressed && ischangingDirection && !isDragging))
             {
                 isDragging = false;
@@ -127,7 +143,7 @@ namespace SaturnIV
                         npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
                         mouseOld = mouseCurrent;
                     }
-              }
+                }
             }
             else
             {
@@ -135,32 +151,66 @@ namespace SaturnIV
                 ischangingDirection = false;
             }
 
-           // if (prevMouseState.LeftButton == ButtonState.Released)
-                //selectionRect = Rectangle.Empty;
-            //RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
+            if (keyboardState.IsKeyDown(Keys.Escape))
+            {
+                selectionRect = Rectangle.Empty;
+                isGroupSelect = false;
+            }
+           //if (isGroupSelect)
+               // RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
             mousePosOld = mousePos;
             prevMouseState = mouseCurrent;
             base.Update(gameTime);
         }
 
-        public Rectangle selectRectangle(MouseState mouseState, Vector3 mouse3d)
-        {
-            if (selectionRect == Rectangle.Empty)
-            {
-                selectionRect = new Rectangle((int)mouseState.X, (int)mouseState.Y, 0, 0);
-            }
-            else if (selectionRect != Rectangle.Empty)
-            {
-                isGroupSelect = true;
-                selectionRect.Width = mouseState.X - selectionRect.X;
-                selectionRect.Height = mouseState.Y - selectionRect.Y;
+        
 
-            } //else
-            return selectionRect;
+        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
+        {
+            //grid.drawLines();
+
+          
+            foreach (newShipStruct enemy in shipList)
+               {
+                   fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,
+                          enemy.modelPosition + enemy.Direction * enemy.radius * 1,
+                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                   BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius,enemy.radius/4);
+                  // BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
+                                            //                 GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);   
+                if (enemy.isSelected)
+                   {
+                       BoundingSphereRenderer.Render3dCircle(directionSphere.Center,directionSphere.Radius/1.75f, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+                       BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
+                                                          GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   }
+                    
+              }
+           // BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 500, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 1000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 2000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 4000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 6000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 8000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 10000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 12000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 14000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            base.Draw(gameTime);
+        }
+        
+        public static bool checkIsSelected(Ray currentMouseRay, Vector3 mouse3dVector,
+                BoundingSphere sphere)
+        {
+            MouseState currentState = Mouse.GetState();
+            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 7.5f);
+
+            if (sphere.Intersects(mouseSphere)) return true;
+
+            return false;
         }
 
-        public newShipStruct spawnNPC(NPCManager modelManager,Vector3 mouse3dVector,ref List<shipData> shipDefList,
-                                    GameTime gameTime,Camera ourCamera,string shipName,int shipIndex, int team)
+        public newShipStruct spawnNPC(NPCManager modelManager, Vector3 mouse3dVector, ref List<shipData> shipDefList,
+                                   GameTime gameTime, Camera ourCamera, string shipName, int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectFileName = shipDefList[shipIndex].FileName;
@@ -172,6 +222,7 @@ namespace SaturnIV
             tempData.objectType = shipDefList[shipIndex].Type;
             tempData.hullLvl = 100;
             tempData.shieldLvl = 100;
+            tempData.shieldFactor = shipDefList[shipIndex].ShieldFactor;
             tempData.team = team;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
@@ -179,17 +230,20 @@ namespace SaturnIV
             tempData.Direction = Vector3.Forward;
             tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
             tempData.wayPointPosition = tempData.targetPosition;
-            tempData.currentDisposition = disposition.patrol;
+            if (team == 0)
+                tempData.currentDisposition = disposition.idle;
+            else
+                tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
             tempData.Up = Vector3.Up;
-            tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel,tempData.modelPosition);
+            tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel, tempData.modelPosition);
             tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;
             tempData.modelWidth = tempData.modelBB.Max.Z - tempData.modelBB.Min.Z;
             tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.portFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.starboardFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.radius = tempData.modelLen;
-            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, tempData.radius/2);
+            tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, tempData.radius / 2);
             tempData.shipThruster = new Athruster();
             tempData.shipThruster.LoadContent(Game, spriteBatch);
             tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;
@@ -201,64 +255,16 @@ namespace SaturnIV
 
             //Build Bounding Frustrum for all Weapon Modules on ship
             tempData.moduleFrustum = new List<BoundingFrustum>();
-             int moduleCount = 0;
-             foreach (WeaponModule thisWeapon in tempData.weaponArray)
-                 for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
-                 {
-                     tempData.moduleFrustum.Add(new BoundingFrustum(Matrix.Identity));
-                     moduleCount++;
-                 }
+            int moduleCount = 0;
+            foreach (WeaponModule thisWeapon in tempData.weaponArray)
+                for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
+                {
+                    tempData.moduleFrustum.Add(new BoundingFrustum(Matrix.Identity));
+                    moduleCount++;
+                }
 
-            modelManager.updateShipMovement(gameTime, 5.0f,tempData,ourCamera,true);
+            modelManager.updateShipMovement(gameTime, 5.0f, tempData, ourCamera, true);
             return tempData;
-        }
-
-        public void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
-        {
-            foreach (newShipStruct o in objectsList)
-            {
-                // Getting the 2D position of the object
-                Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
-
-                if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y))
-                    o.isSelected = true;
-                else
-                    o.isSelected = false;
-            }
-        }
-
-        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
-        {
-            grid.drawLines();
-            foreach (newShipStruct enemy in shipList)
-               {
-                   fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,
-                          enemy.modelPosition + enemy.Direction * enemy.radius * 1,
-                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                   BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius,enemy.radius/4);
-                   BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
-                                                             GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);   
-                if (enemy.isSelected)
-                   {
-                       BoundingSphereRenderer.Render3dCircle(directionSphere.Center,directionSphere.Radius/1.75f, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
-                       BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
-                                                          GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   }
-                    
-              }
-
-            base.Draw(gameTime);
-        }
-        
-        public bool checkIsSelected(Ray currentMouseRay, Vector3 mouse3dVector,
-                BoundingSphere sphere)
-        {
-            MouseState currentState = Mouse.GetState();
-            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 7.5f);
-
-            if (sphere.Intersects(mouseSphere)) return true;
-
-            return false;
         }
     }
 }

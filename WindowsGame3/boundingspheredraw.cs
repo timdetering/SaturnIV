@@ -140,8 +140,9 @@ namespace SaturnIV
             Color color)
         {
             if (vertBuffer == null)
-                InitializeGraphics(graphicsDevice, 30,color);
+                InitializeGraphics(graphicsDevice, 30, color);
 
+           graphicsDevice.RenderState.PointSize = 1.0f;
             graphicsDevice.VertexDeclaration = vertDecl;
             graphicsDevice.Vertices[0].SetSource(
                   vertBuffer,
@@ -167,6 +168,7 @@ namespace SaturnIV
                 pass.End();
             }
             effect.End();
+
         }
 
     }

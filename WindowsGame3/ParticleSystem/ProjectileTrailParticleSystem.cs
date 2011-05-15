@@ -32,7 +32,7 @@ namespace SaturnIV
 
             settings.MaxParticles = 400;
 
-            settings.Duration = TimeSpan.FromSeconds(2);
+            settings.Duration = TimeSpan.FromSeconds(20);
 
             settings.DurationRandomness = 3.5f;
 
@@ -44,19 +44,19 @@ namespace SaturnIV
             settings.MinVerticalVelocity = 0;
             settings.MaxVerticalVelocity = 1;
 
-            settings.MinColor = new Color(64, 96, 128, 255);
-            settings.MaxColor = new Color(255, 255, 255, 128);
-            //settings.MinColor = new Color(255, 255, 255, 255);
-            //settings.MaxColor = new Color(255, 255, 255, 255);
+            //settings.MinColor = new Color(64, 96, 128, 255);
+           // settings.MaxColor = new Color(255, 255, 255, 128);
+            settings.MinColor = new Color(255, 255, 255, 255);
+            settings.MaxColor = new Color(255, 255, 255, 255);
 
             settings.MinRotateSpeed = -2;
             settings.MaxRotateSpeed = 2;
 
-            settings.MinStartSize = 5;
-            settings.MaxStartSize = 15;
+            settings.MinStartSize = 15;
+            settings.MaxStartSize = 25;
 
-            settings.MinEndSize = 5;
-            settings.MaxEndSize = 15;
+            settings.MinEndSize = 15;
+            settings.MaxEndSize = 25;
         }
     }
 }

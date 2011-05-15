@@ -121,7 +121,7 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed);
+            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed * 2);
             thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
@@ -185,7 +185,7 @@ namespace SaturnIV
             for (int i=0; i < activeWeaponList.Count; i++)
             {
                 updateMissileMovement(gameTime, gameSpeed, activeWeaponList[i]);
-                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > 2000 
+                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > activeWeaponList[i].timeToLive 
                     || activeWeaponList[i].currentTarget == null)
                 {
                     ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,activeWeaponList[i].modelPosition,0.25f);                                                      
@@ -255,14 +255,14 @@ namespace SaturnIV
             tempData.range = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].range;
             tempData.Direction = weaponOrigin.Direction;
             tempData.targetPosition = weaponOrigin.Direction;
-            tempData.timeToLive = 1000;
+            tempData.timeToLive = 100;
 
           if (tempData.isProjectile)
            {
                  tempData.shipThruster = new Athruster();
                  tempData.shipThruster.LoadContent(Game, spriteBatch);
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
-                                               400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
+                                               200, weaponOrigin.modelPosition, weaponOrigin.Velocity);
                 tempData.trailEmitter = trailEmitter;
                 //weaponOrigin.cMissileCount -= 1;
             }
@@ -287,12 +287,13 @@ namespace SaturnIV
             //Calculate path
             //tempData.calcInitalPath(originDirection);
             tempData.objectFileName = weaponDefList[(int)thisWeapon.weaponType].FileName;
-            tempData.radius = weaponDefList[(int)thisWeapon.weaponType].SphereRadius;
+            tempData.radius = weaponDefList[(int)thisWeapon.weaponType].SphereRadius*2;
             tempData.isProjectile = weaponDefList[(int)thisWeapon.weaponType].isProjectile;
             tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
             tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
+            tempData.damageFactor = weaponDefList[(int)thisWeapon.weaponType].damageFactor;
             if (tempData.isProjectile)
                 tempData.shipModel = LoadModel(tempData.objectFileName);
             else
@@ -300,7 +301,7 @@ namespace SaturnIV
             tempData.objectAgility = weaponDefList[(int)thisWeapon.weaponType].Agility;
             tempData.objectMass = weaponDefList[(int)thisWeapon.weaponType].Mass;
             tempData.objectThrust = weaponDefList[(int)thisWeapon.weaponType].Thrust;
-            tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius);
+            tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius*4);
             tempData.missileTarget = targetObject;
             tempData.currentTarget = targetObject;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
@@ -340,10 +341,11 @@ namespace SaturnIV
                 //tempData.shipThruster = new Athruster();
                 //tempData.shipThruster.LoadContent(Game, spriteBatch);
                 trailEmitter = new ParticleEmitter(projectileTrailParticles,
-                                               400, weaponOrigin.modelPosition, weaponOrigin.Velocity);
+                                               200, weaponOrigin.modelPosition, weaponOrigin.Velocity/2);
+               
                 tempData.trailEmitter = trailEmitter;
             }
-            tempData.timeToLive = 1000;
+            tempData.timeToLive = 700;
             //if (weaponOrigin.cMissileCount >0)
             activeWeaponList.Add(tempData);
             //isMissileHit = true;

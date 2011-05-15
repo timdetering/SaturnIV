@@ -74,15 +74,6 @@
       <Time>2011-03-29T19:05:37.96875-05:00</Time>
     </Item>
     <Item>
-      <Source>DemoFont.spritefont</Source>
-      <Name>DemoFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\DemoFont.xnb</Output>
-      <Time>2011-04-22T20:52:27.62975-05:00</Time>
-    </Item>
-    <Item>
       <Source>Miramonte.spritefont</Source>
       <Name>Miramonte</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -288,15 +279,6 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\HealthBar.xnb</Output>
       <Time>2011-03-29T19:05:39.9375-05:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\hud_target_new.png</Source>
-      <Name>textures\hud_target_new</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\hud_target_new.xnb</Output>
-      <Time>2011-03-29T19:05:41.328125-05:00</Time>
     </Item>
     <Item>
       <Source>textures\smoke2.jpg</Source>
@@ -2671,6 +2653,291 @@
       <Options>None</Options>
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Hgn_AttackBomber_Burner_EXPORT[3_0.xnb</Output>
       <Time>2009-06-27T23:38:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>MedFont.spritefont</Source>
+      <Name>MedFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\MedFont.xnb</Output>
+      <Time>2011-05-04T19:20:45.953125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>SmallFont.spritefont</Source>
+      <Name>SmallFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\SmallFont.xnb</Output>
+      <Time>2011-05-04T20:56:23.0625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\carrier.FBX</Source>
+      <Name>Models\carrier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\carrier.xnb</Output>
+      <Time>2011-05-08T15:58:41.1875-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\carrier_0.xml</Key>
+        <Value>2011-05-08T15:58:45.09375-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\carrier.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\carrier_0.xml</Output>
+      <Time>2011-05-08T15:58:41.1875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\metal-hull.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\metal-hull_0.xnb</Output>
+      <Time>2011-04-02T21:36:40.3645-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\basic_missile.FBX</Source>
+      <Name>Models\basic_missile</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\basic_missile.xnb</Output>
+      <Time>2011-05-08T16:27:58.09375-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\basic_missile_0.xml</Key>
+        <Value>2011-05-08T16:28:02.578125-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\basic_missile.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\basic_missile_0.xml</Output>
+      <Time>2011-05-08T16:27:58.09375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Lakerem.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Output>
+      <Time>2011-03-29T19:05:37.90625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\blue_marker.png</Source>
+      <Name>textures\blue_marker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\blue_marker.xnb</Output>
+      <Time>2011-03-29T19:05:41.328125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\New_Destroyer.FBX</Source>
+      <Name>Models\New_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\New_Destroyer.xnb</Output>
+      <Time>2011-05-15T09:41:20.175885-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\New_Destroyer_0.xml</Key>
+        <Value>2011-05-15T09:41:24.37901-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull5_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Shipyard_Alpha.FBX</Source>
+      <Name>Models\Shipyard_Alpha</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Shipyard_Alpha.xnb</Output>
+      <Time>2011-05-15T09:12:13.644635-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Shipyard_Alpha_0.xml</Key>
+        <Value>2011-05-15T09:22:22.613385-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\New_Destroyer.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\New_Destroyer_0.xml</Output>
+      <Time>2011-05-15T09:41:20.175885-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Shipyard_Alpha.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Shipyard_Alpha_0.xml</Output>
+      <Time>2011-05-15T09:12:13.644635-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\New Models\space_station_0\color.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_0.xnb</Output>
+      <Time>2010-09-02T01:21:08.765625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\New Models\Anna-V Variations\Anna-V Variations\Anna Textures\ship_hull5.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull5_0.xnb</Output>
+      <Time>2010-01-03T01:19:38-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Frigate_MK1.FBX</Source>
+      <Name>Models\Frigate_MK1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Frigate_MK1.xnb</Output>
+      <Time>2011-05-15T09:52:18.457-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Frigate_MK1_0.xml</Key>
+        <Value>2011-05-15T09:55:16.785125-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull17_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Frigate_MK2.FBX</Source>
+      <Name>Models\Frigate_MK2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Frigate_MK2.xnb</Output>
+      <Time>2011-05-15T09:51:29.582-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Frigate_MK2_0.xml</Key>
+        <Value>2011-05-15T09:55:18.128875-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull17_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Frigate_MK1.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Frigate_MK1_0.xml</Output>
+      <Time>2011-05-15T09:52:18.457-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Frigate_MK2.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Frigate_MK2_0.xml</Output>
+      <Time>2011-05-15T09:51:29.582-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\New Models\Anna-V Variations\Anna-V Variations\Anna Textures\ship_hull17.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\ship_hull17_0.xnb</Output>
+      <Time>2010-01-03T04:45:28-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Base.FBX</Source>
+      <Name>Models\Eriax_Base</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Eriax_Base.xnb</Output>
+      <Time>2011-05-15T09:53:08.8945-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Eriax_Base_0.xml</Key>
+        <Value>2011-05-15T09:55:18.332-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Eriax_Base.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Eriax_Base_0.xml</Output>
+      <Time>2011-05-15T09:53:08.8945-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Station.FBX</Source>
+      <Name>Models\Fleet_Station</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Fleet_Station.xnb</Output>
+      <Time>2011-05-15T10:06:36.003875-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Fleet_Station_0.xml</Key>
+        <Value>2011-05-15T10:08:00.0195-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_1.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Fleet_Station.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Fleet_Station_0.xml</Output>
+      <Time>2011-05-15T10:06:36.003875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Documents and Settings\bryan\Desktop\New Models\spaceship_station_3\spaceship_station_3\color.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_1.xnb</Output>
+      <Time>2010-07-13T14:21:12.0149056-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -47,7 +47,7 @@ namespace SaturnIV
         public void Initialize()
         {
             // TODO: Add your initialization code here
-            //planetData.Description = shipTypes.ShipModelFileName[planetTypeIndex];
+           // planetData.Description = shipTypes.ShipModelFileName[planetTypeIndex];
             //loadModel(planetData.Description, "effects");
             base.Initialize();
         }
@@ -76,12 +76,13 @@ namespace SaturnIV
                 t = 2.0 * MathHelper.Pi * Position.NextDouble(); 
                 w = Math.Sqrt(1 - tZ * tZ); 
                 tX = w * Math.Cos(t); 
-                tY = w * Math.Sin(t); 
+                tY = 0;//w * Math.Sin(t); 
                 tempData = new PlanetManager(Game);
-                int tTextureIndex = Position.Next(2);
-                tempData.planetRadius = Position.Next(200,planetRadiusBoundry);
-                tempData.modelTexture = planetTextureArray[0];
-               // tempData.modelPosition = new Vector3(0,0,1);
+                //int tTextureIndex = 1;
+                tempData.planetRadius = 5; // Position.Next(100, planetRadiusBoundry);
+                tempData.modelTexture = planetTextureArray[2];
+               // tempData.DrawModelWithTexture
+               // tempData.modelPosition = new Vector3(0,1000,0);
                 planetList.Add(tempData);
             }
         }
@@ -115,12 +116,12 @@ namespace SaturnIV
                         currentEffect.Parameters["xProjection"].SetValue(projectionMatrix);
                         currentEffect.Parameters["xEnableLighting"].SetValue(true);
                        // currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
-                        currentEffect.Parameters["xAmbient"].SetValue(0.5f);
+                        currentEffect.Parameters["xAmbient"].SetValue(1.5f);
                         currentEffect.Parameters["xTexture"].SetValue(planet.modelTexture);
                     }
                     mesh.Draw();
                 }
-                //base.Draw(gameTime);
+                base.Draw(gameTime);
             }
         }
     }

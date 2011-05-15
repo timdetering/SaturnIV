@@ -2,7 +2,7 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
     <Item>
-      <FileName>Models//Fleet_KM100</FileName>
+      <FileName>Models//basic_missile</FileName>
       <Type>SRM</Type>
       <Mass>0.75</Mass>
       <Thrust>1200</Thrust>
@@ -18,7 +18,7 @@
       <range>1000</range>
     </Item>
     <Item>
-      <FileName>Models//Fleet_KM100</FileName>
+      <FileName>Models//basic_missile</FileName>
       <Type>SRMH</Type>
       <Mass>0.50</Mass>
       <Thrust>700</Thrust>

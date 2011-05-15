@@ -44,8 +44,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DemoFont.spritefont">
-      <Name>DemoFont</Name>
+    <Compile Include="MedFont.spritefont">
+      <Name>MedFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
@@ -287,6 +287,51 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="SmallFont.spritefont">
+      <Name>SmallFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\carrier.FBX">
+      <Name>carrier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\basic_missile.FBX">
+      <Name>basic_missile</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\New_Destroyer.FBX">
+      <Name>New_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Shipyard_Alpha.FBX">
+      <Name>Shipyard_Alpha</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Frigate_MK1.FBX">
+      <Name>Frigate_MK1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Frigate_MK2.FBX">
+      <Name>Frigate_MK2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Base.FBX">
+      <Name>Eriax_Base</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Fleet_Station.FBX">
+      <Name>Fleet_Station</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="neuropol.spritefont">
       <Name>neuropol</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -372,13 +417,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\hud_target_new.png">
-      <Name>hud_target_new</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\smoke2.jpg">
       <Name>smoke2</Name>
       <Importer>TextureImporter</Importer>
@@ -409,6 +447,13 @@
   <ItemGroup>
     <Compile Include="textures\SelectionBox.png">
       <Name>SelectionBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\blue_marker.png">
+      <Name>blue_marker</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -20,7 +20,7 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             foreach (string msg in messageLog)
                 messageBuffer.AppendFormat("\n" + msg);
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Yellow);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.MediumSlateBlue);
             //systemMessagePos.Y += 10;
             spriteBatch.End();
         }

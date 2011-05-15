@@ -64,18 +64,18 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if ((thisShipList[j].portFrustum.Intersects(missileList[i].modelBoundingSphere) || thisShipList[j].starboardFrustum.Intersects(missileList[i].modelBoundingSphere))
-                        && missileList[i].distanceFromOrigin > 300)
+                        && missileList[i].distanceFromOrigin > 200)
                     {
+                        thisShipList[j].shieldLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor;
+                        if (thisShipList[j].shieldLvl < 0)
+                            thisShipList[j].hullLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor;
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                        currentExpLocation,(float)rand.NextDouble());
-                        thisShipList[j].shieldLvl -= 5.0f;
-                        if (thisShipList[j].shieldLvl < 0)
-                            thisShipList[j].hullLvl -= 5.0f;// *missileList[i].damageFactor;
+                                                        currentExpLocation, (float)rand.NextDouble());
                         if (thisShipList[j].hullLvl < 0)
                         {
-                            for (int y=0; y< 50;y++)
+                            for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                            currentExpLocation, (float)rand.NextDouble());
                             MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
@@ -94,7 +94,7 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if (thisShip.modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
-                        && missileList[i].distanceFromOrigin > 200)
+                        && missileList[i].distanceFromOrigin > 100)
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
