@@ -135,7 +135,7 @@ namespace SaturnIV
             thisObject.modelPosition += thisObject.Velocity * elapsed;
             thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
 
-            thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin);
+            //thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin.modelPosition);
            // thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             if (thisObject.trailEmitter != null)
                 thisObject.trailEmitter.Update(gameTime, thisObject.modelPosition);
@@ -224,7 +224,7 @@ namespace SaturnIV
             tempData.objectThrust = weaponDefList[(int)weaponOrigin.currentWeapon.weaponType].Thrust;           
             tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius);
             tempData.missileTarget = targetObject;
-            tempData.missileOrigin = weaponOrigin.modelPosition;
+            tempData.missileOrigin = weaponOrigin;
             tempData.Velocity = weaponOrigin.Velocity;
             Vector3 plyonVector3 = new Vector3(weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].X, 
                                                weaponOrigin.currentWeapon.ModulePositionOnShip[pylon].Y, 
@@ -304,6 +304,7 @@ namespace SaturnIV
             tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius*4);
             tempData.missileTarget = targetObject;
             tempData.currentTarget = targetObject;
+            tempData.missileOrigin = weaponOrigin;
             tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
             Vector3 plyonVector3 = new Vector3(thisWeapon.ModulePositionOnShip[modIndex].X,
                                    thisWeapon.ModulePositionOnShip[modIndex].Y,
@@ -329,7 +330,7 @@ namespace SaturnIV
                     break;
             }
 
-            tempData.missileOrigin = weaponOrigin.modelPosition + plyonVector3;
+            //tempData.missileOrigin = weaponOrigin.modelPosition + plyonVector3;
             tempData.Velocity = weaponOrigin.Velocity;
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;

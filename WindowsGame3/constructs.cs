@@ -120,7 +120,7 @@ namespace SaturnIV
         public bool isHoming;
         public int regenTime;
         public int damageFactor;
-        public Vector3 missileOrigin;
+        public newShipStruct missileOrigin;
         public float distanceFromOrigin;
         public float range;
         public Color objectColor;

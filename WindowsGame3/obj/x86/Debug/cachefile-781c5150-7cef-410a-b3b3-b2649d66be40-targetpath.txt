@@ -189,3 +189,7 @@ Content\ship_hull17_0.xnb
 Content\Models\Eriax_Base.xnb
 Content\Models\Fleet_Station.xnb
 Content\color_1.xnb
+Content\Models\Raptor_Crusier.xnb
+Content\Models\blu_0.xnb
+Content\textures\attack_icon.xnb
+Content\textures\move_icon.xnb

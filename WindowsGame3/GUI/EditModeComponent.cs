@@ -167,7 +167,7 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-            //grid.drawLines();
+            grid.drawLines();
 
           
             foreach (newShipStruct enemy in shipList)
@@ -231,7 +231,7 @@ namespace SaturnIV
             tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
             tempData.wayPointPosition = tempData.targetPosition;
             if (team == 0)
-                tempData.currentDisposition = disposition.idle;
+                tempData.currentDisposition = disposition.patrol;
             else
                 tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;

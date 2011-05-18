@@ -2939,6 +2939,60 @@
       <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\color_1.xnb</Output>
       <Time>2010-07-13T14:21:12.0149056-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\Raptor_Crusier.FBX</Source>
+      <Name>Models\Raptor_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\Raptor_Crusier.xnb</Output>
+      <Time>2011-05-16T19:10:58.597625-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Raptor_Crusier_0.xml</Key>
+        <Value>2011-05-16T19:11:33.67575-05:00</Value>
+      </Dependency>
+      <Request>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\blu_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Raptor_Crusier.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Raptor_Crusier_0.xml</Output>
+      <Time>2011-05-16T19:10:58.597625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\blu.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\Models\blu_0.xnb</Output>
+      <Time>2011-03-29T19:05:37.140625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\attack_icon.png</Source>
+      <Name>textures\attack_icon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\attack_icon.xnb</Output>
+      <Time>2011-05-17T19:38:48.332-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\move_icon.png</Source>
+      <Name>textures\move_icon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\bin\x86\Debug\Content\textures\move_icon.xnb</Output>
+      <Time>2011-05-17T19:44:15.832-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -39,7 +39,7 @@ namespace SaturnIV
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D rectTex,shipRec,blueMarker,selectRecTex;
+        Texture2D rectTex,shipRec,blueMarker,selectRecTex,attackIcon,moveIcon;
         MessageClass messageClass;
         Vector2 messagePos1 = new Vector2(0,0);
         public Vector2 systemMessagePos = new Vector2(30,20);
@@ -212,6 +212,8 @@ namespace SaturnIV
             shipRec = this.Content.Load<Texture2D>("textures//missiletrack");
             blueMarker = this.Content.Load<Texture2D>("textures//blue_marker");
             selectRecTex = this.Content.Load<Texture2D>("textures//SelectionBox");
+            attackIcon = this.Content.Load<Texture2D>("textures//attack_icon");
+            moveIcon = this.Content.Load<Texture2D>("textures//move_icon");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
         }
@@ -716,6 +718,8 @@ namespace SaturnIV
                     }
                     buffer.AppendFormat("[" + enemy.shieldLvl + "%]");
                     buffer.AppendFormat("\n[" + enemy.currentDisposition + "]");
+                    buffer.AppendFormat("[" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[" + enemy.thrustAmount + "]");
                     //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     //buffer.AppendFormat("[Team]"+ enemy.team);
@@ -739,8 +743,10 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             messageBuffer = new StringBuilder();
             //playerShipHealthBar.DrawHbar(gameTime, spriteBatch, Color.Blue, 0,0, 500, 20, (int)playerShip.objectArmorLvl);
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX -
-                                    (screenX / 3), screenCenterY - (screenY / 3)-25), Color.White);
+            spriteBatch.Draw(attackIcon, new Vector2(screenCenterX +
+                                    (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
+            spriteBatch.Draw(moveIcon, new Vector2(screenCenterX +
+                        (screenX / 6) - 300, screenCenterY + (screenY / 3)), Color.White);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
             messageBuffer.AppendFormat("\nCurrent Menu " +guiClass.currentSelection);

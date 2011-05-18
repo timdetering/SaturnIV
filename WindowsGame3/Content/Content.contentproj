@@ -332,6 +332,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Models\Raptor_Crusier.FBX">
+      <Name>Raptor_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="neuropol.spritefont">
       <Name>neuropol</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -454,6 +459,20 @@
   <ItemGroup>
     <Compile Include="textures\blue_marker.png">
       <Name>blue_marker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\attack_icon.png">
+      <Name>attack_icon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\move_icon.png">
+      <Name>move_icon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

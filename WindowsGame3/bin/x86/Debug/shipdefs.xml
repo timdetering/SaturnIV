@@ -64,49 +64,6 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
-      <FileName>Models//Frigate_MK2</FileName>
-      <Type>Eriax Frigate MK2</Type>
-      <Mass>5.0</Mass>
-      <Thrust>1000</Thrust>
-      <SphereRadius>25</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>3.00</Agility>
-      <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Frigate</ShipClass>
-      <ShieldFactor>0.42</ShieldFactor>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 900 1300 200 50</EvadeDist>
-      <TargetPrefs>0 0.6 0.4 0.2</TargetPrefs>
-	  <Chase>0 1 1 0 0 </Chase>
-      <AvailableWeapons>
-      <Item>
-	 <weaponType>SRM</weaponType>
-	 <ModulePositionOnShip>
-	   -4 0 0 3
-            4 0 0 3
-	   -8 0 0 3
-            8 0 0 3
-	   -12 0 0 2
-            12 0 0 2
-	   -16 0 0 2
-            16 0 0 2
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-      </Item>
-      <Item>
-	 <weaponType>SRMH</weaponType>
-	 <ModulePositionOnShip>
-	   -4 0 0 2
-            4 0 0 2
-	   -12 0 0 3
-            12 0 0 3
-	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-      </Item>
-      </AvailableWeapons>
-      <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>
-<Item>
       <FileName>Models//Fleet_MR-80_Striker</FileName>
       <Type>Fleet MR-80 Striker</Type>
       <Mass>2.0</Mass>
@@ -119,7 +76,7 @@
       <ShieldFactor>0.99</ShieldFactor>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 500 1000 200 50</EvadeDist>
-      <TargetPrefs>0.5 0.6 1 1 0.2</TargetPrefs>
+      <TargetPrefs>0.5 0.6 0.9 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 0 0</Chase>
       <AvailableWeapons>
       <Item>
@@ -288,11 +245,11 @@
     <Item>
       <FileName>Models//Eriax_Medium_crusier</FileName>
       <Type>Eriax Medium Crusier</Type>
-      <Mass>6</Mass>
+      <Mass>8</Mass>
       <Thrust>900</Thrust>
       <SphereRadius>170</SphereRadius>
       <Scale>1</Scale>
-      <Agility>3.5</Agility>
+      <Agility>0.5</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldFactor>0.85</ShieldFactor>
@@ -401,7 +358,7 @@
     <Item>
       <FileName>Models//Fleet_SF-6_Hornet</FileName>
       <Type>SF-6 Hornet</Type>
-      <Mass>1.5</Mass>
+      <Mass>1.75</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
@@ -412,7 +369,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>500 1000 1500 200 50</EvadeDist>
       <TargetPrefs>0.5 0.3 1 1 0.2 </TargetPrefs>
-	  	  <Chase> 1 1 1 0 0 </Chase>
+      <Chase> 1 1 1 0 0 </Chase>
       <AvailableWeapons>
 	<Item>
 		<weaponType>AutoCannon</weaponType>

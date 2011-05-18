@@ -64,7 +64,7 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if ((thisShipList[j].portFrustum.Intersects(missileList[i].modelBoundingSphere) || thisShipList[j].starboardFrustum.Intersects(missileList[i].modelBoundingSphere))
-                        && missileList[i].distanceFromOrigin > 200)
+                        && missileList[i].missileOrigin != thisShipList[j])
                     {
                         thisShipList[j].shieldLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor;
                         if (thisShipList[j].shieldLvl < 0)
@@ -94,7 +94,7 @@ namespace SaturnIV
                 for (int i = 0; i < missileList.Count; i++)
                 {
                     if (thisShip.modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
-                        && missileList[i].distanceFromOrigin > 100)
+                        && missileList[i].missileOrigin != thisShip)
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
