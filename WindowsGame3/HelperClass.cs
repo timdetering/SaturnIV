@@ -78,7 +78,7 @@ namespace SaturnIV
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                            currentExpLocation, (float)rand.NextDouble());
-                            MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
+                            //MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
                          }                       
                         return true;
@@ -106,6 +106,23 @@ namespace SaturnIV
                         return true;
                     }
                 }
+            return false;
+        }
+
+        //CheckForCollision given a single object and list of objects
+        public bool CheckForCollisionMech(GameTime gameTime, newShipStruct thisShip, ref List<newShipStruct> objectList, ref ExplosionClass ourExplosion)
+        {
+            for (int i = 0; i < objectList.Count; i++)
+            {
+                
+                    if (thisShip.portFrustum.Intersects(objectList[i].modelBoundingSphere) || thisShip.starboardFrustum.Intersects(objectList[i].modelBoundingSphere))
+                    {
+                        Ray myRay = new Ray(objectList[i].modelPosition + new Vector3(0, objectList[i].modelWidth,0), Vector3.Down);
+                        float vertDif = thisShip.modelPosition.Y - objectList[i].modelPosition.Y;
+                        thisShip.modelPosition.Y = vertDif;
+                        return true;
+                    }
+            }
             return false;
         }
 

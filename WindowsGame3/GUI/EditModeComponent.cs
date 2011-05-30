@@ -61,7 +61,7 @@ namespace SaturnIV
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            grid = new Grid(100, 300, Game.GraphicsDevice, Game);
+            grid = new Grid(200, 700, Game.GraphicsDevice, Game);
             fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
             base.Initialize();
@@ -82,7 +82,7 @@ namespace SaturnIV
             mouseCurrent = Mouse.GetState();
             keyboardState = Keyboard.GetState();
 
-            isDirectionSphere = checkIsSelected(currentMouseRay, mouse3dVector, directionSphere);
+            isDirectionSphere = checkIsSelected(mouse3dVector, directionSphere);
             if (isDirectionSphere)
                 isDragging = false;
             if (isLClicked && !isDirectionSphere && !isGroupSelect)
@@ -90,7 +90,7 @@ namespace SaturnIV
                 isDragging = false;
                 foreach (newShipStruct ourShip in objectList)
                 {
-                    checkResult = checkIsSelected(currentMouseRay, mouse3dVector, ourShip.modelBoundingSphere);
+                    checkResult = checkIsSelected(mouse3dVector, ourShip.modelBoundingSphere);
                     if (checkResult && isLClicked)
                     {
                         ourShip.isSelected = true;
@@ -167,7 +167,7 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-            grid.drawLines();
+            //grid.drawLines();
 
           
             foreach (newShipStruct enemy in shipList)
@@ -187,18 +187,18 @@ namespace SaturnIV
                     
               }
            // BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 500, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 1000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 2000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 4000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 6000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 8000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 10000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 12000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
-            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 14000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.LawnGreen);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 1000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 2000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 4000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 6000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 8000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 10000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 12000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
+            BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 14000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
             base.Draw(gameTime);
         }
         
-        public static bool checkIsSelected(Ray currentMouseRay, Vector3 mouse3dVector,
+        public static bool checkIsSelected(Vector3 mouse3dVector,
                 BoundingSphere sphere)
         {
             MouseState currentState = Mouse.GetState();
@@ -213,6 +213,7 @@ namespace SaturnIV
                                    GameTime gameTime, Camera ourCamera, string shipName, int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
+            tempData.objectIndex = shipIndex;
             tempData.objectFileName = shipDefList[shipIndex].FileName;
             tempData.objectAlias = shipName;
             tempData.shipModel = modelManager.LoadModel(shipDefList[shipIndex].FileName);
@@ -251,8 +252,8 @@ namespace SaturnIV
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;
             tempData.ChasePrefs = shipDefList[shipIndex].Chase;
+            tempData.squadNo = -1;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
-
             //Build Bounding Frustrum for all Weapon Modules on ship
             tempData.moduleFrustum = new List<BoundingFrustum>();
             int moduleCount = 0;

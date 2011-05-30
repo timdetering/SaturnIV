@@ -21,27 +21,24 @@ namespace SaturnIV
     /// steady stream of trail particles behind it. After a while it explodes,
     /// creating a sudden burst of explosion and smoke particles.
     /// </summary>
-    class Projectile
+    public class Projectile
     {
         #region Constants
 
-        const float trailParticlesPerSecond = 50;
+        const float trailParticlesPerSecond = 175;
         const int numExplosionParticles = 30;
         const int numExplosionSmokeParticles = 50;
-        const float projectileLifespan = 5.5f;
-        const float sidewaysVelocityRange = 0;
-        const float verticalVelocityRange = 0;
-        const float gravity = 0;
+        const float projectileLifespan = 1.5f;
+        const float sidewaysVelocityRange = 10;
+        const float verticalVelocityRange = 15;
+        const float gravity = 0f;
 
         #endregion
 
         #region Fields
 
-        ParticleSystem explosionParticles;
-        ParticleSystem explosionSmokeParticles;
         ParticleEmitter trailEmitter;
 
-        Vector3 position;
         Vector3 velocity;
         float age;
 
@@ -53,19 +50,8 @@ namespace SaturnIV
         /// <summary>
         /// Constructs a new projectile.
         /// </summary>
-        public Projectile(ParticleSystem explosionParticles,
-                          ParticleSystem explosionSmokeParticles,
-                          ParticleSystem projectileTrailParticles, Vector3 position)
+        public Projectile(ParticleSystem projectileTrailParticles, Vector3 position,Vector3 velocity)
         {
-            this.explosionParticles = explosionParticles;
-            this.explosionSmokeParticles = explosionSmokeParticles;
-
-            // Start at the origin, firing in a random (but roughly upward) direction.
-
-            velocity.X = (float)(random.NextDouble() - 0.5) * sidewaysVelocityRange;
-            velocity.Y = (float)(random.NextDouble() + 0.5) * verticalVelocityRange;
-            velocity.Z = (float)(random.NextDouble() - 0.5) * sidewaysVelocityRange;
-
             // Use the particle emitter helper to output our trail particles.
             trailEmitter = new ParticleEmitter(projectileTrailParticles,
                                                trailParticlesPerSecond, position, velocity);
@@ -79,8 +65,8 @@ namespace SaturnIV
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // Simple projectile physics.
-            position += velocity * elapsedTime;
-            velocity.Y -= elapsedTime * gravity;
+            //position += velocity * elapsedTime;
+            //velocity.Y -= elapsedTime * gravity;
             age += elapsedTime;
 
             // Update the particle emitter, which will create our particle trail.

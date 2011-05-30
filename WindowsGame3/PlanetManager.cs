@@ -24,16 +24,11 @@ namespace SaturnIV
 
         //Space Object Variables
         Matrix rotationMatrix = Matrix.Identity;
-        int numberOfPlanets = 10;
-        int planetXBoundry = 200;
-        int planetYBoundry = 200;
-        int planetZBoundry = 200;
-        Vector3 rotationAmount = new Vector3();
-        int planetRadiusBoundry = 5000;
-        int planetRadius;
-        public List<ModelManager> planetList = new List<ModelManager>();
+        public static List<planetStruct> planetList = new List<planetStruct>();
         public Texture2D[] planetTextureArray;
-
+        public Model pdpModel;
+        public Line3D line;
+        public static BoundingSphere planetBS;
         public PlanetManager(Game game)
             : base(game)
         {
@@ -64,11 +59,12 @@ namespace SaturnIV
 
         public void generatSpaceObjects(int numberOfPlanets)
         {
+            pdpModel = LoadModel("Models//pdp");
+            planetBS = new BoundingSphere(Vector3.Zero,2000);
+            
+            line = new Line3D(Game.GraphicsDevice);
             Random Position = new Random();
-            loadModelCustomEffects("Models/sphere", "effects");
-
             loadPlanetTextures();
-            tempData = new PlanetManager(Game);
             double tX, tY, tZ, w, t;
             for (int i = 0; i < numberOfPlanets; i++)
             {
@@ -77,12 +73,26 @@ namespace SaturnIV
                 w = Math.Sqrt(1 - tZ * tZ); 
                 tX = w * Math.Cos(t); 
                 tY = 0;//w * Math.Sin(t); 
-                tempData = new PlanetManager(Game);
+                planetStruct tempData = new planetStruct();
                 //int tTextureIndex = 1;
-                tempData.planetRadius = 5; // Position.Next(100, planetRadiusBoundry);
-                tempData.modelTexture = planetTextureArray[2];
-               // tempData.DrawModelWithTexture
-               // tempData.modelPosition = new Vector3(0,1000,0);
+                tempData.planetModel = LoadModel("Models/planet");
+                tempData.planetRadius = 4; // Position.Next(100, planetRadiusBoundry);
+                tempData.planetPosition = Vector3.Zero;//HelperClass.RandomPosition(-9000, 9000);
+                tempData.planetTexture = planetTextureArray[2];
+                tempData.pdpList = new List<PDPlatformStruct>();
+                tempData.pdpCount = 8;
+                float degrees = 360/tempData.pdpCount;
+                for (int j = 0; j < tempData.pdpCount; j++)
+                {
+                    PDPlatformStruct newPDP = new PDPlatformStruct();
+                    newPDP.pdpNumber = j;
+                    newPDP.pdpPosition = RotateAroundPoint(new Vector3(550*tempData.planetRadius, 0, 0), Vector3.Zero, Vector3.UnitY, MathHelper.ToRadians(degrees));
+                    newPDP.worldMatrix = Matrix.CreateWorld(newPDP.pdpPosition, Vector3.Forward, Vector3.Up);
+                    degrees += 360/tempData.pdpCount;
+                    newPDP.isDeployed = true;
+                    newPDP.isOnline = true;
+                    tempData.pdpList.Add(newPDP);
+                }
                 planetList.Add(tempData);
             }
         }
@@ -98,31 +108,107 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void DrawPlanets(GameTime gameTime, Matrix viewMatrix, Matrix projectionMatrix)
+        public void DrawPDP(GameTime gameTime, Matrix viewMatrix, Matrix projectionMatrix)
         {
-            foreach (PlanetManager planet in planetList)
-            {
-                float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius);
-                Matrix[] targetTransforms = new Matrix[myModel.Bones.Count];
-                myModel.CopyAbsoluteBoneTransformsTo(targetTransforms);
-                foreach (ModelMesh mesh in myModel.Meshes)
+            foreach (planetStruct planet in planetList)
+                foreach (PDPlatformStruct thisPDP in planet.pdpList)
                 {
-                    foreach (Effect currentEffect in mesh.Effects)
+                    Matrix[] transforms = new Matrix[pdpModel.Bones.Count];
+                    pdpModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+                    // Draw the model. A model can have multiple meshes, so loop.
+                    foreach (ModelMesh mesh in pdpModel.Meshes)
                     {
-                        currentEffect.CurrentTechnique = currentEffect.Techniques["Textured"];
-                        currentEffect.Parameters["xWorld"].SetValue(targetTransforms[mesh.ParentBone.Index] * worldMatrix);
-                        currentEffect.Parameters["xView"].SetValue(viewMatrix);
-                        currentEffect.Parameters["xProjection"].SetValue(projectionMatrix);
-                        currentEffect.Parameters["xEnableLighting"].SetValue(true);
-                       // currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
-                        currentEffect.Parameters["xAmbient"].SetValue(1.5f);
-                        currentEffect.Parameters["xTexture"].SetValue(planet.modelTexture);
+                        foreach (BasicEffect effect in mesh.Effects)
+                        {
+                            effect.EnableDefaultLighting();
+                            effect.DirectionalLight0.DiffuseColor = Color.Green.ToVector3();
+                            effect.AmbientLightColor = Color.Green.ToVector3();
+                            effect.World = transforms[mesh.ParentBone.Index] * thisPDP.worldMatrix;
+                            effect.View = viewMatrix;
+                            effect.Projection = projectionMatrix;
+                        }
+                        // Draw the mesh, using the effects set above.
+                        GraphicsDevice.RenderState.DepthBufferEnable = true;
+                        mesh.Draw();
                     }
+                }
+            DrawPDPGrid(viewMatrix, projectionMatrix);
+        }
+
+        public void DrawPDPGrid(Matrix viewMatrix, Matrix projectionMatrix)
+        {
+            int i=0;
+            foreach (planetStruct planet in planetList)
+                foreach (PDPlatformStruct thisPDP in planet.pdpList)
+                {
+                    if (i < planet.pdpList.Count() - 1)
+                    {
+                        line.Draw(thisPDP.pdpPosition, planet.pdpList[i + 1].pdpPosition, Color.Green, viewMatrix, projectionMatrix);
+                        i++;
+                    }
+                    else
+                    {
+                        line.Draw(thisPDP.pdpPosition, planet.pdpList[0].pdpPosition, Color.Green, viewMatrix, projectionMatrix);
+                    }
+                }
+        }
+
+
+
+        public void DrawPlanets(GameTime gameTime, Matrix viewMatrix, Matrix projectionMatrix, Camera ourCamera)
+        {
+            foreach (planetStruct planet in planetList)
+            {
+               // BoundingSphereRenderer.Render(planetBS, Game.GraphicsDevice, viewMatrix, projectionMatrix, Color.Yellow);
+                Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius) * Matrix.CreateTranslation(planet.planetPosition);
+                Matrix[] transforms = new Matrix[planet.planetModel.Bones.Count];
+                planet.planetModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+                // Draw the model. A model can have multiple meshes, so loop.
+                foreach (ModelMesh mesh in planet.planetModel.Meshes)
+                {
+                    foreach (BasicEffect effect in mesh.Effects)
+                    {
+                        //effect.EnableDefaultLighting();
+                        effect.TextureEnabled = true;
+                        //effect.C
+                        //effect.DirectionalLight0.Enabled = false;
+                        effect.Texture = planet.planetTexture;
+                        //effect.DirectionalLight0.DiffuseColor = Color.Blue.ToVector3();
+                       // effect.AmbientLightColor = Color.Blue.ToVector3();
+                        //effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
+                       // effect.DirectionalLight0.SpecularColor = Color.Blue.ToVector3(); // with green highlights
+                        //effect.AmbientLightColor = Color.White.ToVector3();
+                        effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
+                      //  effect.SpecularColor = Color.Blue.ToVector3();
+                        effect.View = viewMatrix;
+                        effect.Projection = projectionMatrix;
+                    }
+                    // Draw the mesh, using the effects set above.
+                    GraphicsDevice.RenderState.DepthBufferEnable = true;
                     mesh.Draw();
                 }
-                base.Draw(gameTime);
             }
+        }
+
+        /// <summary>
+        /// Translates a point around an origin
+        /// </summary>
+        /// <param name="point">Point that is going to be translated</param>
+        /// <param name="originPoint">Origin of rotation</param>
+        /// <param name="rotationAxis">Axis to rotate around, this Vector should be a unit vector (normalized)</param>
+        /// <param name="radiansToRotate">Radians to rotate</param>
+        /// <returns>Translated point</returns>
+        public Vector3 RotateAroundPoint(Vector3 point, Vector3 originPoint, Vector3 rotationAxis, float radiansToRotate)
+        {
+            Vector3 diffVect = point - originPoint;
+
+            Vector3 rotatedVect = Vector3.Transform(diffVect, Matrix.CreateFromAxisAngle(rotationAxis, radiansToRotate));
+
+            rotatedVect += originPoint;
+
+            return rotatedVect;
         }
     }
 }

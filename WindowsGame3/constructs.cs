@@ -16,14 +16,16 @@ namespace SaturnIV
         idle = 3,
         moving = 4,
         onstation = 5,
-        defensive = 6
+        defensive = 6,
+        squad = 7
     }
 
     public enum SquadDisposition
     {
         tight = 0,
-        regroup = 1,
-        engage = 2
+        formup = 1,
+        engage = 2,
+        breakform = 3
     }
 
     public enum WeaponClassEnum
@@ -47,6 +49,7 @@ namespace SaturnIV
 
     public class newShipStruct
     {
+        public int objectIndex;
         public string objectFileName;
         public string objectAlias;
         public float objectMass;
@@ -112,6 +115,7 @@ namespace SaturnIV
         public bool isSquadLeader;
         public int team;
         public newShipStruct threat;
+        public Texture2D hudTex;
     }
 
     public class weaponStruct : newShipStruct
@@ -125,6 +129,7 @@ namespace SaturnIV
         public float range;
         public Color objectColor;
         public ParticleEmitter trailEmitter;
+        public Projectile projectile;
         public newShipStruct missileTarget;
         public double timeToLive;
         public double timer;
@@ -134,6 +139,7 @@ namespace SaturnIV
     public class genericObjectLoadClass
     {
         public string FileName;
+        public string ThumbFileName;
         public string Type;
         public float Mass;
         public float Thrust;
@@ -170,6 +176,7 @@ namespace SaturnIV
         public WeaponTypeEnum weaponType;
         public Vector4[] ModulePositionOnShip;
         public float FiringEnvelopeAngle;
+        public float weaponRange;
     }
 
     public class squadClass
@@ -180,13 +187,25 @@ namespace SaturnIV
         public SquadDisposition squadOrders;
     }
 
+    public class PDPlatformStruct
+    {
+        public int pdpNumber;
+        public Vector3 pdpPosition;
+        public int pdpScale = 100;
+        public bool isDeployed = false;
+        public bool isOnline = false;
+        public Matrix worldMatrix;
+        public Matrix rotMatrix;
+        public BoundingSphere pdpBS;
+    }
+
         public enum ClassesEnum
         {
             Fighter = 0,
             Frigate = 1,
             Capitalship = 2,
             Carrier = 3,
-            SWACS = 4
+            Engineer = 4
         }
 
         public enum DirectionEnum
@@ -196,4 +215,17 @@ namespace SaturnIV
             left = 2, // Port
             right = 3 // Starboard
         }
+
+        public class planetStruct
+        {
+            public Vector3 planetPosition;
+            public Texture2D planetTexture;
+            public int planetRadius;
+            public Model planetModel;
+            public List<PDPlatformStruct> pdpList;
+            public int pdpCount;
+            public bool pdpStatus;
+            public BoundingSphere planetBS;
+        }
+
 }

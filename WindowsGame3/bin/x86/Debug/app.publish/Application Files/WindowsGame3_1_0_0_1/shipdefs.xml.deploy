@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.shipData]">
+    <Item>
+      <FileName>Models//Eriax_Crusier</FileName>
+      <ThumbFileName>Models//tEriax_Crusier</ThumbFileName>
+      <Type>Eriax Crusier</Type>
+      <Mass>5.0</Mass>
+      <Thrust>1200</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Frigate</ShipClass>
+      <ShieldFactor>0.50</ShieldFactor>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 400 1000 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
+	  <Chase> 0 1 0 0 </Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AutoCannon</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 0
+            4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+      </Item>
+      <Item>
+	 <weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 3
+	   -4 0 0 3
+	    4 0 10 3
+	   -4 0 20 2
+	    4 0 -20 2
+	   -4 0 -10 2
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//Eriax_Frigate</FileName>
+      <ThumbFileName>Models//tEriax_Crusier</ThumbFileName>
+      <Type>Eriax Frigate</Type>
+      <Mass>4</Mass>
+      <Thrust>1600</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>7.0</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.50</ShieldFactor>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>50 500 1500 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
+	  <Chase> 0 0 0 0 0</Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 0
+	   -4 0 0 0
+	    4 0 10 2
+	   -4 0 -10 2
+	    4 0 20 3
+	   -4 0 -20 3
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+      </Item>
+      <Item>
+	 <weaponType>AutoCannon</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 0
+	   -4 0 0 0
+	    4 0 0 0
+	   -4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+   <Item>
+      <FileName>Models//Fleet_SF101</FileName>
+      <ThumbFileName>Models//tFleet_SF101</ThumbFileName>
+      <Type>SF-101 Striker</Type>
+      <Mass>2.50</Mass>
+      <Thrust>1500</Thrust>
+      <SphereRadius>35</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>7.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.75</ShieldFactor>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>100 400 800 200 50</EvadeDist>
+      <TargetPrefs>0.6 1 0.4 0.1 0</TargetPrefs>
+	  <Chase> 1 1 1 1 0</Chase>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AutoCannon</weaponType>
+		<ModulePositionOnShip> 
+		 -6 0 0 0		 
+     	         -14 0 0 0
+		</ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>1000</weaponRange>
+        </Item>
+	<Item>
+		<weaponType>SRMH</weaponType>
+			 <ModulePositionOnShip>
+	    8 0 0 0
+	    -8 0 0 0
+	    10 0 0 0
+	    4 0 0 0
+	   -4 0 0 0
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>1000</weaponRange>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models//SFV300</FileName>
+      <ThumbFileName>Models//tSFV300</ThumbFileName>
+      <Type>SVF-300 Viper</Type>
+      <Mass>1.75</Mass>
+      <Thrust>1200</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>8.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>500 1000 1500 200 50</EvadeDist>
+      <TargetPrefs>0.5 0.3 1 1 0.2 </TargetPrefs>
+      <Chase> 1 1 1 0 0 </Chase>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AutoCannon</weaponType>
+		<ModulePositionOnShip> 
+		-6 0 0 0 
+		6 0 0 0
+		</ModulePositionOnShip>
+		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+        </Item>
+	<Item>
+		<weaponType>SRM</weaponType>
+		<ModulePositionOnShip>
+		4 0 0 0
+		-4 0 0 0
+		</ModulePositionOnShip>
+	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>2000</weaponRange>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+  <Item>
+      <FileName>Models//battlecrusier</FileName>
+      <ThumbFileName>Models//tbattlecrusier</ThumbFileName>
+      <Type>Antares Class Battlecrusier</Type>
+      <Mass>14</Mass>
+      <Thrust>1500</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>1.0</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldFactor>0.12</ShieldFactor>
+      <ShieldRegenTime>50</ShieldRegenTime>
+      <EvadeDist>100 300 600 1500 0</EvadeDist>
+      <TargetPrefs>1 1 0.5 1 1</TargetPrefs>
+	<Chase>
+	0
+	0
+	0
+	0
+	0
+	</Chase>
+      <AvailableWeapons>
+	<Item>
+	<weaponType>LargeIon</weaponType>
+	 <ModulePositionOnShip>
+	    20 40 1 2
+	   -20 40 1 2
+	   -40 10 1 3
+	    40 10 1 3
+	    30 20 1 2
+	   -30 20 1 2
+	   -10 10 1 3
+	    10 10 1 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>700</weaponRange>
+        </Item>
+	<Item>
+	 <weaponType>LRMH</weaponType>
+	 <ModulePositionOnShip>
+	    10 0 0 0
+	   -30 0 0 0
+	   -10 0 0 1
+	    30 0 0 1
+	    40 0 0 0
+	   -40 0 0 0
+	   -80 0 0 1
+	    80 0 0 1
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>25</FiringEnvelopeAngle>
+	<weaponRange>1500</weaponRange>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Carrier/carrier</FileName>
+      <ThumbFileName>Models//Carrier/tcarrier</ThumbFileName>
+      <Type>Federation Carrier</Type>
+      <Mass>9</Mass>
+      <Thrust>1050</Thrust>
+      <SphereRadius>285</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.5</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldFactor>0.10</ShieldFactor>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>0 2000 1200 500 0</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2 </TargetPrefs>
+	<Chase>
+	0
+	1
+	1
+	0
+	1
+	</Chase>
+      <AvailableWeapons>
+	<Item>
+	 <weaponType>LargeIon</weaponType>
+	 <ModulePositionOnShip>
+	   0 0 100 2
+	   0 0 150 3
+	   0 0 200 2
+	   0 0 -100 3
+	   0 0 -150 2
+	   0 0 -200 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>35</FiringEnvelopeAngle>
+	<weaponRange>800</weaponRange>
+        </Item>
+	<Item>
+	 <weaponType>SRMH</weaponType>
+	 <ModulePositionOnShip>
+	   0 0 100 2
+	   0 0 150 3
+	   0 0 200 2
+	   0 0 -100 3
+	   0 0 -150 2
+	   0 0 -200 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>1000</weaponRange>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models//Fleet_Station</FileName>
+      <ThumbFileName>Models//tEriax_Crusier</ThumbFileName>
+      <Type>Fleet Station</Type>
+      <Mass>27</Mass>
+      <Thrust>850</Thrust>
+      <SphereRadius>125</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>0.50</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldFactor>0.30</ShieldFactor>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>0 1000 2000 500 0</EvadeDist>
+      <TargetPrefs>0.5 0.3 1 1 0.2 </TargetPrefs>
+	  <Chase> 0 0 0 0 0</Chase>
+      <AvailableWeapons>
+	<Item>
+		<weaponType>AutoCannon</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 2
+	   -4 0 0 2
+	   -6 0 0 0
+	    6 0 0 0
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>700</weaponRange>
+        </Item>
+	<Item>
+	<weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 2
+	   -4 0 0 2
+	   -8 0 0 0
+	    8 0 0 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>1000</weaponRange>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+  </Asset>
+</XnaContent>

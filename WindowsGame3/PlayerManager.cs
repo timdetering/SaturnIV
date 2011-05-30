@@ -45,22 +45,22 @@ namespace SaturnIV
             //Vector2 rotationAmount = -gamePadState.ThumbSticks.Left;
             if (keyboardState.IsKeyDown(Keys.A))
             {
-                rotationAmount.X = 2.0f;
+                rotationAmount.X = 4.0f;
             }
             if (keyboardState.IsKeyDown(Keys.D))
             {
-                rotationAmount.X = -2.0f;
+                rotationAmount.X = -4.0f;
             }
 
-            if (keyboardState.IsKeyDown(Keys.S))
+            if (keyboardState.IsKeyDown(Keys.W))
             {
                 playerShip.ThrusterEngaged = true;
-                thrustAmount = 0.85f;
+                thrustAmount = 1.0f;
             }
             else
             {
-                playerShip.ThrusterEngaged = true;
-                thrustAmount = 0.15f;
+                playerShip.ThrusterEngaged = false;
+                thrustAmount = 0.0f;
             }
 
             // Scale rotation amount to radians per second

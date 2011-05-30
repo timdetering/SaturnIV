@@ -25,7 +25,6 @@ namespace SaturnIV
         //public Matrix projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 1.0f / 1.0f, .5f, 500f);
         public Texture2D modelTexture;
         public Vector3 screenCords = Vector3.Zero;
-        Effect effect;
 
         // The aspect ratio determines how to scale 3d to 2d projection.
         public float aspectRatio;
@@ -50,9 +49,9 @@ namespace SaturnIV
             base.LoadContent();
         }
 
-        public void loadModelCustomEffects(String myModelFile, string  myEffects)
+        public void loadModelCustomEffects(String myModelFile, BasicEffect effect)
         {
-            effect = Game.Content.Load<Effect>(myEffects);
+            //effect = Game.Content.Load<Effect>(myEffects);
             myModel = Game.Content.Load<Model>(myModelFile);
             //aspectRatio = Game.GraphicsDevice.Viewport.AspectRatio;
             foreach (ModelMesh mesh in myModel.Meshes)
@@ -115,10 +114,10 @@ namespace SaturnIV
                 foreach (BasicEffect effect in mesh.Effects)
                 {
                     effect.EnableDefaultLighting();
-                    //effect.DirectionalLight0.DiffuseColor = new Vector3(0.5f, 0.5f, 0.5f); // a red light
+                    effect.DirectionalLight0.DiffuseColor = new Vector3(1f, 1f, 1f); // a red light
                     effect.AmbientLightColor = shipColor.ToVector3();
                     //effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
-                    //effect.DirectionalLight0.SpecularColor = new Vector3(1, 1, 1); // with green highlights
+                   // effect.DirectionalLight0.SpecularColor = new Vector3(1, 1, 1); // with green highlights
                     //effect.AmbientLightColor = Color.White.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     //effect.SpecularColor = Color.Blue.ToVector3();

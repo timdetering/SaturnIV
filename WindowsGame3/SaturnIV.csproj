@@ -14,7 +14,12 @@
     <XnaCrossPlatformGroupID>255c79e0-d60e-48e2-aa89-6bed17cca8c6</XnaCrossPlatformGroupID>
     <ApplicationIcon>Game.ico</ApplicationIcon>
     <Thumbnail>GameThumbnail.png</Thumbnail>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>A0B52CAB1A87329D8811F1016E19A24D176CCA9E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SaturnIV_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>c:\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,10 +29,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -92,6 +97,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIClass.cs" />
+    <Compile Include="BloomComponent.cs" />
+    <Compile Include="BloomSettings.cs" />
     <Compile Include="boundingspheredraw.cs" />
     <Compile Include="CameraClass.cs" />
     <Compile Include="boundingFrustumRender.cs" />
@@ -141,8 +148,11 @@
     <Compile Include="WeaponsManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="classdefs.xml" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="shipdefs.xml" />
+    <Content Include="weapondefs.xml" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
@@ -188,6 +198,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="SaturnIV_TemporaryKey.pfx" />
     <None Include="SkySphere.fx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

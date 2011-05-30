@@ -559,7 +559,7 @@ namespace SaturnIV
 
             // Fill in the particle vertex structure.
             particles[firstFreeParticle].Position = position;
-            particles[firstFreeParticle].Velocity = velocity;
+            particles[firstFreeParticle].Velocity = Vector3.Zero;
             particles[firstFreeParticle].Random = randomValues;
             particles[firstFreeParticle].Time = currentTime;
 
