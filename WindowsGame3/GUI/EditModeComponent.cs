@@ -229,7 +229,7 @@ namespace SaturnIV
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));
             tempData.Direction = Vector3.Forward;
-            tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
+            //tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
             tempData.wayPointPosition = tempData.targetPosition;
             if (team == 0)
                 tempData.currentDisposition = disposition.patrol;

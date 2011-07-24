@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>M1 tube fighter12</Name>
     <Identity>
-      <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
+      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -2492,7 +2492,7 @@ MapChannel:2 = UVChannel_1
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>engine glow</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -2509,7 +2509,7 @@ MapChannel:2 = UVChannel_1
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>tubefighter</Name>
       <Identity>
-        <SourceFilename>C:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\WindowsGame3\Content\Models\Eriax_Fighter_MK2.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

@@ -66,9 +66,9 @@ namespace SaturnIV
                     if ((thisShipList[j].portFrustum.Intersects(missileList[i].modelBoundingSphere) || thisShipList[j].starboardFrustum.Intersects(missileList[i].modelBoundingSphere))
                         && missileList[i].missileOrigin != thisShipList[j])
                     {
-                        thisShipList[j].shieldLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor;
+                        thisShipList[j].shieldLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor*2;
                         if (thisShipList[j].shieldLvl < 0)
-                            thisShipList[j].hullLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor;
+                            thisShipList[j].hullLvl -= thisShipList[j].shieldFactor * missileList[i].damageFactor*2;
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
@@ -78,7 +78,7 @@ namespace SaturnIV
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                            currentExpLocation, (float)rand.NextDouble());
-                            //MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
+                            MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
                          }                       
                         return true;
@@ -88,28 +88,31 @@ namespace SaturnIV
             return false;
         }
 
-        //CheckForCollision given a single object and list of objects
-        public bool CheckForCollision(GameTime gameTime, newShipStruct thisShip, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
+        //CheckForCollision give to object lists
+        public bool CheckForCollision(GameTime gameTime, ref List<PDPlatformStruct> thisPDPList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
         {
+            for (int j = 0; j < thisPDPList.Count; j++)
+            {
                 for (int i = 0; i < missileList.Count; i++)
                 {
-                    if (thisShip.modelBoundingSphere.Contains(missileList[i].modelBoundingSphere) == ContainmentType.Contains
-                        && missileList[i].missileOrigin != thisShip)
+                    if (thisPDPList[j].pdpBS.Intersects(missileList[i].modelBoundingSphere))
                     {
                         Vector3 currentExpLocation = missileList[i].modelPosition;
-                        missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation, (float)rand.NextDouble());
-                        thisShip.shieldLvl = 5.0f; // 1.0f * missileList[i].damageFactor;
-                        if (thisShip.shieldLvl<0)
-                            thisShip.hullLvl -= (thisShip.hullFactor / 100) * missileList[i].damageFactor;
-                        return true;
+                        for (int y = 0; y < 15; y++)
+                                ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
+                                                        currentExpLocation, (float)rand.NextDouble());
+                        thisPDPList[j].isDeployed = false;
+                        thisPDPList[j].isOnline = false;
                     }
-                }
+                        return true;
+               }
+            }
             return false;
         }
 
-        //CheckForCollision given a single object and list of objects
+      //CheckForCollision given a single object and list of objects
         public bool CheckForCollisionMech(GameTime gameTime, newShipStruct thisShip, ref List<newShipStruct> objectList, ref ExplosionClass ourExplosion)
         {
             for (int i = 0; i < objectList.Count; i++)

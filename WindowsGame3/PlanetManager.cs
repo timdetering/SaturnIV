@@ -50,7 +50,7 @@ namespace SaturnIV
         public void loadPlanetTextures()
         {
             planetTextureArray = new Texture2D[5];
-            planetTextureArray[0] = Game.Content.Load<Texture2D>("textures/planettexture2");
+            planetTextureArray[0] = Game.Content.Load<Texture2D>("textures/planettexture1");
             planetTextureArray[1] = Game.Content.Load<Texture2D>("textures/planettexture2");
             planetTextureArray[2] = Game.Content.Load<Texture2D>("textures/planettexture3");
 
@@ -76,17 +76,17 @@ namespace SaturnIV
                 planetStruct tempData = new planetStruct();
                 //int tTextureIndex = 1;
                 tempData.planetModel = LoadModel("Models/planet");
-                tempData.planetRadius = 4; // Position.Next(100, planetRadiusBoundry);
-                tempData.planetPosition = Vector3.Zero;//HelperClass.RandomPosition(-9000, 9000);
-                tempData.planetTexture = planetTextureArray[2];
+                tempData.planetRadius = 3; // Position.Next(100, planetRadiusBoundry);
+                tempData.planetPosition = HelperClass.RandomPosition(-5000, 5000);
+                tempData.planetTexture = planetTextureArray[Position.Next(2)];
                 tempData.pdpList = new List<PDPlatformStruct>();
-                tempData.pdpCount = 8;
+                tempData.pdpCount = 6;
                 float degrees = 360/tempData.pdpCount;
                 for (int j = 0; j < tempData.pdpCount; j++)
                 {
                     PDPlatformStruct newPDP = new PDPlatformStruct();
                     newPDP.pdpNumber = j;
-                    newPDP.pdpPosition = RotateAroundPoint(new Vector3(550*tempData.planetRadius, 0, 0), Vector3.Zero, Vector3.UnitY, MathHelper.ToRadians(degrees));
+                    newPDP.pdpPosition = RotateAroundPoint(new Vector3(125*tempData.planetRadius, 0, tempData.planetPosition.Z), tempData.planetPosition, Vector3.UnitY, MathHelper.ToRadians(degrees));
                     newPDP.worldMatrix = Matrix.CreateWorld(newPDP.pdpPosition, Vector3.Forward, Vector3.Up);
                     degrees += 360/tempData.pdpCount;
                     newPDP.isDeployed = true;
@@ -142,7 +142,7 @@ namespace SaturnIV
             foreach (planetStruct planet in planetList)
                 foreach (PDPlatformStruct thisPDP in planet.pdpList)
                 {
-                    if (i < planet.pdpList.Count() - 1)
+                    if (i < planet.pdpList.Count() - 1 && thisPDP.isOnline)
                     {
                         line.Draw(thisPDP.pdpPosition, planet.pdpList[i + 1].pdpPosition, Color.Green, viewMatrix, projectionMatrix);
                         i++;
@@ -160,7 +160,7 @@ namespace SaturnIV
         {
             foreach (planetStruct planet in planetList)
             {
-               // BoundingSphereRenderer.Render(planetBS, Game.GraphicsDevice, viewMatrix, projectionMatrix, Color.Yellow);
+               //BoundingSphereRenderer.Render(planetBS, Game.GraphicsDevice, viewMatrix, projectionMatrix, Color.Yellow);
                 Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius) * Matrix.CreateTranslation(planet.planetPosition);
                 Matrix[] transforms = new Matrix[planet.planetModel.Bones.Count];
                 planet.planetModel.CopyAbsoluteBoneTransformsTo(transforms);

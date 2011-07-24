@@ -58,7 +58,7 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45.0f), 4.0f / 3.0f, 200f, 40000f);       
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 4.0f / 3.0f, 200f, 40000f);       
         }
 
         public void Update(Matrix chasedObjectsWorld)

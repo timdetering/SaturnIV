@@ -211,11 +211,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Frigate.FBX">
-      <Name>Eriax_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_SF101.FBX">
       <Name>Fleet_SF101</Name>
       <Importer>FbxImporter</Importer>
@@ -226,11 +221,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\battlecrusier.FBX">
-      <Name>battlecrusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\sphere.FBX">
       <Name>sphere</Name>
       <Importer>FbxImporter</Importer>
@@ -238,11 +228,6 @@
     </Compile>
     <Compile Include="Models\planet.FBX">
       <Name>planet</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Eriax_Fighter_MK1.FBX">
-      <Name>Eriax_Fighter_MK1</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -276,11 +261,31 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
+    <Compile Include="Models\Fleet_Destroyer.FBX">
+      <Name>Fleet_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Destroyer.FBX">
+      <Name>Eriax_Destroyer</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Light_Crusier.FBX">
+      <Name>Eriax_Light_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="neuropol.spritefont">
       <Name>neuropol</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </None>
+    <Compile Include="textures\spacescape_green.dds">
+      <Name>spacescape_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="textures\spacescape_blue.dds">
       <Name>spacescape_blue</Name>
       <Importer>TextureImporter</Importer>

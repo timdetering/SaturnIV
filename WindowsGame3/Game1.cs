@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 
+
 namespace SaturnIV
 {
     /// <summary>
@@ -101,7 +102,6 @@ namespace SaturnIV
         public string chatMessage;
         Vector3 isFacing;
         Vector3 isRight;
-        
         guiClass Gui;
 
         public Game1()
@@ -151,7 +151,7 @@ namespace SaturnIV
             sparkParticles = new SparkParticleSystem(this, Content);
             Gui = new guiClass();
             fLine = new Line3D(GraphicsDevice);
-            
+         
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
             planetManager.generatSpaceObjects(1);
@@ -323,6 +323,7 @@ namespace SaturnIV
             if (weaponsManager.activeWeaponList.Count > 0)
             {
                 helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList, ref ourExplosion);
+               // helperClass.CheckForCollision(gameTime, ref PlanetManager.planetList[0].pdpList, ref weaponsManager.activeWeaponList, ref ourExplosion);
                // helperClass.CheckForCollision(gameTime, playerShip, ref weaponsManager.activeWeaponList, ref ourExplosion);
             }
             //helperClass.CheckForCollisionMech(gameTime, playerShip, ref activeShipList, ref ourExplosion);
@@ -340,7 +341,7 @@ namespace SaturnIV
 
         protected void updateObjects(GameTime gameTime)
         {
-           // playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);
+           playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);
             for (int i = 0; i < activeShipList.Count; i++)
             {
                 if (activeShipList[i].squadNo >-1)
@@ -355,8 +356,8 @@ namespace SaturnIV
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
              //   if (!isEditMode)
-             //      npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, 
-              //                              activeShipList[i], playerShip, 0,thisSquad);
+                   npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, 
+                                            activeShipList[i], playerShip, 0,thisSquad);
             }
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
         }
@@ -415,7 +416,7 @@ namespace SaturnIV
             {
                 int rLen = rNameList.capitalShipNames.Count;
                 int i = rand.Next(0, rLen);
-                tmpShipName = rNameList.capitalShipNames[i];
+                tmpShipName = rNameList.capitalShipNames[2];
                 rNameList.capitalShipNames.Remove(tmpShipName);
                 //messageClass.sendSystemMsg(spriteFont,spriteBatch,tmpShipName + " Added",systemMessagePos);
                 newShipStruct newShip = editModeClass.spawnNPC(npcManager, mouse3dVector, ref shipDefList, gameTime, ourCamera, tmpShipName, Gui.thisItem,Gui.thisTeam);
@@ -488,7 +489,6 @@ namespace SaturnIV
                             thisShip.isSquadLeader = true;
                             squadList[0].leader = thisShip;
                         }
-
                         thisShip.squadNo = 0;
                         squadList[0].squadmate.Add(thisShip);
                         isLeader = true;
@@ -590,14 +590,14 @@ namespace SaturnIV
             graphics.GraphicsDevice.Clear(Color.Black);
             
             //Draw Skybox and Starfield
-           // skySphere.DrawSkySphere(this, ourCamera);
+            skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
-            planetManager.DrawPDP(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
+            //planetManager.DrawPDP(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
             
 
             if (isEditMode) editModeClass.Draw(gameTime,ref activeShipList,ourCamera);
-          // modelManager.DrawModel(ourCamera, playerShip.shipModel, playerShip.worldMatrix,Color.Blue);
+         // modelManager.DrawModel(ourCamera, playerShip.shipModel, playerShip.worldMatrix,Color.Blue);
             //modelManager.DrawWithCustomEffect(playerShip.shipModel, playerShip.worldMatrix, ourCamera.viewMatrix, ourCamera.projectionMatrix, Vector3.Zero);
            // BoundingFrustumRenderer.Render(playerShip.modelFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //playerManager.DrawFiringArc(device, playerShip, ourCamera);
@@ -624,17 +624,16 @@ namespace SaturnIV
                 spriteBatch.End();
                 
               //  npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-               // BoundingSphereRenderer.Render3dCircle(npcship.modelBoundingSphere.Center, npcship.modelBoundingSphere.Radius,
-                //                                              GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, shipColor);
-                if (npcship.currentDisposition == disposition.moving)    
-                    fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                    
+                BoundingSphereRenderer.Render3dCircle(npcship.modelBoundingSphere.Center, npcship.modelBoundingSphere.Radius,
+                                                              GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                                       
                 if (isDebug)
                 {
+                    fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                     foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   // BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   // BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
                     isRight = npcship.modelRotation.Right;
                     for (int i = 0; i < npcship.weaponArray.Count(); i++)
@@ -667,10 +666,10 @@ namespace SaturnIV
                                                         npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
                                                         npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
 
-                           // firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,
-                          //      tVec3 + isFacing,
-                          //      tVec3 + isFacing * 600 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
-                          //      tVec3 + isFacing * 600 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
+                            firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,
+                                tVec3 + isFacing,
+                                tVec3 + isFacing * 600 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
+                                tVec3 + isFacing * 600 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
                        }
                    }
                }
@@ -686,10 +685,7 @@ namespace SaturnIV
             }
 
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
-           // if (ourExplosion.expList.Count > 10)
-             //   ourExplosion.expList = new List<VertexExplosion[]>();
-            //spriteBatch.End();
-            //spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
+
             DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             if (!isEditMode) DrawHUDTargets();
@@ -732,7 +728,7 @@ namespace SaturnIV
             int i=0;
             foreach (newShipStruct enemy in activeShipList)
             {
-
+                //spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-45, enemy.screenCords.Y-45), Color.White);
                 if (enemy.isSelected)
                 {
                     StringBuilder buffer = new StringBuilder();
@@ -740,15 +736,16 @@ namespace SaturnIV
                     buffer.AppendFormat(enemy.objectAlias);
                     if (enemy.currentTarget != null)
                     {
-                        //buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
+                       buffer.AppendFormat("[Target]" + enemy.currentTarget.objectAlias + "-");
                     }
                     buffer.AppendFormat("[" + enemy.shieldLvl + "%]");
                     buffer.AppendFormat("\n[" + enemy.currentDisposition + "]");
-                    buffer.AppendFormat("[" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     buffer.AppendFormat("[" + enemy.thrustAmount + "]");
                     buffer.AppendFormat("[" + enemy.squadNo + "]");
                     buffer.AppendFormat("[" + enemy.isSquadLeader + "]");
                     buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
+
                     //buffer.AppendFormat("[Engage]" + enemy.isEngaging + "-");
                     //buffer.AppendFormat("[Evade]" + enemy.isEvading + "-");
                     //buffer.AppendFormat("[Team]"+ enemy.team);
@@ -780,7 +777,7 @@ namespace SaturnIV
             messageBuffer.AppendFormat("\nPlayer Pos {0} ", playerShip.modelPosition);
             messageBuffer.AppendFormat("\nCurrent Menu " + guiClass.currentSelection);
             messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
-            messageBuffer.AppendFormat("\nisGroupSelect: " + editModeClass.isGroupSelect);
+            messageBuffer.AppendFormat("\nisInvalidArea: " + isInvalidArea);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
             messageBuffer = new StringBuilder();

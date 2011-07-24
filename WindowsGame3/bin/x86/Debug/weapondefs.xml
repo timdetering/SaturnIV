@@ -8,7 +8,7 @@
       <Mass>0.75</Mass>
       <Thrust>2200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
+      <Scale>2</Scale>
       <Agility>8</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -25,7 +25,7 @@
       <Mass>0.50</Mass>
       <Thrust>1700</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
+      <Scale>2</Scale>
       <Agility>8</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -42,7 +42,7 @@
       <Mass>0.75</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
+      <Scale>2</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -59,7 +59,7 @@
       <Mass>0.50</Mass>
       <Thrust>700</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
+      <Scale>2</Scale>
       <Agility>8</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -74,15 +74,15 @@
       <ThumbFileName>Models//rbasic_missile</ThumbFileName>
       <Type>AutoCannon</Type>
       <Mass>0.25</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>2200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>10</Scale>
+      <Scale>25</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>150</regenTime>
       <damageFactor>5</damageFactor>
       <range>2000</range>
     </Item>
@@ -93,7 +93,7 @@
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>25</Scale>
+      <Scale>50</Scale>
       <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <wClass>Cannon</wClass>	

@@ -327,7 +327,7 @@ namespace SaturnIV
                 tempData.Direction = Vector3.Normalize(targetObject.modelPosition - tempData.modelPosition);
             if (tempData.isProjectile)
                 tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
-            tempData.timeToLive = 1000;
+            tempData.timeToLive = 5000;
             //if (weaponOrigin.cMissileCount >0)
             activeWeaponList.Add(tempData);
             //isMissileHit = true;

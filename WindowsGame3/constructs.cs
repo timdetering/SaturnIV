@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace SaturnIV
 {
     public enum disposition
-    {
+    {        
         pursue = 0,
         patrol = 1,
         evade = 2,
@@ -77,6 +77,7 @@ namespace SaturnIV
         public Vector3 wayPointPosition;
         public newShipStruct currentTarget;
         public disposition currentDisposition;
+        public disposition preEvadeDisposition;
         public Model shipModel;
         public float thrustAmount;
         public float distanceFromTarget;
@@ -94,6 +95,7 @@ namespace SaturnIV
         public bool isSelected;
         public bool isEngaging;
         public bool isEvading;
+        public bool isChasing;
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public int[] ChasePrefs;
@@ -116,6 +118,7 @@ namespace SaturnIV
         public int team;
         public newShipStruct threat;
         public Texture2D hudTex;
+        public double timer;
     }
 
     public class weaponStruct : newShipStruct
@@ -202,10 +205,9 @@ namespace SaturnIV
         public enum ClassesEnum
         {
             Fighter = 0,
-            Frigate = 1,
+            Warship = 1,
             Capitalship = 2,
             Carrier = 3,
-            Engineer = 4
         }
 
         public enum DirectionEnum
