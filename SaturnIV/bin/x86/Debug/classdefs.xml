@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="SaturnIV.shipClasses">
+    <classDesc>
+      <Item>Fighter</Item>
+      <Item>BattleShip</Item>
+      <Item>Crusier</Item>
+      <Item>Carrier</Item>
+      <Item>Civilian Ship</Item>
+      <Item>Cargo Ship</Item>
+    </classDesc>
+    <classEvadeDistance>
+      <Item>100 300 300 300 100 100</Item>
+      <Item>10 200 800 700 500 1000</Item>
+      <Item>10 200 1400 600 500 1000</Item>
+      <Item>10 200 1500 1400 1100 1100</Item>
+      <Item>200 200 800 700 500 1000</Item>
+      <Item>200 200 1400 600 500 1000</Item>
+    </classEvadeDistance>
+  </Asset>
+</XnaContent>
