@@ -247,7 +247,6 @@ namespace SaturnIV
                     tempData.moduleFrustum.Add(new BoundingFrustum(Matrix.Identity));
                     moduleCount++;
                 }
-
             modelManager.updateShipMovement(gameTime, 5.0f, tempData, ourCamera, true);
             return tempData;
         }

@@ -153,12 +153,13 @@ namespace SaturnIV
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
+                    
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.Begin();
                         laserEffect.CurrentTechnique.Passes[0].Begin();
-                        shader_matrices_combined[0] = weapon.worldMatrix;
-                        shader_matrices_combined[1] = weapon.worldMatrix * view * projection;
+                        shader_matrices_combined[0] =  weapon.worldMatrix;
+                        shader_matrices_combined[1] =  weapon.worldMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
                         effect_center_to_viewer.SetValue(Vector3.Up);
@@ -189,78 +190,7 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void fireWeapon(newShipStruct targetObject, newShipStruct weaponOrigin,
-                               ParticleSystem projectileTrailParticles, ref List<weaponData> weaponDefList, WeaponModule thisWeapon, int modIndex)
-        {
-            weaponStruct tempData;
-            tempData = new weaponStruct();
-            tempData.targetPosition = Vector3.Zero;
-
-            if (targetObject != null)
-                tempData.targetPosition = targetObject.modelPosition - weaponOrigin.modelPosition;
-            else
-                tempData.targetPosition = weaponOrigin.Direction;
-
-            //Calculate path
-            //tempData.calcInitalPath(originDirection);
-            tempData.objectFileName = weaponDefList[(int)thisWeapon.weaponType].FileName;
-            tempData.radius = weaponDefList[(int)thisWeapon.weaponType].SphereRadius * 2;
-            tempData.isProjectile = weaponDefList[(int)thisWeapon.weaponType].isProjectile;
-            tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
-            tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
-            tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
-            tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
-            tempData.damageFactor = weaponDefList[(int)thisWeapon.weaponType].damageFactor;
-            if (tempData.isProjectile)
-                tempData.shipModel = LoadModel(tempData.objectFileName);
-            else
-                tempData.shipModel = LaserModelLoad(tempData.objectFileName);
-            tempData.objectAgility = weaponDefList[(int)thisWeapon.weaponType].Agility;
-            tempData.objectMass = weaponDefList[(int)thisWeapon.weaponType].Mass;
-            tempData.objectThrust = weaponDefList[(int)thisWeapon.weaponType].Thrust;
-            tempData.modelBoundingSphere = new BoundingSphere(tempData.modelPosition, tempData.radius * 4);
-            tempData.missileTarget = targetObject;
-            tempData.currentTarget = targetObject;
-            tempData.missileOrigin = weaponOrigin;
-            tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
-            Vector3 plyonVector3 = new Vector3(thisWeapon.ModulePositionOnShip[modIndex].X,
-                                   thisWeapon.ModulePositionOnShip[modIndex].Y,
-                                   thisWeapon.ModulePositionOnShip[modIndex].Z);
-
-            switch ((int)thisWeapon.ModulePositionOnShip[modIndex].W)
-            {
-                case 0:
-                    tempData.Direction = weaponOrigin.Direction;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-                case 1:
-                    tempData.Direction = -weaponOrigin.Direction;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-                case 2:
-                    tempData.Direction = -weaponOrigin.modelRotation.Right;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-                case 3:
-                    tempData.Direction = weaponOrigin.modelRotation.Right;
-                    tempData.targetPosition = tempData.Direction;
-                    break;
-            }
-
-            //tempData.missileOrigin = weaponOrigin.modelPosition + plyonVector3;
-            tempData.Velocity = weaponOrigin.Velocity;
-            tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
-            tempData.modelRotation = Matrix.Identity;
-            if (targetObject != null)
-                tempData.Direction = Vector3.Normalize(targetObject.modelPosition - tempData.modelPosition);
-            if (tempData.isProjectile)
-                tempData.projectile = new Projectile(projectileTrailParticles, tempData.modelPosition, Vector3.Zero);
-            tempData.timeToLive = 1400;
-            //if (weaponOrigin.cMissileCount >0)
-            activeWeaponList.Add(tempData);
-            //isMissileHit = true;
-        }
-
+     
 //////////////////////// NEW FIRE WEAPON CLASS
         public void fireWeapon(newShipStruct targetObject, newShipStruct weaponOrigin,
                                ref ParticleSystem projectileTrailParticles, ref List<weaponData> weaponDefList, 

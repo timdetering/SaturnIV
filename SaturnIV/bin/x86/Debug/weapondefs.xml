@@ -24,7 +24,7 @@
       <Thrust>1700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
-      <Agility>8</Agility>
+      <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
@@ -69,15 +69,15 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>AutoCannon</Type>
       <Mass>0.25</Mass>
-      <Thrust>2200</Thrust>
+      <Thrust>1700</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>2</Scale>	  
+      <Scale>24</Scale>	  
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>150</regenTime>
+      <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
       <range>2000</range>            
 	  </Item>
@@ -87,14 +87,14 @@
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>2</Scale>
+	  <Scale>25</Scale>
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
-      <damageFactor>25</damageFactor>
+      <regenTime>600</regenTime>
+      <damageFactor>35</damageFactor>
       <range>1000</range>	        
     </Item>
   </Asset>

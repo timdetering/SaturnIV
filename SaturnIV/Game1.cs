@@ -36,11 +36,10 @@ namespace SaturnIV
         Vector3 farpoint, nearpoint = new Vector3(0,0,0);
         SpriteBatch spriteBatch;
         HelperClass helperClass;
-        double lastWeaponFireTime;
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D rectTex,shipRec,blueMarker,selectRecTex,attackIcon,moveIcon;
+        Texture2D rectTex, shipRec, selectRecTex;
         MessageClass messageClass;
         Vector2 messagePos1 = new Vector2(0,0);
         public Vector2 systemMessagePos = new Vector2(30,20);
@@ -53,9 +52,6 @@ namespace SaturnIV
         Ray currentMouseRay;
         RadarClass radar;
         Color shipColor;
-
-        public newShipStruct playerShip;
-        
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
         public List<squadClass> squadList = new List<squadClass>();
@@ -64,10 +60,10 @@ namespace SaturnIV
         public PlayerManager playerManager;
         public ModelManager modelManager;
         public WeaponsManager weaponsManager;
-        public List<saveObject> saveList = new List<saveObject>();
         public List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
-        public randomNames rNameList = new randomNames();
+        public SaveClass saveClass;
+        public RandomNames rNameList = new RandomNames();
         public string tmpShipName;
         ExplosionClass ourExplosion;
         public PlanetManager planetManager;
@@ -118,8 +114,8 @@ namespace SaturnIV
             rand = new Random();
             // TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            saveClass = new SaveClass();
             messageClass = new MessageClass();
-            playerShip = new newShipStruct();
             ourExplosion = new ExplosionClass();
             skySphere = new SkySphere(this);
             activeShipList = new List<newShipStruct>();
@@ -194,10 +190,8 @@ namespace SaturnIV
             Gui.initalize(this, ref shipDefList);
             rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             shipRec = this.Content.Load<Texture2D>("textures//missiletrack");
-            blueMarker = this.Content.Load<Texture2D>("textures//blue_marker");
             selectRecTex = this.Content.Load<Texture2D>("textures//SelectionBox");
-            attackIcon = this.Content.Load<Texture2D>("textures//attack_icon");
-            moveIcon = this.Content.Load<Texture2D>("textures//move_icon");
+
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
         }
@@ -210,40 +204,11 @@ namespace SaturnIV
             xmlReader = XmlReader.Create("weapondefs.xml");
             weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
             xmlReader = XmlReader.Create("listofnames.xml");
-            rNameList = IntermediateSerializer.Deserialize<randomNames>(xmlReader, null);
+            rNameList = IntermediateSerializer.Deserialize<RandomNames>(xmlReader, null);
             foreach (shipData thisShip in shipDefList)
                 objectThumbs.Add(this.Content.Load<Texture2D>(thisShip.ThumbFileName));
         }
-
-        private void serializeClass()
-        {
-            // Create the data to save
-            saveObject saveMe;
-            //weaponTypes exportWeaponDefs;
-            shipData exportShipDefs = new shipData();
-           // exportWeaponDefs = new weaponTypes();
-            randomNames nameList = new randomNames();
-
-            XmlWriterSettings xmlSettings = new XmlWriterSettings();
-            xmlSettings.Indent = true;
-
-            foreach (newShipStruct ship in activeShipList)
-            {
-                saveMe = new saveObject();
-                saveMe.shipPosition = ship.modelPosition;
-                saveMe.shipDirection = ship.targetPosition;
-                saveMe.shipName = ship.objectAlias;
-                saveMe.shipType = ship.objectType;
-                saveList.Add(saveMe);
-            }
-
-            using (XmlWriter xmlWriter = XmlWriter.Create("scene.xml", xmlSettings))
-            {
-              IntermediateSerializer.Serialize(xmlWriter, saveList, null);
-            }
-            
-        }
-
+       
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -305,16 +270,12 @@ namespace SaturnIV
                                             activeShipList[i], activeShipList[j], j,thisSquad);
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
-             //   if (!isEditMode)
-                npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, 
-                                            activeShipList[i], playerShip, 0,thisSquad);
             }
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
         }
 
         protected void processInput(GameTime gameTime)
         {
-            BoundingSphere testSphere;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
@@ -389,17 +350,13 @@ namespace SaturnIV
                 isSelected = false;
                foreach (newShipStruct thisShip in activeShipList)
                    if (EditModeComponent.checkIsSelected(mouse3dVector, thisShip.modelBoundingSphere))
-                   {
                        if (thisShip.team == 0)
                        {                           
                            thisShip.isSelected = true;
                            isSelected = true;
                        }
-                   }
                    else
-                   {
                        thisShip.isSelected = false;
-                   }
             }
 
             if (isRclicked && !isEditMode && isSelected)
@@ -444,13 +401,13 @@ namespace SaturnIV
                     }
             }
             if (keyboardState.IsKeyDown(Keys.A))
-                cameraTargetVec3 += Vector3.Left * 20.0f;
+                cameraTargetVec3 += Vector3.Left * 40.0f;
             if (keyboardState.IsKeyDown(Keys.D))
-                cameraTargetVec3 += Vector3.Right * 20.0f;
+                cameraTargetVec3 += Vector3.Right * 40.0f;
             if (keyboardState.IsKeyDown(Keys.W))
-                cameraTargetVec3 += Vector3.Forward * 20.0f;
+                cameraTargetVec3 += Vector3.Forward * 40.0f;
             if (keyboardState.IsKeyDown(Keys.S))
-                cameraTargetVec3 += Vector3.Backward * 20.0f;
+                cameraTargetVec3 += Vector3.Backward * 40.0f;
   
             if (currentTime - lastKeyPressTime > 100)
             {
@@ -489,7 +446,7 @@ namespace SaturnIV
                 }
                 // Edit mode save Handler
                 if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
-                    serializeClass();
+                    saveClass.serializeClass(activeShipList);
 
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
@@ -518,15 +475,7 @@ namespace SaturnIV
                 MessageClass.messageLog.Add("Debug Mode Off");
                 isDebug = false;
             }
-                
-            if (keyboardState.IsKeyDown(Keys.R) && (currentTime - lastWeaponFireTime > weaponDefList[(int)playerShip.currentWeapon.weaponType].regenTime) && !isChat)
-            {
-                weaponsManager.fireWeapon(new newShipStruct(), playerShip, projectileTrailParticles, ref weaponDefList, playerShip.weaponArray[0],playerShip.pylonIndex);
-                playerShip.pylonIndex++;
-                if (playerShip.pylonIndex > playerShip.currentWeapon.ModulePositionOnShip.GetLength(0) - 1)
-                    playerShip.pylonIndex = 0;
-                lastWeaponFireTime = currentTime;
-            }
+
                 mouseStatePrevious = mouseStateCurrent;
                 oldkeyboardState = keyboardState;
 }
@@ -720,46 +669,12 @@ namespace SaturnIV
         public void debug (newShipStruct npcship)
         {
              fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                   /// foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
-                   /// BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
+                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                   // BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    // BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
                     isRight = npcship.modelRotation.Right;
-                    for (int i = 0; i < npcship.weaponArray.Count(); i++)
-                    {
-                        for (int j = 0; j < npcship.weaponArray[i].ModulePositionOnShip.Count(); j++)
-                        {
-                            switch ((int)npcship.currentWeapon.ModulePositionOnShip[j].W)
-                            {
-                                case 0:
-                                    isFacing = npcship.Direction;
-                                    isRight = npcship.modelRotation.Right;
-                                    break;
-                                case 1:
-                                    isFacing = -npcship.Direction;
-                                    isRight = -npcship.modelRotation.Right;
-                                    break;
-                                case 2:
-                                    isFacing = -npcship.modelRotation.Right;
-                                    isRight = npcship.Direction;
-                                    break;
-                                case 3:
-                                    isFacing = npcship.modelRotation.Right;
-                                    isRight = -npcship.Direction;
-                                    break;
-                            }
-                           
-                            Vector3 tVec3 = new Vector3(npcship.modelPosition.X + npcship.weaponArray[i].ModulePositionOnShip[j].X,
-                                                        npcship.modelPosition.Y + npcship.weaponArray[i].ModulePositionOnShip[j].Y,
-                                                        npcship.modelPosition.Z + npcship.weaponArray[i].ModulePositionOnShip[j].Z);
-
-                            firingArc.Render(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue,
-                                tVec3 + isFacing,
-                                tVec3 + isFacing * 600 + isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5,
-                                tVec3 + isFacing * 600 - isRight * npcship.weaponArray[i].FiringEnvelopeAngle * 5);
-                       }
-                   }
         }
 
     }

@@ -21,6 +21,7 @@ namespace SaturnIV
         string textString;
         private float _FPS = 0f, _TotalTime = 0f, _DisplayFPS = 0f;
         Random rand = new Random();
+
         /// <summary>
         /// Returns a number between two values.
         /// </summary>

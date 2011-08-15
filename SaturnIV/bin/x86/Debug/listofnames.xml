@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent>
-  <Asset Type="SaturnIV.randomNames">
+  <Asset Type="SaturnIV.RandomNames">
     <capitalShipNames>
       <Item>Stormhawk</Item>
       <Item>Senlac</Item>

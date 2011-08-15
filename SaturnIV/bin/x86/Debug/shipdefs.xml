@@ -166,6 +166,55 @@
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
+	<Item>
+      <FileName>Models//Ships//Eriax_Heavy_Gunship</FileName>
+      <Type>Eriax Heavy Gunship</Type>
+      <Mass>2.0</Mass>
+      <Thrust>1400</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>10.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ThumbFileName>Models//tEriax_Crusier</ThumbFileName>      
+	  <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+	  <HullFactor>0.85</HullFactor>
+	  <hullValue>200</hullValue>
+	  <shieldValue>0</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 400 1000 200 50</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
+	  <Chase> 1 1 1 0 0</Chase>
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AutoCannon</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 0
+        4 0 0 0
+	   -8 0 0 0
+        8 0 0 0
+	 </ModulePositionOnShip> 
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <weaponRange>700</weaponRange>
+      </Item>
+	   <Item>
+	 <weaponType>SRMH</weaponType>
+	 <ModulePositionOnShip>
+	   -4 0 0 0
+        4 0 0 0
+	   -8 0 0 0
+        8 0 0 0
+	   -4 0 0 0
+        4 0 0 0
+	   -8 0 0 0
+        8 0 0 0
+	 </ModulePositionOnShip> 
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <weaponRange>700</weaponRange>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
     <Item>
       <FileName>Models//SFV300</FileName>
       <Type>SVF-300 Viper</Type>
@@ -189,8 +238,8 @@
 	<Item>
 		<weaponType>SRMH</weaponType>
 		<ModulePositionOnShip> 
-		-6 0 0 0 
-		6 0 0 0
+		-6 0 10 0 
+		 6 0 -10 0
 		</ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>1000</weaponRange>
@@ -198,8 +247,8 @@
 	<Item>
 		<weaponType>AutoCannon</weaponType>
 		<ModulePositionOnShip>
-		4 0 0 0
-		-4 0 0 0
+		4 0 10 0
+		-4 0 -10 0
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>1000</weaponRange>
@@ -224,27 +273,27 @@
 	  <shieldValue>400</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
       <EvadeDist>0 4000 5000 500 0</EvadeDist>
-      <TargetPrefs>0.5 0.3 1 1 0.2 </TargetPrefs>
+      <TargetPrefs>0.5 0.3 0.6 1 0.2 </TargetPrefs>
       <Chase>0 0 0 0 0</Chase>
       <AvailableWeapons>
 	<Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
-	    4 0 0 2
-	   -4 0 0 2
-	   -6 0 0 3
-	    6 0 0 3
+	    40 0 0 2
+	   -20 0 0 2
+	   -40 0 0 3
+	    60 0 0 3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>5200</weaponRange>
-        </Item>
+    </Item>
 	<Item>
 	 <weaponType>LargeIon</weaponType>
 	 <ModulePositionOnShip>
-	    0 0 100  2
-	    0 0 -100 2
-	    0 0 -150 3
-	    0 0 -150 3
+	    10 0 100  2
+	    20 0 -100 2
+	    30 0 -150 3
+	    40 0 -150 3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>2200</weaponRange>

@@ -208,7 +208,7 @@ namespace SaturnIV
                         - (thisShip.modelRotation.Up) + (thisShip.modelRotation.Right * 1);
              
                     thisShip.moduleFrustum[moduleCount].Matrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + isFacing, Vector3.Up) *
-                                                        Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisWeapon.FiringEnvelopeAngle*2),
+                                                        Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisWeapon.FiringEnvelopeAngle),
                                                         16.0f / 9.0f, .5f, 2200);
                     moduleCount++;
                 }
@@ -322,6 +322,8 @@ namespace SaturnIV
 
             base.Update(gameTime);
         }
+
+
         public void cycleWeapons(newShipStruct thisShip, newShipStruct otherShip, double currentTime, WeaponsManager weaponsManager,
            ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
         {
