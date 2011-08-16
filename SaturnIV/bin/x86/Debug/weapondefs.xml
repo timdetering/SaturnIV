@@ -16,6 +16,7 @@
       <regenTime>600</regenTime>
       <damageFactor>5</damageFactor>
       <range>1000</range>
+      <timeToLive>1000</timeToLive>	  
     </Item>
     <Item>
       <FileName>Models//basic_missile</FileName>
@@ -32,6 +33,7 @@
       <regenTime>600</regenTime>
       <damageFactor>5</damageFactor>
       <range>1000</range>
+      <timeToLive>1000</timeToLive>	  
     </Item>
    <Item>
       <FileName>Models//Fleet_KM100</FileName>
@@ -48,6 +50,7 @@
       <regenTime>800</regenTime>
       <damageFactor>5</damageFactor>
       <range>1500</range>
+      <timeToLive>1000</timeToLive>	  
     </Item>
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
@@ -64,6 +67,7 @@
       <regenTime>800</regenTime>
       <damageFactor>5</damageFactor>
       <range>15000</range>
+      <timeToLive>1000</timeToLive>	  
 	  </Item>
     <Item>
       <FileName>Models//LaserBolt2</FileName>
@@ -79,7 +83,8 @@
       <isHoming>0</isHoming>
       <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
-      <range>2000</range>            
+      <range>2000</range>       
+	  <timeToLive>1000</timeToLive>
 	  </Item>
 <Item>
       <FileName>Models//LaserBolt2</FileName>
@@ -95,7 +100,25 @@
       <isHoming>0</isHoming>
       <regenTime>600</regenTime>
       <damageFactor>35</damageFactor>
-      <range>1000</range>	        
+      <range>1000</range>	
+      <timeToLive>1000</timeToLive>	  
+    </Item>
+	<Item>
+      <FileName>Models//LaserBolt2</FileName>
+      <Type>MassDriver</Type>
+      <Mass>0.25</Mass>
+      <Thrust>1200</Thrust>
+      <SphereRadius>5</SphereRadius>      
+	  <Scale>25</Scale>
+	  <Agility>4</Agility>
+      <BelongsTo>Fleet</BelongsTo>	  
+      <wClass>Beam</wClass>	
+      <isProjectile>0</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>300</regenTime>
+      <damageFactor>35</damageFactor>
+      <range>6000</range>	
+      <timeToLive>10000</timeToLive>	  
     </Item>
   </Asset>
 </XnaContent>

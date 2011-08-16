@@ -51,7 +51,7 @@
     <Item>
       <FileName>Models//Eriax_Crusier</FileName>
       <Type>Eriax Battleship</Type>
-      <Mass>7.0</Mass>
+      <Mass>14.0</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
@@ -74,8 +74,8 @@
 	   -4 0 0 0
         4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2000</weaponRange>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>10000</weaponRange>
       </Item>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -85,8 +85,8 @@
 	    4 0 -20 2
 	   -4 0 -10 2
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2000</weaponRange>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>12000</weaponRange>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -182,7 +182,7 @@
 	  <hullValue>200</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 400 1000 200 50</EvadeDist>
+      <EvadeDist>700 1400 2000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
 	  <Chase> 1 1 1 0 0</Chase>
       <AvailableWeapons>
@@ -195,7 +195,7 @@
         8 0 0 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	 <weaponRange>700</weaponRange>
+	 <weaponRange>1700</weaponRange>
       </Item>
 	   <Item>
 	 <weaponType>SRMH</weaponType>
@@ -210,7 +210,7 @@
         8 0 0 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	 <weaponRange>700</weaponRange>
+	 <weaponRange>1700</weaponRange>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -231,7 +231,7 @@
 	  <hullValue>200</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>500 1000 1500 200 50</EvadeDist>
+      <EvadeDist>500 2000 3500 200 50</EvadeDist>
       <TargetPrefs>0.5 0.3 1 1 0.2</TargetPrefs>
       <Chase> 1 1 1 1 0 </Chase>
       <AvailableWeapons>
@@ -242,7 +242,7 @@
 		 6 0 -10 0
 		</ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>1000</weaponRange>
+	<weaponRange>2000</weaponRange>
         </Item>
 	<Item>
 		<weaponType>AutoCannon</weaponType>
@@ -251,7 +251,7 @@
 		-4 0 -10 0
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>1000</weaponRange>
+	<weaponRange>3000</weaponRange>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -273,7 +273,7 @@
 	  <shieldValue>400</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
       <EvadeDist>0 4000 5000 500 0</EvadeDist>
-      <TargetPrefs>0.5 0.3 0.6 1 0.2 </TargetPrefs>
+      <TargetPrefs>0.5 0.9 0.6 1 0.2 </TargetPrefs>
       <Chase>0 0 0 0 0</Chase>
       <AvailableWeapons>
 	<Item>
@@ -288,7 +288,7 @@
 	<weaponRange>5200</weaponRange>
     </Item>
 	<Item>
-	 <weaponType>LargeIon</weaponType>
+	 <weaponType>MassDriver</weaponType>
 	 <ModulePositionOnShip>
 	    10 0 100  2
 	    20 0 -100 2
@@ -296,7 +296,7 @@
 	    40 0 -150 3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>2200</weaponRange>
+	<weaponRange>16200</weaponRange>
     </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>

@@ -87,8 +87,7 @@ namespace SaturnIV
                     thisShip.currentTargetLevel = 0;
                 }
 
-                if (thisShip.currentTarget != null)
-                    thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
+                //if (thisShip.currentTarget != null)
                 if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
                     thisShip.targetPosition = thisShip.currentTarget.modelPosition + thisShip.currentTarget.Direction * rand.Next(5, 15);
                 float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);
@@ -96,23 +95,26 @@ namespace SaturnIV
                 if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1000, 3000))
                     thisShip.isEvading = false;
 
-                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass] * 2
-                    && thisShip.angleOfAttack > 1.35 && thisShip.angleOfAttack < 1.75 && !thisShip.isEvading)
+                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
+                    && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
                 {
+
                     thisShip.targetPosition = thisShip.modelPosition + AIClass.EvadeVector(thisShip.modelPosition, otherShip.modelPosition,
                                                thisShip.Direction) * HelperClass.RandomDirection()
                                               * thisShip.modelLen * 50;
                     thisShip.timer = currentTime;
                     thisShip.isEvading = true;
                 }
-                //else
-                // thisShip.isEvading = false;
-
-                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 35500 && thisShip.team != otherShip.team
-                    && !thisShip.isEvading)
+ 
+                /// Engaging
+                if (thisShip.team != otherShip.team && !thisShip.isEvading)
                 {
                     if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
+                    {
+                        thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                         thisShip.currentTarget = otherShip;
+                        thisShip.currentDisposition = disposition.engaging;
+                    }
                 }
 
                 if (thisShip.currentTarget != null && thisShip.currentTarget == otherShip)
@@ -209,7 +211,7 @@ namespace SaturnIV
              
                     thisShip.moduleFrustum[moduleCount].Matrix = Matrix.CreateLookAt(thisShip.modelPosition, thisShip.modelPosition + isFacing, Vector3.Up) *
                                                         Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(thisWeapon.FiringEnvelopeAngle),
-                                                        16.0f / 9.0f, .5f, 2200);
+                                                        16.0f / 9.0f, .5f, thisWeapon.weaponRange);
                     moduleCount++;
                 }
             }

@@ -31,7 +31,6 @@ namespace SaturnIV
         Effect laserEffect;
         Vector3 turretDirection = Vector3.Zero;
         public ParticleEmitter trailEmitter;
-        SpriteBatch spriteBatch;
         float thrustAmount;
         double elapsedTime;
         double currentTime;
@@ -107,12 +106,6 @@ namespace SaturnIV
           } 
           else
             thisObject.targetPosition = thisObject.Direction;
-         //  if (thisObject.isHoming)
-         //       thisObject.angleOfAttack = NPCManager.GetSignedAngleBetweenTwoVectors(thisObject.modelPosition, thisObject.currentTarget.modelPosition,
-         //                                  thisObject.currentTarget.modelRotation.Right);
-          // if (thisObject.angleOfAttack < -0 || thisObject.angleOfAttack > .99)
-          //      thisObject.targetPosition = thisObject.Direction;
-
             Vector3 scale, translation;
             Quaternion rotation;
             Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
@@ -135,15 +128,14 @@ namespace SaturnIV
             thisObject.Velocity *= DragFactor;
             // Apply velocity
             thisObject.modelPosition += thisObject.Velocity * elapsed;
-            thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
-
+            if (thisObject.objectClass != WeaponClassEnum.Beam)
+                thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin.modelPosition);
-           // thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
+            thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
             if (thisObject.projectile != null)
                 if (thisObject.isProjectile)
                     thisObject.projectile.Update(gameTime, thisObject.modelPosition);
-
             thisObject.timer += currentTime - elapsedTime;
             elapsedTime = currentTime;
         }
@@ -209,7 +201,8 @@ namespace SaturnIV
             tempData.radius = weaponDefList[(int)thisWeapon.weaponType].SphereRadius*2;
             tempData.isProjectile = weaponDefList[(int)thisWeapon.weaponType].isProjectile;
             tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
-            tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
+            tempData.objectClass = weaponDefList[(int)thisWeapon.weaponType].wClass;
+            tempData.range = thisWeapon.weaponRange;//weaponDefList[(int)thisWeapon.weaponType].range;
             tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
             tempData.damageFactor = weaponDefList[(int)thisWeapon.weaponType].damageFactor;
@@ -249,7 +242,6 @@ namespace SaturnIV
                     break;
             }
 
-            //tempData.missileOrigin = weaponOrigin.modelPosition + plyonVector3;
             tempData.Velocity = weaponOrigin.Velocity;
             tempData.modelPosition = weaponOrigin.modelPosition + plyonVector3;
             tempData.modelRotation = Matrix.Identity;
@@ -257,10 +249,10 @@ namespace SaturnIV
                 tempData.Direction = Vector3.Normalize(targetObject.modelPosition - tempData.modelPosition);
             if (tempData.isProjectile)
                 tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
-            tempData.timeToLive = 5000;
-            //if (weaponOrigin.cMissileCount >0)
+            tempData.timeToLive = 15000;            
+            tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);
+            tempData.beamQuad = new Quad(weaponOrigin.modelPosition + tempData.Direction * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 100, weaponOrigin.distanceFromTarget);
             activeWeaponList.Add(tempData);
-            //isMissileHit = true;
         }
     }
 }

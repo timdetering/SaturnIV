@@ -10,14 +10,13 @@ namespace SaturnIV
 {
     public enum disposition
     {        
-        pursue = 0,
+        engaging = 0,
         patrol = 1,
         evade = 2,
         idle = 3,
         moving = 4,
         onstation = 5,
         defensive = 6,
-        squad = 7
     }
 
     public enum SquadDisposition
@@ -33,7 +32,7 @@ namespace SaturnIV
         Cannon = 0,
         Missile = 1,
         Torpedo = 2,
-        Energy = 3
+        Beam = 3
     }
 
     public enum WeaponTypeEnum
@@ -44,7 +43,7 @@ namespace SaturnIV
         LRMH = 3,
         AutoCannon = 4,
         LargeIon = 5,
-        MedIon = 6
+        MassDriver = 6
     }
 
     public class newShipStruct
@@ -138,6 +137,8 @@ namespace SaturnIV
         public newShipStruct missileTarget;
         public double timeToLive;
         public double timer;
+        public WeaponClassEnum objectClass;
+        public Quad beamQuad;
     }
 
     [Serializable]
@@ -177,6 +178,7 @@ namespace SaturnIV
         public int   regenTime;
         public int   damageFactor;
         public float range;
+        public int timeToLive;
     }
 
     public class WeaponModule

@@ -104,11 +104,13 @@
     <Compile Include="CameraClass.cs" />
     <Compile Include="boundingFrustumRender.cs" />
     <Compile Include="BoidClass.cs" />
+    <Compile Include="GlobalClass.cs" />
     <Compile Include="MessageClass.cs" />
     <Compile Include="myAI\AIClass.cs" />
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
     <Compile Include="ParticleSystem\SparkParticleSystem.cs" />
+    <Compile Include="QuadClass.cs" />
     <Compile Include="TriangleRender.cs" />
     <Compile Include="ExplosionClass.cs" />
     <Compile Include="Game1.cs" />

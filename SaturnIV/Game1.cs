@@ -24,9 +24,11 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public static ContentManager content;
+        Quad myBeam;
         SpriteFont spriteFont;
         SpriteFont spriteFontSmall;
-        GraphicsDeviceManager graphics;
+        public static GraphicsDeviceManager graphics;
         Random rand;
         public GraphicsDevice device;
         public Viewport viewport;
@@ -39,7 +41,7 @@ namespace SaturnIV
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D rectTex, shipRec, selectRecTex;
+        Texture2D rectTex, shipRec, selectRecTex,dummyTex;
         MessageClass messageClass;
         Vector2 messagePos1 = new Vector2(0,0);
         public Vector2 systemMessagePos = new Vector2(30,20);
@@ -94,6 +96,7 @@ namespace SaturnIV
 
         public Game1()
         {
+            content = new ContentManager(Services);
             graphics = new GraphicsDeviceManager(this);
             helperClass = new HelperClass();
             Content.RootDirectory = "Content";
@@ -158,13 +161,6 @@ namespace SaturnIV
 
         public void ConfigureGraphicsManager()
         {
-#if XBOX360
-            graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            graphics.IsFullScreen = true;
-            screenX = graphics.PreferredBackBufferWidth;
-            screenY = graphics.PreferredBackBufferHeight;
-#else
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             screenX = 1280; // graphics.PreferredBackBufferWidth;
@@ -175,7 +171,6 @@ namespace SaturnIV
             messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY 
                                       - (graphics.PreferredBackBufferHeight / 3));
          
-#endif
         }
 
         protected override void LoadContent()
@@ -189,9 +184,9 @@ namespace SaturnIV
             loadShipData();
             Gui.initalize(this, ref shipDefList);
             rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
+            dummyTex = this.Content.Load<Texture2D>("textures//dummy");
             shipRec = this.Content.Load<Texture2D>("textures//missiletrack");
             selectRecTex = this.Content.Load<Texture2D>("textures//SelectionBox");
-
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
         }
@@ -218,11 +213,6 @@ namespace SaturnIV
             // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             processInput(gameTime);
@@ -445,8 +435,9 @@ namespace SaturnIV
                     systemMessagePos.Y += 10;
                 }
                 // Edit mode save Handler
-                if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
-                    saveClass.serializeClass(activeShipList);
+                if (keyboardState.IsKeyDown(Keys.Space) && isEditMode)
+                   saveClass.serializeClass(activeShipList);
+
 
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
@@ -460,8 +451,8 @@ namespace SaturnIV
                     isServer = false;
                     isClient = true;
                     gClient.initializeNetwork();
-                }
 
+                }
                 lastKeyPressTime = currentTime;
             }
 
@@ -516,16 +507,22 @@ namespace SaturnIV
                 if (isDebug)
                     debug(npcship);                
             }
+                    
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
                 if (theList.isProjectile)
-                    modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix, Color.White); 
+                    modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix, Color.White);
+                else if (theList.objectClass == WeaponClassEnum.Beam)
+                {
+                    theList.beamQuad.DrawQuad(ourCamera.viewMatrix,
+                        ourCamera.projectionMatrix, Matrix.Identity, theList.beamQuad);
+                }
                 else
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
-            }
-             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
-
+            }            
+             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);           
+            // Start HUD and other 2d stuff
             DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             if (!isEditMode) DrawHUDTargets();
