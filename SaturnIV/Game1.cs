@@ -24,8 +24,6 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        public static ContentManager content;
-        Quad myBeam;
         SpriteFont spriteFont;
         SpriteFont spriteFontSmall;
         public static GraphicsDeviceManager graphics;
@@ -33,7 +31,7 @@ namespace SaturnIV
         public GraphicsDevice device;
         public Viewport viewport;
         KeyboardState oldkeyboardState;
-        MouseState mouseStateCurrent, mouseStatePrevious, originalMouseState;
+        public static MouseState mouseStateCurrent, mouseStatePrevious;
         bool isRclicked, isLclicked, isRdown, isLdown,isSelected;
         Vector3 farpoint, nearpoint = new Vector3(0,0,0);
         SpriteBatch spriteBatch;
@@ -95,13 +93,8 @@ namespace SaturnIV
         guiClass Gui;
 
         public Game1()
-        {
-            content = new ContentManager(Services);
-            graphics = new GraphicsDeviceManager(this);
-            helperClass = new HelperClass();
+        {                      
             Content.RootDirectory = "Content";
-            ConfigureGraphicsManager();
-            ourCamera = new Camera(screenCenterX,screenCenterY);
         }
 
         /// <summary>
@@ -112,17 +105,19 @@ namespace SaturnIV
         /// </summary>
         protected override void Initialize()
         {
-            ourCamera.ResetCamera();
-            this.IsMouseVisible = true;
+            ConfigureGraphicsManager();
+            helperClass = new HelperClass();
+            ourCamera = new Camera(screenCenterX, screenCenterY);
+            ourCamera.ResetCamera();            
             rand = new Random();
-            // TODO: Add your initialization logic here
+////////////TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
             saveClass = new SaveClass();
             messageClass = new MessageClass();
-            ourExplosion = new ExplosionClass();
-            skySphere = new SkySphere(this);
+            messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY
+                          - (graphics.PreferredBackBufferHeight / 3));
             activeShipList = new List<newShipStruct>();
-            //Initialize Manager Classes
+////////////Initialize Manager Classes
             modelManager = new ModelManager(this);
             modelManager.Initialize();
             playerManager = new PlayerManager(this);
@@ -131,46 +126,46 @@ namespace SaturnIV
             npcManager.Initialize();
             weaponsManager = new WeaponsManager(this);
             weaponsManager.Initialize();
-            //Initalize Starfield
+////////////Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
             firingArc = new renderTriangle();
             editModeClass = new EditModeComponent(this);
             ourExplosion.initExplosionClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
-            projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             Gui = new guiClass();
             fLine = new Line3D(GraphicsDevice);
-         
+            ourExplosion = new ExplosionClass();            
+            skySphere = new SkySphere(this);
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
-            // Initial cameraTarget WM
             
-            // Add Components
+////////////Add Components
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
+
+////////////Mousey Stuff
+            this.IsMouseVisible = true;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
-            originalMouseState = Mouse.GetState();
+            mouseStateCurrent = Mouse.GetState();
 
             //Network Stuff
             gServer = new gameServer();
             gClient = new gameClient();
-
+////////////Random Stuff             
+            projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             base.Initialize();
         }
 
         public void ConfigureGraphicsManager()
         {
-            graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
-            graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            screenX = 1280; // graphics.PreferredBackBufferWidth;
-            screenY = 720; //graphics.PreferredBackBufferHeight;
-            screenCenterX = graphics.PreferredBackBufferWidth / 2;
-            screenCenterY = graphics.PreferredBackBufferHeight/2;
-            graphics.IsFullScreen = false;
-            messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY 
-                                      - (graphics.PreferredBackBufferHeight / 3));
-         
+            screenX = 1280;
+            screenY = 720;
+            graphics.PreferredBackBufferWidth = screenX;
+            graphics.PreferredBackBufferHeight = screenY;
+            screenCenterX = screenX / 2;
+            screenCenterY = screenY /2;
+            graphics.IsFullScreen = false;      
         }
 
         protected override void LoadContent()

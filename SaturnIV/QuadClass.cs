@@ -12,9 +12,8 @@ namespace SaturnIV
 {
     public class Quad
     {
-        Quad quad;
         VertexDeclaration quadVertexDecl;
-
+        public List<Quad> beamList;
         public Vector3 Origin;
         public Vector3 UpperLeft;
         public Vector3 LowerLeft;
@@ -30,23 +29,20 @@ namespace SaturnIV
         Texture2D texture;
     BasicEffect quadEffect;
 
-    public void LoadGraphicsContent()
+    public void BeamClassInit(ContentManager Content)
     {
-
-            // TODO: Load any ResourceManagementMode.Automatic content
-            texture = Game1.content.Load<Texture2D>("Content//textures//dummy");
+            texture = Content.Load<Texture2D>("Content//textures//dummy");
             quadEffect = new BasicEffect( Game1.graphics.GraphicsDevice, null );
             quadEffect.EnableDefaultLighting();
             quadEffect.TextureEnabled = true;
             quadEffect.Texture = texture;
-        // TODO: Load any ResourceManagementMode.Manual content
             quadVertexDecl = new VertexDeclaration(Game1.graphics.GraphicsDevice,
             VertexPositionColor.VertexElements);
     }
 
-        public Quad(Vector3 origin, Vector3 normal, Vector3 up, float width, float height)
+        public Quad(ContentManager Content,Vector3 origin, Vector3 normal, Vector3 up, float width, float height)
         {
-            LoadGraphicsContent();
+            BeamClassInit(Content);
             Vertices = new VertexPositionColor[4];
             Indices = new int[6];
             Origin = origin;

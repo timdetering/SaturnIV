@@ -76,20 +76,13 @@ namespace SaturnIV
 
         public Model LaserModelLoad(string modelFileName)
         {
-            
             myModel = Game.Content.Load<Model>(modelFileName);
-
             foreach (ModelMesh mesh in myModel.Meshes)
                 foreach (ModelMeshPart part in mesh.MeshParts)
                     part.Effect = laserEffect;
             return myModel;
         }
-
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
-        
+      
         public void updateMissileMovement(GameTime gameTime, float gameSpeed, weaponStruct thisObject)
         {
             currentTime = gameTime.TotalGameTime.TotalMilliseconds;
@@ -251,7 +244,7 @@ namespace SaturnIV
                 tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
             tempData.timeToLive = 15000;            
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);
-            tempData.beamQuad = new Quad(weaponOrigin.modelPosition + tempData.Direction * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 100, weaponOrigin.distanceFromTarget);
+            tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 100, weaponOrigin.distanceFromTarget);
             activeWeaponList.Add(tempData);
         }
     }
