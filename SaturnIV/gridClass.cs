@@ -59,7 +59,8 @@ namespace SaturnIV
  	            { 
  	                for (int y = 0; y < this.side; y++) 
  	                { 
- 	                     pointList[(x * this.side) + y] = new VertexPositionColor(new Vector3((x * this.interval)-this.posX, this.posY, (y * this.interval)-this.posZ), Color.Red); 
+ 	                     pointList[(x * this.side) + y] = new VertexPositionColor(new Vector3((x * this.interval)-this.posX
+                         , this.posY, (y * this.interval)-this.posZ), new Color(255,255,255,128)); 
  	                } 
  	            } 
  	        } 

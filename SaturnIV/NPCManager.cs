@@ -61,7 +61,7 @@ namespace SaturnIV
             thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);
 
               // Squad AI Stuff
-            //thisShip.thrustAmount = 0.75f;
+            thisShip.thrustAmount = 0.75f;
             if (boidList != null && otherShip == boidList.leader && thisShip != boidList.leader)
             {
                 isSquad = true;
@@ -98,10 +98,10 @@ namespace SaturnIV
                 if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
                     && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
                 {
-
                     thisShip.targetPosition = thisShip.modelPosition + AIClass.EvadeVector(thisShip.modelPosition, otherShip.modelPosition,
                                                thisShip.Direction) * HelperClass.RandomDirection()
                                               * thisShip.modelLen * 50;
+                    thisShip.thrustAmount = 1.0f;
                     thisShip.timer = currentTime;
                     thisShip.isEvading = true;
                 }

@@ -490,8 +490,7 @@ namespace SaturnIV
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
             //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
-            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera);
-                                    
+            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera);                             
             foreach (newShipStruct npcship in activeShipList)
             {                
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix,shipColor);
