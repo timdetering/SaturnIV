@@ -525,7 +525,7 @@ namespace SaturnIV
             // Start HUD and other 2d stuff
             DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
-            if (!isEditMode) DrawHUDTargets();
+            DrawHUDTargets();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
@@ -565,7 +565,6 @@ namespace SaturnIV
                     shipColor = Color.Red;
                 if (enemy.isSelected)
                     shipColor = Color.White;
-            
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
@@ -573,6 +572,13 @@ namespace SaturnIV
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
                     spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
+                    if (enemy.isSelected)
+                    {
+                        buffer = new StringBuilder();
+                        foreach (WeaponModule thisMod in enemy.weaponArray)
+                            buffer.Append(thisMod.weaponType + "\n");
+                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), new Vector2(25,768), Color.White);
+                    }
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             spriteBatch.End();

@@ -267,7 +267,7 @@
       <Chase>0 0 0 0 0</Chase>
       <AvailableWeapons>
 	<Item>
-	 <weaponType>MassDriver</weaponType>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	    30 0 20 2
 	   -20 0 10 2
