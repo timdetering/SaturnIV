@@ -31,23 +31,23 @@ namespace SaturnIV
 
     public void BeamClassInit(ContentManager Content)
     {
-            texture = Content.Load<Texture2D>("Content//textures//dummy");
+            texture = Content.Load<Texture2D>("textures//dummy");
             quadEffect = new BasicEffect( Game1.graphics.GraphicsDevice, null );
             quadEffect.EnableDefaultLighting();
-            quadEffect.TextureEnabled = true;
-            quadEffect.Texture = texture;
+            quadEffect.TextureEnabled = false;
             quadVertexDecl = new VertexDeclaration(Game1.graphics.GraphicsDevice,
             VertexPositionColor.VertexElements);
     }
 
-        public Quad(ContentManager Content,Vector3 origin, Vector3 normal, Vector3 up, float width, float height)
+        public Quad(ContentManager Content,Vector3 origin, Vector3 normal,
+            Vector3 up, float width, float height, Color color)
         {
             BeamClassInit(Content);
             Vertices = new VertexPositionColor[4];
             Indices = new int[6];
             Origin = origin;
             Normal = normal;
-            Up = up;
+            Up = -up;
             // Calculate the quad corners
             Left = Vector3.Cross(normal, Up);
             Vector3 uppercenter = (Up * height / 2) + origin;
@@ -56,37 +56,30 @@ namespace SaturnIV
             LowerLeft = UpperLeft - (Up * height);
             LowerRight = UpperRight - (Up * height);
 
-            FillVertices();
+            FillVertices(color);
         }
 
-        private void FillVertices()
+        private void FillVertices(Color color)
         {
-            // Fill in texture coordinates to display full texture
-            // on quad
-            Vector2 textureUpperLeft = new Vector2(0.0f, 0.0f);
-            Vector2 textureUpperRight = new Vector2(1.0f, 0.0f);
-            Vector2 textureLowerLeft = new Vector2(0.0f, 1.0f);
-            Vector2 textureLowerRight = new Vector2(1.0f, 1.0f);
-
             // Provide a normal for each vertex
             for (int i = 0; i < Vertices.Length; i++)
             {
-                //Vertices[i].Normal = Normal;
+               // Vertices[i].Normal = Normal;
             }
 
             // Set the position and texture coordinate for each
             // vertex
             Vertices[0].Position = LowerLeft;
-            Vertices[0].Color = Color.Orange;
+            Vertices[0].Color = color;
             //Vertices[0].TextureCoordinate = textureLowerLeft;
             Vertices[1].Position = UpperLeft;
-            Vertices[1].Color = Color.Orange;
+            Vertices[1].Color = color;
             //Vertices[1].TextureCoordinate = textureUpperLeft;
             Vertices[2].Position = LowerRight;
-            Vertices[2].Color = Color.Orange;
+            Vertices[2].Color = color;
             //Vertices[2].TextureCoordinate = textureLowerRight;
             Vertices[3].Position = UpperRight;
-            Vertices[3].Color = Color.Orange;
+            Vertices[3].Color = color;
             //Vertices[3].TextureCoordinate = textureUpperRight;
 
             // Set the index buffer for each vertex, using
@@ -104,6 +97,7 @@ namespace SaturnIV
             quadEffect.World = world;
             quadEffect.View = View;
             quadEffect.Projection = Projection;
+            quadEffect.EnableDefaultLighting();
 
             Game1.graphics.GraphicsDevice.VertexDeclaration = quadVertexDecl;
             quadEffect.Begin();

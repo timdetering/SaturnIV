@@ -115,10 +115,10 @@
       <wClass>Beam</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>500</regenTime>
       <damageFactor>35</damageFactor>
       <range>6000</range>	
-      <timeToLive>10000</timeToLive>	  
+      <timeToLive>2000</timeToLive>	  
     </Item>
   </Asset>
 </XnaContent>

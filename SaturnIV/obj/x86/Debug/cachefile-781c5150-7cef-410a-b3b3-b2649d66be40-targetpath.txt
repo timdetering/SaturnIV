@@ -37,7 +37,12 @@ Content\textures\dummy.xnb
 Content\textures\spark.xnb
 Content\textures\SelectionBox.xnb
 Content\textures\move_icon.xnb
+Content\Models\tbattlecrusier.xnb
+Content\Models\tEriax_Crusier.xnb
 Content\textures\smoke2.xnb
+Content\textures\blackDotLarge.xnb
+Content\Models\3732.xnb
+Content\Models\Ships\3732.xnb
 Content\Models\LaserBolt2.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\Models\largeSphere.xnb
@@ -53,6 +58,10 @@ Content\Models\SFV300.xnb
 Content\Models\sphere.xnb
 Content\Models\Eriax_Fighter_MK2.xnb
 Content\Models\Eriax_Destroyer.xnb
+Content\Models\Ships\Fleet_MR-140_Viper.xnb
+Content\Models\Ships\Eriax_Heavy_Gunship.xnb
+Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
+Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Lakerem_0.xnb
 Content\color_0.xnb
@@ -60,13 +69,4 @@ Content\color_1.xnb
 Content\Models\3732_0.xnb
 Content\fx3_Panels_9F_0.xnb
 Content\Models\blu_0.xnb
-Content\Models\tbattlecrusier.xnb
-Content\Models\tEriax_Crusier.xnb
-Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
-Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
-Content\Models\Ships\Eriax_Heavy_Gunship.xnb
 Content\Models\Ships\3732_0.xnb
-Content\textures\blackDotLarge.xnb
-Content\Models\3732.xnb
-Content\Models\Ships\3732.xnb
-Content\Models\Ships\Fleet_MR-140_Viper.xnb

@@ -121,7 +121,7 @@ namespace SaturnIV
             thisObject.Velocity *= DragFactor;
             // Apply velocity
             thisObject.modelPosition += thisObject.Velocity * elapsed;
-            if (thisObject.objectClass != WeaponClassEnum.Beam)
+            //if (thisObject.objectClass != WeaponClassEnum.Beam)
                 thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin.modelPosition);
             thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
@@ -165,10 +165,21 @@ namespace SaturnIV
             for (int i=0; i < activeWeaponList.Count; i++)
             {
                 updateMissileMovement(gameTime, gameSpeed, activeWeaponList[i]);
-                if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range || activeWeaponList[i].timer > activeWeaponList[i].timeToLive 
-                    || activeWeaponList[i].currentTarget == null)
+                if (activeWeaponList[i].objectClass != WeaponClassEnum.Beam)
                 {
-                    ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,activeWeaponList[i].modelPosition,0.25f);                                                      
+                    if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range
+                        || activeWeaponList[i].timer > activeWeaponList[i].timeToLive
+                        || activeWeaponList[i].currentTarget == null)
+                    {
+                        ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
+                            activeWeaponList[i].modelPosition, 0.25f);
+                        activeWeaponList.Remove(activeWeaponList[i]);
+                    }
+                }
+                else if (activeWeaponList[i].timer > activeWeaponList[i].timeToLive)
+                {
+                    ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
+                        activeWeaponList[i].modelPosition, 0.25f);
                     activeWeaponList.Remove(activeWeaponList[i]);
                 }
             }
@@ -210,7 +221,6 @@ namespace SaturnIV
             tempData.missileTarget = targetObject;
             tempData.currentTarget = targetObject;
             tempData.missileOrigin = weaponOrigin;
-            tempData.range = weaponDefList[(int)thisWeapon.weaponType].range;
             Vector3 plyonVector3 = new Vector3(thisWeapon.ModulePositionOnShip[modIndex].X,
                                    thisWeapon.ModulePositionOnShip[modIndex].Y,
                                    thisWeapon.ModulePositionOnShip[modIndex].Z);
@@ -242,9 +252,12 @@ namespace SaturnIV
                 tempData.Direction = Vector3.Normalize(targetObject.modelPosition - tempData.modelPosition);
             if (tempData.isProjectile)
                 tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
-            tempData.timeToLive = 15000;            
+            tempData.timeToLive = weaponDefList[(int)thisWeapon.weaponType].timeToLive;
+            tempData.regenTime = weaponDefList[(int)thisWeapon.weaponType].regenTime;
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);
-            tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 100, weaponOrigin.distanceFromTarget);
+            tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
+                * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 20, 
+                weaponOrigin.distanceFromTarget,Color.Green);           
             activeWeaponList.Add(tempData);
         }
     }

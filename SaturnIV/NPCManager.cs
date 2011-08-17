@@ -92,9 +92,9 @@ namespace SaturnIV
                     thisShip.targetPosition = thisShip.currentTarget.modelPosition + thisShip.currentTarget.Direction * rand.Next(5, 15);
                 float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);
 
-                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1000, 3000))
+                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1000, 2000))
                     thisShip.isEvading = false;
-
+                else
                 if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
                     && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
                 {

@@ -16,7 +16,6 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 
-
 namespace SaturnIV
 {
     /// <summary>
@@ -24,9 +23,10 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public static GraphicsDeviceManager graphics;
         SpriteFont spriteFont;
         SpriteFont spriteFontSmall;
-        public static GraphicsDeviceManager graphics;
+
         Random rand;
         public GraphicsDevice device;
         public Viewport viewport;
@@ -93,7 +93,9 @@ namespace SaturnIV
         guiClass Gui;
 
         public Game1()
-        {                      
+        {
+            graphics = new GraphicsDeviceManager(this);
+            ConfigureGraphicsManager();
             Content.RootDirectory = "Content";
         }
 
@@ -105,7 +107,6 @@ namespace SaturnIV
         /// </summary>
         protected override void Initialize()
         {
-            ConfigureGraphicsManager();
             helperClass = new HelperClass();
             ourCamera = new Camera(screenCenterX, screenCenterY);
             ourCamera.ResetCamera();            
@@ -131,19 +132,15 @@ namespace SaturnIV
             InitializeStarFieldEffect();
             firingArc = new renderTriangle();
             editModeClass = new EditModeComponent(this);
+            ourExplosion = new ExplosionClass();
             ourExplosion.initExplosionClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
             Gui = new guiClass();
-            fLine = new Line3D(GraphicsDevice);
-            ourExplosion = new ExplosionClass();            
+            fLine = new Line3D(GraphicsDevice);          
             skySphere = new SkySphere(this);
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
             
-////////////Add Components
-            Components.Add(projectileTrailParticles);
-            Components.Add(editModeClass);
-
 ////////////Mousey Stuff
             this.IsMouseVisible = true;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
@@ -154,13 +151,16 @@ namespace SaturnIV
             gClient = new gameClient();
 ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
+            ////////////Add Components
+            Components.Add(projectileTrailParticles);
+            Components.Add(editModeClass);
             base.Initialize();
         }
 
         public void ConfigureGraphicsManager()
         {
             screenX = 1280;
-            screenY = 720;
+            screenY = 1024;
             graphics.PreferredBackBufferWidth = screenX;
             graphics.PreferredBackBufferHeight = screenY;
             screenCenterX = screenX / 2;
@@ -370,18 +370,24 @@ namespace SaturnIV
             if (!isEditMode && isSelected && keyboardState.IsKeyDown(Keys.T) && 
                 !oldkeyboardState.IsKeyDown (Keys.T))
             {
+                squadClass createSquad = new squadClass();
+                createSquad.squadmate = new List<newShipStruct>();
+                createSquad.squadOrders = SquadDisposition.tight;
+                squadList.Add(createSquad);
+
                 bool isLeader = false;
                 foreach (newShipStruct thisShip in activeShipList)
                     if (thisShip.isSelected && thisShip.squadNo < 0)
                     {
+                        createSquad.squadmate.Add(thisShip);
                         if (!isLeader)
                         {
                             MessageClass.messageLog.Add(thisShip.objectAlias + " Squad Formed");
                             thisShip.isSquadLeader = true;
-                            squadList[0].leader = thisShip;
+                            squadList[squadList.Count-1].leader = thisShip;
                         }
                         thisShip.squadNo = 0;
-                        squadList[0].squadmate.Add(thisShip);
+                        squadList[squadList.Count-1].squadmate.Add(thisShip);
                         isLeader = true;
                     }
             }
@@ -663,8 +669,8 @@ namespace SaturnIV
              fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                    foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
                      BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                  // BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   // BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
                     isRight = npcship.modelRotation.Right;
         }

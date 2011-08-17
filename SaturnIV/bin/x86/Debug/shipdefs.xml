@@ -150,8 +150,8 @@
 	  <hullValue>200</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 400 1000 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
+      <EvadeDist>150 4000 10000 200 50</EvadeDist>
+      <TargetPrefs>1 0.50 0.50 0.25 0.2</TargetPrefs>
 	  <Chase> 1 1 1 0 0</Chase>
       <AvailableWeapons>
       <Item>
@@ -190,9 +190,6 @@
 	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 0
-        4 0 0 0
-	   -8 0 0 0
-        8 0 0 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	 <weaponRange>1700</weaponRange>
@@ -201,14 +198,7 @@
 	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	   -4 0 0 0
-        4 0 0 0
-	   -8 0 0 0
-        8 0 0 0
-	   -4 0 0 0
-        4 0 0 0
-	   -8 0 0 0
-        8 0 0 0
-	 </ModulePositionOnShip> 
+ 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	 <weaponRange>1700</weaponRange>
       </Item>
@@ -232,7 +222,7 @@
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>500 2000 3500 200 50</EvadeDist>
-      <TargetPrefs>0.5 0.3 1 1 0.2</TargetPrefs>
+      <TargetPrefs>1 0.3 0.8 0.5 0.2</TargetPrefs>
       <Chase> 1 1 1 1 0 </Chase>
       <AvailableWeapons>
 	<Item>
@@ -277,29 +267,29 @@
       <Chase>0 0 0 0 0</Chase>
       <AvailableWeapons>
 	<Item>
-	 <weaponType>SRMH</weaponType>
-	 <ModulePositionOnShip>
-	    40 0 0 2
-	   -20 0 0 2
-	   -40 0 0 3
-	    60 0 0 3
-	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>5200</weaponRange>
-    </Item>
-	<Item>
 	 <weaponType>MassDriver</weaponType>
 	 <ModulePositionOnShip>
-	    10 0 100  2
-	    20 0 -100 2
-	    30 0 -150 3
-	    40 0 -150 3
+	    30 0 20 2
+	   -20 0 10 2
+	   -20 0 30 3
+	    30 0 40 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+	<weaponRange>15200</weaponRange>
+    </Item>
+	<Item>
+	 <weaponType>LargeIon</weaponType>
+	 <ModulePositionOnShip>
+	    20 0 100  2
+		-20 10 10  2
+		40 0 100  3
+		-40 10 10  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>16200</weaponRange>
     </Item>
       </AvailableWeapons>
-      <ThrusterPosition>0 0 0 </ThrusterPosition>
+      <ThrusterPosition>0 0 0</ThrusterPosition>
     </Item>
 <Item>
       <FileName>Models//Ships//Fleet_Auriga_Class_Crusier</FileName>

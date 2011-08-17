@@ -4,8 +4,8 @@ Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
 Content\textures\explosion.xnb
 Content\SmallFont.xnb
 Content\Thrusters\Thrust.xnb
-Content\Models\Ships\3732.xnb
 Content\Models\basic_missile.xnb
+Content\Models\Shipyard_Alpha.xnb
 Content\textures\starfield2.xnb
 Content\textures\planettexture1.xnb
 Content\Models\Ships\3732_0.xnb
@@ -16,7 +16,7 @@ Content\effectslib.xnb
 Content\Models\Eriax_Destroyer.xnb
 Content\textures\smoke2.xnb
 Content\Models\sphere.xnb
-Content\Models\Lakerem_0.xnb
+Content\Models\tbattlecrusier.xnb
 Content\textures\nebula2.xnb
 Content\textures\spacescape_blue.xnb
 Content\Thrusters\NoiseVolume.xnb
@@ -24,6 +24,7 @@ Content\Effects\BloomExtract.xnb
 Content\textures\move_icon.xnb
 Content\Effects\laser_shader.xnb
 Content\textures\blackDotLarge.xnb
+Content\Models\Lakerem_0.xnb
 Content\textures\dummy.xnb
 Content\Miramonte.xnb
 Content\textures\fire.xnb
@@ -35,10 +36,8 @@ Content\Models\Ships\Fleet_MR-140_Viper.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Effects\pointsprites.xnb
 Content\textures\Sky128.xnb
-Content\Models\3732.xnb
-Content\Models\tbattlecrusier.xnb
+Content\Models\Ships\3732.xnb
 Content\Models\largeSphere.xnb
-Content\Models\Shipyard_Alpha.xnb
 Content\Models\tEriax_Crusier.xnb
 Content\Effects\explosionEffect.xnb
 Content\hud.xnb
@@ -46,11 +45,12 @@ Content\textures\SelectionBox.xnb
 Content\Models\Fleet_Station.xnb
 Content\Effects\GaussianBlur.xnb
 Content\Models\LaserBolt2.xnb
-Content\Models\Fleet_SF101.xnb
+Content\Thrusters\ThrustCylinderB.xnb
 Content\Effects\SkySphere.xnb
 Content\textures\missiletrack.xnb
 Content\textures\redDotSmall.xnb
 Content\MedFont.xnb
+Content\Models\Eriax_Fighter_MK2.xnb
 Content\Models\SFV300.xnb
 Content\textures\planettexture2.xnb
 Content\textures\planettexture3.xnb
@@ -61,12 +61,12 @@ Content\Models\basic_bullet.xnb
 Content\hud_target.xnb
 Content\Models\Eriax_Crusier.xnb
 Content\textures\spark.xnb
-Content\Thrusters\ThrustCylinderB.xnb
+Content\Models\3732.xnb
 Content\Models\3732_0.xnb
 Content\textures\star.xnb
 Content\Effects\BloomCombine.xnb
 Content\Models\Ships\Eriax_Heavy_Gunship.xnb
-Content\Models\Eriax_Fighter_MK2.xnb
+Content\Models\Fleet_SF101.xnb
 Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
 Content\color_0.xnb
 Content\textures\smoke.xnb
