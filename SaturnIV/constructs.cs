@@ -120,6 +120,7 @@ namespace SaturnIV
         public newShipStruct threat;
         public Texture2D hudTex;
         public double timer;
+        public double[] regenTimer;
     }
 
     public class weaponStruct : newShipStruct
@@ -136,9 +137,9 @@ namespace SaturnIV
         public Projectile projectile;
         public newShipStruct missileTarget;
         public double timeToLive;
-        public double timer;
         public WeaponClassEnum objectClass;
         public Quad beamQuad;
+        public int modIndex;
     }
 
     [Serializable]
@@ -187,6 +188,7 @@ namespace SaturnIV
         public Vector4[] ModulePositionOnShip;
         public float FiringEnvelopeAngle;
         public float weaponRange;
+        public double timer;
     }
 
     public class squadClass

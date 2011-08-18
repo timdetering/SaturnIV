@@ -94,17 +94,17 @@ namespace SaturnIV
 
         public void DrawQuad(Matrix world,Matrix View, Matrix Projection,Quad quad)
         {
+            Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = false;
             quadEffect.World = world;
             quadEffect.View = View;
             quadEffect.Projection = Projection;
-            quadEffect.EnableDefaultLighting();
+            //quadEffect.EnableDefaultLighting();
 
             Game1.graphics.GraphicsDevice.VertexDeclaration = quadVertexDecl;
             quadEffect.Begin();
             foreach (EffectPass pass in quadEffect.CurrentTechnique.Passes)
             {
                 pass.Begin();
-
                 Game1.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(
                     PrimitiveType.TriangleList, quad.Vertices, 0, 4, quad.Indices, 0, 2);
 

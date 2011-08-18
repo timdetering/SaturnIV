@@ -92,7 +92,7 @@
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>25</Scale>
+	  <Scale>35</Scale>
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
@@ -115,7 +115,7 @@
       <wClass>Beam</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>500</regenTime>
+      <regenTime>5000</regenTime>
       <damageFactor>35</damageFactor>
       <range>6000</range>	
       <timeToLive>2000</timeToLive>	  

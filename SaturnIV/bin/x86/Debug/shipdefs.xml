@@ -33,6 +33,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>2000</weaponRange>
+	<timer>0</timer>
       </Item>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -44,6 +45,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>2000</weaponRange>
+	<timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -76,6 +78,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>10000</weaponRange>
+	<timer>0</timer>
       </Item>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -87,6 +90,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>12000</weaponRange>
+	<timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -119,6 +123,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>2000</weaponRange>
+	<timer>0</timer>
       </Item>
       <Item>
 	 <weaponType>SRM</weaponType>
@@ -130,6 +135,7 @@
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>2000</weaponRange>
+	<timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -162,6 +168,7 @@
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	 <weaponRange>700</weaponRange>
+	 <timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -193,6 +200,7 @@
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	 <weaponRange>1700</weaponRange>
+	 <timer>0</timer>
       </Item>
 	   <Item>
 	 <weaponType>SRMH</weaponType>
@@ -201,6 +209,7 @@
  	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	 <weaponRange>1700</weaponRange>
+	 <timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -233,6 +242,7 @@
 		</ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>2000</weaponRange>
+	<timer>0</timer>
         </Item>
 	<Item>
 		<weaponType>AutoCannon</weaponType>
@@ -242,6 +252,7 @@
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>3000</weaponRange>
+	<timer>0</timer>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -276,6 +287,7 @@
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>20</FiringEnvelopeAngle>
 	<weaponRange>15200</weaponRange>
+	<timer>0</timer>
     </Item>
 	<Item>
 	 <weaponType>LargeIon</weaponType>
@@ -287,6 +299,17 @@
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>16200</weaponRange>
+	<timer>0</timer>
+    </Item>
+	<Item>
+	 <weaponType>MassDriver</weaponType>
+	 <ModulePositionOnShip>
+	    20 0 100  2
+		-40 10 10  3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	<weaponRange>16200</weaponRange>
+	<timer>0</timer>
     </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0</ThrusterPosition>
@@ -321,6 +344,7 @@
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>6200</weaponRange>
+	<timer>0</timer>
         </Item>
 	<Item>
 	 <weaponType>SRMH</weaponType>
@@ -332,6 +356,7 @@
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>6200</weaponRange>
+	<timer>0</timer>
         </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>

@@ -24,13 +24,12 @@ namespace SaturnIV
         public bool isTargeted = false;
         float thrustAmount = 0.75f;
         private const float ThrustForce = 500.0f;
-        double lastWeaponFireTime;
         bool isEvading, hasEvadeVector,isSquad;
         float currentTargetLevel;
         Vector3 isFacing;
         Vector3 isRight;
         int moduleCount = 0;
-        double[] regentime;
+        public double[] regentime;
         double speedTime;
         float lastTime;
         float projection;
@@ -61,7 +60,7 @@ namespace SaturnIV
             thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);
 
               // Squad AI Stuff
-            thisShip.thrustAmount = 0.75f;
+            thisShip.thrustAmount = 0.95f;
             if (boidList != null && otherShip == boidList.leader && thisShip != boidList.leader)
             {
                 isSquad = true;
@@ -86,25 +85,31 @@ namespace SaturnIV
                     thisShip.currentTarget = null;
                     thisShip.currentTargetLevel = 0;
                 }
-
                 //if (thisShip.currentTarget != null)
                 if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
                     thisShip.targetPosition = thisShip.currentTarget.modelPosition + thisShip.currentTarget.Direction * rand.Next(5, 15);
                 float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);
-
-                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1000, 2000))
-                    thisShip.isEvading = false;
-                else
-                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
-                    && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
+                if (thisShip.objectAgility < 2.0)
                 {
-                    thisShip.targetPosition = thisShip.modelPosition + AIClass.EvadeVector(thisShip.modelPosition, otherShip.modelPosition,
-                                               thisShip.Direction) * HelperClass.RandomDirection()
-                                              * thisShip.modelLen * 50;
-                    thisShip.thrustAmount = 1.0f;
-                    thisShip.timer = currentTime;
-                    thisShip.isEvading = true;
+                    if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(8000, 12000))
+                        thisShip.isEvading = false;
                 }
+                else
+                    if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(2000, 4000))
+                        thisShip.isEvading = false;
+                    
+                        if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
+                            && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
+                        {
+                            // thisShip.targetPosition = thisShip.modelPosition + AIClass.EvadeVector(thisShip.modelPosition, otherShip.modelPosition,
+                            //                            thisShip.Direction)
+                            //                           * thisShip.modelLen * 50;
+                            thisShip.targetPosition = thisShip.modelPosition + -thisShip.Direction + HelperClass.RandomDirection()
+                                * thisShip.modelLen * 50;
+                            thisShip.thrustAmount = 1.0f;
+                            thisShip.timer = currentTime;
+                            thisShip.isEvading = true;
+                        }
  
                 /// Engaging
                 if (thisShip.team != otherShip.team && !thisShip.isEvading)
@@ -335,10 +340,10 @@ namespace SaturnIV
                 {
                     if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
                     {
-                        if (currentTime - regentime[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                        if (currentTime - thisShip.regenTimer[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
                         {
                             weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, ref projectileTrailParticles, ref weaponDefList, thisWeapon, i);
-                            regentime[moduleCount] = currentTime;
+                            thisShip.regenTimer[moduleCount] = currentTime;
                             thisShip.isEngaging = true;
                             break;
                         }

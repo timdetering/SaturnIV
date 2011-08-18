@@ -495,10 +495,10 @@ namespace SaturnIV
             {                
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix,shipColor);
 
-                spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-                if (npcship.isSelected)
-                    spriteBatch.Draw(objectThumbs[npcship.objectIndex], new Vector2(300, 10), Color.White);
-                spriteBatch.End();
+               // spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
+                //if (npcship.isSelected)
+                //    spriteBatch.Draw(objectThumbs[npcship.objectIndex], new Vector2(300, 10), Color.White);
+                //spriteBatch.End();
                 
               //  npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
                 BoundingSphereRenderer.Render3dCircle(npcship.modelBoundingSphere.Center, npcship.modelBoundingSphere.Radius,
@@ -525,7 +525,7 @@ namespace SaturnIV
             // Start HUD and other 2d stuff
             DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
-            DrawHUDTargets();
+            DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
@@ -552,7 +552,7 @@ namespace SaturnIV
             base.Draw(gameTime); messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
         }
 
-        private void DrawHUDTargets()
+        private void DrawHUDTargets(GameTime gameTime)
         {          
             StringBuilder messageBuffer = new StringBuilder(); 
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -574,10 +574,20 @@ namespace SaturnIV
                     spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
                     if (enemy.isSelected)
                     {
+                        int timerIndex = 0;
                         buffer = new StringBuilder();
                         foreach (WeaponModule thisMod in enemy.weaponArray)
-                            buffer.Append(thisMod.weaponType + "\n");
-                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), new Vector2(25,768), Color.White);
+                        {
+                                buffer.AppendLine(thisMod.weaponType + "");
+                                foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
+                                {
+                                        double currentTime = enemy.regenTimer[timerIndex] - gameTime.TotalGameTime.TotalMilliseconds;
+                                        buffer.AppendLine(currentTime + "  "+ weaponDefList[(int)thisMod.weaponType].regenTime);
+                                        timerIndex++;
+                                }
+
+                        }
+                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), new Vector2(25,600), Color.White);
                     }
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);

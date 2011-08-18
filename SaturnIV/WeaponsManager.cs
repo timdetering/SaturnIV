@@ -131,6 +131,7 @@ namespace SaturnIV
                     thisObject.projectile.Update(gameTime, thisObject.modelPosition);
             thisObject.timer += currentTime - elapsedTime;
             elapsedTime = currentTime;
+            
         }
 
         public void DrawLaser(GraphicsDevice device, Matrix view, Matrix projection,Color laserColor,weaponStruct weapon)
@@ -257,7 +258,8 @@ namespace SaturnIV
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);
             tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
                 * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 20, 
-                weaponOrigin.distanceFromTarget,Color.Green);           
+                weaponOrigin.distanceFromTarget,Color.Green);
+            tempData.modIndex = modIndex;
             activeWeaponList.Add(tempData);
         }
     }
