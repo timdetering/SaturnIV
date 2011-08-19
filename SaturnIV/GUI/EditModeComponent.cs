@@ -56,8 +56,8 @@ namespace SaturnIV
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            grid = new Grid(200, 700, Game.GraphicsDevice, Game);
-            fLine = new Line3D(Game.GraphicsDevice);
+            //grid = new Grid(200, 700, Game.GraphicsDevice, Game);
+            //fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
             base.Initialize();
         }
@@ -160,22 +160,22 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-            grid.drawLines();
+           // grid.drawLines();
             foreach (newShipStruct enemy in shipList)
                {
-                   fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,
-                          enemy.modelPosition + enemy.Direction * enemy.radius * 1,
-                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                   BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius,enemy.radius/4);
-                  // BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
-                                            //                 GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);   
+                   //fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,
+                   //       enemy.modelPosition + enemy.Direction * enemy.radius * 1,
+                   //       Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                  // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius,enemy.radius/8);
+                  // BoundingSphere tempBS = new BoundingSphere(enemy.modelPosition, enemy.modelLen);
+                  // BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                  // BoundingSphereRenderer.Render(tempBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 if (enemy.isSelected)
                    {
-                       BoundingSphereRenderer.Render3dCircle(directionSphere.Center,directionSphere.Radius/1.75f, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Blue);
-                       BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
-                                                          GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   //    BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
+                            //                              GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                    }
-                    
               }
             base.Draw(gameTime);
         }

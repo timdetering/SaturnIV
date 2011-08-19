@@ -51,6 +51,7 @@ namespace SaturnIV
         public List<Texture2D> objectThumbs = new List<Texture2D>();
         Ray currentMouseRay;
         RadarClass radar;
+        HealthBarClass bar;
         Color shipColor;
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
@@ -109,7 +110,8 @@ namespace SaturnIV
         {
             helperClass = new HelperClass();
             ourCamera = new Camera(screenCenterX, screenCenterY);
-            ourCamera.ResetCamera();            
+            ourCamera.ResetCamera();
+            cameraTargetVec3 = new Vector3(0, 3500, 0);
             rand = new Random();
 ////////////TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -117,6 +119,8 @@ namespace SaturnIV
             messageClass = new MessageClass();
             messagePos1 = new Vector2(screenCenterX - (graphics.PreferredBackBufferWidth / 4), screenCenterY
                           - (graphics.PreferredBackBufferHeight / 3));
+            bar = new HealthBarClass(this);
+            bar.Initialize();
             activeShipList = new List<newShipStruct>();
 ////////////Initialize Manager Classes
             modelManager = new ModelManager(this);
@@ -392,13 +396,13 @@ namespace SaturnIV
                     }
             }
             if (keyboardState.IsKeyDown(Keys.A))
-                cameraTargetVec3 += Vector3.Left * 40.0f;
+                cameraTargetVec3 += Vector3.Left * 120.0f;
             if (keyboardState.IsKeyDown(Keys.D))
-                cameraTargetVec3 += Vector3.Right * 40.0f;
+                cameraTargetVec3 += Vector3.Right * 120.0f;
             if (keyboardState.IsKeyDown(Keys.W))
-                cameraTargetVec3 += Vector3.Forward * 40.0f;
+                cameraTargetVec3 += Vector3.Forward * 120.0f;
             if (keyboardState.IsKeyDown(Keys.S))
-                cameraTargetVec3 += Vector3.Backward * 40.0f;
+                cameraTargetVec3 += Vector3.Backward * 120.0f;
   
             if (currentTime - lastKeyPressTime > 100)
             {
@@ -570,24 +574,37 @@ namespace SaturnIV
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
-                    spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
-                    spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
+                    if (!isEditMode)
+                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
+                    if (!isEditMode)
+                        spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
                     if (enemy.isSelected)
                     {
+                        int starty = 600;
                         int timerIndex = 0;
+                        double hbarValue;
+                        int hbarwidth = 100;
                         buffer = new StringBuilder();
                         foreach (WeaponModule thisMod in enemy.weaponArray)
                         {
-                                buffer.AppendLine(thisMod.weaponType + "");
-                                foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
-                                {
-                                        double currentTime = enemy.regenTimer[timerIndex] - gameTime.TotalGameTime.TotalMilliseconds;
-                                        buffer.AppendLine(currentTime + "  "+ weaponDefList[(int)thisMod.weaponType].regenTime);
+                            buffer = new StringBuilder();
+                            buffer.AppendLine(thisMod.weaponType + "");
+                            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty-18), Color.White);
+                            foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
+                            {
+                                    double currentTime = gameTime.TotalGameTime.TotalMilliseconds - enemy.regenTimer[timerIndex];
+                                    if (enemy.regenTimer[timerIndex] == 0)
+                                        currentTime = 0;
+                                        hbarValue = currentTime / weaponDefList[(int)thisMod.weaponType].regenTime * 100;
                                         timerIndex++;
+                                        hbarValue = hbarValue / hbarwidth * 100;
+                                        if (hbarValue > hbarwidth) hbarValue = hbarwidth;
+                                        bar.DrawHbar(gameTime, spriteBatch, Color.Red, 10, starty, hbarwidth, 10, hbarwidth);
+                                        bar.DrawHbar(gameTime, spriteBatch, Color.Blue, 10, starty, hbarwidth, 10, (int)hbarValue);
+                                        starty += 20;
                                 }
-
+                            starty += 10;
                         }
-                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), new Vector2(25,600), Color.White);
                     }
             }
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);

@@ -59,6 +59,9 @@ namespace SaturnIV
             thisShip.thrustAmount = 1.0f;
             thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);
 
+            if (thisShip.currentDisposition == disposition.moving)
+                thisShip.targetPosition = thisShip.wayPointPosition;
+
               // Squad AI Stuff
             thisShip.thrustAmount = 0.95f;
             if (boidList != null && otherShip == boidList.leader && thisShip != boidList.leader)
@@ -112,7 +115,7 @@ namespace SaturnIV
                         }
  
                 /// Engaging
-                if (thisShip.team != otherShip.team && !thisShip.isEvading)
+                if (thisShip.team != otherShip.team && !thisShip.isEvading &&thisShip.currentDisposition != disposition.moving)
                 {
                     if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
                     {
@@ -128,7 +131,11 @@ namespace SaturnIV
             }
 
             if (thisShip.currentDisposition == disposition.defensive)
-                thisShip.thrustAmount = 0.0f; 
+                thisShip.thrustAmount = 0.0f;            
+
+            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,100)))
+                thisShip.currentDisposition = disposition.engaging;
+                
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,

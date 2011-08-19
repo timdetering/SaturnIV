@@ -23,7 +23,7 @@ namespace SaturnIV
 
         private float yaw, pitch, roll;
         private float speed;
-        public static float zoomFactor = 0.25f;
+        public static float zoomFactor = 0.50f;
         private int mscreenMiddleX, mscreenMiddleY;
 
         public Matrix cameraRotation;
@@ -77,8 +77,8 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 10.0)
-                zoomFactor += (WheelVal * 0.10f);
+                if (zoomFactor < 5.0)
+                zoomFactor += (WheelVal * 0.20f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -87,7 +87,7 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
                 
-                 if (zoomFactor >0.10)
+                 if (zoomFactor > 0.30)
                      zoomFactor -= (WheelVal * -0.10f);
             }
 
@@ -102,10 +102,8 @@ namespace SaturnIV
                     Mouse.SetPosition(mscreenMiddleX, mscreenMiddleY);
                 }
             }
-
             mouseStatePrevious = mouseStateCurrent;
             keyboardStatePrevious = keyboardState;
-           
         }
 
         private void MoveCamera(Vector3 addedVector)

@@ -208,7 +208,7 @@ namespace SaturnIV
             tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
             tempData.objectClass = weaponDefList[(int)thisWeapon.weaponType].wClass;
             tempData.range = thisWeapon.weaponRange;//weaponDefList[(int)thisWeapon.weaponType].range;
-            tempData.objectColor = Color.Blue; // weaponDefList[0].weaponColor;
+            tempData.objectColor = Color.Green; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
             tempData.damageFactor = weaponDefList[(int)thisWeapon.weaponType].damageFactor;
             if (tempData.isProjectile)

@@ -66,7 +66,7 @@ namespace SaturnIV
             {
                // Vertices[i].Normal = Normal;
             }
-
+            color = Color.White;
             // Set the position and texture coordinate for each
             // vertex
             Vertices[0].Position = LowerLeft;
@@ -94,7 +94,7 @@ namespace SaturnIV
 
         public void DrawQuad(Matrix world,Matrix View, Matrix Projection,Quad quad)
         {
-            Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = false;
+            Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = true;
             quadEffect.World = world;
             quadEffect.View = View;
             quadEffect.Projection = Projection;

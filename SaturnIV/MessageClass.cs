@@ -11,6 +11,7 @@ namespace SaturnIV
     {
         StringBuilder messageBuffer = new StringBuilder();
         public static List<String> messageLog = new List<string>();
+        int maxLines = 10;
 
         public void sendSystemMsg(SpriteFont spriteFont,SpriteBatch spriteBatch,string myMessage, Vector2 systemMessagePos)                         
         {
@@ -23,6 +24,8 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.MediumSlateBlue);
             //systemMessagePos.Y += 10;
             spriteBatch.End();
+            if (messageLog.Count > maxLines)
+                messageLog.Remove(messageLog[0]);
         }
     }
 }

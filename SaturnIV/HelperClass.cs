@@ -79,7 +79,7 @@ namespace SaturnIV
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                            currentExpLocation, (float)rand.NextDouble());
-                            MessageClass.messageLog.Add("\n"+thisShipList[j].objectAlias + " is destroyed");
+                            MessageClass.messageLog.Add(thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
                          }                       
                         return true;
