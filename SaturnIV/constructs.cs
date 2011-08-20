@@ -94,6 +94,7 @@ namespace SaturnIV
         public bool ThrusterEngaged = false;
         public bool isVisable;
         public bool isSelected;
+        public bool isGroupSelected;
         public bool isEngaging;
         public bool isEvading;
         public bool isChasing;

@@ -57,10 +57,7 @@ namespace SaturnIV
             moduleCount = 0;
             Random rand = new Random();
             thisShip.thrustAmount = 1.0f;
-            thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);
-
-            if (thisShip.currentDisposition == disposition.moving)
-                thisShip.targetPosition = thisShip.wayPointPosition;
+            thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);            
 
               // Squad AI Stuff
             thisShip.thrustAmount = 0.95f;
@@ -129,6 +126,9 @@ namespace SaturnIV
                     cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
                         weaponDefList);
             }
+
+            if (thisShip.currentDisposition == disposition.moving)
+                thisShip.targetPosition = thisShip.wayPointPosition;
 
             if (thisShip.currentDisposition == disposition.defensive)
                 thisShip.thrustAmount = 0.0f;            

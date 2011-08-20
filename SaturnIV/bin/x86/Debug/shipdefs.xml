@@ -343,7 +343,7 @@
 	   -400 0 0  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>6200</weaponRange>
+	<weaponRange>16200</weaponRange>
 	<timer>0</timer>
         </Item>
 	<Item>
@@ -355,7 +355,7 @@
 	   -400 0 0  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>6200</weaponRange>
+	<weaponRange>16200</weaponRange>
 	<timer>0</timer>
         </Item>
       </AvailableWeapons>

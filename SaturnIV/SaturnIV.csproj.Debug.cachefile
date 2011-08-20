@@ -15,9 +15,11 @@ Content\textures\redtexture.xnb
 Content\effectslib.xnb
 Content\Models\Eriax_Destroyer.xnb
 Content\textures\smoke2.xnb
+Content\Models\plane.xnb
 Content\Models\sphere.xnb
 Content\Models\tbattlecrusier.xnb
 Content\textures\nebula2.xnb
+Content\Models\plane2.xnb
 Content\textures\spacescape_blue.xnb
 Content\Thrusters\NoiseVolume.xnb
 Content\Effects\BloomExtract.xnb
@@ -29,7 +31,6 @@ Content\textures\dummy.xnb
 Content\Miramonte.xnb
 Content\textures\fire.xnb
 Content\textures\skybox2.xnb
-Content\fx3_Panels_9F_0.xnb
 Content\Models\LRGMISSILE.xnb
 Content\textures\explo.xnb
 Content\Models\Ships\Fleet_MR-140_Viper.xnb
@@ -54,6 +55,7 @@ Content\Models\Eriax_Fighter_MK2.xnb
 Content\Models\SFV300.xnb
 Content\textures\planettexture2.xnb
 Content\textures\planettexture3.xnb
+Content\fx3_Panels_9F_1.xnb
 Content\Models\Fleet_KM100.xnb
 Content\textures\spacescape_green.xnb
 Content\effects.xnb

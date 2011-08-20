@@ -71,11 +71,12 @@ namespace SaturnIV
         public Effect effect;
         public Matrix cameraTarget;
         public Vector3 cameraTargetVec3;
+        public Model planisphere;
 
         SkySphere skySphere;
         RenderStarfield starField;
         VertexDeclaration vertexDeclaration;
-        public float gameSpeed = 5.0f;
+        public float gameSpeed = 10.0f;
 
         public renderTriangle firingArc;
         public Camera ourCamera;
@@ -111,7 +112,7 @@ namespace SaturnIV
             helperClass = new HelperClass();
             ourCamera = new Camera(screenCenterX, screenCenterY);
             ourCamera.ResetCamera();
-            cameraTargetVec3 = new Vector3(0, 3500, 0);
+            cameraTargetVec3 = new Vector3(0, 6000, 0);
             rand = new Random();
 ////////////TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -136,6 +137,7 @@ namespace SaturnIV
             InitializeStarFieldEffect();
             firingArc = new renderTriangle();
             editModeClass = new EditModeComponent(this);
+            editModeClass.Initialize(modelManager);
             ourExplosion = new ExplosionClass();
             ourExplosion.initExplosionClass(this);
             radar = new RadarClass(Content, "textures//redDotSmall", "textures//yellowDotSmall", "textures//blackDotLarge");
@@ -334,16 +336,16 @@ namespace SaturnIV
                         activeShipList.Add(newShip);
                     }
             }
+
             if (isLclicked && !isEditMode)
             {
                 isSelected = false;
                foreach (newShipStruct thisShip in activeShipList)
                    if (EditModeComponent.checkIsSelected(mouse3dVector, thisShip.modelBoundingSphere))
-                       if (thisShip.team == 0)
-                       {                           
+                   {
                            thisShip.isSelected = true;
                            isSelected = true;
-                       }
+                    }
                    else
                        thisShip.isSelected = false;
             }
@@ -420,12 +422,16 @@ namespace SaturnIV
                     isEditMode = false;
                 }
                 // Chat Mode Handler //
-                if (keyboardState.IsKeyDown(Keys.Tab) && !oldkeyboardState.IsKeyDown(Keys.Tab))
+                if (keyboardState.IsKeyDown(Keys.Tab))
                 {
                     if (isChat)
                         isChat = false;
                     else
+                    {
                         isChat = true;
+                        string msg = "Chat Mode On";
+                        messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
+                    }
                 }
                 else if (isChat)
                     chatMessage += helperClass.UpdateInput();
@@ -443,20 +449,22 @@ namespace SaturnIV
                 if (keyboardState.IsKeyDown(Keys.Space) && isEditMode)
                    saveClass.serializeClass(activeShipList);
 
-
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
                 {
                     isServer = true;
                     isClient = false;
+                    string msg = "Network: Server Mode";
+                    messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gServer.initializeServer();
                 }
                 else if (keyboardState.IsKeyDown(Keys.F2) && !isServer && !isClient)
                 {
                     isServer = false;
                     isClient = true;
+                    string msg = "Network:Client Mode";
+                    messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gClient.initializeNetwork();
-
                 }
                 lastKeyPressTime = currentTime;
             }
@@ -489,12 +497,11 @@ namespace SaturnIV
         {
             float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;
             graphics.GraphicsDevice.Clear(Color.Black);
-            
             //Draw Skybox and Starfield
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
             //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
-            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera);                             
+            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera);             
             foreach (newShipStruct npcship in activeShipList)
             {                
                 modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix,shipColor);
@@ -504,9 +511,7 @@ namespace SaturnIV
                 //    spriteBatch.Draw(objectThumbs[npcship.objectIndex], new Vector2(300, 10), Color.White);
                 //spriteBatch.End();
                 
-              //  npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                BoundingSphereRenderer.Render3dCircle(npcship.modelBoundingSphere.Center, npcship.modelBoundingSphere.Radius,
-                                       GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Black);
+              //  npcship.shipThruster.draw(ourCamera.viewMatrix, ourCamera.projectionMatrix)
 
                 if (isDebug)
                     debug(npcship);                
@@ -557,7 +562,8 @@ namespace SaturnIV
         }
 
         private void DrawHUDTargets(GameTime gameTime)
-        {          
+        {
+            bool isDone = false;
             StringBuilder messageBuffer = new StringBuilder(); 
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             Vector2 fontPos = new Vector2(0,0);
@@ -578,18 +584,23 @@ namespace SaturnIV
                         spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
                     if (!isEditMode)
                         spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
-                    if (enemy.isSelected)
+                    if (enemy.isSelected && !isDone)
                     {
+                        isDone = true;
                         int starty = 600;
                         int timerIndex = 0;
                         double hbarValue;
                         int hbarwidth = 100;
                         buffer = new StringBuilder();
+                        buffer.AppendLine(enemy.objectAlias + "");
+                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty - 38), 
+                            Color.White);
+                        
                         foreach (WeaponModule thisMod in enemy.weaponArray)
                         {
                             buffer = new StringBuilder();
                             buffer.AppendLine(thisMod.weaponType + "");
-                            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty-18), Color.White);
+                            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty-18), Color.Green);
                             foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
                             {
                                     double currentTime = gameTime.TotalGameTime.TotalMilliseconds - enemy.regenTimer[timerIndex];

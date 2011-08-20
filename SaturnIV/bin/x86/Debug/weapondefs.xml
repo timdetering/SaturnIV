@@ -75,7 +75,7 @@
       <Mass>0.25</Mass>
       <Thrust>1700</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>24</Scale>	  
+      <Scale>50</Scale>	  
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
@@ -92,7 +92,7 @@
       <Mass>0.25</Mass>
       <Thrust>1200</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>35</Scale>
+	  <Scale>75</Scale>
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	

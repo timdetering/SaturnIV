@@ -67,6 +67,8 @@ Content\Models\Lakerem_0.xnb
 Content\color_0.xnb
 Content\color_1.xnb
 Content\Models\3732_0.xnb
-Content\fx3_Panels_9F_0.xnb
 Content\Models\blu_0.xnb
 Content\Models\Ships\3732_0.xnb
+Content\fx3_Panels_9F_1.xnb
+Content\Models\plane.xnb
+Content\Models\plane2.xnb

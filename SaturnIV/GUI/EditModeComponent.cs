@@ -23,6 +23,8 @@ namespace SaturnIV
         private Line3D fLine;
         BoundingSphere directionSphere;
         Color sphereColor;
+        Color mouseOverColor;
+        Color mouseOverColor2;
         public bool ischangingDirection = false;
         public bool isDragging = false;
         public bool isGroupSelect = false;
@@ -30,7 +32,6 @@ namespace SaturnIV
         public bool isCameraSet = false;
         MouseState mouseOld;
         SpriteBatch spriteBatch;
-        string[] NameList;
         public static bool selected = false;
         MouseState prevMouseState;
         MouseState mouseCurrent;
@@ -40,8 +41,12 @@ namespace SaturnIV
         Vector3 mousePos;
         public Rectangle selectionRect;
         public BoundingBox selectionBB;
-        Vector3 mouse3dStart;
+        float lineFactor = 2000.00f;
         List<newShipStruct> selectedGroup = new List<newShipStruct>();
+        ModelManager modelManager;
+        Model planisphere;
+        Model crusierSphere;
+        float planisphereScale = 1.0f;
 
         public EditModeComponent(Game game)
             : base(game)
@@ -53,11 +58,14 @@ namespace SaturnIV
         /// Allows the game component to perform any initialization it needs to before starting
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
-        public override void Initialize()
+        public void Initialize(ModelManager ModelManager)
         {
             // TODO: Add your initialization code here
             //grid = new Grid(200, 700, Game.GraphicsDevice, Game);
-            //fLine = new Line3D(Game.GraphicsDevice);
+            modelManager = ModelManager;
+            planisphere = modelManager.LoadModel("Models/plane");
+            crusierSphere = modelManager.LoadModel("Models/plane2");
+            fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
             base.Initialize();
         }
@@ -78,8 +86,14 @@ namespace SaturnIV
             keyboardState = Keyboard.GetState();
 
             isDirectionSphere = checkIsSelected(mouse3dVector, directionSphere);
+
             if (isDirectionSphere)
+            {
                 isDragging = false;
+                mouseOverColor = Color.Yellow;
+            }
+            else
+                mouseOverColor = Color.White;
             if (isLClicked && !isDirectionSphere && !isGroupSelect)
             {
                 isDragging = false;
@@ -90,13 +104,18 @@ namespace SaturnIV
                     {
                         ourShip.isSelected = true;
                         selected = true;
-
-                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * ourShip.radius, ourShip.radius / 4);
+                        mouseOverColor2 = Color.Yellow;
+                        directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * lineFactor, 200);
                     }
                     else
+                    {
+                        mouseOverColor2 = Color.White;
                         ourShip.isSelected = false;
+                    }
+
                 }
             }
+
            //if (isLClicked && !isDirectionSphere && !isGroupSelect && !selected)
             //    Game1.cameraTarget = Matrix.CreateWorld(mouse3dVector, Vector3.Forward, Vector3.Up);
             if (isLDepressed && !isDirectionSphere && !isDragging)
@@ -114,7 +133,7 @@ namespace SaturnIV
                          isDragging = true;
                          ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
                          npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
-                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius;
+                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
                     }
                }
             }
@@ -134,7 +153,7 @@ namespace SaturnIV
                     if (ourShip.isSelected)
                     {
                         ourShip.targetPosition = mouse3dVector;
-                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * ourShip.radius;
+                        directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
                         npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
                         mouseOld = mouseCurrent;
                     }
@@ -160,23 +179,39 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-           // grid.drawLines();
+           // grid.drawLines()            
+
             foreach (newShipStruct enemy in shipList)
                {
-                   //fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius/2,
-                   //       enemy.modelPosition + enemy.Direction * enemy.radius * 1,
-                   //       Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                  // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * enemy.radius,enemy.radius/8);
-                  // BoundingSphere tempBS = new BoundingSphere(enemy.modelPosition, enemy.modelLen);
-                  // BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                  // BoundingSphereRenderer.Render(tempBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                   if (enemy.objectClass == ClassesEnum.Capitalship)
+                   {
+                       Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                       pMatrix *= Matrix.CreateScale(planisphereScale);
+                       modelManager.DrawModel(ourCamera, planisphere, pMatrix, Color.Blue);
+                   }
+                   else if (enemy.objectClass == ClassesEnum.Crusier)
+                   {
+                       Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                       pMatrix *= Matrix.CreateScale(planisphereScale);
+                       modelManager.DrawModel(ourCamera, crusierSphere, pMatrix, Color.Blue);
+                   }
+
+
+                 fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
+                          enemy.modelPosition + enemy.Direction * 900,
+                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                 // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * lineFactor,100);
+                //   BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
+                //   BoundingSphereRenderer.Render(tempBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor2);
                 if (enemy.isSelected)
                    {
-                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   //    BoundingSphereRenderer.Render3dCircle(enemy.modelBoundingSphere.Center, enemy.modelBoundingSphere.Radius,
-                            //                              GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
+                           ourCamera.projectionMatrix, mouseOverColor);
+                       BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
+                           ourCamera.projectionMatrix, Color.Yellow);
                    }
-              }
+
+              }           
             base.Draw(gameTime);
         }
         
@@ -184,7 +219,7 @@ namespace SaturnIV
                 BoundingSphere sphere)
         {
             MouseState currentState = Mouse.GetState();
-            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 7.5f);
+            BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 15f);
             if (sphere.Intersects(mouseSphere)) return true;
 
             return false;

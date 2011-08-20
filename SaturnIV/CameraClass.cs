@@ -23,7 +23,7 @@ namespace SaturnIV
 
         private float yaw, pitch, roll;
         private float speed;
-        public static float zoomFactor = 0.50f;
+        public static float zoomFactor = 0.25f;
         private int mscreenMiddleX, mscreenMiddleY;
 
         public Matrix cameraRotation;
