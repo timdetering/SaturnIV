@@ -139,13 +139,13 @@ namespace SaturnIV
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
-                    
+                    Matrix wMatrix = weapon.worldMatrix;
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.Begin();
                         laserEffect.CurrentTechnique.Passes[0].Begin();
-                        shader_matrices_combined[0] =  weapon.worldMatrix;
-                        shader_matrices_combined[1] =  weapon.worldMatrix * view * projection;
+                        shader_matrices_combined[0] = wMatrix;
+                        shader_matrices_combined[1] = wMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
                         effect_color.SetValue(laserColor.ToVector4());
                         effect_center_to_viewer.SetValue(Vector3.Up);

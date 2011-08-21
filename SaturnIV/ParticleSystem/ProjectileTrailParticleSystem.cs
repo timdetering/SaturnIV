@@ -50,11 +50,11 @@ namespace SaturnIV
             settings.MinRotateSpeed = 0;
             settings.MaxRotateSpeed = 0;
 
-            settings.MinStartSize = 20;
-            settings.MaxStartSize = 35;
+            settings.MinStartSize = 30;
+            settings.MaxStartSize = 45;
 
-            settings.MinEndSize = 20;
-            settings.MaxEndSize = 35;
+            settings.MinEndSize = 30;
+            settings.MaxEndSize = 45;
         }
     }
 }

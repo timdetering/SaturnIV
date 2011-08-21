@@ -5,7 +5,7 @@
       <FileName>Models//Eriax_Destroyer</FileName>
       <Type>Eriax Destroyer</Type>
       <Mass>8</Mass>
-      <Thrust>1600</Thrust>
+      <Thrust>3600</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.0</Agility>
@@ -54,7 +54,7 @@
       <FileName>Models//Eriax_Crusier</FileName>
       <Type>Eriax Battleship</Type>
       <Mass>14.0</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>4200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.00</Agility>
@@ -99,7 +99,7 @@
       <FileName>Models//Eriax_Light_Crusier</FileName>
       <Type>Eriax Light Crusier</Type>
       <Mass>7.0</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>3200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.00</Agility>
@@ -122,11 +122,11 @@
         4 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2000</weaponRange>
+	<weaponRange>8000</weaponRange>
 	<timer>0</timer>
       </Item>
       <Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 3
 	   -4 0 0 3
@@ -134,7 +134,7 @@
 	   -4 0 -10 2
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2000</weaponRange>
+	<weaponRange>6000</weaponRange>
 	<timer>0</timer>
       </Item>
       </AvailableWeapons>
@@ -143,8 +143,8 @@
 <Item>
       <FileName>Models//Eriax_Fighter_MK2</FileName>
       <Type>Eriax Fighter MK2</Type>
-      <Mass>2.0</Mass>
-      <Thrust>1400</Thrust>
+      <Mass>1.25</Mass>
+      <Thrust>3400</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>10.00</Agility>
@@ -157,8 +157,8 @@
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>150 4000 10000 200 50</EvadeDist>
-      <TargetPrefs>1 0.50 0.50 0.25 0.2</TargetPrefs>
-	  <Chase> 1 1 1 0 0</Chase>
+      <TargetPrefs>1 0.9 0.00 0.0 0.2</TargetPrefs>
+	  <Chase> 1 1 1 1 1</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -167,7 +167,7 @@
         4 0 0 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	 <weaponRange>700</weaponRange>
+	 <weaponRange>4700</weaponRange>
 	 <timer>0</timer>
       </Item>
       </AvailableWeapons>
@@ -176,8 +176,8 @@
 	<Item>
       <FileName>Models//Ships//Eriax_Heavy_Gunship</FileName>
       <Type>Eriax Heavy Gunship</Type>
-      <Mass>2.0</Mass>
-      <Thrust>1400</Thrust>
+      <Mass>1.75</Mass>
+      <Thrust>2400</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>10.00</Agility>
@@ -191,7 +191,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>700 1400 2000 200 50</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
-	  <Chase> 1 1 1 0 0</Chase>
+	  <Chase> 1 1 1 1 1</Chase>
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -217,8 +217,8 @@
     <Item>
       <FileName>Models//SFV300</FileName>
       <Type>SVF-300 Viper</Type>
-      <Mass>1.75</Mass>
-      <Thrust>1200</Thrust>
+      <Mass>1.25</Mass>
+      <Thrust>3500</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
       <Agility>8.0</Agility>
@@ -230,9 +230,9 @@
 	  <hullValue>200</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>500 2000 3500 200 50</EvadeDist>
-      <TargetPrefs>1 0.3 0.8 0.5 0.2</TargetPrefs>
-      <Chase> 1 1 1 1 0 </Chase>
+      <EvadeDist>500 8000 9000 200 50</EvadeDist>
+      <TargetPrefs>1 0.0 0.0 0.0 0.2</TargetPrefs>
+      <Chase> 1 1 1 1 1 </Chase>
       <AvailableWeapons>
 	<Item>
 		<weaponType>SRMH</weaponType>
@@ -240,8 +240,8 @@
 		-6 0 10 0 
 		 6 0 -10 0
 		</ModulePositionOnShip>
-		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2000</weaponRange>
+		 <FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+	<weaponRange>4000</weaponRange>
 	<timer>0</timer>
         </Item>
 	<Item>
@@ -251,7 +251,7 @@
 		-4 0 -10 0
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>7.5</FiringEnvelopeAngle>
-	<weaponRange>3000</weaponRange>
+	<weaponRange>6000</weaponRange>
 	<timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -260,8 +260,8 @@
 <Item>
       <FileName>Models//Ships//Fleet_Procyon_Class_Battlecrusier</FileName>
       <Type>Fleet Procyon Class Battlecrusier</Type>
-      <Mass>33</Mass>
-      <Thrust>1150</Thrust>
+      <Mass>20</Mass>
+      <Thrust>4150</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.25</Agility>
@@ -277,38 +277,50 @@
       <TargetPrefs>0.5 0.9 0.6 1 0.2 </TargetPrefs>
       <Chase>0 0 0 0 0</Chase>
       <AvailableWeapons>
-	<Item>
-	 <weaponType>SRMH</weaponType>
+	  <Item>
+	 <weaponType>PointDefense</weaponType>
 	 <ModulePositionOnShip>
-	    300 0 0 2
+	    200 0 0 0
+	   -200 0 0 1	   
 	   -200 0 0 2
-	   -200 0 0 3
-	    300 0 0 3
+	    200 0 0 3
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>20</FiringEnvelopeAngle>
-	<weaponRange>15200</weaponRange>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>4000</weaponRange>
+	<timer>0</timer>
+    </Item>
+	  <Item>
+	 <weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    200 0 0 2
+	   -200 0 0 3	   
+	   -200 0 0 2
+	    200 0 0 3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>4000</weaponRange>
 	<timer>0</timer>
     </Item>
 	<Item>
 	 <weaponType>LargeIon</weaponType>
 	 <ModulePositionOnShip>
 	    200 0 0  2
-		200 0 0  2
-		400 0 0  3
 	   -400 0 0  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>16200</weaponRange>
+	<weaponRange>26200</weaponRange>
 	<timer>0</timer>
     </Item>
 	<Item>
 	 <weaponType>MassDriver</weaponType>
 	 <ModulePositionOnShip>
-	     600 0 0  2
-		-600 0 0  3
+	     600 0 0  1
+		-100 0 0  3
+		 600 0 0  1
+		-100 0 0  2
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>12200</weaponRange>
+	<weaponRange>22200</weaponRange>
 	<timer>0</timer>
     </Item>
       </AvailableWeapons>
@@ -317,8 +329,8 @@
 <Item>
       <FileName>Models//Ships//Fleet_Auriga_Class_Crusier</FileName>
       <Type>Fleet Auriga Class Crusier</Type>
-      <Mass>25</Mass>
-      <Thrust>1350</Thrust>
+      <Mass>15</Mass>
+      <Thrust>4350</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>1.50</Agility>
@@ -331,31 +343,27 @@
 	  <shieldValue>600</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
       <EvadeDist>0 2000 2000 5000 0</EvadeDist>
-      <TargetPrefs>1 0.3 1 1 0.2 </TargetPrefs>
-      <Chase>0 0 0 0 1</Chase>
+      <TargetPrefs>0.9 0.3 1 0.8 0.2 </TargetPrefs>
+      <Chase>0 1 1 0 1</Chase>
       <AvailableWeapons>
 	<Item>
 	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
 	    200 0 0  2
-		200 0 0  2
-		400 0 0  3
 	   -400 0 0  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>16200</weaponRange>
+	<weaponRange>26200</weaponRange>
 	<timer>0</timer>
         </Item>
 	<Item>
 	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
 	    200 0 0  2
-		200 0 0  2
-		400 0 0  3
 	   -400 0 0  3
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>16200</weaponRange>
+	<weaponRange>26200</weaponRange>
 	<timer>0</timer>
         </Item>
       </AvailableWeapons>

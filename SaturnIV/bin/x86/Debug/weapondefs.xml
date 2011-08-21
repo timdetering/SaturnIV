@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
-    <Item>
+   <Item>
       <FileName>Models//basic_missile</FileName>
-      <Type>SRM</Type>
-      <Mass>0.75</Mass>
-      <Thrust>2200</Thrust>
+      <Type>PointDefense</Type>
+      <Mass>0.15</Mass>
+      <Thrust>4200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>8</Agility>
@@ -13,7 +13,24 @@
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>600</regenTime>
+      <regenTime>500</regenTime>
+      <damageFactor>3</damageFactor>
+      <range>5000</range>
+      <timeToLive>1000</timeToLive>	  
+    </Item>
+    <Item>
+      <FileName>Models//basic_missile</FileName>
+      <Type>SRM</Type>
+      <Mass>0.75</Mass>
+      <Thrust>8200</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>2</Scale>
+      <Agility>8</Agility>
+	  <BelongsTo>Fleet</BelongsTo>
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>1100</regenTime>
       <damageFactor>5</damageFactor>
       <range>1000</range>
       <timeToLive>1000</timeToLive>	  
@@ -22,7 +39,7 @@
       <FileName>Models//basic_missile</FileName>
       <Type>SRMH</Type>
       <Mass>0.50</Mass>
-      <Thrust>1700</Thrust>
+      <Thrust>4700</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>4</Agility>
@@ -30,7 +47,7 @@
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>600</regenTime>
+      <regenTime>1200</regenTime>
       <damageFactor>5</damageFactor>
       <range>1000</range>
       <timeToLive>1000</timeToLive>	  
@@ -39,7 +56,7 @@
       <FileName>Models//Fleet_KM100</FileName>
       <Type>LRM</Type>
       <Mass>0.75</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>3200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>4</Agility>
@@ -73,15 +90,15 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>AutoCannon</Type>
       <Mass>0.25</Mass>
-      <Thrust>1700</Thrust>
+      <Thrust>6700</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>50</Scale>	  
+      <Scale>100</Scale>	  
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
       <range>2000</range>       
 	  <timeToLive>1000</timeToLive>
@@ -90,7 +107,7 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>LargeIon</Type>
       <Mass>0.25</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>4400</Thrust>
       <SphereRadius>5</SphereRadius>      
 	  <Scale>75</Scale>
 	  <Agility>4</Agility>
@@ -98,7 +115,7 @@
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>600</regenTime>
+      <regenTime>1200</regenTime>
       <damageFactor>35</damageFactor>
       <range>1000</range>	
       <timeToLive>1000</timeToLive>	  
@@ -107,7 +124,7 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>MassDriver</Type>
       <Mass>0.25</Mass>
-      <Thrust>1200</Thrust>
+      <Thrust>3400</Thrust>
       <SphereRadius>5</SphereRadius>      
 	  <Scale>25</Scale>
 	  <Agility>4</Agility>
@@ -115,7 +132,7 @@
       <wClass>Beam</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>5000</regenTime>
+      <regenTime>4000</regenTime>
       <damageFactor>35</damageFactor>
       <range>6000</range>	
       <timeToLive>2000</timeToLive>	  

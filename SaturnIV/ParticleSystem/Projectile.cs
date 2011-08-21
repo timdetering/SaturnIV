@@ -25,7 +25,7 @@ namespace SaturnIV
     {
         #region Constants
 
-        const float trailParticlesPerSecond = 200;
+        const float trailParticlesPerSecond = 300;
         const int numExplosionParticles = 30;
         const int numExplosionSmokeParticles = 50;
         const float projectileLifespan = 1.5f;

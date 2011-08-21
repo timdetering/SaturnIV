@@ -43,7 +43,8 @@ namespace SaturnIV
         LRMH = 3,
         AutoCannon = 4,
         LargeIon = 5,
-        MassDriver = 6
+        MassDriver = 6,
+        PointDefense = 7
     }
 
     public class newShipStruct

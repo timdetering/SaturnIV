@@ -4,13 +4,145 @@
     <Item>
       <shipType>Fleet Procyon Class Battlecrusier</shipType>
       <shipName>Vanguard</shipName>
-      <shipPosition>1685.856 0 -1396.935</shipPosition>
+      <shipPosition>-14460.668 0 2357.912</shipPosition>
       <shipDirection>0 0 0</shipDirection>
     </Item>
     <Item>
-      <shipType>Fleet Auriga Class Crusier</shipType>
+      <shipType>SVF-300 Viper</shipType>
       <shipName>Vendetta</shipName>
-      <shipPosition>-2952.9126 0 1505.82739</shipPosition>
+      <shipPosition>-13701.3115 0 -10480.0156</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Ultima</shipName>
+      <shipPosition>-13796.4092 0 -7355.96045</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Relentless</shipName>
+      <shipPosition>-13574.5781 0 -8943.067</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Adamant</shipName>
+      <shipPosition>-8388.616 0 8591.28</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Stalker</shipName>
+      <shipPosition>-7883.174 0 9393.813</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Skyhook</shipName>
+      <shipPosition>-5480.34131 0 11488.9121</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>SVF-300 Viper</shipType>
+      <shipName>Reckoning</shipName>
+      <shipPosition>-6990.37158 0 10014.1143</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Heavy Gunship</shipType>
+      <shipName>Malice</shipName>
+      <shipPosition>-17609.2773 0 -6046.0127</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Heavy Gunship</shipType>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>-17163.4629 0 -3934.171</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Heavy Gunship</shipType>
+      <shipName>Nitsa</shipName>
+      <shipPosition>-12805.3789 0 6396.809</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Heavy Gunship</shipType>
+      <shipName>Kreiger</shipName>
+      <shipPosition>-12131.7852 0 7904.92041</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Hydra</shipName>
+      <shipPosition>12873.1172 0 -15237.8926</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Leonides</shipName>
+      <shipPosition>11998.0488 0 -14038.584</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Grey Wolf</shipName>
+      <shipPosition>11830.0146 0 -11494.749</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Freedom</shipName>
+      <shipPosition>15963.4541 0 -10585.5547</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Intrepid</shipName>
+      <shipPosition>17040.3867 0 -14070.6836</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Tyrant</shipName>
+      <shipPosition>17687.6055 0 -15141.6494</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Tecumseh</shipName>
+      <shipPosition>15036.5234 0 -17399</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Inexorable</shipName>
+      <shipPosition>14309.415 0 -14076.251</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Devastator</shipName>
+      <shipPosition>17915.88 0 -12816.73</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Fighter MK2</shipType>
+      <shipName>Vengeance</shipName>
+      <shipPosition>15090.0039 0 -15373.74</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Destroyer</shipType>
+      <shipName>Thunderflare</shipName>
+      <shipPosition>9356.983 0 -17436.4688</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+    </Item>
+    <Item>
+      <shipType>Eriax Destroyer</shipType>
+      <shipName>Red October</shipName>
+      <shipPosition>22495.248 0 -9734.77</shipPosition>
       <shipDirection>0 0 0</shipDirection>
     </Item>
   </Asset>

@@ -76,7 +76,7 @@ namespace SaturnIV
         SkySphere skySphere;
         RenderStarfield starField;
         VertexDeclaration vertexDeclaration;
-        public float gameSpeed = 10.0f;
+        public float gameSpeed = 5.0f;
 
         public renderTriangle firingArc;
         public Camera ourCamera;
@@ -446,7 +446,7 @@ namespace SaturnIV
                     systemMessagePos.Y += 10;
                 }
                 // Edit mode save Handler
-                if (keyboardState.IsKeyDown(Keys.Space) && isEditMode)
+                if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
                    saveClass.serializeClass(activeShipList);
 
                 // Turn on/off Server/Client Mode
@@ -578,8 +578,14 @@ namespace SaturnIV
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    buffer.AppendFormat("[" + enemy.currentDisposition + "]");
+                    if (enemy.currentTarget != null)
+                    {                     
+                        buffer.AppendFormat("[" + enemy.currentTarget.objectClass + "]");
+                        buffer.AppendFormat("[" + enemy.distanceFromTarget + "]");
+                        buffer.AppendFormat("[" + enemy.EvadeDist[(int)enemy.currentTarget.objectClass] + "]");
+                    }
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                     if (!isEditMode)
                         spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
                     if (!isEditMode)
