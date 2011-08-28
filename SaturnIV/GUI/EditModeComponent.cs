@@ -44,8 +44,18 @@ namespace SaturnIV
         float lineFactor = 2000.00f;
         List<newShipStruct> selectedGroup = new List<newShipStruct>();
         ModelManager modelManager;
-        Model planisphere;
-        Model crusierSphere;
+
+        /// <summary>
+        /// Load Tactical Map items
+        /// </summary>
+        Model redLargePlane;
+        Model redMediumPlane;
+        Model redSmallPlane;
+        Model blueLargePlane;
+        Model blueMediumPlane;
+        Model blueSmallPlane;
+
+
         float planisphereScale = 1.0f;
 
         public EditModeComponent(Game game)
@@ -61,10 +71,15 @@ namespace SaturnIV
         public void Initialize(ModelManager ModelManager)
         {
             // TODO: Add your initialization code here
-            //grid = new Grid(200, 700, Game.GraphicsDevice, Game);
+         //   grid = new Grid(20000, 17000, Game.GraphicsDevice, Game);
             modelManager = ModelManager;
-            planisphere = modelManager.LoadModel("Models/plane");
-            crusierSphere = modelManager.LoadModel("Models/plane2");
+            redLargePlane = modelManager.LoadModel("Models/tacmap_items/red_large_plane");
+            redMediumPlane = modelManager.LoadModel("Models/tacmap_items/red_medium_plane");
+            redSmallPlane = modelManager.LoadModel("Models/tacmap_items/red_small_plane");
+            blueLargePlane = modelManager.LoadModel("Models/tacmap_items/blue_large_plane");
+            blueMediumPlane = modelManager.LoadModel("Models/tacmap_items/blue_medium_plane");
+            blueSmallPlane = modelManager.LoadModel("Models/tacmap_items/blue_small_plane");
+
             fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
             base.Initialize();
@@ -179,30 +194,57 @@ namespace SaturnIV
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
         {
-           // grid.drawLines()            
-
+             //egrid.drawPoints(10);                       
             foreach (newShipStruct enemy in shipList)
-               {
-                   if (enemy.objectClass == ClassesEnum.Capitalship)
-                   {
-                       Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                       pMatrix *= Matrix.CreateScale(planisphereScale);
-                       modelManager.DrawModel(ourCamera, planisphere, pMatrix, Color.Blue);
-                   }
-                   else if (enemy.objectClass == ClassesEnum.Crusier)
-                   {
-                       Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                       pMatrix *= Matrix.CreateScale(planisphereScale);
-                       modelManager.DrawModel(ourCamera, crusierSphere, pMatrix, Color.Blue);
-                   }
-
-
-                 fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
-                          enemy.modelPosition + enemy.Direction * 900,
-                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+            {
+                if (enemy.team == 0)
+                {
+                    if (enemy.objectClass == ClassesEnum.Capitalship)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, blueLargePlane, pMatrix, Color.Blue);
+                    }
+                    else if (enemy.objectClass == ClassesEnum.Crusier)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, blueMediumPlane, pMatrix, Color.Blue);
+                    }
+                    else if (enemy.objectClass == ClassesEnum.Fighter)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, blueSmallPlane, pMatrix, Color.Blue);
+                    }
+                }
+                else
+                {
+                    if (enemy.objectClass == ClassesEnum.Capitalship)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, redLargePlane, pMatrix, Color.Blue);
+                    }
+                    else if (enemy.objectClass == ClassesEnum.Crusier)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, redMediumPlane, pMatrix, Color.Blue);
+                    }
+                    else if (enemy.objectClass == ClassesEnum.Fighter)
+                    {
+                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
+                        pMatrix *= Matrix.CreateScale(planisphereScale);
+                        modelManager.DrawModel(ourCamera, redSmallPlane, pMatrix, Color.Blue);
+                    }
+                }
+                 //fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
+                     //     enemy.modelPosition + enemy.Direction * 900,
+                      //    Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                  // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * lineFactor,100);
                 //   BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
-                //   BoundingSphereRenderer.Render(tempBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor2);
+                   BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 if (enemy.isSelected)
                    {
                        BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
@@ -211,7 +253,7 @@ namespace SaturnIV
                            ourCamera.projectionMatrix, Color.Yellow);
                    }
 
-              }           
+              }
             base.Draw(gameTime);
         }
         
@@ -225,7 +267,7 @@ namespace SaturnIV
             return false;
         }
 
-        public newShipStruct spawnNPC(NPCManager modelManager, Vector3 mouse3dVector, ref List<shipData> shipDefList,
+        public static newShipStruct spawnNPC(NPCManager modelManager, Vector3 mouse3dVector, ref List<shipData> shipDefList,
                                    GameTime gameTime, Camera ourCamera, string shipName, int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
@@ -264,8 +306,8 @@ namespace SaturnIV
             tempData.starboardFrustum = new BoundingFrustum(Matrix.Identity);
             tempData.radius = tempData.modelLen;
             tempData.modelBoundingSphere = new BoundingSphere(mouse3dVector, tempData.radius / 2);
-            tempData.shipThruster = new Athruster();
-            tempData.shipThruster.LoadContent(Game, spriteBatch);
+            //tempData.shipThruster = new Athruster();
+           // tempData.shipThruster.LoadContent(Game, spriteBatch);
             tempData.weaponArray = shipDefList[shipIndex].AvailableWeapons;
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;

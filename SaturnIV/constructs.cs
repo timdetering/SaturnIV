@@ -8,6 +8,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SaturnIV
 {
+    public enum PacketTypes
+    {
+        LOGIN,
+        MOVE,
+        WORLDSTATE,
+        GETOBJECTS,
+    }
+
     public enum disposition
     {        
         engaging = 0,
@@ -207,7 +215,7 @@ namespace SaturnIV
             Crusier = 1,
             Capitalship = 2,
             Carrier = 3,
-            Neutral = 4
+            Station = 4
         }
 
         public enum DirectionEnum

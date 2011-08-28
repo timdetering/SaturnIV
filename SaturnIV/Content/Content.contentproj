@@ -191,18 +191,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Shipyard_Alpha.FBX">
-      <Name>Shipyard_Alpha</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_Station.FBX">
       <Name>Fleet_Station</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Crusier.FBX">
-      <Name>Eriax_Crusier</Name>
+    <Compile Include="Models\Eriax_Light_Crusier.FBX">
+      <Name>Eriax_Light_Crusier</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -258,6 +253,56 @@
     </Compile>
     <Compile Include="Models\plane2.FBX">
       <Name>plane2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Heavy_Bomber.FBX">
+      <Name>Heavy_Bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Heavy_Bomber.FBX">
+      <Name>Heavy_Bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\SI-300.FBX">
+      <Name>SI-300</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\blue_large_plane.FBX">
+      <Name>blue_large_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\blue_medium_plane.FBX">
+      <Name>blue_medium_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\blue_small_plane.FBX">
+      <Name>blue_small_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\red_large_plane.FBX">
+      <Name>red_large_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\red_medium_plane.FBX">
+      <Name>red_medium_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\tacmap_items\red_small_plane.FBX">
+      <Name>red_small_plane</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Eriax_Crusier.FBX">
+      <Name>Eriax_Crusier</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>

@@ -4,16 +4,16 @@
    <Item>
       <FileName>Models//basic_missile</FileName>
       <Type>PointDefense</Type>
-      <Mass>0.15</Mass>
-      <Thrust>4200</Thrust>
+      <Mass>0.25</Mass>
+      <Thrust>7200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>8</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
-      <wClass>Missile</wClass>
+      <wClass>Cannon</wClass>
       <isProjectile>1</isProjectile>
-      <isHoming>0</isHoming>
-      <regenTime>500</regenTime>
+      <isHoming>1</isHoming>
+      <regenTime>300</regenTime>
       <damageFactor>3</damageFactor>
       <range>5000</range>
       <timeToLive>1000</timeToLive>	  
@@ -22,7 +22,7 @@
       <FileName>Models//basic_missile</FileName>
       <Type>SRM</Type>
       <Mass>0.75</Mass>
-      <Thrust>8200</Thrust>
+      <Thrust>7200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>8</Agility>
@@ -39,7 +39,7 @@
       <FileName>Models//basic_missile</FileName>
       <Type>SRMH</Type>
       <Mass>0.50</Mass>
-      <Thrust>4700</Thrust>
+      <Thrust>8000</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>2</Scale>
       <Agility>4</Agility>

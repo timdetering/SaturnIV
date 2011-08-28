@@ -29,7 +29,9 @@ namespace SaturnIV
                 saveMe.shipPosition = ship.modelPosition;
                 saveMe.shipDirection = ship.targetPosition;
                 saveMe.shipName = ship.objectAlias;
-                saveMe.shipType = ship.objectType;
+                saveMe.shipIndex = ship.objectIndex;
+                saveMe.side = ship.team;
+
                 saveList.Add(saveMe);
             }
 
@@ -42,10 +44,11 @@ namespace SaturnIV
     [Serializable]
     public struct saveObject
     {
-        public string shipType;
+        public int shipIndex;
         public string shipName;
         public Vector3 shipPosition;
         public Vector3 shipDirection;
+        public int side;
     }
 
     [Serializable]

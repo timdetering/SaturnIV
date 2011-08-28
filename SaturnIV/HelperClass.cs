@@ -142,7 +142,7 @@ namespace SaturnIV
             {
                 if (oldKeyboardState.IsKeyUp(key))
                 {
-                    if (key == Keys.Back) // overflows
+                    if (key == Keys.Back && textString.Length>1) // overflows
                         textString = textString.Remove(textString.Length - 1, 1);
                     else
                         if (key == Keys.Space)

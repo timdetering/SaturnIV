@@ -23,7 +23,7 @@ namespace SaturnIV
 
         private float yaw, pitch, roll;
         private float speed;
-        public static float zoomFactor = 0.25f;
+        public static float zoomFactor = 7f;
         private int mscreenMiddleX, mscreenMiddleY;
 
         public Matrix cameraRotation;
@@ -48,18 +48,18 @@ namespace SaturnIV
             desiredPosition = position;
             target = new Vector3();
             desiredTarget = target;
-            offsetDistance = new Vector3(0.0f, 1000.0f, 500.0f);
+            offsetDistance = new Vector3(0, 2000, 100);
             //offsetDistance = new Vector3(0, 0, 50);
 
             yaw = 0.0f;
             pitch = 0.0f;
             roll = 0.0f;
 
-            speed = .3f;
+            speed = .6f;
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(90.0f), 4.0f / 3.0f, 200f, 40000f);       
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(90.0f), 4.0f / 3.0f, 200f, 190000f);       
         }
 
         public void Update(Matrix chasedObjectsWorld)
@@ -77,8 +77,8 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 5.0)
-                zoomFactor += (WheelVal * 0.20f);
+                if (zoomFactor < 15.0)
+                zoomFactor += (WheelVal * 0.50f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -87,20 +87,13 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
                 
-                 if (zoomFactor > 0.30)
-                     zoomFactor -= (WheelVal * -0.10f);
+                 if (zoomFactor > 2.50)
+                     zoomFactor -= (WheelVal * -0.50f);
             }
 
             if (keyboardState.IsKeyDown(Keys.LeftShift))
             {
-                if (mouseStateCurrent != originalMouseState)
-                {
-                    float xDifference = mouseStateCurrent.X - originalMouseState.X;
-                    float yDifference = mouseStateCurrent.Y - originalMouseState.Y;
-                    yaw -=  (xDifference/2) * .01f;
-                    pitch -= (yDifference / 2) * .01f;
-                    Mouse.SetPosition(mscreenMiddleX, mscreenMiddleY);
-                }
+                position.Y = 10000;
             }
             mouseStatePrevious = mouseStateCurrent;
             keyboardStatePrevious = keyboardState;
@@ -163,7 +156,7 @@ namespace SaturnIV
                   //  offsetDistance = offsetDistance;
                     cameraRotation = Matrix.CreateRotationX(pitch) * Matrix.CreateRotationY(yaw) 
                             * Matrix.CreateFromAxisAngle(cameraRotation.Forward, roll);
-                    desiredPosition = Vector3.Transform(offsetDistance, cameraRotation) * zoomFactor;
+                    desiredPosition = Vector3.Transform(offsetDistance, cameraRotation) *zoomFactor;
                     desiredPosition += chasedObjectsWorld.Translation;
                     position = desiredPosition;
                     target = chasedObjectsWorld.Translation;

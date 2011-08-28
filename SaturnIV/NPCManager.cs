@@ -33,8 +33,8 @@ namespace SaturnIV
         double speedTime;
         float lastTime;
         float projection;
-        //disposition predisposition = new disposition();
         Random rand = new Random();
+        //disposition predisposition = new disposition();
        
         HelperClass helperClass = new HelperClass();
 
@@ -54,8 +54,8 @@ namespace SaturnIV
         {
             isSquad = false;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
-            moduleCount = 0;
-            Random rand = new Random();
+            moduleCount = 0;            
+            float distance = Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition);
             thisShip.thrustAmount = 1.0f;
             thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);            
 
@@ -69,7 +69,7 @@ namespace SaturnIV
                 }
 
                 //float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);                  
-                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < thisShip.EvadeDist[(int)otherShip.objectClass]
+                if (distance < thisShip.EvadeDist[(int)otherShip.objectClass]
                             && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
                 {
                     thisShip.targetPosition = thisShip.modelPosition + -thisShip.Direction + 
@@ -95,12 +95,19 @@ namespace SaturnIV
                 /// Engaging
                 if (thisShip.team != otherShip.team && !thisShip.isEvading &&  thisShip.currentDisposition != disposition.moving)
                 {
-                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
+                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] > thisShip.currentTargetLevel)
                     {
                         thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                         thisShip.currentTarget = otherShip;
                         thisShip.currentDisposition = disposition.engaging;
-                    }
+                    } //else
+                        if (thisShip.objectClass == ClassesEnum.Capitalship && otherShip.objectClass == ClassesEnum.Fighter
+                            && distance < 5000)
+                        {
+                            //thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                            thisShip.currentTarget = otherShip;
+                            thisShip.currentDisposition = disposition.engaging;
+                        }
                 }
 
                 if (thisShip.currentTarget != null && thisShip.currentTarget == otherShip)
@@ -316,12 +323,17 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-
         public void cycleWeapons(newShipStruct thisShip, newShipStruct otherShip, double currentTime, WeaponsManager weaponsManager,
            ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
         {
+            bool noFire = false;
             foreach (WeaponModule thisWeapon in thisShip.weaponArray)
             {
+                if (thisWeapon.weaponType == WeaponTypeEnum.MassDriver && thisShip.currentTarget.objectClass == ClassesEnum.Fighter)
+                    noFire = true;
+                else
+                    noFire = false;
+                if (!noFire)
                 for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                 {
                     if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
