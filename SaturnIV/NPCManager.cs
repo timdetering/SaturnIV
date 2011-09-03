@@ -46,7 +46,7 @@ namespace SaturnIV
         public NPCManager(Game game)
             : base(game)
         {
-                regentime = new double[100];
+                regentime = new double[500];
         }
 
         public void performAI(GameTime gameTime, ref WeaponsManager weaponsManager, ref ParticleSystem projectileTrailParticles,
@@ -95,21 +95,22 @@ namespace SaturnIV
                 /// Engaging
                 if (thisShip.team != otherShip.team && !thisShip.isEvading &&  thisShip.currentDisposition != disposition.moving)
                 {
-                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] > thisShip.currentTargetLevel)
+                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel 
+                        && distance < thisShip.engageDist[(int)otherShip.objectClass]*4)
                     {
                         thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                         thisShip.currentTarget = otherShip;
                         thisShip.currentDisposition = disposition.engaging;
                     } //else
-                        if (thisShip.objectClass == ClassesEnum.Capitalship && otherShip.objectClass == ClassesEnum.Fighter
-                            && distance < 5000)
-                        {
-                            //thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
-                            thisShip.currentTarget = otherShip;
-                            thisShip.currentDisposition = disposition.engaging;
-                        }
+                    if (thisShip.objectClass == ClassesEnum.Capitalship && otherShip.objectClass != ClassesEnum.Capitalship
+                          && distance < 5000)
+                    {
+                        //thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                        thisShip.currentTarget = otherShip;
+                        thisShip.currentDisposition = disposition.engaging;
+                    }
                 }
-
+                /// Too do Optimize
                 if (thisShip.currentTarget != null && thisShip.currentTarget == otherShip)
                     cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
                         weaponDefList);

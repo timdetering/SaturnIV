@@ -11,9 +11,10 @@ namespace SaturnIV
     public enum PacketTypes
     {
         LOGIN,
-        MOVE,
-        WORLDSTATE,
         GETOBJECTS,
+        UPDATE,
+        REMOVE,
+        ADD
     }
 
     public enum disposition
@@ -45,14 +46,14 @@ namespace SaturnIV
 
     public enum WeaponTypeEnum
     {
-        SRM = 0,
-        SRMH = 1,
-        LRM = 2,
-        LRMH = 3,
-        AutoCannon = 4,
-        LargeIon = 5,
-        MassDriver = 6,
-        PointDefense = 7
+        PointDefense = 0,
+        SRM = 1,
+        SRMH = 2,
+        LRM = 3,
+        LRMH = 4,
+        AutoCannon = 5,
+        LargeIon = 6,
+        MassDriver = 7,        
     }
 
     public class newShipStruct
@@ -109,6 +110,7 @@ namespace SaturnIV
         public bool isChasing;
         public float[] EvadeDist;
         public float[] TargetPrefs;
+        public float[] engageDist;
         public int[] ChasePrefs;
         public double lastWeaponFireTime;
         public WeaponModule[] weaponArray;
@@ -176,7 +178,8 @@ namespace SaturnIV
         public int ShieldRegenTime;
         public float[] EvadeDist;
         public float[] TargetPrefs;
-        public int[] Chase;
+        public int[] ChasePrefs;
+        public float[] EngageDist;
         public WeaponModule[] AvailableWeapons;
         public Vector3 ThrusterPosition;
     }

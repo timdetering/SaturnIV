@@ -59,7 +59,6 @@ namespace SaturnIV
                 verticalStartY += 20;
                 menuShipList.Add(tempItem);
             }
-           
         }
 
         public void buildTeamMenu()
@@ -67,7 +66,7 @@ namespace SaturnIV
             horizontalStartX = 500;
             verticalStartY = 25;
             MenuItem tempItem = new MenuItem();
-            tempItem.itemText = "Fleet";
+            tempItem.itemText = "Earth Alliance";
             tempItem.itemIndex = 0;
             tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 100, 20);
             verticalStartY += 20;

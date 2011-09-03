@@ -5,15 +5,15 @@ Content\textures\spark.xnb
 Content\textures\nebula2.xnb
 Content\Thrusters\Thrust.xnb
 Content\textures\explosion.xnb
+Content\Models\3732_0.xnb
 Content\Models\tacmap_items\blue_large_plane.xnb
-Content\textures\spacescape_blue.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\Models\Ships\3732.xnb
 Content\Effects\ParticleEffect.xnb
 Content\textures\skybox2.xnb
 Content\Models\Eriax_Fighter_MK2.xnb
 Content\Models\largeSphere.xnb
-Content\textures\smoke2.xnb
+Content\Models\Eriax_Destroyer.xnb
 Content\SmallFont.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\textures\dummy.xnb
@@ -32,7 +32,7 @@ Content\textures\fire.xnb
 Content\textures\spacescape_green.xnb
 Content\Models\basic_bullet.xnb
 Content\Effects\GaussianBlur.xnb
-Content\Models\3732_0.xnb
+Content\Miramonte.xnb
 Content\Models\SFV300.xnb
 Content\Models\Ships\3732_0.xnb
 Content\textures\smoke.xnb
@@ -46,8 +46,9 @@ Content\textures\redDotSmall.xnb
 Content\effectslib.xnb
 Content\hud.xnb
 Content\Effects\BloomExtract.xnb
-Content\textures\star.xnb
 Content\color_0.xnb
+Content\textures\star.xnb
+Content\textures\smoke2.xnb
 Content\Models\Eriax_Crusier.xnb
 Content\textures\planettexture2.xnb
 Content\hud_target.xnb
@@ -58,7 +59,7 @@ Content\textures\explo.xnb
 Content\MedFont.xnb
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\textures\planettexture1.xnb
-Content\Miramonte.xnb
+Content\textures\spacescape_blue.xnb
 Content\textures\starfield2.xnb
 Content\textures\missiletrack.xnb
 Content\Effects\BloomCombine.xnb
@@ -77,6 +78,5 @@ Content\fx3_Panels_9F_0.xnb
 Content\Effects\explosionEffect.xnb
 Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
 Content\Effects\pointsprites.xnb
-Content\Models\Eriax_Destroyer.xnb
 Content\effects.xnb
 Content\Models\Ships\Heavy_Bomber.xnb

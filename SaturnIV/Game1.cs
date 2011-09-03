@@ -33,6 +33,7 @@ namespace SaturnIV
         KeyboardState oldkeyboardState;
         public static MouseState mouseStateCurrent, mouseStatePrevious;
         bool isRclicked, isLclicked, isRdown, isLdown,isSelected;
+        int thisTeam;
         public static bool isTacmap;
         float mapScrollSpeed = 380f;
         Vector3 farpoint, nearpoint = new Vector3(0,0,0);
@@ -63,7 +64,7 @@ namespace SaturnIV
         public PlayerManager playerManager;
         public ModelManager modelManager;
         public WeaponsManager weaponsManager;
-        public List<shipData> shipDefList = new List<shipData>();
+        public static List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
         public SaveClass saveClass;
         public RandomNames rNameList = new RandomNames();
@@ -239,7 +240,7 @@ namespace SaturnIV
             if (isServer)
                 gServer.update(ref activeShipList);
             if (isClient)
-                gClient.Update(ref activeShipList);
+                gClient.Update(ref activeShipList, ref npcManager);
 
             if (selectionRect != Rectangle.Empty)
                 RectangleSelect(activeShipList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, 
@@ -253,15 +254,18 @@ namespace SaturnIV
            //playerManager.updateShipMovement(gameTime,gameSpeed,Keyboard.GetState(),playerShip,ourCamera);
             for (int i = 0; i < activeShipList.Count; i++)
             {
-                if (activeShipList[i].squadNo >-1)
-                    thisSquad = squadList[activeShipList[i].squadNo];
-                else
-                    thisSquad = null;
-                for (int j = 0; j < activeShipList.Count; j++)
+                if (!isClient)
                 {
-                    if (activeShipList[j] != activeShipList[i])
-                        npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, 
-                                            activeShipList[i], activeShipList[j], j,thisSquad);
+                    if (activeShipList[i].squadNo > -1)
+                        thisSquad = squadList[activeShipList[i].squadNo];
+                    else
+                        thisSquad = null;
+                    for (int j = 0; j < activeShipList.Count; j++)
+                    {
+                        if (activeShipList[j] != activeShipList[i])
+                            npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
+                                                activeShipList[i], activeShipList[j], j, thisSquad);
+                    }
                 }
                 npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
             }
@@ -335,7 +339,7 @@ namespace SaturnIV
                         rNameList.capitalShipNames.Remove(tmpShipName);
                         messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
                         newShipStruct newShip = EditModeComponent.spawnNPC(npcManager, mouse3dVector, ref shipDefList, 
-                            gameTime, ourCamera, tmpShipName, Gui.thisItem, Gui.thisTeam);
+                            tmpShipName, Gui.thisItem, Gui.thisTeam);
                         activeShipList.Add(newShip);
                     }
             }
@@ -488,6 +492,7 @@ namespace SaturnIV
                 {
                     isServer = true;
                     isClient = false;
+                    thisTeam = 0;
                     string msg = "Network: Server Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gServer.initializeServer();
@@ -496,6 +501,7 @@ namespace SaturnIV
                 {
                     isServer = false;
                     isClient = true;
+                    thisTeam = 1;
                     string msg = "Network:Client Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gClient.initializeNetwork();
@@ -563,7 +569,7 @@ namespace SaturnIV
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            if (isEditMode || isTacmap) editModeClass.Draw(gameTime, ref activeShipList, ourCamera);
+            if (isEditMode || isTacmap) editModeClass.Draw(gameTime, ref activeShipList, ourCamera,spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
 

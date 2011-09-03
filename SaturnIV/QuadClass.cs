@@ -31,7 +31,7 @@ namespace SaturnIV
 
     public void BeamClassInit(ContentManager Content)
     {
-            texture = Content.Load<Texture2D>("textures//dummy");
+            texture = Content.Load<Texture2D>("textures//redtexture");
             quadEffect = new BasicEffect( Game1.graphics.GraphicsDevice, null );
             quadEffect.EnableDefaultLighting();
             quadEffect.TextureEnabled = false;

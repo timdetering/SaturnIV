@@ -51,6 +51,7 @@ Content\Models\LRGMISSILE.xnb
 Content\Models\basic_bullet.xnb
 Content\Models\basic_missile.xnb
 Content\Models\Fleet_Station.xnb
+Content\Models\Eriax_Light_Crusier.xnb
 Content\Models\Fleet_SF101.xnb
 Content\Models\SFV300.xnb
 Content\Models\sphere.xnb
@@ -68,6 +69,7 @@ Content\Models\tacmap_items\blue_small_plane.xnb
 Content\Models\tacmap_items\red_large_plane.xnb
 Content\Models\tacmap_items\red_medium_plane.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
+Content\Models\Eriax_Crusier.xnb
 Content\Models\Ships\Eriax_Heavy_Gunship.xnb
 Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
 Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
@@ -78,5 +80,3 @@ Content\Models\3732_0.xnb
 Content\fx3_Panels_9F_0.xnb
 Content\Models\blu_0.xnb
 Content\Models\Ships\3732_0.xnb
-Content\Models\Eriax_Light_Crusier.xnb
-Content\Models\Eriax_Crusier.xnb

@@ -40,7 +40,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.98f;
+        private const float DragFactor = 0.97f;
 
         public static void set_mesh(ModelMesh mesh, GraphicsDevice device)
         {
@@ -109,8 +109,8 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed * 2);
-            thrustAmount = 1.0f;
+            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed * 0.25f);
+            thrustAmount = 1.5f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
             // Apply acceleration
@@ -208,7 +208,7 @@ namespace SaturnIV
             tempData.isHoming = weaponDefList[(int)thisWeapon.weaponType].isHoming;
             tempData.objectClass = weaponDefList[(int)thisWeapon.weaponType].wClass;
             tempData.range = thisWeapon.weaponRange;//weaponDefList[(int)thisWeapon.weaponType].range;
-            tempData.objectColor = Color.Green; // weaponDefList[0].weaponColor;
+            tempData.objectColor = Color.LightBlue; // weaponDefList[0].weaponColor;
             tempData.objectScale = weaponDefList[(int)thisWeapon.weaponType].Scale;
             tempData.damageFactor = weaponDefList[(int)thisWeapon.weaponType].damageFactor;
             if (tempData.isProjectile)

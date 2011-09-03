@@ -44,6 +44,7 @@ namespace SaturnIV
         float lineFactor = 2000.00f;
         List<newShipStruct> selectedGroup = new List<newShipStruct>();
         ModelManager modelManager;
+        Texture2D selectRecTex;
 
         /// <summary>
         /// Load Tactical Map items
@@ -79,6 +80,8 @@ namespace SaturnIV
             blueLargePlane = modelManager.LoadModel("Models/tacmap_items/blue_large_plane");
             blueMediumPlane = modelManager.LoadModel("Models/tacmap_items/blue_medium_plane");
             blueSmallPlane = modelManager.LoadModel("Models/tacmap_items/blue_small_plane");
+
+            selectRecTex = Game.Content.Load<Texture2D>("textures/SelectionBox");
 
             fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
@@ -117,8 +120,8 @@ namespace SaturnIV
                     checkResult = checkIsSelected(mouse3dVector, ourShip.modelBoundingSphere);
                     if (checkResult && isLClicked)
                     {
-                        ourShip.isSelected = true;
-                        selected = true;
+                        //ourShip.isSelected = true;
+                        //selected = true;
                         mouseOverColor2 = Color.Yellow;
                         directionSphere = new BoundingSphere(ourShip.modelPosition + ourShip.Direction * lineFactor, 200);
                     }
@@ -127,16 +130,19 @@ namespace SaturnIV
                         mouseOverColor2 = Color.White;
                         ourShip.isSelected = false;
                     }
-
                 }
             }
 
-           //if (isLClicked && !isDirectionSphere && !isGroupSelect && !selected)
-            //    Game1.cameraTarget = Matrix.CreateWorld(mouse3dVector, Vector3.Forward, Vector3.Up);
             if (isLDepressed && !isDirectionSphere && !isDragging)
             {
-         //     isGroupSelect = true;
-             // selectRectangle(mouseCurrent, mouse3dVector);
+              isGroupSelect = true;
+              selectRectangle(mouseCurrent, mouse3dVector);
+            }
+
+            if (!isLDepressed && isGroupSelect)
+            {
+                selectionRect = Rectangle.Empty;
+                isGroupSelect = false;
             }
    
             if (isLDepressed && !isDirectionSphere && !ischangingDirection)
@@ -152,10 +158,6 @@ namespace SaturnIV
                     }
                }
             }
-       //     else if (isLDepressed && !isDirectionSphere && !ischangingDirection && isGroupSelect)
-     //       {
-     //           
-     //       }
             else if ((isLDepressed && isDirectionSphere && !isDragging)
                       || (isLDepressed && ischangingDirection && !isDragging))
             {
@@ -185,16 +187,32 @@ namespace SaturnIV
                 selectionRect = Rectangle.Empty;
                 isGroupSelect = false;
             }
-           //if (isGroupSelect)
-               // RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
+           if (isGroupSelect)
+                RectangleSelect(objectList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix, selectionRect);
             mousePosOld = mousePos;
             prevMouseState = mouseCurrent;
             base.Update(gameTime);
         }
 
-        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera)
+        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera,SpriteBatch spriteBatch)
         {
-             //egrid.drawPoints(10);                       
+            //spriteBatch.Begin();
+            // We need to fix the selection rectangle in case one of its dimensions is negative
+
+            Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
+            if (r.Width < 0)
+            {
+                r.Width = -r.Width;
+                r.X -= r.Width;
+            }
+            if (r.Height < 0)
+            {
+                r.Height = -r.Height;
+                r.Y -= r.Height;
+            }
+            spriteBatch.Draw(selectRecTex, r, Color.White);
+            //spriteBatch.End();
+                    
             foreach (newShipStruct enemy in shipList)
             {
                 if (enemy.team == 0)
@@ -268,7 +286,7 @@ namespace SaturnIV
         }
 
         public static newShipStruct spawnNPC(NPCManager modelManager, Vector3 mouse3dVector, ref List<shipData> shipDefList,
-                                   GameTime gameTime, Camera ourCamera, string shipName, int shipIndex, int team)
+                                    string shipName, int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectIndex = shipIndex;
@@ -312,7 +330,8 @@ namespace SaturnIV
             tempData.currentWeapon = tempData.weaponArray[0];
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;
-            tempData.ChasePrefs = shipDefList[shipIndex].Chase;
+            tempData.ChasePrefs = shipDefList[shipIndex].ChasePrefs;
+            tempData.engageDist = shipDefList[shipIndex].EngageDist;
             tempData.squadNo = -1;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             //Build Bounding Frustrum for all Weapon Modules on ship
@@ -326,8 +345,32 @@ namespace SaturnIV
                 }
             tempData.regenTimer = new double[moduleCount];
 
-            modelManager.updateShipMovement(gameTime, 5.0f, tempData, ourCamera, true);
+            //modelManager.updateShipMovement(gameTime, 5.0f, tempData, ourCamera, true);
             return tempData;
         }
+        public Rectangle selectRectangle(MouseState mouseState, Vector3 mouse3d)
+        {
+            if (selectionRect == Rectangle.Empty)
+                selectionRect = new Rectangle((int)mouseState.X, (int)mouseState.Y, 0, 0);
+            else if (selectionRect != Rectangle.Empty)
+            {
+                selectionRect.Width = mouseState.X - selectionRect.X;
+                selectionRect.Height = mouseState.Y - selectionRect.Y;
+            } //else
+            return selectionRect;
+        }
+
+        public static void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
+        {
+            foreach (newShipStruct o in objectsList)
+            {
+                Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
+             //   if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
+             //       o.isSelected = true;
+             //   else
+             //       o.isSelected = false;
+            }
+        }
+
     }
 }

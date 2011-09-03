@@ -39,6 +39,22 @@ namespace SaturnIV
         {
             NetIncomingMessage msg;
             clientsConnected = server.ConnectionsCount;
+            if (clientsConnected > 0)
+            {
+                //////////////////////// Send ship Position UPDATES
+                NetOutgoingMessage updatemsg = server.CreateMessage();
+                updatemsg.Write((byte)PacketTypes.ADD);
+                updatemsg.Write(shipList.Count);
+                foreach (newShipStruct ship in shipList)
+                {
+                    updatemsg.Write(ship.thrustAmount);
+                    updatemsg.Write(ship.targetPosition.X);
+                    updatemsg.Write(ship.targetPosition.Y);
+                    updatemsg.Write(ship.targetPosition.Z);
+                }
+                server.SendMessage(updatemsg, server.Connections[0], NetDeliveryMethod.ReliableOrdered, 0);
+            }
+
             while ((msg = server.ReadMessage()) != null)
             {
                 switch (msg.MessageType)
@@ -47,32 +63,11 @@ namespace SaturnIV
                         MessageClass.messageLog.Add("step1");
                         break;
                     case NetIncomingMessageType.Data:
-                        MessageClass.messageLog.Add("step2");
                         if (msg.ReadByte() == (byte)PacketTypes.GETOBJECTS)
                         {
-                            MessageClass.messageLog.Add("Incoming Connection");
-
-                            // Approve clients connection ( Its sort of agreenment. "You can be my client and i will host you" )
-                            //msg.SenderConnection.Approve();
-
-                            // Init random
-                            Random r = new Random();
-
-                            // Add new character to the game.
-                            // It adds new player to the list and stores name, ( that was sent from the client )
-                            // Random x, y and stores client IP+Port
-                            //GameWorldState.Add(new Character(inc.ReadString(), r.Next(1, 40), r.Next(1, 20), inc.SenderConnection));
-
-                            // Create message, that can be written and sent
+                            MessageClass.messageLog.Add("Incoming Connection..Sending Data");
                             NetOutgoingMessage outmsg = server.CreateMessage();
-                           // if (!isFetched)
-                           // {
-                                outmsg.Write((byte)PacketTypes.GETOBJECTS);
-                            //   isFetched = true;
-                            //}
-
-
-                            // then int
+                            outmsg.Write((byte)PacketTypes.GETOBJECTS);
                             outmsg.Write(shipList.Count);
 
                             foreach (newShipStruct ship in shipList)
@@ -80,15 +75,15 @@ namespace SaturnIV
                                 sendMe = new saveObject();
                                 sendMe.shipPosition = ship.modelPosition;
                                 sendMe.shipDirection = ship.targetPosition;
-                                sendMe.shipName = ship.objectAlias;                                
+                                sendMe.shipName = ship.objectAlias;
                                 sendMe.side = ship.team;
                                 sendMe.shipIndex = ship.objectIndex;
                                 outmsg.Write(sendMe.shipName);
                                 outmsg.Write(sendMe.shipIndex);
+                                outmsg.Write(sendMe.side);
                                 outmsg.Write(sendMe.shipPosition.X);
                                 outmsg.Write(sendMe.shipPosition.Y);
                                 outmsg.Write(sendMe.shipPosition.Z);
-                                MessageClass.messageLog.Add("Sending" + sendMe.shipName);
                             }
                             // Send message/packet to all connections, in reliably order, channel 0
                             // Reliably means, that each packet arrives in same order they were sent. Its slower than unreliable, but easyest to understand
@@ -96,8 +91,7 @@ namespace SaturnIV
 
                             // Debug
                             MessageClass.messageLog.Add("Approved new connection and updated the world status");
-                        }
-
+                        }                            
                         break;
                     default:
                         Console.WriteLine(msg.ReadString());
@@ -106,10 +100,11 @@ namespace SaturnIV
                     //    fromClient += msg.ReadString();
                     //    MessageClass.messageLog.Add("Client:" + fromClient);
                     //    break;
-                }
+                }                
                 server.Recycle(msg);
-            }
+            }           
         }
+
         public void SendChat(String send)
         {
             if (send != null)
