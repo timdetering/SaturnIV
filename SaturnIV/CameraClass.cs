@@ -87,7 +87,7 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
                 
-                 if (zoomFactor > 2.50)
+                 if (zoomFactor > 1.50)
                      zoomFactor -= (WheelVal * -0.50f);
             }
 

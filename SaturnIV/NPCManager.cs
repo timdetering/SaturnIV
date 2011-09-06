@@ -70,7 +70,7 @@ namespace SaturnIV
 
                 //float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);                  
                 if (distance < thisShip.EvadeDist[(int)otherShip.objectClass]
-                            && thisShip.angleOfAttack > 1.00 && thisShip.angleOfAttack < 1.99 && !thisShip.isEvading)
+                    && thisShip.angleOfAttack > 0.75 && thisShip.angleOfAttack < 2.99 && !thisShip.isEvading)
                 {
                     thisShip.targetPosition = thisShip.modelPosition + -thisShip.Direction + 
                             HelperClass.RandomDirection() * thisShip.modelLen * 50;
@@ -121,31 +121,26 @@ namespace SaturnIV
             if (thisShip.currentDisposition == disposition.defensive)
                 thisShip.thrustAmount = 0.10f;            
 
-            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,100)))
+            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,200)))
                 thisShip.currentDisposition = disposition.engaging;
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
                                       Camera ourCamera, bool isEdit)
         {
-           //thisShip.targetPosition = Vector3.Normalize(thisShip.targetPosition);
-            thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);// / 
-               //                     //Vector3.Distance(thisShip.targetPosition, thisShip.modelPosition);
+            thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             turningSpeed *= thisShip.objectAgility * gameSpeed;
 
             if (isEdit)
                 thisShip.thrustAmount = 0.0f;
-
             if (isEdit)
                 thisShip.Direction = thisShip.vecToTarget;
             else
-            {
-                //thisShip.angleOfAttack = Vector3.Dot(thisShip.Direction, thisShip.vecToTarget);
-                thisShip.Direction = Vector3.Normalize(Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, turningSpeed * 0.15f));
-              
-            }
+                thisShip.Direction = Vector3.Normalize(Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 
+                                      turningSpeed * 0.15f));
+
             thisShip.modelRotation.Forward = thisShip.Direction;
 
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);

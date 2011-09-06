@@ -33,7 +33,7 @@ namespace SaturnIV
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            mHealthBar = Game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
+            mHealthBar = Game.Content.Load<Texture2D>("textures//hbartex") as Texture2D;
             base.Initialize();
         }
 

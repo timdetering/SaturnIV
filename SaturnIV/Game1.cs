@@ -45,7 +45,7 @@ namespace SaturnIV
         Texture2D rectTex, shipRec, selectRecTex,dummyTex;
         MessageClass messageClass;
         Vector2 messagePos1 = new Vector2(0,0);
-        public Vector2 systemMessagePos = new Vector2(30,20);
+        public Vector2 systemMessagePos = new Vector2(10,100);
         public StringBuilder messageBuffer = new StringBuilder();
         public static List<string> messageLog = new List<string>();
         public Vector3[] plyonOffset;
@@ -206,7 +206,7 @@ namespace SaturnIV
             foreach (shipData thisShip in shipDefList)
                 objectThumbs.Add(this.Content.Load<Texture2D>(thisShip.ThumbFileName));
             foreach (shipData thisShip in shipDefList)
-                Content.Load<Model>(thisShip.FileName);
+                 Content.Load<Model>(thisShip.FileName);
         }
        
         /// <summary>
@@ -418,7 +418,7 @@ namespace SaturnIV
 
             if (isChat) typeSpeed = 50;
             else
-                typeSpeed = 125;
+                typeSpeed = 150;
 
             if (currentTime - lastKeyPressTime > typeSpeed)
             {
@@ -428,13 +428,15 @@ namespace SaturnIV
                     mapScrollSpeed = 1000;
                     cameraTargetVec3.Y = 90000;
                     Camera.zoomFactor = 5.0f;
+                    messageClass.sendSystemMsg(spriteFont, spriteBatch, "Tactical Map On", systemMessagePos);
                 }
                 else
                     if (keyboardState.IsKeyDown(Keys.Z) && isTacmap && !isChat)
                     {
                         isTacmap = false;
                         mapScrollSpeed = 500f;
-                        cameraTargetVec3.Y = 10000;
+                        cameraTargetVec3.Y = 8000;
+                        messageClass.sendSystemMsg(spriteFont, spriteBatch, "Tactical Map Off", systemMessagePos);
                     } 
 
                 if (keyboardState.IsKeyDown(Keys.E) && !isEditMode && !isChat)
@@ -480,8 +482,9 @@ namespace SaturnIV
                         gClient.SendChat(chatMessage);
                     if (isServer)
                         gServer.SendChat(chatMessage);
+                    messageClass.sendSystemMsg(spriteFont, spriteBatch, chatMessage, systemMessagePos);
                     chatMessage = "";
-                    systemMessagePos.Y += 10;
+                    //systemMessagePos.Y += 10;
                 }
                 // Edit mode save Handler
                 if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
@@ -564,7 +567,7 @@ namespace SaturnIV
             }            
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);           
             // Start HUD and other 2d stuff
-            DrawHUD(gameTime);
+            //DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -572,7 +575,6 @@ namespace SaturnIV
             if (isEditMode || isTacmap) editModeClass.Draw(gameTime, ref activeShipList, ourCamera,spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
-
                 spriteBatch.Begin();
                 // We need to fix the selection rectangle in case one of its dimensions is negative
                 
@@ -589,7 +591,6 @@ namespace SaturnIV
                 }
                 spriteBatch.Draw(selectRecTex, r, Color.White);
                 spriteBatch.End();
-       //     }
             messageClass.sendSystemMsg(spriteFont, spriteBatch,null, systemMessagePos);
             base.Draw(gameTime); messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
         }
@@ -611,14 +612,17 @@ namespace SaturnIV
                     StringBuilder buffer = new StringBuilder();
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    if (enemy.currentTarget != null)
-                    {                     
-                        buffer.AppendFormat("[" + enemy.currentTarget.objectClass + "]");
-                        //buffer.AppendFormat("[" + enemy.distanceFromTarget + "]");
-                       // buffer.AppendFormat("[" + enemy.EvadeDist[(int)enemy.currentTarget.objectClass] + "]");
+                    if (isDebug)
+                    {
+                        if (enemy.currentTarget != null)
+                        {
+                            buffer.AppendFormat("[" + enemy.currentTarget.objectClass + "]");
+                            //buffer.AppendFormat("[" + enemy.distanceFromTarget + "]");
+                            // buffer.AppendFormat("[" + enemy.EvadeDist[(int)enemy.currentTarget.objectClass] + "]");
+                        }
+                        buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
+                        buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
                     }
-                    buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
-                    buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                    // if (!isEditMode)
                         spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
                      if (!isEditMode)
@@ -632,14 +636,14 @@ namespace SaturnIV
                         int hbarwidth = 100;
                         buffer = new StringBuilder();
                         buffer.AppendLine(enemy.objectAlias + "");
-                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty - 38), 
+                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty - 38), 
                             Color.White);
                         
                         foreach (WeaponModule thisMod in enemy.weaponArray)
                         {
                             buffer = new StringBuilder();
                             buffer.AppendLine(thisMod.weaponType + "");
-                            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(15, starty-18), Color.Green);
+                            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty-18), Color.Green);
                             foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
                             {
                                     double currentTime = gameTime.TotalGameTime.TotalMilliseconds - enemy.regenTimer[timerIndex];
@@ -649,8 +653,8 @@ namespace SaturnIV
                                         timerIndex++;
                                         hbarValue = hbarValue / hbarwidth * 100;
                                         if (hbarValue > hbarwidth) hbarValue = hbarwidth;
-                                        bar.DrawHbar(gameTime, spriteBatch, Color.Red, 10, starty, hbarwidth, 10, hbarwidth);
-                                        bar.DrawHbar(gameTime, spriteBatch, Color.Blue, 10, starty, hbarwidth, 10, (int)hbarValue);
+                                        bar.DrawHbar(gameTime, spriteBatch, Color.Red, 1100, starty, hbarwidth, 10, hbarwidth);
+                                        bar.DrawHbar(gameTime, spriteBatch, Color.LightBlue, 1100, starty, hbarwidth, 10, (int)hbarValue);
                                         starty += 20;
                                 }
                             starty += 10;

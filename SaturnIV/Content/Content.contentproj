@@ -166,11 +166,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Miramonte.spritefont">
-      <Name>Miramonte</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </Compile>
     <Compile Include="Models\LRGMISSILE.FBX">
       <Name>LRGMISSILE</Name>
       <Importer>FbxImporter</Importer>
@@ -193,11 +188,6 @@
     </Compile>
     <Compile Include="Models\Fleet_Station.FBX">
       <Name>Fleet_Station</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Eriax_Light_Crusier.FBX">
-      <Name>Eriax_Light_Crusier</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -236,11 +226,6 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Destroyer.FBX">
-      <Name>Eriax_Destroyer</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Ships\Fleet_MR-140_Viper.FBX">
       <Name>Fleet_MR-140_Viper</Name>
       <Importer>FbxImporter</Importer>
@@ -253,11 +238,6 @@
     </Compile>
     <Compile Include="Models\plane2.FBX">
       <Name>plane2</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Heavy_Bomber.FBX">
-      <Name>Heavy_Bomber</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -301,16 +281,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Crusier.FBX">
-      <Name>Eriax_Crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <None Include="neuropol.spritefont">
-      <Name>neuropol</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-    </None>
     <Compile Include="textures\spacescape_green.dds">
       <Name>spacescape_green</Name>
       <Importer>TextureImporter</Importer>
@@ -462,6 +432,34 @@
       <Name>3732</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\hbartex.png">
+      <Name>hbartex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Ares_Battlecrusier.FBX">
+      <Name>Ares_Battlecrusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Eriax_Crusier.FBX">
+      <Name>Eriax_Crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Eriax_Frigate.FBX">
+      <Name>Eriax_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

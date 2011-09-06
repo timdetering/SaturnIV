@@ -329,7 +329,6 @@ D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Conte
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\nebula2.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\Thrust.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\explosion.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\3732_0.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\missiletrack.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\ParticleEffect.xnb
@@ -347,9 +346,6 @@ D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Conte
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\yellowDotSmall.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\fire.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\spacescape_green.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Eriax_Destroyer.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Miramonte.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\blu_0.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\SFV300.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Fleet_Station.xnb
@@ -405,7 +401,6 @@ C:\Documents and Settings\bhaase\My Documents\scsi\Saturn-IV\SaturnIV\obj\x86\De
 C:\Documents and Settings\bhaase\My Documents\scsi\Saturn-IV\SaturnIV\obj\x86\Debug\scsi.pdb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\plane.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\plane2.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Heavy_Bomber.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SI-300.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Heavy_Bomber.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_large_plane.xnb
@@ -416,5 +411,8 @@ D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Conte
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_small_plane.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\fx3_Panels_9F_0.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Eriax_Light_Crusier.xnb
-D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Eriax_Crusier.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\hbartex.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Ares_Battlecrusier.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax_Crusier.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax_Frigate.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\blu_0.xnb
