@@ -228,7 +228,7 @@ namespace SaturnIV
                 updateObjects(gameTime);
             else
             {
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isLdown,
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
                     ref npcManager, ourCamera,ref viewport);
                 Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
@@ -320,7 +320,7 @@ namespace SaturnIV
                 isRdown = false;
             }
 
-            if (isRclicked && isEditMode)
+            if (isRclicked && isEditMode && !EditModeComponent.isSelecting)
             {
                 isInvalidArea = false;
                 potentialTarget = null;

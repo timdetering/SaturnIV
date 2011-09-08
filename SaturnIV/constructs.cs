@@ -76,6 +76,7 @@ namespace SaturnIV
         public float radius;
         public Matrix worldMatrix;
         public Vector3 modelPosition;
+        public Vector3 editModeOffset;
         public Matrix modelRotation;
         public BoundingSphere modelBoundingSphere;
         public BoundingBox modelBB;
