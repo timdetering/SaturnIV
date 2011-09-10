@@ -604,10 +604,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Heavy_Bomber.xnb</Output>
-      <Time>2011-08-21T19:27:13.9375-05:00</Time>
+      <Time>2011-09-09T18:52:20.7060547-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Heavy_Bomber_0.xml</Key>
-        <Value>2011-09-01T21:52:23.5761718-05:00</Value>
+        <Value>2011-09-09T18:52:25.477539-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -722,10 +722,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb</Output>
-      <Time>2011-09-03T12:04:34.3320312-05:00</Time>
+      <Time>2011-09-09T18:51:01.6953125-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet_Auriga_Class_Crusier_0.xml</Key>
-        <Value>2011-09-03T12:19:15.5898437-05:00</Value>
+        <Value>2011-09-09T18:52:27.2089843-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -735,10 +735,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb</Output>
-      <Time>2011-08-18T21:52:41.1132813-05:00</Time>
+      <Time>2011-09-09T18:51:37.0820312-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet_Procyon_Class_Battlecrusie_0.xml</Key>
-        <Value>2011-09-01T21:52:30.4990234-05:00</Value>
+        <Value>2011-09-09T18:52:28.078125-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -911,7 +911,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Heavy_Bomber_0.xml</Output>
-      <Time>2011-08-21T19:27:13.9375-05:00</Time>
+      <Time>2011-09-09T18:52:20.7060547-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\SI-300.FBX</Source>
@@ -989,14 +989,14 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet_Auriga_Class_Crusier_0.xml</Output>
-      <Time>2011-09-03T12:04:34.3320312-05:00</Time>
+      <Time>2011-09-09T18:51:01.6953125-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet_Procyon_Class_Battlecrusie_0.xml</Output>
-      <Time>2011-08-18T21:52:41.1132813-05:00</Time>
+      <Time>2011-09-09T18:51:37.0820312-05:00</Time>
     </Item>
     <Item>
       <Source>textures\hbartex.png</Source>
@@ -1014,10 +1014,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Ares_Battlecrusier.xnb</Output>
-      <Time>2011-09-04T21:38:31.8603516-05:00</Time>
+      <Time>2011-09-09T18:56:52.2353515-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Ares_Battlecrusier_0.xml</Key>
-        <Value>2011-09-04T22:07:23.7294922-05:00</Value>
+        <Value>2011-09-09T18:57:00.4589843-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1025,7 +1025,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Ares_Battlecrusier_0.xml</Output>
-      <Time>2011-09-04T21:38:31.8603516-05:00</Time>
+      <Time>2011-09-09T18:56:52.2353515-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax_Crusier.FBX</Source>

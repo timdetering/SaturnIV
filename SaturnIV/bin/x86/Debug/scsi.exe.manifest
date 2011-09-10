@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>AeMLX4l4Q3QnrhliL70fCR9WDBg=</dsig:DigestValue>
+        <dsig:DigestValue>Z/k+88CAykWrQxwXn9rzxAI84UE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -384,7 +384,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>/koQq66CDVmAC+GqOOMz1PFOUdY=</dsig:DigestValue>
+      <dsig:DigestValue>WW19vDdJiDAn5orC4jxDkY5sq8A=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\blu_0.xnb" size="174897">
@@ -429,7 +429,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>TH+FJzZbsqZftwhwvd3rMQ/jyEQ=</dsig:DigestValue>
+      <dsig:DigestValue>0lV1ETWxD9a3HaAW75sgPhVIC5o=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\Fleet_MR-140_Viper.xnb" size="196465">
@@ -447,7 +447,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BpC7WTXnQr9rB9S16dVmHbcDVz0=</dsig:DigestValue>
+      <dsig:DigestValue>1d8S4TNPGIO0cGd6e+JUEuQfLkw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\Heavy_Bomber.xnb" size="724737">
@@ -456,7 +456,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Lw/x8WmJ9PWWZquXQxs44jg3dKk=</dsig:DigestValue>
+      <dsig:DigestValue>O3+Ba6yddN/A9TE4i5kznUi/vbA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\SI-300.xnb" size="196465">

@@ -117,7 +117,7 @@ namespace SaturnIV
             //else
             if (!isLDepressed && isGroupSelect)
             {
-                selectionRect = Rectangle.Empty;
+                selectionRect = Rectangle.Empty; 
                 isGroupSelect = false;
             }
 
@@ -128,8 +128,8 @@ namespace SaturnIV
                    if (ourShip.isSelected)
                     {
                          isDragging = true;
-                         ourShip.modelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
-                            /// - (ourShip.modelPosition - offset);
+                         Vector3 newModelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
+                         ourShip.modelPosition = newModelPosition + ourShip.editModeOffset;
                          npcManager.updateShipMovement(gameTime, 50.0f, ourShip, ourCamera, true);
                          directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
                     }
@@ -160,7 +160,7 @@ namespace SaturnIV
                 ischangingDirection = false;
             }
 
-            if (keyboardState.IsKeyDown(Keys.Escape))
+            if (keyboardState.IsKeyDown(Keys.Escape) || (isRClicked && isStuffSelected))
             {
                 selectionRect = Rectangle.Empty;
                 isGroupSelect = false;
@@ -179,7 +179,7 @@ namespace SaturnIV
         {
             //spriteBatch.Begin();
             // We need to fix the selection rectangle in case one of its dimensions is negative
-
+            BoundingSphere groupBS = new BoundingSphere();
             Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
             if (r.Width < 0)
             {
@@ -242,18 +242,21 @@ namespace SaturnIV
                      //     enemy.modelPosition + enemy.Direction * 900,
                       //    Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                  // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * lineFactor,100);
-                //   BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
-                BoundingSphere groupBS = new BoundingSphere(offset, 500);
-                BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                //  BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
+                                                   
+                //BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
                 if (enemy.isSelected)
                    {
-                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
-                           ourCamera.projectionMatrix, mouseOverColor);
+                       groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);
+                      /// BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
+                       //    ourCamera.projectionMatrix, mouseOverColor);
                        BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
                            ourCamera.projectionMatrix, Color.Yellow);
                    }
-
               }
+            groupBS.Center = offset;
+            if (isStuffSelected)
+                BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             base.Draw(gameTime);
         }
         
@@ -350,6 +353,7 @@ namespace SaturnIV
 
         public static void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
         {
+            int i = 0;
             offset = Vector3.Zero;
             foreach (newShipStruct o in objectsList)
             {
@@ -360,9 +364,13 @@ namespace SaturnIV
                     isSelecting = true;
                     offset += o.modelPosition;
                     isStuffSelected = true;
+                    i++;
                 }
             }
-            offset /= 3;
+            if (i>0)
+                offset /= i;
+            foreach (newShipStruct o in objectsList)
+                o.editModeOffset = o.modelPosition - offset;
         }
 
     }

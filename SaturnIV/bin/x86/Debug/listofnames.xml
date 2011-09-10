@@ -47,6 +47,13 @@
       <Item>Gnisnal</Item>
       <Item>Gauntlet</Item>
       <Item>Eviscerator</Item>
+	  <Item>Royal Mile</Item>
+	  <Item>Kratos</Item>
+	  <Item>Alpha 1</Item>
+	  <Item>Alpha 2</Item>
+	  <Item>Alpha 3</Item>
+	  <Item>Alpha 4</Item>
+	  <Item>Alpha 5</Item>
     </capitalShipNames>
   </Asset>
 </XnaContent>

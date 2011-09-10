@@ -624,9 +624,9 @@ namespace SaturnIV
                         buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
                     }
                    // if (!isEditMode)
-                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, Color.White);
-                     if (!isEditMode)
-                        spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
+                        spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
+                   //  if (!isEditMode)
+                   //     spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
                     if (enemy.isSelected && !isDone)
                     {
                         isDone = true;
