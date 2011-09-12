@@ -18,7 +18,9 @@ Content\Models\largeSphere.xnb
 Content\Models\Ships\Eriax_Crusier.xnb
 Content\textures\smoke2.xnb
 Content\SmallFont.xnb
+Content\ship_hull19_0.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
+Content\Models\ship_hull19.xnb
 Content\textures\dummy.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
 Content\Models\plane.xnb
@@ -60,6 +62,7 @@ Content\MedFont.xnb
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\textures\planettexture1.xnb
 Content\textures\spacescape_blue.xnb
+Content\Models\Ships\Anna_Class_Frigate.xnb
 Content\textures\starfield2.xnb
 Content\textures\missiletrack.xnb
 Content\Effects\BloomCombine.xnb

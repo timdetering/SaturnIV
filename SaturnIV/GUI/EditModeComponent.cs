@@ -175,7 +175,8 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera,SpriteBatch spriteBatch)
+        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera
+            ,SpriteBatch spriteBatch, Vector3 mouse3dVector)
         {
             //spriteBatch.Begin();
             // We need to fix the selection rectangle in case one of its dimensions is negative
@@ -238,9 +239,9 @@ namespace SaturnIV
                         modelManager.DrawModel(ourCamera, redSmallPlane, pMatrix, Color.Blue);
                     }
                 }
-                 //fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
-                     //     enemy.modelPosition + enemy.Direction * 900,
-                      //    Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                 fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
+                         enemy.modelPosition + enemy.Direction * 900,
+                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                  // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * lineFactor,100);
                 //  BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
                                                    
@@ -249,14 +250,16 @@ namespace SaturnIV
                    {
                        groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);
                       /// BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
-                       //    ourCamera.projectionMatrix, mouseOverColor);
+                       //    ourCamera.projectionMatrix, mouseOverColor);                       
                        BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
                            ourCamera.projectionMatrix, Color.Yellow);
                    }
               }
-            groupBS.Center = offset;
-            if (isStuffSelected)
-                BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+           // groupBS.Center = offset;
+           // if (isStuffSelected && isDragging)
+           //     BoundingSphereRenderer.Render3dCircle(mouse3dVector, groupBS.Radius, GraphicsDevice
+           //                , ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+                //BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             base.Draw(gameTime);
         }
         

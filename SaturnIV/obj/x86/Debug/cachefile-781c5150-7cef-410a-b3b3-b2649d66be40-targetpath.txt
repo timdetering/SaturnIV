@@ -78,3 +78,6 @@ Content\Models\Ships\Ares_Battlecrusier.xnb
 Content\Models\Ships\Eriax_Crusier.xnb
 Content\Models\Ships\Eriax_Frigate.xnb
 Content\Models\Ships\blu_0.xnb
+Content\Models\Ships\Anna_Class_Frigate.xnb
+Content\ship_hull19_0.xnb
+Content\Models\ship_hull19.xnb

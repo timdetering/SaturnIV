@@ -1084,6 +1084,51 @@
       <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\blu_0.xnb</Output>
       <Time>2011-03-29T19:05:37.140625-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\Ships\Anna_Class_Frigate.FBX</Source>
+      <Name>Models\Ships\Anna_Class_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Anna_Class_Frigate.xnb</Output>
+      <Time>2011-09-10T23:24:28.1835938-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Anna_Class_Frigate_0.xml</Key>
+        <Value>2011-09-10T23:27:24.0859375-05:00</Value>
+      </Dependency>
+      <Request>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\ship_hull19_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Anna_Class_Frigate.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Anna_Class_Frigate_0.xml</Output>
+      <Time>2011-09-10T23:24:28.1835938-05:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Users\bryan\Desktop\Anna-V Variations\Anna Textures\ship_hull19.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\ship_hull19_0.xnb</Output>
+      <Time>2010-01-03T04:46:30-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\ship_hull19.jpg</Source>
+      <Name>Models\ship_hull19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\ship_hull19.xnb</Output>
+      <Time>2011-09-10T23:29:43.163086-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

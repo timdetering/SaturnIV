@@ -572,7 +572,7 @@ namespace SaturnIV
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             //radar.Draw(spriteBatch, (float)System.Math.Atan2(playerShip.Direction.Z, playerShip.Direction.X), playerShip.modelPosition, ref activeShipList);
-            if (isEditMode || isTacmap) editModeClass.Draw(gameTime, ref activeShipList, ourCamera,spriteBatch);
+            if (isEditMode || isTacmap) editModeClass.Draw(gameTime, ref activeShipList, ourCamera,spriteBatch,mouse3dVector);
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
                 spriteBatch.Begin();
@@ -622,6 +622,7 @@ namespace SaturnIV
                         }
                         buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                         buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
+                        buffer.AppendFormat("[" + enemy.timer + "]");
                     }
                    // if (!isEditMode)
                         spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
