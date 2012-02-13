@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="bt4ever.terrainData">
+    <MapName>map1</MapName>
+    <HeightMap>Terrain/testmap</HeightMap>
+    <TextureMap>Textures/texmap</TextureMap>
+    <RedTexture>Textures/grass</RedTexture>
+    <GreenTexture>Textures/Red Earth</GreenTexture>
+    <BlueTexture>Textures/Gravel Bed</BlueTexture>
+    <GroundTexture>Terrain/DeepForest</GroundTexture>
+    <HeightMod>1</HeightMod>
+    <LightDirection>0 -1 1</LightDirection>
+    <AmbientColor>0.9 0.9 0.9</AmbientColor>
+    <LightColor>1 1 1</LightColor>
+    <UVScaling>30</UVScaling>
+  </Asset>
+</XnaContent>

@@ -18,6 +18,9 @@ namespace SaturnIV
     {
         public int shipTypeIndex;
         public Line3D fArc1,fArc2;
+        MouseState originalMouseState;
+        public float xDifference, yDifference;
+        public Vector2 rotationAmount = Vector2.Zero;
 
         //public float playerShipHealth;
 
@@ -32,46 +35,76 @@ namespace SaturnIV
             : base(game)
         {
             // TODO: Construct any child components here
+            originalMouseState = Mouse.GetState();
         }
 
-       public void updateShipMovement(GameTime gameTime, float gameSpeed,KeyboardState keyboardState,newShipStruct playerShip,Camera ourCamera)
+       public void updateShipMovement(GameTime gameTime, float gameSpeed,KeyboardState keyboardState,newShipStruct playerShip,CameraNew ourCamera)
         {
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             float roll = 0;
             turningSpeed *= playerShip.objectAgility * gameSpeed;
-            Vector2 rotationAmount = Vector2.Zero;
-            // Keyboard checks
-            //Vector2 rotationAmount = -gamePadState.ThumbSticks.Left;
+            rotationAmount = Vector2.Zero;
+
+            //MouseState currentMouseState = Mouse.GetState();
+            //if (currentMouseState != originalMouseState)
+           // {
+             //   xDifference = currentMouseState.X - originalMouseState.X;
+               // yDifference = currentMouseState.Y - originalMouseState.Y;
+               // if (Math.Abs(xDifference) > 2)
+               //     rotationAmount.X -= xDifference * turningSpeed * 0.15f;
+               // if (Math.Abs(xDifference) > 2)
+               //     rotationAmount.Y -= yDifference * turningSpeed * 0.15f;                
+           // }
+
             if (keyboardState.IsKeyDown(Keys.A))
             {
-                rotationAmount.X = 4.0f;
-                thrustAmount = 1.0f;
+                rotationAmount.X = 4f;
             }
             if (keyboardState.IsKeyDown(Keys.D))
             {
-                rotationAmount.X = -4.0f;
-                thrustAmount = 1.0f;
-            }
-
-            if (keyboardState.IsKeyDown(Keys.W))
-            {
-                rotationAmount.Y = -4.0f;
-                thrustAmount = 1.0f;
+                rotationAmount.X = -4f;
             }
             if (keyboardState.IsKeyDown(Keys.S))
             {
-                rotationAmount.Y = -4.0f;
-                thrustAmount = 1.0f;
+               // rotationAmount.Y = 4f;
             }
-            else
-                thrustAmount = 0.0f;
+            if (keyboardState.IsKeyDown(Keys.W))
+            {
+               // rotationAmount.Y = -4f;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Z))
+            {
+                //roll = -0.023f;
+            }
+            if (keyboardState.IsKeyDown(Keys.X))
+            {
+                //roll = 0.023f;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.D1))
+            {
+                thrustAmount = 0.10f;
+            }
+            if (keyboardState.IsKeyDown(Keys.D2))
+            {
+                thrustAmount = .25f;
+            }
+            if (keyboardState.IsKeyDown(Keys.D3))
+            {
+                thrustAmount = 0.75f;
+            }
+            if (keyboardState.IsKeyDown(Keys.D4))
+            {
+                thrustAmount = 1.00f;
+            }
 
             // Scale rotation amount to radians per second
             rotationAmount = rotationAmount * turningSpeed * elapsed;
 
             Matrix rotationMatrix =
-                Matrix.CreateFromAxisAngle(playerShip.Right, rotationAmount.Y) *
+                Matrix.CreateFromAxisAngle(playerShip.right, rotationAmount.Y) *
                 ((Matrix.CreateFromAxisAngle(playerShip.Direction, roll) *
                 Matrix.CreateFromAxisAngle(playerShip.Up, rotationAmount.X)));
 
@@ -92,21 +125,6 @@ namespace SaturnIV
             playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
             playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(playerShip.modelPosition);
-
-            playerShip.modelBoundingSphere.Center = playerShip.modelPosition; playerShip.modelBoundingSphere.Radius = 17;
-            playerShip.viewMatrix = Matrix.CreateLookAt(playerShip.modelPosition, playerShip.modelPosition 
-                                                        + playerShip.Direction * 2.0f, playerShip.Up);
-            if (playerShip.ThrusterEngaged)
-            {
-                playerShip.shipThruster.update(playerShip.modelPosition + (playerShip.modelRotation.Forward)
-                                        - (playerShip.modelRotation.Up) + (playerShip.modelRotation.Right * -20),
-                                        playerShip.Direction, new Vector3(6, 6, 6), 40.0f, 10.0f,
-                                        Color.White, Color.Blue, Camera.position);
-
-                playerShip.shipThruster.heat = 1.5f;
-            }
-
-            playerShip.modelFrustum.Matrix = playerShip.viewMatrix * playerShip.projectionMatrix;
            }
 
         /// <summary>

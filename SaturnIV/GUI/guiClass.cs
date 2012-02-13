@@ -197,7 +197,7 @@ namespace SaturnIV
             messageBuffer.AppendFormat("Form Squad");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(350, 7), opt3Color);
             messageBuffer = new StringBuilder();
-            messageBuffer.AppendFormat("Team");
+            messageBuffer.AppendFormat("Faction");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(500, 7), opt4Color);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Save - F10");

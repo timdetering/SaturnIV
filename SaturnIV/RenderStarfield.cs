@@ -83,7 +83,7 @@ namespace SaturnIV
             //starList= new VertexPositionColor[30000];
             vertexPosColDecl = new VertexDeclaration(game.GraphicsDevice,
                 VertexPositionColor.VertexElements);
-            generateStarField(game, 2000);
+            generateStarField(game, 5000);
         }
 
          private VertexPositionTexture[] SetUpFullscreenVertices()
@@ -118,13 +118,13 @@ namespace SaturnIV
                 w = Math.Sqrt(1 - z * z);
                 x = w * Math.Cos(t);
                 y = w * Math.Sin(t);
-               starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-20000, 200000),
-                                                        (float)y * rand.Next(-20000, 200000), (float)z * rand.Next(-20000, 200000)),
+                starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-400000, 400000),
+                                                        (float)y * rand.Next(-400000, 400000), (float)z * rand.Next(-400000, 400000)),
                                                          starColors[rand.Next(0, 5)]);
              }
         }
 
-        public void DrawStars(Game game, Camera ourCamera)
+        public void DrawStars(Game game, CameraNew ourCamera)
         {
             game.GraphicsDevice.RenderState.PointSpriteEnable = true;
             game.GraphicsDevice.RenderState.PointSize = 2.0f;
@@ -157,7 +157,7 @@ namespace SaturnIV
             game.GraphicsDevice.RenderState.DestinationBlend = Blend.InverseSourceAlpha;
         }
 
-        public void DrawSkyDome(Game game, Camera ourCamera)
+        public void DrawSkyDome(Game game, CameraNew ourCamera)
         {
             game.GraphicsDevice.RenderState.DepthBufferWriteEnable = false;
 

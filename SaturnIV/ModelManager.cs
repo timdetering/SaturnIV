@@ -74,7 +74,7 @@ namespace SaturnIV
 
             base.Update(gameTime);
         }
-        public Vector3 get2dCoords(Vector3 modelPos, Camera ourCamera)
+        public Vector3 get2dCoords(Vector3 modelPos, CameraNew ourCamera)
         {
             return Game.GraphicsDevice.Viewport.Project(modelPos, ourCamera.projectionMatrix,
                     ourCamera.viewMatrix, Matrix.Identity);
@@ -103,7 +103,7 @@ namespace SaturnIV
             //base.Draw(gameTime);
         }
 
-        public void DrawModel (Camera myCamera,Model shipModel,Matrix worldMatrix,Color shipColor)
+        public void DrawModel (CameraNew myCamera,Model shipModel,Matrix worldMatrix,Color shipColor)
         {
             Matrix[] transforms = new Matrix[shipModel.Bones.Count];
             shipModel.CopyAbsoluteBoneTransformsTo(transforms);
@@ -113,7 +113,10 @@ namespace SaturnIV
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
+                    effect.EnableDefaultLighting();                    
+                    effect.AmbientLightColor = new Vector3(1f, 1f, 1f);
+                    Color mColor = Color.TransparentWhite;
+                    //effect.EmissiveColor = mColor.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;

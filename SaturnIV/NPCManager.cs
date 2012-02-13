@@ -41,7 +41,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.99f;
+        private const float DragFactor = 0.97f;
 
         public NPCManager(Game game)
             : base(game)
@@ -69,7 +69,7 @@ namespace SaturnIV
                 }
 
                 //float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);                  
-                if (distance < thisShip.EvadeDist[(int)otherShip.objectClass]
+                if (distance < thisShip.EvadeDist[(int)otherShip.objectClass] * 2
                     && !thisShip.isEvading && thisShip.angleOfAttack > 1.25 && thisShip.angleOfAttack < 2.50)
                 {
                     thisShip.targetPosition = thisShip.modelPosition + -thisShip.Direction + 
@@ -80,14 +80,13 @@ namespace SaturnIV
                     thisShip.timer = currentTime;
                 }
 
-
                 if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
                 {
                     thisShip.targetPosition = thisShip.currentTarget.modelPosition + thisShip.currentTarget.Direction
                         * rand.Next(-150, 150);
                 }
 
-                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(2500, 4000) 
+                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) 
                     && thisShip.objectAgility > 2.0)
                 {
                         thisShip.isEvading = false;
@@ -95,21 +94,25 @@ namespace SaturnIV
                 }
 
                 /// Engaging
-                if (thisShip.team != otherShip.team && !thisShip.isEvading &&  thisShip.currentDisposition != disposition.moving)
-                {
-                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel 
-                        && distance < thisShip.engageDist[(int)otherShip.objectClass]*2 )
+                if (thisShip.team != otherShip.team && !thisShip.isEvading)
+                {                                        
+                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
+                        //&& distance < thisShip.engageDist[(int)otherShip.objectClass]*2 )
                     {
+                        thisShip.thrustAmount = 1.25f;
                         thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                         thisShip.currentTarget = otherShip;
                         thisShip.currentDisposition = disposition.engaging;
-                    } //else
-                    if (thisShip.objectClass == ClassesEnum.Capitalship && otherShip.objectClass != ClassesEnum.Capitalship
-                          && distance < 5000)
+                    }
+                    if (thisShip.currentTarget != null && distance < Vector3.Distance(thisShip.currentTarget.modelPosition, thisShip.modelPosition))
                     {
-                        //thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
-                        thisShip.currentTarget = otherShip;
-                        thisShip.currentDisposition = disposition.engaging;
+                        if (thisShip.TargetPrefs[(int)otherShip.objectClass] > 0)
+                        {
+                            thisShip.thrustAmount = 1.25f;
+                            thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                            thisShip.currentTarget = otherShip;
+                            thisShip.currentDisposition = disposition.engaging;
+                        }
                     }
                 }
                 /// Too do: Optimize
@@ -128,7 +131,7 @@ namespace SaturnIV
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,
-                                      Camera ourCamera, bool isEdit)
+                                      CameraNew ourCamera, bool isEdit)
         {
             thisShip.vecToTarget = Vector3.Normalize(thisShip.targetPosition - thisShip.modelPosition);
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
@@ -141,7 +144,7 @@ namespace SaturnIV
                 thisShip.Direction = thisShip.vecToTarget;
             else
                 thisShip.Direction = Vector3.Normalize(Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 
-                                      turningSpeed * 0.15f));
+                                      turningSpeed * 0.045f));
 
             thisShip.modelRotation.Forward = thisShip.Direction;
 

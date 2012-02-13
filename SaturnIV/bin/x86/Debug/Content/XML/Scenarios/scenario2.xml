@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="bt4ever.ScenarioStruct">
+    <name>scenario2</name>
+    <map>map2</map>
+    <unitList>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>0</factionIndex>
+        <position>-41.18022 0 -100.509033</position>
+        <direction>0.3791288 0 0.925344</direction>
+        <rotation>-0.925344 0 0.3791288 0 0 1 0 0 -0.3791288 -0 -0.925344 0 0 0 0 1</rotation>
+        <hexIndex>2251</hexIndex>
+      </Item>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>0</factionIndex>
+        <position>0.8928781 0 -73.46204</position>
+        <direction>-0.0121533806 0 0.99992615</direction>
+        <rotation>-0.99992615 0 -0.0121533806 0 0 1 0 0 0.0121533806 -0 -0.99992615 0 0 0 0 1</rotation>
+        <hexIndex>2182</hexIndex>
+      </Item>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>0</factionIndex>
+        <position>-62.216774 0 -32.891552</position>
+        <direction>0.8840624 0 0.467368871</direction>
+        <rotation>-0.467368871 0 0.8840624 0 0 1 0 0 -0.8840624 -0 -0.467368871 0 0 0 0 1</rotation>
+        <hexIndex>2075</hexIndex>
+      </Item>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>1</factionIndex>
+        <position>-41.18022 0 -46.4150467</position>
+        <direction>0.663665 0 0.74803</direction>
+        <rotation>-0.74803 0 0.663665 0 0 1 0 0 -0.663665 -0 -0.74803 0 0 0 0 1</rotation>
+        <hexIndex>2111</hexIndex>
+      </Item>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>1</factionIndex>
+        <position>-20.1436729 0 -86.9855347</position>
+        <direction>0.225604743 0 0.974219</direction>
+        <rotation>-0.974219 0 0.225604743 0 0 1 0 0 -0.225604743 -0 -0.974219 0 0 0 0 1</rotation>
+        <hexIndex>2216</hexIndex>
+      </Item>
+      <Item>
+        <unitIndex>0</unitIndex>
+        <factionIndex>1</factionIndex>
+        <position>42.96598 0 -19.3680553</position>
+        <direction>-0.911656439 0 0.4109533</direction>
+        <rotation>-0.4109533 0 -0.911656439 0 0 1 0 0 0.911656439 -0 -0.4109533 0 0 0 0 1</rotation>
+        <hexIndex>2043</hexIndex>
+      </Item>
+    </unitList>
+  </Asset>
+</XnaContent>

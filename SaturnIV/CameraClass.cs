@@ -13,17 +13,27 @@ namespace SaturnIV
             chase = 1,
             orbit = 2
         }
-        public CameraMode currentCameraMode = CameraMode.orbit;
+        public static CameraMode currentCameraMode = CameraMode.chase;
+
+        float mousemoveX = 0;
+        float mousemoveY = 0;
+
+        // This float holds the Angle the camera has moved around the Z.axis since last frame.
+        float AngleAddZ = 0;
+
+        // This float holds the Angle the camera has moved around the Y.axis since last frame.
+        float AngleAddY = 0;
+
 
         public static Vector3 position;
         private Vector3 desiredPosition;
         private Vector3 target;
         private Vector3 desiredTarget;
-        public Vector3 offsetDistance;
+        public static Vector3 offsetDistance;
 
         private float yaw, pitch, roll;
         private float speed;
-        public static float zoomFactor = 7f;
+        public static float zoomFactor = 4f;
         private int mscreenMiddleX, mscreenMiddleY;
 
         public Matrix cameraRotation;
@@ -44,11 +54,11 @@ namespace SaturnIV
 
         public void ResetCamera()
         {
-            position = new Vector3(0, 5000, 50);
+            position = new Vector3(10, 10, 1);
             desiredPosition = position;
             target = new Vector3();
             desiredTarget = target;
-            offsetDistance = new Vector3(0, 2000, 100);
+            //offsetDistance = new Vector3(-5400, 2200, 250);
             //offsetDistance = new Vector3(0, 0, 50);
 
             yaw = 0.0f;
@@ -59,26 +69,24 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(90.0f), 4.0f / 3.0f, 200f, 190000f);       
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(65.0f), 4.0f / 3.0f, 0.5f, 120000f);       
         }
 
-        public void Update(Matrix chasedObjectsWorld)
+        public void Update(Matrix chasedObjectsWorld, Vector3 playerUp,Vector3 playerForward)
         {
             HandleInput();
-            UpdateViewMatrix(chasedObjectsWorld);
+            UpdateViewMatrix(chasedObjectsWorld,playerUp,playerForward);
         }
 
         private void HandleInput()
         {
             KeyboardState keyboardState = Keyboard.GetState();
-            mouseStateCurrent = Mouse.GetState();
-
             if (mouseStateCurrent.ScrollWheelValue > mouseStatePrevious.ScrollWheelValue)
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 15.0)
-                zoomFactor += (WheelVal * 0.50f);
+                //if (zoomFactor < 25.0)
+                zoomFactor += (WheelVal * 0.15f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -86,14 +94,15 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                
-                 if (zoomFactor > 1.50)
-                     zoomFactor -= (WheelVal * -0.50f);
+
+                //if (zoomFactor > 0.50)
+                zoomFactor -= (WheelVal * -0.15f);
             }
+
 
             if (keyboardState.IsKeyDown(Keys.LeftShift))
             {
-                position.Y = 10000;
+                position.Y = 42500;
             }
             mouseStatePrevious = mouseStateCurrent;
             keyboardStatePrevious = keyboardState;
@@ -104,7 +113,7 @@ namespace SaturnIV
             position += speed * addedVector * zoomFactor;
         }
 
-        private void UpdateViewMatrix(Matrix chasedObjectsWorld)
+        private void UpdateViewMatrix(Matrix chasedObjectsWorld, Vector3 playerUp, Vector3 playerForward)
         {
             switch (currentCameraMode)
             {
@@ -139,10 +148,10 @@ namespace SaturnIV
 
                     target += chasedObjectsWorld.Right * yaw;
                     target += chasedObjectsWorld.Up * pitch;
-                    
-                    desiredPosition = Vector3.Transform(offsetDistance, chasedObjectsWorld);
-    
-                    position = Vector3.SmoothStep(position, desiredPosition, .15f);
+
+                    Math.Abs(zoomFactor);
+                    desiredPosition = Vector3.Transform(offsetDistance, chasedObjectsWorld) * zoomFactor;
+                    position = Vector3.SmoothStep(position, desiredPosition, .25f);
                     
                     yaw = MathHelper.SmoothStep(yaw, 0f, .1f);
                     pitch = MathHelper.SmoothStep(pitch, 0f, .1f);
@@ -156,7 +165,7 @@ namespace SaturnIV
                   //  offsetDistance = offsetDistance;
                     cameraRotation = Matrix.CreateRotationX(pitch) * Matrix.CreateRotationY(yaw) 
                             * Matrix.CreateFromAxisAngle(cameraRotation.Forward, roll);
-                    desiredPosition = Vector3.Transform(offsetDistance, cameraRotation) *zoomFactor;
+                    desiredPosition = Vector3.Transform(offsetDistance, cameraRotation);
                     desiredPosition += chasedObjectsWorld.Translation;
                     position = desiredPosition;
                     target = chasedObjectsWorld.Translation;
@@ -165,7 +174,12 @@ namespace SaturnIV
             }
 
             //We'll always use this line of code to set up the View Matrix.
-            viewMatrix = Matrix.CreateLookAt(position, target,new Vector3(0, 1, 0));
+            if (currentCameraMode == CameraMode.orbit)
+                viewMatrix = Matrix.CreateLookAt(position, target,new Vector3(0, 1, 0));
+            else
+                viewMatrix = Matrix.CreateLookAt(chasedObjectsWorld.Translation,
+                                              chasedObjectsWorld.Translation + playerForward,
+                                              playerUp);
         }
 
         //This cycles through the different camera modes.

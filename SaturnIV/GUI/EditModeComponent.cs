@@ -59,7 +59,6 @@ namespace SaturnIV
         Model blueMediumPlane;
         Model blueSmallPlane;
 
-
         float planisphereScale = 1.0f;
 
         public EditModeComponent(Game game)
@@ -97,7 +96,7 @@ namespace SaturnIV
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public void Update(GameTime gameTime, Ray currentMouseRay, Vector3 mouse3dVector, 
                                     ref List<newShipStruct> objectList,bool isLClicked, bool isRClicked,bool isLDepressed, 
-                                    ref NPCManager npcManager,Camera ourCamera, ref Viewport viewport)
+                                    ref NPCManager npcManager,CameraNew ourCamera, ref Viewport viewport)
         {
             // TODO: Add your update code here
             bool checkResult = false;
@@ -126,13 +125,13 @@ namespace SaturnIV
                foreach (newShipStruct ourShip in objectList)
                {
                    if (ourShip.isSelected)
-                    {
+                   {
                          isDragging = true;
                          Vector3 newModelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
                          ourShip.modelPosition = newModelPosition + ourShip.editModeOffset;
                          npcManager.updateShipMovement(gameTime, 50.0f, ourShip, ourCamera, true);
                          directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
-                    }
+                   }
                }
             }
 
@@ -175,7 +174,7 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,Camera ourCamera
+        public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,CameraNew ourCamera
             ,SpriteBatch spriteBatch, Vector3 mouse3dVector)
         {
             //spriteBatch.Begin();
@@ -242,24 +241,17 @@ namespace SaturnIV
                  fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
                          enemy.modelPosition + enemy.Direction * 900,
                           Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                 // BoundingSphere directionSphere = new BoundingSphere(enemy.modelPosition + enemy.Direction * lineFactor,100);
-                //  BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, mouseOverColor);
-                                                   
-                //BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                
                 if (enemy.isSelected)
                    {
-                       groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);
-                      /// BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, 
-                       //    ourCamera.projectionMatrix, mouseOverColor);                       
+                       groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);                      
                        BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
                            ourCamera.projectionMatrix, Color.Yellow);
                    }
               }
-           // groupBS.Center = offset;
-           // if (isStuffSelected && isDragging)
-           //     BoundingSphereRenderer.Render3dCircle(mouse3dVector, groupBS.Radius, GraphicsDevice
-           //                , ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
-                //BoundingSphereRenderer.Render(groupBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+            Matrix pMatrix1 = Matrix.CreateWorld(Game1.playerShip.modelPosition, Vector3.Forward, Vector3.Up);
+            pMatrix1 *= Matrix.CreateScale(planisphereScale);
+            modelManager.DrawModel(ourCamera, redSmallPlane, pMatrix1, Color.Yellow);
             base.Draw(gameTime);
         }
         
@@ -292,17 +284,19 @@ namespace SaturnIV
             tempData.team = team;
             tempData.objectClass = shipDefList[shipIndex].ShipClass;
             tempData.modelPosition = mouse3dVector;
-            tempData.modelRotation = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(-90));
+            tempData.modelRotation = Matrix.Identity;           
             tempData.Direction = Vector3.Forward;
-            //tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
+            tempData.targetPosition = tempData.modelPosition + tempData.Direction * 10000;
+            //tempData.targetPosition.Y = new Random().Next(-2000, 2000);
             tempData.wayPointPosition = tempData.targetPosition;
+            //tempData.wayPointPosition.Y = new Random().Next(-2000, 2000);
             if (team == 0)
                 tempData.currentDisposition = disposition.patrol;
             else
                 tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
-            if (tempData.objectClass == ClassesEnum.Capitalship)
-                tempData.currentDisposition = disposition.defensive;
+            //if (tempData.objectClass == ClassesEnum.Capitalship)
+            //    tempData.currentDisposition = disposition.defensive;
             tempData.Up = Vector3.Up;
             tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel, tempData.modelPosition);
             tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;

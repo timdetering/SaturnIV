@@ -89,7 +89,7 @@ namespace SaturnIV
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
             float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
             
-            turningSpeed *= thisObject.objectAgility * gameSpeed;
+            turningSpeed *= 1.0f * gameSpeed;
 
           if (thisObject.isHoming && thisObject.distanceFromOrigin > rand.Next(100,400) && thisObject.missileTarget !=null)
           {
@@ -99,6 +99,7 @@ namespace SaturnIV
           } 
           else
             thisObject.targetPosition = thisObject.Direction;
+
             Vector3 scale, translation;
             Quaternion rotation;
             Matrix rotationMatrix = Matrix.CreateWorld(thisObject.modelPosition, thisObject.targetPosition, Vector3.Up);
@@ -109,8 +110,8 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, turningSpeed * 0.25f);
-            thrustAmount = 1.5f;
+            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, 0.10f);
+            thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
             // Apply acceleration
@@ -118,13 +119,14 @@ namespace SaturnIV
             thisObject.Velocity += acceleration * elapsed;
             // Apply psuedo drag
             //if (distanceFromPlayer > 1000)
-            thisObject.Velocity *= DragFactor;
+            //thisObject.Velocity *= DragFactor;
             // Apply velocity
             thisObject.modelPosition += thisObject.Velocity * elapsed;
             //if (thisObject.objectClass != WeaponClassEnum.Beam)
                 thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin.modelPosition);
-            thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
+            if (thisObject.missileTarget != null)
+                thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
             thisObject.modelBoundingSphere.Center = thisObject.modelPosition;
             if (thisObject.projectile != null)
                 if (thisObject.isProjectile)
@@ -169,8 +171,8 @@ namespace SaturnIV
                 if (activeWeaponList[i].objectClass != WeaponClassEnum.Beam)
                 {
                     if (activeWeaponList[i].distanceFromOrigin > activeWeaponList[i].range
-                        || activeWeaponList[i].timer > activeWeaponList[i].timeToLive
-                        || activeWeaponList[i].currentTarget == null)
+                        || activeWeaponList[i].timer > activeWeaponList[i].timeToLive)
+                        //|| activeWeaponList[i].currentTarget == null)
                     {
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
                             activeWeaponList[i].modelPosition, 0.25f);
@@ -199,6 +201,8 @@ namespace SaturnIV
 
             if (targetObject != null)
                 tempData.targetPosition = targetObject.modelPosition - weaponOrigin.modelPosition;
+            else
+                tempData.targetPosition = weaponOrigin.Direction * 5000;
 
             //Calculate path
             //tempData.calcInitalPath(originDirection);

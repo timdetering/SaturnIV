@@ -206,11 +206,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Eriax_Fighter_MK2.FBX">
-      <Name>Eriax_Fighter_MK2</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Effects\BloomCombine.fx">
       <Name>BloomCombine</Name>
       <Importer>EffectImporter</Importer>
@@ -463,13 +458,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Anna_Class_Frigate.FBX">
-      <Name>Anna_Class_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\ship_hull19.jpg">
       <Name>ship_hull19</Name>
       <Importer>TextureImporter</Importer>
@@ -477,8 +465,171 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fonts\" />
-    <Folder Include="GUI\" />
+    <Compile Include="textures\GUI\cpanel1.png">
+      <Name>cpanel1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\cpanel2.png">
+      <Name>cpanel2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\mWindow.png">
+      <Name>mWindow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\textdialog1.png">
+      <Name>textdialog1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonts\MedFont.spritefont">
+      <Name>MedFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Fonts\SmallFont.spritefont">
+      <Name>SmallFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\SB-50\SB50.FBX">
+      <Name>SB50</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\MR-101\MR101.FBX">
+      <Name>MR101</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\MR-100\MR100.FBX">
+      <Name>MR100</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\SF-90 Agile\bump_6.jpg">
+      <Name>bump_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\SF-90 Agile\color_6.jpg">
+      <Name>color_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\SF-90 Agile\illumination_6.jpg">
+      <Name>illumination_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\SF-90 Agile\specular_6.jpg">
+      <Name>specular_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\SF-90 Agile\sf-90_model.FBX">
+      <Name>sf-90_model</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Battlecrusier\battlecruiser.FBX">
+      <Name>battlecruiser</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiserkineticburstcannon_export[1].bmp">
+      <Name>Hgn_battlecruiserkineticburstcannon_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiserkineticburstcannon_export[1]SPEC.bmp">
+      <Name>Hgn_battlecruiserkineticburstcannon_export[1]SPEC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_badge_export[1].bmp">
+      <Name>Hgn_battlecruiser_badge_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_badge_export[1]SPEC.bmp">
+      <Name>Hgn_battlecruiser_badge_export[1]SPEC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[1].bmp">
+      <Name>Hgn_battlecruiser_engine_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[1]SPEC.bmp">
+      <Name>Hgn_battlecruiser_engine_export[1]SPEC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[2]LUM.bmp">
+      <Name>Hgn_battlecruiser_engine_export[2]LUM</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[1].bmp">
+      <Name>Hgn_battlecruiser_main_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[1]SPEC.bmp">
+      <Name>Hgn_battlecruiser_main_export[1]SPEC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[2]LUM.bmp">
+      <Name>Hgn_battlecruiser_main_export[2]LUM</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_thruster_export[1].bmp">
+      <Name>Hgn_battlecruiser_thruster_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_thruster_export[3]LUM.bmp">
+      <Name>Hgn_battlecruiser_thruster_export[3]LUM</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\HUD\centertarget.png">
+      <Name>centertarget</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\HUD\target_track.png">
+      <Name>target_track</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

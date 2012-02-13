@@ -44,7 +44,7 @@ namespace SaturnIV
 
             //TextureCube SkyboxTexture =
             //    game.Content.Load<TextureCube>("cloudMap");
-            SkyboxTexture = game.Content.Load<TextureCube>("textures/spacescape_blue");
+            SkyboxTexture = game.Content.Load<TextureCube>("textures/spacescape_green");
             SkySphereEffect = game.Content.Load<Effect>("Effects/SkySphere");
             SkySphereModel = game.Content.Load<Model>("Models/largeSphere"); 
             SkySphereModel.Meshes[0].MeshParts[0].Effect = SkySphereEffect.Clone(game.GraphicsDevice);
@@ -71,7 +71,7 @@ namespace SaturnIV
             base.Update(gameTime);
         }
 
-        public void DrawSkySphere(Game game, Camera ourCamera)
+        public void DrawSkySphere(Game game, CameraNew ourCamera)
         {
              game.GraphicsDevice.Clear(Color.CornflowerBlue);
              SkySphereEffect.Parameters["ViewMatrix"].SetValue(ourCamera.viewMatrix);

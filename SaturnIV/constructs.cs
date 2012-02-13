@@ -28,6 +28,19 @@ namespace SaturnIV
         defensive = 6,
     }
 
+    public enum MachineState
+    {
+        IDLE,
+        MOVE,
+        ENGAGE,
+        STANDOFF,
+        DEFEND,
+        ESCORT,
+        FLEE,
+        RECON,        
+        EVADE
+    }
+
     public enum SquadDisposition
     {
         tight = 0,
@@ -134,6 +147,7 @@ namespace SaturnIV
         public Texture2D hudTex;
         public double timer;
         public double[] regenTimer;
+        public int currentWeaponMod;
     }
 
     public class weaponStruct : newShipStruct
@@ -237,6 +251,32 @@ namespace SaturnIV
             public int planetRadius;
             public Model planetModel;
             public BoundingSphere planetBS;
+        }
+        public enum TextBoxActions
+        {
+            SaveScenario,
+            LoadScenario,
+            SaveMap,
+            LoadMap,
+            None
+        }
+
+        public enum MouseActions
+        {
+            None,
+            AddUnit,
+            MoveUnit,
+            SelectUnit,
+            PaintHex
+        }
+
+        public enum GameModes
+        {
+            None,
+            EditMode,
+            UnitCommandMode,
+            CombatMode,
+            MoveMode
         }
 
 }

@@ -30,7 +30,7 @@ namespace SaturnIV
         {
             settings.TextureName = "textures//smoke";
 
-            settings.MaxParticles = 3000;
+            settings.MaxParticles = 32000;
 
             settings.Duration = TimeSpan.FromSeconds(1);
 
@@ -44,17 +44,17 @@ namespace SaturnIV
             settings.MinVerticalVelocity = -1;
             settings.MaxVerticalVelocity = 1;
 
-            settings.MinColor = new Color(0, 0, 255, 255);
-            settings.MaxColor = new Color(255, 255, 255, 255);
+            settings.MinColor = new Color(255,255,255,255);
+            settings.MaxColor = new Color(0, 0, 255, 255);
 
             settings.MinRotateSpeed = 0;
             settings.MaxRotateSpeed = 0;
 
-            settings.MinStartSize = 75;
-            settings.MaxStartSize = 125;
+            settings.MinStartSize = 150;
+            settings.MaxStartSize = 250;
 
-            settings.MinEndSize = 50;
-            settings.MaxEndSize = 100;
+            settings.MinEndSize = 150;
+            settings.MaxEndSize = 250;
         }
     }
 }
