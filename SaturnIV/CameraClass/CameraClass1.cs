@@ -60,7 +60,7 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, .5f, 300000f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, .5f, 400000f);
         }
 
         public void Update(Matrix chasedObjectsWorld, bool isEditMode)
@@ -138,7 +138,7 @@ namespace SaturnIV
                 }
             }
             MouseState currentMouseState = Mouse.GetState();
-            if (currentMouseState != originalMouseState && !isEditMode)
+            if (currentMouseState != originalMouseState && !isEditMode && Keyboard.GetState().IsKeyDown(Keys.LeftShift))
             {
                 float xDifference = currentMouseState.X - originalMouseState.X;
                 float yDifference = currentMouseState.Y - originalMouseState.Y;
@@ -209,7 +209,6 @@ namespace SaturnIV
                     desiredPosition = Vector3.Transform(offsetDistance, cameraRotation) * zoomFactor;
                     desiredPosition += chasedObjectsWorld.Translation;
                     position = desiredPosition;
-
                     target = chasedObjectsWorld.Translation;
 
                     roll = MathHelper.SmoothStep(roll, 0f, .2f);

@@ -240,7 +240,8 @@ namespace SaturnIV
             {
                 //this.IsMouseVisible = false;
                 updateObjects(gameTime);
-                Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+                    Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
             }
             else
             {
@@ -408,9 +409,9 @@ namespace SaturnIV
             {
                 playerShip.currentWeaponMod = 0;
                 if (keyboardState.IsKeyDown(Keys.Space) && !isEditMode && !isChat)
-                    if (currentTime - playerShip.regenTimer[playerShip.currentWeaponMod] > weaponDefList[(int)playerShip.weaponArray[1].weaponType].regenTime)
+                    if (currentTime - playerShip.regenTimer[playerShip.currentWeaponMod] > weaponDefList[(int)playerShip.weaponArray[0].weaponType].regenTime)
                     {
-                        weaponsManager.fireWeapon(playerShip.currentTarget, playerShip, ref projectileTrailParticles, ref weaponDefList, playerShip.weaponArray[1], playerShip.currentWeaponMod);
+                        weaponsManager.fireWeapon(playerShip.currentTarget, playerShip, ref projectileTrailParticles, ref weaponDefList, playerShip.weaponArray[0], playerShip.currentWeaponMod);
                         playerShip.regenTimer[playerShip.currentWeaponMod] = currentTime;
                         playerShip.isEngaging = true;                    
                     }
@@ -419,14 +420,12 @@ namespace SaturnIV
                 {
                     isEditMode = true;
                     string msg = "Edit Mode";
-                    //cameraTargetVec3.Y = 40000f;
                     messageClass.sendSystemMsg(spriteFont, spriteBatch,msg, systemMessagePos);
                     CameraNew.zoomFactor = 2.0f;                    
                 }
                 else if (keyboardState.IsKeyDown(Keys.E) && isEditMode && !isChat)
-                {
                     isEditMode = false;
-                }
+
                 // Chat Mode Handler //
                 if (keyboardState.IsKeyDown(Keys.C) )
                 {
@@ -467,7 +466,7 @@ namespace SaturnIV
                 {
                     drawTextbox = true;
                     ControlPanelClass.textBoxActions = TextBoxActions.SaveScenario;
-                    //saveClass.serializeClass(activeShipList);
+                    saveClass.serializeClass(activeShipList, "plan1");
                 }
 
                 // Turn on/off Server/Client Mode
@@ -492,12 +491,12 @@ namespace SaturnIV
                 lastKeyPressTime = currentTime;
             }
 
-            if (keyboardState.IsKeyDown(Keys.F12) && !oldkeyboardState.IsKeyDown(Keys.F10) && !isDebug && !isChat)
+            if (keyboardState.IsKeyDown(Keys.F12) && !oldkeyboardState.IsKeyDown(Keys.F12) && !isDebug && !isChat)
             {
                 MessageClass.messageLog.Add("Debug Mode On");
                 isDebug = true;
             }
-            else if (keyboardState.IsKeyDown(Keys.F12) && !oldkeyboardState.IsKeyDown(Keys.F10) && isDebug && !isChat)
+            else if (keyboardState.IsKeyDown(Keys.F12) && !oldkeyboardState.IsKeyDown(Keys.F12) && isDebug && !isChat)
             {
                 MessageClass.messageLog.Add("Debug Mode Off");
                 isDebug = false;
@@ -572,7 +571,7 @@ namespace SaturnIV
                 spriteBatch.End();
                 if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                     cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
-                        activeShipList);
+                        activeShipList, saveClass);
 
             messageClass.sendSystemMsg(spriteFont, spriteBatch,null, systemMessagePos);
             base.Draw(gameTime); messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);

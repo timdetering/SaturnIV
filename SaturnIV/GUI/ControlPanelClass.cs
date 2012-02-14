@@ -42,7 +42,7 @@ namespace SaturnIV
             //spritebatch.DrawString(smallFont, buffer, new Vector2(148, 825), Color.White);
             spritebatch.End();
     }
-        public void drawTextbox(SpriteBatch spritebatch, string text,Vector2 boxPos,List<newShipStruct> itemList)
+        public void drawTextbox(SpriteBatch spritebatch, string text,Vector2 boxPos,List<newShipStruct> itemList,SaveClass saveClass)
         {
             bool isDone = false;
             textString += UpdateInput();
@@ -64,18 +64,10 @@ namespace SaturnIV
                 case TextBoxActions.SaveScenario:
                     if (isDone)
                     {
-                        
+                        saveClass.serializeClass(itemList, textString);
                     }
-                    //SerializerClass.exportSaveScenario(thisScenario);                
-                    break;
-                case TextBoxActions.SaveMap:
-                    if (isDone)
-                    {                        
-                        textBoxActions = TextBoxActions.None;
-                    }
-                    break;
+                    break;              
             }
-
         }
 
         public string UpdateInput()

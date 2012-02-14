@@ -12,7 +12,7 @@ namespace SaturnIV
 {
     public class SaveClass
     {
-        public void serializeClass(List<newShipStruct> activeShipList)
+        public void serializeClass(List<newShipStruct> activeShipList,string saveName)
         {
             List<saveObject> saveList = new List<saveObject>();
             // Create the data to save
@@ -35,7 +35,7 @@ namespace SaturnIV
                 saveList.Add(saveMe);
             }
 
-            using (XmlWriter xmlWriter = XmlWriter.Create("scene.xml", xmlSettings))
+            using (XmlWriter xmlWriter = XmlWriter.Create("Content/XML/Scenarios/" + saveName, xmlSettings))
             {
                 IntermediateSerializer.Serialize(xmlWriter, saveList, null);
             }

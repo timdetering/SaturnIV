@@ -83,7 +83,7 @@ namespace SaturnIV
             //starList= new VertexPositionColor[30000];
             vertexPosColDecl = new VertexDeclaration(game.GraphicsDevice,
                 VertexPositionColor.VertexElements);
-            generateStarField(game, 5000);
+            generateStarField(game, 3000);
         }
 
          private VertexPositionTexture[] SetUpFullscreenVertices()
@@ -127,7 +127,7 @@ namespace SaturnIV
         public void DrawStars(Game game, CameraNew ourCamera)
         {
             game.GraphicsDevice.RenderState.PointSpriteEnable = true;
-            game.GraphicsDevice.RenderState.PointSize = 2.0f;
+            game.GraphicsDevice.RenderState.PointSize = 1.0f;
             game.GraphicsDevice.RenderState.AlphaBlendEnable = true;
             game.GraphicsDevice.RenderState.SourceBlend = Blend.SourceAlpha;
             game.GraphicsDevice.RenderState.DestinationBlend = Blend.One;

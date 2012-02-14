@@ -13,7 +13,7 @@
       <wClass>Cannon</wClass>
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>100</regenTime>
       <damageFactor>5</damageFactor>
       <range>5000</range>
       <timeToLive>700</timeToLive>	  

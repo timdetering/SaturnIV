@@ -182,7 +182,7 @@ namespace SaturnIV
                 else if (activeWeaponList[i].timer > activeWeaponList[i].timeToLive)
                 {
                     ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
-                        activeWeaponList[i].modelPosition, 0.25f);
+                        activeWeaponList[i].modelPosition, 0.50f);
                     activeWeaponList.Remove(activeWeaponList[i]);
                 }
             }
