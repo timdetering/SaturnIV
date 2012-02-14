@@ -186,7 +186,6 @@ namespace SaturnIV
                     break;
 
                     case editOptions.team:
-
                         selectTeam = true;
                         for (int i = 0; i < menuTeamList.Count; i++)
                         {
@@ -205,7 +204,7 @@ namespace SaturnIV
                         {
                             if (menuScenarioList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
                             {
-                                //loadThisScenario = menuScenarioList[i].itemText;
+                                loadThisScenario = menuScenarioList[i].itemText;
                                 thisScenario = i;
                                 inGui = true;
                                 break;
@@ -246,6 +245,7 @@ namespace SaturnIV
             messageBuffer.AppendFormat("Save - F10");
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(750, 7), opt6Color);
             messageBuffer = new StringBuilder();
+
             if (AddRemove == true)
             {
                 for (int i = 0; i < menuShipList.Count; i++)
@@ -262,7 +262,6 @@ namespace SaturnIV
                     messageBuffer = new StringBuilder();
                 }
             }
-
                 if (selectTeam == true)
                 {
                     for (int i = 0; i < menuTeamList.Count; i++)
@@ -280,8 +279,8 @@ namespace SaturnIV
                     }
                }
 
-                if (LoadScenario == true)
-                {
+               if (LoadScenario == true)
+               {
                     for (int i = 0; i < menuScenarioList.Count; i++)
                     {
                         if (thisScenario == i)
@@ -295,7 +294,7 @@ namespace SaturnIV
                                         new Vector2(menuScenarioList[i].itemRectangle.X, menuScenarioList[i].itemRectangle.Y), itemColor);
                         messageBuffer = new StringBuilder();
                     }
-                }
+               }
         }
     }
 }

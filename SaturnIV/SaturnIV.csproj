@@ -138,14 +138,14 @@
     </Compile>
     <Compile Include="ThrusterClass.cs" />
     <Compile Include="HelperClasses\HelperClass.cs" />
-    <Compile Include="ObjectClasses\NPCManager.cs" />
-    <Compile Include="ObjectClasses\ModelManager.cs" />
-    <Compile Include="ObjectClasses\PlanetManager.cs" />
-    <Compile Include="ObjectClasses\PlayerManager.cs" />
+    <Compile Include="ManagerClasses\NPCManager.cs" />
+    <Compile Include="ManagerClasses\ModelManager.cs" />
+    <Compile Include="ManagerClasses\PlanetManager.cs" />
+    <Compile Include="ManagerClasses\PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="constructs.cs" />
-    <Compile Include="ObjectClasses\WeaponsManager.cs" />
+    <Compile Include="ManagerClasses\WeaponsManager.cs" />
     <Compile Include="XMLClasses\SerializerClass.cs" />
   </ItemGroup>
   <ItemGroup>

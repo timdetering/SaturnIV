@@ -23,8 +23,6 @@ namespace SaturnIV
         private Line3D fLine;
         BoundingSphere directionSphere;
         Color sphereColor;
-        Color mouseOverColor;
-        Color mouseOverColor2;
         public bool ischangingDirection = false;
         public bool isDragging = false;
         public bool isGroupSelect = false;
@@ -32,12 +30,10 @@ namespace SaturnIV
         public bool isCameraSet = false;
         public static bool isSelecting = false;
         MouseState mouseOld;
-        SpriteBatch spriteBatch;
         public static bool selected = false;
         MouseState prevMouseState;
         MouseState mouseCurrent;
         KeyboardState keyboardState;
-        KeyboardState prevKeyboardState;
         Vector3 mousePosOld;
         static bool isStuffSelected = false;
         static Vector3 offset;
@@ -265,14 +261,14 @@ namespace SaturnIV
             return false;
         }
 
-        public static newShipStruct spawnNPC(NPCManager modelManager, Vector3 mouse3dVector, ref List<shipData> shipDefList,
+        public static newShipStruct spawnNPC(Vector3 mouse3dVector, ref List<shipData> shipDefList,
                                     string shipName, int shipIndex, int team)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectIndex = shipIndex;
             tempData.objectFileName = shipDefList[shipIndex].FileName;
             tempData.objectAlias = shipName;
-            tempData.shipModel = modelManager.LoadModel(shipDefList[shipIndex].FileName);
+            //tempData.shipModel = modelManager.LoadModel(shipDefList[shipIndex].FileName);
             tempData.objectAgility = shipDefList[shipIndex].Agility;
             tempData.objectMass = shipDefList[shipIndex].Mass;
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
@@ -298,7 +294,7 @@ namespace SaturnIV
             //if (tempData.objectClass == ClassesEnum.Capitalship)
             //    tempData.currentDisposition = disposition.defensive;
             tempData.Up = Vector3.Up;
-            tempData.modelBB = HelperClass.ComputeBoundingBox(tempData.shipModel, tempData.modelPosition);
+            tempData.modelBB = HelperClass.ComputeBoundingBox(Game1.modelDictionary[tempData.objectFileName], tempData.modelPosition);
             tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;
             tempData.modelWidth = tempData.modelBB.Max.Z - tempData.modelBB.Min.Z;
             tempData.modelFrustum = new BoundingFrustum(Matrix.Identity);

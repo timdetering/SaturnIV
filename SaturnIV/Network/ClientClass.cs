@@ -64,7 +64,7 @@ namespace SaturnIV
                                         MessageClass.messageLog.Add("Data: " + ch.shipName);
                                         MessageClass.messageLog.Add("Data: " + ch.shipIndex);
                                         netFetchList.Add(ch);
-                                        shipList.Add(EditModeComponent.spawnNPC(npcManager, ch.shipPosition, ref Game1.shipDefList, 
+                                        shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList, 
                                             ch.shipName, ch.shipIndex, ch.side));
                                     }
                                 }

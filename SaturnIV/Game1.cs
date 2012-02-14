@@ -98,7 +98,7 @@ namespace SaturnIV
         // Define Hud Components
         Texture2D centerHUD;
         Texture2D targetTracker;
-        Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
+        public static Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
         
         public Game1()
         {
@@ -191,7 +191,7 @@ namespace SaturnIV
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             // Init Player ship
-            playerShip = EditModeComponent.spawnNPC(npcManager, Vector3.Zero, ref shipDefList, "player1", 2, 0);
+            playerShip = EditModeComponent.spawnNPC(Vector3.Zero, ref shipDefList, "player1", 2, 0);
             playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
         }
 
@@ -312,6 +312,9 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
+            // Check if I need to do anything triggered by the gui menu in Edit Mode or elsewhere (etc. Load Scenario)....
+            if (guiClass.LoadScenario)
+                serializerClass.loadScenario(Gui.loadThisScenario ,ref activeShipList);
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
                 mouseStatePrevious.LeftButton == ButtonState.Released)
@@ -373,7 +376,7 @@ namespace SaturnIV
                         tmpShipName = rNameList.capitalShipNames[2];
                         rNameList.capitalShipNames.Remove(tmpShipName);
                         messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
-                        newShipStruct newShip = EditModeComponent.spawnNPC(npcManager, mouse3dVector, ref shipDefList, 
+                        newShipStruct newShip = EditModeComponent.spawnNPC(mouse3dVector, ref shipDefList, 
                             tmpShipName, Gui.thisShip, Gui.thisFaction);
                         activeShipList.Add(newShip);
                     }
@@ -690,10 +693,11 @@ namespace SaturnIV
 
             StringBuilder buffer = new StringBuilder();
             buffer.AppendFormat("Ninja76");
-            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), Color.White);
+            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), Color.Gray);
             spriteBatch.End();
         }
 
+        // Rectangle Drag N Drop routines //
         public Rectangle selectRectangle(MouseState mouseState, Vector3 mouse3d)
         {
             if (selectionRect == Rectangle.Empty)

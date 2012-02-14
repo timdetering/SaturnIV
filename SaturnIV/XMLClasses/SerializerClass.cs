@@ -44,10 +44,8 @@ namespace SaturnIV
             {
                 List<saveObject> saveList = new List<saveObject>();
                 // Create the data to save
-                saveObject saveMe;
-                //weaponTypes exportWeaponDefs;
-                shipData exportShipDefs = new shipData();
-                // exportWeaponDefs = new weaponTypes();
+                saveObject saveMe;                
+                shipData exportShipDefs = new shipData();                
                 XmlWriterSettings xmlSettings = new XmlWriterSettings();
                 xmlSettings.Indent = true;
 
@@ -68,9 +66,22 @@ namespace SaturnIV
                 }
             }
 
-            public static void loadScenario(string filename, ref List<newShipStruct> ShipList)
+            public void loadScenario(string filename, ref List<newShipStruct> ShipList)
             {
-               
+                if (filename != null)
+                {
+                    ShipList.Clear();
+                    List<saveObject> tempScenario = new List<saveObject>();
+                    XmlReaderSettings xmlSettings = new XmlReaderSettings();
+                    XmlReader xmlReader = XmlReader.Create("Content/XML/Scenarios/" + filename);
+                    tempScenario = IntermediateSerializer.Deserialize<List<saveObject>>(xmlReader, null);
+                    foreach (saveObject ship in tempScenario)
+                    {
+                        newShipStruct shipAdd = new newShipStruct();
+                        shipAdd.objectAlias = ship.shipName;
+                        //EditModeComponent.spawnNPC(
+                    }
+                }
             }        
     }
         [Serializable]
