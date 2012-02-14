@@ -7,7 +7,7 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
-      <FileName>Models//Ships/SB-50/SB50</FileName>
+      <FileName>Models//Ships/OrionFrigate</FileName>
       <Type>Eriax Destroyer</Type>
       <Mass>8</Mass>
       <Thrust>3600</Thrust>
@@ -57,7 +57,7 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models/Ships/Battlecrusier/battlecruiser</FileName>
+      <FileName>Models/Ships/NovaCarrier</FileName>
       <Type>Battlecrusier</Type>
       <Mass>124.0</Mass>
       <Thrust>14200</Thrust>

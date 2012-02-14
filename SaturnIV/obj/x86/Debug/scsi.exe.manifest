@@ -666,6 +666,24 @@
       <dsig:DigestValue>WZm/tVC+4Cvacl2CVCY9qoKI6Hg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\Ships\NovaCarrier.xnb" size="2966193">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TThoQWOnch5R6V2f4qYFSRECfWI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\Ships\OrionFrigate.xnb" size="597981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>b2t2McvAKi6x8GPIdFJvUXcUTzo=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\Ships\SB-50\COLOR_0.xnb" size="174897">
     <hash>
       <dsig:Transforms>

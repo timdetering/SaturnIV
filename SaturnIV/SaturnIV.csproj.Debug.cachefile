@@ -37,6 +37,7 @@ Content\Models\sphere.xnb
 Content\Models\Ships\Ares_Battlecrusier.xnb
 Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
 Content\Hgn_battlecruiser_main_export[1]_0.xnb
+Content\Models\Ships\OrionFrigate.xnb
 Content\textures\HUD\centertarget.xnb
 Content\Thrusters\NoiseVolume.xnb
 Content\textures\yellowDotSmall.xnb
@@ -92,6 +93,7 @@ Content\textures\starfield2.xnb
 Content\textures\missiletrack.xnb
 Content\Effects\BloomCombine.xnb
 Content\Effects\ParticleEffect.xnb
+Content\Models\Ships\NovaCarrier.xnb
 Content\Models\Ships\Eriax_Heavy_Gunship.xnb
 Content\Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[2]LUM.xnb
 Content\Models\Ships\MR-100\FIGHTER__0.xnb

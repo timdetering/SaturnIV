@@ -115,3 +115,5 @@ Content\Hgn_battlecruiser_main_export[1]_0.xnb
 Content\Hgn_battlecruiser_thruster_expor_0.xnb
 Content\textures\HUD\centertarget.xnb
 Content\textures\HUD\target_track.xnb
+Content\Models\Ships\NovaCarrier.xnb
+Content\Models\Ships\OrionFrigate.xnb

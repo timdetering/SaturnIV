@@ -453,3 +453,5 @@ D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Conte
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Hgn_battlecruiser_thruster_expor_0.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\centertarget.xnb
 D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\target_track.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\NovaCarrier.xnb
+D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\OrionFrigate.xnb
