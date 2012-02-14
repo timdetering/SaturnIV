@@ -60,6 +60,7 @@ namespace SaturnIV
             if (keyboardState.IsKeyDown(Keys.A))
             {
                 rotationAmount.X = 4f;
+                //roll = 0.023f;
             }
             if (keyboardState.IsKeyDown(Keys.D))
             {
@@ -125,6 +126,7 @@ namespace SaturnIV
             playerShip.modelRotation = playerShip.modelRotation * rotationMatrix;
             playerShip.worldMatrix = (playerShip.modelRotation * rotationMatrix) *
                           Matrix.CreateTranslation(playerShip.modelPosition);
+            playerShip.screenCords = get2dCoords(playerShip.modelPosition, ourCamera);
            }
 
         /// <summary>

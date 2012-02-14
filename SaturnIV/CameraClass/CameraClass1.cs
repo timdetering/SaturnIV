@@ -24,13 +24,13 @@ namespace SaturnIV
         private float yaw, pitch, roll;
         private float speed;
 
-        private Matrix cameraRotation;
+        Matrix cameraRotation;
         public Matrix viewMatrix, projectionMatrix;
 
         private MouseState mouseStateCurrent;
         private MouseState mouseStatePrevious;
         private MouseState originalMouseState;
-        public static float zoomFactor = 7f;
+        public static float zoomFactor = 3.5f;
 
         public CameraNew()
         {
@@ -60,16 +60,16 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, .5f, 200000f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, .5f, 300000f);
         }
 
-        public void Update(Matrix chasedObjectsWorld)
+        public void Update(Matrix chasedObjectsWorld, bool isEditMode)
         {
-            HandleInput();
+            HandleInput(isEditMode);
             UpdateViewMatrix(chasedObjectsWorld);
         }
 
-        private void HandleInput()
+        private void HandleInput(bool isEditMode)
         {
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
@@ -77,7 +77,7 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                //if (zoomFactor < 25.0)
+                if (zoomFactor < 5.0)
                 zoomFactor += (WheelVal * 0.15f);
             }
 
@@ -87,7 +87,7 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
 
-                //if (zoomFactor > 0.50)
+                if (zoomFactor > 1.0)
                 zoomFactor -= (WheelVal * -0.15f);
             }
 
@@ -136,6 +136,16 @@ namespace SaturnIV
                 {
                     pitch += -.2f;
                 }
+            }
+            MouseState currentMouseState = Mouse.GetState();
+            if (currentMouseState != originalMouseState && !isEditMode)
+            {
+                float xDifference = currentMouseState.X - originalMouseState.X;
+                float yDifference = currentMouseState.Y - originalMouseState.Y;
+                //leftrightRot -= rotationSpeed * xDifference * amount;
+                pitch += .005f * yDifference * speed;
+                yaw -= .005f * xDifference * speed;
+                
             }
             mouseStatePrevious = mouseStateCurrent;
         }

@@ -85,7 +85,7 @@ namespace SaturnIV
             expList.Add(explosionVertices);
         }
 
-        public void DrawExp(GameTime gameTime, Camera myCamera, GraphicsDevice device)
+        public void DrawExp(GameTime gameTime, CameraNew myCamera, GraphicsDevice device)
         {
             Matrix worldMatrix = Matrix.Identity;
 
@@ -97,7 +97,7 @@ namespace SaturnIV
 
                 expEffect.Parameters["xCamPos"].SetValue(Camera.position);
                 expEffect.Parameters["xExplosionTexture"].SetValue(myTexture);
-                expEffect.Parameters["xCamUp"].SetValue(myCamera.cameraRotation.Up);
+                expEffect.Parameters["xCamUp"].SetValue(Vector3.Up);
                 expEffect.Parameters["xTime"].SetValue((float)gameTime.TotalGameTime.TotalMilliseconds);
 
                 device.RenderState.AlphaBlendEnable = true;

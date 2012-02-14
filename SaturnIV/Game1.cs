@@ -227,13 +227,13 @@ namespace SaturnIV
                 ourCamera.ResetCamera();
                 CameraNew.offsetDistance = new Vector3(0, 70000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
-                ourCamera.Update(cameraTarget);
+                ourCamera.Update(cameraTarget, isEditMode);
             }
             else
             {                
                 CameraNew.offsetDistance = new Vector3(0, 15000, 1000);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
-                ourCamera.Update(cameraTarget);
+                ourCamera.Update(cameraTarget, isEditMode);
             }
 
             if (!isEditMode)
@@ -421,11 +421,10 @@ namespace SaturnIV
                     string msg = "Edit Mode";
                     //cameraTargetVec3.Y = 40000f;
                     messageClass.sendSystemMsg(spriteFont, spriteBatch,msg, systemMessagePos);
-                    //Camera.zoomFactor = 4.0f;                    
+                    CameraNew.zoomFactor = 2.0f;                    
                 }
                 else if (keyboardState.IsKeyDown(Keys.E) && isEditMode && !isChat)
                 {
-                    //Camera.zoomFactor = 2.0f;
                     isEditMode = false;
                 }
                 // Chat Mode Handler //
@@ -545,7 +544,7 @@ namespace SaturnIV
                 else
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
             }            
-             //ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);           
+             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);           
             // Start HUD and other 2d stuff
             //DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
@@ -617,6 +616,8 @@ namespace SaturnIV
                         buffer.AppendFormat("[" + enemy.timer + "]");
                     }
                     // if (!isEditMode)
+
+                    spriteBatch.Draw(shipRec, new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), shipColor);
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                     //  if (!isEditMode)
                     //     spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
@@ -666,7 +667,6 @@ namespace SaturnIV
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
             messageBuffer = new StringBuilder();
-            messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nZoomFactor {0} ", CameraNew.zoomFactor);
             messageBuffer.AppendFormat("\nCamera Mode " + CameraNew.currentCameraMode);
             messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
@@ -675,6 +675,10 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Blue);
             //spriteBatch.Draw(centerHUD, new Vector2(screenCenterX - 149, screenCenterY - 155), Color.Wheat);
+
+            StringBuilder buffer = new StringBuilder();
+            buffer.AppendFormat("Ninja76");
+            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), Color.White);
             spriteBatch.End();
         }
 
