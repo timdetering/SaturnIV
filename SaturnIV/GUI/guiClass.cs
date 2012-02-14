@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-
 
 namespace SaturnIV
 {
@@ -16,17 +16,21 @@ namespace SaturnIV
         Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5,rectangle6,rectangle7;
         Color opt1Color, opt2Color, opt3Color, opt4Color, opt5Color, opt6Color, opt7Color;
         public static editOptions currentSelection;
+        public int thisFaction, thisScenario, thisShip;
         int verticalStartY = 25;
         int horizontalStartX = 150;
         public static bool AddRemove = false;
         public static bool selectTeam = false;
-        public int thisItem;
-        public int thisTeam=0;
+        public static bool LoadScenario = false;
+        public static bool inGui;
+        public string loadThisScenario;
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
-        
+        //int[] menuStartX = new int[10]{10,150,300,450,600,750};
+               
         List<MenuItem> menuShipList = new List<MenuItem>();
         List<MenuItem> menuTeamList = new List<MenuItem>();
+        List<MenuItem> menuScenarioList = new List<MenuItem>();
 
         public enum editOptions
         {
@@ -63,7 +67,7 @@ namespace SaturnIV
 
         public void buildTeamMenu()
         {
-            horizontalStartX = 500;
+            horizontalStartX = 450;
             verticalStartY = 25;
             MenuItem tempItem = new MenuItem();
             tempItem.itemText = "Earth Alliance";
@@ -79,19 +83,38 @@ namespace SaturnIV
             menuTeamList.Add(tempItem);
         }
 
+        public void buildScenarioMenu()
+        {
+            string[] files = Directory.GetFiles("Content/XML/Scenarios/", "*.xml");
+            int i = 0;
+            horizontalStartX = 600;
+            verticalStartY = 25;
+            foreach (string o in files)
+            {
+                string[] words = o.Split('/');
+                MenuItem tempItem = new MenuItem();
+                tempItem.itemText = words[words.Count() - 1];
+                tempItem.itemIndex = i;
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 100, 20);
+                verticalStartY += 20;
+                menuScenarioList.Add(tempItem);
+                i++;
+            }
+        }
 
         public void initalize(Game game, ref List<shipData> shipList) 
         {
             buildShipMenu(shipList);
             buildTeamMenu();
-            currentSelection = editOptions.load;
+            buildScenarioMenu();
+            //currentSelection = editOptions.load;
             rectangle1 = new Rectangle(5, 5, 150, 20);
             rectangle2 = new Rectangle(150, 5, 150, 20);
             rectangle3 = new Rectangle(300, 5, 150, 20);
             rectangle4 = new Rectangle(450, 5, 150, 20);
             rectangle5 = new Rectangle(600, 5, 150, 20);
             rectangle6 = new Rectangle(750, 5, 150, 20);
-            rectangle7 = new Rectangle(850, 5, 150, 20);
+            rectangle7 = new Rectangle(900, 5, 150, 20);
             opt1Color = Color.Gray;
             opt2Color = Color.Gray;
             opt3Color = Color.Gray;
@@ -104,11 +127,12 @@ namespace SaturnIV
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
         }
 
-        public void update(MouseState currentMouse,MouseState oldMouse)
+        public void update(MouseState currentMouse, MouseState oldMouse)
         {
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
             AddRemove = false;
             selectTeam = false;
+            LoadScenario = false;
             opt2Color = Color.White;
             opt3Color = Color.White;
             opt4Color = Color.White;
@@ -120,64 +144,80 @@ namespace SaturnIV
             {
                 currentSelection = editOptions.addremove;
                 opt2Color = Color.Black;
+                inGui = true;
             }
-            else
-                if (rectangle3.Contains(new Point(mouseX, mouseY)))
-                {
-                    currentSelection = editOptions.formsquad;
-                    opt3Color = Color.Black;
-                }
-                else
-                    if (rectangle4.Contains(new Point(mouseX, mouseY)))
-                    {
-                        currentSelection = editOptions.team;
-                        opt4Color = Color.Black;
-                    }
-                    else
-                        if (rectangle5.Contains(new Point(mouseX, mouseY)))
-                        {
-                            currentSelection = editOptions.load;
-                            opt5Color = Color.Black;
-                        }
 
-            if (currentMouse.LeftButton == ButtonState.Pressed) //&& oldMouse.LeftButton == ButtonState.Released)
+            if (rectangle3.Contains(new Point(mouseX, mouseY)))
             {
-                if (currentSelection == editOptions.addremove)
-                {
-                    AddRemove = true;
-                    for (int i = 0; i < menuShipList.Count; i++)
-                    {
-                        if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
-                        {
-                            thisItem = i;
-                            break;
-                        }
-                    }
-                }
-                else
-                    AddRemove = false;
+                currentSelection = editOptions.formsquad;
+                opt3Color = Color.Black;
+                inGui = true;
+            }
 
-                // Team Menu
-                if (currentSelection == editOptions.team)
+            if (rectangle4.Contains(new Point(mouseX, mouseY)))
+            {
+                currentSelection = editOptions.team;
+                opt4Color = Color.Black;
+                inGui = true;
+            }
+
+            if (rectangle5.Contains(new Point(mouseX, mouseY)))
+            {
+                currentSelection = editOptions.load;
+                opt5Color = Color.Black;
+                inGui = true;
+            }
+
+            if (currentMouse.LeftButton == ButtonState.Pressed)
+            {
+                switch (currentSelection)
                 {
-                    selectTeam = true;
-                    for (int i = 0; i < menuTeamList.Count; i++)
-                    {
-                        if (menuTeamList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                    case editOptions.addremove:
+                        AddRemove = true;
+                        for (int i = 0; i < menuShipList.Count; i++)
                         {
-                            thisTeam = i;
-                            break;
+                            if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                            {
+                                thisShip = i;
+                                inGui = true;
+                                break;
+                            }
                         }
-                    }
-                }
-                else
-                    selectTeam = false;
+                    break;
+
+                    case editOptions.team:
+
+                        selectTeam = true;
+                        for (int i = 0; i < menuTeamList.Count; i++)
+                        {
+                            if (menuTeamList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                            {
+                                thisFaction = i;
+                                inGui = true;                                
+                                break;
+                            }
+                        }
+                    break;
+
+                    case editOptions.load:                        
+                        LoadScenario = true;
+                        for (int i = 0; i < menuScenarioList.Count; i++)
+                        {
+                            if (menuScenarioList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                            {
+                                //loadThisScenario = menuScenarioList[i].itemText;
+                                thisScenario = i;
+                                inGui = true;
+                                break;
+                            }
+                        }
+                    break;
+                 }
             }
         }
 
         public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
-        {
-            
+        {            
             mBatch.Draw(dummyTexture, rectangle1, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle2, Color.Gray);
             mBatch.Draw(dummyTexture, rectangle3, Color.Gray);
@@ -195,19 +235,22 @@ namespace SaturnIV
             mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(150, 7), opt2Color);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Form Squad");
-            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(350, 7), opt3Color);
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(300, 7), opt3Color);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Faction");
-            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(500, 7), opt4Color);
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(450, 7), opt4Color);
+            messageBuffer = new StringBuilder();
+            messageBuffer.AppendFormat("Load Scenario");
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(600, 7), opt5Color);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("Save - F10");
-            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(800, 7), opt4Color);
+            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(750, 7), opt6Color);
             messageBuffer = new StringBuilder();
             if (AddRemove == true)
             {
                 for (int i = 0; i < menuShipList.Count; i++)
                 {
-                    if (thisItem == i)
+                    if (thisShip == i)
                         itemColor = Color.Black;
                     else
                         itemColor = Color.White;
@@ -217,7 +260,6 @@ namespace SaturnIV
                     mBatch.DrawString(spriteFont, messageBuffer,
                                     new Vector2(menuShipList[i].itemRectangle.X, menuShipList[i].itemRectangle.Y), itemColor);
                     messageBuffer = new StringBuilder();
-
                 }
             }
 
@@ -225,7 +267,7 @@ namespace SaturnIV
                 {
                     for (int i = 0; i < menuTeamList.Count; i++)
                     {
-                        if (thisTeam == i)
+                        if (thisFaction == i)
                             itemColor = Color.Black;
                         else
                             itemColor = Color.White;
@@ -235,9 +277,25 @@ namespace SaturnIV
                         mBatch.DrawString(spriteFont, messageBuffer,
                                         new Vector2(menuTeamList[i].itemRectangle.X, menuTeamList[i].itemRectangle.Y), itemColor);
                         messageBuffer = new StringBuilder();
-
                     }
                }
+
+                if (LoadScenario == true)
+                {
+                    for (int i = 0; i < menuScenarioList.Count; i++)
+                    {
+                        if (thisScenario == i)
+                            itemColor = Color.Black;
+                        else
+                            itemColor = Color.White;
+
+                        mBatch.Draw(dummyTexture, menuScenarioList[i].itemRectangle, Color.Gray);
+                        messageBuffer.AppendFormat(menuScenarioList[i].itemText);
+                        mBatch.DrawString(spriteFont, messageBuffer,
+                                        new Vector2(menuScenarioList[i].itemRectangle.X, menuScenarioList[i].itemRectangle.Y), itemColor);
+                        messageBuffer = new StringBuilder();
+                    }
+                }
         }
     }
 }

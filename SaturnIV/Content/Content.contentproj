@@ -549,13 +549,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Battlecrusier\battlecruiser.FBX">
-      <Name>battlecruiser</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiserkineticburstcannon_export[1].bmp">
       <Name>Hgn_battlecruiserkineticburstcannon_export[1]</Name>
       <Importer>TextureImporter</Importer>

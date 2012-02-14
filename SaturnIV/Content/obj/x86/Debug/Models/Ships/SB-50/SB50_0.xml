@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Box01</Name>
     <Identity>
-      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\SB-50\SB50.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\SB-50\SB50.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -29,7 +29,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>01 - Default</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\SB-50\SB50.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\SB-50\SB50.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

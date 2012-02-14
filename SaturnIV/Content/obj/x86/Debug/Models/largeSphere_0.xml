@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>pSphere1</Name>
     <Identity>
-      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\largeSphere.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\largeSphere.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>lambert1</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\largeSphere.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\largeSphere.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

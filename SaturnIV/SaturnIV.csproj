@@ -98,29 +98,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIClass.cs" />
-    <Compile Include="BloomComponent.cs" />
-    <Compile Include="BloomSettings.cs" />
-    <Compile Include="boundingspheredraw.cs" />
-    <Compile Include="CameraClass.cs" />
-    <Compile Include="boundingFrustumRender.cs" />
-    <Compile Include="BoidClass.cs" />
+    <Compile Include="BloomClasses\BloomComponent.cs" />
+    <Compile Include="BloomClasses\BloomSettings.cs" />
+    <Compile Include="PrimitiveClasses\boundingspheredraw.cs" />
+    <Compile Include="PrimitiveClasses\boundingFrustumRender.cs" />
+    <Compile Include="myAI\BoidClass.cs" />
     <Compile Include="CameraClass\CameraClass1.cs" />
-    <Compile Include="CameraClass\CameraMovement.cs" />
     <Compile Include="GUI\ControlPanelClass.cs" />
-    <Compile Include="MessageClass.cs" />
+    <Compile Include="HelperClasses\SystemLogClass.cs" />
     <Compile Include="myAI\AIClass.cs" />
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
     <Compile Include="ParticleSystem\SparkParticleSystem.cs" />
-    <Compile Include="QuadClass.cs" />
-    <Compile Include="ExplosionClass.cs" />
+    <Compile Include="PrimitiveClasses\QuadClass.cs" />
+    <Compile Include="ParticleSystem\ExplosionClass.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="gridClass.cs" />
+    <Compile Include="PrimitiveClasses\gridClass.cs" />
     <Compile Include="GUI\EditModeComponent.cs" />
     <Compile Include="GUI\guiClass.cs" />
-    <Compile Include="HealthBarClass.cs" />
-    <Compile Include="Line3D.cs" />
-    <Compile Include="ParticleClass.cs" />
+    <Compile Include="HelperClasses\HealthBarClass.cs" />
+    <Compile Include="PrimitiveClasses\Line3D.cs" />
+    <Compile Include="ParticleSystem\ParticleClass.cs" />
     <Compile Include="ParticleSystem\ExplosionParticleSystem.cs" />
     <Compile Include="ParticleSystem\ExplosionSmokeParticleSystem.cs" />
     <Compile Include="ParticleSystem\FireParticleSystem.cs" />
@@ -131,27 +129,26 @@
     <Compile Include="ParticleSystem\Projectile.cs" />
     <Compile Include="ParticleSystem\ProjectileTrailParticleSystem.cs" />
     <Compile Include="ParticleSystem\SmokePlumeParticleSystem.cs" />
-    <Compile Include="RadarClass.cs" />
-    <Compile Include="RenderStarfield.cs">
+    <Compile Include="HelperClasses\RadarClass.cs" />
+    <Compile Include="HelperClasses\RenderStarfield.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="saveClass.cs" />
     <Compile Include="SkySphere.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ThrusterClass.cs" />
-    <Compile Include="HelperClass.cs" />
-    <Compile Include="NPCManager.cs" />
-    <Compile Include="ModelManager.cs" />
-    <Compile Include="PlanetManager.cs" />
-    <Compile Include="PlayerManager.cs" />
+    <Compile Include="HelperClasses\HelperClass.cs" />
+    <Compile Include="ObjectClasses\NPCManager.cs" />
+    <Compile Include="ObjectClasses\ModelManager.cs" />
+    <Compile Include="ObjectClasses\PlanetManager.cs" />
+    <Compile Include="ObjectClasses\PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="constructs.cs" />
-    <Compile Include="WeaponsManager.cs" />
+    <Compile Include="ObjectClasses\WeaponsManager.cs" />
+    <Compile Include="XMLClasses\SerializerClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="classdefs.xml" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

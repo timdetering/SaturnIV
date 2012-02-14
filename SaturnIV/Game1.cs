@@ -66,7 +66,7 @@ namespace SaturnIV
         public WeaponsManager weaponsManager;
         public static List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
-        public SaveClass saveClass;
+        public SerializerClass serializerClass;
         public RandomNames rNameList = new RandomNames();
         public string tmpShipName;
         ExplosionClass ourExplosion;
@@ -98,6 +98,7 @@ namespace SaturnIV
         // Define Hud Components
         Texture2D centerHUD;
         Texture2D targetTracker;
+        Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
         
         public Game1()
         {
@@ -115,11 +116,11 @@ namespace SaturnIV
             ourCamera = new CameraNew();
             ourCamera.ResetCamera();
             cameraTargetVec3 = new Vector3(0, 10000, 50);
-            Camera.offsetDistance = new Vector3(-2400, 3200, 250);
+            CameraNew.offsetDistance = new Vector3(-2400, 3200, 250);
             rand = new Random();
 ////////////TODO: Add your initialization logic here
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            saveClass = new SaveClass();
+            serializerClass = new SerializerClass();
             messageClass = new MessageClass();
             bar = new HealthBarClass(this);
             bar.Initialize();
@@ -178,9 +179,7 @@ namespace SaturnIV
             viewport = device.Viewport;
             spriteFont = this.Content.Load<SpriteFont>("MedFont");
             spriteFontSmall = this.Content.Load<SpriteFont>("SmallFont");
-            loadShipData();
-            playerShip = EditModeComponent.spawnNPC(npcManager, Vector3.Zero, ref shipDefList, "player1", 2, 0);
-            playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            loadMetaData();
             Gui.initalize(this, ref shipDefList);
             cPanel.LoadPanel(Content, spriteBatch);
             rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
@@ -191,21 +190,35 @@ namespace SaturnIV
             targetTracker = this.Content.Load<Texture2D>("textures//HUD/target_track");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
+            // Init Player ship
+            playerShip = EditModeComponent.spawnNPC(npcManager, Vector3.Zero, ref shipDefList, "player1", 2, 0);
+            playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
         }
 
-        private void loadShipData()
+        private void loadMetaData()
         {
-            XmlReaderSettings xmlSettings = new XmlReaderSettings();
-            XmlReader xmlReader = XmlReader.Create("Content/XML/shipdefs.xml");
-            shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader,null);
-            xmlReader = XmlReader.Create("Content/XML/weapondefs.xml");
-            weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
-            xmlReader = XmlReader.Create("Content/XML/listofnames.xml");
-            rNameList = IntermediateSerializer.Deserialize<RandomNames>(xmlReader, null);
+            /// <summary>
+            /// Load Ship/Unit Data from XML            
+            /// </summary>
+            /// <param name="ShipData">Provide Reference to List to populate</param>
+            serializerClass.loadMetaData(ref shipDefList, ref weaponDefList, ref rNameList);
             foreach (shipData thisShip in shipDefList)
-                objectThumbs.Add(this.Content.Load<Texture2D>(thisShip.ThumbFileName));
-            foreach (shipData thisShip in shipDefList)
-                 Content.Load<Model>(thisShip.FileName);
+            {
+                if (!modelDictionary.ContainsKey(thisShip.FileName))
+                {
+                    modelDictionary.Add(thisShip.FileName, Content.Load<Model>(thisShip.FileName));
+                     //messageClass.messageLog.Add("Loading " + thisShip.FileName);
+                }
+            }
+
+            foreach (weaponData thisWeapon in weaponDefList)
+            {
+                if (!modelDictionary.ContainsKey(thisWeapon.FileName))
+                {
+                    modelDictionary.Add(thisWeapon.FileName, Content.Load<Model>(thisWeapon.FileName));
+                    //SystemLogClass.messageLog.Add("Loading " + thisWeapon.assetString);
+                }
+            }
         }
        
         /// <summary>
@@ -361,7 +374,7 @@ namespace SaturnIV
                         rNameList.capitalShipNames.Remove(tmpShipName);
                         messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
                         newShipStruct newShip = EditModeComponent.spawnNPC(npcManager, mouse3dVector, ref shipDefList, 
-                            tmpShipName, Gui.thisItem, Gui.thisTeam);
+                            tmpShipName, Gui.thisShip, Gui.thisFaction);
                         activeShipList.Add(newShip);
                     }
             }
@@ -466,7 +479,7 @@ namespace SaturnIV
                 {
                     drawTextbox = true;
                     ControlPanelClass.textBoxActions = TextBoxActions.SaveScenario;
-                    saveClass.serializeClass(activeShipList, "plan1");
+                    serializerClass.exportSaveScenario(activeShipList, "plan1");
                 }
 
                 // Turn on/off Server/Client Mode
@@ -518,23 +531,23 @@ namespace SaturnIV
         {
             float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;
             graphics.GraphicsDevice.Clear(Color.Black);
-            //Draw Skybox and Starfield
+            // Draw Skybox and Starfield Elements
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
             //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
             cPanel.Draw();
             foreach (newShipStruct npcship in activeShipList)
-            {                
-                modelManager.DrawModel(ourCamera, npcship.shipModel, npcship.worldMatrix,shipColor);
+            {
+                modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor);
                 if (isDebug)
                     debug(npcship);                
             }
-            modelManager.DrawModel(ourCamera, playerShip.shipModel, playerShip.worldMatrix, Color.Blue);
+            modelManager.DrawModel(ourCamera, modelDictionary[playerShip.objectFileName], playerShip.worldMatrix, Color.Blue);
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
                 if (theList.isProjectile)
-                    modelManager.DrawModel(ourCamera, theList.shipModel, theList.worldMatrix, Color.White);
+                    modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White);
                 else if (theList.objectClass == WeaponClassEnum.Beam)
                 {
                     theList.beamQuad.DrawQuad(ourCamera.viewMatrix,
@@ -571,7 +584,7 @@ namespace SaturnIV
                 spriteBatch.End();
                 if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                     cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
-                        activeShipList, saveClass);
+                        activeShipList, serializerClass);
 
             messageClass.sendSystemMsg(spriteFont, spriteBatch,null, systemMessagePos);
             base.Draw(gameTime); messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
@@ -668,7 +681,7 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nZoomFactor {0} ", CameraNew.zoomFactor);
             messageBuffer.AppendFormat("\nCamera Mode " + CameraNew.currentCameraMode);
-            messageBuffer.AppendFormat("\nisDragging: " + editModeClass.isDragging);
+            messageBuffer.AppendFormat("\nMenu CurrentSlection: " + guiClass.currentSelection);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
             messageBuffer = new StringBuilder();

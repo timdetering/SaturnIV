@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
+
+namespace SaturnIV
+{
+        public class SerializerClass
+        {
+            public void loadMetaData(ref List<shipData> shipDefList, ref List<weaponData> weaponDefList, ref RandomNames rNameList)
+            {
+                XmlReaderSettings xmlSettings = new XmlReaderSettings();
+                XmlReader xmlReader = XmlReader.Create("Content/XML/shipdefs.xml");
+                shipDefList = IntermediateSerializer.Deserialize<List<shipData>>(xmlReader, null);
+                xmlReader = XmlReader.Create("Content/XML/weapondefs.xml");
+                weaponDefList = IntermediateSerializer.Deserialize<List<weaponData>>(xmlReader, null);
+                xmlReader = XmlReader.Create("Content/XML/listofnames.xml");
+                rNameList = IntermediateSerializer.Deserialize<RandomNames>(xmlReader, null);                
+             }
+
+            public static void exportWClass()
+            {
+                // Generate XML Template for Mech Data
+                XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                xmlSettings.Indent = true;
+                using (XmlWriter xmlWriter = XmlWriter.Create("weaponsdata.xml", xmlSettings))
+                {
+                }
+            }
+
+            public void exportSaveScenario(List<newShipStruct> activeShipList, string saveName)
+            {
+                List<saveObject> saveList = new List<saveObject>();
+                // Create the data to save
+                saveObject saveMe;
+                //weaponTypes exportWeaponDefs;
+                shipData exportShipDefs = new shipData();
+                // exportWeaponDefs = new weaponTypes();
+                XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                xmlSettings.Indent = true;
+
+                foreach (newShipStruct ship in activeShipList)
+                {
+                    saveMe = new saveObject();
+                    saveMe.shipPosition = ship.modelPosition;
+                    saveMe.shipDirection = ship.targetPosition;
+                    saveMe.shipName = ship.objectAlias;
+                    saveMe.shipIndex = ship.objectIndex;
+                    saveMe.side = ship.team;
+                    saveList.Add(saveMe);
+                }
+
+                using (XmlWriter xmlWriter = XmlWriter.Create("Content/XML/Scenarios/" + saveName + ".xml", xmlSettings))
+                {
+                    IntermediateSerializer.Serialize(xmlWriter, saveList, null);
+                }
+            }
+
+            public static void loadScenario(string filename, ref List<newShipStruct> ShipList)
+            {
+               
+            }        
+    }
+        [Serializable]
+        public struct saveObject
+        {
+            public int shipIndex;
+            public string shipName;
+            public Vector3 shipPosition;
+            public Vector3 shipDirection;
+            public int side;
+        }
+
+        [Serializable]
+        public class RandomNames
+        {
+            public List<string> capitalShipNames;
+        }
+}
