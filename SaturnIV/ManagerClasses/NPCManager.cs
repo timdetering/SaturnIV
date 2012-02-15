@@ -59,7 +59,6 @@ namespace SaturnIV
             thisShip.thrustAmount = 1.0f;
             thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, otherShip.Direction, otherShip.Right);            
 
-              // Squad AI Stuff
             thisShip.thrustAmount = 0.95f;
            
                 if (thisShip.currentTarget != null && thisShip.currentTarget.hullLvl < 0)

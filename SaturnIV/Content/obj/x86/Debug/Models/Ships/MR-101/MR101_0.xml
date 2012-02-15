@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>space_frig</Name>
     <Identity>
-      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\MR-101\MR101.FBX</SourceFilename>
+      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\MR-101\MR101.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -40,7 +40,7 @@ MapChannel:4 = UVChannel_1
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>space_frigate_0</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\MR-101\MR101.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\MR-101\MR101.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

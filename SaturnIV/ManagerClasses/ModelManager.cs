@@ -113,12 +113,12 @@ namespace SaturnIV
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    //effect.EnableDefaultLighting();                    
-                    Color mColor = Color.White;                    
-                    effect.DiffuseColor = Color.White.ToVector3();
-                    //effect.SpecularColor = Color.White.ToVector3();
-                    //effect.EmissiveColor = Color.White.ToVector3();
-                    effect.AmbientLightColor = Color.White.ToVector3(); 
+                    effect.EnableDefaultLighting();                    
+                    Color mColor = Color.White;
+                    //effect.DiffuseColor = mColor.ToVector3();
+                    //effect.SpecularColor = mColor.ToVector3();
+                    //effect.EmissiveColor = mColor.ToVector3();
+                    //effect.AmbientLightColor = mColor.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;

@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -154,7 +154,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_windo</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -168,7 +168,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_strip</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -182,7 +182,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_pipe</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -196,7 +196,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_light</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -210,7 +210,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_front</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -224,7 +224,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_engin</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -238,7 +238,7 @@
     <Resource ID="#Resource7" Type="Graphics:BasicMaterialContent">
       <Name>Object_000_Defau</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

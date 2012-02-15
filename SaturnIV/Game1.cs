@@ -238,13 +238,13 @@ namespace SaturnIV
             if (isEditMode)
             {
                 ourCamera.ResetCamera();
-                CameraNew.offsetDistance = new Vector3(0, 70000, 250);
+                CameraNew.offsetDistance = new Vector3(0, 20000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
             }
             else
             {                
-                CameraNew.offsetDistance = new Vector3(0, 15000, 1000);
+                CameraNew.offsetDistance = new Vector3(0, 20000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
             }
@@ -314,7 +314,7 @@ namespace SaturnIV
             mouseStateCurrent = Mouse.GetState();
             // Check if I need to do anything triggered by the gui menu in Edit Mode or elsewhere (etc. Load Scenario)....
             if (guiClass.LoadScenario)
-                serializerClass.loadScenario(Gui.loadThisScenario ,ref activeShipList);
+                serializerClass.loadScenario(Gui.loadThisScenario ,ref activeShipList, ref shipDefList);
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
                 mouseStatePrevious.LeftButton == ButtonState.Released)
@@ -437,7 +437,7 @@ namespace SaturnIV
                     isEditMode = true;
                     string msg = "Edit Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch,msg, systemMessagePos);
-                    CameraNew.zoomFactor = 2.0f;                    
+                    CameraNew.zoomFactor = 8.0f;                    
                 }
                 else if (keyboardState.IsKeyDown(Keys.E) && isEditMode && !isChat)
                     isEditMode = false;
@@ -447,9 +447,9 @@ namespace SaturnIV
                 {
                     if (isChat)
                     {
-                            isChat = false;
-                            string msg = "Chat Off";
-                            messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
+                        isChat = false;
+                        string msg = "Chat Off";
+                        messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     }
                     else
                     {
@@ -477,14 +477,7 @@ namespace SaturnIV
                     chatMessage = "";
                     //systemMessagePos.Y += 10;
                 }
-                // Edit mode save Handler
-                if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
-                {
-                    drawTextbox = true;
-                    ControlPanelClass.textBoxActions = TextBoxActions.SaveScenario;
-                    serializerClass.exportSaveScenario(activeShipList, "plan1");
-                }
-
+ 
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
                 {
@@ -517,7 +510,6 @@ namespace SaturnIV
                 MessageClass.messageLog.Add("Debug Mode Off");
                 isDebug = false;
             }
-
                 mouseStatePrevious = mouseStateCurrent;
                 oldkeyboardState = keyboardState;
 }
@@ -538,7 +530,7 @@ namespace SaturnIV
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
             //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
-            cPanel.Draw();
+            //cPanel.Draw();
             foreach (newShipStruct npcship in activeShipList)
             {
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor);
@@ -560,8 +552,6 @@ namespace SaturnIV
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
             }            
              ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);           
-            // Start HUD and other 2d stuff
-            //DrawHUD(gameTime);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -570,8 +560,7 @@ namespace SaturnIV
             if (isEditMode) Gui.drawGUI(spriteBatch,spriteFont);
             spriteBatch.End();
                 spriteBatch.Begin();
-                // We need to fix the selection rectangle in case one of its dimensions is negative
-                
+                // We need to fix the selection rectangle in case one of its dimensions is negative                
                 Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
                 if (r.Width < 0)
                 {
@@ -590,7 +579,7 @@ namespace SaturnIV
                         activeShipList, serializerClass);
 
             messageClass.sendSystemMsg(spriteFont, spriteBatch,null, systemMessagePos);
-            base.Draw(gameTime); messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
+            base.Draw(gameTime); 
         }
 
         private void DrawHUDTargets(GameTime gameTime)
@@ -602,52 +591,16 @@ namespace SaturnIV
             foreach (newShipStruct enemy in activeShipList)
             {
                 StringBuilder buffer = new StringBuilder();
-                if (Project(enemy.modelPosition, viewport, ourCamera, Matrix.Identity).Z < 1)
+                if (enemy.isSelected && !isDone)
                 {
-                    if (enemy.team == 0)
-                    {
-                        shipColor = Color.Blue;
-                        spriteBatch.Draw(targetTracker, new Rectangle((int)enemy.screenCords.X-50, (int)enemy.screenCords.Y-50, 100, 100), Color.Green);
-                    }
-                    else if (enemy.team == 1)
-                    {
-                        spriteBatch.Draw(targetTracker, new Rectangle((int)enemy.screenCords.X, (int)enemy.screenCords.Y, 100, 100), Color.Red);
-                        shipColor = Color.Red;
-                    }
-                    if (enemy.isSelected)
-                        shipColor = Color.White;                    
-                    fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
-                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    if (isDebug)
-                    {
-                        if (enemy.currentTarget != null)
-                        {
-                            buffer.AppendFormat("[" + enemy.currentTarget.objectClass + "]");
-                            //buffer.AppendFormat("[" + enemy.distanceFromTarget + "]");
-                            //buffer.AppendFormat("[" + enemy.EvadeDist[(int)enemy.currentTarget.objectClass] + "]");
-                        }
-                        buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
-                        buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
-                        buffer.AppendFormat("[" + enemy.timer + "]");
-                    }
-                    // if (!isEditMode)
-
-                    spriteBatch.Draw(shipRec, new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), shipColor);
-                    spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
-                    //  if (!isEditMode)
-                    //     spriteBatch.Draw(shipRec, new Vector2(enemy.screenCords.X-16, enemy.screenCords.Y-16), shipColor);
-                }
-                    if (enemy.isSelected && !isDone)
-                    {
-                        isDone = true;
-                        int starty = 600;
-                        int timerIndex = 0;
+                    isDone = true;
+                    int starty = 600;
+                    int timerIndex = 0;
                         double hbarValue;
                         int hbarwidth = 100;
                         buffer = new StringBuilder();
                         buffer.AppendLine(enemy.objectAlias + "");
-                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty - 38), 
-                            Color.White);
+                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty - 38), Color.White);
                         
                         foreach (WeaponModule thisMod in enemy.weaponArray)
                         {
@@ -670,8 +623,28 @@ namespace SaturnIV
                             starty += 10;
                         }
                     }
+                if (Project(enemy.modelPosition, viewport, ourCamera, Matrix.Identity).Z < 1)
+                {
+                    switch(enemy.team)
+                    {
+                        case 0:
+                            shipColor = Color.Blue;
+                            break;
+                        case 1:
+                            shipColor = Color.Green;
+                            break;
+                    }
+                    if (enemy.isSelected)
+                        shipColor = Color.White;
+                    fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
+                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
+                    buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
+                    buffer.AppendFormat("[" + enemy.timer + "]");
+                    spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
+                }
             }
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0,0), Color.White);           
             spriteBatch.End();
             DrawHUD(gameTime);
         }

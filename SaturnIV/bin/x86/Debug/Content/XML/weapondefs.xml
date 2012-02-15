@@ -10,10 +10,10 @@
       <Scale>150</Scale>
       <Agility>8</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
-      <wClass>Cannon</wClass>
+      <wClass>Beam</wClass>
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>100</regenTime>
+      <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
       <range>5000</range>
       <timeToLive>700</timeToLive>	  

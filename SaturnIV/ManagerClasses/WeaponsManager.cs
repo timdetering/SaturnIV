@@ -52,7 +52,6 @@ namespace SaturnIV
 
         public static void draw_set_mesh(ModelMesh mesh, GraphicsDevice device)
         {
-
             device.DrawIndexedPrimitives(PrimitiveType.TriangleList, mesh.MeshParts[0].BaseVertex, 0,
                                          mesh.MeshParts[0].NumVertices, mesh.MeshParts[0].StartIndex,
                                          mesh.MeshParts[0].PrimitiveCount);
@@ -259,9 +258,9 @@ namespace SaturnIV
                 tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
             tempData.timeToLive = weaponDefList[(int)thisWeapon.weaponType].timeToLive;
             tempData.regenTime = weaponDefList[(int)thisWeapon.weaponType].regenTime;
-            tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);
+            tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);        
             tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
-                * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 20, 
+                * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 200, 
                 weaponOrigin.distanceFromTarget,Color.Green);
             tempData.modIndex = modIndex;
             activeWeaponList.Add(tempData);

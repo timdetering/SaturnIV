@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Group01</Name>
     <Identity>
-      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -143,7 +143,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>07 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -157,7 +157,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>19 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -185,7 +185,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>blu</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -199,7 +199,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>07 - Default_ncl1_1</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -213,7 +213,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>blu_ncl1_1</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -227,7 +227,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>09 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
+        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Crusier.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

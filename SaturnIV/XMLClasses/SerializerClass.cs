@@ -66,7 +66,7 @@ namespace SaturnIV
                 }
             }
 
-            public void loadScenario(string filename, ref List<newShipStruct> ShipList)
+            public void loadScenario(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList)
             {
                 if (filename != null)
                 {
@@ -79,7 +79,7 @@ namespace SaturnIV
                     {
                         newShipStruct shipAdd = new newShipStruct();
                         shipAdd.objectAlias = ship.shipName;
-                        //EditModeComponent.spawnNPC(
+                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side));
                     }
                 }
             }        
