@@ -125,6 +125,7 @@ namespace SaturnIV
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public float[] engageDist;
+        public bool isBehind;
         public int[] ChasePrefs;
         public double lastWeaponFireTime;
         public WeaponModule[] weaponArray;

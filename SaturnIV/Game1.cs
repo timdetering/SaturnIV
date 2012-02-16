@@ -632,7 +632,7 @@ namespace SaturnIV
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
-                    buffer.AppendFormat("[" + enemy.timer + "]");
+                    buffer.AppendFormat("[" + enemy.isBehind + "]");
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
             }

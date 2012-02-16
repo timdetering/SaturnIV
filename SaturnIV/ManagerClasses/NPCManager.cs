@@ -67,52 +67,62 @@ namespace SaturnIV
                     thisShip.currentTargetLevel = 0;
                 }
 
-                //float isBehind = Vector3.Dot(thisShip.modelPosition, otherShip.modelPosition);                  
-                if (distance < thisShip.EvadeDist[(int)otherShip.objectClass] * 2
-                    && !thisShip.isEvading && thisShip.angleOfAttack > 1.25 && thisShip.angleOfAttack < 2.50)
-                {
-                    thisShip.targetPosition = thisShip.modelPosition + -thisShip.Direction + 
-                            HelperClass.RandomDirection() * thisShip.modelLen * 50;
-                    thisShip.thrustAmount = 1.0f;
-                    thisShip.isEvading = true;
-                    // MARK!
-                    thisShip.timer = currentTime;
-                }
+                
+            if(thisShip.angleOfAttack < 0)
+                thisShip.isBehind = true;
+            else
+                thisShip.isBehind = false;           
+    
+            if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass]/2
+                    && !thisShip.isEvading) || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
+            {
+                thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction + 
+                     (HelperClass.RandomDirection()) * thisShip.modelLen * 50));
+                thisShip.thrustAmount = 1.0f;
+                thisShip.isEvading = true;
+                // MARK!
+                thisShip.timer = currentTime;
+            }
 
-                if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
-                {
-                    thisShip.targetPosition = thisShip.currentTarget.modelPosition; // +(thisShip.currentTarget.Direction * rand.Next(-550, 550));                    
-                }
+            if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0 
+                && currentTime - thisShip.timer > rand.Next(1500, 3000))
+            {
+                // The random.next could very well be a skill value
+                thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-250, 350));                    
+                // So we don't adjest to target new position EVERY cycle.  Again this could be a skill value.
+                thisShip.timer = currentTime;
+            }
 
-                if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) 
-                    && thisShip.objectAgility > 2.0)
-                {
-                        thisShip.isEvading = false;
-                        thisShip.timer = 0;
-                }
+            if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) 
+                && thisShip.objectAgility > 2.0)
+            {
+                thisShip.isEvading = false;
+                thisShip.timer = 0;
+            }
 
-                /// Engaging
-                if (thisShip.team != otherShip.team && !thisShip.isEvading)
-                {                                        
-                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
+            /// Engaging
+            if (thisShip.team != otherShip.team && !thisShip.isEvading)
+            {                                        
+                if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
                         //&& distance < thisShip.engageDist[(int)otherShip.objectClass]*2 )
+                {
+                    thisShip.thrustAmount = 1.25f;
+                    thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
+                    thisShip.currentTarget = otherShip;
+                    thisShip.currentDisposition = disposition.engaging;
+                }
+                if (thisShip.currentTarget != null && distance < Vector3.Distance(thisShip.currentTarget.modelPosition, thisShip.modelPosition))
+                {
+                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] > 0)
                     {
                         thisShip.thrustAmount = 1.25f;
                         thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
                         thisShip.currentTarget = otherShip;
                         thisShip.currentDisposition = disposition.engaging;
                     }
-                    if (thisShip.currentTarget != null && distance < Vector3.Distance(thisShip.currentTarget.modelPosition, thisShip.modelPosition))
-                    {
-                        if (thisShip.TargetPrefs[(int)otherShip.objectClass] > 0)
-                        {
-                            thisShip.thrustAmount = 1.25f;
-                            thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)otherShip.objectClass];
-                            thisShip.currentTarget = otherShip;
-                            thisShip.currentDisposition = disposition.engaging;
-                        }
-                    }
                 }
+            }
+
                 /// Too do: Optimize
                 if (thisShip.currentTarget != null && thisShip.currentTarget == otherShip)
                     cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,

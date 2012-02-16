@@ -168,7 +168,7 @@
 	  <hullValue>600</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 1400 2000 200 50</EvadeDist>
+      <EvadeDist>2000 1400 2000 200 50</EvadeDist>
       <TargetPrefs>0.5 0.6 0.7 0.2</TargetPrefs>
 	  <ChasePrefs>1 1 1 0 0</ChasePrefs>
       <EngageDist>9000 15000 12000 2000 50</EngageDist>
