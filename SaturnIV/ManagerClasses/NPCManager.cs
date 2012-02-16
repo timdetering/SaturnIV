@@ -73,28 +73,32 @@ namespace SaturnIV
             else
                 thisShip.isBehind = false;           
     
-            if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass]/2
-                    && !thisShip.isEvading) || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
+            if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass]/2 && !thisShip.isEvading) 
+                || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
             {
                 thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction + 
                      (HelperClass.RandomDirection()) * thisShip.modelLen * 50));
                 thisShip.thrustAmount = 1.0f;
                 thisShip.isEvading = true;
+                thisShip.isPursuing = false;
                 // MARK!
                 thisShip.timer = currentTime;
             }
 
-            if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0 
-                && currentTime - thisShip.timer > rand.Next(1500, 3000))
+            if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
             {
-                // The random.next could very well be a skill value
-                thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-250, 350));                    
-                // So we don't adjest to target new position EVERY cycle.  Again this could be a skill value.
-                thisShip.timer = currentTime;
+                if (currentTime - thisShip.timer > rand.Next(1500, 3000))
+                {
+                    thisShip.isPursuing = true;
+                    // The random.next could very well be a skill value
+                    thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-250, 350));
+                    // Start times so we don't adjust to target's new position EVERY cycle.  Again this could be a skill value.
+                }
+                if (!thisShip.isPursuing)
+                    thisShip.timer = currentTime;
             }
 
-            if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) 
-                && thisShip.objectAgility > 2.0)
+            if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) && thisShip.objectAgility > 2.0)
             {
                 thisShip.isEvading = false;
                 thisShip.timer = 0;
@@ -122,7 +126,6 @@ namespace SaturnIV
                     }
                 }
             }
-
                 /// Too do: Optimize
                 if (thisShip.currentTarget != null && thisShip.currentTarget == otherShip)
                     cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
