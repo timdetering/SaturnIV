@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Tube01</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Fleet_Station.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Fleet_Station.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -40,7 +40,7 @@ MapChannel:4 = UVChannel_1
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>01 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Fleet_Station.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Fleet_Station.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

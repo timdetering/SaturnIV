@@ -279,4 +279,20 @@ namespace SaturnIV
             MoveMode
         }
 
+        [Serializable]
+        public struct saveObject
+        {
+            public int shipIndex;
+            public string shipName;
+            public Vector3 shipPosition;
+            public Vector3 shipDirection;
+            public int side;
+        }
+
+        [Serializable]
+        public class RandomNames
+        {
+            public List<string> capitalShipNames;
+        }
+
 }

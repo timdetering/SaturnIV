@@ -112,3 +112,9 @@ Content\Models\Ships\SB-50\COLOR_0.xnb
 Content\Models\Ships\MR-101\COLOR_0_0.xnb
 Content\Models\Ships\MR-100\FIGHTER__0.xnb
 Content\Models\Ships\SF-90 Agile\color_6_0.xnb
+Content\XML\listofnames.xml
+Content\XML\shipdefs.xml
+Content\XML\weapondefs.xml
+Content\XML\Scenarios\battleplan1.xml
+Content\XML\Scenarios\plan1.xml
+Content\XML\Scenarios\plan9.xml

@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>dark_fighter_6</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\SF-90 Agile\sf-90_model.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\SF-90 Agile\sf-90_model.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material #46</Name>
       <Identity>
-        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\SF-90 Agile\sf-90_model.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\SF-90 Agile\sf-90_model.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

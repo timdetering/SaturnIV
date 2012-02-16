@@ -698,3 +698,10 @@ C:\Users\bryan\Saturn-IV\SaturnIV\obj\x86\Debug\scsi.application
 C:\Users\bryan\Saturn-IV\SaturnIV\obj\x86\Debug\scsi.exe
 C:\Users\bryan\Saturn-IV\SaturnIV\obj\x86\Debug\scsi.pdb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Frigate.xnb
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Frigate.xnb
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\battleplan1.xml
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\plan1.xml
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\shipdefs.xml
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\listofnames.xml
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\weapondefs.xml
+C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\plan9.xml
