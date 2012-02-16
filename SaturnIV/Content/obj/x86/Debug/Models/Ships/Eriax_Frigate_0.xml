@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Group01</Name>
     <Identity>
-      <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -283,7 +283,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>02 - Default</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -311,7 +311,7 @@
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Name>15 - Default</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -325,7 +325,7 @@
     <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
       <Name>13 - Default</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -339,7 +339,7 @@
     <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
       <Name>light</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -353,7 +353,7 @@
     <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
       <Name>03 - Default</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -367,7 +367,7 @@
     <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
       <Name>blk</Name>
       <Identity>
-        <SourceFilename>D:\Documents and Settings\bryan\Saturn-IV\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax_Frigate.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

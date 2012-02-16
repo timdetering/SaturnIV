@@ -241,27 +241,19 @@ namespace SaturnIV
                 CameraNew.offsetDistance = new Vector3(0, 20000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
+                this.IsMouseVisible = true;
+                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
+                    ref npcManager, ourCamera, ref viewport);
+                Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
             else
             {                
                 CameraNew.offsetDistance = new Vector3(0, 20000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
-            }
-
-            if (!isEditMode)
-            {
-                //this.IsMouseVisible = false;
                 updateObjects(gameTime);
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
                     Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
-            }
-            else
-            {
-                this.IsMouseVisible = true;
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
-                    ref npcManager, ourCamera, ref viewport);
-                Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
 
             if (weaponsManager.activeWeaponList.Count > 0)
@@ -296,8 +288,8 @@ namespace SaturnIV
                         {
                             npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
                                 activeShipList[i], activeShipList[j], j, thisSquad);
-                            npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
-                                activeShipList[i], playerShip, j, thisSquad);
+                            //npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
+                            //    activeShipList[i], playerShip, j, thisSquad);
                         }
                     }
                 }

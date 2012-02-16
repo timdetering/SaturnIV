@@ -81,8 +81,7 @@ namespace SaturnIV
 
                 if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
                 {
-                    thisShip.targetPosition = thisShip.currentTarget.modelPosition + thisShip.currentTarget.Direction
-                        * rand.Next(-150, 150);
+                    thisShip.targetPosition = thisShip.currentTarget.modelPosition; // +(thisShip.currentTarget.Direction * rand.Next(-550, 550));                    
                 }
 
                 if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) 
@@ -125,7 +124,7 @@ namespace SaturnIV
             if (thisShip.currentDisposition == disposition.defensive)
                 thisShip.thrustAmount = 0.10f;            
 
-            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,600)))
+            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1600)))
                 thisShip.currentDisposition = disposition.engaging;
         }
 
@@ -140,7 +139,7 @@ namespace SaturnIV
             if (isEdit)
                 thisShip.thrustAmount = 0.0f;
             if (isEdit)
-                thisShip.Direction = thisShip.vecToTarget;
+                thisShip.Direction = thisShip.vecToTarget + HelperClass.RandomDirection();
             else
                 thisShip.Direction = Vector3.Normalize(Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 
                                       turningSpeed * 0.045f));
