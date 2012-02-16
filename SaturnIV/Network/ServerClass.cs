@@ -17,7 +17,7 @@ namespace SaturnIV
         public double nextSendUpdates;
         public string fromClient;
         public int clientsConnected;
-        bool isFetched;
+
         List<saveObject> netSendList = new List<saveObject>();
         // Create the data to save
         saveObject sendMe;

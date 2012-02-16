@@ -11,8 +11,6 @@ namespace SaturnIV
         NetPeerConfiguration config;
         bool isFirstRun;
         List<saveObject> netFetchList = new List<saveObject>();
-        // Create the data to save
-        saveObject fetchMe;
 
         public void initializeNetwork()
         {
