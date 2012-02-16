@@ -7,8 +7,8 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
-      <FileName>Models//Ships/OrionFrigate</FileName>
-      <Type>Eriax Destroyer</Type>
+      <FileName>Models//Ships/Fleet_Frigate</FileName>
+      <Type>Fleet Frigate</Type>
       <Mass>8</Mass>
       <Thrust>3600</Thrust>
       <SphereRadius>25</SphereRadius>

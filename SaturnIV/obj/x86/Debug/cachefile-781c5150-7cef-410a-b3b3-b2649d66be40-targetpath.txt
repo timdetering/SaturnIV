@@ -102,6 +102,7 @@ Content\Models\Ships\MR-100\MR100.xnb
 Content\Models\Ships\SF-90 Agile\sf-90_model.xnb
 Content\Models\Ships\NovaCarrier.xnb
 Content\Models\Ships\OrionFrigate.xnb
+Content\Models\Ships\Fleet_Frigate.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Lakerem_0.xnb
 Content\Models\color_0.xnb

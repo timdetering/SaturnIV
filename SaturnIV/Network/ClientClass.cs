@@ -80,7 +80,7 @@ namespace SaturnIV
                                             shipList[i].targetPosition.X = msg.ReadFloat();
                                             shipList[i].targetPosition.Y = msg.ReadFloat();
                                             shipList[i].targetPosition.Z = msg.ReadFloat();
-                                           // MessageClass.messageLog.Add(" " + shipList[i].objectAlias + " " + shipList[i].Direction.X);
+                                            //MessageClass.messageLog.Add(" " + shipList[i].objectAlias + " " + shipList[i].Direction.X);
                                         }
                                     }
                             }

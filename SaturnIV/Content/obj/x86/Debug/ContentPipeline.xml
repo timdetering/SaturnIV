@@ -641,7 +641,7 @@
       <Time>2012-02-15T19:12:19.7144089-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2012-02-15T19:13:41.6990982-06:00</Value>
+        <Value>2012-02-15T21:15:11.8580714-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -654,7 +654,7 @@
       <Time>2012-02-15T19:12:20.6364616-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2012-02-15T19:13:41.8791085-06:00</Value>
+        <Value>2012-02-15T21:15:11.939076-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -667,7 +667,7 @@
       <Time>2012-02-15T19:12:20.4904533-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2012-02-15T19:13:43.2991897-06:00</Value>
+        <Value>2012-02-15T21:15:13.3261554-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -680,7 +680,7 @@
       <Time>2012-02-15T19:12:19.6504052-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2012-02-15T19:13:44.3312487-06:00</Value>
+        <Value>2012-02-15T21:15:14.3522141-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -694,7 +694,7 @@
       <Time>2012-02-15T19:12:19.7084086-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LRGMISSILE_0.xml</Key>
-        <Value>2012-02-15T19:13:45.4523128-06:00</Value>
+        <Value>2012-02-15T21:15:15.4302757-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -708,7 +708,7 @@
       <Time>2012-02-15T19:12:20.4014482-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
-        <Value>2012-02-15T19:13:46.4703711-06:00</Value>
+        <Value>2012-02-15T21:15:16.4513341-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -721,7 +721,7 @@
       <Time>2012-02-15T19:12:20.4074485-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_missile_0.xml</Key>
-        <Value>2012-02-15T19:13:47.6214369-06:00</Value>
+        <Value>2012-02-15T21:15:17.6024-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Request>
     </Item>
@@ -735,7 +735,7 @@
       <Time>2012-02-15T19:12:19.7074085-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_Station_0.xml</Key>
-        <Value>2012-02-15T19:13:48.7725027-06:00</Value>
+        <Value>2012-02-15T21:15:18.7594661-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\color_0.xnb</Request>
     </Item>
@@ -749,7 +749,7 @@
       <Time>2012-02-15T19:12:19.7014082-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_SF101_0.xml</Key>
-        <Value>2012-02-15T19:13:52.1026932-06:00</Value>
+        <Value>2012-02-15T21:15:22.0416539-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -762,7 +762,7 @@
       <Time>2012-02-15T19:12:19.7194092-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\SFV300_0.xml</Key>
-        <Value>2012-02-15T19:13:53.2147568-06:00</Value>
+        <Value>2012-02-15T21:15:23.1487172-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -775,7 +775,7 @@
       <Time>2012-02-15T19:12:20.5984595-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2012-02-15T19:13:54.2418156-06:00</Value>
+        <Value>2012-02-15T21:15:24.1827763-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -788,7 +788,7 @@
       <Time>2012-02-15T19:12:20.1064313-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet_MR-140_Viper_0.xml</Key>
-        <Value>2012-02-15T19:13:55.3308779-06:00</Value>
+        <Value>2012-02-15T21:15:25.2748388-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -801,7 +801,7 @@
       <Time>2012-02-15T19:12:20.4924534-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\plane_0.xml</Key>
-        <Value>2012-02-15T19:13:56.3639369-06:00</Value>
+        <Value>2012-02-15T21:15:26.3238988-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -814,7 +814,7 @@
       <Time>2012-02-15T19:12:20.4934535-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\plane2_0.xml</Key>
-        <Value>2012-02-15T19:13:57.3879955-06:00</Value>
+        <Value>2012-02-15T21:15:27.358958-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -827,7 +827,7 @@
       <Time>2012-02-15T19:12:20.205437-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Heavy_Bomber_0.xml</Key>
-        <Value>2012-02-15T19:13:58.8630799-06:00</Value>
+        <Value>2012-02-15T21:15:28.8480432-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -840,7 +840,7 @@
       <Time>2012-02-15T19:12:20.3324443-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\SI-300_0.xml</Key>
-        <Value>2012-02-15T19:13:59.9901444-06:00</Value>
+        <Value>2012-02-15T21:15:29.9851082-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -853,7 +853,7 @@
       <Time>2012-02-15T19:12:20.6024597-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_large_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:01.0232034-06:00</Value>
+        <Value>2012-02-15T21:15:31.0231676-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -866,7 +866,7 @@
       <Time>2012-02-15T19:12:20.6034598-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_medium_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:02.0482621-06:00</Value>
+        <Value>2012-02-15T21:15:32.0502263-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -879,7 +879,7 @@
       <Time>2012-02-15T19:12:20.60746-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_small_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:03.0733207-06:00</Value>
+        <Value>2012-02-15T21:15:33.0782851-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -892,7 +892,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_large_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:04.0983793-06:00</Value>
+        <Value>2012-02-15T21:15:34.1053439-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -905,7 +905,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_medium_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:05.1224379-06:00</Value>
+        <Value>2012-02-15T21:15:35.1324026-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -918,7 +918,7 @@
       <Time>2012-02-15T19:12:20.6094601-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_small_plane_0.xml</Key>
-        <Value>2012-02-15T19:14:06.1474965-06:00</Value>
+        <Value>2012-02-15T21:15:36.1614615-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -931,7 +931,7 @@
       <Time>2012-02-15T19:12:20.0394275-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax_Heavy_Gunship_0.xml</Key>
-        <Value>2012-02-15T19:14:07.2415591-06:00</Value>
+        <Value>2012-02-15T21:15:37.2585242-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732_0.xnb</Request>
     </Item>
@@ -945,7 +945,7 @@
       <Time>2012-02-15T19:12:20.101431-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet_Auriga_Class_Crusier_0.xml</Key>
-        <Value>2012-02-15T19:14:09.5136891-06:00</Value>
+        <Value>2012-02-15T21:15:39.5926577-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -958,7 +958,7 @@
       <Time>2012-02-15T19:12:20.1324328-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet_Procyon_Class_Battlecrusie_0.xml</Key>
-        <Value>2012-02-15T19:14:11.2347875-06:00</Value>
+        <Value>2012-02-15T21:15:41.3547585-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -971,7 +971,7 @@
       <Time>2012-02-15T19:12:19.8664176-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Ares_Battlecrusier_0.xml</Key>
-        <Value>2012-02-15T19:14:14.4839733-06:00</Value>
+        <Value>2012-02-15T21:15:44.7389521-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -984,7 +984,7 @@
       <Time>2012-02-15T19:12:20.0194264-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax_Crusier_0.xml</Key>
-        <Value>2012-02-15T19:14:18.4001973-06:00</Value>
+        <Value>2012-02-15T21:15:48.9411924-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732_0.xnb</Request>
     </Item>
@@ -998,7 +998,7 @@
       <Time>2012-02-15T19:12:20.0374274-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax_Frigate_0.xml</Key>
-        <Value>2012-02-15T19:14:20.2363024-06:00</Value>
+        <Value>2012-02-15T21:15:50.7992987-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\blu_0.xnb</Request>
     </Item>
@@ -1012,7 +1012,7 @@
       <Time>2012-02-15T19:12:20.3154433-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\SB-50\SB50_0.xml</Key>
-        <Value>2012-02-15T19:14:21.5343766-06:00</Value>
+        <Value>2012-02-15T21:15:52.0993731-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SB-50\COLOR_0.xnb</Request>
     </Item>
@@ -1026,7 +1026,7 @@
       <Time>2012-02-15T19:12:20.222438-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\MR-101\MR101_0.xml</Key>
-        <Value>2012-02-15T19:14:22.7424457-06:00</Value>
+        <Value>2012-02-15T21:15:53.339444-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-101\COLOR_0_0.xnb</Request>
     </Item>
@@ -1040,7 +1040,7 @@
       <Time>2012-02-15T19:12:20.2074371-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\MR-100\MR100_0.xml</Key>
-        <Value>2012-02-15T19:14:23.9405142-06:00</Value>
+        <Value>2012-02-15T21:15:54.5425128-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-100\FIGHTER__0.xnb</Request>
     </Item>
@@ -1054,7 +1054,7 @@
       <Time>2012-02-15T19:12:20.327444-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\SF-90 Agile\sf-90_model_0.xml</Key>
-        <Value>2012-02-15T19:14:25.1555837-06:00</Value>
+        <Value>2012-02-15T21:15:55.7805836-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\color_6_0.xnb</Request>
     </Item>
@@ -1068,7 +1068,7 @@
       <Time>2012-02-15T19:12:20.2774411-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\NovaCarrier_0.xml</Key>
-        <Value>2012-02-15T19:14:27.3307081-06:00</Value>
+        <Value>2012-02-15T21:15:58.0457132-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1081,7 +1081,20 @@
       <Time>2012-02-15T19:12:20.3124431-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\OrionFrigate_0.xml</Key>
-        <Value>2012-02-15T19:14:28.8597956-06:00</Value>
+        <Value>2012-02-15T21:15:59.6118028-06:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet_Frigate.FBX</Source>
+      <Name>Models\Ships\Fleet_Frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Frigate.xnb</Output>
+      <Time>2012-02-15T20:54:33.7182539-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Fleet_Frigate_0.xml</Key>
+        <Value>2012-02-15T21:16:00.8908759-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1456,6 +1469,13 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\OrionFrigate_0.xml</Output>
       <Time>2012-02-15T19:12:20.3124431-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet_Frigate.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Fleet_Frigate_0.xml</Output>
+      <Time>2012-02-15T20:54:33.7182539-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
