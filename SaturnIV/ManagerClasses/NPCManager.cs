@@ -62,52 +62,73 @@ namespace SaturnIV
 
             thisShip.thrustAmount = 0.95f;
            
-                if (thisShip.currentTarget != null && thisShip.currentTarget.hullLvl < 0)
-                {
-                    thisShip.currentTarget = null;
-                    thisShip.currentTargetLevel = 0;
-                }
-
-                
-            if(thisShip.angleOfAttack < 0)
+            if (thisShip.currentTarget != null && thisShip.currentTarget.hullLvl < 0)
+            {
+                thisShip.currentTarget = null;
+                thisShip.currentTargetLevel = 0;
+            }
+            if (thisShip.angleOfAttack < 0)
                 thisShip.isBehind = true;
             else
-                thisShip.isBehind = false;           
-    
-            if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass]/2 && !thisShip.isEvading) 
-                || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
-            {
-                thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction + 
-                     (HelperClass.RandomDirection()) * thisShip.modelLen * 50));
-                thisShip.thrustAmount = 1.0f;
-                thisShip.isEvading = true;
-                thisShip.isPursuing = false;
-                // MARK!
-                thisShip.timer = currentTime;
-            }
+                thisShip.isBehind = false;   
 
-            if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
+
+                // Squad AI Stuff
+                //thisShip.thrustAmount = 0.75f;
+            if (boidList != null && otherShip == boidList.leader && thisShip != boidList.leader)
             {
-                if (currentTime - thisShip.timer > rand.Next(1500, 3000))
+                isSquad = true;
+                if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) > otherShip.radius * 3)
                 {
-                    thisShip.isPursuing = true;
-                    // The random.next could very well be a skill value
-                    thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-250, 350));
-                    // Start times so we don't adjust to target's new position EVERY cycle.  Again this could be a skill value.
+                    thisShip.currentDisposition = disposition.moving;
+                    thisShip.thrustAmount = 0.99f;
+                    projection = Vector3.Dot(Vector3.Normalize(thisShip.Direction), Vector3.Normalize(otherShip.Direction));
+                    thisShip.angleOfAttack = projection;
+                    if (thisShip.angleOfAttack < rand.NextDouble())
+                    {
+                        thisShip.targetPosition = otherShip.modelPosition +
+                            Vector3.Normalize(otherShip.Direction - thisShip.Direction) * -rand.Next(100, 150);
+                        thisShip.thrustAmount = otherShip.thrustAmount;
+                    }
                 }
-                if (!thisShip.isPursuing)
-                    thisShip.timer = currentTime;
             }
-
-            if (thisShip.objectAgility > 2.0)
-                timeToEvade = rand.Next(1500, 3000);
             else
-                timeToEvade = rand.Next(2500, 5000);
-
-            if (thisShip.isEvading && currentTime - thisShip.timer > timeToEvade)
             {
-                thisShip.isEvading = false;
-                thisShip.timer = 0;
+                if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass] / 2 && !thisShip.isEvading)
+                    || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
+                {
+                    thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction +
+                         (HelperClass.RandomDirection()) * thisShip.modelLen * 50));
+                    thisShip.thrustAmount = 1.0f;
+                    thisShip.isEvading = true;
+                    thisShip.isPursuing = false;
+                    // MARK!
+                    thisShip.timer = currentTime;
+                }
+
+                if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
+                {
+                    if (currentTime - thisShip.timer > rand.Next(1500, 3000))
+                    {
+                        thisShip.isPursuing = true;
+                        // The random.next could very well be a skill value
+                        thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-250, 350));
+                        // Start times so we don't adjust to target's new position EVERY cycle.  Again this could be a skill value.
+                    }
+                    if (!thisShip.isPursuing)
+                        thisShip.timer = currentTime;
+                }
+
+                if (thisShip.objectAgility > 2.0)
+                    timeToEvade = rand.Next(1500, 3000);
+                else
+                    timeToEvade = rand.Next(2500, 5000);
+
+                if (thisShip.isEvading && currentTime - thisShip.timer > timeToEvade)
+                {
+                    thisShip.isEvading = false;
+                    thisShip.timer = 0;
+                }
             }
 
             /// Engaging
