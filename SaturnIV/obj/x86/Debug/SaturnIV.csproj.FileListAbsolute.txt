@@ -705,3 +705,9 @@ C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\shipdefs.
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\listofnames.xml
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\weapondefs.xml
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\plan9.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\shipdefs.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\weapondefs.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\plan1.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\plan9.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\listofnames.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\battleplan1.xml

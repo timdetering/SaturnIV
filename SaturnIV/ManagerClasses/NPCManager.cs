@@ -33,6 +33,7 @@ namespace SaturnIV
         double speedTime;
         float lastTime;
         float projection;
+        double timeToEvade;
         Random rand = new Random();
         //disposition predisposition = new disposition();
        
@@ -98,7 +99,12 @@ namespace SaturnIV
                     thisShip.timer = currentTime;
             }
 
-            if (thisShip.isEvading && currentTime - thisShip.timer > rand.Next(1500, 3000) && thisShip.objectAgility > 2.0)
+            if (thisShip.objectAgility > 2.0)
+                timeToEvade = rand.Next(1500, 3000);
+            else
+                timeToEvade = rand.Next(2500, 5000);
+
+            if (thisShip.isEvading && currentTime - thisShip.timer > timeToEvade)
             {
                 thisShip.isEvading = false;
                 thisShip.timer = 0;

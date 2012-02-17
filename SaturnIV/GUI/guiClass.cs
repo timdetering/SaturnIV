@@ -16,14 +16,15 @@ namespace SaturnIV
         Rectangle rectangle1,rectangle2,rectangle3,rectangle4,rectangle5,rectangle6,rectangle7;
         Color opt1Color, opt2Color, opt3Color, opt4Color, opt5Color, opt6Color, opt7Color;
         public static editOptions currentSelection;
-        public int thisFaction, thisScenario, thisShip;
+        public int thisFaction, thisShip;
+        public int thisScenario = -1;
         int verticalStartY = 25;
         int horizontalStartX = 150;
         public static bool AddRemove = false;
         public static bool selectTeam = false;
         public static bool LoadScenario = false;
         public static bool inGui;
-        public string loadThisScenario;
+        public string loadThisScenario = null;
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         //int[] menuStartX = new int[10]{10,150,300,450,600,750};

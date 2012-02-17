@@ -35,32 +35,28 @@ namespace SaturnIV
             MessageClass.messageLog.Add("Listening on 127.0.0.1");           
         }
 
-        public void update(ref List<newShipStruct> shipList)
+        public void removeObject(int objectIndex)
         {
+            if (clientsConnected > 0)
+            {
+                NetOutgoingMessage outmsg = server.CreateMessage();
+                outmsg.Write((byte)PacketTypes.REMOVE);
+                //updatemsg.Write(objectIndex);
+                server.SendMessage(outmsg, server.Connections[0], NetDeliveryMethod.Unreliable, 0);
+            }
+        }
+
+        public void update(ref List<newShipStruct> shipList)
+        {            
             NetIncomingMessage msg;
             clientsConnected = server.ConnectionsCount;
             if (clientsConnected > 0)
-            {
-                //////////////////////// Send ship Position UPDATES
-                NetOutgoingMessage updatemsg = server.CreateMessage();
-                updatemsg.Write((byte)PacketTypes.ADD);
-                updatemsg.Write(shipList.Count);
-                foreach (newShipStruct ship in shipList)
-                {
-                    updatemsg.Write(ship.thrustAmount);
-                    updatemsg.Write(ship.targetPosition.X);
-                    updatemsg.Write(ship.targetPosition.Y);
-                    updatemsg.Write(ship.targetPosition.Z);
-                }
-                server.SendMessage(updatemsg, server.Connections[0], NetDeliveryMethod.ReliableOrdered, 0);
-            }
-
             while ((msg = server.ReadMessage()) != null)
             {
                 switch (msg.MessageType)
                 {
                     case NetIncomingMessageType.StatusChanged:
-                        MessageClass.messageLog.Add("step1");
+                        MessageClass.messageLog.Add("Client Status Changed");
                         break;
                     case NetIncomingMessageType.Data:
                         if (msg.ReadByte() == (byte)PacketTypes.GETOBJECTS)
@@ -87,11 +83,13 @@ namespace SaturnIV
                             }
                             // Send message/packet to all connections, in reliably order, channel 0
                             // Reliably means, that each packet arrives in same order they were sent. Its slower than unreliable, but easyest to understand
-                            server.SendMessage(outmsg, msg.SenderConnection, NetDeliveryMethod.ReliableOrdered, 0);
+                            server.SendMessage(outmsg, msg.SenderConnection, NetDeliveryMethod.Unreliable, 0);
 
                             // Debug
                             MessageClass.messageLog.Add("Approved new connection and updated the world status");
-                        }                            
+                        }      
+                      
+
                         break;
                     default:
                         Console.WriteLine(msg.ReadString());

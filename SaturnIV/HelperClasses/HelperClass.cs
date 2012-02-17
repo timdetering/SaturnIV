@@ -58,7 +58,7 @@ namespace SaturnIV
         }
 
         //CheckForCollision give to object lists
-        public bool CheckForCollision(GameTime gameTime, ref List<newShipStruct> thisShipList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion)
+        public bool CheckForCollision(GameTime gameTime, ref List<newShipStruct> thisShipList, ref List<weaponStruct> missileList, ref ExplosionClass ourExplosion,ref gameServer gServer)
         {
             for (int j = 0; j < thisShipList.Count; j++)
             {
@@ -81,6 +81,7 @@ namespace SaturnIV
                                                            currentExpLocation, (float)rand.NextDouble());
                             MessageClass.messageLog.Add(thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
+                            gServer.removeObject(j);
                          }                       
                         return true;
                     }

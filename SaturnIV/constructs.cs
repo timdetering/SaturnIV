@@ -12,8 +12,8 @@ namespace SaturnIV
     {
         LOGIN,
         GETOBJECTS,
-        UPDATE,
         REMOVE,
+        UPDATE,
         ADD
     }
 

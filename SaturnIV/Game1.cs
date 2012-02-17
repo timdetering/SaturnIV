@@ -148,7 +148,7 @@ namespace SaturnIV
             planetManager = new PlanetManager(this);
             planetManager.Initialize();           
 ////////////Mousey Stuff
-            this.IsMouseVisible = false;
+            this.IsMouseVisible = true;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
             //mouseStateCurrent = Mouse.GetState();
 ////////////Network Stuff
@@ -257,9 +257,9 @@ namespace SaturnIV
             }
 
             if (weaponsManager.activeWeaponList.Count > 0)
-                helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList, 
-                    ref ourExplosion);            
-            
+                helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList,
+                    ref ourExplosion, ref gServer);
+
             if (isServer)
                 gServer.update(ref activeShipList);
             if (isClient)
@@ -304,9 +304,6 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
-            // Check if I need to do anything triggered by the gui menu in Edit Mode or elsewhere (etc. Load Scenario)....
-            if (guiClass.LoadScenario)
-                serializerClass.loadScenario(Gui.loadThisScenario ,ref activeShipList, ref shipDefList);
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
                 mouseStatePrevious.LeftButton == ButtonState.Released)
@@ -374,6 +371,16 @@ namespace SaturnIV
                     }
             }
 
+            if (isEditMode && guiClass.inGui)
+            {
+                if (Gui.loadThisScenario != null)
+                {
+                    serializerClass.loadScenario(Gui.loadThisScenario, ref activeShipList, ref shipDefList);
+                    Gui.loadThisScenario = null;
+                }
+                
+            }
+            
             if (isLclicked && !isEditMode)
             {
                isSelected = false;
@@ -487,7 +494,7 @@ namespace SaturnIV
                     thisTeam = 1;
                     string msg = "Network:Client Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
-                    gClient.initializeNetwork();
+                    gClient.initializeNetwork("127.0.0.1");
                 }               
                 lastKeyPressTime = currentTime;
             }
@@ -501,6 +508,32 @@ namespace SaturnIV
             {
                 MessageClass.messageLog.Add("Debug Mode Off");
                 isDebug = false;
+            }
+
+            // T will form a squad of all selected ships
+            if (isSelected && keyboardState.IsKeyDown(Keys.T) &&
+                !oldkeyboardState.IsKeyDown(Keys.T))
+            {
+                squadClass createSquad = new squadClass();
+                createSquad.squadmate = new List<newShipStruct>();
+                createSquad.squadOrders = SquadDisposition.tight;
+                squadList.Add(createSquad);
+
+                bool isLeader = false;
+                foreach (newShipStruct thisShip in activeShipList)
+                    if (thisShip.isSelected && thisShip.squadNo < 0)
+                    {
+                        createSquad.squadmate.Add(thisShip);
+                        if (!isLeader)
+                        {
+                            MessageClass.messageLog.Add(thisShip.objectAlias + " Squad Formed");
+                            thisShip.isSquadLeader = true;
+                            squadList[squadList.Count - 1].leader = thisShip;
+                        }
+                        thisShip.squadNo = 0;
+                        squadList[squadList.Count - 1].squadmate.Add(thisShip);
+                        isLeader = true;
+                    }
             }
                 mouseStatePrevious = mouseStateCurrent;
                 oldkeyboardState = keyboardState;
@@ -615,7 +648,7 @@ namespace SaturnIV
                             starty += 10;
                         }
                     }
-                if (Project(enemy.modelPosition, viewport, ourCamera, Matrix.Identity).Z < 1)
+                if (Project(enemy.modelPosition, viewport, ourCamera, Matrix.Identity).Z < 1 && !isEditMode)
                 {
                     switch(enemy.team)
                     {

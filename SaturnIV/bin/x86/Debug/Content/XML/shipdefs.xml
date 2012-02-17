@@ -259,9 +259,9 @@
 	  <hullValue>1200</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 12000 12000 2000 500</EvadeDist>
+      <EvadeDist>1000 8000 8000 2000 500</EvadeDist>
       <TargetPrefs>0.1 1.0 1.0 1.0 0.2</TargetPrefs>
-      <ChasePrefs>0 1 1 0 0</ChasePrefs>
+      <ChasePrefs>1 2 2 0 0</ChasePrefs>
       <EngageDist>500 12000 15000 200 50</EngageDist> 
       <AvailableWeapons>
 	<Item>
