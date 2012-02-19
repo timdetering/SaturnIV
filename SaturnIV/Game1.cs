@@ -418,7 +418,7 @@ namespace SaturnIV
             }           
             if (isChat) typeSpeed = 50;
             else
-                typeSpeed = 150;
+                typeSpeed = 125;
 
             if (currentTime - lastKeyPressTime > typeSpeed)
             {
@@ -511,7 +511,7 @@ namespace SaturnIV
             }
 
             // T will form a squad of all selected ships
-            if (isSelected && keyboardState.IsKeyDown(Keys.T) &&
+            if (keyboardState.IsKeyDown(Keys.T) &&
                 !oldkeyboardState.IsKeyDown(Keys.T))
             {
                 squadClass createSquad = new squadClass();
@@ -558,16 +558,16 @@ namespace SaturnIV
             //cPanel.Draw();
             foreach (newShipStruct npcship in activeShipList)
             {
-                modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor);
+                modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
                 if (isDebug)
                     debug(npcship);                
             }
-            modelManager.DrawModel(ourCamera, modelDictionary[playerShip.objectFileName], playerShip.worldMatrix, Color.Blue);
+            modelManager.DrawModel(ourCamera, modelDictionary[playerShip.objectFileName], playerShip.worldMatrix, Color.Blue, true);
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
                 if (theList.isProjectile)
-                    modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White);
+                    modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White, true);
                 else if (theList.objectClass == WeaponClassEnum.Beam)
                 {
                     theList.beamQuad.DrawQuad(ourCamera.viewMatrix,
@@ -624,8 +624,8 @@ namespace SaturnIV
                         double hbarValue;
                         int hbarwidth = 100;
                         buffer = new StringBuilder();
-                        buffer.AppendLine(enemy.objectAlias + "");
-                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty - 38), Color.White);
+                        buffer.AppendLine(enemy.objectAlias + "\n" + enemy.objectClass + "\n" + enemy.squadNo);
+                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1000, starty - 70), Color.White);
                         
                         foreach (WeaponModule thisMod in enemy.weaponArray)
                         {
@@ -664,8 +664,8 @@ namespace SaturnIV
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
-                    buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
-                    buffer.AppendFormat("[" + enemy.isBehind + "]");
+                    //buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
+                    //buffer.AppendFormat("[" + enemy.isBehind + "]");
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
             }

@@ -261,7 +261,7 @@ namespace SaturnIV
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);        
             tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
                 * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 200, 
-                weaponOrigin.distanceFromTarget,Color.Green);
+                weaponOrigin.distanceFromTarget,Color.Red);
             tempData.modIndex = modIndex;
             activeWeaponList.Add(tempData);
         }

@@ -185,7 +185,6 @@ namespace SaturnIV
 
     public class shipData : genericObjectLoadClass
     {
-        public string ThumbFileName;
         public ClassesEnum ShipClass;
         public float ShieldFactor;
         public float HullFactor;
@@ -233,8 +232,8 @@ namespace SaturnIV
             Fighter = 0,
             Crusier = 1,
             Capitalship = 2,
-            Carrier = 3,
-            Station = 4
+            Frigate = 3,
+            Bomber = 4,
         }
 
         public enum DirectionEnum

@@ -47,7 +47,7 @@ namespace SaturnIV
         public void initExplosionClass(Game game)
         {
              expList = new List<VertexExplosion[]>();
-            myTexture = game.Content.Load<Texture2D>("textures//explo");
+            myTexture = game.Content.Load<Texture2D>("textures//explosion");
             expEffect = game.Content.Load<Effect>("Effects//explosionEffect");
             myVertexDeclaration = new VertexDeclaration(game.GraphicsDevice, VertexExplosion.VertexElements);
         }

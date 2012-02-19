@@ -50,9 +50,9 @@ namespace SaturnIV
             Up = -up;
             // Calculate the quad corners
             Left = Vector3.Cross(normal, Up);
-            Vector3 uppercenter = (Up * height / 2) + origin;
-            UpperLeft = uppercenter + (Left * width / 2);
-            UpperRight = uppercenter - (Left * width / 2);
+            Vector3 uppercenter = (Up * height / 4) + origin;
+            UpperLeft = uppercenter + (Left * width / 4);
+            UpperRight = uppercenter - (Left * width / 4);
             LowerLeft = UpperLeft - (Up * height);
             LowerRight = UpperRight - (Up * height);
 
@@ -98,7 +98,7 @@ namespace SaturnIV
             quadEffect.World = world;
             quadEffect.View = View;
             quadEffect.Projection = Projection;
-            //quadEffect.EnableDefaultLighting();
+            quadEffect.EnableDefaultLighting();
 
             Game1.graphics.GraphicsDevice.VertexDeclaration = quadVertexDecl;
             quadEffect.Begin();

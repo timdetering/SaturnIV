@@ -95,7 +95,7 @@ namespace SaturnIV
             else
             {
                 if ((distance < thisShip.EvadeDist[(int)otherShip.objectClass] / 2 && !thisShip.isEvading)
-                    || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading))
+                    || (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading) && distance < thisShip.EvadeDist[(int)otherShip.objectClass] / 2)
                 {
                     thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction +
                          (HelperClass.RandomDirection()) * thisShip.modelLen * 50));

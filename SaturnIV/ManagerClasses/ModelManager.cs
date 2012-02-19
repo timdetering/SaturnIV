@@ -103,7 +103,7 @@ namespace SaturnIV
             //base.Draw(gameTime);
         }
 
-        public void DrawModel (CameraNew myCamera,Model shipModel,Matrix worldMatrix,Color shipColor)
+        public void DrawModel (CameraNew myCamera,Model shipModel,Matrix worldMatrix,Color shipColor, bool isEdit)
         {
             Matrix[] transforms = new Matrix[shipModel.Bones.Count];
             shipModel.CopyAbsoluteBoneTransformsTo(transforms);
@@ -113,11 +113,10 @@ namespace SaturnIV
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();                    
-                    Color mColor = Color.White;
-                    //effect.DiffuseColor = mColor.ToVector3();
-                    //effect.SpecularColor = mColor.ToVector3();
-                    //effect.EmissiveColor = mColor.ToVector3();
+                    effect.EnableDefaultLighting();
+                    Color mColor = Color.Sienna;
+                    if (isEdit)
+                        effect.EmissiveColor = mColor.ToVector3();
                     //effect.AmbientLightColor = mColor.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;

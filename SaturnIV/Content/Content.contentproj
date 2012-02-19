@@ -156,18 +156,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="Models\largeSphere.FBX">
-      <Name>largeSphere</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Fleet_KM100.FBX">
       <Name>Fleet_KM100</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\LRGMISSILE.FBX">
-      <Name>LRGMISSILE</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -186,23 +176,8 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Fleet_Station.FBX">
-      <Name>Fleet_Station</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Fleet_SF101.FBX">
-      <Name>Fleet_SF101</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\SFV300.FBX">
-      <Name>SFV300</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\sphere.FBX">
-      <Name>sphere</Name>
+    <Compile Include="Models\largeSphere.FBX">
+      <Name>largeSphere</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -223,16 +198,6 @@
     </Compile>
     <Compile Include="Models\Ships\Fleet_MR-140_Viper.FBX">
       <Name>Fleet_MR-140_Viper</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\plane.FBX">
-      <Name>plane</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\plane2.FBX">
-      <Name>plane2</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -377,16 +342,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\tbattlecrusier.png">
-      <Name>tbattlecrusier</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\tEriax_Crusier.png">
-      <Name>tEriax_Crusier</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="textures\smoke2.png">
       <Name>smoke2</Name>
       <Importer>TextureImporter</Importer>
@@ -455,13 +410,6 @@
       <Name>Eriax_Frigate</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\ship_hull19.jpg">
-      <Name>ship_hull19</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -549,68 +497,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiserkineticburstcannon_export[1].bmp">
-      <Name>Hgn_battlecruiserkineticburstcannon_export[1]</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiserkineticburstcannon_export[1]SPEC.bmp">
-      <Name>Hgn_battlecruiserkineticburstcannon_export[1]SPEC</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_badge_export[1].bmp">
-      <Name>Hgn_battlecruiser_badge_export[1]</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_badge_export[1]SPEC.bmp">
-      <Name>Hgn_battlecruiser_badge_export[1]SPEC</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[1].bmp">
-      <Name>Hgn_battlecruiser_engine_export[1]</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[1]SPEC.bmp">
-      <Name>Hgn_battlecruiser_engine_export[1]SPEC</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_engine_export[2]LUM.bmp">
-      <Name>Hgn_battlecruiser_engine_export[2]LUM</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[1].bmp">
-      <Name>Hgn_battlecruiser_main_export[1]</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[1]SPEC.bmp">
-      <Name>Hgn_battlecruiser_main_export[1]SPEC</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_main_export[2]LUM.bmp">
-      <Name>Hgn_battlecruiser_main_export[2]LUM</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_thruster_export[1].bmp">
-      <Name>Hgn_battlecruiser_thruster_export[1]</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Battlecrusier\Hgn_battlecruiser_thruster_export[3]LUM.bmp">
-      <Name>Hgn_battlecruiser_thruster_export[3]LUM</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\HUD\centertarget.png">
       <Name>centertarget</Name>
       <Importer>TextureImporter</Importer>
@@ -622,20 +508,6 @@
       <Name>target_track</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ships\NovaCarrier.FBX">
-      <Name>NovaCarrier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ships\OrionFrigate.FBX">
-      <Name>OrionFrigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -684,6 +556,55 @@
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Fleet\fleet_crusier.FBX">
+      <Name>fleet_crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Fleet\fleet_frigate.FBX">
+      <Name>fleet_frigate</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Eriax\eriax_heavy_fighter.FBX">
+      <Name>eriax_heavy_fighter</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Eriax\eriax_bomber.FBX">
+      <Name>eriax_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Fleet\fleet_bomber.FBX">
+      <Name>fleet_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\sphere.FBX">
+      <Name>sphere</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\Fleet\fleet_heavy_crusier.FBX">
+      <Name>fleet_heavy_crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
