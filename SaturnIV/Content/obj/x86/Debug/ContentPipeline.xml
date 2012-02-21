@@ -616,10 +616,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_crusier.xnb</Output>
-      <Time>2012-02-17T21:44:16.5013609-06:00</Time>
+      <Time>2012-02-20T21:17:25.0636171-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_crusier_0.xml</Key>
-        <Value>2012-02-20T19:03:07.4354798-06:00</Value>
+        <Value>2012-02-20T21:17:36.4572688-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
@@ -825,7 +825,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_crusier_0.xml</Output>
-      <Time>2012-02-17T21:44:16.5013609-06:00</Time>
+      <Time>2012-02-20T21:17:25.0636171-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Metal_Pa.jpg</Source>
@@ -1082,6 +1082,69 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_a\03pmg_0.xnb</Output>
       <Time>2012-02-20T19:12:44.9458978-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_attack_bomber.FBX</Source>
+      <Name>Models\Ships\Fleet\fleet_attack_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_attack_bomber.xnb</Output>
+      <Time>2012-02-20T21:09:59.8301512-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_attack_bomber_0.xml</Key>
+        <Value>2012-02-20T21:10:03.2273455-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_attack_bomber.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_attack_bomber_0.xml</Output>
+      <Time>2012-02-20T21:09:59.8301512-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_corvette.FBX</Source>
+      <Name>Models\Ships\Fleet\fleet_corvette</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_corvette.xnb</Output>
+      <Time>2012-02-20T21:09:16.415668-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_corvette_0.xml</Key>
+        <Value>2012-02-20T21:10:03.516362-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_corvette.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_corvette_0.xml</Output>
+      <Time>2012-02-20T21:09:16.415668-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Eriax\eriax_fighter_a.FBX</Source>
+      <Name>Models\Ships\Eriax\eriax_fighter_a</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_fighter_a.xnb</Output>
+      <Time>2012-02-20T21:05:38.4342002-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_fighter_a_0.xml</Key>
+        <Value>2012-02-20T21:06:36.3855148-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Eriax\eriax_fighter_a.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Eriax\eriax_fighter_a_0.xml</Output>
+      <Time>2012-02-20T21:05:38.4342002-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

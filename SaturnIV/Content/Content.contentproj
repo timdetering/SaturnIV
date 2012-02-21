@@ -472,6 +472,21 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Models\Ships\Fleet\fleet_attack_bomber.FBX">
+      <Name>fleet_attack_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Fleet\fleet_corvette.FBX">
+      <Name>fleet_corvette</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\Eriax\eriax_fighter_a.FBX">
+      <Name>eriax_fighter_a</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="XML\listofnames.xml">
       <Name>listofnames</Name>
       <Importer>XmlImporter</Importer>

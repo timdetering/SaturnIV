@@ -51,6 +51,7 @@ Content\textures\missiletrack.xnb
 Content\Models\Ships\Destroyer_A\04D_0.xnb
 Content\textures\move_icon.xnb
 Content\03D_0.xnb
+Content\Models\Ships\Fleet\fleet_corvette.xnb
 Content\Models\Ships\Eriax\eriax_bomber.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\hud.xnb
@@ -63,6 +64,7 @@ Content\textures\skybox2.xnb
 Content\textures\nebula2.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
 Content\textures\blackDotLarge.xnb
+Content\Models\Ships\Eriax\eriax_fighter_a.xnb
 Content\Models\Ships\Metal_Pa_0.xnb
 Content\MedFont.xnb
 Content\textures\starfield2.xnb
@@ -79,6 +81,7 @@ Content\Effects\SkySphere.xnb
 Content\Fonts\SmallFont.xnb
 Content\textures\smoke2.xnb
 Content\effects.xnb
+Content\Models\Ships\Fleet\fleet_attack_bomber.xnb
 Content\Models\tacmap_items\blue_large_plane.xnb
 Content\textures\spacescape_blue.xnb
 Content\Models\Ships\Fleet\fleet_bomber.xnb

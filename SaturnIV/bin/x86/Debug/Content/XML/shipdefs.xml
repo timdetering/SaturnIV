@@ -56,15 +56,15 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models/Ships/Frigate_A/frigate_A</FileName>
-      <Type>Fleet Class A Frigate</Type>
+      <FileName>Models/Ships/Fleet/fleet_attack_bomber</FileName>
+      <Type>Fleet Class B Attack Bomber</Type>
       <Mass>14.0</Mass>
       <Thrust>14200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>3.00</Agility>
       <BelongsTo>Fleet</BelongsTo>
-	  <ShipClass>Frigate</ShipClass>
+	  <ShipClass>Bomber</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
 	  <HullFactor>0.99</HullFactor>
 	  <hullValue>2000</hullValue>
@@ -106,7 +106,7 @@
     </Item>
 <Item>
       <FileName>Models/Ships/Eriax/eriax_heavy_fighter</FileName>
-      <Type>Eriax Fighter Type A</Type>
+      <Type>Eriax Interceptor</Type>
       <Mass>2.25</Mass>
       <Thrust>13000</Thrust>
       <SphereRadius>25</SphereRadius>
@@ -148,8 +148,53 @@
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
-    </Item>	  
-	   <Item>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/Eriax/eriax_fighter_a</FileName>
+      <Type>Eriax Fighter Type A</Type>
+      <Mass>2.25</Mass>
+      <Thrust>13000</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>10.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+      <HullFactor>0.85</HullFactor>
+      <hullValue>200</hullValue>
+      <shieldValue>0</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>1000 4000 10000 200 50</EvadeDist>
+      <TargetPrefs>1 0.9 0.00 0.0 0.2</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1</ChasePrefs>
+      <EngageDist>5000 15000 15000 2000 50</EngageDist>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>AutoCannon</weaponType>
+          <ModulePositionOnShip>
+            -4 0 0 0
+            4 0 0 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <weaponRange>15000</weaponRange>
+          <timer>0</timer>
+        </Item>
+        <Item>
+          <weaponType>SRMH</weaponType>
+          <ModulePositionOnShip>
+            0 0 10 0
+            0 0 -10 0
+            0 0 20 0
+            0 0 -20 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <weaponRange>20000</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>    
+    <Item>
       <FileName>Models//Ships/Eriax/eriax_bomber</FileName>
       <Type>Attack Bomber Type A</Type>
       <Mass>3.25</Mass>
@@ -194,8 +239,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 		<Item>
-      <FileName>Models/Ships/Destroyer_A/destroyer_a</FileName>
-      <Type>Fleet Class C Destroyer</Type>
+      <FileName>Models/Ships/Fleet/fleet_corvette</FileName>
+      <Type>Fleet Corvette Escort</Type>
       <Mass>20</Mass>
       <Thrust>4150</Thrust>
       <SphereRadius>125</SphereRadius>

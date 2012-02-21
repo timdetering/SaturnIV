@@ -82,6 +82,9 @@ Content\Models\Ships\Destroyer_A\04D_0.xnb
 Content\03D_0.xnb
 Content\Models\Ships\fighter_a\fighter_a.xnb
 Content\Models\Ships\fighter_a\03pmg_0.xnb
+Content\Models\Ships\Fleet\fleet_attack_bomber.xnb
+Content\Models\Ships\Fleet\fleet_corvette.xnb
+Content\Models\Ships\Eriax\eriax_fighter_a.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml
