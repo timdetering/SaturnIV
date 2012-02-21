@@ -389,15 +389,6 @@
       <Time>2012-02-15T19:12:19.6194035-06:00</Time>
     </Item>
     <Item>
-      <Source>Models\Ships\3732.jpg</Source>
-      <Name>Models\Ships\3732</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732.xnb</Output>
-      <Time>2012-02-15T19:12:19.7214093-06:00</Time>
-    </Item>
-    <Item>
       <Source>textures\hbartex.png</Source>
       <Name>textures\hbartex</Name>
       <Importer>TextureImporter</Importer>
@@ -443,42 +434,6 @@
       <Time>2012-02-15T19:12:21.2754982-06:00</Time>
     </Item>
     <Item>
-      <Source>Models\Ships\SF-90 Agile\bump_6.jpg</Source>
-      <Name>Models\Ships\SF-90 Agile\bump_6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\bump_6.xnb</Output>
-      <Time>2012-02-15T19:12:20.3224437-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\color_6.jpg</Source>
-      <Name>Models\Ships\SF-90 Agile\color_6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\color_6.xnb</Output>
-      <Time>2012-02-15T19:12:20.3234437-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\illumination_6.jpg</Source>
-      <Name>Models\Ships\SF-90 Agile\illumination_6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\illumination_6.xnb</Output>
-      <Time>2012-02-15T19:12:20.3254439-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\specular_6.jpg</Source>
-      <Name>Models\Ships\SF-90 Agile\specular_6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\specular_6.xnb</Output>
-      <Time>2012-02-15T19:12:20.327444-06:00</Time>
-    </Item>
-    <Item>
       <Source>textures\HUD\centertarget.png</Source>
       <Name>textures\HUD\centertarget</Name>
       <Importer>TextureImporter</Importer>
@@ -506,7 +461,7 @@
       <Time>2012-02-15T19:12:19.7144089-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2012-02-17T22:45:30.5135024-06:00</Value>
+        <Value>2012-02-20T19:02:55.6282983-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -519,7 +474,7 @@
       <Time>2012-02-15T19:12:20.6364616-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2012-02-17T22:45:30.5795062-06:00</Value>
+        <Value>2012-02-20T19:02:55.6957994-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -532,7 +487,7 @@
       <Time>2012-02-15T19:12:19.6504052-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2012-02-17T22:45:33.0116453-06:00</Value>
+        <Value>2012-02-20T19:02:56.7658158-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -546,7 +501,7 @@
       <Time>2012-02-15T19:12:20.4014482-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
-        <Value>2012-02-17T22:45:35.1307665-06:00</Value>
+        <Value>2012-02-20T19:02:57.9233336-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -559,47 +514,21 @@
       <Time>2012-02-15T19:12:20.4074485-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_missile_0.xml</Key>
-        <Value>2012-02-17T22:45:36.2848325-06:00</Value>
+        <Value>2012-02-20T19:02:59.0593511-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Request>
     </Item>
     <Item>
-      <Source>Models\Ships\Fleet_MR-140_Viper.FBX</Source>
-      <Name>Models\Ships\Fleet_MR-140_Viper</Name>
+      <Source>Models\largeSphere.FBX</Source>
+      <Name>Models\largeSphere</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_MR-140_Viper.xnb</Output>
-      <Time>2012-02-15T19:12:20.1064313-06:00</Time>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\largeSphere.xnb</Output>
+      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
       <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet_MR-140_Viper_0.xml</Key>
-        <Value>2012-02-17T22:45:38.5349612-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Heavy_Bomber.FBX</Source>
-      <Name>Models\Ships\Heavy_Bomber</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Heavy_Bomber.xnb</Output>
-      <Time>2012-02-15T19:12:20.205437-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Heavy_Bomber_0.xml</Key>
-        <Value>2012-02-17T22:45:40.0200461-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SI-300.FBX</Source>
-      <Name>Models\Ships\SI-300</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SI-300.xnb</Output>
-      <Time>2012-02-15T19:12:20.3324443-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\SI-300_0.xml</Key>
-        <Value>2012-02-17T22:45:41.1501108-06:00</Value>
+        <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
+        <Value>2012-02-20T19:03:00.1243674-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -612,7 +541,7 @@
       <Time>2012-02-15T19:12:20.6024597-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_large_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:42.1911703-06:00</Value>
+        <Value>2012-02-20T19:03:01.1518832-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -625,7 +554,7 @@
       <Time>2012-02-15T19:12:20.6034598-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_medium_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:43.2412304-06:00</Value>
+        <Value>2012-02-20T19:03:02.176899-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -638,7 +567,7 @@
       <Time>2012-02-15T19:12:20.60746-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_small_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:44.2722894-06:00</Value>
+        <Value>2012-02-20T19:03:03.2629157-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -651,7 +580,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_large_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:45.3233495-06:00</Value>
+        <Value>2012-02-20T19:03:04.3054317-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -664,7 +593,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_medium_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:46.3774098-06:00</Value>
+        <Value>2012-02-20T19:03:05.3329475-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -677,157 +606,7 @@
       <Time>2012-02-15T19:12:20.6094601-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_small_plane_0.xml</Key>
-        <Value>2012-02-17T22:45:47.4044685-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Heavy_Gunship.FBX</Source>
-      <Name>Models\Ships\Eriax_Heavy_Gunship</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax_Heavy_Gunship.xnb</Output>
-      <Time>2012-02-15T19:12:20.0394275-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Eriax_Heavy_Gunship_0.xml</Key>
-        <Value>2012-02-17T22:45:48.4825302-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Auriga_Class_Crusier.FBX</Source>
-      <Name>Models\Ships\Fleet_Auriga_Class_Crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb</Output>
-      <Time>2012-02-15T19:12:20.101431-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet_Auriga_Class_Crusier_0.xml</Key>
-        <Value>2012-02-17T22:45:50.8176637-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</Source>
-      <Name>Models\Ships\Fleet_Procyon_Class_Battlecrusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb</Output>
-      <Time>2012-02-15T19:12:20.1324328-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet_Procyon_Class_Battlecrusie_0.xml</Key>
-        <Value>2012-02-17T22:45:52.5687639-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Ares_Battlecrusier.FBX</Source>
-      <Name>Models\Ships\Ares_Battlecrusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Ares_Battlecrusier.xnb</Output>
-      <Time>2012-02-15T19:12:19.8664176-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Ares_Battlecrusier_0.xml</Key>
-        <Value>2012-02-17T22:45:55.8879537-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Crusier.FBX</Source>
-      <Name>Models\Ships\Eriax_Crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax_Crusier.xnb</Output>
-      <Time>2012-02-15T19:12:20.0194264-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Eriax_Crusier_0.xml</Key>
-        <Value>2012-02-17T22:46:00.0821936-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Frigate.FBX</Source>
-      <Name>Models\Ships\Eriax_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax_Frigate.xnb</Output>
-      <Time>2012-02-15T19:12:20.0374274-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Eriax_Frigate_0.xml</Key>
-        <Value>2012-02-17T22:46:01.8972975-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\blu_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SB-50\SB50.FBX</Source>
-      <Name>Models\Ships\SB-50\SB50</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SB-50\SB50.xnb</Output>
-      <Time>2012-02-15T19:12:20.3154433-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\SB-50\SB50_0.xml</Key>
-        <Value>2012-02-17T22:46:03.1913715-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SB-50\COLOR_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-101\MR101.FBX</Source>
-      <Name>Models\Ships\MR-101\MR101</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-101\MR101.xnb</Output>
-      <Time>2012-02-15T19:12:20.222438-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\MR-101\MR101_0.xml</Key>
-        <Value>2012-02-17T22:46:04.3864398-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-101\COLOR_0_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-100\MR100.FBX</Source>
-      <Name>Models\Ships\MR-100\MR100</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-100\MR100.xnb</Output>
-      <Time>2012-02-15T19:12:20.2074371-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\MR-100\MR100_0.xml</Key>
-        <Value>2012-02-17T22:46:05.6265108-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-100\FIGHTER__0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\sf-90_model.FBX</Source>
-      <Name>Models\Ships\SF-90 Agile\sf-90_model</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\sf-90_model.xnb</Output>
-      <Time>2012-02-15T19:12:20.327444-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\SF-90 Agile\sf-90_model_0.xml</Key>
-        <Value>2012-02-17T22:46:06.8305796-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\color_6_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Frigate.FBX</Source>
-      <Name>Models\Ships\Fleet_Frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet_Frigate.xnb</Output>
-      <Time>2012-02-15T20:54:33.7182539-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet_Frigate_0.xml</Key>
-        <Value>2012-02-17T22:46:08.1716563-06:00</Value>
+        <Value>2012-02-20T19:03:06.3579632-06:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -840,7 +619,7 @@
       <Time>2012-02-17T21:44:16.5013609-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_crusier_0.xml</Key>
-        <Value>2012-02-17T22:46:09.2717192-06:00</Value>
+        <Value>2012-02-20T19:03:07.4354798-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
@@ -854,7 +633,7 @@
       <Time>2012-02-17T21:42:53.6196204-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_frigate_0.xml</Key>
-        <Value>2012-02-17T22:46:10.4177848-06:00</Value>
+        <Value>2012-02-20T19:03:08.7740004-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
@@ -868,7 +647,7 @@
       <Time>2012-02-18T18:01:47.6411281-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_heavy_fighter_0.xml</Key>
-        <Value>2012-02-18T18:07:04.4212469-06:00</Value>
+        <Value>2012-02-20T19:03:10.0240196-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
@@ -882,9 +661,50 @@
       <Time>2012-02-17T22:02:25.8746695-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_bomber_0.xml</Key>
-        <Value>2012-02-17T22:46:12.8149219-06:00</Value>
+        <Value>2012-02-20T19:03:11.1990376-06:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_bomber.FBX</Source>
+      <Name>Models\Ships\Fleet\fleet_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_bomber.xnb</Output>
+      <Time>2012-02-17T22:44:03.75254-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_bomber_0.xml</Key>
+        <Value>2012-02-20T19:03:12.4965576-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\sphere.FBX</Source>
+      <Name>Models\sphere</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\sphere.xnb</Output>
+      <Time>2012-02-18T18:08:21.105633-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
+        <Value>2012-02-20T19:03:13.6740756-06:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Fleet\fleet_heavy_crusier.FBX</Source>
+      <Name>Models\Ships\Fleet\fleet_heavy_crusier</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb</Output>
+      <Time>2012-02-18T19:45:11.2324197-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_heavy_crusier_0.xml</Key>
+        <Value>2012-02-20T19:03:14.8610988-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
@@ -952,25 +772,11 @@
       <Time>2012-02-15T19:12:20.4864531-06:00</Time>
     </Item>
     <Item>
-      <Source>Models\Ships\Fleet_MR-140_Viper.FBX</Source>
+      <Source>Models\largeSphere.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Fleet_MR-140_Viper_0.xml</Output>
-      <Time>2012-02-15T19:12:20.1064313-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Heavy_Bomber.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Heavy_Bomber_0.xml</Output>
-      <Time>2012-02-15T19:12:20.205437-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SI-300.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\SI-300_0.xml</Output>
-      <Time>2012-02-15T19:12:20.3324443-06:00</Time>
+      <Output>obj\x86\Debug\Models\largeSphere_0.xml</Output>
+      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\blue_large_plane.FBX</Source>
@@ -1013,173 +819,6 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\red_small_plane_0.xml</Output>
       <Time>2012-02-15T19:12:20.6094601-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Heavy_Gunship.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Eriax_Heavy_Gunship_0.xml</Output>
-      <Time>2012-02-15T19:12:20.0394275-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\3732.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\3732_0.xnb</Output>
-      <Time>2012-02-15T19:12:19.7214093-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Auriga_Class_Crusier.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Fleet_Auriga_Class_Crusier_0.xml</Output>
-      <Time>2012-02-15T19:12:20.101431-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Procyon_Class_Battlecrusier.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Fleet_Procyon_Class_Battlecrusie_0.xml</Output>
-      <Time>2012-02-15T19:12:20.1324328-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Ares_Battlecrusier.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Ares_Battlecrusier_0.xml</Output>
-      <Time>2012-02-15T19:12:19.8664176-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Crusier.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Eriax_Crusier_0.xml</Output>
-      <Time>2012-02-15T19:12:20.0194264-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Eriax_Frigate.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Eriax_Frigate_0.xml</Output>
-      <Time>2012-02-15T19:12:20.0374274-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\blu.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\blu_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.3344444-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SB-50\SB50.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\SB-50\SB50_0.xml</Output>
-      <Time>2012-02-15T19:12:20.3154433-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SB-50\COLOR.JPG</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SB-50\COLOR_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.3174434-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-101\MR101.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\MR-101\MR101_0.xml</Output>
-      <Time>2012-02-15T19:12:20.222438-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-101\COLOR_0.JPG</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-101\COLOR_0_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.2264382-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-100\MR100.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\MR-100\MR100_0.xml</Output>
-      <Time>2012-02-15T19:12:20.2074371-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\MR-100\FIGHTER_.JPG</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\MR-100\FIGHTER__0.xnb</Output>
-      <Time>2012-02-15T19:12:20.2114373-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\sf-90_model.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\SF-90 Agile\sf-90_model_0.xml</Output>
-      <Time>2012-02-15T19:12:20.327444-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\SF-90 Agile\color_6.jpg</Source>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Parameters>
-        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
-        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
-        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
-        <Data Key="GenerateMipmaps" Type="bool">true</Data>
-        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
-      </Parameters>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\SF-90 Agile\color_6_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.3234437-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet_Frigate.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\Ships\Fleet_Frigate_0.xml</Output>
-      <Time>2012-02-15T20:54:33.7182539-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_crusier.FBX</Source>
@@ -1241,20 +880,6 @@
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_bomber.FBX</Source>
-      <Name>Models\Ships\Fleet\fleet_bomber</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_bomber.xnb</Output>
-      <Time>2012-02-17T22:44:03.75254-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_bomber_0.xml</Key>
-        <Value>2012-02-17T22:48:32.1658923-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet\fleet_bomber.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_bomber_0.xml</Output>
@@ -1276,39 +901,6 @@
       <Time>2012-02-17T22:43:09.9684637-06:00</Time>
     </Item>
     <Item>
-      <Source>Models\largeSphere.FBX</Source>
-      <Name>Models\largeSphere</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\largeSphere.xnb</Output>
-      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2012-02-18T18:07:57.1672638-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\largeSphere.FBX</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\Models\largeSphere_0.xml</Output>
-      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\sphere.FBX</Source>
-      <Name>Models\sphere</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\sphere.xnb</Output>
-      <Time>2012-02-18T18:08:21.105633-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2012-02-18T18:08:30.7621853-06:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
       <Source>Models\sphere.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
@@ -1317,24 +909,179 @@
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_heavy_crusier.FBX</Source>
-      <Name>Models\Ships\Fleet\fleet_heavy_crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb</Output>
-      <Time>2012-02-18T19:45:11.2324197-06:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_heavy_crusier_0.xml</Key>
-        <Value>2012-02-18T19:45:18.0788113-06:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Ships\Fleet\fleet_heavy_crusier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_heavy_crusier_0.xml</Output>
       <Time>2012-02-18T19:45:11.2324197-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Attack_Bomber\03AB.bmp</Source>
+      <Name>Models\Ships\Attack_Bomber\03AB</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Attack_Bomber\03AB.xnb</Output>
+      <Time>2012-02-20T19:12:42.7283637-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Attack_Bomber\attack_bomber.FBX</Source>
+      <Name>Models\Ships\Attack_Bomber\attack_bomber</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Attack_Bomber\attack_bomber.xnb</Output>
+      <Time>2012-02-20T19:21:19.5122103-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Attack_Bomber\attack_bomber_0.xml</Key>
+        <Value>2012-02-20T19:21:22.9444066-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Attack_Bomber\03AB_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Attack_Bomber\attack_bomber.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Attack_Bomber\attack_bomber_0.xml</Output>
+      <Time>2012-02-20T19:21:19.5122103-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Attack_Bomber\03AB.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Attack_Bomber\03AB_0.xnb</Output>
+      <Time>2012-02-20T19:12:42.7283637-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Frigate_A\frigate_a.FBX</Source>
+      <Name>Models\Ships\Frigate_A\frigate_a</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Frigate_A\frigate_a.xnb</Output>
+      <Time>2012-02-20T19:45:13.2572158-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Frigate_A\frigate_a_0.xml</Key>
+        <Value>2012-02-20T19:49:00.6892242-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Frigate_A\02DFC_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Frigate_A\frigate_a.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Frigate_A\frigate_a_0.xml</Output>
+      <Time>2012-02-20T19:45:13.2572158-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Frigate_A\02DFC.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Frigate_A\02DFC_0.xnb</Output>
+      <Time>2012-02-20T19:12:43.5708766-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Destroyer_A\destroyer_a.FBX</Source>
+      <Name>Models\Ships\Destroyer_A\destroyer_a</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Destroyer_A\destroyer_a.xnb</Output>
+      <Time>2012-02-20T19:56:12.3279125-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\Destroyer_A\destroyer_a_0.xml</Key>
+        <Value>2012-02-20T19:56:14.4280327-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Destroyer_A\04D_0.xnb</Request>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\03D_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Destroyer_A\destroyer_a.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\Destroyer_A\destroyer_a_0.xml</Output>
+      <Time>2012-02-20T19:56:12.3279125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\Destroyer_A\04D.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Destroyer_A\04D_0.xnb</Output>
+      <Time>2012-02-20T19:12:43.1683705-06:00</Time>
+    </Item>
+    <Item>
+      <Source>C:\Users\bryan\Desktop\Hiigaran\Destroyer\03D.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\03D_0.xnb</Output>
+      <Time>2012-02-20T19:12:43.1483701-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fighter_a\fighter_a.FBX</Source>
+      <Name>Models\Ships\fighter_a\fighter_a</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_a\fighter_a.xnb</Output>
+      <Time>2012-02-20T20:03:22.4995169-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Ships\fighter_a\fighter_a_0.xml</Key>
+        <Value>2012-02-20T20:03:25.3266786-06:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_a\03pmg_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fighter_a\fighter_a.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Ships\fighter_a\fighter_a_0.xml</Output>
+      <Time>2012-02-20T20:03:22.4995169-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fighter_a\03pmg.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_a\03pmg_0.xnb</Output>
+      <Time>2012-02-20T19:12:44.9458978-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

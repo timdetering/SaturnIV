@@ -41,16 +41,11 @@ Content\textures\move_icon.xnb
 Content\textures\smoke2.xnb
 Content\textures\blackDotLarge.xnb
 Content\Models\3732.xnb
-Content\Models\Ships\3732.xnb
 Content\textures\hbartex.xnb
 Content\textures\GUI\cpanel1.xnb
 Content\textures\GUI\cpanel2.xnb
 Content\textures\GUI\mWindow.xnb
 Content\textures\GUI\textdialog1.xnb
-Content\Models\Ships\SF-90 Agile\bump_6.xnb
-Content\Models\Ships\SF-90 Agile\color_6.xnb
-Content\Models\Ships\SF-90 Agile\illumination_6.xnb
-Content\Models\Ships\SF-90 Agile\specular_6.xnb
 Content\textures\HUD\centertarget.xnb
 Content\textures\HUD\target_track.xnb
 Content\Models\LaserBolt2.xnb
@@ -58,48 +53,37 @@ Content\Thrusters\ThrustCylinderB.xnb
 Content\Models\Fleet_KM100.xnb
 Content\Models\basic_bullet.xnb
 Content\Models\basic_missile.xnb
-Content\Models\Ships\Fleet_MR-140_Viper.xnb
-Content\Models\Ships\Heavy_Bomber.xnb
-Content\Models\Ships\SI-300.xnb
+Content\Models\largeSphere.xnb
 Content\Models\tacmap_items\blue_large_plane.xnb
 Content\Models\tacmap_items\blue_medium_plane.xnb
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\Models\tacmap_items\red_large_plane.xnb
 Content\Models\tacmap_items\red_medium_plane.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
-Content\Models\Ships\Eriax_Heavy_Gunship.xnb
-Content\Models\Ships\Fleet_Auriga_Class_Crusier.xnb
-Content\Models\Ships\Fleet_Procyon_Class_Battlecrusier.xnb
-Content\Models\Ships\Ares_Battlecrusier.xnb
-Content\Models\Ships\Eriax_Crusier.xnb
-Content\Models\Ships\Eriax_Frigate.xnb
-Content\Models\Ships\SB-50\SB50.xnb
-Content\Models\Ships\MR-101\MR101.xnb
-Content\Models\Ships\MR-100\MR100.xnb
-Content\Models\Ships\SF-90 Agile\sf-90_model.xnb
-Content\Models\Ships\Fleet_Frigate.xnb
 Content\Models\Ships\Fleet\fleet_crusier.xnb
 Content\Models\Ships\Fleet\fleet_frigate.xnb
 Content\Models\Ships\Eriax\eriax_heavy_fighter.xnb
 Content\Models\Ships\Eriax\eriax_bomber.xnb
-Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
-Content\Models\Lakerem_0.xnb
-Content\Models\Ships\3732_0.xnb
-Content\Models\Ships\blu_0.xnb
-Content\Models\Ships\SB-50\COLOR_0.xnb
-Content\Models\Ships\MR-101\COLOR_0_0.xnb
-Content\Models\Ships\MR-100\FIGHTER__0.xnb
-Content\Models\Ships\SF-90 Agile\color_6_0.xnb
-Content\Models\Ships\Metal_Pa_0.xnb
-Content\Models\Ships\Material_0.xnb
 Content\Models\Ships\Fleet\fleet_bomber.xnb
-Content\test2_0.xnb
-Content\Models\largeSphere.xnb
 Content\Models\sphere.xnb
 Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb
+Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
+Content\Models\Lakerem_0.xnb
+Content\Models\Ships\Metal_Pa_0.xnb
+Content\Models\Ships\Material_0.xnb
+Content\test2_0.xnb
+Content\Models\Ships\Attack_Bomber\03AB.xnb
+Content\Models\Ships\Attack_Bomber\attack_bomber.xnb
+Content\Models\Ships\Attack_Bomber\03AB_0.xnb
+Content\Models\Ships\Frigate_A\frigate_a.xnb
+Content\Models\Ships\Frigate_A\02DFC_0.xnb
+Content\Models\Ships\Destroyer_A\destroyer_a.xnb
+Content\Models\Ships\Destroyer_A\04D_0.xnb
+Content\03D_0.xnb
+Content\Models\Ships\fighter_a\fighter_a.xnb
+Content\Models\Ships\fighter_a\03pmg_0.xnb
 Content\XML\listofnames.xml
+Content\XML\Scenarios\scenario1.xml
+Content\XML\Scenarios\testscenario.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml
-Content\XML\Scenarios\battleplan1.xml
-Content\XML\Scenarios\plan1.xml
-Content\XML\Scenarios\plan9.xml

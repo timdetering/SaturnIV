@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>-61351.7773 0 -58153.75</shipPosition>
+      <shipDirection>-61351.7773 0 -155103.516</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vendetta</shipName>
+      <shipPosition>-50971.2539 0 -19245.9531</shipPosition>
+      <shipDirection>-50971.2539 0 -116192.461</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Ultima</shipName>
+      <shipPosition>-29994.832 0 12187.03</shipPosition>
+      <shipDirection>-29994.832 0 -84759.51</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Relentless</shipName>
+      <shipPosition>-24773.84 0 -36526.7461</shipPosition>
+      <shipDirection>-24773.84 0 -133476.516</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Adamant</shipName>
+      <shipPosition>18191.3828 0 -74073.0547</shipPosition>
+      <shipDirection>33262.2344 0 -141159.031</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Stalker</shipName>
+      <shipPosition>88437.6 0 -79714.9844</shipPosition>
+      <shipDirection>50514.62 0 -121849.031</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Skyhook</shipName>
+      <shipPosition>80438.83 0 39146.08</shipPosition>
+      <shipDirection>47966.5469 0 -145922.953</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Reckoning</shipName>
+      <shipPosition>38196.77 0 -30459.65</shipPosition>
+      <shipDirection>38196.77 0 -128697.125</shipDirection>
+      <side>1</side>
+    </Item>
+  </Asset>
+</XnaContent>

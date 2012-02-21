@@ -86,8 +86,7 @@ namespace SaturnIV
                     thisShip.angleOfAttack = projection;
                     if (thisShip.angleOfAttack < rand.NextDouble())
                     {
-                        thisShip.targetPosition = otherShip.modelPosition +
-                            Vector3.Normalize(otherShip.Direction - thisShip.Direction) * -rand.Next(100, 150);
+                         thisShip.targetPosition = otherShip.modelPosition + Vector3.Normalize(otherShip.Direction - thisShip.Direction) * -rand.Next(100, 150);
                         thisShip.thrustAmount = otherShip.thrustAmount;
                     }
                 }
@@ -132,7 +131,7 @@ namespace SaturnIV
             }
 
             /// Engaging
-            if (thisShip.team != otherShip.team && !thisShip.isEvading)
+            if (thisShip.team != otherShip.team && !thisShip.isEvading && thisShip.currentDisposition != disposition.moving)
             {                                        
                 if (thisShip.TargetPrefs[(int)otherShip.objectClass] >= thisShip.currentTargetLevel)
                         //&& distance < thisShip.engageDist[(int)otherShip.objectClass]*2 )
@@ -164,7 +163,7 @@ namespace SaturnIV
             if (thisShip.currentDisposition == disposition.defensive)
                 thisShip.thrustAmount = 0.10f;            
 
-            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1600)))
+            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,2500)))
                 thisShip.currentDisposition = disposition.engaging;
         }
 

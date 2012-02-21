@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>-61351.7773 0 -60101.5469</shipPosition>
+      <shipDirection>-61351.7773 0 -159959.9</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vendetta</shipName>
+      <shipPosition>-50971.2539 0 -21193.73</shipPosition>
+      <shipDirection>-50971.2539 0 -121052.094</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Ultima</shipName>
+      <shipPosition>-29994.832 0 10239.24</shipPosition>
+      <shipDirection>-29994.832 0 -89619.12</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Relentless</shipName>
+      <shipPosition>-24773.84 0 -38474.543</shipPosition>
+      <shipDirection>-24773.84 0 -138332.9</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Adamant</shipName>
+      <shipPosition>18191.3828 0 -77445.27</shipPosition>
+      <shipDirection>18191.3828 0 -177200.031</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Stalker</shipName>
+      <shipPosition>88437.6 0 -83087.2</shipPosition>
+      <shipDirection>88437.6 0 -182841.969</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Skyhook</shipName>
+      <shipPosition>80438.83 0 35773.9063</shipPosition>
+      <shipDirection>80438.83 0 -63980.875</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Reckoning</shipName>
+      <shipPosition>38196.77 0 -33831.85</shipPosition>
+      <shipDirection>38196.77 0 -133586.625</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>-2911.69678 0 -38614.0938</shipPosition>
+      <shipDirection>38196.77 0 -33670.85</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Vendetta</shipName>
+      <shipPosition>37962.8555 0 10469.2646</shipPosition>
+      <shipDirection>38196.77 0 -33694.85</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Ultima</shipName>
+      <shipPosition>-17622.707 0 71279.56</shipPosition>
+      <shipDirection>38196.77 0 -34042.85</shipDirection>
+      <side>0</side>
+    </Item>
+  </Asset>
+</XnaContent>

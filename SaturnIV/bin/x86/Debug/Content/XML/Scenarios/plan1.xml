@@ -2,87 +2,59 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.saveObject]">
     <Item>
-      <shipIndex>5</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Vanguard</shipName>
-      <shipPosition>-49763.2539 0 -28822.3457</shipPosition>
-      <shipDirection>-49763.2539 0 -38822.3438</shipDirection>
+      <shipPosition>-61351.7773 0 -57864.7656</shipPosition>
+      <shipDirection>-61351.7773 0 -155103.516</shipDirection>
       <side>0</side>
     </Item>
     <Item>
-      <shipIndex>5</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Vendetta</shipName>
-      <shipPosition>-48113.6055 0 -11196.5264</shipPosition>
-      <shipDirection>-48113.6055 0 -21196.5273</shipDirection>
+      <shipPosition>-50971.2539 0 -18956.6172</shipPosition>
+      <shipDirection>-50971.2539 0 -116192.461</shipDirection>
       <side>0</side>
     </Item>
     <Item>
-      <shipIndex>5</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Ultima</shipName>
-      <shipPosition>-45827.4258 0 3122.553</shipPosition>
-      <shipDirection>-45827.4258 0 -6877.44727</shipDirection>
+      <shipPosition>-29994.832 0 12476.3662</shipPosition>
+      <shipDirection>-29994.832 0 -84759.51</shipDirection>
       <side>0</side>
     </Item>
     <Item>
-      <shipIndex>5</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Relentless</shipName>
-      <shipPosition>-40165.33 0 20558.2852</shipPosition>
-      <shipDirection>-40165.33 0 10558.2852</shipDirection>
+      <shipPosition>-24773.84 0 -36237.76</shipPosition>
+      <shipDirection>-24773.84 0 -133476.516</shipDirection>
       <side>0</side>
     </Item>
     <Item>
-      <shipIndex>8</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Adamant</shipName>
-      <shipPosition>-61834.57 0 -26909.7266</shipPosition>
-      <shipDirection>-61834.57 0 -36909.7266</shipDirection>
-      <side>0</side>
+      <shipPosition>18158.3438 0 -73909.38</shipPosition>
+      <shipDirection>33262.2344 0 -141159.031</shipDirection>
+      <side>1</side>
     </Item>
     <Item>
-      <shipIndex>8</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Stalker</shipName>
-      <shipPosition>-24631.582 0 6541.849</shipPosition>
-      <shipDirection>-24631.582 0 -3458.151</shipDirection>
-      <side>0</side>
+      <shipPosition>88539.3047 0 -79582.44</shipPosition>
+      <shipDirection>50514.62 0 -121849.031</shipDirection>
+      <side>1</side>
     </Item>
     <Item>
-      <shipIndex>4</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Skyhook</shipName>
-      <shipPosition>17208.4648 0 -48540.7461</shipPosition>
-      <shipDirection>17208.4648 0 -58540.7461</shipDirection>
+      <shipPosition>80469.91 0 39310.2773</shipPosition>
+      <shipDirection>47966.5469 0 -145922.953</shipDirection>
       <side>1</side>
     </Item>
     <Item>
-      <shipIndex>4</shipIndex>
+      <shipIndex>1</shipIndex>
       <shipName>Reckoning</shipName>
-      <shipPosition>17865.6855 0 -46660.11</shipPosition>
-      <shipDirection>17865.6855 0 -56660.11</shipDirection>
-      <side>1</side>
-    </Item>
-    <Item>
-      <shipIndex>4</shipIndex>
-      <shipName>Malice</shipName>
-      <shipPosition>22057.7051 0 -36754.0469</shipPosition>
-      <shipDirection>22057.7051 0 -46754.0469</shipDirection>
-      <side>1</side>
-    </Item>
-    <Item>
-      <shipIndex>4</shipIndex>
-      <shipName>Red Gauntlet</shipName>
-      <shipPosition>21981.0762 0 -35057.3633</shipPosition>
-      <shipDirection>21981.0762 0 -45057.3633</shipDirection>
-      <side>1</side>
-    </Item>
-    <Item>
-      <shipIndex>4</shipIndex>
-      <shipName>Nitsa</shipName>
-      <shipPosition>27930.377 0 -25304.5371</shipPosition>
-      <shipDirection>27930.377 0 -35304.54</shipDirection>
-      <side>1</side>
-    </Item>
-    <Item>
-      <shipIndex>4</shipIndex>
-      <shipName>Kreiger</shipName>
-      <shipPosition>30273.4863 0 -18225.1758</shipPosition>
-      <shipDirection>30273.4863 0 -28225.1758</shipDirection>
+      <shipPosition>38196.77 0 -30292.6582</shipPosition>
+      <shipDirection>38196.77 0 -128697.125</shipDirection>
       <side>1</side>
     </Item>
   </Asset>

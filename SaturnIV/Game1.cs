@@ -409,11 +409,11 @@ namespace SaturnIV
                 foreach (newShipStruct thisShip in activeShipList)
                     if (thisShip.isSelected)
                     {
-                            if (potentialTarget != null && potentialTarget.team != thisShip.team)
-                                thisShip.currentTarget = potentialTarget;
-                                thisShip.currentDisposition = disposition.moving;
-                                thisShip.targetPosition = mouse3dVector;
-                                thisShip.wayPointPosition = mouse3dVector;
+                        if (potentialTarget != null && potentialTarget.team != thisShip.team)
+                            thisShip.currentTarget = potentialTarget;
+                            thisShip.currentDisposition = disposition.moving;
+                            thisShip.targetPosition = mouse3dVector;
+                            thisShip.wayPointPosition = mouse3dVector;
                     }
             }           
             if (isChat) typeSpeed = 50;
@@ -476,7 +476,15 @@ namespace SaturnIV
                     chatMessage = "";
                     //systemMessagePos.Y += 10;
                 }
- 
+                
+                // Edit mode save Handler
+                if (keyboardState.IsKeyDown(Keys.F10) && isEditMode)
+                {
+                    drawTextbox = true;
+                    ControlPanelClass.textBoxActions = TextBoxActions.SaveScenario;
+                    //serializerClass.exportSaveScenario(activeShipList, "plan1");
+                }
+
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F1) && !isServer)
                 {
