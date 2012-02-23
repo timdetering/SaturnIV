@@ -94,6 +94,7 @@ namespace SaturnIV
         public string chatMessage;
         Vector3 isRight;
         guiClass Gui;
+        RadarClass radar;
 
         // Define Hud Components
         Texture2D centerHUD;

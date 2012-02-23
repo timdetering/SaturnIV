@@ -234,6 +234,7 @@ namespace SaturnIV
             Capitalship = 2,
             Frigate = 3,
             Bomber = 4,
+            SWACS = 5
         }
 
         public enum DirectionEnum

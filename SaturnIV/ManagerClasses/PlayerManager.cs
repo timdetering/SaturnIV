@@ -70,10 +70,6 @@ namespace SaturnIV
             {
                // rotationAmount.Y = 4f;
             }
-            if (keyboardState.IsKeyDown(Keys.W))
-            {
-               // rotationAmount.Y = -4f;
-            }
 
             if (keyboardState.IsKeyDown(Keys.Z))
             {
@@ -84,21 +80,10 @@ namespace SaturnIV
                 //roll = 0.023f;
             }
 
-            if (keyboardState.IsKeyDown(Keys.D1))
+            thrustAmount = 0.0f;
+            if (keyboardState.IsKeyDown(Keys.W))
             {
-                thrustAmount = 0.10f;
-            }
-            if (keyboardState.IsKeyDown(Keys.D2))
-            {
-                thrustAmount = .25f;
-            }
-            if (keyboardState.IsKeyDown(Keys.D3))
-            {
-                thrustAmount = 0.75f;
-            }
-            if (keyboardState.IsKeyDown(Keys.D4))
-            {
-                thrustAmount = 1.00f;
+                thrustAmount = 1.25f;
             }
 
             // Scale rotation amount to radians per second

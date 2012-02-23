@@ -2,15 +2,15 @@
 <!-- This is the shipdefs.xml file
 	Available ships are defined here
 	The order of classes defining AI Prefs are
-	Fighter,Crusier,Capitalship,Frigate,Bomber    
+	Fighter,Crusier,Capitalship,Frigate,Bomber,SWACS    
 -->
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
       <FileName>Models//Ships/Fleet/fleet_crusier</FileName>
       <Type>Fleet Class C Crusier</Type>
-      <Mass>8</Mass>
-      <Thrust>3600</Thrust>
+      <Mass>12</Mass>
+      <Thrust>23600</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>2.0</Agility>
@@ -18,13 +18,13 @@
       <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
 	  <HullFactor>0.35</HullFactor>
-	  <hullValue>600</hullValue>
+	  <hullValue>3600</hullValue>
 	  <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 1400 2000 200 50</EvadeDist>	  
-      <TargetPrefs>1 0.5 0.4 1 0.2</TargetPrefs>
-	  <ChasePrefs>0 1 0 1 0</ChasePrefs>
-      <EngageDist>50 500 1500 200 50</EngageDist>
+      <EvadeDist>1000 15400 12000 1200 150 1500</EvadeDist>	  
+      <TargetPrefs>1 0.5 0.4 1 0.2 0.6</TargetPrefs>
+	  <ChasePrefs>0 1 0 1 0 1</ChasePrefs>
+      <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
 	  <AvailableWeapons>
       <Item>
 	 <weaponType>MassDriver</weaponType>
@@ -70,19 +70,16 @@
 	  <hullValue>2000</hullValue>
 	  <shieldValue>9000</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 1400 2000 200 50</EvadeDist>
-      <TargetPrefs>0.5 1 1 1 0.2</TargetPrefs>
-	  <ChasePrefs>0 0 0 0 0</ChasePrefs>
-      <EngageDist>500 5000 15000 2000 50</EngageDist>	  
+      <EvadeDist>150 1400 2000 200 50 500</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2 1</TargetPrefs>
+	  <ChasePrefs>0 1 1 1 0 1</ChasePrefs>
+      <EngageDist>5000 50000 150000 40000 50000 19000</EngageDist>	  
       <AvailableWeapons>
       <Item>
-	 <weaponType>PointDefense</weaponType>
+	 <weaponType>LRM</weaponType>
 	 <ModulePositionOnShip>
 	   -400 0 0 1
         400 0 0 1
-		-40 0 0 2
-        40 0 0 2
-		-400 0 0 1
         400 0 0 1
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
@@ -116,13 +113,13 @@
 	    <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
 	  <HullFactor>0.85</HullFactor>
-	  <hullValue>200</hullValue>
+	  <hullValue>900</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 4000 10000 200 50</EvadeDist>
-      <TargetPrefs>1 0.9 0.00 0.0 0.2</TargetPrefs>
-	  <ChasePrefs>1 1 1 1 1</ChasePrefs>
-      <EngageDist>5000 15000 15000 2000 50</EngageDist>  
+      <EvadeDist>1000 4000 10000 200 5000 1000</EvadeDist>
+      <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
+	  <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
+      <EngageDist>50000 56000 75000 20000 50000 80000</EngageDist>  
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -161,13 +158,13 @@
       <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
       <HullFactor>0.85</HullFactor>
-      <hullValue>200</hullValue>
+      <hullValue>1400</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 4000 10000 200 50</EvadeDist>
-      <TargetPrefs>1 0.9 0.00 0.0 0.2</TargetPrefs>
-      <ChasePrefs>1 1 1 1 1</ChasePrefs>
-      <EngageDist>5000 15000 15000 2000 50</EngageDist>
+      <EvadeDist>1000 4000 10000 200 5000 2500</EvadeDist>
+      <TargetPrefs>1 0.9 0.00 0.0 0.2 1</TargetPrefs>
+      <ChasePrefs>1 1 1 1 0 1</ChasePrefs>
+      <EngageDist>50000 75000 65000 20000 35000 55000</EngageDist>
       <AvailableWeapons>
         <Item>
           <weaponType>AutoCannon</weaponType>
@@ -209,10 +206,10 @@
 	    <hullValue>1200</hullValue>
 	    <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 8000 8000 2000 500</EvadeDist>
-      <TargetPrefs>0.1 1.0 1.0 1.0 0.2</TargetPrefs>
-      <ChasePrefs>1 2 2 1 1</ChasePrefs>
-      <EngageDist>50000 12000 15000 200 50</EngageDist> 
+      <EvadeDist>1000 8000 8000 2000 500 1000</EvadeDist>
+      <TargetPrefs>0.1 1.0 1.0 1.0 0.2 0.1</TargetPrefs>
+      <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
+      <EngageDist>90000 82000 75000 20000 50000 10000</EngageDist> 
       <AvailableWeapons>
 	<Item>
 		<weaponType>LRMH</weaponType>
@@ -242,21 +239,21 @@
       <FileName>Models/Ships/Fleet/fleet_corvette</FileName>
       <Type>Fleet Corvette Escort</Type>
       <Mass>20</Mass>
-      <Thrust>4150</Thrust>
+      <Thrust>40150</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
-      <Agility>0.15</Agility>
+      <Agility>1.15</Agility>
       <BelongsTo>Fleet</BelongsTo> 
 	  <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.30</ShieldFactor>
 	  <HullFactor>0.15</HullFactor>
 	  <hullValue>3600</hullValue>
-	  <shieldValue>1400</shieldValue>
+	  <shieldValue>5400</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>0 4000 5000 500 0</EvadeDist>
-      <TargetPrefs>0.4 0.9 0.2 1 0.2 </TargetPrefs>
-      <ChasePrefs>0 0 0 0 0</ChasePrefs>
-	  <EngageDist>5000 14000 15000 500 100</EngageDist>      
+      <EvadeDist>25000 40000 50000 50000 100 50000</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3</TargetPrefs>
+      <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
+	  <EngageDist>72000 64000 45000 45500 80000 90000</EngageDist>      
       <AvailableWeapons>
 	  <Item>
 	 <weaponType>PointDefense</weaponType>
@@ -288,10 +285,6 @@
 		-100 0 0  0
 		 600 0 0  0
 		-100 0 0  0
-		600 0 110  1
-		-100 0 220  3
-		 600 0 330  1
-		-100 0 440  2
 		0 0 110  1
 		0 0 220  3
 		0 0 330  1

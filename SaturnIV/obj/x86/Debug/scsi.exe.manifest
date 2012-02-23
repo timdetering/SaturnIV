@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="109568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="109056">
       <assemblyIdentity name="scsi" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>9+qEA9bt7olycwjQ9WrxorP1V9E=</dsig:DigestValue>
+        <dsig:DigestValue>mb2R2k1w6pOBt54GbTbpgA1LqiI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -891,22 +891,22 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="9309">
+  <file name="Content\XML\shipdefs.xml" size="9351">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>s8Ric29STz0k2vRUUJi2h8Zb5pk=</dsig:DigestValue>
+      <dsig:DigestValue>yiDh+syfeatwGKwNWIQ65x9/uz8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4356">
+  <file name="Content\XML\weapondefs.xml" size="4359">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PAG1jBPcN/Qv8OuRI8OX6v/yHZE=</dsig:DigestValue>
+      <dsig:DigestValue>pRH3euskbVwqkn7UvEiCGL5jImo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

@@ -10,7 +10,7 @@
       <Scale>150</Scale>
       <Agility>8</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
-      <wClass>Cannon</wClass>
+      <wClass>Missile</wClass>
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>300</regenTime>
@@ -129,13 +129,13 @@
 	  <Scale>25</Scale>
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
-      <wClass>Beam</wClass>	
+      <wClass>Missile</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>4000</regenTime>
       <damageFactor>35</damageFactor>
       <range>6000</range>	
-      <timeToLive>2000</timeToLive>	  
+      <timeToLive>100</timeToLive>	  
     </Item>
   </Asset>
 </XnaContent>
