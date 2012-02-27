@@ -35,6 +35,7 @@ namespace SaturnIV
         {
             BoundingSphereRenderer.sphereResolution = sphereResolution;
             //Color mColor = new Color(new Vector4(0f, 1f, 0f, 1.0f));
+            graphicsDevice.RenderState.FillMode = FillMode.Solid;
             vertDecl = new VertexDeclaration(graphicsDevice, VertexPositionColor.VertexElements);
             effect = new BasicEffect(graphicsDevice, null);
             effect.LightingEnabled = false;
@@ -94,7 +95,6 @@ namespace SaturnIV
         {
             if (vertBuffer == null)
                 InitializeGraphics(graphicsDevice, 30,color);
-
             graphicsDevice.VertexDeclaration = vertDecl;
             graphicsDevice.Vertices[0].SetSource(
                   vertBuffer,

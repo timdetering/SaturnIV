@@ -298,7 +298,10 @@ namespace SaturnIV
             //tempData.targetPosition.Y = new Random().Next(-2000, 2000);
             //tempData.wayPointPosition = tempData.targetPosition;
             //tempData.wayPointPosition.Y = new Random().Next(-2000, 2000);
-            tempData.currentDisposition = disposition.patrol;
+            if (team > 0)
+                tempData.currentDisposition = disposition.patrol;
+            else
+                tempData.currentDisposition = disposition.idle;
             tempData.currentTarget = null;
             //if (tempData.objectClass == ClassesEnum.Capitalship)
             //    tempData.currentDisposition = disposition.defensive;

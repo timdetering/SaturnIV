@@ -9,11 +9,11 @@
     <Item>
       <FileName>Models//Ships/Fleet/fleet_crusier</FileName>
       <Type>Fleet Class C Crusier</Type>
-      <Mass>12</Mass>
-      <Thrust>23600</Thrust>
+      <Mass>122</Mass>
+      <Thrust>11000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>2.0</Agility>
+      <Agility>0.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
@@ -23,7 +23,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>1000 15400 12000 1200 150 1500</EvadeDist>	  
       <TargetPrefs>1 0.5 0.4 1 0.2 0.6</TargetPrefs>
-	  <ChasePrefs>0 1 0 1 0 1</ChasePrefs>
+	  <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
       <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
 	  <AvailableWeapons>
       <Item>
@@ -48,7 +48,7 @@
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>100000</weaponRange>
 	<timer>0</timer>
       </Item>
@@ -58,11 +58,11 @@
     <Item>
       <FileName>Models/Ships/Fleet/fleet_attack_bomber</FileName>
       <Type>Fleet Class B Attack Bomber</Type>
-      <Mass>14.0</Mass>
+      <Mass>10.0</Mass>
       <Thrust>14200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>3.00</Agility>
+      <Agility>1.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
 	  <ShipClass>Bomber</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
@@ -117,7 +117,7 @@
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>1000 4000 10000 200 5000 1000</EvadeDist>
-      <TargetPrefs>1 0.9 0.6 0.7 0.8 0.3</TargetPrefs>
+      <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
 	  <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
       <EngageDist>50000 56000 75000 20000 50000 80000</EngageDist>  
       <AvailableWeapons>
@@ -218,7 +218,7 @@
 		0 0 20 0 
 		0 0 -50 0 
 		</ModulePositionOnShip>
-		 <FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+		 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>80000</weaponRange>
 	<timer>0</timer>
         </Item>
@@ -252,7 +252,7 @@
       <ShieldRegenTime>150</ShieldRegenTime>
       <EvadeDist>25000 40000 50000 50000 100 50000</EvadeDist>
       <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3</TargetPrefs>
-      <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
+      <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
 	  <EngageDist>72000 64000 45000 45500 80000 90000</EngageDist>      
       <AvailableWeapons>
 	  <Item>

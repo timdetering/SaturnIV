@@ -275,27 +275,34 @@ namespace SaturnIV
 
         protected void updateObjects(GameTime gameTime)
         {
-            for (int i = 0; i < activeShipList.Count; i++)
+            //for (int i = 0; i < activeShipList.Count; i++)
+           // {
+                //if (!isClient)
+                //{
+                  //  if (activeShipList[i].squadNo > -1)
+                    //    thisSquad = squadList[activeShipList[i].squadNo];
+                    //else
+                      //  thisSquad = null;
+            foreach (newShipStruct thisShip in activeShipList)
             {
-                if (!isClient)
-                {
-                    if (activeShipList[i].squadNo > -1)
-                        thisSquad = squadList[activeShipList[i].squadNo];
-                    else
-                        thisSquad = null;
-                    for (int j = 0; j < activeShipList.Count; j++)
-                    {
-                        if (activeShipList[j] != activeShipList[i])
-                        {
-                            npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
-                                activeShipList[i], activeShipList[j], j, thisSquad);
+                //npcManager.AI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList);
+                npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                        //        activeShipList[i], activeShipList[j], j, thisSquad);
+                npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);
+            }
+                    //for (int j = 0; j < activeShipList.Count; j++)
+                   // {
+                     //   if (activeShipList[j] != activeShipList[i])
+                     //   {
+                        //    npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
+                        //        activeShipList[i], activeShipList[j], j, thisSquad);
                             //npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList,
                             //    activeShipList[i], playerShip, j, thisSquad);
-                        }
-                    }
-                }
-                npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
-            }
+                    //    }
+                   // }
+                //}
+                //npcManager.updateShipMovement(gameTime, gameSpeed, activeShipList[i], ourCamera,false);
+           // }
             playerManager.updateShipMovement(gameTime, gameSpeed, Keyboard.GetState(), playerShip, ourCamera);
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
         }
