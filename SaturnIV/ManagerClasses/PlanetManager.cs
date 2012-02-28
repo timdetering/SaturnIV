@@ -44,6 +44,7 @@ namespace SaturnIV
             // TODO: Add your initialization code here
            // planetData.Description = shipTypes.ShipModelFileName[planetTypeIndex];
             //loadModel(planetData.Description, "effects");
+            loadPlanetTextures();
             base.Initialize();
         }
 
@@ -56,7 +57,31 @@ namespace SaturnIV
 
             //planetTextureArray[2] = Game.Content.Load<Texture2D>("earthplanettexture");
         }
-     
+        public void generatSpaceObjects(int numberOfPlanets)
+        {
+            planetBS = new BoundingSphere(Vector3.Zero, 2000);
+
+            Random Position = new Random();
+            loadPlanetTextures();
+            double tX, tY, tZ, w, t;
+            for (int i = 0; i < numberOfPlanets; i++)
+            {
+                tZ = 2.0 * Position.NextDouble() - 1.0;
+                t = 2.0 * MathHelper.Pi * Position.NextDouble();
+                w = Math.Sqrt(1 - tZ * tZ);
+                tX = w * Math.Cos(t);
+                tY = 0;//w * Math.Sin(t); 
+                planetStruct tempData = new planetStruct();
+                //int tTextureIndex = 1;
+                tempData.planetModel = LoadModel("Models/planet");
+                tempData.planetRadius = 225; // Position.Next(100, planetRadiusBoundry);
+                tempData.planetPosition = HelperClass.RandomPosition(-90000, 90000);
+                tempData.planetPosition.Y = -200000;
+                tempData.planetTexture = planetTextureArray[0];
+                planetList.Add(tempData);
+            }
+        }
+
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>

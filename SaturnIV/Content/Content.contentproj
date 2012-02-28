@@ -226,12 +226,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="textures\spacescape_green.dds">
+    <Compile Include="spacescapes\spacescape_green.dds">
       <Name>spacescape_green</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\spacescape_blue.dds">
+    <Compile Include="spacescapes\spacescape_blue.dds">
       <Name>spacescape_blue</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -248,11 +248,6 @@
     </Compile>
     <Compile Include="textures\Sky128.dds">
       <Name>Sky128</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\nebula2.dds">
-      <Name>nebula2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -486,6 +481,16 @@
       <Name>eriax_fighter_a</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\planet.FBX">
+      <Name>planet</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="spacescapes\pink_complex.dds">
+      <Name>pink_complex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
     <None Include="XML\listofnames.xml">
       <Name>listofnames</Name>

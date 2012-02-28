@@ -23,12 +23,9 @@ Content\textures\fire.xnb
 Content\textures\star.xnb
 Content\textures\explosion.xnb
 Content\textures\smoke.xnb
-Content\textures\spacescape_green.xnb
-Content\textures\spacescape_blue.xnb
 Content\textures\skybox2.xnb
 Content\textures\starfield2.xnb
 Content\textures\Sky128.xnb
-Content\textures\nebula2.xnb
 Content\Thrusters\NoiseVolume.xnb
 Content\textures\missiletrack.xnb
 Content\textures\redDotSmall.xnb
@@ -85,6 +82,10 @@ Content\Models\Ships\fighter_a\03pmg_0.xnb
 Content\Models\Ships\Fleet\fleet_attack_bomber.xnb
 Content\Models\Ships\Fleet\fleet_corvette.xnb
 Content\Models\Ships\Eriax\eriax_fighter_a.xnb
+Content\spacescapes\spacescape_green.xnb
+Content\spacescapes\spacescape_blue.xnb
+Content\Models\planet.xnb
+Content\spacescapes\pink_complex.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml

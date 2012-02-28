@@ -134,7 +134,7 @@ namespace SaturnIV
             npcManager = new NPCManager(this);
             npcManager.Initialize();
             weaponsManager = new WeaponsManager(this);
-            weaponsManager.Initialize();
+            weaponsManager.Initialize();           
 ////////////Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
@@ -191,6 +191,7 @@ namespace SaturnIV
             targetTracker = this.Content.Load<Texture2D>("textures//HUD/target_track");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
+            planetManager.generatSpaceObjects(1);
             // Init Player ship
             playerShip = EditModeComponent.spawnNPC(Vector3.Zero, ref shipDefList, "player1", 2, 0);
             playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
@@ -570,6 +571,7 @@ namespace SaturnIV
             // Draw Skybox and Starfield Elements
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
+            planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
             //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix,ourCamera);
             //cPanel.Draw();
             foreach (newShipStruct npcship in activeShipList)

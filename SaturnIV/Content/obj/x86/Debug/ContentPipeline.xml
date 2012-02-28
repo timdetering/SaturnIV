@@ -227,24 +227,6 @@
       <Time>2012-02-15T19:12:21.7355245-06:00</Time>
     </Item>
     <Item>
-      <Source>textures\spacescape_green.dds</Source>
-      <Name>textures\spacescape_green</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\spacescape_green.xnb</Output>
-      <Time>2012-02-15T19:12:21.8415306-06:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\spacescape_blue.dds</Source>
-      <Name>textures\spacescape_blue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\spacescape_blue.xnb</Output>
-      <Time>2012-02-15T19:12:21.7995282-06:00</Time>
-    </Item>
-    <Item>
       <Source>textures\skybox2.dds</Source>
       <Name>textures\skybox2</Name>
       <Importer>TextureImporter</Importer>
@@ -270,15 +252,6 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\Sky128.xnb</Output>
       <Time>2012-02-15T19:12:21.6305185-06:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\nebula2.dds</Source>
-      <Name>textures\nebula2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\nebula2.xnb</Output>
-      <Time>2012-02-15T19:12:21.6875218-06:00</Time>
     </Item>
     <Item>
       <Source>Thrusters\NoiseVolume.dds</Source>
@@ -1145,6 +1118,53 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Eriax\eriax_fighter_a_0.xml</Output>
       <Time>2012-02-20T21:05:38.4342002-06:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\spacescape_green.dds</Source>
+      <Name>spacescapes\spacescape_green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_green.xnb</Output>
+      <Time>2012-02-15T19:12:21.8415306-06:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\spacescape_blue.dds</Source>
+      <Name>spacescapes\spacescape_blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_blue.xnb</Output>
+      <Time>2012-02-15T19:12:21.7995282-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\planet.FBX</Source>
+      <Name>Models\planet</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\planet.xnb</Output>
+      <Time>2012-02-27T18:51:36.7690915-06:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\planet_0.xml</Key>
+        <Value>2012-02-27T18:51:47.3676977-06:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\planet.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\planet_0.xml</Output>
+      <Time>2012-02-27T18:51:36.7690915-06:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\pink_complex.dds</Source>
+      <Name>spacescapes\pink_complex</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\pink_complex.xnb</Output>
+      <Time>2012-02-27T19:59:33.2895072-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

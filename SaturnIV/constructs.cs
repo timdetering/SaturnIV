@@ -123,6 +123,7 @@ namespace SaturnIV
         public bool isEvading;
         public bool isPursuing;
         public bool isAlreadyEngaged;
+        public bool canEngageMultipleTargets;
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public float[] engageDist;

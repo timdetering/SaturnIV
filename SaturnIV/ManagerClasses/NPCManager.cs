@@ -74,8 +74,8 @@ namespace SaturnIV
             }
             for (int i = 0; i < tmpList.Count; i++)
             {
-                if (thisShip.engageDist[(int)tmpList[i].objectClass] > Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
-                    tmpList.Remove(tmpList[i]);
+                //if (thisShip.engageDist[(int)tmpList[i].objectClass] > Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
+                //    tmpList.Remove(tmpList[i]);
             }
             /// End Target List Creation
             /// 
@@ -93,9 +93,21 @@ namespace SaturnIV
                     thisShip.currentDisposition = disposition.engaging;
                 }
             }            
+            
             if (thisShip.currentTarget != null)
             {
-
+                int c = tmpList.Count();
+                if (c > 0)
+                {
+                    int b = rand.Next(c);
+                    if (thisShip.currentTargetLevel > thisShip.TargetPrefs[(int)tmpList[b].objectClass])
+                    {
+                        thisShip.currentTarget = tmpList[b];
+                        thisShip.currentTarget.isAlreadyEngaged = true;
+                        thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
+                        thisShip.currentDisposition = disposition.engaging;
+                    }
+                }
             }
             /// End Target Selection
             /// 
@@ -104,8 +116,12 @@ namespace SaturnIV
             switch (thisShip.currentDisposition)
             {
                 case disposition.engaging:
-                    cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
-                               weaponDefList);
+                    if (!thisShip.canEngageMultipleTargets)
+                        cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
+                                   weaponDefList);
+                    else
+                        cycleWeapons(thisShip, tmpList, currentTime, weaponsManager, projectileTrailParticles,
+                                   weaponDefList);
                     thisShip.thrustAmount = 1.25f;
                     if (!thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
                                 thisShip.targetPosition = thisShip.currentTarget.modelPosition + 
@@ -129,7 +145,8 @@ namespace SaturnIV
             {
                 float distance = Vector3.Distance(thisShip.modelPosition, iShip.modelPosition);
                 thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, iShip.Direction, iShip.Right);    
-                if (thisShip.currentDisposition != disposition.moving && (distance < thisShip.EvadeDist[(int)iShip.objectClass] / 2 && !thisShip.isEvading))
+                if (thisShip.currentDisposition != disposition.moving && (distance < thisShip.EvadeDist[(int)iShip.objectClass] / 2 && !thisShip.isEvading) &&
+                    thisShip.ChasePrefs[(int)iShip.objectClass] > 0)
                     //|| (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading) && distance < thisShip.EvadeDist[(int)iShip.objectClass] / 2)
                 {
                     thisShip.targetPosition = thisShip.modelPosition + ((thisShip.Direction +
@@ -354,15 +371,9 @@ namespace SaturnIV
         public void cycleWeapons(newShipStruct thisShip, newShipStruct otherShip, double currentTime, WeaponsManager weaponsManager,
            ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
         {
-            bool noFire = false;
             foreach (WeaponModule thisWeapon in thisShip.weaponArray)
             {
-                if (thisWeapon.weaponType == WeaponTypeEnum.MassDriver && thisShip.currentTarget.objectClass == ClassesEnum.Fighter)
-                    noFire = true;
-                else
-                    noFire = false;
-                if (!noFire)
-                    moduleCount = 0;
+                moduleCount = 0;
                 for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                 {
                     if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
@@ -376,6 +387,32 @@ namespace SaturnIV
                         }
                     }
                     moduleCount++;
+                }
+            }
+        }
+
+        public void cycleWeapons(newShipStruct thisShip, List<newShipStruct> otherShipList, double currentTime, WeaponsManager weaponsManager,
+           ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
+        {
+            foreach (newShipStruct otherShip in otherShipList)
+            {
+                foreach (WeaponModule thisWeapon in thisShip.weaponArray)
+                {
+                    moduleCount = 0;
+                    for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
+                    {
+                        if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
+                        {
+                            if (currentTime - thisShip.regenTimer[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                            {
+                                weaponsManager.fireWeapon(otherShip, thisShip, ref projectileTrailParticles, ref weaponDefList, thisWeapon, i);
+                                thisShip.regenTimer[moduleCount] = currentTime;
+                                thisShip.isEngaging = true;
+                                break;
+                            }
+                        }
+                        moduleCount++;
+                    }
                 }
             }
         }

@@ -9,8 +9,8 @@
     <Item>
       <FileName>Models//Ships/Fleet/fleet_crusier</FileName>
       <Type>Fleet Class C Crusier</Type>
-      <Mass>122</Mass>
-      <Thrust>11000</Thrust>
+      <Mass>15</Mass>
+      <Thrust>21000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>
@@ -27,30 +27,38 @@
       <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
 	  <AvailableWeapons>
       <Item>
-	 <weaponType>MassDriver</weaponType>
+	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
-	    4 0 0 0
-	   -4 0 0 0
-	    4 0 10 2
-	   -4 0 -10 2
-	    4 0 20 3
-	   -4 0 -20 3
+	    4 0 0 2
+	   -4 0 0 3
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>80000</weaponRange>
 	<timer>0</timer>
       </Item>
-      <Item>
+   <Item>
 	 <weaponType>LRMH</weaponType>
 	 <ModulePositionOnShip>
-	    4 0 0 0
-	   -4 0 0 0
-	    4 0 0 0
-	   -4 0 0 0
+	    4 0 0 2
+	   -4 0 0 2
+	    4 0 0 3
+	   -4 0 0 3
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
 	<weaponRange>100000</weaponRange>
 	<timer>0</timer>
+  </Item>
+      <Item>
+        <weaponType>PointDefense</weaponType>
+        <ModulePositionOnShip>
+          4 0 0 2
+          -4 0 0 2
+          4 0 0 3
+          -4 0 0 3
+        </ModulePositionOnShip>
+        <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+        <weaponRange>100000</weaponRange>
+        <timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
@@ -259,17 +267,15 @@
 	 <weaponType>PointDefense</weaponType>
 	 <ModulePositionOnShip>
 	    200 0 220 2
-	    600 0 330 3	   
 	    1600 0 330 3	   
 	   -1200 0 -1330 3	   
-	   -600 0 -1220 2
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
 	<weaponRange>15000</weaponRange>
 	<timer>0</timer>
 	</Item>
 	<Item>
-	 <weaponType>MassDriver</weaponType>
+	 <weaponType>LargeIon</weaponType>
 	 <ModulePositionOnShip>
 	   -200 0 0  2
 	   -400 0 0  3
@@ -281,12 +287,7 @@
 	<Item>
 	 <weaponType>LRMH</weaponType>
 	 <ModulePositionOnShip>
-	     600 0 0  0
-		-100 0 0  0
-		 600 0 0  0
-		-100 0 0  0
-		0 0 110  1
-		0 0 220  3
+	  600 0 0  0
 		0 0 330  1
 		0 0 440  2
 	 </ModulePositionOnShip>

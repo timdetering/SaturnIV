@@ -301,10 +301,10 @@ namespace SaturnIV
             if (team > 0)
                 tempData.currentDisposition = disposition.patrol;
             else
-                tempData.currentDisposition = disposition.idle;
+                tempData.currentDisposition = disposition.patrol;
             tempData.currentTarget = null;
-            //if (tempData.objectClass == ClassesEnum.Capitalship)
-            //    tempData.currentDisposition = disposition.defensive;
+            if (tempData.objectClass == ClassesEnum.Crusier)
+                tempData.canEngageMultipleTargets = true;
             tempData.Up = Vector3.Up;
             tempData.modelBB = HelperClass.ComputeBoundingBox(Game1.modelDictionary[tempData.objectFileName], tempData.modelPosition);
             tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;
