@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.systemStruct]">
+    <Item>
+      <systemName>Orion</systemName>
+      <systemPlanet>
+        <planetTextureFile>textures//redtexture</planetTextureFile>
+        <planetRadius>1000</planetRadius>
+      </systemPlanet>
+      <systemMapPosition>0 0 0</systemMapPosition>
+      <systemMapImageFile Null="true" />
+      <systemID>1</systemID>
+    </Item>
+    <Item>
+      <systemName>Orion</systemName>
+      <systemPlanet>
+        <planetTextureFile>textures//redtexture</planetTextureFile>
+        <planetRadius>1000</planetRadius>
+      </systemPlanet>
+      <systemMapPosition>10000 0 25000</systemMapPosition>
+      <systemMapImageFile Null="true" />
+      <systemID>1</systemID>
+    </Item>
+    <Item>
+      <systemName>Alpha</systemName>
+      <systemPlanet>
+        <planetTextureFile>textures//redtexture</planetTextureFile>
+        <planetRadius>1000</planetRadius>
+      </systemPlanet>
+      <systemMapPosition>40000 0 5000</systemMapPosition>
+      <systemMapImageFile Null="true" />
+      <systemID>1</systemID>
+    </Item>
+  </Asset>
+</XnaContent>

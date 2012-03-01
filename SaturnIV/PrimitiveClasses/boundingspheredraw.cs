@@ -38,7 +38,7 @@ namespace SaturnIV
             graphicsDevice.RenderState.FillMode = FillMode.Solid;
             vertDecl = new VertexDeclaration(graphicsDevice, VertexPositionColor.VertexElements);
             effect = new BasicEffect(graphicsDevice, null);
-            effect.LightingEnabled = false;
+            effect.LightingEnabled = true;
             effect.VertexColorEnabled = true;
 
             VertexPositionColor[] verts = new VertexPositionColor[(sphereResolution + 1) * 3];
@@ -107,6 +107,53 @@ namespace SaturnIV
             effect.View = view;
             effect.Projection = projection;
             effect.DiffuseColor = color.ToVector3();
+
+            effect.Begin();
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Begin();
+
+                //render each circle individually
+                graphicsDevice.DrawPrimitives(
+                      PrimitiveType.LineStrip,
+                      0,
+                      sphereResolution);
+                graphicsDevice.DrawPrimitives(
+                      PrimitiveType.LineStrip,
+                      sphereResolution + 1,
+                      sphereResolution);
+                graphicsDevice.DrawPrimitives(
+                      PrimitiveType.LineStrip,
+                      (sphereResolution + 1) * 2,
+                      sphereResolution);
+
+                pass.End();
+            }
+            effect.End();
+        }
+
+        public static void RenderWTexture(
+            BoundingSphere sphere,
+            GraphicsDevice graphicsDevice,
+            Matrix view,
+            Matrix projection,
+            Texture2D texture, Color color)
+        {
+            if (vertBuffer == null)
+                InitializeGraphics(graphicsDevice, 30, color);
+            graphicsDevice.VertexDeclaration = vertDecl;
+            graphicsDevice.Vertices[0].SetSource(
+                  vertBuffer,
+                  0,
+                  VertexPositionColor.SizeInBytes);
+
+            effect.World =
+                  Matrix.CreateScale(sphere.Radius) *
+                  Matrix.CreateTranslation(sphere.Center);
+            effect.View = view;
+            effect.Projection = projection;
+            effect.TextureEnabled = true;
+            effect.Texture = texture;
 
             effect.Begin();
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)

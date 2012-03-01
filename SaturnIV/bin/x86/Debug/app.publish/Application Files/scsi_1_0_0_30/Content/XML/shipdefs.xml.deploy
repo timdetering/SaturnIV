@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This is the shipdefs.xml file
+	Available ships are defined here
+	The order of classes defining AI Prefs are
+	Fighter,Crusier,Capitalship,Frigate,Bomber,SWACS    
+-->
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.shipData]">
+    <Item>
+      <FileName>Models//Ships/Fleet/fleet_crusier</FileName>
+      <Type>Fleet Class C Crusier</Type>
+      <Mass>15</Mass>
+      <Thrust>21000</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>0.75</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Crusier</ShipClass>
+      <ShieldFactor>0.24</ShieldFactor>
+	  <HullFactor>0.35</HullFactor>
+	  <hullValue>3600</hullValue>
+	  <shieldValue>400</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>1000 15400 12000 1200 150 1500</EvadeDist>	  
+      <TargetPrefs>1 0.5 0.4 1 0.2 0.6</TargetPrefs>
+	  <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
+      <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
+	  <AvailableWeapons>
+      <Item>
+	 <weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 2
+	   -4 0 0 3
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>80000</weaponRange>
+	<timer>0</timer>
+      </Item>
+   <Item>
+	 <weaponType>LRMH</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 2
+	   -4 0 0 2
+	    4 0 0 3
+	   -4 0 0 3
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>100000</weaponRange>
+	<timer>0</timer>
+  </Item>
+      <Item>
+        <weaponType>PointDefense</weaponType>
+        <ModulePositionOnShip>
+          4 0 0 2
+          -4 0 0 2
+          4 0 0 3
+          -4 0 0 3
+        </ModulePositionOnShip>
+        <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+        <weaponRange>100000</weaponRange>
+        <timer>0</timer>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/Fleet/fleet_attack_bomber</FileName>
+      <Type>Fleet Class B Attack Bomber</Type>
+      <Mass>10.0</Mass>
+      <Thrust>14200</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>1.50</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+	  <ShipClass>Bomber</ShipClass>
+      <ShieldFactor>0.99</ShieldFactor>
+	  <HullFactor>0.99</HullFactor>
+	  <hullValue>2000</hullValue>
+	  <shieldValue>9000</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>150 1400 2000 200 50 500</EvadeDist>
+      <TargetPrefs>0.5 1 1 1 0.2 1</TargetPrefs>
+	  <ChasePrefs>0 1 1 1 0 1</ChasePrefs>
+      <EngageDist>5000 50000 150000 40000 50000 19000</EngageDist>	  
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>LRM</weaponType>
+	 <ModulePositionOnShip>
+	   -400 0 0 1
+        400 0 0 1
+        400 0 0 1
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>45000</weaponRange>
+	<timer>0</timer>
+      </Item>
+      <Item>
+	 <weaponType>SRM</weaponType>
+	 <ModulePositionOnShip>
+	    4 0 0 3
+	   -4 0 0 3
+	    4 0 -20 2
+	   -4 0 -10 2
+	 </ModulePositionOnShip>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>46000</weaponRange>
+	<timer>0</timer>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+<Item>
+      <FileName>Models/Ships/Eriax/eriax_heavy_fighter</FileName>
+      <Type>Eriax Interceptor</Type>
+      <Mass>2.25</Mass>
+      <Thrust>13000</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>10.00</Agility>
+      <BelongsTo>Fleet</BelongsTo> 
+	    <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+	  <HullFactor>0.85</HullFactor>
+	  <hullValue>900</hullValue>
+	  <shieldValue>0</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>1000 4000 10000 200 5000 1000</EvadeDist>
+      <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
+	  <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
+      <EngageDist>50000 56000 75000 20000 50000 80000</EngageDist>  
+      <AvailableWeapons>
+      <Item>
+	 <weaponType>AutoCannon</weaponType>
+	 <ModulePositionOnShip>
+	    -4 0 0 0
+       4 0 0 0
+	 </ModulePositionOnShip> 
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <weaponRange>15000</weaponRange>
+	 <timer>0</timer>
+      </Item>
+      <Item>
+	 <weaponType>SRMH</weaponType>
+	 <ModulePositionOnShip>
+	    0 0 10 0
+      0 0 -10 0
+		  0 0 20 0
+      0 0 -20 0
+	 </ModulePositionOnShip> 
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <weaponRange>20000</weaponRange>
+	 <timer>0</timer>
+      </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/Eriax/eriax_fighter_a</FileName>
+      <Type>Eriax Fighter Type A</Type>
+      <Mass>2.25</Mass>
+      <Thrust>13000</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>10.00</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Fighter</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+      <HullFactor>0.85</HullFactor>
+      <hullValue>1400</hullValue>
+      <shieldValue>0</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>1000 4000 10000 200 5000 2500</EvadeDist>
+      <TargetPrefs>1 0.9 0.00 0.0 0.2 1</TargetPrefs>
+      <ChasePrefs>1 1 1 1 0 1</ChasePrefs>
+      <EngageDist>50000 75000 65000 20000 35000 55000</EngageDist>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>AutoCannon</weaponType>
+          <ModulePositionOnShip>
+            -4 0 0 0
+            4 0 0 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <weaponRange>15000</weaponRange>
+          <timer>0</timer>
+        </Item>
+        <Item>
+          <weaponType>SRMH</weaponType>
+          <ModulePositionOnShip>
+            0 0 10 0
+            0 0 -10 0
+            0 0 20 0
+            0 0 -20 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <weaponRange>20000</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>    
+    <Item>
+      <FileName>Models//Ships/Eriax/eriax_bomber</FileName>
+      <Type>Attack Bomber Type A</Type>
+      <Mass>3.25</Mass>
+      <Thrust>15500</Thrust>
+      <SphereRadius>17</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>7</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Bomber</ShipClass>
+      <ShieldFactor>0.90</ShieldFactor>
+	    <HullFactor>0.25</HullFactor>
+	    <hullValue>1200</hullValue>
+	    <shieldValue>0</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>1000 8000 8000 2000 500 1000</EvadeDist>
+      <TargetPrefs>0.1 1.0 1.0 1.0 0.2 0.1</TargetPrefs>
+      <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
+      <EngageDist>90000 82000 75000 20000 50000 10000</EngageDist> 
+      <AvailableWeapons>
+	<Item>
+		<weaponType>LRMH</weaponType>
+		<ModulePositionOnShip> 
+		0 0 50 0 
+		0 0 20 0 
+		0 0 -50 0 
+		</ModulePositionOnShip>
+		 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>80000</weaponRange>
+	<timer>0</timer>
+        </Item>
+	<Item>
+		<weaponType>LRM</weaponType>
+		<ModulePositionOnShip>
+		0 0 -50 0
+		0 0  50 0
+		</ModulePositionOnShip>
+	        <FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+	<weaponRange>62000</weaponRange>
+	<timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+		<Item>
+      <FileName>Models/Ships/Fleet/fleet_corvette</FileName>
+      <Type>Fleet Corvette Escort</Type>
+      <Mass>20</Mass>
+      <Thrust>40150</Thrust>
+      <SphereRadius>125</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>1.15</Agility>
+      <BelongsTo>Fleet</BelongsTo> 
+	  <ShipClass>Crusier</ShipClass>
+      <ShieldFactor>0.30</ShieldFactor>
+	  <HullFactor>0.15</HullFactor>
+	  <hullValue>3600</hullValue>
+	  <shieldValue>5400</shieldValue>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>25000 40000 50000 50000 100 50000</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3</TargetPrefs>
+      <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
+	  <EngageDist>72000 64000 45000 45500 80000 90000</EngageDist>      
+      <AvailableWeapons>
+	  <Item>
+	 <weaponType>PointDefense</weaponType>
+	 <ModulePositionOnShip>
+	    200 0 220 2
+	    1600 0 330 3	   
+	   -1200 0 -1330 3	   
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>15000</weaponRange>
+	<timer>0</timer>
+	</Item>
+	<Item>
+	 <weaponType>LargeIon</weaponType>
+	 <ModulePositionOnShip>
+	   -200 0 0  2
+	   -400 0 0  3
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>46200</weaponRange>
+	<timer>0</timer>
+    </Item>
+	<Item>
+	 <weaponType>LRMH</weaponType>
+	 <ModulePositionOnShip>
+	  600 0 0  0
+		0 0 330  1
+		0 0 440  2
+	 </ModulePositionOnShip>
+	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+	<weaponRange>52200</weaponRange>
+	<timer>0</timer>
+    </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0</ThrusterPosition>
+    </Item>
+  </Asset>
+</XnaContent>

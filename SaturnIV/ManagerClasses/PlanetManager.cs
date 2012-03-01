@@ -26,7 +26,6 @@ namespace SaturnIV
         Matrix rotationMatrix = Matrix.Identity;
         public static List<planetStruct> planetList = new List<planetStruct>();
         public Texture2D[] planetTextureArray;
-        public Model pdpModel;
         public Line3D line;
         public static BoundingSphere planetBS;
         public PlanetManager(Game game)
