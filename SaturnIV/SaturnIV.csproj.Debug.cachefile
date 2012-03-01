@@ -1,6 +1,7 @@
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\Models\Ships\Fleet\fleet_crusier.xnb
 Content\Models\Fleet_KM100.xnb
+Content\textures\Sky128.xnb
 Content\textures\yellowDotSmall.xnb
 Content\textures\GUI\cpanel2.xnb
 Content\Models\Ships\Material_0.xnb
@@ -20,7 +21,6 @@ Content\XML\weapondefs.xml
 Content\textures\redtexture.xnb
 Content\Models\Lakerem_0.xnb
 Content\textures\redDotSmall.xnb
-Content\spacescapes\spacescape_blue.xnb
 Content\spacescapes\spacescape_green.xnb
 Content\Models\tacmap_items\blue_medium_plane.xnb
 Content\Models\sphere.xnb
@@ -33,7 +33,7 @@ Content\Effects\BloomCombine.xnb
 Content\textures\fire.xnb
 Content\textures\planettexture3.xnb
 Content\Models\largeSphere.xnb
-Content\Models\tacmap_items\red_medium_plane.xnb
+Content\Models\Ships\fighter_a\fighter_a.xnb
 Content\textures\planettexture1.xnb
 Content\Models\Ships\Fleet\fleet_frigate.xnb
 Content\Effects\explosionEffect.xnb
@@ -50,6 +50,7 @@ Content\textures\missiletrack.xnb
 Content\Models\Ships\Destroyer_A\04D_0.xnb
 Content\textures\move_icon.xnb
 Content\03D_0.xnb
+Content\spacescapes\pink_complex.xnb
 Content\Models\Ships\Eriax\eriax_bomber.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\hud.xnb
@@ -59,6 +60,7 @@ Content\Models\basic_missile.xnb
 Content\textures\spark.xnb
 Content\Models\3732.xnb
 Content\textures\skybox2.xnb
+Content\Models\tacmap_items\red_medium_plane.xnb
 Content\Models\Ships\Fleet\fleet_corvette.xnb
 Content\Effects\SkySphere.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
@@ -74,8 +76,7 @@ Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Thrusters\Thrust.xnb
 Content\Effects\laser_shader.xnb
 Content\hud_target.xnb
-Content\spacescapes\pink_complex.xnb
-Content\textures\Sky128.xnb
+Content\spacescapes\spacescape_blue.xnb
 Content\XML\listofnames.xml
 Content\Models\Ships\Frigate_A\frigate_a.xnb
 Content\Fonts\SmallFont.xnb
@@ -86,7 +87,6 @@ Content\Models\tacmap_items\blue_large_plane.xnb
 Content\textures\GUI\mWindow.xnb
 Content\XML\Scenarios\scenario1.xml
 Content\Models\Ships\Fleet\fleet_bomber.xnb
-Content\Models\Ships\fighter_a\fighter_a.xnb
 Content\textures\GUI\textdialog1.xnb
 Content\Models\basic_bullet.xnb
 Content\Models\Ships\Attack_Bomber\03AB.xnb

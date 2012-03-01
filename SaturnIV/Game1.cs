@@ -278,7 +278,7 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             if (loopTimer < 0)
                 loopTimer = currentTime;
-            if (currentTime - loopTimer > 1000)
+            if (currentTime - loopTimer > 500)
             {
                 foreach (newShipStruct thisShip in activeShipList)
                 {                    
@@ -669,8 +669,8 @@ namespace SaturnIV
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     if (enemy.currentTarget != null)
                         buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
-                    //buffer.AppendFormat("[AOA:" + enemy.angleOfAttack + "]");
-                    //buffer.AppendFormat("[" + enemy.isBehind + "]");
+                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
+                    buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
             }

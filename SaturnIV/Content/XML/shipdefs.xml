@@ -77,10 +77,10 @@
 	  <HullFactor>0.99</HullFactor>
 	  <hullValue>2000</hullValue>
 	  <shieldValue>9000</shieldValue>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1500 14000 20000 2000 5000 5000</EvadeDist>
-      <TargetPrefs>0.5 1 1 1 0.2 1</TargetPrefs>
-	  <ChasePrefs>0 1 1 1 0 1</ChasePrefs>
+    <ShieldRegenTime>100</ShieldRegenTime>
+    <EvadeDist>1500 14000 20000 2000 5000 5000</EvadeDist>
+    <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
+	  <ChasePrefs>1 1 1 1 0 1</ChasePrefs>
       <EngageDist>500000 5000000 1500000 400000 500000 190000</EngageDist>	  
       <AvailableWeapons>
       <Item>
@@ -123,9 +123,9 @@
 	  <HullFactor>0.85</HullFactor>
 	  <hullValue>900</hullValue>
 	  <shieldValue>0</shieldValue>
-      <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>10000 40000 90000 20000 500000 1000</EvadeDist>
-      <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
+    <ShieldRegenTime>100</ShieldRegenTime>
+    <EvadeDist>1000 4000 9000 2000 5000 1000</EvadeDist>
+    <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
 	  <ChasePrefs>1 0 1 1 1 1</ChasePrefs>
       <EngageDist>10000 25000 25000 20000 10000 10000</EngageDist>  
       <AvailableWeapons>
