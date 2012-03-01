@@ -43,7 +43,7 @@ namespace SaturnIV
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D rectTex, shipRec, selectRecTex,dummyTex;
+        Texture2D rectTex, shipRec, selectRecTex,dummyTex, planetTexture;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         public StringBuilder messageBuffer = new StringBuilder();
@@ -97,6 +97,7 @@ namespace SaturnIV
         Vector3 isRight;
         guiClass Gui;
         RadarClass radar;
+        Model systemMapSphere;
 
         // Define Hud Components
         Texture2D centerHUD;
@@ -192,6 +193,8 @@ namespace SaturnIV
             selectRecTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             centerHUD = this.Content.Load<Texture2D>("textures//HUD/centertarget");
             targetTracker = this.Content.Load<Texture2D>("textures//HUD/target_track");
+            systemMapSphere = this.Content.Load<Model>("models//planet");
+            planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1);
@@ -573,8 +576,8 @@ namespace SaturnIV
             if (isSystemMap)
             {
                 foreach (systemStruct tSystem in SystemClass.systemList)
-                    BoundingSphereRenderer.RenderWTexture(new BoundingSphere(tSystem.systemMapPosition,5000), GraphicsDevice,
-                        ourCamera.viewMatrix, ourCamera.projectionMatrix, rectTex, Color.Yellow);
+                    BoundingSphereRenderer.Render(new BoundingSphere(tSystem.systemMapPosition,5000), GraphicsDevice,
+                        ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);               
             }
             else
             {

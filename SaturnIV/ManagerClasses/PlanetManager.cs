@@ -40,9 +40,6 @@ namespace SaturnIV
         /// </summary>
         public void Initialize()
         {
-            // TODO: Add your initialization code here
-           // planetData.Description = shipTypes.ShipModelFileName[planetTypeIndex];
-            //loadModel(planetData.Description, "effects");
             loadPlanetTextures();
             base.Initialize();
         }
@@ -106,18 +103,9 @@ namespace SaturnIV
                 {
                     foreach (BasicEffect effect in mesh.Effects)
                     {
-                        //effect.EnableDefaultLighting();
                         effect.TextureEnabled = true;
-                        //effect.C
-                        //effect.DirectionalLight0.Enabled = false;
                         effect.Texture = planet.planetTexture;
-                        //effect.DirectionalLight0.DiffuseColor = Color.Blue.ToVector3();
-                       // effect.AmbientLightColor = Color.Blue.ToVector3();
-                        //effect.DirectionalLight0.Direction = modelRotation.Forward;  // coming along the x-axis
-                       // effect.DirectionalLight0.SpecularColor = Color.Blue.ToVector3(); // with green highlights
-                        //effect.AmbientLightColor = Color.White.ToVector3();
                         effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
-                      //  effect.SpecularColor = Color.Blue.ToVector3();
                         effect.View = viewMatrix;
                         effect.Projection = projectionMatrix;
                     }

@@ -38,7 +38,7 @@ namespace SaturnIV
             graphicsDevice.RenderState.FillMode = FillMode.Solid;
             vertDecl = new VertexDeclaration(graphicsDevice, VertexPositionColor.VertexElements);
             effect = new BasicEffect(graphicsDevice, null);
-            effect.LightingEnabled = true;
+            //effect.LightingEnabled = true;
             effect.VertexColorEnabled = true;
 
             VertexPositionColor[] verts = new VertexPositionColor[(sphereResolution + 1) * 3];

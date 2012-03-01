@@ -49,16 +49,6 @@ namespace SaturnIV
             base.LoadContent();
         }
 
-        public void loadModelCustomEffects(String myModelFile, BasicEffect effect)
-        {
-            //effect = Game.Content.Load<Effect>(myEffects);
-            myModel = Game.Content.Load<Model>(myModelFile);
-            //aspectRatio = Game.GraphicsDevice.Viewport.AspectRatio;
-            foreach (ModelMesh mesh in myModel.Meshes)
-                foreach (ModelMeshPart meshPart in mesh.MeshParts)
-                    meshPart.Effect = effect.Clone(Game.GraphicsDevice);
-        }
-
         public Model LoadModel(string assetName)
         {          
             myModel = Game.Content.Load<Model>(assetName);
@@ -80,30 +70,31 @@ namespace SaturnIV
                     ourCamera.viewMatrix, Matrix.Identity);
         }
 
-        public void DrawModelWithTexture(Matrix worldMatrix, CameraNew myCamera, Texture2D myTexture)
+        public void DrawModelWithTexture(Vector3 position, CameraNew myCamera, Texture2D myTexture, Model myModel1)
         {
-           // worldMatrix = Matrix.CreateScale(modelScale) * modelRotation * Matrix.CreateTranslation(modelPosition);
-            Matrix[] targetTransforms = new Matrix[myModel.Bones.Count];
-            myModel.CopyAbsoluteBoneTransformsTo(targetTransforms);
-            foreach (ModelMesh mesh in myModel.Meshes)
+            Matrix worldMatrix = Matrix.CreateScale(500) * Matrix.CreateTranslation(position);
+            Matrix[] transforms = new Matrix[myModel1.Bones.Count];
+            myModel1.CopyAbsoluteBoneTransformsTo(transforms);
+
+            // Draw the model. A model can have multiple meshes, so loop.
+            foreach (ModelMesh mesh in myModel1.Meshes)
             {
-                foreach (Effect currentEffect in mesh.Effects)
+                foreach (BasicEffect effect in mesh.Effects)
                 {
-                    currentEffect.CurrentTechnique = currentEffect.Techniques["Textured"];
-                    currentEffect.Parameters["xWorld"].SetValue(targetTransforms[mesh.ParentBone.Index] * worldMatrix);
-                    currentEffect.Parameters["xView"].SetValue(myCamera.viewMatrix);
-                    currentEffect.Parameters["xProjection"].SetValue(myCamera.projectionMatrix);
-                    currentEffect.Parameters["xEnableLighting"].SetValue(true);
-                    //currentEffect.Parameters["xLightDirection"].SetValue(modellightDirection);
-                    currentEffect.Parameters["xAmbient"].SetValue(1.5f);
-                    //currentEffect.Parameters["xTexture"].SetValue(myTexture);
+                    effect.TextureEnabled = true;
+                    effect.Texture = myTexture;
+                    effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
+                    effect.View = viewMatrix;
+                    effect.Projection = myCamera.projectionMatrix;
                 }
+                // Draw the mesh, using the effects set above.
+                GraphicsDevice.RenderState.DepthBufferEnable = true;
                 mesh.Draw();
             }
             //base.Draw(gameTime);
         }
 
-        public void DrawModel (CameraNew myCamera,Model shipModel,Matrix worldMatrix,Color shipColor, bool isEdit)
+        public void DrawModel (CameraNew myCamera,Model shipModel,Matrix worldMatrix, Color shipColor, bool isEdit)
         {
             Matrix[] transforms = new Matrix[shipModel.Bones.Count];
             shipModel.CopyAbsoluteBoneTransformsTo(transforms);
@@ -116,8 +107,8 @@ namespace SaturnIV
                     effect.EnableDefaultLighting();
                     Color mColor = Color.Sienna;
                     if (isEdit)
-                        effect.EmissiveColor = mColor.ToVector3();
-                    //effect.AmbientLightColor = mColor.ToVector3();
+                        effect.EmissiveColor = shipColor.ToVector3();
+                    effect.AmbientLightColor = shipColor.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;
