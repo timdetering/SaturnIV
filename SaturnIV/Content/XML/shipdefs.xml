@@ -22,7 +22,7 @@
 	  <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>1000 15400 12000 1200 150 1500</EvadeDist>	  
-      <TargetPrefs>1 0.5 0.4 1 0.2 0.6</TargetPrefs>
+      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
 	  <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
       <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
 	  <AvailableWeapons>
@@ -66,11 +66,11 @@
     <Item>
       <FileName>Models/Ships/Fleet/fleet_attack_bomber</FileName>
       <Type>Fleet Class B Attack Bomber</Type>
-      <Mass>10.0</Mass>
+      <Mass>7.0</Mass>
       <Thrust>14200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>1.50</Agility>
+      <Agility>3.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
 	  <ShipClass>Bomber</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
@@ -78,17 +78,17 @@
 	  <hullValue>2000</hullValue>
 	  <shieldValue>9000</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>150 1400 2000 200 50 500</EvadeDist>
+      <EvadeDist>1500 14000 20000 2000 5000 5000</EvadeDist>
       <TargetPrefs>0.5 1 1 1 0.2 1</TargetPrefs>
 	  <ChasePrefs>0 1 1 1 0 1</ChasePrefs>
-      <EngageDist>5000 50000 150000 40000 50000 19000</EngageDist>	  
+      <EngageDist>500000 5000000 1500000 400000 500000 190000</EngageDist>	  
       <AvailableWeapons>
       <Item>
 	 <weaponType>LRM</weaponType>
 	 <ModulePositionOnShip>
 	   -400 0 0 1
-        400 0 0 1
-        400 0 0 1
+      400 0 0 1
+      400 0 0 1
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	<weaponRange>45000</weaponRange>
@@ -124,10 +124,10 @@
 	  <hullValue>900</hullValue>
 	  <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 4000 10000 200 5000 1000</EvadeDist>
+      <EvadeDist>10000 40000 90000 20000 500000 1000</EvadeDist>
       <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
-	  <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
-      <EngageDist>50000 56000 75000 20000 50000 80000</EngageDist>  
+	  <ChasePrefs>1 0 1 1 1 1</ChasePrefs>
+      <EngageDist>10000 25000 25000 20000 10000 10000</EngageDist>  
       <AvailableWeapons>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
@@ -147,7 +147,7 @@
 		  0 0 20 0
       0 0 -20 0
 	 </ModulePositionOnShip> 
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
 	 <weaponRange>20000</weaponRange>
 	 <timer>0</timer>
       </Item>
@@ -169,7 +169,7 @@
       <hullValue>1400</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>1000 4000 10000 200 5000 2500</EvadeDist>
+      <EvadeDist>10000 40000 100000 2000 50000 25000</EvadeDist>
       <TargetPrefs>1 0.9 0.00 0.0 0.2 1</TargetPrefs>
       <ChasePrefs>1 1 1 1 0 1</ChasePrefs>
       <EngageDist>50000 75000 65000 20000 35000 55000</EngageDist>
@@ -180,7 +180,7 @@
             -4 0 0 0
             4 0 0 0
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
           <weaponRange>15000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -192,7 +192,7 @@
             0 0 20 0
             0 0 -20 0
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>85</FiringEnvelopeAngle>
           <weaponRange>20000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -270,8 +270,8 @@
 	    1600 0 330 3	   
 	   -1200 0 -1330 3	   
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
-	<weaponRange>15000</weaponRange>
+	<FiringEnvelopeAngle>5</FiringEnvelopeAngle>
+	<weaponRange>5000</weaponRange>
 	<timer>0</timer>
 	</Item>
 	<Item>
@@ -280,8 +280,8 @@
 	   -200 0 0  2
 	   -400 0 0  3
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>46200</weaponRange>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>146200</weaponRange>
 	<timer>0</timer>
     </Item>
 	<Item>
@@ -291,8 +291,8 @@
 		0 0 330  1
 		0 0 440  2
 	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-	<weaponRange>52200</weaponRange>
+	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
+	<weaponRange>152200</weaponRange>
 	<timer>0</timer>
     </Item>
       </AvailableWeapons>
