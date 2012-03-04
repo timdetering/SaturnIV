@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>rocket</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Fleet_KM100.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Fleet_KM100.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>01 - Default</Name>
       <Identity>
-        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Fleet_KM100.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Fleet_KM100.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

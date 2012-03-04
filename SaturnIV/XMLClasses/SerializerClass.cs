@@ -82,6 +82,17 @@ namespace SaturnIV
                         ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side));
                     }
                 }
-            }        
+
+            }
+
+            public void saveSystemList(string saveName, List<systemStruct> systemList)
+            {
+                XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                xmlSettings.Indent = true;
+                using (XmlWriter xmlWriter = XmlWriter.Create("Content/XML/Systems/" + saveName + ".xml", xmlSettings))
+                {
+                    IntermediateSerializer.Serialize(xmlWriter, systemList, null);
+                }
+            }
     }        
 }

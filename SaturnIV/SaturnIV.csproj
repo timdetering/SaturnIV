@@ -135,6 +135,7 @@
     <Compile Include="SkySphere.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SystemClass.cs" />
     <Compile Include="ThrusterClass.cs" />
     <Compile Include="HelperClasses\HelperClass.cs" />
     <Compile Include="ManagerClasses\NPCManager.cs" />

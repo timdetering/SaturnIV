@@ -255,6 +255,22 @@ namespace SaturnIV
             public Model planetModel;
             public BoundingSphere planetBS;
         }
+
+        public class planetSaveStruct
+        {
+            public string planetTextureFile;
+            public int planetRadius;
+        }
+
+        public class systemStruct
+        {
+            public string systemName;
+            public planetSaveStruct systemPlanet;
+            public Vector3 systemMapPosition;
+            public string systemMapImageFile;
+            public int systemID;
+        }       
+
         public enum TextBoxActions
         {
             SaveScenario,

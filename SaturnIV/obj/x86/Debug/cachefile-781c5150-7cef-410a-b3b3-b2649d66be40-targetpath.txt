@@ -70,7 +70,6 @@ Content\Models\sphere.xnb
 Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb
 Content\Models\Ships\Attack_Bomber\attack_bomber.xnb
 Content\Models\Ships\Frigate_A\frigate_a.xnb
-Content\Models\Ships\Destroyer_A\destroyer_a.xnb
 Content\Models\Ships\fighter_a\fighter_a.xnb
 Content\Models\Ships\Fleet\fleet_attack_bomber.xnb
 Content\Models\Ships\Fleet\fleet_corvette.xnb
@@ -83,8 +82,6 @@ Content\Models\Ships\Material_0.xnb
 Content\test2_0.xnb
 Content\Models\Ships\Attack_Bomber\03AB_0.xnb
 Content\Models\Ships\Frigate_A\02DFC_0.xnb
-Content\Models\Ships\Destroyer_A\04D_0.xnb
-Content\03D_0.xnb
 Content\Models\Ships\fighter_a\03pmg_0.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
