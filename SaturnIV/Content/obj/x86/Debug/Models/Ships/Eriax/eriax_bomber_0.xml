@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>V2Grp001</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Ships\Eriax\eriax_bomber.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax\eriax_bomber.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -47,7 +47,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material #47</Name>
       <Identity>
-        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Ships\Eriax\eriax_bomber.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\Eriax\eriax_bomber.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

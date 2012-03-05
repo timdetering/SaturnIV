@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Ships\fighter_a\fighter_a.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_a\fighter_a.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -413,7 +413,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material #33</Name>
       <Identity>
-        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\Ships\fighter_a\fighter_a.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_a\fighter_a.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

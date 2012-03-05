@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Cylinder001</Name>
     <Identity>
-      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV_old\Content\Models\basic_bullet.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\basic_bullet.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>

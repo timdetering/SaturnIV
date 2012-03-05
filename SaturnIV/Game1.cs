@@ -546,7 +546,10 @@ namespace SaturnIV
                 if (isSystemMap)
                     isSystemMap = false;
                 else
+                {
                     isSystemMap = true;
+                    CameraNew.zoomFactor = 20.0f;      
+                }
             }
 
             // T will form a squad of all selected ships
@@ -591,14 +594,6 @@ namespace SaturnIV
             float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;
             graphics.GraphicsDevice.Clear(Color.Black);
             /// Draw system Map if systemMap mode is selected!
-            if (isSystemMap)
-            {
-                foreach (systemStruct tSystem in SystemClass.systemList)
-                    BoundingSphereRenderer.Render(new BoundingSphere(tSystem.systemMapPosition,5000), GraphicsDevice,
-                        ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);               
-            }
-            else
-            {
                 skySphere.DrawSkySphere(this, ourCamera);
                 starField.DrawStars(this, ourCamera);
                 planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
@@ -609,7 +604,7 @@ namespace SaturnIV
                 if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch, mouse3dVector);
                 if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
                 spriteBatch.End();
-            }
+
             spriteBatch.Begin();
             /// We need to fix the selection rectangle in case one of its dimensions is negative                
             /// 
