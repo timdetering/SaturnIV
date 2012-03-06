@@ -727,6 +727,7 @@ namespace SaturnIV
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[" + enemy.currentDisposition + "]");
+                    buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     if (enemy.currentTarget != null)
                         buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
