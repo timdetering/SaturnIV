@@ -23,7 +23,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>1000 15400 12000 1200 150 1500</EvadeDist>	  
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
-	  <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
+	  <ChasePrefs>0 0 1 1 0 0</ChasePrefs>
       <EngageDist>25000 45000 15000 20000 5000 50000</EngageDist>
 	  <AvailableWeapons>
       <Item>
@@ -112,8 +112,8 @@
 <Item>
       <FileName>Models/Ships/Eriax/eriax_heavy_fighter</FileName>
       <Type>Eriax Interceptor</Type>
-      <Mass>2.25</Mass>
-      <Thrust>13000</Thrust>
+      <Mass>2.50</Mass>
+      <Thrust>38000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>10.00</Agility>
@@ -121,7 +121,7 @@
 	    <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
 	  <HullFactor>0.85</HullFactor>
-	  <hullValue>900</hullValue>
+	  <hullValue>200</hullValue>
 	  <shieldValue>0</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
     <EvadeDist>1000 4000 9000 2000 5000 1000</EvadeDist>
@@ -135,16 +135,14 @@
 	    -4 0 0 0
        4 0 0 0
 	 </ModulePositionOnShip> 
-	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>55</FiringEnvelopeAngle>
 	 <weaponRange>15000</weaponRange>
 	 <timer>0</timer>
       </Item>
       <Item>
-	 <weaponType>SRMH</weaponType>
+	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
 	    0 0 10 0
-      0 0 -10 0
-		  0 0 20 0
       0 0 -20 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
@@ -157,16 +155,16 @@
     <Item>
       <FileName>Models/Ships/Eriax/eriax_fighter_a</FileName>
       <Type>Eriax Fighter Type A</Type>
-      <Mass>2.25</Mass>
-      <Thrust>13000</Thrust>
+      <Mass>3.75</Mass>
+      <Thrust>23000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>10.00</Agility>
+      <Agility>15.00</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
       <HullFactor>0.85</HullFactor>
-      <hullValue>1400</hullValue>
+      <hullValue>400</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>10000 40000 100000 2000 50000 25000</EvadeDist>
@@ -185,7 +183,7 @@
           <timer>0</timer>
         </Item>
         <Item>
-          <weaponType>SRMH</weaponType>
+          <weaponType>AutoCannon</weaponType>
           <ModulePositionOnShip>
             0 0 10 0
             0 0 -10 0
@@ -211,11 +209,11 @@
       <ShipClass>Bomber</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
 	    <HullFactor>0.25</HullFactor>
-	    <hullValue>1200</hullValue>
+	    <hullValue>900</hullValue>
 	    <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>1000 8000 8000 2000 500 1000</EvadeDist>
-      <TargetPrefs>0.1 1.0 1.0 1.0 0.2 0.1</TargetPrefs>
+      <TargetPrefs>0.9 0.5 1.0 1.0 0.2 0.1</TargetPrefs>
       <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
       <EngageDist>90000 82000 75000 20000 50000 10000</EngageDist> 
       <AvailableWeapons>
@@ -258,9 +256,9 @@
 	  <hullValue>3600</hullValue>
 	  <shieldValue>5400</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>25000 40000 50000 50000 100 50000</EvadeDist>
+      <EvadeDist>15000 10000 40000 20000 100 10000</EvadeDist>
       <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3</TargetPrefs>
-      <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
+      <ChasePrefs>0 0 1 0 0 0</ChasePrefs>
 	  <EngageDist>72000 64000 45000 45500 80000 90000</EngageDist>      
       <AvailableWeapons>
 	  <Item>

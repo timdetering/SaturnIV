@@ -58,13 +58,6 @@ namespace SaturnIV
             if (loopTimer < 0)
                 loopTimer = currentTime;
 
-            if (thisShip.currentTarget == null)
-            {
-                thisShip.currentTarget = null;
-                thisShip.currentTargetLevel = 0;
-                thisShip.currentDisposition = disposition.patrol;
-            }
-
             List<newShipStruct> tmpList = new List<newShipStruct>();
             List<newShipStruct> tmpList2 = new List<newShipStruct>();
 
@@ -83,17 +76,17 @@ namespace SaturnIV
                         tmpList.Remove(tmpList[i]);
                     
             }
-               // for (int i = 0; i < tmpList.Count; i++)
-               // {
-                    //if (thisShip.engageDist[(int)tmpList[i].objectClass] > Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
-                    //    tmpList.Remove(tmpList[i]);
-                //}
+            for (int i = 0; i < tmpList.Count; i++)
+            {
+                //if (thisShip.engageDist[(int)tmpList[i].objectClass] * 4> Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
+                //        tmpList.Remove(tmpList[i]);
+            }
 
             /// End Target List Creation
             /// 
             /// Target Selection
             /// 
-            if ((thisShip.currentTarget == null && thisShip.currentDisposition != disposition.idle)) // || thisShip.canEngageMultipleTargets)
+            if ((thisShip.currentTarget == null && thisShip.currentDisposition != disposition.idle) || thisShip.canEngageMultipleTargets)
             {
                 c = tmpList.Count();
                 if (c > 0)
@@ -121,8 +114,14 @@ namespace SaturnIV
                     //    cycleWeapons(thisShip, tmpList, currentTime, weaponsManager, projectileTrailParticles,
                      //              weaponDefList);
                     thisShip.thrustAmount = 1.00f;
-                    if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
-                        thisShip.targetPosition = thisShip.currentTarget.modelPosition;// *rand.Next(-250, 350);
+                    if (thisShip.currentTarget != null  && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
+                        if (rand.Next(0, 100) > 50)
+                            thisShip.targetPosition = thisShip.currentTarget.modelPosition + (-thisShip.currentTarget.Direction * rand.Next(-125, 135));
+                        else
+                        {
+                            thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-1025, 1035));
+                            thisShip.thrustAmount = (float)rand.NextDouble() + 1.0f;
+                        }
                                 //(thisShip.currentTarget.Direction * rand.Next(-250, 350));
                     break;
                 case disposition.moving:
@@ -130,7 +129,13 @@ namespace SaturnIV
                     break;
                 case disposition.defensive:
                     thisShip.thrustAmount = 0.25f;
-                    break;       
+                    break;
+                case disposition.patrol:
+                    thisShip.currentTargetLevel = 0;
+                    thisShip.currentTarget = null;
+                    thisShip.targetPosition = thisShip.modelPosition + (thisShip.Direction * 15000);
+                    thisShip.thrustAmount = 0.50f;
+                    break;
             }             
             /// End Disposition Logic Switch
             /// 
@@ -144,17 +149,17 @@ namespace SaturnIV
                     thisShip.ChasePrefs[(int)iShip.objectClass] > 0)
                     //|| (thisShip.angleOfAttack > 3.11 && !thisShip.isEvading) && distance < thisShip.EvadeDist[(int)iShip.objectClass] / 2)
                 {
-                    thisShip.targetPosition = thisShip.modelPosition +((thisShip.Direction +
-                         (HelperClass.RandomDirection()) * thisShip.modelLen * 100));
-                    thisShip.thrustAmount = 0.85f;
+                    thisShip.targetPosition = thisShip.modelPosition +((-thisShip.Direction +
+                         (HelperClass.RandomDirection()) * thisShip.modelLen * 5500));
+                    thisShip.thrustAmount = 1.35f;
                     thisShip.isEvading = true;
                     thisShip.isPursuing = false;
                     // MARK!
                     thisShip.timer = currentTime;
                     if (thisShip.objectAgility > 1.9)
-                        timeToEvade = rand.Next(2500, 4000);
+                        timeToEvade = rand.Next(1500, 3000) * thisShip.objectMass;
                     else
-                        timeToEvade = rand.Next(3500, 5000);
+                        timeToEvade = rand.Next(2500, 4000) * thisShip.objectMass;
                     break;
                 }
             }
@@ -167,6 +172,13 @@ namespace SaturnIV
             ///      
             if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1000)))
                 thisShip.currentDisposition = disposition.patrol;
+            
+            if (thisShip.currentTarget == null)
+            {
+                thisShip.currentTarget = null;
+                thisShip.currentTargetLevel = 0;
+                thisShip.currentDisposition = disposition.patrol;
+            }
         }
 
         public void updateShipMovement(GameTime gameTime, float gameSpeed, newShipStruct thisShip,

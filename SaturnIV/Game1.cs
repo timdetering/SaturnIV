@@ -74,7 +74,7 @@ namespace SaturnIV
         public PlanetManager planetManager;
         public Effect effect;
         public Matrix cameraTarget;
-        public Vector3 cameraTargetVec3;
+        public Vector3 cameraTargetVec3;        
         int typeSpeed = 125;
         SkySphere skySphere;
         RenderStarfield starField;
@@ -122,7 +122,7 @@ namespace SaturnIV
             //ourCamera.ResetCamera();
             ourCamera = new CameraNew();
             ourCamera.ResetCamera();
-            cameraTargetVec3 = new Vector3(0, 10000, 50);
+            cameraTargetVec3 = Vector3.Zero;
             CameraNew.offsetDistance = new Vector3(-2400, 3200, 250);
             rand = new Random();
 ////////////TODO: Add your initialization logic here
@@ -244,7 +244,7 @@ namespace SaturnIV
         protected override void Update(GameTime gameTime)
         {
             processInput(gameTime);            
-            cameraTarget = Matrix.CreateWorld(playerShip.modelPosition, Vector3.Forward, Vector3.Up);
+            cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
             if (isEditMode || isSystemMap)
             {
                 ourCamera.ResetCamera();
@@ -297,15 +297,9 @@ namespace SaturnIV
                 loopTimer = currentTime;
             }    
             foreach (newShipStruct thisShip in activeShipList)
-                npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);                  
+                npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);                                
 
-            foreach (newShipStruct thisShip in activeShipList)
-            {                
-                npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
-                npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);
-            }                  
-
-            playerManager.updateShipMovement(gameTime, gameSpeed, Keyboard.GetState(), playerShip, ourCamera);
+            //playerManager.updateShipMovement(gameTime, gameSpeed, Keyboard.GetState(), playerShip, ourCamera);
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
         }
 
@@ -552,6 +546,27 @@ namespace SaturnIV
                 }
             }
 
+            /// Pan Camera
+            /// 
+            if (keyboardState.IsKeyDown(Keys.A))
+            {
+                cameraTargetVec3.X += -1000f;
+                //roll = 0.023f;
+            }
+            if (keyboardState.IsKeyDown(Keys.D))
+            {
+                cameraTargetVec3.X += 1000f;
+            }
+            if (keyboardState.IsKeyDown(Keys.S))
+            {
+                cameraTargetVec3.Z += 1000f;
+            }
+
+            if (keyboardState.IsKeyDown(Keys.W))
+            {
+                cameraTargetVec3.Z += -1000f;
+            }
+
             // T will form a squad of all selected ships
             if (keyboardState.IsKeyDown(Keys.T) &&
                 !oldkeyboardState.IsKeyDown(Keys.T))
@@ -710,12 +725,12 @@ namespace SaturnIV
                     if (enemy.isSelected)
                         shipColor = Color.White;
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
+                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                     buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
                     if (enemy.currentTarget != null)
                         buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
-                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
+                    buffer.AppendFormat("[" + enemy.hullLvl + "]");
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
             }
@@ -823,10 +838,10 @@ namespace SaturnIV
         public void debug (newShipStruct npcship)
         {
              fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
-                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
-                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+//                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
+//                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+//                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+//                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
                     isRight = npcship.modelRotation.Right;
         }       

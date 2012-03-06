@@ -32,7 +32,7 @@ namespace SaturnIV
 
             settings.MaxParticles = 100;
 
-            settings.Duration = TimeSpan.FromSeconds(2);
+            settings.Duration = TimeSpan.FromSeconds(4);
             settings.DurationRandomness = 1;
 
             settings.MinHorizontalVelocity = 20;
@@ -49,11 +49,11 @@ namespace SaturnIV
             settings.MinRotateSpeed = -1;
             settings.MaxRotateSpeed = 1;
 
-            settings.MinStartSize = 10;
-            settings.MaxStartSize = 10;
+            settings.MinStartSize = 1100;
+            settings.MaxStartSize = 1100;
 
-            settings.MinEndSize = 100;
-            settings.MaxEndSize = 200;
+            settings.MinEndSize = 2500;
+            settings.MaxEndSize = 2600;
 
             // Use additive blending.
             settings.SourceBlend = Blend.SourceAlpha;

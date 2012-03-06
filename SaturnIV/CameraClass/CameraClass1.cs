@@ -77,8 +77,8 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 15.0)
-                zoomFactor += (WheelVal * 0.25f);
+                if (zoomFactor < 45.0)
+                zoomFactor += (WheelVal * 0.55f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -87,8 +87,8 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
 
-                if (zoomFactor > 1.0)
-                zoomFactor -= (WheelVal * -0.25f);
+                if (zoomFactor > 2.0)
+                zoomFactor -= (WheelVal * -0.55f);
             }
 
             //Rotate Camera

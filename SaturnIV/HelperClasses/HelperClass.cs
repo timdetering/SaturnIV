@@ -81,7 +81,7 @@ namespace SaturnIV
                                                            currentExpLocation, (float)rand.NextDouble());
                             MessageClass.messageLog.Add(thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
-                            gServer.removeObject(j);
+                            //gServer.removeObject(j);
                          }                       
                         return true;
                     }
