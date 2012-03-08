@@ -42,12 +42,12 @@ namespace SaturnIV
             //spritebatch.DrawString(smallFont, buffer, new Vector2(148, 825), Color.White);
             spritebatch.End();
     }
-        public void drawTextbox(SpriteBatch spritebatch, string text,Vector2 boxPos,List<newShipStruct> itemList, SerializerClass serializerClass)
+        public void drawTextbox(SpriteBatch spritebatch, string text,Vector2 boxPos,List<newShipStruct> itemList, SerializerClass serializerClass,int width,int height)
         {
             bool isDone = false;
             textString += UpdateInput();
             spritebatch.Begin();
-            spritebatch.Draw(TextInputBox, new Rectangle((int)boxPos.X - 25, (int)boxPos.Y - 20, 300, 50), Color.White);
+            spritebatch.Draw(TextInputBox, new Rectangle((int)boxPos.X - 25, (int)boxPos.Y - 20, width, height), Color.White);
             boxPos.Y -= 7;
             spritebatch.DrawString(medFont, text , boxPos, Color.Gray);
             boxPos.X += 70;
@@ -66,7 +66,9 @@ namespace SaturnIV
                     {
                         serializerClass.exportSaveScenario(itemList, textString);
                     }
-                    break;              
+                    break;   
+                case TextBoxActions.LoadScenario:
+                    break;
             }
         }
 

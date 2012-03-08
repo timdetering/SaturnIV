@@ -21,7 +21,7 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             foreach (string msg in messageLog)
                 messageBuffer.AppendFormat("\n" + msg);
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.MediumSlateBlue);
+            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Yellow);
             //systemMessagePos.Y += 10;
             spriteBatch.End();
             if (messageLog.Count > maxLines)

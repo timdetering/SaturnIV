@@ -74,7 +74,7 @@ namespace SaturnIV
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
                                                         currentExpLocation, (float)rand.NextDouble());
-                        if (thisShipList[j].hullLvl < 0)
+                        if (thisShipList[j].hullLvl < 1)
                         {
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,

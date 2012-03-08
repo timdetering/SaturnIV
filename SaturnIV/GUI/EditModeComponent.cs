@@ -294,6 +294,7 @@ namespace SaturnIV
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;           
             tempData.Direction = Vector3.Forward;
+            tempData.Direction = HelperClass.RandomDirection() + Vector3.Forward;
             //tempData.targetPosition = tempData.modelPosition + (tempData.Direction * 100000f);
             //tempData.targetPosition.Y = new Random().Next(-2000, 2000);
             //tempData.wayPointPosition = tempData.targetPosition;

@@ -132,6 +132,7 @@
     <Compile Include="HelperClasses\RenderStarfield.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PrimitiveClasses\TriangleRender.cs" />
     <Compile Include="SkySphere.cs">
       <SubType>Code</SubType>
     </Compile>
