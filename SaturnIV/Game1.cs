@@ -733,7 +733,7 @@ namespace SaturnIV
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
-                        buffer.AppendFormat("[" + enemy.currentTarget.hullLvl + "]");
+                        buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
                     }
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }

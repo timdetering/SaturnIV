@@ -74,8 +74,8 @@ namespace SaturnIV
             }
             for (int i = 0; i < tmpList.Count; i++)
             {
-                if (thisShip.engageDist[(int)tmpList[i].objectClass] * 4> Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
-                        tmpList.Remove(tmpList[i]);
+                //if (thisShip.engageDist[(int)tmpList[i].objectClass] * 4> Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
+                //        tmpList.Remove(tmpList[i]);
             }
             if (thisShip.currentTarget != null)
                 thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.currentTarget.Direction, thisShip.currentTarget.Right);
@@ -160,6 +160,7 @@ namespace SaturnIV
                 {
                     thisShip.isEvading = false;
                     thisShip.timer = 0;
+                    thisShip.currentTarget = null;
                 }
             /// End Evade Routine
             ///      
