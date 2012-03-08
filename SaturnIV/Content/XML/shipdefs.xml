@@ -126,7 +126,7 @@
     <ShieldRegenTime>100</ShieldRegenTime>
     <EvadeDist>1000 4000 9000 2000 5000 1000</EvadeDist>
     <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
-	  <ChasePrefs>1 0 1 1 1 1</ChasePrefs>
+	  <ChasePrefs>1 1 1 1 1 0</ChasePrefs>
       <EngageDist>10000 25000 25000 20000 10000 10000</EngageDist>  
       <AvailableWeapons>
       <Item>
