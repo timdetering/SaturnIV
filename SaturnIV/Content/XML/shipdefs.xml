@@ -7,8 +7,8 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
-      <FileName>Models//Ships/Fleet/fleet_crusier</FileName>
-      <Type>Fleet Class C Crusier</Type>
+      <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
+      <Type>Atlas Class Frigate</Type>
       <Mass>15</Mass>
       <Thrust>21000</Thrust>
       <SphereRadius>25</SphereRadius>
@@ -64,15 +64,15 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models/Ships/Fleet/fleet_attack_bomber</FileName>
-      <Type>Fleet Class B Attack Bomber</Type>
-      <Mass>7.0</Mass>
+      <FileName>Models/Ships/fighter_m1/fighter_m1</FileName>
+      <Type>M1 Fighter</Type>
+      <Mass>3.0</Mass>
       <Thrust>14200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>3.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
-	  <ShipClass>Bomber</ShipClass>
+	  <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
 	  <HullFactor>0.99</HullFactor>
 	  <hullValue>2000</hullValue>
@@ -110,8 +110,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 <Item>
-      <FileName>Models/Ships/Eriax/eriax_heavy_fighter</FileName>
-      <Type>Eriax Interceptor</Type>
+      <FileName>Models/Ships/fighter_m2/fighter_m2</FileName>
+      <Type>M2 Interceptor</Type>
       <Mass>2.50</Mass>
       <Thrust>38000</Thrust>
       <SphereRadius>25</SphereRadius>
@@ -153,8 +153,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models/Ships/Eriax/eriax_fighter_a</FileName>
-      <Type>Eriax Fighter Type A</Type>
+      <FileName>Models/Ships/fighter_m3/fighter_m3</FileName>
+      <Type>MR Streak Fighter</Type>
       <Mass>3.75</Mass>
       <Thrust>23000</Thrust>
       <SphereRadius>25</SphereRadius>
@@ -198,8 +198,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>    
     <Item>
-      <FileName>Models//Ships/Eriax/eriax_bomber</FileName>
-      <Type>Attack Bomber Type A</Type>
+      <FileName>Models//Ships/bomber_b1/bomber_b1</FileName>
+      <Type>Lancer Attack Bomber</Type>
       <Mass>3.25</Mass>
       <Thrust>15500</Thrust>
       <SphereRadius>17</SphereRadius>
@@ -242,10 +242,10 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
 		<Item>
-      <FileName>Models/Ships/Fleet/fleet_corvette</FileName>
-      <Type>Fleet Corvette Escort</Type>
-      <Mass>20</Mass>
-      <Thrust>40150</Thrust>
+      <FileName>Models/Ships/station_t1/station_t1</FileName>
+      <Type>Dry Dock Ship Foundry</Type>
+      <Mass>100</Mass>
+      <Thrust>0</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>1.15</Agility>
@@ -272,27 +272,6 @@
 	<weaponRange>5000</weaponRange>
 	<timer>0</timer>
 	</Item>
-	<Item>
-	 <weaponType>LargeIon</weaponType>
-	 <ModulePositionOnShip>
-	   -200 0 0  2
-	   -400 0 0  3
-	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
-	<weaponRange>146200</weaponRange>
-	<timer>0</timer>
-    </Item>
-	<Item>
-	 <weaponType>LRMH</weaponType>
-	 <ModulePositionOnShip>
-	  600 0 0  0
-		0 0 330  1
-		0 0 440  2
-	 </ModulePositionOnShip>
-	<FiringEnvelopeAngle>90</FiringEnvelopeAngle>
-	<weaponRange>152200</weaponRange>
-	<timer>0</timer>
-    </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0</ThrusterPosition>
     </Item>

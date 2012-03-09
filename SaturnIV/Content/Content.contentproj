@@ -447,21 +447,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Attack_Bomber\attack_bomber.FBX">
-      <Name>attack_bomber</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Frigate_A\frigate_a.FBX">
-      <Name>frigate_a</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\fighter_a\fighter_a.FBX">
-      <Name>fighter_a</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Ships\Fleet\fleet_attack_bomber.FBX">
       <Name>fleet_attack_bomber</Name>
       <Importer>FbxImporter</Importer>
@@ -486,6 +471,36 @@
       <Name>pink_complex</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\frigate_c1\frigate_c1.FBX">
+      <Name>frigate_c1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m1\fighter_m1.FBX">
+      <Name>fighter_m1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m2\fighter_m2.FBX">
+      <Name>fighter_m2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\station_t1\station_t1.FBX">
+      <Name>station_t1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\bomber_b1\bomber_b1.FBX">
+      <Name>bomber_b1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m3\fighter_m3.FBX">
+      <Name>fighter_m3</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
     <None Include="XML\listofnames.xml">
       <Name>listofnames</Name>
@@ -519,13 +534,97 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Attack_Bomber\03AB.bmp">
-      <Name>03AB</Name>
+    <Compile Include="Models\Ships\ship_hull19.jpg">
+      <Name>ship_hull19</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Ships\fighter_m1\bump_6.jpg">
+      <Name>bump_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m1\color_6.jpg">
+      <Name>color_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m1\illumination_6.jpg">
+      <Name>illumination_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m1\specular_6.jpg">
+      <Name>specular_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\fighter_m2\fighter_1.jpg">
+      <Name>fighter_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m2\fighter_1_bump.jpg">
+      <Name>fighter_1_bump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m2\fighter_1_specular.jpg">
+      <Name>fighter_1_specular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\station_t1\bump.jpg">
+      <Name>bump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\station_t1\color.jpg">
+      <Name>color</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\station_t1\illumination.jpg">
+      <Name>illumination</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\station_t1\specular.jpg">
+      <Name>specular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\bomber_b1\color.jpg">
+      <Name>color</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m3\fighter_1.jpg">
+      <Name>fighter_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m3\fighter_1_bump.jpg">
+      <Name>fighter_1_bump</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fighter_m3\fighter_1_specular.jpg">
+      <Name>fighter_1_specular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Systems\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

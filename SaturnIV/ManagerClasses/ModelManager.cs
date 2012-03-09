@@ -106,9 +106,10 @@ namespace SaturnIV
                 {
                     effect.EnableDefaultLighting();
                     Color mColor = Color.Sienna;
-                    if (isEdit)
-                        effect.EmissiveColor = shipColor.ToVector3();
-                    effect.AmbientLightColor = shipColor.ToVector3();
+                    //if (isEdit)
+                    //    effect.EmissiveColor = shipColor.ToVector3();
+                    effect.AmbientLightColor = Color.White.ToVector3();
+                    //effect.EmissiveColor = Color.White.ToVector3();
                     effect.World = transforms[mesh.ParentBone.Index] * worldMatrix;
                     effect.View = myCamera.viewMatrix;
                     effect.Projection = myCamera.projectionMatrix;
