@@ -21,18 +21,26 @@ namespace SaturnIV
     /// </summary>
     class ProjectileTrailParticleSystem : ParticleSystem
     {
+        public static Color color;
         public ProjectileTrailParticleSystem(Game game, ContentManager content)
             : base(game, content)
-        { }
-
-
-        protected override void InitializeSettings(ParticleSettings settings)
         {
+        }
+
+
+        public void initColor(Color color, ParticleSettings settings)
+        {
+            settings.MaxColor = color;
+            settings.MinColor = color;
+        }
+        
+        protected override void InitializeSettings(ParticleSettings settings)
+        {            
             settings.TextureName = "textures//smoke";
 
-            settings.MaxParticles = 32000;
+            settings.MaxParticles = 30000;
 
-            settings.Duration = TimeSpan.FromSeconds(1);
+            settings.Duration = TimeSpan.FromSeconds(1.5);
 
             settings.DurationRandomness = 0;
 
@@ -41,20 +49,20 @@ namespace SaturnIV
             settings.MinHorizontalVelocity = 0;
             settings.MaxHorizontalVelocity = 1;
 
-            settings.MinVerticalVelocity = -1;
-            settings.MaxVerticalVelocity = 1;
+            settings.MinVerticalVelocity = -2;
+            settings.MaxVerticalVelocity = 2;
 
-            settings.MinColor = new Color(255,255,255,255);
-            settings.MaxColor = new Color(0, 0, 255, 255);
+            settings.MinColor = Color.White;
+            settings.MaxColor = Color.White;
 
             settings.MinRotateSpeed = 0;
             settings.MaxRotateSpeed = 0;
 
-            settings.MinStartSize = 150;
-            settings.MaxStartSize = 250;
+            settings.MinStartSize = 550;
+            settings.MaxStartSize = 950;
 
-            settings.MinEndSize = 150;
-            settings.MaxEndSize = 250;
+            settings.MinEndSize = 1050;
+            settings.MaxEndSize = 1150;
         }
     }
 }

@@ -161,19 +161,16 @@ namespace SaturnIV
             this.content = content;
         }
 
-
         /// <summary>
         /// Initializes the component.
         /// </summary>
         public override void Initialize()
         {
+            settings.MaxColor = Color.PowderBlue;
             InitializeSettings(settings);
-
-            particles = new ParticleVertex[settings.MaxParticles];
-
+            particles = new ParticleVertex[settings.MaxParticles];            
             base.Initialize();
         }
-
 
         /// <summary>
         /// Derived particle system classes should override this method

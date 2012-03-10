@@ -10,6 +10,7 @@
 #region Using Statements
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 namespace SaturnIV
@@ -53,9 +54,8 @@ namespace SaturnIV
         /// </summary>
         public ParticleEmitter(ParticleSystem particleSystem,
                                float particlesPerSecond, Vector3 initialPosition, Vector3 initialVelocity)
-        {
+        {            
             this.particleSystem = particleSystem;
-
             timeBetweenParticles = 2.0f / particlesPerSecond;
             velocity = initialVelocity;
             previousPosition = initialPosition;

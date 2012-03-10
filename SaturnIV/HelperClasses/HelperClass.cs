@@ -20,7 +20,7 @@ namespace SaturnIV
         KeyboardState currentKeyboardState;
         string textString;
         private float _FPS = 0f, _TotalTime = 0f, _DisplayFPS = 0f;
-        Random rand = new Random();
+        Random random = new Random();
 
         /// <summary>
         /// Returns a number between two values.
@@ -36,13 +36,35 @@ namespace SaturnIV
 
         public static Vector3 RandomPosition(float minBoxPos, float maxBoxPos)
         {
-            Random random = new Random();
-
             return new Vector3(
                      RandomBetween(minBoxPos, maxBoxPos),
                      0.0f,
                      RandomBetween(minBoxPos, maxBoxPos));
         }
+        /// <summary>  
+        /// Choose a random point on the sphere with radius 1 centered at (0, 0, 0).  
+        /// </summary>  
+        /// <returns>Random vector with length 1</returns>  
+        public static Vector3 RandomSpherePoint()
+        {
+            Vector3 v;
+            Random random = new Random();
+            // Pick a random vector that has non-zero length.  
+            // It's almost certain that the first one picked will be non-zero,  
+            // but double check it to avoid division by 0 in Normalize.  
+            do
+            {
+                v.X = (float)random.NextDouble() - 500000.5f;
+                v.Y = 0.0f;
+                v.Z = (float)random.NextDouble() - 500000.5f;
+            } while (v.LengthSquared() == 0);
+
+            // Normalize the vector so that its length is 1.  
+            // This snaps it to the surface of the sphere.  
+            v.Normalize();
+
+            return v;
+        } 
 
         public static Vector3 RandomDirection()
         {
@@ -73,12 +95,12 @@ namespace SaturnIV
                         Vector3 currentExpLocation = missileList[i].modelPosition;
                         missileList.Remove(missileList[i]);
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                        currentExpLocation, (float)rand.NextDouble());
+                                                        currentExpLocation, (float)random.NextDouble());
                         if (thisShipList[j].hullLvl < 1)
                         {
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                           currentExpLocation, (float)rand.NextDouble());
+                                                           currentExpLocation, (float)random.NextDouble());
                             MessageClass.messageLog.Add(thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
                             //gServer.removeObject(j);

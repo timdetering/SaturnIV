@@ -729,7 +729,8 @@ namespace SaturnIV
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                     buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
-                    buffer.AppendFormat("[Evade:" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[" + enemy.isEvading + "]");
+                    buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
                     if (enemy.currentTarget != null)
                     {
                         buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");

@@ -2,20 +2,20 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
    <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_bullet</FileName>
       <Type>PointDefense</Type>
       <Mass>1.25</Mass>
-      <Thrust>7200</Thrust>
+      <Thrust>12200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>150</Scale>
+      <Scale>1</Scale>
       <Agility>8</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>300</regenTime>
+      <regenTime>150</regenTime>
       <damageFactor>5</damageFactor>
-      <range>5000</range>
+      <range>15000</range>
       <timeToLive>700</timeToLive>	  
     </Item>
     <Item>
@@ -32,8 +32,8 @@
       <isHoming>0</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>12000</range>
-      <timeToLive>1000</timeToLive>	  
+      <range>92000</range>
+      <timeToLive>2000</timeToLive>	  
     </Item>
     <Item>
       <FileName>Models//Fleet_KM100</FileName>
@@ -87,7 +87,7 @@
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_bullet</FileName>
       <Type>AutoCannon</Type>
       <Mass>0.25</Mass>
       <Thrust>10000</Thrust>

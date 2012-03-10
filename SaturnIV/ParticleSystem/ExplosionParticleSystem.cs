@@ -30,10 +30,10 @@ namespace SaturnIV
         {
             settings.TextureName = "textures//explosion";
 
-            settings.MaxParticles = 100;
+            settings.MaxParticles = 25000;
 
             settings.Duration = TimeSpan.FromSeconds(4);
-            settings.DurationRandomness = 1;
+            settings.DurationRandomness = 0;
 
             settings.MinHorizontalVelocity = 20;
             settings.MaxHorizontalVelocity = 30;
@@ -49,11 +49,11 @@ namespace SaturnIV
             settings.MinRotateSpeed = -1;
             settings.MaxRotateSpeed = 1;
 
-            settings.MinStartSize = 1100;
-            settings.MaxStartSize = 1100;
+            settings.MinStartSize = 11100;
+            settings.MaxStartSize = 11100;
 
-            settings.MinEndSize = 2500;
-            settings.MaxEndSize = 2600;
+            settings.MinEndSize = 12500;
+            settings.MaxEndSize = 12600;
 
             // Use additive blending.
             settings.SourceBlend = Blend.SourceAlpha;

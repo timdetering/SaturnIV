@@ -10,6 +10,7 @@
 #region Using Statements
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 namespace SaturnIV
@@ -25,13 +26,13 @@ namespace SaturnIV
     {
         #region Constants
 
-        const float trailParticlesPerSecond = 300;
+        const float trailParticlesPerSecond = 400;
         const int numExplosionParticles = 30;
         const int numExplosionSmokeParticles = 50;
         const float projectileLifespan = 1.5f;
         const float sidewaysVelocityRange = 10;
         const float verticalVelocityRange = 15;
-        const float gravity = 0f;
+        const float gravity = 0f;        
 
         #endregion
 
@@ -40,6 +41,7 @@ namespace SaturnIV
         ParticleEmitter trailEmitter;
 
         Vector3 velocity;
+
         float age;
 
         static Random random = new Random();
@@ -54,7 +56,7 @@ namespace SaturnIV
         {
             // Use the particle emitter helper to output our trail particles.
             trailEmitter = new ParticleEmitter(projectileTrailParticles,
-                                               trailParticlesPerSecond, position, velocity);
+                                               trailParticlesPerSecond, position, velocity);    
         }
 
         /// <summary>

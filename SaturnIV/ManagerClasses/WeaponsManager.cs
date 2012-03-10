@@ -255,7 +255,7 @@ namespace SaturnIV
             if (targetObject != null)
                 tempData.Direction = Vector3.Normalize(targetObject.modelPosition - tempData.modelPosition);
             if (tempData.isProjectile)
-                tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);
+                tempData.projectile = new Projectile(projectileTrailParticles,tempData.modelPosition,Vector3.Zero);            
             tempData.timeToLive = weaponDefList[(int)thisWeapon.weaponType].timeToLive;
             tempData.regenTime = weaponDefList[(int)thisWeapon.weaponType].regenTime;
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);        

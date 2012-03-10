@@ -98,14 +98,14 @@ namespace SaturnIV
         {
             Matrix[] transforms = new Matrix[shipModel.Bones.Count];
             shipModel.CopyAbsoluteBoneTransformsTo(transforms);
-
+            //GraphicsDevice.RenderState.FillMode = FillMode.WireFrame;
             // Draw the model. A model can have multiple meshes, so loop.
             foreach (ModelMesh mesh in shipModel.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
                     effect.EnableDefaultLighting();
-                    Color mColor = Color.Sienna;
+                    Color mColor = Color.Sienna;                       
                     //if (isEdit)
                     //    effect.EmissiveColor = shipColor.ToVector3();
                     effect.AmbientLightColor = Color.White.ToVector3();
