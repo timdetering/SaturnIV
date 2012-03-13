@@ -805,7 +805,7 @@ namespace SaturnIV
             return pt;
         }
 
-        Vector3 mousePosition
+        Vector3 mouse3dVector
         {
             get
             {
@@ -832,7 +832,7 @@ namespace SaturnIV
             }
         }
 
-        Vector3 mouse3dVector
+        Vector3 mouse3dVector2
         {
             get
             {
