@@ -44,6 +44,7 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
+        Texture2D transCircleGreen;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         public StringBuilder messageBuffer = new StringBuilder();
@@ -78,7 +79,7 @@ namespace SaturnIV
         int typeSpeed = 125;
         SkySphere skySphere;
         RenderStarfield starField;
-        VertexDeclaration vertexDeclaration;
+        VertexDeclaration vertexDeclaration, quadVertexDecl;
         ControlPanelClass cPanel = new ControlPanelClass();
         public float gameSpeed = 5.0f;
         //public Camera ourCamera;
@@ -99,16 +100,16 @@ namespace SaturnIV
         RadarClass radar;
         renderTriangle firingArc = new renderTriangle();
         Vector3 isFacing;
-
-
         Double loopTimer = -1;
         Model systemMapSphere;
-
 
         // Define Hud Components
         Texture2D centerHUD;
         Texture2D targetTracker;
         public static Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
+        DrawQuadClass drawQuad;
+        BasicEffect quadEffect;
+        Quad tacPlaneQuad;
 
         public Game1()
         {
@@ -165,12 +166,20 @@ namespace SaturnIV
             ////////////Network Stuff
             gServer = new gameServer();
             gClient = new gameClient();
+            /// quadClass init
+            /// 
+            drawQuad = new DrawQuadClass();
+            quadEffect = new BasicEffect(GraphicsDevice,null);
+            quadVertexDecl = new VertexDeclaration(graphics.GraphicsDevice,
+               VertexPositionNormalTexture.VertexElements);
+            tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Left, Vector3.Up, 300000, 300000);
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             ////////////Add Components
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
             base.Initialize();
+
         }
 
         public void ConfigureGraphicsManager()
@@ -201,6 +210,7 @@ namespace SaturnIV
             targetTracker = this.Content.Load<Texture2D>("textures//HUD/target_track");
             systemMapSphere = this.Content.Load<Model>("models//planet");
             planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
+            transCircleGreen = this.Content.Load<Texture2D>("Models/tacmap_items/transplanegreen");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1);
@@ -255,8 +265,8 @@ namespace SaturnIV
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
                 this.IsMouseVisible = true;
-                editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
-                    ref npcManager, ourCamera, ref viewport);
+                //editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
+                //    ref npcManager, ourCamera, ref viewport);
                 Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
             else
@@ -434,7 +444,7 @@ namespace SaturnIV
                     isEditMode = true;
                     string msg = "Edit Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
-                    CameraNew.zoomFactor = 8.0f;
+                    //CameraNew.zoomFactor = 8.0f;
                 }
                 else if (keyboardState.IsKeyDown(Keys.F1) && isEditMode && !isChat)
                     isEditMode = false;
@@ -613,8 +623,10 @@ namespace SaturnIV
             /// Draw system Map if systemMap mode is selected!
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
-            planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
+            //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
             drawMainObjects(gameTime);
+            /// Draw tacitcal Circle Element
+            drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, transCircleGreen);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -660,11 +672,6 @@ namespace SaturnIV
             {
                 if (theList.isProjectile)
                     modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White, true);
-                else if (theList.objectClass == WeaponClassEnum.Beam)
-                {
-                    theList.beamQuad.DrawQuad(ourCamera.viewMatrix,
-                        ourCamera.projectionMatrix, Matrix.Identity, theList.beamQuad);
-                }
                 else
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
             }
@@ -843,13 +850,48 @@ namespace SaturnIV
         public void debug(newShipStruct npcship)
         {
 
+
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
             //                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
             //                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 
-            //Update all Weapon Module Firing Frustums            
+            //Update all Weapon Module Firing Frustums           
+            //Update all Weapon Module Firing Frustums
+            int moduleCount = 0;
+            foreach (WeaponModule thisWeapon in npcship.weaponArray)
+            {
+                for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count() - 1; i++)
+                {
+                    switch ((int)thisWeapon.ModulePositionOnShip[i].W)
+                    {
+                        case 0:
+                            isFacing = npcship.Direction;
+                            isRight = npcship.modelRotation.Forward;
+                            break;
+                        case 1:
+                            isFacing = -npcship.Direction;
+                            isRight = npcship.modelRotation.Backward;
+                            break;
+                        case 2:
+                            isFacing = -npcship.modelRotation.Right;
+                            isRight = npcship.modelRotation.Forward;
+                            break;
+                        case 3:
+                            isFacing = npcship.modelRotation.Right;
+                            isRight = -npcship.modelRotation.Forward;
+                            break;
+                    }
+                    Vector3 tVec = npcship.modelPosition;
+                    tVec.X = npcship.modelPosition.X + thisWeapon.ModulePositionOnShip[i].X;
+                    tVec.Z = npcship.modelPosition.Z + thisWeapon.ModulePositionOnShip[i].Z;
+
+                    fLine.Draw(tVec, tVec + (isFacing * 15000), Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
+                    moduleCount++;
+                }
+            }
+
         }
     }
 

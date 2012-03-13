@@ -40,7 +40,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.97f;
+        private const float DragFactor = 0.99f;
 
         public static void set_mesh(ModelMesh mesh, GraphicsDevice device)
         {
@@ -148,7 +148,7 @@ namespace SaturnIV
                         shader_matrices_combined[0] = wMatrix;
                         shader_matrices_combined[1] = wMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
-                        effect_color.SetValue(laserColor.ToVector4());
+                        effect_color.SetValue(Color.Green.ToVector4());
                         effect_center_to_viewer.SetValue(Vector3.Up);
                         laserEffect.CommitChanges();
                         draw_set_mesh(weapon.shipModel.Meshes[0], device);
@@ -174,14 +174,14 @@ namespace SaturnIV
                         //|| activeWeaponList[i].currentTarget == null)
                     {
                         ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
-                            activeWeaponList[i].modelPosition, 0.25f);
+                            activeWeaponList[i].modelPosition, 1.25f);
                         activeWeaponList.Remove(activeWeaponList[i]);
                     }
                 }
                 else if (activeWeaponList[i].timer > activeWeaponList[i].timeToLive)
                 {
                     ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds, 
-                        activeWeaponList[i].modelPosition, 0.50f);
+                        activeWeaponList[i].modelPosition, 1.50f);
                     activeWeaponList.Remove(activeWeaponList[i]);
                 }
             }
@@ -259,9 +259,9 @@ namespace SaturnIV
             tempData.timeToLive = weaponDefList[(int)thisWeapon.weaponType].timeToLive;
             tempData.regenTime = weaponDefList[(int)thisWeapon.weaponType].regenTime;
             tempData.worldMatrix = Matrix.CreateWorld(tempData.modelPosition, weaponOrigin.Direction, Vector3.Up);        
-            tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
-                * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 200, 
-                weaponOrigin.distanceFromTarget,Color.Red);
+            //tempData.beamQuad = new Quad(Game.Content,weaponOrigin.modelPosition + tempData.Direction 
+            //    * weaponOrigin.distanceFromTarget/2, Vector3.UnitZ, tempData.Direction, 200, 
+            //    weaponOrigin.distanceFromTarget,Color.Red);
             tempData.modIndex = modIndex;
             activeWeaponList.Add(tempData);
         }

@@ -109,7 +109,8 @@
     <Compile Include="Network\ClientClass.cs" />
     <Compile Include="Network\ServerClass.cs" />
     <Compile Include="ParticleSystem\SparkParticleSystem.cs" />
-    <Compile Include="PrimitiveClasses\QuadClass.cs" />
+    <Compile Include="PrimitiveClasses\Quad.cs" />
+    <Compile Include="PrimitiveClasses\DrawQuadClass.cs" />
     <Compile Include="ParticleSystem\ExplosionClass.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="PrimitiveClasses\gridClass.cs" />

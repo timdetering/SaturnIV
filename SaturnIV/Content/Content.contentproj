@@ -502,6 +502,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Models\cannon.FBX">
+      <Name>cannon</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="XML\listofnames.xml">
       <Name>listofnames</Name>
       <Importer>XmlImporter</Importer>
@@ -619,6 +624,13 @@
     </Compile>
     <Compile Include="Models\Ships\fighter_m3\fighter_1_specular.jpg">
       <Name>fighter_1_specular</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\transplanegreen.png">
+      <Name>transplanegreen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

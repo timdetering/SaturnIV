@@ -302,7 +302,7 @@ namespace SaturnIV
             if (team > 0)
                 tempData.currentDisposition = disposition.patrol;
             else
-                tempData.currentDisposition = disposition.patrol;
+                tempData.currentDisposition = disposition.idle;
             tempData.currentTarget = null;
             if (tempData.objectClass == ClassesEnum.Crusier)
                 tempData.canEngageMultipleTargets = true;

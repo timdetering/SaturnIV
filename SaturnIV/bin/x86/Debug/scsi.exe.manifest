@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>5fi765x0cRPjEer1iYpfJnuRl1Y=</dsig:DigestValue>
+        <dsig:DigestValue>GCT5CYxPaF4dEIYAN/bUdbb1UKQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -240,7 +240,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BJSC7yRj0FeI2rVlz5QrkMOoJ+A=</dsig:DigestValue>
+      <dsig:DigestValue>V48nr26tdd1c1p4Z8oPP5BLFxyk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\basic_missile.xnb" size="59850">
@@ -250,6 +250,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>QbaW+1idB7U0cmyBQ9+PoIUuma8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\cannon.xnb" size="6801">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>V48nr26tdd1c1p4Z8oPP5BLFxyk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Fleet_KM100.xnb" size="4224">
@@ -711,6 +720,15 @@
       <dsig:DigestValue>wVxKcKX6EcgvdXBXsKBnoaft3Uc=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\transplanegreen.xnb" size="4194389">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>C0IhSi55YemJIGTP6ezip4iqjww=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\SmallFont.xnb" size="13282">
     <hash>
       <dsig:Transforms>
@@ -1062,22 +1080,22 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="9001">
+  <file name="Content\XML\shipdefs.xml" size="8794">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>XB9CI1ixqlvUSC9g5j1T0PqIA/o=</dsig:DigestValue>
+      <dsig:DigestValue>mOePsPC9j5oR0P8KGvpiiGbhE1w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4366">
+  <file name="Content\XML\weapondefs.xml" size="4361">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>aNp/O5fXTpjhxlbN3W0413J2wjg=</dsig:DigestValue>
+      <dsig:DigestValue>di8TMW+PKYezzh9Aa4EXH6wdxWc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

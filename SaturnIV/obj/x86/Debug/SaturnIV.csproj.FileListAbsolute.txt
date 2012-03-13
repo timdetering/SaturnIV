@@ -773,3 +773,5 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_specular.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_m3.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\transplanegreen.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\cannon.xnb

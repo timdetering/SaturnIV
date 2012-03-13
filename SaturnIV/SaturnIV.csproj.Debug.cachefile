@@ -43,6 +43,7 @@ Content\Models\Ships\fighter_m3\fighter_m3.xnb
 Content\Effects\ParticleEffect.xnb
 Content\Effects\BloomCombine.xnb
 Content\textures\fire.xnb
+Content\Models\tacmap_items\transplanegreen.xnb
 Content\Models\Ships\fighter_m2\fighter_1.xnb
 Content\Models\Ships\fighter_m2\fighter_1_0.xnb
 Content\Models\largeSphere.xnb
@@ -67,6 +68,7 @@ Content\spacescapes\pink_complex.xnb
 Content\Models\Ships\bomber_b1\bomber_b1.xnb
 Content\Models\Ships\Eriax\eriax_bomber.xnb
 Content\Thrusters\ThrustCylinderB.xnb
+Content\Models\cannon.xnb
 Content\hud.xnb
 Content\Models\Ships\fighter_m3\fighter_1.xnb
 Content\Models\basic_missile.xnb

@@ -77,9 +77,9 @@ namespace SaturnIV
                 //if (thisShip.engageDist[(int)tmpList[i].objectClass] * 4> Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition))
                 //        tmpList.Remove(tmpList[i]);
             }
-            newShipStruct bestTarget = (from element in tmpList 
-                                        orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
-                                        select element).First();
+            //newShipStruct bestTarget = (from element in tmpList 
+            //                            orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
+            //                            select element).First();
 
             if (thisShip.currentTarget != null)
                 thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.currentTarget.Direction, thisShip.currentTarget.Right);
@@ -119,7 +119,7 @@ namespace SaturnIV
                 case disposition.engaging:
                     if ( thisShip.currentTarget != null)
                         cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
-                                   weaponDefList);
+                                   weaponDefList);                    
                     //else
                     //    cycleWeapons(thisShip, tmpList, currentTime, weaponsManager, projectileTrailParticles,
                      //              weaponDefList);
@@ -177,14 +177,14 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1000)))
-                thisShip.currentDisposition = disposition.patrol;
+            //if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1000)))
+            //    thisShip.currentDisposition = disposition.patrol;
             
             if (thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 1)
             {
                 thisShip.currentTarget = null;
                 thisShip.currentTargetLevel = 0;
-                thisShip.currentDisposition = disposition.patrol;
+                //thisShip.currentDisposition = disposition.patrol;
             }
 
             if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 500000)
@@ -362,18 +362,6 @@ namespace SaturnIV
             return angleBetween;
         }
 
-        public void selectTarget(newShipStruct thisShip, newShipStruct otherShip, float currentTargetLevel, 
-                                  ref List<weaponData> weaponDefList)
-        {
-            if (Vector3.Distance(thisShip.modelPosition, otherShip.modelPosition) < 1000)
-            {
-                //Decide weather or Not to Pursue based on this ships TargetPrefs values;  Ex. A capitalship is not going to chase a fighter!
-                if (thisShip.currentTarget != null)
-                    if (thisShip.TargetPrefs[(int)otherShip.objectClass] > currentTargetLevel)
-                        thisShip.currentTarget = otherShip;
-            }
-        }
-
         /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
@@ -389,9 +377,10 @@ namespace SaturnIV
         public void cycleWeapons(newShipStruct thisShip, newShipStruct otherShip, double currentTime, WeaponsManager weaponsManager,
            ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
         {
+            moduleCount = 0;
             foreach (WeaponModule thisWeapon in thisShip.weaponArray)
             {
-                moduleCount = 0;
+                
                 for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                 {
                     if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
@@ -401,7 +390,7 @@ namespace SaturnIV
                             weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, ref projectileTrailParticles, ref weaponDefList, thisWeapon, i);
                             thisShip.regenTimer[moduleCount] = currentTime;
                             thisShip.isEngaging = true;
-                            break;
+                            //break;
                         }
                     }
                     moduleCount++;
