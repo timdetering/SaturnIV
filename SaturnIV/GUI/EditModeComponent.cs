@@ -99,15 +99,16 @@ namespace SaturnIV
             bool isDirectionSphere = false;            
             mouseCurrent = Mouse.GetState();
             keyboardState = Keyboard.GetState();
+            Vector3 myMouse3dVector = mouse3dVector;
              foreach (newShipStruct ourShip in objectList)                     
              {
-                 checkResult = checkIsSelected(mouse3dVector, ourShip.modelBoundingSphere);
+                 checkResult = checkIsSelected(myMouse3dVector, ourShip.modelBoundingSphere);
                  if (checkResult) break;
              }
             if (isLDepressed && keyboardState.IsKeyDown(Keys.LeftShift))
             {
               isGroupSelect = true;
-              selectRectangle(mouseCurrent, mouse3dVector);
+              selectRectangle(mouseCurrent, myMouse3dVector);
             } 
             //else
             if (!isLDepressed && isGroupSelect)
@@ -123,7 +124,7 @@ namespace SaturnIV
                    if (ourShip.isSelected)
                    {
                          isDragging = true;
-                         Vector3 newModelPosition = new Vector3(mouse3dVector.X, 0, mouse3dVector.Z);
+                         Vector3 newModelPosition = new Vector3(myMouse3dVector.X, 0, myMouse3dVector.Z);
                          ourShip.modelPosition = newModelPosition + ourShip.editModeOffset;
                          npcManager.updateShipMovement(gameTime, 50.0f, ourShip, ourCamera, true);
                          directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
@@ -171,7 +172,7 @@ namespace SaturnIV
         }
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,CameraNew ourCamera
-            ,SpriteBatch spriteBatch, Vector3 mouse3dVector)
+            ,SpriteBatch spriteBatch)
         {
             //spriteBatch.Begin();
             // We need to fix the selection rectangle in case one of its dimensions is negative

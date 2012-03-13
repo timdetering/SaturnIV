@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\effects.xnb</Output>
-      <Time>2012-02-15T19:12:20.6484623-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\effects.xnb</Output>
+      <Time>2012-03-09T10:15:13.3811365-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\SkySphere.fx</Source>
@@ -16,8 +16,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\SkySphere.xnb</Output>
-      <Time>2012-02-15T19:12:19.6174034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\SkySphere.xnb</Output>
+      <Time>2012-03-09T10:15:12.8641069-06:00</Time>
     </Item>
     <Item>
       <Source>effectslib.fx</Source>
@@ -25,8 +25,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\effectslib.xnb</Output>
-      <Time>2012-02-15T19:12:20.6494624-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\effectslib.xnb</Output>
+      <Time>2012-03-09T10:15:13.3811365-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\pointsprites.fx</Source>
@@ -34,8 +34,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\pointsprites.xnb</Output>
-      <Time>2012-02-15T19:12:19.6184034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\pointsprites.xnb</Output>
+      <Time>2012-03-09T10:15:12.865107-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\laser_shader.fx</Source>
@@ -43,8 +43,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\laser_shader.xnb</Output>
-      <Time>2012-02-15T19:12:19.6174034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\laser_shader.xnb</Output>
+      <Time>2012-03-09T10:15:12.8641069-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\explosionEffect.fx</Source>
@@ -52,8 +52,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\explosionEffect.xnb</Output>
-      <Time>2012-02-15T19:12:19.6174034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\explosionEffect.xnb</Output>
+      <Time>2012-03-09T10:15:12.8641069-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\ParticleEffect.fx</Source>
@@ -61,8 +61,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\ParticleEffect.xnb</Output>
-      <Time>2012-02-15T19:12:19.6164033-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\ParticleEffect.xnb</Output>
+      <Time>2012-03-09T10:15:12.8631068-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\BloomCombine.fx</Source>
@@ -70,8 +70,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\BloomCombine.xnb</Output>
-      <Time>2012-02-15T19:12:19.6094029-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\BloomCombine.xnb</Output>
+      <Time>2012-03-09T10:15:12.8561064-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\BloomExtract.fx</Source>
@@ -79,8 +79,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\BloomExtract.xnb</Output>
-      <Time>2012-02-15T19:12:19.610403-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\BloomExtract.xnb</Output>
+      <Time>2012-03-09T10:15:12.8561064-06:00</Time>
     </Item>
     <Item>
       <Source>Effects\GaussianBlur.fx</Source>
@@ -88,8 +88,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\GaussianBlur.xnb</Output>
-      <Time>2012-02-15T19:12:19.610403-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\GaussianBlur.xnb</Output>
+      <Time>2012-03-09T10:15:12.8561064-06:00</Time>
     </Item>
     <Item>
       <Source>Thrusters\Thrust.fx</Source>
@@ -97,8 +97,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\Thrust.xnb</Output>
-      <Time>2012-02-15T19:12:20.6354616-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\Thrust.xnb</Output>
+      <Time>2012-03-09T10:15:13.3641355-06:00</Time>
     </Item>
     <Item>
       <Source>MedFont.spritefont</Source>
@@ -106,8 +106,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\MedFont.xnb</Output>
-      <Time>2012-02-15T19:12:19.6194035-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\MedFont.xnb</Output>
+      <Time>2012-03-09T10:15:12.866107-06:00</Time>
     </Item>
     <Item>
       <Source>SmallFont.spritefont</Source>
@@ -115,8 +115,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\SmallFont.xnb</Output>
-      <Time>2012-02-15T19:12:20.6104602-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\SmallFont.xnb</Output>
+      <Time>2012-03-09T10:15:13.337134-06:00</Time>
     </Item>
     <Item>
       <Source>Fonts\MedFont.spritefont</Source>
@@ -124,8 +124,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Fonts\MedFont.xnb</Output>
-      <Time>2012-02-15T19:12:19.6184034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Fonts\MedFont.xnb</Output>
+      <Time>2012-03-09T10:15:12.865107-06:00</Time>
     </Item>
     <Item>
       <Source>Fonts\SmallFont.spritefont</Source>
@@ -133,8 +133,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Fonts\SmallFont.xnb</Output>
-      <Time>2012-02-15T19:12:19.6184034-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Fonts\SmallFont.xnb</Output>
+      <Time>2012-03-09T10:15:12.865107-06:00</Time>
     </Item>
     <Item>
       <Source>textures\redtexture.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\redtexture.xnb</Output>
-      <Time>2012-02-15T19:12:21.7015226-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\redtexture.xnb</Output>
+      <Time>2012-03-09T10:15:14.1541807-06:00</Time>
     </Item>
     <Item>
       <Source>hud.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\hud.xnb</Output>
-      <Time>2012-02-15T19:12:20.6494624-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\hud.xnb</Output>
+      <Time>2012-03-09T10:15:13.3821365-06:00</Time>
     </Item>
     <Item>
       <Source>hud_target.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\hud_target.xnb</Output>
-      <Time>2012-02-15T19:12:20.6634632-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\hud_target.xnb</Output>
+      <Time>2012-03-09T10:15:13.3981374-06:00</Time>
     </Item>
     <Item>
       <Source>textures\planettexture1.png</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture1.xnb</Output>
-      <Time>2012-02-15T19:12:21.691522-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture1.xnb</Output>
+      <Time>2012-03-09T10:15:14.1431801-06:00</Time>
     </Item>
     <Item>
       <Source>textures\planettexture2.png</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture2.xnb</Output>
-      <Time>2012-02-15T19:12:21.6955222-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture2.xnb</Output>
+      <Time>2012-03-09T10:15:14.1471803-06:00</Time>
     </Item>
     <Item>
       <Source>textures\planettexture3.png</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture3.xnb</Output>
-      <Time>2012-02-15T19:12:21.6985224-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture3.xnb</Output>
+      <Time>2012-03-09T10:15:14.1501805-06:00</Time>
     </Item>
     <Item>
       <Source>textures\fire.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\fire.xnb</Output>
-      <Time>2012-02-15T19:12:21.6455194-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\fire.xnb</Output>
+      <Time>2012-03-09T10:15:14.1371797-06:00</Time>
     </Item>
     <Item>
       <Source>textures\star.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\star.xnb</Output>
-      <Time>2012-02-15T19:12:21.8425306-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\star.xnb</Output>
+      <Time>2012-03-09T10:15:14.2151842-06:00</Time>
     </Item>
     <Item>
       <Source>textures\explosion.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\explosion.xnb</Output>
-      <Time>2012-02-15T19:12:21.6425192-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\explosion.xnb</Output>
+      <Time>2012-03-09T10:15:14.1351796-06:00</Time>
     </Item>
     <Item>
       <Source>textures\smoke.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke.xnb</Output>
-      <Time>2012-02-15T19:12:21.7355245-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke.xnb</Output>
+      <Time>2012-03-09T10:15:14.2141841-06:00</Time>
     </Item>
     <Item>
       <Source>spacescapes\spacescape_green.dds</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_green.xnb</Output>
-      <Time>2012-02-15T19:12:21.8415306-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_green.xnb</Output>
+      <Time>2012-03-09T10:15:13.8551636-06:00</Time>
     </Item>
     <Item>
       <Source>spacescapes\spacescape_blue.dds</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_blue.xnb</Output>
-      <Time>2012-02-15T19:12:21.7995282-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_blue.xnb</Output>
+      <Time>2012-03-09T10:15:13.8141612-06:00</Time>
     </Item>
     <Item>
       <Source>textures\skybox2.dds</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\skybox2.xnb</Output>
-      <Time>2012-02-15T19:12:21.7325243-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\skybox2.xnb</Output>
+      <Time>2012-03-09T10:15:14.212184-06:00</Time>
     </Item>
     <Item>
       <Source>textures\starfield2.dds</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\starfield2.xnb</Output>
-      <Time>2012-02-15T19:12:21.9035341-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\starfield2.xnb</Output>
+      <Time>2012-03-09T10:15:14.2761877-06:00</Time>
     </Item>
     <Item>
       <Source>textures\Sky128.dds</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\Sky128.xnb</Output>
-      <Time>2012-02-15T19:12:21.6305185-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\Sky128.xnb</Output>
+      <Time>2012-03-09T10:15:14.1271791-06:00</Time>
     </Item>
     <Item>
       <Source>Thrusters\NoiseVolume.dds</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\NoiseVolume.xnb</Output>
-      <Time>2012-02-15T19:12:20.6344615-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\NoiseVolume.xnb</Output>
+      <Time>2012-03-09T10:15:13.3641355-06:00</Time>
     </Item>
     <Item>
       <Source>textures\missiletrack.png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\missiletrack.xnb</Output>
-      <Time>2012-02-15T19:12:21.6475195-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\missiletrack.xnb</Output>
+      <Time>2012-03-09T10:15:14.1381798-06:00</Time>
     </Item>
     <Item>
       <Source>textures\redDotSmall.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\redDotSmall.xnb</Output>
-      <Time>2012-02-15T19:12:21.6985224-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\redDotSmall.xnb</Output>
+      <Time>2012-03-09T10:15:14.1511805-06:00</Time>
     </Item>
     <Item>
       <Source>textures\yellowDotSmall.png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\yellowDotSmall.xnb</Output>
-      <Time>2012-02-15T19:12:21.9045342-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\yellowDotSmall.xnb</Output>
+      <Time>2012-03-09T10:15:14.2771877-06:00</Time>
     </Item>
     <Item>
       <Source>textures\explo.png</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\explo.xnb</Output>
-      <Time>2012-02-15T19:12:21.6405191-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\explo.xnb</Output>
+      <Time>2012-03-09T10:15:14.1341795-06:00</Time>
     </Item>
     <Item>
       <Source>textures\dummy.jpg</Source>
@@ -322,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\dummy.xnb</Output>
-      <Time>2012-02-15T19:12:21.639519-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\dummy.xnb</Output>
+      <Time>2012-03-09T10:15:14.1331795-06:00</Time>
     </Item>
     <Item>
       <Source>textures\spark.png</Source>
@@ -331,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\spark.xnb</Output>
-      <Time>2012-02-15T19:12:21.8425306-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\spark.xnb</Output>
+      <Time>2012-03-09T10:15:14.2151842-06:00</Time>
     </Item>
     <Item>
       <Source>textures\SelectionBox.png</Source>
@@ -340,8 +340,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\SelectionBox.xnb</Output>
-      <Time>2012-02-15T19:12:21.2814985-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\SelectionBox.xnb</Output>
+      <Time>2012-03-09T10:15:13.8661642-06:00</Time>
     </Item>
     <Item>
       <Source>textures\move_icon.png</Source>
@@ -349,8 +349,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\move_icon.xnb</Output>
-      <Time>2012-02-15T19:12:21.6475195-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\move_icon.xnb</Output>
+      <Time>2012-03-09T10:15:14.1381798-06:00</Time>
     </Item>
     <Item>
       <Source>textures\smoke2.png</Source>
@@ -358,8 +358,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke2.xnb</Output>
-      <Time>2012-02-15T19:12:21.7355245-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke2.xnb</Output>
+      <Time>2012-03-09T10:15:14.2151842-06:00</Time>
     </Item>
     <Item>
       <Source>textures\blackDotLarge.png</Source>
@@ -367,8 +367,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\blackDotLarge.xnb</Output>
-      <Time>2012-02-15T19:12:21.638519-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\blackDotLarge.xnb</Output>
+      <Time>2012-03-09T10:15:14.1331795-06:00</Time>
     </Item>
     <Item>
       <Source>Models\3732.jpg</Source>
@@ -376,8 +376,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\3732.xnb</Output>
-      <Time>2012-02-15T19:12:19.6194035-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\3732.xnb</Output>
+      <Time>2012-03-09T10:15:12.8671071-06:00</Time>
     </Item>
     <Item>
       <Source>textures\hbartex.png</Source>
@@ -385,8 +385,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\hbartex.xnb</Output>
-      <Time>2012-02-15T19:12:21.6465194-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\hbartex.xnb</Output>
+      <Time>2012-03-09T10:15:14.1381798-06:00</Time>
     </Item>
     <Item>
       <Source>textures\GUI\cpanel1.png</Source>
@@ -394,8 +394,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel1.xnb</Output>
-      <Time>2012-02-15T19:12:21.272498-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel1.xnb</Output>
+      <Time>2012-03-09T10:15:13.8561636-06:00</Time>
     </Item>
     <Item>
       <Source>textures\GUI\cpanel2.png</Source>
@@ -403,8 +403,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel2.xnb</Output>
-      <Time>2012-02-15T19:12:21.2744981-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel2.xnb</Output>
+      <Time>2012-03-09T10:15:13.8591638-06:00</Time>
     </Item>
     <Item>
       <Source>textures\GUI\mWindow.png</Source>
@@ -412,8 +412,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\mWindow.xnb</Output>
-      <Time>2012-02-15T19:12:21.2754982-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\mWindow.xnb</Output>
+      <Time>2012-03-09T10:15:13.8591638-06:00</Time>
     </Item>
     <Item>
       <Source>textures\GUI\textdialog1.png</Source>
@@ -421,8 +421,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\textdialog1.xnb</Output>
-      <Time>2012-02-15T19:12:21.2754982-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\textdialog1.xnb</Output>
+      <Time>2012-03-09T10:15:13.8601639-06:00</Time>
     </Item>
     <Item>
       <Source>textures\HUD\centertarget.png</Source>
@@ -430,8 +430,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\centertarget.xnb</Output>
-      <Time>2012-02-15T19:12:21.2764983-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\centertarget.xnb</Output>
+      <Time>2012-03-09T10:15:13.8611639-06:00</Time>
     </Item>
     <Item>
       <Source>textures\HUD\target_track.png</Source>
@@ -439,8 +439,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\target_track.xnb</Output>
-      <Time>2012-02-15T19:12:21.2804985-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\HUD\target_track.xnb</Output>
+      <Time>2012-03-09T10:15:13.8661642-06:00</Time>
     </Item>
     <Item>
       <Source>spacescapes\pink_complex.dds</Source>
@@ -448,8 +448,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\pink_complex.xnb</Output>
-      <Time>2012-02-27T19:59:33.2895072-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\pink_complex.xnb</Output>
+      <Time>2012-03-09T10:15:13.7531578-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\ship_hull19.jpg</Source>
@@ -457,8 +457,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19.xnb</Output>
-      <Time>2012-02-15T19:12:20.3654461-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19.xnb</Output>
+      <Time>2012-03-09T10:15:13.2541292-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\bump_6.jpg</Source>
@@ -466,8 +466,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\bump_6.xnb</Output>
-      <Time>2012-01-21T18:11:54.0813056-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\bump_6.xnb</Output>
+      <Time>2012-03-09T10:15:13.1341223-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\color_6.jpg</Source>
@@ -475,8 +475,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\color_6.xnb</Output>
-      <Time>2012-03-08T20:01:48.7625871-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\color_6.xnb</Output>
+      <Time>2012-03-09T10:15:13.1351224-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\illumination_6.jpg</Source>
@@ -484,8 +484,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\illumination_6.xnb</Output>
-      <Time>2011-12-15T19:30:55.515625-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\illumination_6.xnb</Output>
+      <Time>2012-03-09T10:15:13.1721245-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\specular_6.jpg</Source>
@@ -493,8 +493,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\specular_6.xnb</Output>
-      <Time>2011-12-15T19:32:08.28125-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\specular_6.xnb</Output>
+      <Time>2012-03-09T10:15:13.1721245-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_1.jpg</Source>
@@ -502,8 +502,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1.xnb</Output>
-      <Time>2010-04-07T00:44:32.796875-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1.xnb</Output>
+      <Time>2012-03-09T10:15:13.1751247-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_1_bump.jpg</Source>
@@ -511,8 +511,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_bump.xnb</Output>
-      <Time>2010-04-06T22:58:53.9375-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_bump.xnb</Output>
+      <Time>2012-03-09T10:15:13.1771248-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_1_specular.jpg</Source>
@@ -520,8 +520,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_specular.xnb</Output>
-      <Time>2010-04-06T22:59:52.640625-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_specular.xnb</Output>
+      <Time>2012-03-09T10:15:13.180125-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\bump.jpg</Source>
@@ -529,8 +529,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\bump.xnb</Output>
-      <Time>2010-09-02T02:22:51.359375-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\bump.xnb</Output>
+      <Time>2012-03-09T10:15:13.2581294-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\color.jpg</Source>
@@ -538,8 +538,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\color.xnb</Output>
-      <Time>2010-09-02T02:21:08.765625-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\color.xnb</Output>
+      <Time>2012-03-09T10:15:13.2611296-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\illumination.jpg</Source>
@@ -547,8 +547,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\illumination.xnb</Output>
-      <Time>2010-09-02T02:25:55.078125-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\illumination.xnb</Output>
+      <Time>2012-03-09T10:15:13.2621297-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\specular.jpg</Source>
@@ -556,8 +556,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\specular.xnb</Output>
-      <Time>2010-09-02T02:28:36.671875-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\specular.xnb</Output>
+      <Time>2012-03-09T10:15:13.2631297-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\bomber_b1\color.jpg</Source>
@@ -565,8 +565,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\color.xnb</Output>
-      <Time>2010-10-23T19:02:45.6875-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\color.xnb</Output>
+      <Time>2012-03-09T10:15:13.0701187-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m3\fighter_1.jpg</Source>
@@ -574,8 +574,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1.xnb</Output>
-      <Time>2012-03-08T20:40:12.2112106-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1.xnb</Output>
+      <Time>2012-03-09T10:15:13.1851253-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m3\fighter_1_bump.jpg</Source>
@@ -583,8 +583,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_bump.xnb</Output>
-      <Time>2012-03-08T20:40:12.2122106-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_bump.xnb</Output>
+      <Time>2012-03-09T10:15:13.1871254-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m3\fighter_1_specular.jpg</Source>
@@ -592,8 +592,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_specular.xnb</Output>
-      <Time>2012-03-08T20:40:12.2132107-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_specular.xnb</Output>
+      <Time>2012-03-09T10:15:13.1901256-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\transplanegreen.png</Source>
+      <Name>Models\tacmap_items\transplanegreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\transplanegreen.xnb</Output>
+      <Time>2012-03-13T10:52:56.4635776-05:00</Time>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
@@ -601,11 +610,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\LaserBolt2.xnb</Output>
-      <Time>2012-02-15T19:12:19.7144089-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\LaserBolt2.xnb</Output>
+      <Time>2012-03-09T10:15:12.8971088-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\LaserBolt2_0.xml</Key>
-        <Value>2012-03-09T20:54:37.828861-06:00</Value>
+        <Value>2012-03-13T15:14:09.9550501-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -614,11 +623,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb</Output>
-      <Time>2012-02-15T19:12:20.6364616-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb</Output>
+      <Time>2012-03-09T10:15:13.3661356-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2012-03-09T20:54:37.9778695-06:00</Value>
+        <Value>2012-03-13T15:14:10.0780571-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -627,13 +636,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Fleet_KM100.xnb</Output>
-      <Time>2012-03-09T20:50:33.5208874-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Fleet_KM100.xnb</Output>
+      <Time>2012-03-12T13:22:03.0358861-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Fleet_KM100_0.xml</Key>
-        <Value>2012-03-09T20:54:39.0589314-06:00</Value>
+        <Value>2012-03-13T15:14:11.1671194-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\basic_bullet.FBX</Source>
@@ -641,11 +650,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\basic_bullet.xnb</Output>
-      <Time>2012-03-12T21:45:06.0592852-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\basic_bullet.xnb</Output>
+      <Time>2012-03-13T10:52:56.4615775-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_bullet_0.xml</Key>
-        <Value>2012-03-12T21:45:10.6875499-05:00</Value>
+        <Value>2012-03-13T15:14:12.2721826-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -654,13 +663,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\basic_missile.xnb</Output>
-      <Time>2012-03-09T20:58:41.409793-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\basic_missile.xnb</Output>
+      <Time>2012-03-12T13:22:03.0418864-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\basic_missile_0.xml</Key>
-        <Value>2012-03-09T20:58:46.8351033-06:00</Value>
+        <Value>2012-03-13T15:14:13.4172481-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\largeSphere.FBX</Source>
@@ -668,11 +677,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\largeSphere.xnb</Output>
-      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\largeSphere.xnb</Output>
+      <Time>2012-03-09T10:15:13.3241332-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\largeSphere_0.xml</Key>
-        <Value>2012-03-09T20:54:42.5171291-06:00</Value>
+        <Value>2012-03-13T15:14:14.5373122-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -681,11 +690,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_large_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.6024597-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_large_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3311336-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_large_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:43.5581887-06:00</Value>
+        <Value>2012-03-13T15:14:15.566371-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -694,11 +703,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_medium_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.6034598-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_medium_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3321337-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_medium_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:44.5992482-06:00</Value>
+        <Value>2012-03-13T15:14:16.5994301-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -707,11 +716,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_small_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.60746-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue_small_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3341338-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\blue_small_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:45.6383077-06:00</Value>
+        <Value>2012-03-13T15:14:17.6444899-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -720,11 +729,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_large_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.60846-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_large_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3351338-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_large_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:46.9063802-06:00</Value>
+        <Value>2012-03-13T15:14:18.6825493-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -733,11 +742,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_medium_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.60846-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_medium_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3351338-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_medium_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:47.9554402-06:00</Value>
+        <Value>2012-03-13T15:14:19.7156083-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -746,11 +755,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_small_plane.xnb</Output>
-      <Time>2012-02-15T19:12:20.6094601-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_small_plane.xnb</Output>
+      <Time>2012-03-09T10:15:13.3361339-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\tacmap_items\red_small_plane_0.xml</Key>
-        <Value>2012-03-09T20:54:48.9994999-06:00</Value>
+        <Value>2012-03-13T15:14:20.7636683-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -759,13 +768,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_crusier.xnb</Output>
-      <Time>2012-02-20T21:17:25.0636171-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_crusier.xnb</Output>
+      <Time>2012-03-09T10:15:12.9951144-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_crusier_0.xml</Key>
-        <Value>2012-03-09T20:54:50.4255815-06:00</Value>
+        <Value>2012-03-13T15:14:22.3597596-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_frigate.FBX</Source>
@@ -773,13 +782,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_frigate.xnb</Output>
-      <Time>2012-02-17T21:42:53.6196204-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_frigate.xnb</Output>
+      <Time>2012-03-09T10:15:13.0001147-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_frigate_0.xml</Key>
-        <Value>2012-03-09T20:54:51.8346621-06:00</Value>
+        <Value>2012-03-13T15:14:23.7158371-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_heavy_fighter.FBX</Source>
@@ -787,13 +796,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_heavy_fighter.xnb</Output>
-      <Time>2012-02-18T18:01:47.6411281-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_heavy_fighter.xnb</Output>
+      <Time>2012-03-09T10:15:12.9481117-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_heavy_fighter_0.xml</Key>
-        <Value>2012-03-09T20:54:53.7177698-06:00</Value>
+        <Value>2012-03-13T15:14:24.9809095-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_bomber.FBX</Source>
@@ -801,13 +810,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_bomber.xnb</Output>
-      <Time>2012-02-17T22:02:25.8746695-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_bomber.xnb</Output>
+      <Time>2012-03-09T10:15:12.9251104-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_bomber_0.xml</Key>
-        <Value>2012-03-09T20:54:55.1418512-06:00</Value>
+        <Value>2012-03-13T15:14:26.2519822-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_bomber.FBX</Source>
@@ -815,13 +824,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_bomber.xnb</Output>
-      <Time>2012-02-17T22:44:03.75254-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_bomber.xnb</Output>
+      <Time>2012-03-09T10:15:12.970113-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_bomber_0.xml</Key>
-        <Value>2012-03-09T20:54:56.4629268-06:00</Value>
+        <Value>2012-03-13T15:14:27.5790581-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\sphere.FBX</Source>
@@ -829,11 +838,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\sphere.xnb</Output>
-      <Time>2012-02-18T18:08:21.105633-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\sphere.xnb</Output>
+      <Time>2012-03-09T10:15:13.3291335-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\sphere_0.xml</Key>
-        <Value>2012-03-09T20:54:57.7119982-06:00</Value>
+        <Value>2012-03-13T15:14:29.1251465-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -842,13 +851,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb</Output>
-      <Time>2012-02-18T19:45:11.2324197-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb</Output>
+      <Time>2012-03-09T10:15:13.0081151-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_heavy_crusier_0.xml</Key>
-        <Value>2012-03-09T20:54:59.3270906-06:00</Value>
+        <Value>2012-03-13T15:14:30.2682119-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_attack_bomber.FBX</Source>
@@ -856,13 +865,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_attack_bomber.xnb</Output>
-      <Time>2012-02-20T21:09:59.8301512-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_attack_bomber.xnb</Output>
+      <Time>2012-03-09T10:15:12.9661127-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_attack_bomber_0.xml</Key>
-        <Value>2012-03-09T20:55:00.8461775-06:00</Value>
+        <Value>2012-03-13T15:14:31.6492909-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_corvette.FBX</Source>
@@ -870,13 +879,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_corvette.xnb</Output>
-      <Time>2012-02-20T21:09:16.415668-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Fleet\fleet_corvette.xnb</Output>
+      <Time>2012-03-09T10:15:12.9781134-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Fleet\fleet_corvette_0.xml</Key>
-        <Value>2012-03-09T20:55:02.1082497-06:00</Value>
+        <Value>2012-03-13T15:14:32.8473594-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_fighter_a.FBX</Source>
@@ -884,13 +893,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_fighter_a.xnb</Output>
-      <Time>2012-02-20T21:05:38.4342002-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_fighter_a.xnb</Output>
+      <Time>2012-03-09T10:15:12.936111-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\Eriax\eriax_fighter_a_0.xml</Key>
-        <Value>2012-03-09T20:55:03.4923289-06:00</Value>
+        <Value>2012-03-13T15:14:34.1044313-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\planet.FBX</Source>
@@ -898,11 +907,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\planet.xnb</Output>
-      <Time>2012-02-27T18:51:36.7690915-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\planet.xnb</Output>
+      <Time>2012-03-09T10:15:13.3271334-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\planet_0.xml</Key>
-        <Value>2012-03-09T20:55:04.6893973-06:00</Value>
+        <Value>2012-03-13T15:14:35.1974939-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -911,13 +920,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\frigate_c1\frigate_c1.xnb</Output>
-      <Time>2012-03-08T19:35:57.4408565-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\frigate_c1\frigate_c1.xnb</Output>
+      <Time>2012-03-09T10:15:13.2081266-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\frigate_c1\frigate_c1_0.xml</Key>
-        <Value>2012-03-09T20:55:06.1234794-06:00</Value>
+        <Value>2012-03-13T15:14:36.6145749-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\fighter_m1.FBX</Source>
@@ -925,13 +934,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\fighter_m1.xnb</Output>
-      <Time>2012-03-08T20:03:40.0569527-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\fighter_m1.xnb</Output>
+      <Time>2012-03-09T10:15:13.1691244-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\fighter_m1\fighter_m1_0.xml</Key>
-        <Value>2012-03-09T20:55:09.2366574-06:00</Value>
+        <Value>2012-03-13T15:14:39.5697439-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_m2.FBX</Source>
@@ -939,13 +948,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_m2.xnb</Output>
-      <Time>2012-03-08T20:16:46.6749447-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_m2.xnb</Output>
+      <Time>2012-03-09T10:15:13.1821251-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\fighter_m2\fighter_m2_0.xml</Key>
-        <Value>2012-03-09T20:55:10.4327258-06:00</Value>
+        <Value>2012-03-13T15:14:40.777813-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\station_t1.FBX</Source>
@@ -953,13 +962,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\station_t1.xnb</Output>
-      <Time>2012-03-08T20:36:37.4109247-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\station_t1.xnb</Output>
+      <Time>2012-03-09T10:15:13.26713-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\station_t1\station_t1_0.xml</Key>
-        <Value>2012-03-09T20:55:11.6667964-06:00</Value>
+        <Value>2012-03-13T15:14:42.0158839-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\COLOR_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\COLOR_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\bomber_b1\bomber_b1.FBX</Source>
@@ -967,13 +976,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\bomber_b1.xnb</Output>
-      <Time>2012-03-08T20:34:20.1061975-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\bomber_b1.xnb</Output>
+      <Time>2012-03-09T10:15:13.0681186-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\bomber_b1\bomber_b1_0.xml</Key>
-        <Value>2012-03-09T20:55:12.8978668-06:00</Value>
+        <Value>2012-03-13T15:14:43.2819563-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m3\fighter_m3.FBX</Source>
@@ -981,34 +990,47 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_m3.xnb</Output>
-      <Time>2012-03-08T20:42:57.5506674-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_m3.xnb</Output>
+      <Time>2012-03-09T10:15:13.1921257-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\fighter_m3\fighter_m3_0.xml</Key>
-        <Value>2012-03-09T20:55:14.0839347-06:00</Value>
+        <Value>2012-03-13T15:14:44.5110266-05:00</Value>
       </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb</Request>
+      <Request>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\cannon.FBX</Source>
+      <Name>Models\cannon</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\cannon.xnb</Output>
+      <Time>2012-03-13T10:52:56.4625776-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\cannon_0.xml</Key>
+        <Value>2012-03-13T15:14:45.7180956-05:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\LaserBolt2_0.xml</Output>
-      <Time>2012-02-15T19:12:19.7144089-06:00</Time>
+      <Time>2012-03-09T10:15:12.8971088-06:00</Time>
     </Item>
     <Item>
       <Source>Thrusters\ThrustCylinderB.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Thrusters\ThrustCylinderB_0.xml</Output>
-      <Time>2012-02-15T19:12:20.6364616-06:00</Time>
+      <Time>2012-03-09T10:15:13.3661356-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Fleet_KM100.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Fleet_KM100_0.xml</Output>
-      <Time>2012-03-09T20:50:33.5208874-06:00</Time>
+      <Time>2012-03-12T13:22:03.0358861-05:00</Time>
     </Item>
     <Item>
       <Source>Models\km200.xTranslucent_Glass_Tinted.jpg</Source>
@@ -1022,22 +1044,22 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.485453-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.3221331-06:00</Time>
     </Item>
     <Item>
       <Source>Models\basic_bullet.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\basic_bullet_0.xml</Output>
-      <Time>2012-03-12T21:45:06.0592852-05:00</Time>
+      <Time>2012-03-13T10:52:56.4615775-05:00</Time>
     </Item>
     <Item>
       <Source>Models\basic_missile.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\basic_missile_0.xml</Output>
-      <Time>2012-03-09T20:58:41.409793-06:00</Time>
+      <Time>2012-03-12T13:22:03.0418864-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Lakerem.jpg</Source>
@@ -1051,64 +1073,64 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.4864531-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Lakerem_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.3231332-06:00</Time>
     </Item>
     <Item>
       <Source>Models\largeSphere.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\largeSphere_0.xml</Output>
-      <Time>2012-02-15T19:12:20.5984595-06:00</Time>
+      <Time>2012-03-09T10:15:13.3241332-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\blue_large_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\blue_large_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.6024597-06:00</Time>
+      <Time>2012-03-09T10:15:13.3311336-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\blue_medium_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\blue_medium_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.6034598-06:00</Time>
+      <Time>2012-03-09T10:15:13.3321337-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\blue_small_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\blue_small_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.60746-06:00</Time>
+      <Time>2012-03-09T10:15:13.3341338-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\red_large_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\red_large_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.60846-06:00</Time>
+      <Time>2012-03-09T10:15:13.3351338-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\red_medium_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\red_medium_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.60846-06:00</Time>
+      <Time>2012-03-09T10:15:13.3351338-06:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\red_small_plane.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\tacmap_items\red_small_plane_0.xml</Output>
-      <Time>2012-02-15T19:12:20.6094601-06:00</Time>
+      <Time>2012-03-09T10:15:13.3361339-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_crusier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_crusier_0.xml</Output>
-      <Time>2012-02-20T21:17:25.0636171-06:00</Time>
+      <Time>2012-03-09T10:15:12.9951144-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Metal_Pa.jpg</Source>
@@ -1122,29 +1144,29 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Output>
-      <Time>2012-02-17T22:59:11.6774703-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.0661185-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_frigate.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_frigate_0.xml</Output>
-      <Time>2012-02-17T21:42:53.6196204-06:00</Time>
+      <Time>2012-03-09T10:15:13.0001147-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_heavy_fighter.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Eriax\eriax_heavy_fighter_0.xml</Output>
-      <Time>2012-02-18T18:01:47.6411281-06:00</Time>
+      <Time>2012-03-09T10:15:12.9481117-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_bomber.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Eriax\eriax_bomber_0.xml</Output>
-      <Time>2012-02-17T22:02:25.8746695-06:00</Time>
+      <Time>2012-03-09T10:15:12.9251104-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Material.jpg</Source>
@@ -1158,18 +1180,18 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb</Output>
-      <Time>2012-02-17T22:43:09.9684637-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.0651184-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_bomber.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_bomber_0.xml</Output>
-      <Time>2012-02-17T22:44:03.75254-06:00</Time>
+      <Time>2012-03-09T10:15:12.970113-06:00</Time>
     </Item>
     <Item>
-      <Source>C:\Users\bryan\Desktop\test2.jpg</Source>
+      <Source>C:\Users\bhaase\Documents\Desktop\test2.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -1180,57 +1202,57 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Output>
-      <Time>2012-02-17T22:43:09.9684637-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\test2_0.xnb</Output>
+      <Time>2009-07-14T00:32:31.67454-05:00</Time>
     </Item>
     <Item>
       <Source>Models\sphere.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\sphere_0.xml</Output>
-      <Time>2012-02-18T18:08:21.105633-06:00</Time>
+      <Time>2012-03-09T10:15:13.3291335-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_heavy_crusier.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_heavy_crusier_0.xml</Output>
-      <Time>2012-02-18T19:45:11.2324197-06:00</Time>
+      <Time>2012-03-09T10:15:13.0081151-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_attack_bomber.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_attack_bomber_0.xml</Output>
-      <Time>2012-02-20T21:09:59.8301512-06:00</Time>
+      <Time>2012-03-09T10:15:12.9661127-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Fleet\fleet_corvette.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Fleet\fleet_corvette_0.xml</Output>
-      <Time>2012-02-20T21:09:16.415668-06:00</Time>
+      <Time>2012-03-09T10:15:12.9781134-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\Eriax\eriax_fighter_a.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\Eriax\eriax_fighter_a_0.xml</Output>
-      <Time>2012-02-20T21:05:38.4342002-06:00</Time>
+      <Time>2012-03-09T10:15:12.936111-06:00</Time>
     </Item>
     <Item>
       <Source>Models\planet.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\planet_0.xml</Output>
-      <Time>2012-02-27T18:51:36.7690915-06:00</Time>
+      <Time>2012-03-09T10:15:13.3271334-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\frigate_c1\frigate_c1.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\frigate_c1\frigate_c1_0.xml</Output>
-      <Time>2012-03-08T19:35:57.4408565-06:00</Time>
+      <Time>2012-03-09T10:15:13.2081266-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\ship_hull19.jpg</Source>
@@ -1244,15 +1266,15 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19_0.xnb</Output>
-      <Time>2012-02-15T19:12:20.3654461-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\ship_hull19_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.2541292-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\fighter_m1.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\fighter_m1\fighter_m1_0.xml</Output>
-      <Time>2012-03-08T20:03:40.0569527-06:00</Time>
+      <Time>2012-03-09T10:15:13.1691244-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m1\COLOR_6.JPG</Source>
@@ -1266,15 +1288,15 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Output>
-      <Time>2012-03-08T20:01:48.7625871-06:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.1351224-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_m2.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\fighter_m2\fighter_m2_0.xml</Output>
-      <Time>2012-03-08T20:16:46.6749447-06:00</Time>
+      <Time>2012-03-09T10:15:13.1821251-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m2\fighter_1.jpg</Source>
@@ -1288,15 +1310,15 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Output>
-      <Time>2010-04-07T00:44:32.796875-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.1751247-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\station_t1.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\station_t1\station_t1_0.xml</Output>
-      <Time>2012-03-08T20:36:37.4109247-06:00</Time>
+      <Time>2012-03-09T10:15:13.26713-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\COLOR.JPG</Source>
@@ -1310,15 +1332,15 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\COLOR_0.xnb</Output>
-      <Time>2010-09-02T02:21:08.765625-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\COLOR_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.2611296-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\bomber_b1\bomber_b1.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\bomber_b1\bomber_b1_0.xml</Output>
-      <Time>2012-03-08T20:34:20.1061975-06:00</Time>
+      <Time>2012-03-09T10:15:13.0681186-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\bomber_b1\COLOR.JPG</Source>
@@ -1332,18 +1354,18 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Output>
-      <Time>2010-10-23T19:02:45.6875-05:00</Time>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Output>
+      <Time>2012-03-09T10:15:13.0701187-06:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fighter_m3\fighter_m3.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\fighter_m3\fighter_m3_0.xml</Output>
-      <Time>2012-03-08T20:42:57.5506674-06:00</Time>
+      <Time>2012-03-09T10:15:13.1921257-06:00</Time>
     </Item>
     <Item>
-      <Source>C:\Users\bryan\Desktop\space_frigate_0\color_0.jpg</Source>
+      <Source>C:\Users\bhaase\Documents\Desktop\space_frigate_0\color_0.jpg</Source>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Parameters>
@@ -1354,47 +1376,25 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb</Output>
-      <Time>2011-02-24T12:36:22.296875-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\transplanegreen.png</Source>
-      <Name>Models\tacmap_items\transplanegreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\transplanegreen.xnb</Output>
-      <Time>2012-03-11T19:44:56.4012894-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\cannon.FBX</Source>
-      <Name>Models\cannon</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\cannon.xnb</Output>
-      <Time>2012-03-12T21:53:38.1635759-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\cannon_0.xml</Key>
-        <Value>2012-03-12T21:54:18.4658811-05:00</Value>
-      </Dependency>
+      <Output>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb</Output>
+      <Time>2012-02-20T09:53:01.5204604-06:00</Time>
     </Item>
     <Item>
       <Source>Models\cannon.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\cannon_0.xml</Output>
-      <Time>2012-03-12T21:53:38.1635759-05:00</Time>
+      <Time>2012-03-13T10:52:56.4625776-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\bryan\Saturn-IV\SaturnIV\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\bryan\Saturn-IV\SaturnIV\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\bryan\Saturn-IV\SaturnIV\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -1423,7 +1423,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-12-19T21:41:35.2694508-06:00</Value>
+        <Value>2012-02-13T11:07:18.5178182-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

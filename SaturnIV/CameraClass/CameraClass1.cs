@@ -60,7 +60,7 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, 1.5f, 700000f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, 1.5f, 500000f);
         }
 
         public void Update(Matrix chasedObjectsWorld, bool isEditMode)
@@ -77,7 +77,7 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 45.0)
+                if (zoomFactor < 25.0)
                 zoomFactor += (WheelVal * 0.55f);
             }
 

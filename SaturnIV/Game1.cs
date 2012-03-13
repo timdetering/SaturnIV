@@ -321,6 +321,7 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
+            Vector3 myMouse3dVector = mouse3dVector;
 
             if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
                 mouseStatePrevious.LeftButton == ButtonState.Released)
@@ -336,7 +337,7 @@ namespace SaturnIV
                 if (!isEditMode)
                 {
                     isSelected = true;
-                    selectionRect = selectRectangle(mouseStateCurrent, mouse3dVector);
+                    selectionRect = selectRectangle(mouseStateCurrent, myMouse3dVector);
                 }
             }
             else
@@ -369,7 +370,7 @@ namespace SaturnIV
                 isInvalidArea = false;
                 potentialTarget = null;
                 foreach (newShipStruct thisShip in activeShipList)
-                    if (EditModeComponent.checkIsSelected(mouse3dVector, thisShip.modelBoundingSphere))
+                    if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
                     {
                         isInvalidArea = true;
                         potentialTarget = thisShip;
@@ -382,7 +383,7 @@ namespace SaturnIV
                     tmpShipName = rNameList.capitalShipNames[2];
                     rNameList.capitalShipNames.Remove(tmpShipName);
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
-                    newShipStruct newShip = EditModeComponent.spawnNPC(mouse3dVector, ref shipDefList,
+                    newShipStruct newShip = EditModeComponent.spawnNPC(myMouse3dVector, ref shipDefList,
                         tmpShipName, Gui.thisShip, Gui.thisFaction);
                     activeShipList.Add(newShip);
                 }
@@ -416,7 +417,7 @@ namespace SaturnIV
                 isInvalidArea = false;
                 potentialTarget = null;
                 foreach (newShipStruct thisShip in activeShipList)
-                    if (EditModeComponent.checkIsSelected(mouse3dVector, thisShip.modelBoundingSphere))
+                    if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
                     {
                         isInvalidArea = true;
                         potentialTarget = thisShip;
@@ -429,8 +430,8 @@ namespace SaturnIV
                         if (potentialTarget != null && potentialTarget.team != thisShip.team)
                             thisShip.currentTarget = potentialTarget;
                         thisShip.currentDisposition = disposition.moving;
-                        thisShip.targetPosition = mouse3dVector;
-                        thisShip.wayPointPosition = mouse3dVector;
+                        thisShip.targetPosition = myMouse3dVector;
+                        thisShip.wayPointPosition = myMouse3dVector;
                     }
             }
             if (isChat) typeSpeed = 50;
@@ -630,7 +631,7 @@ namespace SaturnIV
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch, mouse3dVector);
+            if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
             spriteBatch.End();
             spriteBatch.Begin();
@@ -804,6 +805,33 @@ namespace SaturnIV
             return pt;
         }
 
+        Vector3 mousePosition
+        {
+            get
+            {
+                MouseState mouseState = Mouse.GetState();
+                Vector2 ms = new Vector2(mouseState.X,mouseState.Y);
+                //  Unproject the screen space mouse coordinate into model space 
+                //  coordinates. Because the world space matrix is identity, this 
+                //  gives the coordinates in world space.
+                Viewport vp = GraphicsDevice.Viewport;
+                //  Note the order of the parameters! Projection first.
+                Vector3 pos1 = vp.Unproject(new Vector3(ms.X, ms.Y, 0), ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
+                Vector3 pos2 = vp.Unproject(new Vector3(ms.X, ms.Y, 1), ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
+                Vector3 dir = Vector3.Normalize(pos2 - pos1);
+                Vector3 ppos = Vector3.Zero;
+                //  If the mouse ray is aimed parallel with the world plane, then don't 
+                //  intersect, because that would divide by zero.
+                if (dir.Y != 0)
+                {
+                    Vector3 x = pos1 - dir * (pos1.Y / dir.Y);
+                    ppos = x;
+                    return ppos;
+                }
+                return Vector3.Zero;
+            }
+        }
+
         Vector3 mouse3dVector
         {
             get
@@ -849,8 +877,6 @@ namespace SaturnIV
 
         public void debug(newShipStruct npcship)
         {
-
-
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
             //                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
             //                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);

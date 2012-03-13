@@ -80,10 +80,9 @@ namespace SaturnIV
             starEffects = game.Content.Load<Effect>("Effects/pointsprites");
             starEffects.Parameters["SpriteTexture"].SetValue(
                 game.Content.Load<Texture2D>("textures/star"));
-            //starList= new VertexPositionColor[30000];
             vertexPosColDecl = new VertexDeclaration(game.GraphicsDevice,
                 VertexPositionColor.VertexElements);
-            generateStarField(game, 3000);
+            generateStarField(game, 2000);
         }
 
          private VertexPositionTexture[] SetUpFullscreenVertices()
