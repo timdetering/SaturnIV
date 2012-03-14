@@ -323,7 +323,7 @@ namespace SaturnIV
             tempData.EvadeDist = shipDefList[shipIndex].EvadeDist;
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;
             tempData.ChasePrefs = shipDefList[shipIndex].ChasePrefs;
-            tempData.engageDist = shipDefList[shipIndex].EngageDist;
+            tempData.maxDetectRange = shipDefList[shipIndex].maxDetectRange;
             tempData.squadNo = -1;
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             //Build Bounding Frustrum for all Weapon Modules on ship

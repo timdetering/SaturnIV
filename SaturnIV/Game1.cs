@@ -300,7 +300,7 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             if (loopTimer < 0)
                 loopTimer = currentTime;
-            if (currentTime - loopTimer > 200)
+            if (currentTime - loopTimer > 500)
             {
                 foreach (newShipStruct thisShip in activeShipList)
                 {

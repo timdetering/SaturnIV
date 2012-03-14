@@ -126,7 +126,6 @@ namespace SaturnIV
         public bool canEngageMultipleTargets;
         public float[] EvadeDist;
         public float[] TargetPrefs;
-        public float[] engageDist;
         public bool isBehind;
         public int[] ChasePrefs;
         public double lastWeaponFireTime;
@@ -142,6 +141,7 @@ namespace SaturnIV
         public float modelLen;
         public float modelWidth;
         public float speed;
+        public float maxDetectRange;
         public bool isSquad;
         public int squadNo = -1;
         public bool isSquadLeader;
@@ -196,7 +196,7 @@ namespace SaturnIV
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public int[] ChasePrefs;
-        public float[] EngageDist;
+        public float maxDetectRange;
         public WeaponModule[] AvailableWeapons;
         public Vector3 ThrusterPosition;
     }
