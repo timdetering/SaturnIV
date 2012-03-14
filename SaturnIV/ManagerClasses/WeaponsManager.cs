@@ -122,7 +122,7 @@ namespace SaturnIV
             // Apply velocity
             thisObject.modelPosition += thisObject.Velocity * elapsed;
             //if (thisObject.objectClass != WeaponClassEnum.Beam)
-                thisObject.worldMatrix = Matrix.CreateScale(thisObject.objectScale) * rotationMatrix;
+                thisObject.worldMatrix = rotationMatrix;
             thisObject.distanceFromOrigin = Vector3.Distance(thisObject.modelPosition, thisObject.missileOrigin.modelPosition);
             if (thisObject.missileTarget != null)
                 thisObject.distanceFromTarget = Vector3.Distance(thisObject.modelPosition, thisObject.missileTarget.modelPosition);
@@ -140,7 +140,7 @@ namespace SaturnIV
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
-                    Matrix wMatrix = weapon.worldMatrix;
+                    Matrix wMatrix = Matrix.CreateScale(new Vector3(250, 1, 500)) * weapon.worldMatrix;
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.Begin();

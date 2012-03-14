@@ -300,7 +300,7 @@ namespace SaturnIV
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             if (loopTimer < 0)
                 loopTimer = currentTime;
-            if (currentTime - loopTimer > 1000)
+            if (currentTime - loopTimer > 200)
             {
                 foreach (newShipStruct thisShip in activeShipList)
                 {
@@ -720,7 +720,7 @@ namespace SaturnIV
                         starty += 10;
                     }
                 }
-                if (Project(enemy.modelPosition, viewport, ourCamera, Matrix.Identity).Z < 1 && !isEditMode)
+                if (!isEditMode)
                 {
                     switch (enemy.team)
                     {
@@ -734,15 +734,19 @@ namespace SaturnIV
                     if (enemy.isSelected)
                         shipColor = Color.White;
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
+                    
                     buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    buffer.AppendFormat("[" + enemy.currentDisposition + "]");
-                    buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
-                    buffer.AppendFormat("[" + enemy.isEvading + "]");
-                    buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
-                    if (enemy.currentTarget != null)
+                    if (isDebug)
                     {
-                        buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
-                        buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
+                        buffer.AppendFormat("[" + enemy.currentDisposition + "]");
+                        buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
+                        buffer.AppendFormat("[" + enemy.isEvading + "]");
+                        buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
+                        if (enemy.currentTarget != null)
+                        {
+                            buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
+                            buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
+                        }
                     }
                     spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
@@ -798,12 +802,7 @@ namespace SaturnIV
             }
         }
 
-        private Vector3 Project(Vector3 point, Viewport wholeViewport, CameraNew camera, Matrix world)
-        {
-            Vector4 mp = Vector4.Transform(new Vector4(point, 1.0f), Matrix.Invert(world));
-            Vector3 pt = wholeViewport.Project(new Vector3(mp.X, mp.Y, mp.Z), ourCamera.projectionMatrix, ourCamera.viewMatrix, world);
-            return pt;
-        }
+ 
 
         Vector3 mouse3dVector
         {
@@ -832,54 +831,11 @@ namespace SaturnIV
             }
         }
 
-        Vector3 mouse3dVector2
-        {
-            get
-            {
-                MouseState mouseState = Mouse.GetState();
-                int mouseX = mouseState.X;
-                int mouseY = mouseState.Y;
-                Vector3 nearsource = new Vector3((float)mouseX, (float)mouseY, 0f);
-                Vector3 farsource = new Vector3((float)mouseX, (float)mouseY, 1f);
-
-                Matrix world = Matrix.CreateTranslation(0, 0, 0);
-
-                nearpoint = GraphicsDevice.Viewport.Unproject(nearsource,
-                 ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
-
-                farpoint = GraphicsDevice.Viewport.Unproject(farsource,
-                    ourCamera.projectionMatrix, ourCamera.viewMatrix, Matrix.Identity);
-                // Create a ray from the near clip plane to the far clip plane.
-                Vector3 direction = farpoint - nearpoint;
-                direction.Normalize();
-                currentMouseRay = new Ray(nearpoint, direction);
-
-                //Check if the ray is pointing down towards the ground
-                //(aka will it intersect the plane)
-                if (currentMouseRay.Direction.Y < 0)
-                {
-                    float xPos = 0f;
-                    float zPos = 0f;
-
-                    //Move the ray lower along its direction vector
-                    while (currentMouseRay.Position.Y > 0)
-                    {
-                        currentMouseRay.Position += currentMouseRay.Direction;
-                        xPos = currentMouseRay.Position.X;
-                        zPos = currentMouseRay.Position.Z;
-                    }
-                    return new Vector3(xPos, 0, zPos);
-                }
-                else
-                    return new Vector3(0, 0, 0);
-            }
-        }
-
         public void debug(newShipStruct npcship)
         {
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            //                   foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
-            //                     BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                               foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
+                                 BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 

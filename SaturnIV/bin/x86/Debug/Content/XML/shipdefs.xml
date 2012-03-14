@@ -29,42 +29,42 @@
       <Item>
         <weaponType>PointDefense</weaponType>
         <ModulePositionOnShip>
+          4 0 0 0
+          -4 0 0 0
+          4 0 0 1
+          -4 0 0 1
+          4000 0 0 2
+          -4000 0 0 2
+          3000 0 0 3
+          -3000 0 0 3
+          -1234 0 3330 3
+          1234 0 111 2
+          -4 0 222 3
+        </ModulePositionOnShip>
+        <FiringEnvelopeAngle>65</FiringEnvelopeAngle>
+        <weaponRange>50000</weaponRange>
+        <timer>0</timer>
+      </Item>
+      <Item>
+        <weaponType>LRMH</weaponType>
+        <ModulePositionOnShip>
           4 0 0 2
           -4 0 0 2
           4 0 0 3
           -4 0 0 3
-        </ModulePositionOnShip>
-        <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
-        <weaponRange>100000</weaponRange>
-        <timer>0</timer>
-      </Item>
-      <Item>
-	 <weaponType>PointDefense</weaponType>
-	 <ModulePositionOnShip>
-     4 0 0 2
-     -4 0 0 3
-     4 0 -2200 2
-     -1234 0 3330 3
-     1234 0 111 2
-     -4 0 222 3
-   </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>85</FiringEnvelopeAngle>
-	<weaponRange>80000</weaponRange>
-	<timer>0</timer>
-      </Item>   
-      <Item>
-        <weaponType>AutoCannon</weaponType>
-        <ModulePositionOnShip>
           4000 0 0 2
           -4000 0 0 2
-          4000 0 0 3
-          -4000 0 0 3
+          3000 0 0 3
+          -3000 0 0 3
+          -1234 0 3330 3
+          1234 0 111 2
+          -4 0 222 3
         </ModulePositionOnShip>
-        <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
         <weaponRange>100000</weaponRange>
         <timer>0</timer>
       </Item>
-      </AvailableWeapons>
+    </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>

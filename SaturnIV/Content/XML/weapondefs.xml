@@ -2,20 +2,20 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
    <Item>
-      <FileName>Models//cannon</FileName>
+      <FileName>Models//basic_bullet</FileName>
       <Type>PointDefense</Type>
       <Mass>1.25</Mass>
-      <Thrust>12200</Thrust>
+      <Thrust>28200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>8</Agility>
+      <Scale>6</Scale>
+      <Agility>18</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Cannon</wClass>
-      <isProjectile>1</isProjectile>
-      <isHoming>0</isHoming>
+      <isProjectile>0</isProjectile>
+      <isHoming>1</isHoming>
       <regenTime>250</regenTime>
       <damageFactor>5</damageFactor>
-      <range>125000</range>
+      <range>100000</range>
       <timeToLive>1700</timeToLive>	  
     </Item>
     <Item>
@@ -83,25 +83,25 @@
       <isHoming>1</isHoming>
       <regenTime>2000</regenTime>
       <damageFactor>5</damageFactor>
-      <range>15000</range>
+      <range>25000</range>
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
       <FileName>Models//basic_bullet</FileName>
       <Type>AutoCannon</Type>
-      <Mass>0.25</Mass>
-      <Thrust>10000</Thrust>
+      <Mass>1.25</Mass>
+      <Thrust>20000</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>100</Scale>
+	  <Scale>3</Scale>
 	  <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>100</regenTime>
+      <regenTime>300</regenTime>
       <damageFactor>15</damageFactor>
       <range>90000</range>	
-      <timeToLive>4000</timeToLive>	  
+      <timeToLive>1000</timeToLive>	  
     </Item>
 <Item>
       <FileName>Models//LaserBolt2</FileName>
