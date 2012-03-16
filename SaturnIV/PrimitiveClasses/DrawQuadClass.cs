@@ -13,11 +13,11 @@ namespace SaturnIV
     public class DrawQuadClass
     {
         
-        public void DrawQuad(VertexDeclaration quadVertexDecl, BasicEffect quadEffect, Matrix View, Matrix Projection, Quad quad, Texture2D texture)
+        public void DrawQuad(VertexDeclaration quadVertexDecl, BasicEffect quadEffect, Matrix View, Matrix Projection, Quad quad, Texture2D texture,Vector3 pos)
         {
             Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = true;
-            quadEffect.EnableDefaultLighting();
-            quadEffect.World = Matrix.CreateRotationZ(MathHelper.ToRadians(-90)) * Matrix.CreateWorld(new Vector3(0,-50000,0), Vector3.Forward, Vector3.Up);
+            quadEffect.EnableDefaultLighting();            
+            quadEffect.World = Matrix.CreateRotationZ(MathHelper.ToRadians(-90)) * Matrix.CreateWorld(pos, Vector3.Forward, Vector3.Up);
             quadEffect.View = View;
             quadEffect.Projection = Projection;
             quadEffect.TextureEnabled = true;

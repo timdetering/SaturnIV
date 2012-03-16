@@ -73,7 +73,7 @@ namespace SaturnIV
                 tempData.planetRadius = 225; // Position.Next(100, planetRadiusBoundry);
                 tempData.planetPosition = HelperClass.RandomPosition(-90000, 90000);
                 tempData.planetPosition.Y = -200000;
-                tempData.planetTexture = planetTextureArray[0];
+                tempData.planetTexture = planetTextureArray[1];
                 planetList.Add(tempData);
             }
         }

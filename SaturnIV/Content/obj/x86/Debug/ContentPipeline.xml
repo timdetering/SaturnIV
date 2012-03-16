@@ -602,7 +602,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\transplanegreen.xnb</Output>
-      <Time>2012-03-11T19:44:56.4012894-05:00</Time>
+      <Time>2012-03-15T18:09:45.3775176-05:00</Time>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
@@ -963,10 +963,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\station_t1.xnb</Output>
-      <Time>2012-03-08T20:36:37.4109247-06:00</Time>
+      <Time>2012-03-15T21:21:09.8236737-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Ships\station_t1\station_t1_0.xml</Key>
-        <Value>2012-03-13T19:02:38.0999708-05:00</Value>
+        <Value>2012-03-15T21:21:15.0199709-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\COLOR_0.xnb</Request>
     </Item>
@@ -1318,7 +1318,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Ships\station_t1\station_t1_0.xml</Output>
-      <Time>2012-03-08T20:36:37.4109247-06:00</Time>
+      <Time>2012-03-15T21:21:09.8236737-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t1\COLOR.JPG</Source>
@@ -1385,6 +1385,15 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\cannon_0.xml</Output>
       <Time>2012-03-12T21:53:38.1635759-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\orange_target.png</Source>
+      <Name>Models\tacmap_items\orange_target</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\orange_target.xnb</Output>
+      <Time>2012-03-15T20:44:42.934403-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

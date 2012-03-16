@@ -44,7 +44,7 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
-        Texture2D transCircleGreen;
+        Texture2D transCircleGreen, orangeTarget;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         public StringBuilder messageBuffer = new StringBuilder();
@@ -171,8 +171,7 @@ namespace SaturnIV
             drawQuad = new DrawQuadClass();
             quadEffect = new BasicEffect(GraphicsDevice,null);
             quadVertexDecl = new VertexDeclaration(graphics.GraphicsDevice,
-               VertexPositionNormalTexture.VertexElements);
-            tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Left, Vector3.Up, 300000, 300000);
+               VertexPositionNormalTexture.VertexElements);            
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             ////////////Add Components
@@ -211,6 +210,7 @@ namespace SaturnIV
             systemMapSphere = this.Content.Load<Model>("models//planet");
             planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
             transCircleGreen = this.Content.Load<Texture2D>("Models/tacmap_items/transplanegreen");
+            orangeTarget = this.Content.Load<Texture2D>("Models/tacmap_items/orange_target");
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1);
@@ -562,20 +562,20 @@ namespace SaturnIV
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -1000f;
+                    cameraTargetVec3.X += -200f * CameraNew.zoomFactor;
                     //roll = 0.023f;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 1000f;
+                    cameraTargetVec3.X += 200f * CameraNew.zoomFactor;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 1000f;
+                    cameraTargetVec3.Z += 200f * CameraNew.zoomFactor;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -1000f;
+                    cameraTargetVec3.Z += -200f * CameraNew.zoomFactor;
                 }
 
 
@@ -624,10 +624,10 @@ namespace SaturnIV
             /// Draw system Map if systemMap mode is selected!
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);
-            //planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
+            planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
             drawMainObjects(gameTime);
             /// Draw tacitcal Circle Element
-            drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, transCircleGreen);
+            //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
@@ -666,6 +666,13 @@ namespace SaturnIV
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
                 if (isDebug)
                     debug(npcship);
+                spriteBatch.Begin();
+                if (npcship.team > 0)                
+                    spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X-24, (int)npcship.screenCords.Y-24, 48, 48), Color.Red);
+                else
+                    spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X - 24, (int)npcship.screenCords.Y - 24, 48, 48), Color.Blue);                
+                spriteBatch.End();
+
             }
             modelManager.DrawModel(ourCamera, modelDictionary[playerShip.objectFileName], playerShip.worldMatrix, Color.Blue, true);
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
@@ -734,10 +741,10 @@ namespace SaturnIV
                     if (enemy.isSelected)
                         shipColor = Color.White;
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
-                    
-                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
+                    if (enemy.isSelected)
+                        buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     if (isDebug)
-                    {
+                    {                       
                         buffer.AppendFormat("[" + enemy.currentDisposition + "]");
                         buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
                         buffer.AppendFormat("[" + enemy.isEvading + "]");

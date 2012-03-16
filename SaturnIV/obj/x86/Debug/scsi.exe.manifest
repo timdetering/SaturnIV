@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="113152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="113664">
       <assemblyIdentity name="scsi" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Izgd6Ms7eieWTuMguBpUnMuhUZw=</dsig:DigestValue>
+        <dsig:DigestValue>ce+lIm4HbBS0hDhLd3VqYBMj9qk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -648,13 +648,13 @@
       <dsig:DigestValue>h+Zq4/1XRjin4nFyF7IXt7H5RbQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\Ships\station_t1\station_t1.xnb" size="84432">
+  <file name="Content\Models\Ships\station_t1\station_t1.xnb" size="108840">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uw3bfHL41vbaWe7AmckhVsHO/hQ=</dsig:DigestValue>
+      <dsig:DigestValue>cONBrHuD+qjgfAQWdKnRPNn+48o=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\sphere.xnb" size="8291">
@@ -693,6 +693,15 @@
       <dsig:DigestValue>37gU8K1Pb3nQyRdVUJhDruIBWLM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\orange_target.xnb" size="4194389">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>LVpQM0K1FZBh5OE5UKUXxEYgchU=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\tacmap_items\red_large_plane.xnb" size="12705">
     <hash>
       <dsig:Transforms>
@@ -726,7 +735,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>C0IhSi55YemJIGTP6ezip4iqjww=</dsig:DigestValue>
+      <dsig:DigestValue>/JXpXdzbUMuzwyTmolpQX9VPFfw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SmallFont.xnb" size="13282">
@@ -1080,22 +1089,22 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="8948">
+  <file name="Content\XML\shipdefs.xml" size="8852">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>MYD0enUJJKlvgBWFR81BAxwIelU=</dsig:DigestValue>
+      <dsig:DigestValue>w3k/33c7WTZgSi2VXa4S1nim3ps=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4366">
+  <file name="Content\XML\weapondefs.xml" size="4368">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>YsFubk/35op8Gg/rC14m1O3Uit8=</dsig:DigestValue>
+      <dsig:DigestValue>oNwbp/b9/KMotnyq6nBG3lvTw4Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

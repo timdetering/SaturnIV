@@ -9,11 +9,11 @@
     <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
       <Type>Atlas Class Frigate</Type>
-      <Mass>15</Mass>
-      <Thrust>21000</Thrust>
+      <Mass>12</Mass>
+      <Thrust>25000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>0.75</Agility>
+      <Agility>1.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
@@ -21,7 +21,7 @@
 	    <hullValue>3600</hullValue>
 	    <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>15000 10000 40000 20000 100 10000</EvadeDist>      
+      <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>      
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
 	    <ChasePrefs>0 0 1 1 0 0</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange>
@@ -33,9 +33,7 @@
           -4 0 0 0
           4 0 0 1
           -4 0 0 1
-          4000 0 0 2
-          -4000 0 0 2
-          3000 0 0 3
+           3000 0 0 3
           -3000 0 0 3
           -1234 0 3330 3
           1234 0 111 2
@@ -53,8 +51,6 @@
           4 0 0 3
           -4 0 0 3
           4000 0 0 2
-          -4000 0 0 2
-          3000 0 0 3
           -3000 0 0 3
           -1234 0 3330 3
           1234 0 111 2
@@ -180,7 +176,7 @@
             -4 0 0 0
             4 0 0 0
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
           <weaponRange>25000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -190,7 +186,7 @@
             0 0 10 0
             0 0 -20 0
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>85</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
           <weaponRange>30000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -212,7 +208,7 @@
 	    <hullValue>900</hullValue>
 	    <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>3500 2500 2500 2500 2500 500</EvadeDist>
+      <EvadeDist>3500 4500 3500 2500 2500 500</EvadeDist>
       <TargetPrefs>0.1 0.9 0.9 0.8 0.2 0.1</TargetPrefs>
       <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange> 
@@ -248,7 +244,7 @@
       <Thrust>0</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
-      <Agility>1.15</Agility>
+      <Agility>0</Agility>
       <BelongsTo>Fleet</BelongsTo> 
 	  <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.30</ShieldFactor>

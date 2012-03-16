@@ -636,6 +636,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\tacmap_items\orange_target.png">
+      <Name>orange_target</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Systems\" />
   </ItemGroup>

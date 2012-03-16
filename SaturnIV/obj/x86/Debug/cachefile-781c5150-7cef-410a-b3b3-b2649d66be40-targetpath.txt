@@ -106,6 +106,7 @@ Content\Models\Ships\fighter_m2\fighter_1_0.xnb
 Content\Models\Ships\station_t1\COLOR_0.xnb
 Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\color_0_0.xnb
+Content\Models\tacmap_items\orange_target.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml
