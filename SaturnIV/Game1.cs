@@ -66,6 +66,7 @@ namespace SaturnIV
         public ModelManager modelManager;
         public WeaponsManager weaponsManager;
         public SystemClass systemManager;
+        public BuildManager buildManager;
         public static List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
         public SerializerClass serializerClass;
@@ -90,6 +91,7 @@ namespace SaturnIV
         bool isDebug = false;
         bool isInvalidArea = false;
         bool isSystemMap = false;
+        bool showBuildMenu = false;
         public static bool drawTextbox = false;
         newShipStruct potentialTarget;
         int screenX, screenY, screenCenterX, screenCenterY;
@@ -146,6 +148,7 @@ namespace SaturnIV
             weaponsManager = new WeaponsManager(this);
             weaponsManager.Initialize();
             systemManager = new SystemClass();
+            buildManager = new BuildManager();
             ////////////Initalize Starfield
             starField = new RenderStarfield(this);
             InitializeStarFieldEffect();
@@ -396,20 +399,11 @@ namespace SaturnIV
                     serializerClass.loadScenario(Gui.loadThisScenario, ref activeShipList, ref shipDefList);
                     Gui.loadThisScenario = null;
                 }
-
             }
 
             if (isLclicked && !isEditMode)
             {
-                isSelected = false;
-                foreach (newShipStruct thisShip in activeShipList)
-                    if (EditModeComponent.checkIsSelected(mouse3dVector, thisShip.modelBoundingSphere))
-                    {
-                        thisShip.isSelected = true;
-                        isSelected = true;
-                    }
-                    else
-                        thisShip.isSelected = false;
+
             }
 
             if (isRclicked && !isEditMode && isSelected)
@@ -532,18 +526,7 @@ namespace SaturnIV
                 MessageClass.messageLog.Add("Debug Mode Off");
                 isDebug = false;
             }
-
-            if (keyboardState.IsKeyDown(Keys.F9) &&
-                !oldkeyboardState.IsKeyDown(Keys.F9))
-            {
-                planetSaveStruct newPlanet = new planetSaveStruct();
-                newPlanet.planetRadius = 1000;
-                newPlanet.planetTextureFile = "textures//redtexture";
-                systemManager.createNewSystem("Orion", Vector3.Zero, newPlanet, "Orion_System", 1);
-                systemManager.createNewSystem("Orion", new Vector3(10000, 0, 25000), newPlanet, "Orion_System", 1);
-                systemManager.createNewSystem("Alpha", new Vector3(40000, 0, 5000), newPlanet, "Alpha_System", 1);
-                serializerClass.saveSystemList("Orion", SystemClass.systemList);
-            }
+          
             if (!isChat)
             {
                 if (keyboardState.IsKeyDown(Keys.M) &&
@@ -630,6 +613,7 @@ namespace SaturnIV
             //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
+            if (showBuildMenu) buildManager.DrawBuildMenu(spriteBatch, spriteFont);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
@@ -799,13 +783,20 @@ namespace SaturnIV
 
         public void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
         {
+            showBuildMenu = false;
             foreach (newShipStruct o in objectsList)
             {
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
-                    o.isSelected = true;
+                {
+                    if (o.objectClass == ClassesEnum.Foundry)
+                        showBuildMenu = true;
+                    o.isSelected = true;                
+                }
                 else
+                {
                     o.isSelected = false;
+                }
             }
         }
 

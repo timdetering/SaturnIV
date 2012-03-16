@@ -99,6 +99,7 @@
     <Compile Include="AIClass.cs" />
     <Compile Include="BloomClasses\BloomComponent.cs" />
     <Compile Include="BloomClasses\BloomSettings.cs" />
+    <Compile Include="ManagerClasses\BuildManager.cs" />
     <Compile Include="PrimitiveClasses\boundingspheredraw.cs" />
     <Compile Include="PrimitiveClasses\boundingFrustumRender.cs" />
     <Compile Include="myAI\BoidClass.cs" />

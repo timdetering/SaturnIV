@@ -124,6 +124,8 @@ namespace SaturnIV
         public bool isPursuing;
         public bool isAlreadyEngaged;
         public bool canEngageMultipleTargets;
+        public bool isBuilding;
+        public float buildingProgress;
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public bool isBehind;
@@ -233,7 +235,7 @@ namespace SaturnIV
         {
             Fighter = 0,
             Crusier = 1,
-            Capitalship = 2,
+            Foundry = 2,
             Frigate = 3,
             Bomber = 4,
             SWACS = 5

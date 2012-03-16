@@ -65,6 +65,7 @@ Content\Models\Ships\fighter_m3\fighter_1.xnb
 Content\Models\Ships\fighter_m3\fighter_1_bump.xnb
 Content\Models\Ships\fighter_m3\fighter_1_specular.xnb
 Content\Models\tacmap_items\transplanegreen.xnb
+Content\Models\tacmap_items\orange_target.xnb
 Content\Models\LaserBolt2.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\Models\Fleet_KM100.xnb
@@ -106,7 +107,6 @@ Content\Models\Ships\fighter_m2\fighter_1_0.xnb
 Content\Models\Ships\station_t1\COLOR_0.xnb
 Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\color_0_0.xnb
-Content\Models\tacmap_items\orange_target.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml

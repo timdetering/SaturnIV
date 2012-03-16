@@ -239,14 +239,14 @@
     </Item>
 		<Item>
       <FileName>Models/Ships/station_t1/station_t1</FileName>
-      <Type>Dry Dock Ship Foundry</Type>
+      <Type>Orion Ship Foundry</Type>
       <Mass>100</Mass>
       <Thrust>0</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>0</Agility>
       <BelongsTo>Fleet</BelongsTo> 
-	  <ShipClass>Crusier</ShipClass>
+	  <ShipClass>Foundry</ShipClass>
       <ShieldFactor>0.30</ShieldFactor>
 	  <HullFactor>0.15</HullFactor>
 	  <hullValue>3600</hullValue>
