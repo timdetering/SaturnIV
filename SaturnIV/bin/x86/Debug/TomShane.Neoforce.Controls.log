@@ -1,0 +1,75 @@
+////////////////////////////////////////////////////////////////
+    Date: 3/16/2012 6:35:36 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.6.1910.1437
+ Message: Could not find a part of the path 'C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Skins\Default.skin'.
+////////////////////////////////////////////////////////////////
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.OpenRead(String path)
+   at TomShane.Neoforce.External.Zip.ZipFile.get_ReadStream()
+   at TomShane.Neoforce.External.Zip.ZipFile.Read(String zipfilename, Boolean TurnOnDebug)
+   at TomShane.Neoforce.External.Zip.ZipFile.Read(String zipfilename)
+   at TomShane.Neoforce.Controls.ArchiveManager..ctor(IServiceProvider serviceProvider, String archive)
+   at TomShane.Neoforce.Controls.Skin..ctor(Manager manager, String name)
+   at TomShane.Neoforce.Controls.Manager.SetSkin(String name)
+   at TomShane.Neoforce.Controls.Manager.Initialize()
+   at SaturnIV.Game1.Initialize() in C:\Users\bryan\Saturn-IV\SaturnIV\Game1.cs:line 184
+   at Microsoft.Xna.Framework.Game.Run()
+   at SaturnIV.Program.Main(String[] args) in C:\Users\bryan\Saturn-IV\SaturnIV\Program.cs:line 14
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+    Date: 3/16/2012 6:38:29 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.6.1910.1437
+ Message: Nesting more than one SpriteBatch.Begin when using a SpriteBatch with SpriteSortMode.Immediate is not allowed.
+////////////////////////////////////////////////////////////////
+   at Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin(SpriteBlendMode blendMode, SpriteSortMode sortMode, SaveStateMode stateMode, Matrix transformMatrix)
+   at Microsoft.Xna.Framework.Graphics.SpriteBatch.Begin(SpriteBlendMode blendMode, SpriteSortMode sortMode, SaveStateMode stateMode)
+   at TomShane.Neoforce.Controls.Renderer.Begin(BlendingMode mode)
+   at TomShane.Neoforce.Controls.Control.PrepareTexture(Renderer renderer, GameTime gameTime)
+   at TomShane.Neoforce.Controls.Control.PrepareTexture(Renderer renderer, GameTime gameTime)
+   at TomShane.Neoforce.Controls.Window.PrepareTexture(Renderer renderer, GameTime gameTime)
+   at TomShane.Neoforce.Controls.Manager.Draw(GameTime gameTime)
+   at SaturnIV.Game1.Draw(GameTime gameTime) in C:\Users\bryan\Saturn-IV\SaturnIV\Game1.cs:line 636
+   at Microsoft.Xna.Framework.Game.DrawFrame()
+   at Microsoft.Xna.Framework.Game.Tick()
+   at Microsoft.Xna.Framework.Game.HostIdle(Object sender, EventArgs e)
+   at Microsoft.Xna.Framework.GameHost.OnIdle()
+   at Microsoft.Xna.Framework.WindowsGameHost.ApplicationIdle(Object sender, EventArgs e)
+   at System.Windows.Forms.Application.ThreadContext.System.Windows.Forms.UnsafeNativeMethods.IMsoComponent.FDoIdle(Int32 grfidlef)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(Int32 dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at Microsoft.Xna.Framework.WindowsGameHost.Run()
+   at Microsoft.Xna.Framework.Game.Run()
+   at SaturnIV.Program.Main(String[] args) in C:\Users\bryan\Saturn-IV\SaturnIV\Program.cs:line 14
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+    Date: 3/16/2012 6:54:48 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.6.1910.1437
+ Message: Unable to cast object of type 'SaturnIV.ClassesEnum' to type 'System.String'.
+////////////////////////////////////////////////////////////////
+   at SaturnIV.NeoForceClass.initGUI(Game game, GraphicsDeviceManager graphics) in C:\Users\bryan\Saturn-IV\SaturnIV\GUI\NeoForceClass.cs:line 38
+   at SaturnIV.Game1.Initialize() in C:\Users\bryan\Saturn-IV\SaturnIV\Game1.cs:line 182
+   at Microsoft.Xna.Framework.Game.Run()
+   at SaturnIV.Program.Main(String[] args) in C:\Users\bryan\Saturn-IV\SaturnIV\Program.cs:line 14
+////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+    Date: 3/16/2012 6:55:16 PM
+Assembly: TomShane.Neoforce.Controls.dll
+ Version: 0.6.1910.1437
+ Message: Unable to cast object of type 'SaturnIV.ClassesEnum' to type 'System.String'.
+////////////////////////////////////////////////////////////////
+   at SaturnIV.NeoForceClass.initGUI(Game game, GraphicsDeviceManager graphics) in C:\Users\bryan\Saturn-IV\SaturnIV\GUI\NeoForceClass.cs:line 38
+   at SaturnIV.Game1.Initialize() in C:\Users\bryan\Saturn-IV\SaturnIV\Game1.cs:line 182
+   at Microsoft.Xna.Framework.Game.Run()
+   at SaturnIV.Program.Main(String[] args) in C:\Users\bryan\Saturn-IV\SaturnIV\Program.cs:line 14
+////////////////////////////////////////////////////////////////
+

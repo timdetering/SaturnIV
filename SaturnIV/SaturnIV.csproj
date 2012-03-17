@@ -94,11 +94,17 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
       <Private>False</Private>
     </Reference>
+    <Reference Include="TomShane.Neoforce.Controls, Version=0.6.1910.1437, Culture=neutral, PublicKeyToken=f1d905e03f113061, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Tom Shane\Neoforce Controls\Bin\TomShane.Neoforce.Controls.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AIClass.cs" />
     <Compile Include="BloomClasses\BloomComponent.cs" />
     <Compile Include="BloomClasses\BloomSettings.cs" />
+    <Compile Include="GUI\actionMenuClass.cs" />
+    <Compile Include="GUI\NeoForceClass.cs" />
     <Compile Include="ManagerClasses\BuildManager.cs" />
     <Compile Include="PrimitiveClasses\boundingspheredraw.cs" />
     <Compile Include="PrimitiveClasses\boundingFrustumRender.cs" />

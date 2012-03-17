@@ -643,6 +643,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="textures\GUI\medbox.png">
+      <Name>medbox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Systems\" />
   </ItemGroup>

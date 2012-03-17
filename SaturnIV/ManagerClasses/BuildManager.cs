@@ -27,12 +27,5 @@ namespace SaturnIV
         public void updateBuilds(double currentTime, newShipStruct buildThisObject)
         {
         }
-        public void DrawBuildMenu(SpriteBatch spriteBatch, SpriteFont spriteFont)
-        {
-            Vector2 pos = new Vector2(100, 768);
-            spriteBatch.Begin();
-                spriteBatch.DrawString(spriteFont, "Build Menu", pos, Color.Yellow);
-            spriteBatch.End();
-        }
     }
 }

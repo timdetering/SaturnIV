@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
+using TomShane.Neoforce.Controls;
 
 namespace SaturnIV
 {
@@ -23,6 +24,8 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        actionMenuClass aMenu;
+        NeoForceClass neoForce;
         public CameraNew ourCamera;
         Vector3 defaultCameraOffset = new Vector3(10, 5000, 0);
         public static GraphicsDeviceManager graphics;
@@ -92,6 +95,7 @@ namespace SaturnIV
         bool isInvalidArea = false;
         bool isSystemMap = false;
         bool showBuildMenu = false;
+        bool inAMenu = false;
         public static bool drawTextbox = false;
         newShipStruct potentialTarget;
         int screenX, screenY, screenCenterX, screenCenterY;
@@ -111,7 +115,6 @@ namespace SaturnIV
         public static Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
         DrawQuadClass drawQuad;
         BasicEffect quadEffect;
-        Quad tacPlaneQuad;
 
         public Game1()
         {
@@ -177,7 +180,9 @@ namespace SaturnIV
                VertexPositionNormalTexture.VertexElements);            
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
+            aMenu = new actionMenuClass();
             ////////////Add Components
+            
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
             base.Initialize();
@@ -214,6 +219,7 @@ namespace SaturnIV
             planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
             transCircleGreen = this.Content.Load<Texture2D>("Models/tacmap_items/transplanegreen");
             orangeTarget = this.Content.Load<Texture2D>("Models/tacmap_items/orange_target");
+            aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1);
@@ -261,6 +267,7 @@ namespace SaturnIV
         {
             processInput(gameTime);
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
+            aMenu.update(mouseStateCurrent, mouseStatePrevious, ref shipDefList);
             if (isEditMode || isSystemMap)
             {
                 ourCamera.ResetCamera();
@@ -321,43 +328,24 @@ namespace SaturnIV
 
         protected void processInput(GameTime gameTime)
         {
+            if (showBuildMenu && aMenu.medRec.Intersects(new Rectangle((int)mouseStateCurrent.X, (int)mouseStateCurrent.Y, 5, 5)))
+                inAMenu = true;
+            else
+                inAMenu = false;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
             Vector3 myMouse3dVector = mouse3dVector;
 
-            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                mouseStatePrevious.LeftButton == ButtonState.Released)
-            {
-                isLclicked = true;
-                isLdown = false;
-            }
-            else if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                     mouseStatePrevious.LeftButton == ButtonState.Pressed)
-            {
-                isLclicked = false;
-                isLdown = true;
-                if (!isEditMode)
-                {
-                    isSelected = true;
-                    selectionRect = selectRectangle(mouseStateCurrent, myMouse3dVector);
-                }
-            }
-            else
-            {
-                isLclicked = false;
-                isLdown = false;
-                selectionRect = Rectangle.Empty;
-            }
 
             if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-             mouseStatePrevious.RightButton == ButtonState.Released)
+                mouseStatePrevious.RightButton == ButtonState.Released)
             {
                 isRclicked = true;
                 isRdown = false;
             }
             else if (mouseStateCurrent.RightButton == ButtonState.Pressed &&
-         mouseStatePrevious.RightButton == ButtonState.Pressed)
+                    mouseStatePrevious.RightButton == ButtonState.Pressed)
             {
                 isRclicked = false;
                 isRdown = true;
@@ -367,67 +355,93 @@ namespace SaturnIV
                 isRclicked = false;
                 isRdown = false;
             }
-
-            if (isRclicked && isEditMode && !EditModeComponent.isSelecting)
-            {
-                isInvalidArea = false;
-                potentialTarget = null;
-                foreach (newShipStruct thisShip in activeShipList)
-                    if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
-                    {
-                        isInvalidArea = true;
-                        potentialTarget = thisShip;
-                        break;
-                    }
-                if (!isInvalidArea)
+                if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                    mouseStatePrevious.LeftButton == ButtonState.Released)
                 {
-                    int rLen = rNameList.capitalShipNames.Count;
-                    int i = rand.Next(0, rLen);
-                    tmpShipName = rNameList.capitalShipNames[2];
-                    rNameList.capitalShipNames.Remove(tmpShipName);
-                    messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
-                    newShipStruct newShip = EditModeComponent.spawnNPC(myMouse3dVector, ref shipDefList,
-                        tmpShipName, Gui.thisShip, Gui.thisFaction);
-                    activeShipList.Add(newShip);
+                    isLclicked = true;
+                    isLdown = false;
                 }
-            }
-
-            if (isEditMode && guiClass.inGui)
-            {
-                if (Gui.loadThisScenario != null && mouseStateCurrent.LeftButton == ButtonState.Released)
+                if (!inAMenu)
                 {
-                    serializerClass.loadScenario(Gui.loadThisScenario, ref activeShipList, ref shipDefList);
-                    Gui.loadThisScenario = null;
+                    if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                             mouseStatePrevious.LeftButton == ButtonState.Pressed)
+                    {
+                        isLclicked = false;
+                        isLdown = true;
+                        if (!isEditMode)
+                        {
+                            isSelected = true;
+                            selectionRect = selectRectangle(mouseStateCurrent, myMouse3dVector);
+                        }
+                    }
+                    else
+                    {
+                        isLclicked = false;
+                        isLdown = false;
+                        selectionRect = Rectangle.Empty;
+                    }
+
+                    if (isRclicked && isEditMode && !EditModeComponent.isSelecting)
+                    {
+                        isInvalidArea = false;
+                        potentialTarget = null;
+                        foreach (newShipStruct thisShip in activeShipList)
+                            if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
+                            {
+                                isInvalidArea = true;
+                                potentialTarget = thisShip;
+                                break;
+                            }
+                        if (!isInvalidArea)
+                        {
+                            int rLen = rNameList.capitalShipNames.Count;
+                            int i = rand.Next(0, rLen);
+                            tmpShipName = rNameList.capitalShipNames[2];
+                            rNameList.capitalShipNames.Remove(tmpShipName);
+                            messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
+                            newShipStruct newShip = EditModeComponent.spawnNPC(myMouse3dVector, ref shipDefList,
+                                tmpShipName, Gui.thisShip, Gui.thisFaction);
+                            activeShipList.Add(newShip);
+                        }
+                    }
+
+                    if (isEditMode && guiClass.inGui)
+                    {
+                        if (Gui.loadThisScenario != null && mouseStateCurrent.LeftButton == ButtonState.Released)
+                        {
+                            serializerClass.loadScenario(Gui.loadThisScenario, ref activeShipList, ref shipDefList);
+                            Gui.loadThisScenario = null;
+                        }
+                    }
+
+                    if (isLclicked && !isEditMode)
+                    {
+
+                    }
+
+                    if (isRclicked && !isEditMode && isSelected)
+                    {
+                        isInvalidArea = false;
+                        potentialTarget = null;
+                        foreach (newShipStruct thisShip in activeShipList)
+                            if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
+                            {
+                                isInvalidArea = true;
+                                potentialTarget = thisShip;
+                                break;
+                            }
+
+                        foreach (newShipStruct thisShip in activeShipList)
+                            if (thisShip.isSelected)
+                            {
+                                if (potentialTarget != null && potentialTarget.team != thisShip.team)
+                                    thisShip.currentTarget = potentialTarget;
+                                thisShip.currentDisposition = disposition.moving;
+                                thisShip.targetPosition = myMouse3dVector;
+                                thisShip.wayPointPosition = myMouse3dVector;
+                            }
+                    }
                 }
-            }
-
-            if (isLclicked && !isEditMode)
-            {
-
-            }
-
-            if (isRclicked && !isEditMode && isSelected)
-            {
-                isInvalidArea = false;
-                potentialTarget = null;
-                foreach (newShipStruct thisShip in activeShipList)
-                    if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
-                    {
-                        isInvalidArea = true;
-                        potentialTarget = thisShip;
-                        break;
-                    }
-
-                foreach (newShipStruct thisShip in activeShipList)
-                    if (thisShip.isSelected)
-                    {
-                        if (potentialTarget != null && potentialTarget.team != thisShip.team)
-                            thisShip.currentTarget = potentialTarget;
-                        thisShip.currentDisposition = disposition.moving;
-                        thisShip.targetPosition = myMouse3dVector;
-                        thisShip.wayPointPosition = myMouse3dVector;
-                    }
-            }
             if (isChat) typeSpeed = 50;
             else
                 typeSpeed = 100;
@@ -613,12 +627,11 @@ namespace SaturnIV
             //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
-            if (showBuildMenu) buildManager.DrawBuildMenu(spriteBatch, spriteFont);
-            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
+             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
-            spriteBatch.End();
-            spriteBatch.Begin();
+            if (showBuildMenu) aMenu.drawGUI(spriteBatch, spriteFont);
+
             /// We need to fix the selection rectangle in case one of its dimensions is negative                
             /// 
             Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
@@ -790,7 +803,9 @@ namespace SaturnIV
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
                     if (o.objectClass == ClassesEnum.Foundry)
+                    {
                         showBuildMenu = true;
+                    }
                     o.isSelected = true;                
                 }
                 else

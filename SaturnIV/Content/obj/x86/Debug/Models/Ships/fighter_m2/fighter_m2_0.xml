@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Box05</Name>
     <Identity>
-      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_m2\fighter_m2.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_m2\fighter_m2.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>
@@ -31,7 +31,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Material #26</Name>
       <Identity>
-        <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_m2\fighter_m2.FBX</SourceFilename>
+        <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\Ships\fighter_m2\fighter_m2.FBX</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>GeoSphere001</Name>
     <Identity>
-      <SourceFilename>C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\Content\Models\sphere.FBX</SourceFilename>
+      <SourceFilename>C:\Users\bryan\Saturn-IV\SaturnIV\Content\Models\sphere.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>

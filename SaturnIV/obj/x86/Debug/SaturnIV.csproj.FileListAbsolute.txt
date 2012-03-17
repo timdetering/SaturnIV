@@ -800,3 +800,5 @@ C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\orange_target.xnb
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\orange_target.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\TomShane.Neoforce.Controls.dll
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\medbox.xnb
