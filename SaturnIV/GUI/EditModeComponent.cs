@@ -275,7 +275,7 @@ namespace SaturnIV
         }
 
         public static newShipStruct spawnNPC(Vector3 mouse3dVector, ref List<shipData> shipDefList,
-                                    string shipName, int shipIndex, int team)
+                                    string shipName, int shipIndex, int team, bool isBuild)
         {
             newShipStruct tempData = new newShipStruct();
             tempData.objectIndex = shipIndex;
@@ -340,6 +340,7 @@ namespace SaturnIV
             //modelManager.updateShipMovement(gameTime, 5.0f, tempData, ourCamera, true);
             return tempData;
         }
+
         public Rectangle selectRectangle(MouseState mouseState, Vector3 mouse3d)
         {
             if (selectionRect == Rectangle.Empty)

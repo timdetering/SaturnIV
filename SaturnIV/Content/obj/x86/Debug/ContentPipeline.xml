@@ -389,24 +389,6 @@
       <Time>2012-02-15T19:12:21.6465194-06:00</Time>
     </Item>
     <Item>
-      <Source>textures\GUI\cpanel1.png</Source>
-      <Name>textures\GUI\cpanel1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel1.xnb</Output>
-      <Time>2012-02-15T19:12:21.272498-06:00</Time>
-    </Item>
-    <Item>
-      <Source>textures\GUI\cpanel2.png</Source>
-      <Name>textures\GUI\cpanel2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel2.xnb</Output>
-      <Time>2012-02-15T19:12:21.2744981-06:00</Time>
-    </Item>
-    <Item>
       <Source>textures\GUI\mWindow.png</Source>
       <Name>textures\GUI\mWindow</Name>
       <Importer>TextureImporter</Importer>
@@ -1403,6 +1385,15 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\medbox.xnb</Output>
       <Time>2012-03-16T21:24:01.0484557-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\GUI\buildmenubg.png</Source>
+      <Name>textures\GUI\buildmenubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\buildmenubg.xnb</Output>
+      <Time>2012-03-17T15:52:47.6493767-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -526,7 +526,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\blue
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Fleet_KM100.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\hud_target.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\yellowDotSmall.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel2.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\planettexture2.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\SmallFont.xnb
@@ -575,7 +574,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\km200.xTranslucen
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\laser_shader.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\Sky128.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\SkySphere.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\cpanel1.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\smoke2.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\effects.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\starfield2.xnb
@@ -802,3 +800,4 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\oran
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\orange_target.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\TomShane.Neoforce.Controls.dll
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\medbox.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\buildmenubg.xnb

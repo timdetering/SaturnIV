@@ -12,7 +12,7 @@ namespace SaturnIV
 {
     public class actionMenuClass
     {
-        Texture2D dummyTexture, medBox;
+        Texture2D dummyTexture, medBox,buildMBox;
         public Rectangle medRec;
         Color opt1Color;
         public static editOptions currentSelection;
@@ -23,7 +23,7 @@ namespace SaturnIV
         public static bool Show = false;
         public static bool selectTeam = false;
         public static bool LoadScenario = false;
-        public static bool inGui;
+        public static bool inGui, isSelected;
         public string loadThisScenario = null;
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
@@ -48,7 +48,7 @@ namespace SaturnIV
         public void buildShipMenu(List<shipData> shipList)
         {
             menuShipList.Clear();
-            Vector2 pos = new Vector2(50, 775);
+            Vector2 pos = new Vector2(500,400);
             horizontalStartX = (int)pos.X;
             verticalStartY = (int)pos.Y;
             for (int i=0; i < shipList.Count; i++)
@@ -56,7 +56,7 @@ namespace SaturnIV
                 MenuItem tempItem = new MenuItem();
                 tempItem.itemText = shipList[i].Type;
                 tempItem.itemIndex = i;
-                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 225,20);
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 400,20);
                 verticalStartY += 20;
                 menuShipList.Add(tempItem);
             }
@@ -70,11 +70,13 @@ namespace SaturnIV
             buildShipMenu(shipList);
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
             medBox = game.Content.Load<Texture2D>("textures//GUI/medbox") as Texture2D;
-            medRec = new Rectangle(25, 700, 250, 300);
+            buildMBox = game.Content.Load<Texture2D>("textures//GUI/buildmenubg") as Texture2D;
+            medRec = new Rectangle(256,256,768,512);
         }
 
-        public void update(MouseState currentMouse, MouseState oldMouse, ref List<shipData> shipList)
+        public void update(MouseState currentMouse, MouseState oldMouse, BuildManager buildManager, bool isLClicked, Vector3 pos)
         {
+            isSelected = false;
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
             Show = false;
             for (int i = 0; i < menuShipList.Count; i++)
@@ -86,30 +88,42 @@ namespace SaturnIV
                     break;
                 }
             }
-
+            if (isLClicked)
+            {                
+                newShipStruct tempShip = new newShipStruct();
+                buildManager.addBuild(thisShip, "new ship", pos);
+                isSelected = true;
+            }
         }
 
-        public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont)
+        public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
         {            
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
-            mBatch.Draw(medBox, medRec, Color.White);
-            messageBuffer.AppendFormat("Foundry" + "\n");
-            messageBuffer.AppendFormat("Build Ship");
-            mBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(60, 725), Color.Yellow);
-            messageBuffer = new StringBuilder();
+            mBatch.Draw(buildMBox, medRec, Color.White);
+            /// This is the Available Ship List Area
+            /// 
             for (int i = 0; i < menuShipList.Count; i++)
             {
                 if (thisShip == i)
+                {
                     itemColor = Color.White;
+                    mBatch.Draw(dummyTexture, menuShipList[i].itemRectangle, Color.Gray);
+                }
                 else
                     itemColor = Color.Green;
-                    //mBatch.Draw(dummyTexture, menuShipList[i].itemRectangle, Color.Gray);
                     messageBuffer.AppendFormat(menuShipList[i].itemText);
                     mBatch.DrawString(spriteFont, messageBuffer,
                                     new Vector2(menuShipList[i].itemRectangle.X, menuShipList[i].itemRectangle.Y), itemColor);
                     messageBuffer = new StringBuilder();
             }
+            /// This is the Current Build Queue List Area
+            /// 
+            messageBuffer = new StringBuilder();
+            for (int i = 0; i < buildManager.buildQueueList.Count; i++)
+                messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + " " + buildManager.buildQueueList[i].startTime + "\n");
+            mBatch.DrawString(spriteFont, messageBuffer, new Vector2(300, 325), Color.Green);
+                                    
                             
         }
     }

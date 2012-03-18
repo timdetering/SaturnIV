@@ -41,8 +41,6 @@ Content\textures\smoke2.xnb
 Content\textures\blackDotLarge.xnb
 Content\Models\3732.xnb
 Content\textures\hbartex.xnb
-Content\textures\GUI\cpanel1.xnb
-Content\textures\GUI\cpanel2.xnb
 Content\textures\GUI\mWindow.xnb
 Content\textures\GUI\textdialog1.xnb
 Content\textures\HUD\centertarget.xnb
@@ -108,6 +106,7 @@ Content\Models\Ships\station_t1\COLOR_0.xnb
 Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\color_0_0.xnb
 Content\textures\GUI\medbox.xnb
+Content\textures\GUI\buildmenubg.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml

@@ -177,14 +177,14 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-            //if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1000)))
-            //    thisShip.currentDisposition = disposition.patrol;
+            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,1000)))
+                thisShip.currentDisposition = disposition.patrol;
             
             if (thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 1)
             {
                 thisShip.currentTarget = null;
                 thisShip.currentTargetLevel = 0;
-                //thisShip.currentDisposition = disposition.patrol;
+                thisShip.currentDisposition = disposition.patrol;
             }
 
             if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 500000)

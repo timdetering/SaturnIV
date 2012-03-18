@@ -79,7 +79,7 @@ namespace SaturnIV
                     {
                         newShipStruct shipAdd = new newShipStruct();
                         shipAdd.objectAlias = ship.shipName;
-                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side));
+                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
                     }
                 }
 

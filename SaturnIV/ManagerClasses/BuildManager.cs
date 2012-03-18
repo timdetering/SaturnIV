@@ -15,7 +15,18 @@ namespace SaturnIV
 {
     public class BuildManager
     {
+        public List<buildItem> buildQueueList = new List<buildItem>();
         int cost = 10;
+        double currentTime;
+
+        public class buildItem
+        {
+            public Vector3 pos;
+            public string name;
+            public int shipType;
+            public double startTime;
+        }
+
         public enum BuildStates
         {
             notstarted = 0,
@@ -24,8 +35,17 @@ namespace SaturnIV
             done = 3
         }
 
-        public void updateBuilds(double currentTime, newShipStruct buildThisObject)
+        public void addBuild(int sType, string sName, Vector3 sPos)
         {
+            buildItem buildThis = new buildItem();
+            buildThis.pos = sPos; buildThis.name = sName; buildThis.shipType = sType; buildThis.startTime = currentTime;
+            MessageClass.messageLog.Add("Adding New Ship to Foundry Build Queue at" + currentTime);
+            buildQueueList.Add(buildThis);
+        }
+
+        public void updateBuildQueue(ref List<newShipStruct> activeShipList, double cTime)
+        {
+            currentTime = cTime;
         }
     }
 }

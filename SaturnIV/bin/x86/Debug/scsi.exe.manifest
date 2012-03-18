@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="116224">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="117248">
       <assemblyIdentity name="scsi" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>tSROblNerFaVdAp7OfcxAEMTqjE=</dsig:DigestValue>
+        <dsig:DigestValue>XpDfLTpkFXU++vqrsDxxWovr85o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -840,22 +840,13 @@
       <dsig:DigestValue>QpWFcW+NXfdeusjfEcaK9B4YNAg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\textures\GUI\cpanel1.xnb" size="1830997">
+  <file name="Content\textures\GUI\buildmenubg.xnb" size="2097237">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>/lDd2cIgm1+nOFj+kS/N8gk7w9I=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\textures\GUI\cpanel2.xnb" size="716885">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>LJzjfrFAVmBPZAsCQOO4Vzfq0Po=</dsig:DigestValue>
+      <dsig:DigestValue>7cu3ougQyQlPhyY+/SCIsq2704U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\textures\GUI\medbox.xnb" size="2097237">

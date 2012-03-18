@@ -26,7 +26,6 @@ namespace SaturnIV
 
         public void LoadPanel(ContentManager Content,SpriteBatch Tspritebatch)
         {
-            bottomPanel = Content.Load<Texture2D>("Textures/GUI/cpanel2");
             smallFont = Content.Load<SpriteFont>("Fonts//SmallFont");
             medFont = Content.Load<SpriteFont>("Fonts//MedFont");
             mediumWindow = Content.Load<Texture2D>("Textures/GUI/mWindow");

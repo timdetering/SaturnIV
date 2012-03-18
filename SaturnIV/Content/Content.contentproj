@@ -350,16 +350,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\GUI\cpanel1.png">
-      <Name>cpanel1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\GUI\cpanel2.png">
-      <Name>cpanel2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="textures\GUI\mWindow.png">
       <Name>mWindow</Name>
       <Importer>TextureImporter</Importer>
@@ -645,6 +635,13 @@
   <ItemGroup>
     <Compile Include="textures\GUI\medbox.png">
       <Name>medbox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\buildmenubg.png">
+      <Name>buildmenubg</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

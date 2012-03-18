@@ -24,8 +24,7 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        actionMenuClass aMenu;
-        NeoForceClass neoForce;
+        actionMenuClass aMenu;        
         public CameraNew ourCamera;
         Vector3 defaultCameraOffset = new Vector3(10, 5000, 0);
         public static GraphicsDeviceManager graphics;
@@ -41,6 +40,7 @@ namespace SaturnIV
         public static bool isTacmap;
         float mapScrollSpeed = 380f;
         Vector3 farpoint, nearpoint = new Vector3(0, 0, 0);
+        Vector3 activeFoundryPos;
         SpriteBatch spriteBatch;
         HelperClass helperClass;
         double lastKeyPressTime;
@@ -95,6 +95,7 @@ namespace SaturnIV
         bool isInvalidArea = false;
         bool isSystemMap = false;
         bool showBuildMenu = false;
+        bool showActionMenu = false;
         bool inAMenu = false;
         public static bool drawTextbox = false;
         newShipStruct potentialTarget;
@@ -107,6 +108,7 @@ namespace SaturnIV
         renderTriangle firingArc = new renderTriangle();
         Vector3 isFacing;
         Double loopTimer = -1;
+        Double currentTime;
         Model systemMapSphere;
 
         // Define Hud Components
@@ -224,7 +226,7 @@ namespace SaturnIV
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1);
             // Init Player ship
-            playerShip = EditModeComponent.spawnNPC(Vector3.Zero, ref shipDefList, "player1", 2, 0);
+            playerShip = EditModeComponent.spawnNPC(Vector3.Zero, ref shipDefList, "player1", 2, 0, false);
             playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
         }
 
@@ -265,9 +267,11 @@ namespace SaturnIV
 
         protected override void Update(GameTime gameTime)
         {
+            currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             processInput(gameTime);
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
-            aMenu.update(mouseStateCurrent, mouseStatePrevious, ref shipDefList);
+            if (buildManager.buildQueueList.Count > 0)
+                buildManager.updateBuildQueue(ref activeShipList, currentTime);
             if (isEditMode || isSystemMap)
             {
                 ourCamera.ResetCamera();
@@ -281,6 +285,7 @@ namespace SaturnIV
             }
             else
             {
+                aMenu.update(mouseStateCurrent, mouseStatePrevious,buildManager,isLclicked,activeFoundryPos);
                 CameraNew.offsetDistance = new Vector3(0, 20000, 250);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
@@ -332,7 +337,6 @@ namespace SaturnIV
                 inAMenu = true;
             else
                 inAMenu = false;
-            double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             KeyboardState keyboardState = Keyboard.GetState();
             mouseStateCurrent = Mouse.GetState();
             Vector3 myMouse3dVector = mouse3dVector;
@@ -355,12 +359,14 @@ namespace SaturnIV
                 isRclicked = false;
                 isRdown = false;
             }
-                if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
-                    mouseStatePrevious.LeftButton == ButtonState.Released)
-                {
-                    isLclicked = true;
-                    isLdown = false;
-                }
+            if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
+                mouseStatePrevious.LeftButton == ButtonState.Released)
+            {
+                isLclicked = true;
+                isLdown = false;
+            }
+            else
+                isLclicked = false;
                 if (!inAMenu)
                 {
                     if (mouseStateCurrent.LeftButton == ButtonState.Pressed &&
@@ -400,7 +406,7 @@ namespace SaturnIV
                             rNameList.capitalShipNames.Remove(tmpShipName);
                             messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
                             newShipStruct newShip = EditModeComponent.spawnNPC(myMouse3dVector, ref shipDefList,
-                                tmpShipName, Gui.thisShip, Gui.thisFaction);
+                                tmpShipName, Gui.thisShip, Gui.thisFaction, false);
                             activeShipList.Add(newShip);
                         }
                     }
@@ -414,20 +420,14 @@ namespace SaturnIV
                         }
                     }
 
-                    if (isLclicked && !isEditMode)
-                    {
-
-                    }
-
                     if (isRclicked && !isEditMode && isSelected)
                     {
                         isInvalidArea = false;
-                        potentialTarget = null;
+                        //potentialTarget = null;
                         foreach (newShipStruct thisShip in activeShipList)
                             if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
                             {
                                 isInvalidArea = true;
-                                potentialTarget = thisShip;
                                 break;
                             }
 
@@ -453,7 +453,7 @@ namespace SaturnIV
                     isEditMode = true;
                     string msg = "Edit Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
-                    //CameraNew.zoomFactor = 8.0f;
+                     //CameraNew.zoomFactor = 8.0f;
                 }
                 else if (keyboardState.IsKeyDown(Keys.F1) && isEditMode && !isChat)
                     isEditMode = false;
@@ -541,20 +541,33 @@ namespace SaturnIV
                 isDebug = false;
             }
           
-            if (!isChat)
-            {
-                if (keyboardState.IsKeyDown(Keys.M) &&
-                   !oldkeyboardState.IsKeyDown(Keys.M))
+                if (keyboardState.IsKeyDown(Keys.Escape) &&
+                   !oldkeyboardState.IsKeyDown(Keys.Escape))
                 {
-                    if (isSystemMap)
-                        isSystemMap = false;
-                    else
-                    {
-                        isSystemMap = true;
-                        CameraNew.zoomFactor = 20.0f;
-                    }
+                    selectionRect = Rectangle.Empty;
+                    inAMenu = false;
+                    showBuildMenu = false;
                 }
 
+                if (keyboardState.IsKeyDown(Keys.Space) &&
+                    !oldkeyboardState.IsKeyDown(Keys.Space))
+                {
+                    showActionMenu = false;
+                    showBuildMenu = false;
+                    foreach (newShipStruct thisShip in activeShipList)
+                    if (thisShip.isSelected)
+                    {
+                        if (thisShip.objectClass != ClassesEnum.Foundry)
+                            showActionMenu = true;
+                        else
+                        {
+                            showBuildMenu = true;
+                            activeFoundryPos = thisShip.modelPosition;
+                        }
+                    }
+                }
+                if (!isChat)
+                {
             /// Pan Camera
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
@@ -629,8 +642,7 @@ namespace SaturnIV
             DrawHUDTargets(gameTime);
              spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch);
-            if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
-            if (showBuildMenu) aMenu.drawGUI(spriteBatch, spriteFont);
+            if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);            
 
             /// We need to fix the selection rectangle in case one of its dimensions is negative                
             /// 
@@ -648,6 +660,7 @@ namespace SaturnIV
             /// End Rectangle Select Crap
             ///
             spriteBatch.Draw(selectRecTex, r, Color.White);
+            if (showBuildMenu) aMenu.drawGUI(spriteBatch, spriteFont, buildManager);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                 cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
@@ -768,6 +781,8 @@ namespace SaturnIV
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nZoomFactor {0} ", CameraNew.zoomFactor);
             messageBuffer.AppendFormat("\nCamera Mode " + CameraNew.currentCameraMode);
+            if (potentialTarget != null)
+                messageBuffer.AppendFormat("\nClicked On " + potentialTarget);
             messageBuffer.AppendFormat("\nMenu CurrentSlection: " + guiClass.currentSelection);
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(screenCenterX +
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
@@ -796,16 +811,11 @@ namespace SaturnIV
 
         public void RectangleSelect(List<newShipStruct> objectsList, Viewport viewport, Matrix projection, Matrix view, Rectangle selectionRect)
         {
-            showBuildMenu = false;
             foreach (newShipStruct o in objectsList)
             {
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
-                    if (o.objectClass == ClassesEnum.Foundry)
-                    {
-                        showBuildMenu = true;
-                    }
                     o.isSelected = true;                
                 }
                 else
@@ -814,8 +824,6 @@ namespace SaturnIV
                 }
             }
         }
-
- 
 
         Vector3 mouse3dVector
         {
