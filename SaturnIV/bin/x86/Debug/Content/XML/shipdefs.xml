@@ -9,11 +9,11 @@
     <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
       <Type>Atlas Class Frigate</Type>
-      <Mass>12</Mass>
+      <Mass>22</Mass>
       <Thrust>35000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>1.75</Agility>
+      <Agility>0.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
       <ShipClass>Crusier</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
