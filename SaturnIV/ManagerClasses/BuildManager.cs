@@ -18,6 +18,7 @@ namespace SaturnIV
         public List<buildItem> buildQueueList = new List<buildItem>();
         int cost = 10;
         double currentTime;
+        float buildTime = 2000;
 
         public class buildItem
         {
@@ -25,6 +26,7 @@ namespace SaturnIV
             public string name;
             public int shipType;
             public double startTime;
+            public float percentComplete;
         }
 
         public enum BuildStates
@@ -43,9 +45,18 @@ namespace SaturnIV
             buildQueueList.Add(buildThis);
         }
 
-        public void updateBuildQueue(ref List<newShipStruct> activeShipList, double cTime)
+        public void updateBuildQueue(ref List<shipData> shipDefList, ref List<newShipStruct> activeShipList, double cTime)
         {
             currentTime = cTime;
+            float pComplete = (float)((currentTime - buildQueueList.First().startTime) / buildTime * 100);
+            pComplete = pComplete / buildTime * 100;
+            buildQueueList.First().percentComplete = pComplete;
+            if (buildQueueList.First().percentComplete > 99)
+            {
+                activeShipList.Add(EditModeComponent.spawnNPC(buildQueueList.First().pos, ref shipDefList, 
+                                   buildQueueList.First().name, buildQueueList.First().shipType, 0, false));
+                buildQueueList.Remove(buildQueueList.First());
+            }
         }
     }
 }

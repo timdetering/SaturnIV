@@ -85,7 +85,7 @@ namespace SaturnIV
         RenderStarfield starField;
         VertexDeclaration vertexDeclaration, quadVertexDecl;
         ControlPanelClass cPanel = new ControlPanelClass();
-        public float gameSpeed = 5.0f;
+        public float gameSpeed = 10.0f;
         //public Camera ourCamera;
         bool isEditMode = false;
         bool isServer = false;
@@ -271,7 +271,7 @@ namespace SaturnIV
             processInput(gameTime);
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
             if (buildManager.buildQueueList.Count > 0)
-                buildManager.updateBuildQueue(ref activeShipList, currentTime);
+                buildManager.updateBuildQueue(ref shipDefList, ref activeShipList, currentTime);
             if (isEditMode || isSystemMap)
             {
                 ourCamera.ResetCamera();

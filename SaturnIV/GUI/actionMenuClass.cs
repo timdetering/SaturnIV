@@ -12,6 +12,11 @@ namespace SaturnIV
 {
     public class actionMenuClass
     {
+        /// <summary>
+        /// tethanium IS the resource!
+        /// </summary>
+        /// 
+        int tethAvailable;
         Texture2D dummyTexture, medBox,buildMBox;
         public Rectangle medRec;
         Color opt1Color;
@@ -121,10 +126,11 @@ namespace SaturnIV
             /// 
             messageBuffer = new StringBuilder();
             for (int i = 0; i < buildManager.buildQueueList.Count; i++)
-                messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + " " + buildManager.buildQueueList[i].startTime + "\n");
-            mBatch.DrawString(spriteFont, messageBuffer, new Vector2(300, 325), Color.Green);
-                                    
-                            
+            {
+                messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + "\n");
+                messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);
+            }
+            mBatch.DrawString(spriteFont, messageBuffer, new Vector2(300, 325), Color.Green);          
         }
     }
 }
