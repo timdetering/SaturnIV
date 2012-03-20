@@ -70,7 +70,7 @@
       <Thrust>24200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>19.50</Agility>
+      <Agility>12.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
 	  <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
@@ -133,7 +133,7 @@
             -40 0 0 0
             40 0 0 0
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
           <weaponRange>45000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -143,7 +143,7 @@
 	    -4 0 0 0
        4 0 0 0
 	 </ModulePositionOnShip> 
-	 <FiringEnvelopeAngle>55</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
 	 <weaponRange>25000</weaponRange>
 	 <timer>0</timer>
       </Item>      

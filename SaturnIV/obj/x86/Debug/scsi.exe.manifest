@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0RJcHbCx4GhoPH8CJlKNsTQsFGQ=</dsig:DigestValue>
+        <dsig:DigestValue>LF/oAvWkhWoGH3kJid4ym/SJYXg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1107,7 +1107,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>pxmihB55bPomrOCToshVobqATPw=</dsig:DigestValue>
+      <dsig:DigestValue>XhDLtAsFfKozFi8xZ8oh2m0n13E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4369">

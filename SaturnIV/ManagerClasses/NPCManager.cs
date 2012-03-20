@@ -150,7 +150,7 @@ namespace SaturnIV
                     thisShip.isPursuing = false;
                     // MARK!
                     thisShip.timer = currentTime;
-                    timeToEvade = rand.Next(1000, 3000) * thisShip.objectMass;
+                    timeToEvade = rand.Next(3000, 6000) * thisShip.objectMass;
                     break;
                 }
             }
@@ -370,13 +370,13 @@ namespace SaturnIV
                 {
                     for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                     {
-                        //if (currentTime - thisShip.regenTimer[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
-                        //{
+                        if (currentTime - thisShip.regenTimer[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
+                        {
                             weaponsManager.fireWeapon(thisShip.currentTarget, thisShip, ref projectileTrailParticles, ref weaponDefList, thisWeapon, i);
                             thisShip.regenTimer[moduleCount] = currentTime;
                             thisShip.isEngaging = true;
-                            //break;
-                        //}
+                            break;
+                        }
                     }
                 }                 
                 moduleCount++;
