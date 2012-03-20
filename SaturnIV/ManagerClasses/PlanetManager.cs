@@ -28,6 +28,7 @@ namespace SaturnIV
         public Texture2D[] planetTextureArray;
         public Line3D line;
         public static BoundingSphere planetBS;
+        
         public PlanetManager(Game game)
             : base(game)
         {
@@ -53,15 +54,13 @@ namespace SaturnIV
 
             //planetTextureArray[2] = Game.Content.Load<Texture2D>("earthplanettexture");
         }
-        public void generatSpaceObjects(int numberOfPlanets)
+        public void generatSpaceObjects(int textureID, Vector3 position, int planetRadius)
         {
             planetBS = new BoundingSphere(Vector3.Zero, 2000);
 
             Random Position = new Random();
             loadPlanetTextures();
             double tX, tY, tZ, w, t;
-            for (int i = 0; i < numberOfPlanets; i++)
-            {
                 tZ = 2.0 * Position.NextDouble() - 1.0;
                 t = 2.0 * MathHelper.Pi * Position.NextDouble();
                 w = Math.Sqrt(1 - tZ * tZ);
@@ -70,12 +69,11 @@ namespace SaturnIV
                 planetStruct tempData = new planetStruct();
                 //int tTextureIndex = 1;
                 tempData.planetModel = LoadModel("Models/planet");
-                tempData.planetRadius = 225; // Position.Next(100, planetRadiusBoundry);
-                tempData.planetPosition = HelperClass.RandomPosition(-90000, 90000);
+                tempData.planetRadius = planetRadius; // Position.Next(100, planetRadiusBoundry);
+                tempData.planetPosition = position;
                 tempData.planetPosition.Y = -200000;
-                tempData.planetTexture = planetTextureArray[1];
+                tempData.planetTexture = planetTextureArray[textureID];
                 planetList.Add(tempData);
-            }
         }
 
         /// <summary>

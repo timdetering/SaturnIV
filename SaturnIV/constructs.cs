@@ -125,6 +125,7 @@ namespace SaturnIV
         public bool isAlreadyEngaged;
         public bool canEngageMultipleTargets;
         public bool isBuilding;
+        public bool userOverride;
         public float buildingProgress;
         public float[] EvadeDist;
         public float[] TargetPrefs;
@@ -262,6 +263,7 @@ namespace SaturnIV
         {
             public string planetTextureFile;
             public int planetRadius;
+            public Vector3 planetPosition;
         }
 
         public class systemStruct

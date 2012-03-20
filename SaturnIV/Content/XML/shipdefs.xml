@@ -23,7 +23,7 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>      
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
-	    <ChasePrefs>0 0 1 1 0 0</ChasePrefs>
+	    <ChasePrefs>0 0 0 1 1 1</ChasePrefs>
       <maxDetectRange>8000</maxDetectRange>
 	  <AvailableWeapons>
       <Item>
@@ -66,11 +66,11 @@
     <Item>
       <FileName>Models/Ships/fighter_m1/fighter_m1</FileName>
       <Type>M1 Fighter</Type>
-      <Mass>2.0</Mass>
-      <Thrust>44200</Thrust>
+      <Mass>0.50</Mass>
+      <Thrust>24200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>9.50</Agility>
+      <Agility>19.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
 	  <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
@@ -80,7 +80,7 @@
     <ShieldRegenTime>100</ShieldRegenTime>
     <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
     <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
-	  <ChasePrefs>1 1 1 1 0 1</ChasePrefs>
+	  <ChasePrefs>1 1 1 0 1 1</ChasePrefs>
     <maxDetectRange>6000</maxDetectRange>	  
       <AvailableWeapons>
       <Item>
@@ -110,11 +110,11 @@
 <Item>
       <FileName>Models/Ships/fighter_m2/fighter_m2</FileName>
       <Type>M2 Interceptor</Type>
-      <Mass>2.50</Mass>
+      <Mass>1.0</Mass>
       <Thrust>38000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>10.00</Agility>
+      <Agility>12.00</Agility>
       <BelongsTo>Fleet</BelongsTo> 
 	    <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
@@ -153,8 +153,8 @@
     <Item>
       <FileName>Models/Ships/fighter_m3/fighter_m3</FileName>
       <Type>MR Streak Fighter</Type>
-      <Mass>3.75</Mass>
-      <Thrust>23000</Thrust>
+      <Mass>0.75</Mass>
+      <Thrust>33000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>15.00</Agility>

@@ -4,7 +4,7 @@
    <Item>
       <FileName>Models//basic_bullet</FileName>
       <Type>PointDefense</Type>
-      <Mass>1.25</Mass>
+     <Mass>0.25</Mass>
       <Thrust>28200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>6</Scale>
@@ -21,8 +21,8 @@
     <Item>
       <FileName>Models//basic_missile</FileName>
       <Type>SRM</Type>
-      <Mass>1.00</Mass>
-      <Thrust>27200</Thrust>
+      <Mass>0.25</Mass>
+      <Thrust>37200</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>10</Scale>
       <Agility>80</Agility>
@@ -56,10 +56,10 @@
       <FileName>Models//Fleet_KM100</FileName>
       <Type>LRM</Type>
       <Mass>0.25</Mass>
-      <Thrust>15000</Thrust>
+      <Thrust>35000</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>15</Scale>
-      <Agility>4</Agility>
+      <Agility>40</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
@@ -73,10 +73,10 @@
       <FileName>Models//Fleet_KM100</FileName>
       <Type>LRMH</Type>
       <Mass>0.25</Mass>
-      <Thrust>14000</Thrust>
+      <Thrust>44000</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>15</Scale>
-      <Agility>8</Agility>
+      <Agility>20</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
@@ -89,7 +89,7 @@
 	  <Item>
       <FileName>Models//basic_bullet</FileName>
       <Type>AutoCannon</Type>
-      <Mass>1.00</Mass>
+      <Mass>0.75</Mass>
       <Thrust>80000</Thrust>
       <SphereRadius>5</SphereRadius>      
 	  <Scale>3</Scale>

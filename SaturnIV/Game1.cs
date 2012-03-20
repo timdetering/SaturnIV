@@ -224,10 +224,8 @@ namespace SaturnIV
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(1);
-            // Init Player ship
-            playerShip = EditModeComponent.spawnNPC(Vector3.Zero, ref shipDefList, "player1", 2, 0, false);
-            playerShip.modelRotation *= Matrix.CreateRotationY(MathHelper.ToRadians(90));
+            planetManager.generatSpaceObjects(1, new Vector3(0, 0, 0), 225);
+
         }
 
         private void loadMetaData()
@@ -428,6 +426,7 @@ namespace SaturnIV
                             if (EditModeComponent.checkIsSelected(myMouse3dVector, thisShip.modelBoundingSphere))
                             {
                                 isInvalidArea = true;
+                                potentialTarget = thisShip;
                                 break;
                             }
 
@@ -435,7 +434,11 @@ namespace SaturnIV
                             if (thisShip.isSelected)
                             {
                                 if (potentialTarget != null && potentialTarget.team != thisShip.team)
+                                {
                                     thisShip.currentTarget = potentialTarget;
+                                    thisShip.currentDisposition = disposition.engaging;
+                                    thisShip.userOverride = true;
+                                }
                                 thisShip.currentDisposition = disposition.moving;
                                 thisShip.targetPosition = myMouse3dVector;
                                 thisShip.wayPointPosition = myMouse3dVector;
@@ -684,7 +687,7 @@ namespace SaturnIV
                 spriteBatch.End();
 
             }
-            modelManager.DrawModel(ourCamera, modelDictionary[playerShip.objectFileName], playerShip.worldMatrix, Color.Blue, true);
+            
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
@@ -751,8 +754,7 @@ namespace SaturnIV
                     if (enemy.isSelected)
                         shipColor = Color.White;
                     fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
-                    if (enemy.isSelected)
-                        buffer.AppendFormat("[" + enemy.objectAlias + "]");
+                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
                     if (isDebug)
                     {                       
                         buffer.AppendFormat("[" + enemy.currentDisposition + "]");
@@ -762,6 +764,7 @@ namespace SaturnIV
                         if (enemy.currentTarget != null)
                         {
                             buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
+                            buffer.AppendFormat("[" + enemy.currentTarget.hullLvl + "]");
                             buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
                         }
                     }
