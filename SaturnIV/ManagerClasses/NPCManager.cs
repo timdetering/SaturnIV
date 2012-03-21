@@ -74,7 +74,7 @@ namespace SaturnIV
             }
             for (int i = 0; i < tmpList.Count; i++)
             {
-                if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 15)
+                if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 10)
                         tmpList.Remove(tmpList[i]);
             }
             //newShipStruct bestTarget = (from element in tmpList 
@@ -125,11 +125,14 @@ namespace SaturnIV
                     thisShip.targetPosition = thisShip.wayPointPosition;
                     break;
                 case disposition.defensive:
-                    thisShip.thrustAmount = 0.25f;
+                    thisShip.thrustAmount = 0.35f;
                     break;
                 case disposition.patrol:
                     thisShip.targetPosition = thisShip.modelPosition + (thisShip.Direction * 1500000);
-                    thisShip.thrustAmount = 0.60f;
+                    thisShip.thrustAmount = 0.95f;
+                    break;
+                case disposition.idle:
+                    thisShip.thrustAmount = 0.0f;
                     break;
             }             
             /// End Disposition Logic Switch
@@ -162,15 +165,18 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-            if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition,10000)) && thisShip.currentTarget != null)                
-                thisShip.currentDisposition = disposition.engaging;
+                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 10000)))
+                    if (thisShip.currentTarget == null)
+                        thisShip.currentDisposition = disposition.idle;
+                    else
+                        thisShip.currentDisposition = disposition.engaging;
             
-            if (thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 0)
+            if ((thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 0) && thisShip.currentDisposition != disposition.idle)
             {
                 thisShip.currentTarget = null;
                 thisShip.currentTargetLevel = 0;
-                thisShip.userOverride = false;
-                thisShip.currentDisposition = disposition.patrol;
+                thisShip.userOverride = false;                
+                //thisShip.currentDisposition = disposition.patrol;
             }
 
             if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 500000)
@@ -365,8 +371,9 @@ namespace SaturnIV
         {
             foreach (WeaponModule thisWeapon in thisShip.weaponArray)
             {
+                //if (!thisShip.canEngageMultipleTargets)
                 if (thisShip.moduleFrustum[moduleCount].Intersects(thisShip.currentTarget.modelBoundingSphere))
-                //if (Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition) < thisWeapon.weaponRange)
+                    //if (Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition) < thisWeapon.weaponRange)
                 {
                     for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                     {

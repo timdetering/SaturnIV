@@ -38,7 +38,6 @@ namespace SaturnIV
         bool isRclicked, isLclicked, isRdown, isLdown, isSelected;
         int thisTeam;
         public static bool isTacmap;
-        float mapScrollSpeed = 380f;
         Vector3 farpoint, nearpoint = new Vector3(0, 0, 0);
         Vector3 activeFoundryPos;
         SpriteBatch spriteBatch;
@@ -183,12 +182,10 @@ namespace SaturnIV
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             aMenu = new actionMenuClass();
-            ////////////Add Components
-            
+            ////////////Add Components            
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
             base.Initialize();
-
         }
 
         public void ConfigureGraphicsManager()
@@ -225,6 +222,7 @@ namespace SaturnIV
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1, new Vector3(0, 0, 0), 225);
+            planetManager.generatSpaceObjects(2, new Vector3(500000, 0, -800000), 125);
 
         }
 
@@ -511,6 +509,21 @@ namespace SaturnIV
                     //serializerClass.exportSaveScenario(activeShipList, "plan1");
                 }
 
+                if (keyboardState.IsKeyDown(Keys.D1))
+                {
+                    foreach (newShipStruct tShip in activeShipList)
+                        if (tShip.isSelected)
+                            tShip.currentDisposition = disposition.idle;
+                }
+
+                if (keyboardState.IsKeyDown(Keys.D2))                 
+                {
+                    foreach (newShipStruct tShip in activeShipList)
+                        if (tShip.isSelected)
+                            tShip.currentDisposition = disposition.patrol;
+                }
+
+
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F2) && !isServer)
                 {
@@ -691,9 +704,9 @@ namespace SaturnIV
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
             foreach (weaponStruct theList in weaponsManager.activeWeaponList)
             {
-                if (theList.isProjectile)
-                    modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White, true);
-                else
+                //if (theList.isProjectile)
+                //    modelManager.DrawModel(ourCamera, modelDictionary[theList.objectFileName], theList.worldMatrix, Color.White, true);
+                //else
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);
             }
             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
@@ -859,7 +872,7 @@ namespace SaturnIV
         {
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
                                foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
-                                 BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
+                                 BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Red);
             //                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
 

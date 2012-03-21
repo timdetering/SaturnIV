@@ -86,11 +86,9 @@ namespace SaturnIV
         {
             currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             float turningSpeed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000.0f;
-            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+            float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;            
             turningSpeed *= 1.0f * gameSpeed;
-
-          if (thisObject.isHoming && thisObject.distanceFromOrigin > rand.Next(100,400) && thisObject.missileTarget !=null)
+          if (thisObject.isHoming && thisObject.distanceFromOrigin > rand.Next(100,200) && thisObject.missileTarget !=null)
           {
                thisObject.targetPosition = Vector3.Normalize(thisObject.missileTarget.modelPosition - thisObject.modelPosition);
                //thisObject.Direction = Vector3.Lerp(thisObject.Direction, thisObject.targetPosition, turningSpeed);
@@ -109,7 +107,7 @@ namespace SaturnIV
             thisObject.Up = Vector3.Cross(thisObject.right, thisObject.modelRotation.Forward);
             thisObject.modelRotation = Matrix.CreateFromQuaternion(rotation);
             //Direction = modelRotation.Forward;
-            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, 0.10f);
+            thisObject.modelRotation.Forward = Vector3.SmoothStep(thisObject.Direction, thisObject.targetPosition, 0.14f);
             thrustAmount = 1.0f;
             thisObject.Direction = thisObject.modelRotation.Forward;
             Vector3 force = thisObject.Direction * thrustAmount * thisObject.objectThrust;
@@ -140,7 +138,7 @@ namespace SaturnIV
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
-                    Matrix wMatrix = Matrix.CreateScale(new Vector3(250, 1, 500)) * weapon.worldMatrix;
+                    Matrix wMatrix = Matrix.CreateScale(new Vector3(650, 1, weapon.objectScale)) * weapon.worldMatrix;
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.Begin();
@@ -148,7 +146,7 @@ namespace SaturnIV
                         shader_matrices_combined[0] = wMatrix;
                         shader_matrices_combined[1] = wMatrix * view * projection;
                         effect_matrices_combined.SetValue(shader_matrices_combined);
-                        effect_color.SetValue(Color.Green.ToVector4());
+                        effect_color.SetValue(Color.Blue.ToVector4());
                         effect_center_to_viewer.SetValue(Vector3.Up);
                         laserEffect.CommitChanges();
                         draw_set_mesh(weapon.shipModel.Meshes[0], device);

@@ -2,105 +2,105 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
    <Item>
-      <FileName>Models//basic_bullet</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>PointDefense</Type>
-     <Mass>0.25</Mass>
-      <Thrust>28200</Thrust>
+     <Mass>0.10</Mass>
+      <Thrust>48200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>6</Scale>
+      <Scale>3500</Scale>
       <Agility>18</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
-      <wClass>Cannon</wClass>
-      <isProjectile>0</isProjectile>
-      <isHoming>1</isHoming>
-      <regenTime>250</regenTime>
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>50</regenTime>
       <damageFactor>5</damageFactor>
-      <range>100000</range>
+      <range>90000</range>
       <timeToLive>1700</timeToLive>	  
     </Item>
     <Item>
-      <FileName>Models//basic_missile</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>SRM</Type>
-      <Mass>0.25</Mass>
-      <Thrust>37200</Thrust>
+      <Mass>0.35</Mass>
+      <Thrust>67200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>10</Scale>
-      <Agility>80</Agility>
+      <Scale>2000</Scale>
+      <Agility>20</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
-      <isHoming>0</isHoming>
+      <isHoming>1</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>92000</range>
-      <timeToLive>2000</timeToLive>	  
+      <range>492000</range>
+      <timeToLive>6000</timeToLive>	  
     </Item>
     <Item>
-      <FileName>Models//Fleet_KM100</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>SRMH</Type>
-      <Mass>0.05</Mass>
-      <Thrust>25000</Thrust>
+      <Mass>0.35</Mass>
+      <Thrust>45000</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>20</Scale>
-      <Agility>4</Agility>
-      <BelongsTo>Fleet</BelongsTo>	  
-      <wClass>Missile</wClass>
-      <isProjectile>1</isProjectile>
-      <isHoming>1</isHoming>
-      <regenTime>2200</regenTime>
-      <damageFactor>5</damageFactor>
-      <range>10000</range>
-      <timeToLive>1000</timeToLive>	  
-    </Item>
-   <Item>
-      <FileName>Models//Fleet_KM100</FileName>
-      <Type>LRM</Type>
-      <Mass>0.25</Mass>
-      <Thrust>35000</Thrust>
-      <SphereRadius>5</SphereRadius>
-      <Scale>15</Scale>
-      <Agility>40</Agility>
-      <BelongsTo>Fleet</BelongsTo>	  
-      <wClass>Missile</wClass>
-      <isProjectile>1</isProjectile>
-      <isHoming>0</isHoming>
-      <regenTime>2000</regenTime>
-      <damageFactor>5</damageFactor>
-      <range>15000</range>
-      <timeToLive>1000</timeToLive>	  
-    </Item>
-    <Item>
-      <FileName>Models//Fleet_KM100</FileName>
-      <Type>LRMH</Type>
-      <Mass>0.25</Mass>
-      <Thrust>44000</Thrust>
-      <SphereRadius>5</SphereRadius>
-      <Scale>15</Scale>
+      <Scale>3500</Scale>
       <Agility>20</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>2000</regenTime>
+      <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>25000</range>
+      <range>610000</range>
+      <timeToLive>9000</timeToLive>	  
+    </Item>
+   <Item>
+      <FileName>Models//LaserBolt2</FileName>
+      <Type>LRM</Type>
+      <Mass>0.15</Mass>
+      <Thrust>65000</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>5500</Scale>
+      <Agility>40</Agility>
+      <BelongsTo>Fleet</BelongsTo>	  
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>0</isHoming>
+      <regenTime>400</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>415000</range>
+      <timeToLive>1000</timeToLive>	  
+    </Item>
+    <Item>
+      <FileName>Models//LaserBolt2</FileName>
+      <Type>LRMH</Type>
+      <Mass>0.25</Mass>
+      <Thrust>54000</Thrust>
+      <SphereRadius>5</SphereRadius>
+      <Scale>2500</Scale>
+      <Agility>20</Agility>
+      <BelongsTo>Fleet</BelongsTo>	  
+      <wClass>Missile</wClass>
+      <isProjectile>1</isProjectile>
+      <isHoming>1</isHoming>
+      <regenTime>300</regenTime>
+      <damageFactor>5</damageFactor>
+      <range>425000</range>
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
-      <FileName>Models//basic_bullet</FileName>
+      <FileName>Models//LaserBolt2</FileName>
       <Type>AutoCannon</Type>
-      <Mass>0.75</Mass>
+      <Mass>0.15</Mass>
       <Thrust>80000</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>3</Scale>
-	  <Agility>4</Agility>
+	    <Scale>3000</Scale>
+	    <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>200</regenTime>
       <damageFactor>15</damageFactor>
-      <range>90000</range>	
+      <range>190000</range>	
       <timeToLive>1000</timeToLive>	  
     </Item>
 <Item>
@@ -109,15 +109,15 @@
       <Mass>0.25</Mass>
       <Thrust>4800</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>300</Scale>
-	  <Agility>4</Agility>
+	    <Scale>6000</Scale>
+	    <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
-      <wClass>Beam</wClass>	
+      <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>1500</regenTime>
+      <regenTime>1000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>1000</range>	
+      <range>211000</range>	
       <timeToLive>1000</timeToLive>	  
     </Item>
 	<Item>
@@ -126,15 +126,15 @@
       <Mass>0.25</Mass>
       <Thrust>3400</Thrust>
       <SphereRadius>5</SphereRadius>      
-	  <Scale>25</Scale>
-	  <Agility>4</Agility>
+	    <Scale>25</Scale>
+	    <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>4000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>6000</range>	
+      <range>123000</range>	
       <timeToLive>100</timeToLive>	  
     </Item>
   </Asset>

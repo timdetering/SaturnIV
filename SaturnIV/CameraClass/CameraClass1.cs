@@ -30,7 +30,7 @@ namespace SaturnIV
         private MouseState mouseStateCurrent;
         private MouseState mouseStatePrevious;
         private MouseState originalMouseState;
-        public static float zoomFactor = 3.5f;
+        public static float zoomFactor = 8.5f;
 
         public CameraNew()
         {

@@ -23,38 +23,28 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>      
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
-	    <ChasePrefs>0 0 0 1 1 1</ChasePrefs>
+	    <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
       <maxDetectRange>8000</maxDetectRange>
 	  <AvailableWeapons>
       <Item>
         <weaponType>PointDefense</weaponType>
         <ModulePositionOnShip>
-          4 0 0 0
-          -4 0 0 0
-          4 0 0 1
-          -4 0 0 1
-           3000 0 0 3
-          -3000 0 0 3
-          -1234 0 3330 3
-          1234 0 111 2
-          -4 0 222 3
+          0 -1000 -15000 2
+          0 -1000 15000  2
+          0 -1000 -15000 3
+          0 -1000 15000  3
         </ModulePositionOnShip>
         <FiringEnvelopeAngle>65</FiringEnvelopeAngle>
         <weaponRange>50000</weaponRange>
         <timer>0</timer>
       </Item>
       <Item>
-        <weaponType>LRMH</weaponType>
+        <weaponType>LargeIon</weaponType>
         <ModulePositionOnShip>
-          4 0 0 2
-          -4 0 0 2
-          4 0 0 3
-          -4 0 0 3
-          4000 0 0 2
-          -3000 0 0 3
-          -1234 0 3330 3
-          1234 0 111 2
-          -4 0 222 3
+          0 -1000 -10000 2
+          0 -1000 10000  2
+          0 -1000 -10000 3
+          0 -1000 10000  3
         </ModulePositionOnShip>
         <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
         <weaponRange>100000</weaponRange>
@@ -66,11 +56,11 @@
     <Item>
       <FileName>Models/Ships/fighter_m1/fighter_m1</FileName>
       <Type>M1 Fighter</Type>
-      <Mass>0.50</Mass>
+      <Mass>0.75</Mass>
       <Thrust>24200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>12.50</Agility>
+      <Agility>8.50</Agility>
       <BelongsTo>Fleet</BelongsTo>
 	  <ShipClass>Fighter</ShipClass>
       <ShieldFactor>0.99</ShieldFactor>
@@ -84,23 +74,23 @@
     <maxDetectRange>6000</maxDetectRange>	  
       <AvailableWeapons>
       <Item>
-	 <weaponType>AutoCannon</weaponType>
+	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
 	   -400 0 0 0
       400 0 0 0
       400 0 0 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>25</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>45000</weaponRange>
 	<timer>0</timer>
       </Item>
       <Item>
-	 <weaponType>SRMH</weaponType>
+	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 0
 	   -4 0 -10 0
 	 </ModulePositionOnShip>
-	 <FiringEnvelopeAngle>35</FiringEnvelopeAngle>
+	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>66000</weaponRange>
 	<timer>0</timer>
       </Item>
@@ -128,23 +118,23 @@
     <maxDetectRange>8000</maxDetectRange>  
       <AvailableWeapons>
         <Item>
-          <weaponType>SRMH</weaponType>
+          <weaponType>SRM</weaponType>
           <ModulePositionOnShip>
-            -40 0 0 0
-            40 0 0 0
+            -80 0 0 0
+            80 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>45000</weaponRange>
+          <weaponRange>95000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
 	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
-	    -4 0 0 0
-       4 0 0 0
+	    -4 0 -50 0
+       4 0 50 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-	 <weaponRange>25000</weaponRange>
+	 <weaponRange>125000</weaponRange>
 	 <timer>0</timer>
       </Item>      
       </AvailableWeapons>
@@ -171,13 +161,15 @@
       <maxDetectRange>5000</maxDetectRange>
       <AvailableWeapons>
         <Item>
-          <weaponType>AutoCannon</weaponType>
+          <weaponType>SRM</weaponType>
           <ModulePositionOnShip>
+            -4 0 0 0
+            4 0 0 0
             -4 0 0 0
             4 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-          <weaponRange>25000</weaponRange>
+          <weaponRange>85000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
@@ -187,7 +179,7 @@
             0 0 -20 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>30000</weaponRange>
+          <weaponRange>90000</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -215,17 +207,17 @@
       <AvailableWeapons>
 	<Item>
 		<weaponType>LRMH</weaponType>
-		<ModulePositionOnShip> 
-		0 0 50 0 
-		0 0 20 0 
-		0 0 -50 0 
-		</ModulePositionOnShip>
+		<ModulePositionOnShip>
+      -200 0 500 0
+      400 0 200 0
+      -400 0 -500 0
+    </ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>150000</weaponRange>
 	<timer>0</timer>
         </Item>
 	<Item>
-		<weaponType>LRM</weaponType>
+		<weaponType>SRM</weaponType>
 		<ModulePositionOnShip>
 		0 0 -50 0
 		0 0  50 0
