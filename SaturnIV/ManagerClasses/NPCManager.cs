@@ -77,9 +77,9 @@ namespace SaturnIV
                 if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 10)
                         tmpList.Remove(tmpList[i]);
             }
-            //newShipStruct bestTarget = (from element in tmpList 
-            //                            orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
-            //                            select element).First();
+            newShipStruct bestTarget = (from element in tmpList 
+                                        orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
+                                        select element).First();
 
             if (thisShip.currentTarget != null)
                 thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.currentTarget.Direction, thisShip.currentTarget.Right);
@@ -89,14 +89,14 @@ namespace SaturnIV
             /// 
             if ((thisShip.currentTarget == null && thisShip.currentDisposition != disposition.idle && !thisShip.userOverride) || thisShip.canEngageMultipleTargets)
             {
-                if (rand.Next(0, 100) < 25 && tmpList.Count() > 0)
+                if (rand.Next(0, 100) < 50 && tmpList.Count() > 0)
                 {
                     c = tmpList.Count();
                     thisShip.currentTarget = tmpList[rand.Next(c)];                   
                 }
                 else
                     if (tmpList.Count() > 0)
-                        thisShip.currentTarget = tmpList[0];
+                        thisShip.currentTarget = bestTarget; // tmpList[0];
                 if (thisShip.currentTarget != null)
                 {
                     thisShip.currentTarget.isAlreadyEngaged = true;
@@ -105,6 +105,12 @@ namespace SaturnIV
                 }
             }            
             
+            //if (thisShip.currentTarget != null && Vector3.Distance(thisShip.modelPosition,thisShip.currentTarget.modelPosition) < thisShip.maxDetectRange && thisShip.userOverride)
+            //{    
+            //    thisShip.currentTarget = null;
+            //    thisShip.currentTargetLevel = 0;
+           // }
+
             /// End Target Selection
             /// 
             /// Begin Disposition Logic Switch
@@ -125,7 +131,7 @@ namespace SaturnIV
                     thisShip.targetPosition = thisShip.wayPointPosition;
                     break;
                 case disposition.defensive:
-                    thisShip.thrustAmount = 0.35f;
+                    thisShip.thrustAmount = 0.25f;
                     break;
                 case disposition.patrol:
                     thisShip.targetPosition = thisShip.modelPosition + (thisShip.Direction * 1500000);
@@ -165,21 +171,26 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 10000)))
-                    if (thisShip.currentTarget == null)
-                        thisShip.currentDisposition = disposition.idle;
-                    else
-                        thisShip.currentDisposition = disposition.engaging;
+                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 5000)))
+                {
+                    thisShip.currentTarget = null;
+                    thisShip.wayPointPosition = Vector3.Zero;
+                    thisShip.currentTargetLevel = 0;
+                    thisShip.currentDisposition = disposition.patrol;
+
+                }
+                    //else
+                    //    thisShip.currentDisposition = disposition.engaging;
             
-            if ((thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 0) && thisShip.currentDisposition != disposition.idle)
+            if ((thisShip.currentTarget == null || thisShip.currentTarget.hullLvl < 1) && thisShip.currentDisposition != disposition.idle)
             {
                 thisShip.currentTarget = null;
                 thisShip.currentTargetLevel = 0;
                 thisShip.userOverride = false;                
-                //thisShip.currentDisposition = disposition.patrol;
+                thisShip.currentDisposition = disposition.patrol;
             }
 
-            if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 500000)
+            if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 2500000)
             {
                 thisShip.targetPosition = HelperClass.RandomSpherePoint();
             }
@@ -206,7 +217,7 @@ namespace SaturnIV
             thisShip.modelRotation.Right = Vector3.Cross(thisShip.Direction,Vector3.Up);
             thisShip.modelRotation.Up = Vector3.Up;
 
-            Vector3 force = thisShip.Direction * thisShip.thrustAmount * thisShip.objectThrust;
+            Vector3 force = thisShip.Direction * thisShip.thrustAmount * thisShip.objectThrust * 1.50f;
             // Apply acceleration
             Vector3 acceleration = force / thisShip.objectMass;
             thisShip.Velocity += acceleration * thisShip.thrustAmount * elapsed;

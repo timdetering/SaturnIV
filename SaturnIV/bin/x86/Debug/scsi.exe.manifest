@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="117760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="118272">
       <assemblyIdentity name="scsi" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fTkCeg9elE+4C25cw2cX8KKwfnA=</dsig:DigestValue>
+        <dsig:DigestValue>ElBDmC0iKXszu7JMRsuDa9xxnNs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1074,13 +1074,13 @@
       <dsig:DigestValue>0Hh7eSdj0pndLdNS+0nzM7TetTI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\listofnames.xml" size="1660">
+  <file name="Content\XML\listofnames.xml" size="1856">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>s6+I8HzPXmewnh+46p17H5QmOno=</dsig:DigestValue>
+      <dsig:DigestValue>sSn+w0GhveYuojv/Jl20Bavyw9U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\Scenarios\scenario1.xml" size="2074">
@@ -1101,13 +1101,13 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="8739">
+  <file name="Content\XML\shipdefs.xml" size="8738">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+dn1fXMBBnlEr0FGokjgGX5wNmg=</dsig:DigestValue>
+      <dsig:DigestValue>54hxcf3IbKyeMcctHq3/pz6l0Kw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4394">
@@ -1116,7 +1116,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>9/K7rUqraZ0l5q+wDksTKNuQ/uE=</dsig:DigestValue>
+      <dsig:DigestValue>iGKmQQtC6R28cYPXXSDpTZneVrU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

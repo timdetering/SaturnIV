@@ -54,6 +54,13 @@
 	  <Item>Alpha 3</Item>
 	  <Item>Alpha 4</Item>
 	  <Item>Alpha 5</Item>
+      <Item>Cake</Item>
+      <Item>Inception</Item>
+      <Item>Alpha 6</Item>
+      <Item>Alpha 7</Item>
+      <Item>Alpha 8</Item>
+      <Item>Alpha 9</Item>
+      <Item>Alpha 10</Item>
     </capitalShipNames>
   </Asset>
 </XnaContent>

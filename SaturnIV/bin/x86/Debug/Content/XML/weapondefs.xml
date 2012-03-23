@@ -21,16 +21,16 @@
     <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>SRM</Type>
-      <Mass>0.35</Mass>
-      <Thrust>67200</Thrust>
+      <Mass>0.15</Mass>
+      <Thrust>47200</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>2000</Scale>
-      <Agility>20</Agility>
+      <Scale>1500</Scale>
+      <Agility>90</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
-      <isHoming>1</isHoming>
-      <regenTime>400</regenTime>
+      <isHoming>0</isHoming>
+      <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
       <range>492000</range>
       <timeToLive>6000</timeToLive>	  
@@ -38,8 +38,8 @@
     <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>SRMH</Type>
-      <Mass>0.35</Mass>
-      <Thrust>45000</Thrust>
+      <Mass>0.10</Mass>
+      <Thrust>35000</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>3500</Scale>
       <Agility>20</Agility>

@@ -30,6 +30,8 @@ namespace SaturnIV
         public static bool LoadScenario = false;
         public static bool inGui, isSelected;
         public string loadThisScenario = null;
+        Vector2 queueListPos = new Vector2(300, 325);
+        Vector2 shipListPos = new Vector2(500, 400);
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         //int[] menuStartX = new int[10]{10,150,300,450,600,750};
@@ -53,7 +55,7 @@ namespace SaturnIV
         public void buildShipMenu(List<shipData> shipList)
         {
             menuShipList.Clear();
-            Vector2 pos = new Vector2(500,400);
+            Vector2 pos = shipListPos;
             horizontalStartX = (int)pos.X;
             verticalStartY = (int)pos.Y;
             for (int i=0; i < shipList.Count; i++)
@@ -128,9 +130,9 @@ namespace SaturnIV
             for (int i = 0; i < buildManager.buildQueueList.Count; i++)
             {
                 messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + "\n");
-                messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);
+                messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);                         
             }
-            mBatch.DrawString(spriteFont, messageBuffer, new Vector2(300, 325), Color.Green);          
+            mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.Green);          
         }
     }
 }

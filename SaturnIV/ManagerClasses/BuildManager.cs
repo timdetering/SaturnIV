@@ -53,8 +53,11 @@ namespace SaturnIV
             buildQueueList.First().percentComplete = pComplete;
             if (buildQueueList.First().percentComplete > 99)
             {
-                activeShipList.Add(EditModeComponent.spawnNPC(buildQueueList.First().pos, ref shipDefList, 
-                                   buildQueueList.First().name, buildQueueList.First().shipType, 0, false));
+                newShipStruct newShip = EditModeComponent.spawnNPC(buildQueueList.First().pos, ref shipDefList,
+                                   buildQueueList.First().name, buildQueueList.First().shipType, 0, false);
+                                newShip.wayPointPosition = buildQueueList.First().pos * 1000;
+                                newShip.currentDisposition = disposition.moving;
+                activeShipList.Add(newShip);
                 buildQueueList.Remove(buildQueueList.First());
             }
         }

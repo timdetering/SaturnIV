@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>42089.58 0 -81992.6641</shipPosition>
+      <shipDirection>76774.06 0 -204958.719</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Vendetta</shipName>
+      <shipPosition>98000.6 0 -54097.3672</shipPosition>
+      <shipDirection>93835.625 0 -214345.641</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Ultima</shipName>
+      <shipPosition>136096.125 0 -104898.9</shipPosition>
+      <shipDirection>103303.969 0 -205897.156</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Relentless</shipName>
+      <shipPosition>135224.25 0 -106569.711</shipPosition>
+      <shipDirection>103303.969 0 -205897.156</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Adamant</shipName>
+      <shipPosition>43866.02 0 15714.96</shipPosition>
+      <shipDirection>-3366255.5 0 -3444969.5</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Stalker</shipName>
+      <shipPosition>113821.656 0 4848.959</shipPosition>
+      <shipDirection>3562034.5 0 3494584.25</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Skyhook</shipName>
+      <shipPosition>113877.453 0 4415.68164</shipPosition>
+      <shipDirection>3562179.5 0 3494226.75</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Reckoning</shipName>
+      <shipPosition>97165.43 0 -3339.26147</shipPosition>
+      <shipDirection>98340.46 0 -38614.0938</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Malice</shipName>
+      <shipPosition>7051.20654 0 5036.87646</shipPosition>
+      <shipDirection>-3376409 0 -3431341.25</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>97358.95 0 -16572.8926</shipPosition>
+      <shipDirection>98368.98 0 -37484.4531</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Nitsa</shipName>
+      <shipPosition>59783.6 0 -305964.375</shipPosition>
+      <shipDirection>-3367314.75 0 -3687687.5</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>1</shipIndex>
+      <shipName>Kreiger</shipName>
+      <shipPosition>104796.25 0 56771.28</shipPosition>
+      <shipDirection>3564686.5 0 3487729.25</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Hydra</shipName>
+      <shipPosition>114459.906 0 -219462.938</shipPosition>
+      <shipDirection>2492043 0 2183623</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Leonides</shipName>
+      <shipPosition>114290.461 0 -219085.547</shipPosition>
+      <shipDirection>2491963.75 0 2184066.25</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Grey Wolf</shipName>
+      <shipPosition>126075.844 0 -85328.61</shipPosition>
+      <shipDirection>103303.969 0 -205897.156</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Freedom</shipName>
+      <shipPosition>125816.773 0 -85652.78</shipPosition>
+      <shipDirection>103303.969 0 -205897.156</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Intrepid</shipName>
+      <shipPosition>-60465.88 0 -25192.709</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Tyrant</shipName>
+      <shipPosition>250156.984 0 -35566.5938</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Tecumseh</shipName>
+      <shipPosition>93670.4141 0 -204068.828</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>1</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Inexorable</shipName>
+      <shipPosition>-364348.1 0 -346653.281</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Devastator</shipName>
+      <shipPosition>-349992.156 0 -476391.2</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Vengeance</shipName>
+      <shipPosition>-361968 0 -154430.547</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Thunderflare</shipName>
+      <shipPosition>-439253.063 0 -349103.563</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>0</shipIndex>
+      <shipName>Red October</shipName>
+      <shipPosition>-258254.938 0 -331933.125</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Nova Scotia</shipName>
+      <shipPosition>-410783.563 0 -293766.781</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Manticore</shipName>
+      <shipPosition>-393473.8 0 -260636.438</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Bismark</shipName>
+      <shipPosition>-375802.844 0 -257326.344</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Steadfast</shipName>
+      <shipPosition>-334742.1 0 -267258.2</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Direption</shipName>
+      <shipPosition>-380041.844 0 -400701.469</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Adarga</shipName>
+      <shipPosition>-350809.5 0 -414038.219</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Agonizer</shipName>
+      <shipPosition>-337930.1 0 -384597.875</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Avarice</shipName>
+      <shipPosition>-314894.625 0 -380712.656</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>3</shipIndex>
+      <shipName>Avenger</shipName>
+      <shipPosition>-292302.063 0 -391815.2</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>4</shipIndex>
+      <shipName>Admonitor</shipName>
+      <shipPosition>-416720.75 0.03125 -202787.438</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>4</shipIndex>
+      <shipName>Conquest</shipName>
+      <shipPosition>-396775.938 0.03125 -158821.922</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>4</shipIndex>
+      <shipName>Crynyd</shipName>
+      <shipPosition>-274122.344 0 -411814.844</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>4</shipIndex>
+      <shipName>Courageous</shipName>
+      <shipPosition>-262627.531 0 -382377.656</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+  </Asset>
+</XnaContent>

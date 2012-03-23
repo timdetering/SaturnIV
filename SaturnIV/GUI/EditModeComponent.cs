@@ -303,7 +303,10 @@ namespace SaturnIV
             if (team > 0)
                 tempData.currentDisposition = disposition.patrol;
             else
+            {
+                tempData.userOverride = true;
                 tempData.currentDisposition = disposition.idle;
+            }
             tempData.currentTarget = null;
             if (tempData.objectClass == ClassesEnum.Crusier)
                 tempData.canEngageMultipleTargets = true;
@@ -324,7 +327,7 @@ namespace SaturnIV
             tempData.TargetPrefs = shipDefList[shipIndex].TargetPrefs;
             tempData.ChasePrefs = shipDefList[shipIndex].ChasePrefs;
             tempData.maxDetectRange = shipDefList[shipIndex].maxDetectRange;
-            tempData.squadNo = -1;
+            tempData.squadNo = -1;            
             tempData.projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(25.0f), 4.0f / 3.0f, .5f, 500f);
             //Build Bounding Frustrum for all Weapon Modules on ship
             tempData.moduleFrustum = new List<BoundingFrustum>();
