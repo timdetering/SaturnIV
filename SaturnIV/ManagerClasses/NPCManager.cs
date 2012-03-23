@@ -89,27 +89,25 @@ namespace SaturnIV
             /// 
             if ((thisShip.currentTarget == null && thisShip.currentDisposition != disposition.idle && !thisShip.userOverride) || thisShip.canEngageMultipleTargets)
             {
-                if (rand.Next(0, 100) < 50 && tmpList.Count() > 0)
+                if (rand.Next(0, 100) < 40 && tmpList.Count() > 0)
                 {
                     c = tmpList.Count();
                     thisShip.currentTarget = tmpList[rand.Next(c)];                   
                 }
-                else
-                    if (tmpList.Count() > 0)
-                        thisShip.currentTarget = bestTarget; // tmpList[0];
                 if (thisShip.currentTarget != null)
                 {
                     thisShip.currentTarget.isAlreadyEngaged = true;
                     thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
                     thisShip.currentDisposition = disposition.engaging;
                 }
-            }            
-            
-            //if (thisShip.currentTarget != null && Vector3.Distance(thisShip.modelPosition,thisShip.currentTarget.modelPosition) < thisShip.maxDetectRange && thisShip.userOverride)
-            //{    
-            //    thisShip.currentTarget = null;
-            //    thisShip.currentTargetLevel = 0;
-           // }
+            }
+            /// Even if already engaged roll the dice to see if ship changes to another or better target
+            if (thisShip.currentTarget != null && rand.Next(0, 100) < 10)
+            {
+                c = tmpList.Count();
+                thisShip.currentTarget = tmpList[rand.Next(c)];
+                thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
+            }
 
             /// End Target Selection
             /// 

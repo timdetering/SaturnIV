@@ -41,7 +41,7 @@
       <Mass>0.10</Mass>
       <Thrust>35000</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>3500</Scale>
+      <Scale>2500</Scale>
       <Agility>20</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>

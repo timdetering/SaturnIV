@@ -54,7 +54,7 @@ namespace SaturnIV
 
         public void CreateExplosionVertices(float time, Vector3 expPosition,float eSize)
         {
-            int particles = 20;
+            int particles = 30;
             explosionVertices = new VertexExplosion[particles * 6];
             rand = new Random();
             int i = 0;
@@ -72,7 +72,7 @@ namespace SaturnIV
 
                 float r4 = (float)rand.NextDouble();
                 //r4 = r4 / 4.0f * 3.0f + 0.25f;
-                r4 = eSize*10;
+                r4 = eSize*25;
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(1, 1, time, 250), new Vector4(moveDirection, r4));
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(0, 0, time, 250), new Vector4(moveDirection, r4));
                 explosionVertices[i++] = new VertexExplosion(startingPos, new Vector4(1, 0, time, 250), new Vector4(moveDirection, r4));
