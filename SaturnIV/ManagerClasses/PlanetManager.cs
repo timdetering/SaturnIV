@@ -63,7 +63,7 @@ namespace SaturnIV
                 tempData.planetModel = LoadModel("Models/planet");
                 tempData.planetRadius = planetRadius; // Position.Next(100, planetRadiusBoundry);
                 tempData.planetPosition = position;
-                tempData.planetPosition.Y = -600000;
+                tempData.planetPosition.Y = -200000;
                 tempData.planetTexture = planetTextureArray[textureID];
                 tempData.isControlled = isControlled;
                 tempData.planetName = name;

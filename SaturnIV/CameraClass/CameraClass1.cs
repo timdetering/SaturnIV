@@ -78,8 +78,8 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 35.0)
-                zoomFactor += (WheelVal * 1.25f);
+                if (zoomFactor < 60.0)
+                zoomFactor += (WheelVal * 1.75f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -88,8 +88,8 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
 
-                if (zoomFactor > 6.0)
-                zoomFactor -= (WheelVal * -1.25f);
+                if (zoomFactor > 16.0)
+                zoomFactor -= (WheelVal * -1.75f);
             }
 
             MouseState currentMouseState = Mouse.GetState();
