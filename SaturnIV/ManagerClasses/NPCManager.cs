@@ -126,6 +126,9 @@ namespace SaturnIV
                             thisShip.targetPosition = thisShip.currentTarget.modelPosition + (-thisShip.currentTarget.Direction * rand.Next(-1250, 1350));
                         else
                             thisShip.targetPosition = thisShip.currentTarget.modelPosition + (thisShip.currentTarget.Direction * rand.Next(-1250, 1350));
+                    else
+                        if (thisShip.currentTarget != null && !thisShip.isEvading && thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] == 0)
+                            thisShip.targetPosition = thisShip.modelPosition + (thisShip.Direction * 1500000);
                     break;
                 case disposition.moving:                    
                     thisShip.targetPosition = thisShip.wayPointPosition;

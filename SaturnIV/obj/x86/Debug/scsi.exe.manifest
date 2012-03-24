@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="118784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="scsi.exe" size="119296">
       <assemblyIdentity name="scsi" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>GyyzkySxiu2wn+13njEKNSGUE5o=</dsig:DigestValue>
+        <dsig:DigestValue>pNxSRZDNbQ5VJiM1Igj4sI7sRGc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -390,6 +390,42 @@
       <dsig:DigestValue>cjNj51dkXRoh2O4i6W4uCVD/L3A=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\Ships\eriax_fighter_darkstar\ship_1.xnb" size="30493">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bTdm3czQNm5QQtQQbG5TwePknOo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb" size="174897">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0QqkVXRnDON/l5GZoW4lzfro9Z0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\Ships\eriax_lightbomber_legato\ship_5.xnb" size="37061">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kWvt52lT4PUxsWAWnNVxKqSU7ak=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb" size="174897">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hTTX5OgrYIRNYzXGHRhuEw6noCE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\Ships\fighter_m1\bump_6.xnb" size="1048661">
     <hash>
       <dsig:Transforms>
@@ -423,7 +459,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uY1heQ/r/AZkbiEbOT2vzp75ySw=</dsig:DigestValue>
+      <dsig:DigestValue>4FLQgTtvtn9NbXfTBip0cQNsbRc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\fighter_m1\illumination_6.xnb" size="1048661">
@@ -486,7 +522,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PLDmKaR+pyLIcPjkTKijjsbA/oA=</dsig:DigestValue>
+      <dsig:DigestValue>j3iXYeSCyWivHSCnR2BShjgMzQo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\fighter_m3\fighter_1.xnb" size="1048661">
@@ -522,70 +558,16 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>z1UrxwcQpPmKaVxMq4eL/xJkAT4=</dsig:DigestValue>
+      <dsig:DigestValue>DUUFF5QvKYuX14HAr/wjI/3K/90=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\Ships\Fleet\fleet_attack_bomber.xnb" size="909074">
+  <file name="Content\Models\Ships\frigate_c1\frigate_c1.xnb" size="537521">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Tl05bbEe8v9Lkg6N/jb1B5HjKRA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\Fleet\fleet_bomber.xnb" size="228493">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dDNurfPF2Up7TXkh9yAErp+T4fI=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\Fleet\fleet_corvette.xnb" size="346730">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>9gIKW2cQE5dFDdygqhmah+FFeeY=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\Fleet\fleet_crusier.xnb" size="884138">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gg5Lv6Vds/+vnK3eZ3k+yl8S8W8=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\Fleet\fleet_frigate.xnb" size="219150">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2AADx7/Gg37AqNhI4OPcfBxV3wA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\Fleet\fleet_heavy_crusier.xnb" size="356282">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>H9yPbY8Kc33S9rSOJyKkEGcB5Yk=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Models\Ships\frigate_c1\frigate_c1.xnb" size="635777">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>WaVIZZOaCQWuJ/auE/mPTU2lDTM=</dsig:DigestValue>
+      <dsig:DigestValue>bgG2FHyR7eEPqrxAWE7e1hOmtBU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\Material_0.xnb" size="174897">
@@ -793,15 +775,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>zq4ToO1PJIwVi3NYKY5fCa8J6kE=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\test2_0.xnb" size="174897">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ARbGOqQE4L+sL/+iVhgkpt6N8xk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\textures\blackDotLarge.xnb" size="40085">
@@ -1110,13 +1083,13 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="8739">
+  <file name="Content\XML\shipdefs.xml" size="11787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>u9zjbcqqtW820/vO62aySDZvnr8=</dsig:DigestValue>
+      <dsig:DigestValue>KqbqUoJVmrnz/uofOCAaoDjbEjs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4394">

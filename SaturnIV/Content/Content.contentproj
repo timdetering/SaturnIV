@@ -388,20 +388,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Fleet\fleet_crusier.FBX">
-      <Name>fleet_crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ships\Fleet\fleet_frigate.FBX">
-      <Name>fleet_frigate</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\Ships\Eriax\eriax_heavy_fighter.FBX">
       <Name>eriax_heavy_fighter</Name>
       <Importer>FbxImporter</Importer>
@@ -416,13 +402,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Fleet\fleet_bomber.FBX">
-      <Name>fleet_bomber</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\sphere.FBX">
       <Name>sphere</Name>
       <Importer>FbxImporter</Importer>
@@ -430,23 +409,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Ships\Fleet\fleet_heavy_crusier.FBX">
-      <Name>fleet_heavy_crusier</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Ships\Fleet\fleet_attack_bomber.FBX">
-      <Name>fleet_attack_bomber</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\Fleet\fleet_corvette.FBX">
-      <Name>fleet_corvette</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Ships\Eriax\eriax_fighter_a.FBX">
       <Name>eriax_fighter_a</Name>
       <Importer>FbxImporter</Importer>
@@ -501,6 +463,11 @@
       <Name>LargeFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\eriax_lightbomber_legato\ship_5.FBX">
+      <Name>ship_5</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
     <None Include="XML\listofnames.xml">
       <Name>listofnames</Name>
@@ -645,6 +612,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Ships\eriax_fighter_darkstar\ship_1.FBX">
+      <Name>ship_1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="textures\GUI\buildmenubg.png">
       <Name>buildmenubg</Name>
       <Importer>TextureImporter</Importer>
