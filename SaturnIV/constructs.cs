@@ -257,6 +257,10 @@ namespace SaturnIV
             public int planetRadius;
             public Model planetModel;
             public BoundingSphere planetBS;
+            public int isControlled;
+            public Vector3 screenCoords;
+            public string planetName;
+            public bool isSelected;
         }
 
         public class planetSaveStruct
@@ -264,6 +268,8 @@ namespace SaturnIV
             public string planetTextureFile;
             public int planetRadius;
             public Vector3 planetPosition;
+            public int isControlled;
+            public string planetName;
         }
 
         public class systemStruct

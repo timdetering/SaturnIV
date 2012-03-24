@@ -77,13 +77,14 @@ namespace SaturnIV
                 if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 10)
                         tmpList.Remove(tmpList[i]);
             }
-            newShipStruct bestTarget = (from element in tmpList 
-                                        orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
-                                        select element).First();
+            //newShipStruct bestTarget = (from element in tmpList 
+            //                            orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
+            //                            select element).First();
 
             if (thisShip.currentTarget != null)
                 thisShip.angleOfAttack = (float)GetSignedAngleBetweenTwoVectors(thisShip.Direction, thisShip.currentTarget.Direction, thisShip.currentTarget.Right);
             /// End Target List Creation
+            /// 
             /// 
             /// Target Selection
             /// 
@@ -102,7 +103,7 @@ namespace SaturnIV
                 }
             }
             /// Even if already engaged roll the dice to see if ship changes to another or better target
-            if (thisShip.currentTarget != null && rand.Next(0, 100) < 10)
+            if (thisShip.currentTarget != null && rand.Next(0, 100) < 15 && tmpList.Count() > 0)
             {
                 c = tmpList.Count();
                 thisShip.currentTarget = tmpList[rand.Next(c)];
@@ -146,9 +147,9 @@ namespace SaturnIV
             foreach (newShipStruct iShip in tmpList2)
             {
                 float distance = Vector3.Distance(thisShip.modelPosition, iShip.modelPosition);
-                if ((thisShip.currentDisposition != disposition.moving && (distance < thisShip.EvadeDist[(int)iShip.objectClass] * 20 && !thisShip.isEvading &&
+                if ((thisShip.currentDisposition != disposition.moving && (distance < thisShip.EvadeDist[(int)iShip.objectClass] * 5 && !thisShip.isEvading &&
                     thisShip.ChasePrefs[(int)iShip.objectClass] > 0)
-                    || (thisShip.currentTarget != null && thisShip.angleOfAttack > 3.09 && distance < thisShip.EvadeDist[(int)iShip.objectClass] * 10)))
+                    || (thisShip.currentTarget != null && thisShip.angleOfAttack > 3.09 && distance < thisShip.EvadeDist[(int)iShip.objectClass] * 5)))
                 {
                     thisShip.targetPosition = thisShip.modelPosition +((-thisShip.Direction +
                          (HelperClass.RandomDirection()) * thisShip.modelLen * 500));
@@ -157,7 +158,7 @@ namespace SaturnIV
                     thisShip.isPursuing = false;
                     // MARK!
                     thisShip.timer = currentTime;
-                    timeToEvade = rand.Next(3000, 6000) * thisShip.objectMass;
+                    timeToEvade = rand.Next(1000, 6000) * thisShip.objectMass;
                     break;
                 }
             }
@@ -188,9 +189,9 @@ namespace SaturnIV
                 thisShip.currentDisposition = disposition.patrol;
             }
 
-            if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 2500000)
+            if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 700000)
             {
-                thisShip.targetPosition = HelperClass.RandomSpherePoint();
+                //thisShip.targetPosition = HelperClass.RandomSpherePoint();
             }
         }
 

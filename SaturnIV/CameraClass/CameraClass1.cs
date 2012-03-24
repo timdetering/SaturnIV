@@ -30,7 +30,8 @@ namespace SaturnIV
         private MouseState mouseStateCurrent;
         private MouseState mouseStatePrevious;
         private MouseState originalMouseState;
-        public static float zoomFactor = 8.5f;
+        public static float zoomFactor = 12.5f;
+        float preZoomFactor;
 
         public CameraNew()
         {
@@ -60,7 +61,7 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 16 / 9, 1.5f, 700000f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 4 / 3, 1.5f, 6700000f);
         }
 
         public void Update(Matrix chasedObjectsWorld, bool isEditMode)
@@ -77,8 +78,8 @@ namespace SaturnIV
             {
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
-                if (zoomFactor < 25.0)
-                zoomFactor += (WheelVal * 0.55f);
+                if (zoomFactor < 35.0)
+                zoomFactor += (WheelVal * 1.25f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -87,56 +88,10 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
 
-                if (zoomFactor > 2.0)
-                zoomFactor -= (WheelVal * -0.55f);
+                if (zoomFactor > 6.0)
+                zoomFactor -= (WheelVal * -1.25f);
             }
 
-            //Rotate Camera
-            if (keyboardState.IsKeyDown(Keys.J))
-            {
-                if (currentCameraMode != CameraMode.chase)
-                {
-                    yaw += .02f;
-                }
-                else
-                {
-                    //This is to make the panning more prominent in the Chase Camera.
-                    yaw += .2f;
-                }
-            }
-            if (keyboardState.IsKeyDown(Keys.L))
-            {
-                if (currentCameraMode != CameraMode.chase)
-                {
-                    yaw += -.02f;
-                }
-                else
-                {
-                    yaw += -.2f;
-                }
-            }
-            if (keyboardState.IsKeyDown(Keys.I))
-            {
-                if (currentCameraMode != CameraMode.chase)
-                {
-                    pitch += -.02f;
-                }
-                else
-                {
-                    pitch += .2f;
-                }
-            }
-            if (keyboardState.IsKeyDown(Keys.K))
-            {
-                if (currentCameraMode != CameraMode.chase)
-                {
-                    pitch += .02f;
-                }
-                else
-                {
-                    pitch += -.2f;
-                }
-            }
             MouseState currentMouseState = Mouse.GetState();
             if (currentMouseState != originalMouseState && !isEditMode && Keyboard.GetState().IsKeyDown(Keys.LeftShift))
             {

@@ -107,6 +107,7 @@ Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\color_0_0.xnb
 Content\textures\GUI\medbox.xnb
 Content\textures\GUI\buildmenubg.xnb
+Content\LargeFont.xnb
 Content\XML\listofnames.xml
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml

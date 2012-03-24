@@ -24,7 +24,7 @@ namespace SaturnIV
 
         //Space Object Variables
         Matrix rotationMatrix = Matrix.Identity;
-        public static List<planetStruct> planetList = new List<planetStruct>();
+        public List<planetStruct> planetList = new List<planetStruct>();
         public Texture2D[] planetTextureArray;
         public Line3D line;
         public static BoundingSphere planetBS;
@@ -54,25 +54,20 @@ namespace SaturnIV
 
             //planetTextureArray[2] = Game.Content.Load<Texture2D>("earthplanettexture");
         }
-        public void generatSpaceObjects(int textureID, Vector3 position, int planetRadius)
+        public void generatSpaceObjects(int textureID, Vector3 position, int planetRadius, int isControlled, string name)
         {
-            planetBS = new BoundingSphere(Vector3.Zero, 2000);
-
-            Random Position = new Random();
+            planetBS = new BoundingSphere(position, planetRadius);
             loadPlanetTextures();
-            double tX, tY, tZ, w, t;
-                tZ = 2.0 * Position.NextDouble() - 1.0;
-                t = 2.0 * MathHelper.Pi * Position.NextDouble();
-                w = Math.Sqrt(1 - tZ * tZ);
-                tX = w * Math.Cos(t);
-                tY = 0;//w * Math.Sin(t); 
                 planetStruct tempData = new planetStruct();
                 //int tTextureIndex = 1;
                 tempData.planetModel = LoadModel("Models/planet");
                 tempData.planetRadius = planetRadius; // Position.Next(100, planetRadiusBoundry);
                 tempData.planetPosition = position;
-                tempData.planetPosition.Y = -200000;
+                tempData.planetPosition.Y = -600000;
                 tempData.planetTexture = planetTextureArray[textureID];
+                tempData.isControlled = isControlled;
+                tempData.planetName = name;
+                tempData.planetBS = planetBS;
                 planetList.Add(tempData);
         }
 
@@ -80,10 +75,13 @@ namespace SaturnIV
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ModelManager mManager, CameraNew camera)
         {
             // TODO: Add your update code here
+            foreach (planetStruct planet in planetList)
+                planet.screenCoords = mManager.get2dCoords(planet.planetPosition, camera);
             //UpdatePlanetRotation();
+            
             base.Update(gameTime);
         }
 

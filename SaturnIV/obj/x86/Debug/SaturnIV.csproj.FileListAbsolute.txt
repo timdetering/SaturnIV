@@ -801,3 +801,4 @@ C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\TomShane.Neoforce.Controls.dll
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\medbox.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\buildmenubg.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\LargeFont.xnb

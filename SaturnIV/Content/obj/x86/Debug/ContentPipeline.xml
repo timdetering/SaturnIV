@@ -107,7 +107,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\MedFont.xnb</Output>
-      <Time>2012-02-15T19:12:19.6194035-06:00</Time>
+      <Time>2012-03-23T20:19:10.021617-05:00</Time>
     </Item>
     <Item>
       <Source>SmallFont.spritefont</Source>
@@ -1394,6 +1394,15 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\GUI\buildmenubg.xnb</Output>
       <Time>2012-03-17T15:52:47.6493767-05:00</Time>
+    </Item>
+    <Item>
+      <Source>LargeFont.spritefont</Source>
+      <Name>LargeFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\LargeFont.xnb</Output>
+      <Time>2012-03-23T20:18:59.0859978-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

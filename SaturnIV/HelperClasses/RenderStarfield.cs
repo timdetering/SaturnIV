@@ -82,7 +82,7 @@ namespace SaturnIV
                 game.Content.Load<Texture2D>("textures/star"));
             vertexPosColDecl = new VertexDeclaration(game.GraphicsDevice,
                 VertexPositionColor.VertexElements);
-            generateStarField(game, 2000);
+            generateStarField(game, 10000);
         }
 
          private VertexPositionTexture[] SetUpFullscreenVertices()
@@ -117,8 +117,8 @@ namespace SaturnIV
                 w = Math.Sqrt(1 - z * z);
                 x = w * Math.Cos(t);
                 y = w * Math.Sin(t);
-                starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-1000000, 1000000),
-                                                        (float)y * rand.Next(-1000000, 1000000), (float)z * rand.Next(-1000000, 1000000)),
+                starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-7000000, 7000000),
+                                                        (float)y * rand.Next(-7000000, 7000000), (float)z * rand.Next(-7000000, 7000000)),
                                                          starColors[rand.Next(0, 5)]);
              }
         }
