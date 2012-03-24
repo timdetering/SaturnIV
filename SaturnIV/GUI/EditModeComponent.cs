@@ -305,7 +305,7 @@ namespace SaturnIV
             else
             {
                 tempData.userOverride = true;
-                tempData.currentDisposition = disposition.idle;
+                tempData.currentDisposition = disposition.defensive;
             }
             tempData.currentTarget = null;
             if (tempData.objectClass == ClassesEnum.Crusier)

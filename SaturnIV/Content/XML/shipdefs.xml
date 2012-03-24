@@ -112,7 +112,7 @@
 	  <hullValue>100</hullValue>
 	  <shieldValue>0</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
-    <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
+    <EvadeDist>1500 1500 1500 1500 500 500</EvadeDist>
     <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
 	  <ChasePrefs>1 1 1 1 1 0</ChasePrefs>
     <maxDetectRange>8000</maxDetectRange>  

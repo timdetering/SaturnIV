@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qp6R2IkYqmKac3ivmtifgb8iFyM=</dsig:DigestValue>
+        <dsig:DigestValue>GyyzkySxiu2wn+13njEKNSGUE5o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1110,13 +1110,13 @@
       <dsig:DigestValue>LqPxgh1p6nYd2pSFkvFh4axQ5vM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="8738">
+  <file name="Content\XML\shipdefs.xml" size="8739">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>54hxcf3IbKyeMcctHq3/pz6l0Kw=</dsig:DigestValue>
+      <dsig:DigestValue>u9zjbcqqtW820/vO62aySDZvnr8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4394">

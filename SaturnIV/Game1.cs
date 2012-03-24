@@ -434,7 +434,7 @@ namespace SaturnIV
                                 if (potentialTarget != null && potentialTarget.team != thisShip.team)
                                 {
                                     thisShip.currentTarget = potentialTarget;
-                                    thisShip.currentDisposition = disposition.engaging;
+                                    //thisShip.currentDisposition = disposition.engaging;
                                     thisShip.userOverride = true;
                                 }
                                 thisShip.currentDisposition = disposition.moving;
@@ -520,7 +520,10 @@ namespace SaturnIV
                 {
                     foreach (newShipStruct tShip in activeShipList)
                         if (tShip.isSelected)
+                        {
                             tShip.currentDisposition = disposition.patrol;
+                            tShip.currentTarget = null;
+                        }
                 }
 
 
@@ -789,7 +792,7 @@ namespace SaturnIV
                         buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
                         buffer.AppendFormat("[" + enemy.isEvading + "]");
                         buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
-                        buffer.AppendFormat("[{0}", enemy.Velocity);
+                        buffer.AppendFormat("[" + enemy.thrustAmount + "]");
                         if (enemy.currentTarget != null)
                         {
                             buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
