@@ -17,7 +17,7 @@ namespace SaturnIV
         /// </summary>
         /// 
         int tethAvailable;
-        Texture2D dummyTexture, medBox,buildMBox;
+        Texture2D dummyTexture, medBox, buildMBox, rSideWindow;
         public Rectangle medRec;
         Color opt1Color;
         public static editOptions currentSelection;
@@ -30,8 +30,9 @@ namespace SaturnIV
         public static bool LoadScenario = false;
         public static bool inGui, isSelected;
         public string loadThisScenario = null;
-        Vector2 queueListPos = new Vector2(300, 325);
-        Vector2 shipListPos = new Vector2(500, 400);
+        Vector2 queueListPos = new Vector2(55, 600);        
+        Vector2 shipListPos = new Vector2(55, 425);
+        Vector2 shipTitlePos = new Vector2(60, 400);
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         //int[] menuStartX = new int[10]{10,150,300,450,600,750};
@@ -63,7 +64,7 @@ namespace SaturnIV
                 MenuItem tempItem = new MenuItem();
                 tempItem.itemText = shipList[i].Type;
                 tempItem.itemIndex = i;
-                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 400,20);
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 250,20);
                 verticalStartY += 20;
                 menuShipList.Add(tempItem);
             }
@@ -78,7 +79,8 @@ namespace SaturnIV
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
             medBox = game.Content.Load<Texture2D>("textures//GUI/medbox") as Texture2D;
             buildMBox = game.Content.Load<Texture2D>("textures//GUI/buildmenubg") as Texture2D;
-            medRec = new Rectangle(256,256,768,512);
+            rSideWindow = game.Content.Load<Texture2D>("textures//GUI/mWindow") as Texture2D;
+            medRec = new Rectangle((int)shipListPos.X, (int)shipListPos.Y, 200, 200);
         }
 
         public void update(MouseState currentMouse, MouseState oldMouse, BuildManager buildManager, bool isLClicked, Vector3 pos)
@@ -107,7 +109,9 @@ namespace SaturnIV
         {            
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
-            mBatch.Draw(buildMBox, medRec, Color.White);
+            //mBatch.Draw(buildMBox, medRec, Color.White);
+            mBatch.Draw(rSideWindow, new Rectangle(20, 355, 348, 640), Color.Blue);
+            mBatch.DrawString(spriteFont, "Build Menu", shipTitlePos, Color.White);
             /// This is the Available Ship List Area
             /// 
             for (int i = 0; i < menuShipList.Count; i++)
@@ -131,8 +135,8 @@ namespace SaturnIV
             {
                 messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + "\n");
                 messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);                         
-            }
-            mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.Green);          
+            }       
+            mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.White); 
         }
     }
 }

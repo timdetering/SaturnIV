@@ -562,7 +562,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\move_icon.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\ThrustCylinderB.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Effects\GaussianBlur.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\basic_missile.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\3732.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\textures\skybox2.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Thrusters\Thrust.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\red_small_plane.xnb
@@ -594,18 +593,12 @@ C:\Users\bryan\Saturn-IV\SaturnIV\obj\x86\Debug\scsi.pdb
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\shipdefs.xml
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\listofnames.xml
 C:\Users\bhaase\Documents\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\weapondefs.xml
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Metal_Pa_0.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_heavy_fighter.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_bomber.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Material_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\largeSphere.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\sphere.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\testscenario.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\weapondefs.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\Scenarios\scenario1.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\listofnames.xml
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\XML\shipdefs.xml
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\Eriax\eriax_fighter_a.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_blue.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\spacescapes\spacescape_green.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\planet.xnb
@@ -751,10 +744,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\station_t1\
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\COLOR_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\bomber_b1.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\bomber_b1\color.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_bump.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_1_specular.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\color_0_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\fighter_m3.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\tacmap_items\transplanegreen.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\cannon.xnb
@@ -799,3 +788,4 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\eriax_fight
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\eriax_lightbomber_legato\ship_5.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m2\fighter_1_0.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Debug\Content\Models\Ships\fighter_m3\color_0_0.xnb

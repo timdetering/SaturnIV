@@ -308,7 +308,7 @@ namespace SaturnIV
                 tempData.currentDisposition = disposition.defensive;
             }
             tempData.currentTarget = null;
-            if (tempData.objectClass == ClassesEnum.Crusier)
+            if (tempData.objectClass == ClassesEnum.Crusier || shipDefList[shipIndex].isStationary)
                 tempData.canEngageMultipleTargets = true;
             tempData.Up = Vector3.Up;
             tempData.modelBB = HelperClass.ComputeBoundingBox(Game1.modelDictionary[tempData.objectFileName], tempData.modelPosition);

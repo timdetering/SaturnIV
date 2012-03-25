@@ -154,6 +154,7 @@ namespace SaturnIV
         public double timer;
         public double[] regenTimer;
         public int currentWeaponMod;
+        public bool isStationary;
     }
 
     public class weaponStruct : newShipStruct
@@ -200,6 +201,7 @@ namespace SaturnIV
         public float[] TargetPrefs;
         public int[] ChasePrefs;
         public float maxDetectRange;
+        public bool isStationary;
         public WeaponModule[] AvailableWeapons;
         public Vector3 ThrusterPosition;
     }

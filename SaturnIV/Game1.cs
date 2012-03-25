@@ -206,9 +206,9 @@ namespace SaturnIV
         {
             device = graphics.GraphicsDevice;
             viewport = device.Viewport;
-            spriteFont = this.Content.Load<SpriteFont>("MedFont");
-            medFont = this.Content.Load<SpriteFont>("LargeFont");
-            spriteFontSmall = this.Content.Load<SpriteFont>("SmallFont");
+            spriteFont = this.Content.Load<SpriteFont>("Fonts/MedFont");
+            medFont = this.Content.Load<SpriteFont>("Fonts/LargeFont");
+            spriteFontSmall = this.Content.Load<SpriteFont>("Fonts/SmallFont");
             loadMetaData();
             Gui.initalize(this, ref shipDefList);
             cPanel.LoadPanel(Content, spriteBatch);
@@ -674,7 +674,8 @@ namespace SaturnIV
             //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
-             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
+            messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch);
             if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);            
 
@@ -694,12 +695,11 @@ namespace SaturnIV
             /// End Rectangle Select Crap
             ///
             spriteBatch.Draw(selectRecTex, r, Color.White);
-            if (showBuildMenu) aMenu.drawGUI(spriteBatch, spriteFont, buildManager);
+            if (showBuildMenu) aMenu.drawGUI(spriteBatch, medFont, buildManager);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                 cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
                 activeShipList, serializerClass,300,25);
-            messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
             base.Draw(gameTime);
         }
 
@@ -708,6 +708,8 @@ namespace SaturnIV
             foreach (newShipStruct npcship in activeShipList)
             {
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
+                //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.One,Vector3.Down,Vector3.Up,npcship.maxDetectRange
+                //    ,npcship.maxDetectRange), orangeTarget, npcship.modelPosition);
                 if (isDebug)
                     debug(npcship);
                 spriteBatch.Begin();
