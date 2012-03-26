@@ -100,10 +100,10 @@ namespace SaturnIV
                         {
                             for (int y=0; y< 25;y++)
                                 ourExplosion.CreateExplosionVertices((float)gameTime.TotalGameTime.TotalMilliseconds,
-                                                           currentExpLocation, (float)random.NextDouble());
+                                                           currentExpLocation, (float)random.Next(1,3));
                             MessageClass.messageLog.Add(thisShipList[j].objectAlias + " is destroyed");
                             thisShipList.Remove(thisShipList[j]);
-                            //gServer.removeObject(j);
+                            gServer.removeObject(j);
                          }                       
                         return true;
                     }

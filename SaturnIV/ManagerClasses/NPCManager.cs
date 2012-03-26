@@ -53,7 +53,7 @@ namespace SaturnIV
         {
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             moduleCount = 0;                  
-            thisShip.thrustAmount =1.0f;
+            thisShip.thrustAmount = 1.0f;
            
             if (loopTimer < 0)
                 loopTimer = currentTime;
@@ -77,6 +77,18 @@ namespace SaturnIV
                 if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 10)
                         tmpList.Remove(tmpList[i]);
             }
+            /// Find closet target
+            /// 
+            float tDistance = float.MaxValue;
+            newShipStruct cTarget = new newShipStruct();
+            for (int i = 0; i < tmpList.Count; i++)
+            {
+                if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) < tDistance)
+                {
+                    tDistance = Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition);
+                    cTarget = tmpList[i];
+                }
+            }
             //newShipStruct bestTarget = (from element in tmpList 
             //                            orderby thisShip.TargetPrefs[(int)element.objectClass] descending 
             //                            select element).First();
@@ -88,19 +100,23 @@ namespace SaturnIV
             /// 
             /// Target Selection
             /// 
-            if ((thisShip.currentTarget == null || thisShip.canEngageMultipleTargets) && thisShip.currentDisposition != disposition.moving && tmpList.Count() > 0)
+            if ((thisShip.currentTarget == null || thisShip.canEngageMultipleTargets) && tmpList.Count() > 0)
             {
-                if (rand.Next(0, 100) < 40 && tmpList.Count() > 0)
+                if (rand.Next(0, 100) < 25 && tmpList.Count() > 0)
                 {
                     c = tmpList.Count();
-                    thisShip.currentTarget = tmpList[rand.Next(c)];                   
+                    thisShip.currentTarget = tmpList[rand.Next(c)];
                 }
+                else
+                    if (tmpList.Count() > 0)
+                        thisShip.currentTarget = cTarget;
+
                 if (thisShip.currentTarget != null)
                 {
                     thisShip.currentTarget.isAlreadyEngaged = true;
                     thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
                 }
-                if (thisShip.currentDisposition != disposition.defensive)
+                if (thisShip.currentDisposition == disposition.patrol)
                     thisShip.currentDisposition = disposition.engaging;
             }
             /// Even if already engaged roll the dice to see if ship changes to another or better target
@@ -140,7 +156,8 @@ namespace SaturnIV
                     {
                         cycleWeapons(thisShip, thisShip.currentTarget, currentTime, weaponsManager, projectileTrailParticles,
                                    weaponDefList);
-                        thisShip.targetPosition = thisShip.currentTarget.modelPosition;
+                        if (thisShip.ChasePrefs[(int)thisShip.currentTarget.objectClass] > 0)
+                            thisShip.targetPosition = thisShip.currentTarget.modelPosition;
                     }
                     break;
                 case disposition.patrol:
@@ -169,7 +186,7 @@ namespace SaturnIV
                     thisShip.isPursuing = false;
                     // MARK!
                     thisShip.timer = currentTime;
-                    timeToEvade = rand.Next(1000, 6000) * thisShip.objectMass;
+                    timeToEvade = rand.Next(3000, 6000) * thisShip.objectMass;
                     break;
                 }
             }

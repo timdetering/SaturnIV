@@ -34,9 +34,13 @@
           0 -1000 15000  2
           0 -1000 -15000 3
           0 -1000 15000  3
+          0 -1000 -15000 0
+          0 -1000 15000  0
+          0 -1000 -15000 1
+          0 -1000 15000  1
         </ModulePositionOnShip>
         <FiringEnvelopeAngle>65</FiringEnvelopeAngle>
-        <weaponRange>50000</weaponRange>
+        <weaponRange>250000</weaponRange>
         <timer>0</timer>
       </Item>
       <Item>
@@ -46,9 +50,13 @@
           0 -1000 10000  2
           0 -1000 -10000 3
           0 -1000 10000  3
+          0 -1000 -10000 2
+          0 -1000 10000  2
+          0 -1000 -10000 3
+          0 -1000 10000  3
         </ModulePositionOnShip>
         <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
-        <weaponRange>100000</weaponRange>
+        <weaponRange>400000</weaponRange>
         <timer>0</timer>
       </Item>
     </AvailableWeapons>
@@ -83,7 +91,7 @@
             400 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>95000</weaponRange>
+          <weaponRange>295000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
@@ -93,7 +101,7 @@
             -4 0 -10 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>96000</weaponRange>
+          <weaponRange>296000</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -173,17 +181,17 @@
       400 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>45000</weaponRange>
+	<weaponRange>345000</weaponRange>
 	<timer>0</timer>
       </Item>
       <Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 0
 	   -4 0 -10 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>66000</weaponRange>
+	<weaponRange>266000</weaponRange>
 	<timer>0</timer>
       </Item>
       </AvailableWeapons>
@@ -217,7 +225,7 @@
             80 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>95000</weaponRange>
+          <weaponRange>295000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
@@ -227,7 +235,7 @@
        4 0 50 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-	 <weaponRange>125000</weaponRange>
+	 <weaponRange>325000</weaponRange>
 	 <timer>0</timer>
       </Item>      
       </AvailableWeapons>
@@ -273,7 +281,7 @@
             0 0 -20 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>190000</weaponRange>
+          <weaponRange>290000</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -308,7 +316,7 @@
       -400 0 -500 0
     </ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>550000</weaponRange>
+	<weaponRange>650000</weaponRange>
 	<timer>0</timer>
         </Item>
 	<Item>
@@ -318,7 +326,7 @@
 		0 0  50 0
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>562000</weaponRange>
+	<weaponRange>662000</weaponRange>
 	<timer>0</timer>
         </Item>
       </AvailableWeapons>

@@ -13,6 +13,7 @@ Content\MedFont.xnb
 Content\SmallFont.xnb
 Content\Fonts\MedFont.xnb
 Content\Fonts\SmallFont.xnb
+Content\Fonts\LargeFont.xnb
 Content\textures\redtexture.xnb
 Content\hud.xnb
 Content\hud_target.xnb
@@ -95,7 +96,6 @@ Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\Models\Ships\fighter_m3\color_0_0.xnb
 Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb
 Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb
-Content\Fonts\LargeFont.xnb
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml
 Content\XML\listofnames.xml

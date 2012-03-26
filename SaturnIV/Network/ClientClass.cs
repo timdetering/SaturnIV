@@ -26,7 +26,7 @@ namespace SaturnIV
 
         public void Update(ref List<newShipStruct> shipList, ref NPCManager npcManager)
         {
-            MessageClass.messageLog.Add("Update");
+            //MessageClass.messageLog.Add("Update");
              NetIncomingMessage msg;
                 if ((msg = client.ReadMessage()) != null)
                 {                     
@@ -45,13 +45,35 @@ namespace SaturnIV
                         case NetIncomingMessageType.Data:
                             if (msg.LengthBytes > 0)
                             {
-                               // if (msg.ReadByte() == (byte)PacketTypes.REMOVE)
-                               // {
-                               //     int objectIndex = msg.ReadInt32();
-                               //     MessageClass.messageLog.Add("Remove Object Request: " + objectIndex);
-                               // }
+                                byte messageByte = msg.ReadByte();
+                                 if (messageByte == (byte)PacketTypes.REMOVE)
+                                {
+                                    int objectIndex = msg.ReadInt32();
+                                    MessageClass.messageLog.Add("Remove Object Request: " + objectIndex);
+                                    shipList.RemoveAt(objectIndex);
+                                }
+                                if (messageByte == (byte)PacketTypes.ADD)
+                                {
+                                     int objectIndex = msg.ReadInt32();
+                                     MessageClass.messageLog.Add("ADD Object Request: " + objectIndex);
+                                     // Create new character to hold the data
+                                     saveObject ch = new saveObject();
+                                     //msg.ReadAllProperties(ch);
+                                     ch.shipName = msg.ReadString();
+                                     ch.shipIndex = msg.ReadInt32();
+                                     ch.side = msg.ReadInt32();
+                                     ch.shipPosition.X = msg.ReadFloat();
+                                     ch.shipPosition.Y = msg.ReadFloat();
+                                     ch.shipPosition.Z = msg.ReadFloat();
+                                     MessageClass.messageLog.Add("Data: " + ch.shipName);
+                                     //MessageClass.messageLog.Add("Data: " + ch.shipIndex);
+                                     // netFetchList.Add(ch);
+                                     shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList,
+                                         ch.shipName, ch.shipIndex, ch.side, false));
 
-                                if (msg.ReadByte() == (byte)PacketTypes.GETOBJECTS)
+                                }
+
+                                if (messageByte == (byte)PacketTypes.GETOBJECTS)
                                 {
                                     MessageClass.messageLog.Add("Initial Object Get Request");
                                     int count = 0;
@@ -74,15 +96,7 @@ namespace SaturnIV
                                         shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList, 
                                             ch.shipName, ch.shipIndex, ch.side, false));
                                     }
-                                }
-                                else 
-                                    if (msg.ReadByte() == (byte)PacketTypes.REMOVE)
-                                    {
-                                        int oIndex;
-                                        //if (msg.LengthBytes > 0)
-                                        //    oIndex = msg.ReadInt32();
-                                        MessageClass.messageLog.Add("Remove Request Gotten: ");
-                                    }
+                                }                                
                                //else
                                //     if (shipList.Count > 0)
                                //     {

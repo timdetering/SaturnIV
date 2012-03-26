@@ -33,12 +33,13 @@ namespace SaturnIV
         Vector2 queueListPos = new Vector2(55, 600);        
         Vector2 shipListPos = new Vector2(55, 425);
         Vector2 shipTitlePos = new Vector2(60, 400);
+        Vector2 rWindowListPos = new Vector2(250, 20);
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         //int[] menuStartX = new int[10]{10,150,300,450,600,750};
-               
+        string[] actionText = new string[4]{"Idle","patrol","Defend","Escort"};
         List<MenuItem> menuShipList = new List<MenuItem>();
-        List<MenuItem> menuActionList = new List<MenuItem>();
+        List<MenuItem> actionList = new List<MenuItem>();        
 
         public enum editOptions
         {
@@ -53,6 +54,19 @@ namespace SaturnIV
             public int itemIndex;
         }
 
+        public void buildActionList()
+        {
+            for (int i = 0; i < actionText.Count(); i++)
+            {
+                MenuItem tempItem = new MenuItem();
+                tempItem.itemText = actionText[i];
+                tempItem.itemIndex = i;
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, (int)rWindowListPos.X, (int)rWindowListPos.Y);
+                verticalStartY += 20;
+                actionList.Add(tempItem);
+            }
+        }
+
         public void buildShipMenu(List<shipData> shipList)
         {
             menuShipList.Clear();
@@ -64,7 +78,7 @@ namespace SaturnIV
                 MenuItem tempItem = new MenuItem();
                 tempItem.itemText = shipList[i].Type;
                 tempItem.itemIndex = i;
-                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, 250,20);
+                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, (int)rWindowListPos.X, (int)rWindowListPos.Y);
                 verticalStartY += 20;
                 menuShipList.Add(tempItem);
             }
@@ -76,6 +90,7 @@ namespace SaturnIV
             opt1Color = Color.Gray;           
             itemColor = Color.White;
             buildShipMenu(shipList);
+            buildActionList();
             dummyTexture = game.Content.Load<Texture2D>("textures//dummy") as Texture2D;
             medBox = game.Content.Load<Texture2D>("textures//GUI/medbox") as Texture2D;
             buildMBox = game.Content.Load<Texture2D>("textures//GUI/buildmenubg") as Texture2D;

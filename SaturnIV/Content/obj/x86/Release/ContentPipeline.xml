@@ -137,6 +137,15 @@
       <Time>2012-03-24T20:41:36.0657366-05:00</Time>
     </Item>
     <Item>
+      <Source>Fonts\LargeFont.spritefont</Source>
+      <Name>Fonts\LargeFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Fonts\LargeFont.xnb</Output>
+      <Time>2012-03-24T20:47:16.9850671-05:00</Time>
+    </Item>
+    <Item>
       <Source>textures\redtexture.png</Source>
       <Name>textures\redtexture</Name>
       <Importer>TextureImporter</Importer>
@@ -587,7 +596,7 @@
       <Time>2012-02-15T19:12:19.7144089-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\LaserBolt2_0.xml</Key>
-        <Value>2012-03-24T20:34:39.276453-05:00</Value>
+        <Value>2012-03-25T20:27:17.3408378-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -600,7 +609,7 @@
       <Time>2012-02-15T19:12:20.6364616-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2012-03-24T20:34:39.4004601-05:00</Value>
+        <Value>2012-03-25T20:27:17.7308385-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -613,7 +622,7 @@
       <Time>2012-03-09T20:50:33.5208874-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Fleet_KM100_0.xml</Key>
-        <Value>2012-03-24T20:34:40.4861083-05:00</Value>
+        <Value>2012-03-25T20:27:18.8540404-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -627,7 +636,7 @@
       <Time>2012-03-12T21:45:06.0592852-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\basic_bullet_0.xml</Key>
-        <Value>2012-03-24T20:34:41.5733428-05:00</Value>
+        <Value>2012-03-25T20:27:20.0084425-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -640,7 +649,7 @@
       <Time>2012-03-09T20:58:41.409793-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\basic_missile_0.xml</Key>
-        <Value>2012-03-24T20:34:42.7488066-05:00</Value>
+        <Value>2012-03-25T20:27:21.1940446-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Lakerem_0.xnb</Request>
     </Item>
@@ -654,7 +663,7 @@
       <Time>2012-02-15T19:12:20.5984595-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\largeSphere_0.xml</Key>
-        <Value>2012-03-24T20:34:43.8768711-05:00</Value>
+        <Value>2012-03-25T20:27:22.3640466-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -667,7 +676,7 @@
       <Time>2012-02-15T19:12:20.6024597-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_large_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:44.9073266-05:00</Value>
+        <Value>2012-03-25T20:27:23.4092484-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -680,7 +689,7 @@
       <Time>2012-02-15T19:12:20.6034598-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_medium_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:45.9417693-05:00</Value>
+        <Value>2012-03-25T20:27:24.4856503-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -693,7 +702,7 @@
       <Time>2012-02-15T19:12:20.60746-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_small_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:46.9784061-05:00</Value>
+        <Value>2012-03-25T20:27:25.5308522-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -706,7 +715,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_large_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:48.0156378-05:00</Value>
+        <Value>2012-03-25T20:27:26.5832537-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -719,7 +728,7 @@
       <Time>2012-02-15T19:12:20.60846-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_medium_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:49.0510806-05:00</Value>
+        <Value>2012-03-25T20:27:27.6362564-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -732,7 +741,7 @@
       <Time>2012-02-15T19:12:20.6094601-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_small_plane_0.xml</Key>
-        <Value>2012-03-24T20:34:50.0849155-05:00</Value>
+        <Value>2012-03-25T20:27:28.6853164-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -745,7 +754,7 @@
       <Time>2012-02-18T18:08:21.105633-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\sphere_0.xml</Key>
-        <Value>2012-03-24T20:34:51.1019564-05:00</Value>
+        <Value>2012-03-25T20:27:29.7101335-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -758,7 +767,7 @@
       <Time>2012-02-27T18:51:36.7690915-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\planet_0.xml</Key>
-        <Value>2012-03-24T20:34:52.1475894-05:00</Value>
+        <Value>2012-03-25T20:27:30.7709354-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -771,7 +780,7 @@
       <Time>2012-03-24T13:12:50.3595265-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\frigate_c1\frigate_c1_0.xml</Key>
-        <Value>2012-03-24T20:34:53.5668385-05:00</Value>
+        <Value>2012-03-25T20:27:32.237338-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\ship_hull19_0.xnb</Request>
     </Item>
@@ -785,7 +794,7 @@
       <Time>2012-03-24T13:09:12.2040487-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m1\fighter_m1_0.xml</Key>
-        <Value>2012-03-24T20:34:58.0602419-05:00</Value>
+        <Value>2012-03-25T20:27:36.2777451-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Request>
     </Item>
@@ -799,7 +808,7 @@
       <Time>2012-03-24T13:11:15.4450977-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m2\fighter_m2_0.xml</Key>
-        <Value>2012-03-24T20:34:59.5108894-05:00</Value>
+        <Value>2012-03-25T20:27:37.6193474-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Request>
     </Item>
@@ -813,7 +822,7 @@
       <Time>2012-03-15T21:21:09.8236737-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\station_t1\station_t1_0.xml</Key>
-        <Value>2012-03-24T20:35:01.0147469-05:00</Value>
+        <Value>2012-03-25T20:27:39.0077499-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t1\COLOR_0.xnb</Request>
     </Item>
@@ -827,7 +836,7 @@
       <Time>2012-03-08T20:34:20.1061975-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\bomber_b1\bomber_b1_0.xml</Key>
-        <Value>2012-03-24T20:35:02.5227979-05:00</Value>
+        <Value>2012-03-25T20:27:40.3805523-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Request>
     </Item>
@@ -841,7 +850,7 @@
       <Time>2012-03-24T13:57:51.0377751-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m3\fighter_m3_0.xml</Key>
-        <Value>2012-03-24T20:35:03.8958413-05:00</Value>
+        <Value>2012-03-25T20:27:41.6978086-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m3\color_0_0.xnb</Request>
     </Item>
@@ -855,7 +864,7 @@
       <Time>2012-03-12T21:53:38.1635759-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\cannon_0.xml</Key>
-        <Value>2012-03-24T20:35:05.2568934-05:00</Value>
+        <Value>2012-03-25T20:27:43.030613-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -868,7 +877,7 @@
       <Time>2012-03-24T13:00:21.9327189-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\eriax_lightbomber_legato\ship_5_0.xml</Key>
-        <Value>2012-03-24T20:35:06.3089324-05:00</Value>
+        <Value>2012-03-25T20:27:44.0982257-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb</Request>
     </Item>
@@ -882,7 +891,7 @@
       <Time>2012-03-24T12:40:47.5080685-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\eriax_fighter_darkstar\ship_1_0.xml</Key>
-        <Value>2012-03-24T20:35:07.6387752-05:00</Value>
+        <Value>2012-03-25T20:27:45.3994984-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb</Request>
     </Item>
@@ -1196,15 +1205,6 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb</Output>
       <Time>2010-03-04T12:53:15.796875-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\LargeFont.spritefont</Source>
-      <Name>Fonts\LargeFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Fonts\LargeFont.xnb</Output>
-      <Time>2012-03-24T20:47:16.9850671-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -32,7 +32,7 @@
       <isHoming>0</isHoming>
       <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
-      <range>492000</range>
+      <range>2692000</range>
       <timeToLive>6000</timeToLive>	  
     </Item>
     <Item>
@@ -49,7 +49,7 @@
       <isHoming>1</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>610000</range>
+      <range>910000</range>
       <timeToLive>9000</timeToLive>	  
     </Item>
    <Item>
@@ -66,7 +66,7 @@
       <isHoming>0</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>415000</range>
+      <range>915000</range>
       <timeToLive>1000</timeToLive>	  
     </Item>
     <Item>
@@ -83,7 +83,7 @@
       <isHoming>1</isHoming>
       <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
-      <range>425000</range>
+      <range>925000</range>
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
@@ -100,7 +100,7 @@
       <isHoming>0</isHoming>
       <regenTime>200</regenTime>
       <damageFactor>15</damageFactor>
-      <range>190000</range>	
+      <range>390000</range>	
       <timeToLive>1000</timeToLive>	  
     </Item>
 <Item>
@@ -117,7 +117,7 @@
       <isHoming>0</isHoming>
       <regenTime>1000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>211000</range>	
+      <range>911000</range>	
       <timeToLive>1000</timeToLive>	  
     </Item>
 	<Item>
@@ -134,7 +134,7 @@
       <isHoming>0</isHoming>
       <regenTime>4000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>123000</range>	
+      <range>823000</range>	
       <timeToLive>100</timeToLive>	  
     </Item>
   </Asset>

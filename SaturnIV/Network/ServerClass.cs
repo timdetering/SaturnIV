@@ -41,7 +41,29 @@ namespace SaturnIV
             {
                 NetOutgoingMessage outmsg = server.CreateMessage();
                 outmsg.Write((byte)PacketTypes.REMOVE);
-                //updatemsg.Write(objectIndex);
+                outmsg.Write(objectIndex);
+                server.SendMessage(outmsg, server.Connections[0], NetDeliveryMethod.Unreliable, 0);
+            }
+        }
+
+        public void addObject(ref newShipStruct ship)
+        {
+            if (clientsConnected > 0)
+            {
+                NetOutgoingMessage outmsg = server.CreateMessage();
+                outmsg.Write((byte)PacketTypes.ADD);
+                sendMe = new saveObject();
+                sendMe.shipPosition = ship.modelPosition;
+                sendMe.shipDirection = ship.targetPosition;
+                sendMe.shipName = ship.objectAlias;
+                sendMe.side = ship.team;
+                sendMe.shipIndex = ship.objectIndex;
+                outmsg.Write(sendMe.shipName);
+                outmsg.Write(sendMe.shipIndex);
+                outmsg.Write(sendMe.side);
+                outmsg.Write(sendMe.shipPosition.X);
+                outmsg.Write(sendMe.shipPosition.Y);
+                outmsg.Write(sendMe.shipPosition.Z);
                 server.SendMessage(outmsg, server.Connections[0], NetDeliveryMethod.Unreliable, 0);
             }
         }
