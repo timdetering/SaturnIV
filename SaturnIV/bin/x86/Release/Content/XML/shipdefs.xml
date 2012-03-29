@@ -53,8 +53,8 @@
     <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
       <Type>Atlas Class Frigate111</Type>
-      <Mass>15</Mass>
-      <Thrust>9500</Thrust>
+      <Mass>25</Mass>
+      <Thrust>1500</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>

@@ -1044,7 +1044,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nBrKUE4I8W4wKWwOfKjrssX6QdI=</dsig:DigestValue>
+      <dsig:DigestValue>L9Gbq8tGzqlKLC+1KSXr6W6Qhe4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4373">
