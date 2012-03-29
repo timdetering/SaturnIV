@@ -120,6 +120,7 @@ namespace SaturnIV
         public static Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
         DrawQuadClass drawQuad;
         BasicEffect quadEffect;
+        Quad tacPlaneQuad;
 
         public Game1()
         {
@@ -182,7 +183,7 @@ namespace SaturnIV
             drawQuad = new DrawQuadClass();
             quadEffect = new BasicEffect(GraphicsDevice,null);
             quadVertexDecl = new VertexDeclaration(graphics.GraphicsDevice,
-               VertexPositionNormalTexture.VertexElements);            
+               VertexPositionNormalTexture.VertexElements);
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             aMenu = new actionMenuClass();
@@ -671,7 +672,7 @@ namespace SaturnIV
             planetManager.DrawPlanets(gameTime, ourCamera.viewMatrix, ourCamera.projectionMatrix, ourCamera);
             drawMainObjects(gameTime);
             /// Draw tacitcal Circle Element
-            //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget);
+            //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, tacPlaneQuad, orangeTarget, Vector3.Zero);
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
@@ -709,8 +710,9 @@ namespace SaturnIV
             foreach (newShipStruct npcship in activeShipList)
             {
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
-                //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.One,Vector3.Down,Vector3.Up,npcship.maxDetectRange
-                //    ,npcship.maxDetectRange), orangeTarget, npcship.modelPosition);
+                //tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.maxDetectRange/2
+                                    , npcship.maxDetectRange/2), transCircleGreen, npcship.modelPosition);
                 if (isDebug)
                     debug(npcship);
                 spriteBatch.Begin();

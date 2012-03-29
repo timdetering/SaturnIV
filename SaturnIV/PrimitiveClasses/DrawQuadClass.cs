@@ -17,7 +17,7 @@ namespace SaturnIV
         {
             Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = true;
             quadEffect.EnableDefaultLighting();            
-            quadEffect.World = Matrix.CreateRotationZ(MathHelper.ToRadians(-90)) * Matrix.CreateWorld(pos, Vector3.Forward, Vector3.Up);
+            quadEffect.World = Matrix.CreateRotationX(MathHelper.ToRadians(-90)) * Matrix.CreateWorld(pos, Vector3.Forward, Vector3.Up);
             quadEffect.View = View;
             quadEffect.Projection = Projection;
             quadEffect.TextureEnabled = true;
