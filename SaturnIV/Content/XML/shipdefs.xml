@@ -7,10 +7,54 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
+      <FileName>Models//Ships/turret_2/orbital_turret</FileName>
+      <Type>Sentry Weapons Platform</Type>
+      <Mass>6</Mass>
+      <Thrust>0</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>2.75</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Bomber</ShipClass>
+      <ShieldFactor>0.24</ShieldFactor>
+      <HullFactor>0.35</HullFactor>
+      <hullValue>3600</hullValue>
+      <shieldValue>400</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>
+      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
+      <maxDetectRange>800</maxDetectRange>
+      <isStationary>true</isStationary>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>PointDefense</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 0
+            0 0 0 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>5</FiringEnvelopeAngle>
+          <weaponRange>950000</weaponRange>
+          <timer>0</timer>
+        </Item>
+        <Item>
+          <weaponType>LargeIon</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 0
+            0 0 0 0
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
+          <weaponRange>900</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
       <Type>Atlas Class Frigate111</Type>
-      <Mass>22</Mass>
-      <Thrust>35000</Thrust>
+      <Mass>25</Mass>
+      <Thrust>1500</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>
@@ -21,7 +65,7 @@
 	    <hullValue>3600</hullValue>
 	    <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>      
+      <EvadeDist>50 600 300 300 100 10</EvadeDist>      
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
 	    <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
       <maxDetectRange>8000</maxDetectRange>
@@ -30,33 +74,33 @@
       <Item>
         <weaponType>PointDefense</weaponType>
         <ModulePositionOnShip>
-          0 -1000 -15000 2
-          0 -1000 15000  2
-          0 -1000 -15000 3
-          0 -1000 15000  3
-          0 -1000 -15000 0
-          0 -1000 15000  0
-          0 -1000 -15000 1
-          0 -1000 15000  1
+          0 0 0 2
+          0 0 0  2
+          0 0 0 3
+          0 0 0  3
+          0 0 0 0
+          0 0 0  0
+          0 0 0 1
+          0 0 0  1
         </ModulePositionOnShip>
         <FiringEnvelopeAngle>65</FiringEnvelopeAngle>
-        <weaponRange>250000</weaponRange>
+        <weaponRange>2500</weaponRange>
         <timer>0</timer>
       </Item>
       <Item>
         <weaponType>LargeIon</weaponType>
         <ModulePositionOnShip>
-          0 -1000 -10000 2
-          0 -1000 10000  2
-          0 -1000 -10000 3
-          0 -1000 10000  3
-          0 -1000 -10000 2
-          0 -1000 10000  2
-          0 -1000 -10000 3
-          0 -1000 10000  3
+          0 0 0  2
+          0 0 0  2
+          0 0 0 3
+          0 0 0  3
+          0 0 0 2
+          0 0 0  2
+          0 0 0 3
+          0 0 0  3
         </ModulePositionOnShip>
-        <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
-        <weaponRange>400000</weaponRange>
+        <FiringEnvelopeAngle>45</FiringEnvelopeAngle>
+        <weaponRange>4000</weaponRange>
         <timer>0</timer>
       </Item>
     </AvailableWeapons>
@@ -66,7 +110,7 @@
       <FileName>Models/Ships/eriax_fighter_darkstar/ship_1</FileName>
       <Type>Eriax Darkstar Fighter</Type>
       <Mass>0.75</Mass>
-      <Thrust>44200</Thrust>
+      <Thrust>1000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>8.50</Agility>
@@ -77,31 +121,31 @@
       <hullValue>400</hullValue>
       <shieldValue>100</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
-      <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
+      <EvadeDist>50 300 300 300 100 10</EvadeDist>
+      <TargetPrefs>0.5 0.7 0.6 0.7 0.8 0.2</TargetPrefs>
       <ChasePrefs>1 1 1 0 1 1</ChasePrefs>
       <maxDetectRange>6000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
         <Item>
-          <weaponType>SRM</weaponType>
+          <weaponType>AutoCannon</weaponType>
           <ModulePositionOnShip>
-            -400 0 0 0
-            400 0 0 0
-            400 0 0 0
+            0 0 0 0
+            0 0 0 0
+            0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>295000</weaponRange>
+          <weaponRange>2950</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
-          <weaponType>SRM</weaponType>
+          <weaponType>AutoCannon</weaponType>
           <ModulePositionOnShip>
-            4 0 0 0
-            -4 0 -10 0
+            0 0 0 0
+            0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>296000</weaponRange>
+          <weaponRange>2960</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -111,7 +155,7 @@
       <FileName>Models/Ships/eriax_lightbomber_legato/ship_5</FileName>
       <Type>Eriax Legato Light Bomber</Type>
       <Mass>1.75</Mass>
-      <Thrust>44200</Thrust>
+      <Thrust>900</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>8.50</Agility>
@@ -122,7 +166,7 @@
       <hullValue>300</hullValue>
       <shieldValue>100</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
+      <EvadeDist>50 300 300 300 100 10</EvadeDist>
       <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
       <ChasePrefs>0 1 1 0 1 1</ChasePrefs>
       <maxDetectRange>6000</maxDetectRange>
@@ -131,22 +175,22 @@
         <Item>
           <weaponType>LRM</weaponType>
           <ModulePositionOnShip>
-            -400 0 0 0
-            400 0 0 0
-            400 0 0 0
+            -0 0 0 0
+             0 0 0 0
+             0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>145000</weaponRange>
+          <weaponRange>1450</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
           <weaponType>LRM</weaponType>
           <ModulePositionOnShip>
-            4 0 0 0
-            -4 0 -10 0
+            0 0 0 0
+            -0 0 -10 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>166000</weaponRange>
+          <weaponRange>1660</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -155,8 +199,8 @@
     <Item>
       <FileName>Models/Ships/fighter_m1/fighter_m1</FileName>
       <Type>M1 Fighter</Type>
-      <Mass>0.75</Mass>
-      <Thrust>44200</Thrust>
+      <Mass>0.95</Mass>
+      <Thrust>1200</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>8.50</Agility>
@@ -167,7 +211,7 @@
 	  <hullValue>400</hullValue>
 	  <shieldValue>200</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
-    <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
+    <EvadeDist>50 300 300 300 100 10</EvadeDist>
     <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
 	  <ChasePrefs>1 1 1 0 1 1</ChasePrefs>
     <maxDetectRange>6000</maxDetectRange>
@@ -176,19 +220,19 @@
       <Item>
 	 <weaponType>SRM</weaponType>
 	 <ModulePositionOnShip>
-	   -400 0 0 0
-      400 0 0 0
-      400 0 0 0
+	    0 0 0 0
+      0 0 0 0
+      0 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>345000</weaponRange>
+	<weaponRange>3400</weaponRange>
 	<timer>0</timer>
       </Item>
       <Item>
 	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 0
-	   -4 0 -10 0
+	   -4 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>266000</weaponRange>
@@ -200,8 +244,8 @@
 <Item>
       <FileName>Models/Ships/fighter_m2/fighter_m2</FileName>
       <Type>M2 Interceptor</Type>
-      <Mass>1.0</Mass>
-      <Thrust>38000</Thrust>
+      <Mass>0.75</Mass>
+      <Thrust>980</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>12.00</Agility>
@@ -212,7 +256,7 @@
 	  <hullValue>100</hullValue>
 	  <shieldValue>10</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
-    <EvadeDist>1500 1500 1500 1500 500 500</EvadeDist>
+    <EvadeDist>50 300 300 300 100 10</EvadeDist>
     <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
 	  <ChasePrefs>1 1 1 1 1 0</ChasePrefs>
     <maxDetectRange>8000</maxDetectRange>
@@ -221,21 +265,21 @@
         <Item>
           <weaponType>SRM</weaponType>
           <ModulePositionOnShip>
-            -80 0 0 0
-            80 0 0 0
+            0 0 0 0
+            0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>295000</weaponRange>
+          <weaponRange>5000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
 	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
-	    -4 0 -50 0
-       4 0 50 0
+	     0 0 0 0
+       0 0 0 0
 	 </ModulePositionOnShip> 
 	 <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-	 <weaponRange>325000</weaponRange>
+	 <weaponRange>3250</weaponRange>
 	 <timer>0</timer>
       </Item>      
       </AvailableWeapons>
@@ -245,7 +289,7 @@
       <FileName>Models/Ships/fighter_m3/fighter_m3</FileName>
       <Type>MR Streak Fighter</Type>
       <Mass>0.75</Mass>
-      <Thrust>33000</Thrust>
+      <Thrust>1330</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>15.00</Agility>
@@ -256,7 +300,7 @@
       <hullValue>400</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>500 1500 1500 1500 500 500</EvadeDist>
+      <EvadeDist>50 300 300 300 100 10</EvadeDist>
       <TargetPrefs>1 0.7 0.8 0.9 0.2 1</TargetPrefs>
       <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange>
@@ -271,17 +315,17 @@
             4 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-          <weaponRange>185000</weaponRange>
+          <weaponRange>1850</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
           <weaponType>SRMH</weaponType>
           <ModulePositionOnShip>
-            0 0 10 0
-            0 0 -20 0
+            0 0 0 0
+            0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-          <weaponRange>290000</weaponRange>
+          <weaponRange>2900</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -290,8 +334,8 @@
     <Item>
       <FileName>Models//Ships/bomber_b1/bomber_b1</FileName>
       <Type>Lancer Attack Bomber</Type>
-      <Mass>3.25</Mass>
-      <Thrust>15500</Thrust>
+      <Mass>6.25</Mass>
+      <Thrust>1250</Thrust>
       <SphereRadius>17</SphereRadius>
       <Scale>1</Scale>
       <Agility>7</Agility>
@@ -305,15 +349,15 @@
       <EvadeDist>3500 4500 3500 2500 2500 500</EvadeDist>
       <TargetPrefs>0.1 0.9 0.9 0.8 0.2 0.1</TargetPrefs>
       <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
-      <maxDetectRange>10000</maxDetectRange>
+      <maxDetectRange>5000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
 	<Item>
 		<weaponType>LRMH</weaponType>
 		<ModulePositionOnShip>
-      -200 0 500 0
-      400 0 200 0
-      -400 0 -500 0
+      0 0 0 0
+      0 0 0 0
+      0 0 0 0
     </ModulePositionOnShip>
 		 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
 	<weaponRange>650000</weaponRange>
@@ -322,11 +366,11 @@
 	<Item>
 		<weaponType>SRM</weaponType>
 		<ModulePositionOnShip>
-		0 0 -50 0
-		0 0  50 0
+		0 0  0 0
+		0 0  0 0
 		</ModulePositionOnShip>
 	        <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>662000</weaponRange>
+	<weaponRange>6000</weaponRange>
 	<timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -356,9 +400,9 @@
 	  <Item>
 	 <weaponType>PointDefense</weaponType>
 	 <ModulePositionOnShip>
-	    200 0 220 2
-	    1600 0 330 3	   
-	   -1200 0 -1330 3	   
+	    0 0 0 2
+	    0 0 0 3	   
+	    0 0 0 3	   
 	 </ModulePositionOnShip>
 	<FiringEnvelopeAngle>5</FiringEnvelopeAngle>
 	<weaponRange>5000</weaponRange>

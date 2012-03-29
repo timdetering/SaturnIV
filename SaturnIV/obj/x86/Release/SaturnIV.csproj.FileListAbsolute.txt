@@ -113,3 +113,7 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\listofnames.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\weapondefs.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\shipdefs.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Fonts\LargeFont.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\orbital_turret.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color_0.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\cursor.xnb

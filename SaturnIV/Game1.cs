@@ -47,9 +47,10 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
-        Texture2D transCircleGreen, orangeTarget;
+        Texture2D transCircleGreen, orangeTarget, mouseTex;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
+        float disFromcenter;
         public StringBuilder messageBuffer = new StringBuilder();
         public static List<string> messageLog = new List<string>();
         public Vector3[] plyonOffset;
@@ -170,7 +171,7 @@ namespace SaturnIV
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
             ////////////Mousey Stuff
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
             //mouseStateCurrent = Mouse.GetState();
             ////////////Network Stuff
@@ -200,6 +201,7 @@ namespace SaturnIV
             screenCenterX = screenX / 2;
             screenCenterY = screenY / 2;
             graphics.IsFullScreen = false;
+            this.IsMouseVisible = false;
         }
 
         protected override void LoadContent()
@@ -222,11 +224,12 @@ namespace SaturnIV
             planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
             transCircleGreen = this.Content.Load<Texture2D>("Models/tacmap_items/transplanegreen");
             orangeTarget = this.Content.Load<Texture2D>("Models/tacmap_items/orange_target");
+            mouseTex = this.Content.Load<Texture2D>("textures/cursor");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(1, new Vector3(111110, 0, 11110), 425,0, "Titan");
-            planetManager.generatSpaceObjects(2, new Vector3(1500000, 0, -1900000), 225,0, "Io");
+            planetManager.generatSpaceObjects(1, new Vector3(100,0,100), 9,0, "Titan");
+            planetManager.generatSpaceObjects(2, new Vector3(32950, 0, -20590), 3,0, "Io");
         }
 
         private void loadMetaData()
@@ -274,10 +277,10 @@ namespace SaturnIV
             if (isEditMode || isSystemMap)
             {
                 ourCamera.ResetCamera();
-                CameraNew.offsetDistance = new Vector3(0, 20000, 250);
+                CameraNew.offsetDistance = new Vector3(0, 700, 1);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
-                this.IsMouseVisible = true;
+                
                 //editModeClass.Update(gameTime, currentMouseRay, mouse3dVector, ref activeShipList, isLclicked, isRclicked, isLdown,
                 //    ref npcManager, ourCamera, ref viewport);
                 Gui.update(mouseStateCurrent, mouseStatePrevious);
@@ -285,7 +288,7 @@ namespace SaturnIV
             else
             {
                 aMenu.update(mouseStateCurrent, mouseStatePrevious,buildManager,isLclicked,activeFoundryPos);
-                CameraNew.offsetDistance = new Vector3(0, 20000, 250);
+                CameraNew.offsetDistance = new Vector3(0, 700, 1);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
                 updateObjects(gameTime);
@@ -525,8 +528,6 @@ namespace SaturnIV
                             tShip.currentTarget = null;
                         }
                 }
-
-
                 // Turn on/off Server/Client Mode
                 if (keyboardState.IsKeyDown(Keys.F2) && !isServer)
                 {
@@ -591,27 +592,26 @@ namespace SaturnIV
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -300f * CameraNew.zoomFactor;
-                    //roll = 0.023f;
+                    cameraTargetVec3.X += -15f * CameraNew.zoomFactor/2;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 300f * CameraNew.zoomFactor;
+                    cameraTargetVec3.X += 15f * CameraNew.zoomFactor /2 ;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 300f * CameraNew.zoomFactor;
+                    cameraTargetVec3.Z += 15f * CameraNew.zoomFactor /2;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -300f * CameraNew.zoomFactor;
+                    cameraTargetVec3.Z += -15f * CameraNew.zoomFactor/2;
                 }
 
                 if (keyboardState.IsKeyDown(Keys.F1) &&
                     !oldkeyboardState.IsKeyDown(Keys.F1) && isTacmap == false)
                 {
                     preZoomFactor = CameraNew.zoomFactor;
-                    CameraNew.zoomFactor = 175f;
+                    CameraNew.zoomFactor = 50f;
                     isTacmap = true;
                 }
                 else
@@ -696,6 +696,7 @@ namespace SaturnIV
             ///
             spriteBatch.Draw(selectRecTex, r, Color.White);
             if (showBuildMenu) aMenu.drawGUI(spriteBatch, medFont, buildManager);
+            spriteBatch.Draw(mouseTex, new Vector2(mouseStateCurrent.X, mouseStateCurrent.Y), Color.White);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                 cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
@@ -839,7 +840,7 @@ namespace SaturnIV
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0, 0), Color.White);
             messageBuffer = new StringBuilder();
             messageBuffer.AppendFormat("\nZoomFactor {0} ", CameraNew.zoomFactor);
-            messageBuffer.AppendFormat("\nCamera Mode " + CameraNew.currentCameraMode);
+            messageBuffer.AppendFormat("\nDistance from center {0}", disFromcenter);
             if (potentialTarget != null)
                 messageBuffer.AppendFormat("\nClicked On " + potentialTarget);
             messageBuffer.AppendFormat("\nisTacmap: " + isTacmap);
@@ -917,6 +918,7 @@ namespace SaturnIV
                 {
                     Vector3 x = pos1 - dir * (pos1.Y / dir.Y);
                     ppos = x;
+                    disFromcenter = Vector3.Distance(ppos, Vector3.Zero);
                     return ppos;
                 }
                 return Vector3.Zero;

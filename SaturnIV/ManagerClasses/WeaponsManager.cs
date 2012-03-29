@@ -138,7 +138,7 @@ namespace SaturnIV
                 laserEffect.CurrentTechnique = effect_technique;
                 if (activeWeaponList.Count > 0)
                 {
-                    Matrix wMatrix = Matrix.CreateScale(new Vector3(650, 1, weapon.objectScale)) * weapon.worldMatrix;
+                    Matrix wMatrix = Matrix.CreateScale(new Vector3(20, 1, weapon.objectScale* 50)) * weapon.worldMatrix;
                         //set the mesh on the GPU
                         set_mesh(weapon.shipModel.Meshes[0], device);
                         laserEffect.Begin();

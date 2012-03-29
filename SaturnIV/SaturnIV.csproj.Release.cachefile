@@ -20,6 +20,7 @@ Content\spacescapes\spacescape_green.xnb
 Content\hud.xnb
 Content\Models\largeSphere.xnb
 Content\textures\HUD\centertarget.xnb
+Content\Models\Ships\turret_2\orbital_turret.xnb
 Content\Models\Fleet_KM100.xnb
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\textures\planettexture3.xnb
@@ -43,7 +44,7 @@ Content\XML\listofnames.xml
 Content\textures\smoke.xnb
 Content\Models\tacmap_items\orange_target.xnb
 Content\Effects\SkySphere.xnb
-Content\XML\weapondefs.xml
+Content\Models\Ships\turret_2\color.xnb
 Content\effects.xnb
 Content\Models\tacmap_items\red_small_plane.xnb
 Content\textures\redtexture.xnb
@@ -61,6 +62,7 @@ Content\textures\Sky128.xnb
 Content\Models\Ships\ship_hull19_0.xnb
 Content\Models\Ships\station_t1\station_t1.xnb
 Content\textures\yellowDotSmall.xnb
+Content\textures\cursor.xnb
 Content\textures\starfield2.xnb
 Content\Models\Ships\fighter_m3\color_0_0.xnb
 Content\textures\spark.xnb
@@ -75,6 +77,7 @@ Content\Models\planet.xnb
 Content\textures\fire.xnb
 Content\Models\Ships\station_t1\bump.xnb
 Content\textures\smoke2.xnb
+Content\Models\Ships\turret_2\color_0.xnb
 Content\Models\Ships\fighter_m2\fighter_1_0.xnb
 Content\Models\Ships\frigate_c1\frigate_c1.xnb
 Content\Models\Ships\fighter_m2\fighter_1_specular.xnb
@@ -83,6 +86,7 @@ Content\Fonts\SmallFont.xnb
 Content\Effects\ParticleEffect.xnb
 Content\Models\tacmap_items\transplanegreen.xnb
 Content\Models\Lakerem_0.xnb
+Content\XML\weapondefs.xml
 Content\textures\explosion.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Ships\ship_hull19.xnb

@@ -2,12 +2,12 @@
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.weaponData]">
    <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_bullet</FileName>
       <Type>PointDefense</Type>
      <Mass>0.10</Mass>
-      <Thrust>48200</Thrust>
+      <Thrust>4800</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>3500</Scale>
+      <Scale>1</Scale>
       <Agility>18</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -19,12 +19,12 @@
       <timeToLive>1700</timeToLive>	  
     </Item>
     <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_missile</FileName>
       <Type>SRM</Type>
       <Mass>0.15</Mass>
-      <Thrust>47200</Thrust>
+      <Thrust>420</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1500</Scale>
+      <Scale>1</Scale>
       <Agility>90</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
@@ -39,9 +39,9 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>SRMH</Type>
       <Mass>0.10</Mass>
-      <Thrust>35000</Thrust>
+      <Thrust>350</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>2500</Scale>
+      <Scale>1</Scale>
       <Agility>20</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
@@ -53,12 +53,12 @@
       <timeToLive>9000</timeToLive>	  
     </Item>
    <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_missile</FileName>
       <Type>LRM</Type>
       <Mass>0.15</Mass>
-      <Thrust>65000</Thrust>
+      <Thrust>650</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>5500</Scale>
+      <Scale>1</Scale>
       <Agility>40</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
@@ -73,9 +73,9 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>LRMH</Type>
       <Mass>0.25</Mass>
-      <Thrust>54000</Thrust>
+      <Thrust>540</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>2500</Scale>
+      <Scale>1</Scale>
       <Agility>20</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
@@ -87,12 +87,12 @@
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
-      <FileName>Models//LaserBolt2</FileName>
+      <FileName>Models//basic_bullet</FileName>
       <Type>AutoCannon</Type>
       <Mass>0.15</Mass>
-      <Thrust>80000</Thrust>
+      <Thrust>800</Thrust>
       <SphereRadius>5</SphereRadius>      
-	    <Scale>3000</Scale>
+	    <Scale>5</Scale>
 	    <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	
@@ -106,10 +106,10 @@
 <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>LargeIon</Type>
-      <Mass>0.25</Mass>
-      <Thrust>4800</Thrust>
+      <Mass>0.15</Mass>
+      <Thrust>2000</Thrust>
       <SphereRadius>5</SphereRadius>      
-	    <Scale>6000</Scale>
+	    <Scale>1</Scale>
 	    <Agility>4</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Cannon</wClass>	

@@ -63,6 +63,7 @@ Content\Models\tacmap_items\transplanegreen.xnb
 Content\Models\tacmap_items\orange_target.xnb
 Content\textures\GUI\medbox.xnb
 Content\textures\GUI\buildmenubg.xnb
+Content\Models\Ships\turret_2\color.xnb
 Content\Models\LaserBolt2.xnb
 Content\Thrusters\ThrustCylinderB.xnb
 Content\Models\Fleet_KM100.xnb
@@ -86,6 +87,7 @@ Content\Models\Ships\fighter_m3\fighter_m3.xnb
 Content\Models\cannon.xnb
 Content\Models\Ships\eriax_lightbomber_legato\ship_5.xnb
 Content\Models\Ships\eriax_fighter_darkstar\ship_1.xnb
+Content\Models\Ships\turret_2\orbital_turret.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Lakerem_0.xnb
 Content\Models\Ships\ship_hull19_0.xnb
@@ -96,6 +98,8 @@ Content\Models\Ships\bomber_b1\COLOR_0.xnb
 Content\Models\Ships\fighter_m3\color_0_0.xnb
 Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb
 Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb
+Content\Models\Ships\turret_2\color_0.xnb
+Content\textures\cursor.xnb
 Content\XML\Scenarios\scenario1.xml
 Content\XML\Scenarios\testscenario.xml
 Content\XML\listofnames.xml
