@@ -61,7 +61,7 @@ namespace SaturnIV
 
             cameraRotation = Matrix.Identity;
             viewMatrix = Matrix.Identity;
-            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 4 / 3, 1f, 50000f);
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 4 / 3, 1f, 200000f);
         }
 
         public void Update(Matrix chasedObjectsWorld, bool isEditMode)
@@ -79,7 +79,7 @@ namespace SaturnIV
                 float WheelVal = (mouseStateCurrent.ScrollWheelValue -
                              mouseStatePrevious.ScrollWheelValue) / 120;
                 if (zoomFactor < 60.0)
-                zoomFactor += (WheelVal * 0.75f);
+                zoomFactor += (WheelVal * 0.95f);
             }
 
             //! Scroll-Down | Zoom Out
@@ -89,7 +89,7 @@ namespace SaturnIV
                              mouseStatePrevious.ScrollWheelValue) / 120;
 
                 if (zoomFactor > 6.0)
-                zoomFactor -= (WheelVal * -0.75f);
+                zoomFactor -= (WheelVal * -0.95f);
             }
 
             MouseState currentMouseState = Mouse.GetState();

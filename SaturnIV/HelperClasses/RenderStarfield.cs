@@ -117,8 +117,8 @@ namespace SaturnIV
                 w = Math.Sqrt(1 - z * z);
                 x = w * Math.Cos(t);
                 y = w * Math.Sin(t);
-                starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-150000, 150000),
-                                                        (float)y * rand.Next(-150000, 150000), (float)z * rand.Next(-150000, 150000)),
+                starList[count] = new VertexPositionColor(new Vector3((float)x * rand.Next(-500000, 500000),
+                                                        (float)y * rand.Next(-500000, 500000), (float)z * rand.Next(-500000, 500000)),
                                                          starColors[rand.Next(0, 5)]);
              }
         }

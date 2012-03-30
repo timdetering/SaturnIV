@@ -4,6 +4,7 @@ Content\Models\tacmap_items\red_medium_plane.xnb
 Content\textures\explo.xnb
 Content\hud_target.xnb
 Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb
+Content\Models\tacmap_items\planetinfobox.xnb
 Content\textures\GUI\textdialog1.xnb
 Content\Effects\GaussianBlur.xnb
 Content\Effects\BloomCombine.xnb

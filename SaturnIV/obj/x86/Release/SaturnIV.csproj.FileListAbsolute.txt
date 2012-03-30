@@ -117,3 +117,4 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\cursor.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\planetinfobox.xnb

@@ -263,6 +263,7 @@ namespace SaturnIV
             public Vector3 screenCoords;
             public string planetName;
             public bool isSelected;
+            public int initialResources;
         }
 
         public class planetSaveStruct

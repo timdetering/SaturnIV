@@ -47,7 +47,7 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
-        Texture2D transCircleGreen, orangeTarget, mouseTex;
+        Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         float disFromcenter;
@@ -225,12 +225,13 @@ namespace SaturnIV
             planetTexture = this.Content.Load<Texture2D>("textures/planettexture1");
             transCircleGreen = this.Content.Load<Texture2D>("Models/tacmap_items/transplanegreen");
             orangeTarget = this.Content.Load<Texture2D>("Models/tacmap_items/orange_target");
+            planetInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/planetinfobox");
             mouseTex = this.Content.Load<Texture2D>("textures/cursor");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             planetManager.generatSpaceObjects(1, new Vector3(100,0,100), 9,0, "Titan");
-            planetManager.generatSpaceObjects(2, new Vector3(32950, 0, -20590), 3,0, "Io");
+            planetManager.generatSpaceObjects(2, new Vector3(70000, 0, -30000), 4,0, "Io");
         }
 
         private void loadMetaData()
@@ -275,10 +276,10 @@ namespace SaturnIV
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
             if (buildManager.buildQueueList.Count > 0)
                 buildManager.updateBuildQueue(ref shipDefList, ref activeShipList, currentTime);
-            if (isEditMode || isSystemMap)
+            if (isEditMode)
             {
                 ourCamera.ResetCamera();
-                CameraNew.offsetDistance = new Vector3(0, 700, 1);
+                CameraNew.offsetDistance = new Vector3(0, 900, 1);
                 CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                 ourCamera.Update(cameraTarget, isEditMode);
                 
@@ -287,13 +288,22 @@ namespace SaturnIV
                 Gui.update(mouseStateCurrent, mouseStatePrevious);
             }
             else
-            {
-                aMenu.update(mouseStateCurrent, mouseStatePrevious,buildManager,isLclicked,activeFoundryPos);
-                CameraNew.offsetDistance = new Vector3(0, 700, 1);
-                CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
-                ourCamera.Update(cameraTarget, isEditMode);
-                updateObjects(gameTime);
-            }
+                if (isTacmap)
+                {
+                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, activeFoundryPos);
+                    CameraNew.offsetDistance = new Vector3(0, 2500, 1);
+                    CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
+                    ourCamera.Update(cameraTarget, isEditMode);
+                    updateObjects(gameTime);
+                }
+                else
+                {
+                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, activeFoundryPos);
+                    CameraNew.offsetDistance = new Vector3(0, 900, 1);
+                    CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
+                    ourCamera.Update(cameraTarget, isEditMode);
+                    updateObjects(gameTime);
+                }
              
             if (isServer)
                 gServer.update(ref activeShipList);
@@ -593,19 +603,19 @@ namespace SaturnIV
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -15f * CameraNew.zoomFactor/2;
+                    cameraTargetVec3.X += -25f * CameraNew.zoomFactor/2;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 15f * CameraNew.zoomFactor /2 ;
+                    cameraTargetVec3.X += 25f * CameraNew.zoomFactor /2 ;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 15f * CameraNew.zoomFactor /2;
+                    cameraTargetVec3.Z += 25f * CameraNew.zoomFactor /2;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -15f * CameraNew.zoomFactor/2;
+                    cameraTargetVec3.Z += -25f * CameraNew.zoomFactor/2;
                 }
 
                 if (keyboardState.IsKeyDown(Keys.F1) &&
@@ -711,8 +721,8 @@ namespace SaturnIV
             {
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
                 //tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
-                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.maxDetectRange/2
-                                    , npcship.maxDetectRange/2), transCircleGreen, npcship.modelPosition);
+                //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.maxDetectRange/2
+                //                    , npcship.maxDetectRange/2), transCircleGreen, npcship.modelPosition);
                 if (isDebug)
                     debug(npcship);
                 spriteBatch.Begin();
@@ -826,9 +836,16 @@ namespace SaturnIV
                         pColor = Color.White;
                     else
                         pColor = Color.Red;
-                    spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X, planet.screenCoords.Y), pColor);
-                    if (planet.isSelected)
-                        spriteBatch.DrawString(medFont, "Planet Info Goes here!", new Vector2(100,200), pColor);
+                   // spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X, planet.screenCoords.Y), pColor);
+                    if (planet.isSelected && isTacmap)
+                    {
+                        spriteBatch.Draw(planetInfoTex, new Vector2(planet.screenCoords.X - 196, planet.screenCoords.Y - 187), Color.White);
+                        spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X - 96, planet.screenCoords.Y - 128), Color.White);
+                        spriteBatch.DrawString(medFont, "100 Units", new Vector2(planet.screenCoords.X-148, planet.screenCoords.Y-48), Color.YellowGreen);
+                        drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
+                            planet.planetRadius*2000, planet.planetRadius*2000), transCircleGreen, planet.planetPosition);
+                        //cameraTargetVec3 = planet.planetPosition;
+                    }
                     BoundingSphereRenderer.Render(planet.planetBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
                 }
                 spriteBatch.End();
