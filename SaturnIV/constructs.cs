@@ -21,26 +21,19 @@ namespace SaturnIV
     {        
         engaging = 0,
         patrol = 1,
-        evade = 2,
-        idle = 3,
-        moving = 4,
-        onstation = 5,
-        defensive = 6,
+        idle = 2,
+        moving = 3,
+        defensive = 4,
+        nofire = 5
     }
 
-    public enum MachineState
+    public enum MenuActions
     {
-        IDLE,
-        MOVE,
-        ENGAGE,
-        STANDOFF,
-        DEFEND,
-        ESCORT,
-        FLEE,
-        RECON,        
-        EVADE
+        action = 0,
+        build = 1,
+        none = 2
     }
-
+    
     public enum SquadDisposition
     {
         tight = 0,

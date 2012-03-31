@@ -21,7 +21,7 @@ namespace SaturnIV
         public Rectangle medRec;
         Color opt1Color;
         public static editOptions currentSelection;
-        public int thisFaction, thisShip;
+        public int thisFaction, thisShip, thisAction;
         public int thisScenario = -1;
         int verticalStartY = 25;
         int horizontalStartX = 150;
@@ -33,13 +33,18 @@ namespace SaturnIV
         Vector2 queueListPos = new Vector2(55, 600);        
         Vector2 shipListPos = new Vector2(55, 425);
         Vector2 shipTitlePos = new Vector2(60, 400);
+        Vector2 actionTitlePos = new Vector2(75, 700);
+        Vector2 actionListPos = new Vector2(75, 725);
         Vector2 rWindowListPos = new Vector2(250, 20);
+        Vector2 bottomWindowPos = new Vector2(20, 700);
+        Vector2 mainMenuPos = new Vector2(30, 30);
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
         //int[] menuStartX = new int[10]{10,150,300,450,600,750};
-        string[] actionText = new string[4]{"Idle","patrol","Defend","Escort"};
+        string[] actionText = new string[4]{"Engage", "Defend", "Patrol", "Hold"};
         List<MenuItem> menuShipList = new List<MenuItem>();
-        List<MenuItem> actionList = new List<MenuItem>();        
+        List<MenuItem> actionList = new List<MenuItem>();
+        disposition newOrder;
 
         public enum editOptions
         {
@@ -56,6 +61,10 @@ namespace SaturnIV
 
         public void buildActionList()
         {
+            actionList.Clear();
+            Vector2 pos = shipListPos;
+            horizontalStartX = (int)pos.X;
+            verticalStartY = (int)pos.Y;
             for (int i = 0; i < actionText.Count(); i++)
             {
                 MenuItem tempItem = new MenuItem();
@@ -98,33 +107,79 @@ namespace SaturnIV
             medRec = new Rectangle((int)shipListPos.X, (int)shipListPos.Y, 200, 200);
         }
 
-        public void update(MouseState currentMouse, MouseState oldMouse, BuildManager buildManager, bool isLClicked, Vector3 pos)
+        public void update(MouseState currentMouse, MouseState oldMouse, BuildManager buildManager, 
+                           bool isLClicked, Vector3 pos, MenuActions menuAction, ref List<newShipStruct> shipList)
         {
             isSelected = false;
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
             Show = false;
-            for (int i = 0; i < menuShipList.Count; i++)
+            if (menuAction == MenuActions.build)
             {
-                if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                for (int i = 0; i < menuShipList.Count; i++)
                 {
-                    thisShip = i;
-                    inGui = true;
-                    break;
+                    if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                    {
+                        thisShip = i;
+                        inGui = true;
+                        break;
+                    }
+                }
+                if (isLClicked)
+                {
+                    newShipStruct tempShip = new newShipStruct();
+                    buildManager.addBuild(thisShip, "new ship", pos);
+                    isSelected = true;
                 }
             }
-            if (isLClicked)
-            {                
-                newShipStruct tempShip = new newShipStruct();
-                buildManager.addBuild(thisShip, "new ship", pos);
-                isSelected = true;
+
+            if (menuAction == MenuActions.action)
+            {
+                for (int i = 0; i < actionList.Count; i++)
+                {
+                    if (actionList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
+                    {
+                        thisAction = i;
+                        inGui = true;
+                        break;
+                    }
+                }
+                if (isLClicked)
+                {
+                    switch (thisAction)
+                    {
+                        case 0:
+                            newOrder = disposition.engaging;
+                            break;
+                        case 1:
+                            newOrder = disposition.defensive;
+                            break;
+                        case 2:
+                            newOrder = disposition.patrol;
+                            break;
+                        case 3:
+                            newOrder = disposition.idle;
+                            break;
+
+                    }
+                    foreach (newShipStruct tShip in shipList)
+                        if (tShip.isSelected)
+                            tShip.currentDisposition = newOrder;
+                    isSelected = true;
+                }
             }
         }
 
-        public void drawGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
+        public void drawMainMenu(SpriteBatch mBatch, SpriteFont spriteFont)
+        {
+            StringBuilder messageBuffer = new StringBuilder();
+            messageBuffer = new StringBuilder();
+            mBatch.DrawString(spriteFont, "F1->TacMap   G->Grid On-Off  Q->Edit Mode", mainMenuPos, Color.White);
+        }
+
+        public void drawBuildGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
         {            
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
-            //mBatch.Draw(buildMBox, medRec, Color.White);
             mBatch.Draw(rSideWindow, new Rectangle(20, 355, 348, 640), Color.Blue);
             mBatch.DrawString(spriteFont, "Build Menu", shipTitlePos, Color.White);
             /// This is the Available Ship List Area
@@ -152,6 +207,40 @@ namespace SaturnIV
                 messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);                         
             }       
             mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.White); 
+        }
+
+        public void drawActionGUI(SpriteBatch mBatch, SpriteFont spriteFont, ref List<newShipStruct> shipList)
+        {
+            StringBuilder messageBuffer = new StringBuilder();
+            messageBuffer = new StringBuilder();
+            mBatch.Draw(rSideWindow, new Rectangle(20, 355, 348, 640), Color.Blue);
+            mBatch.DrawString(spriteFont, "Issue Orders", shipTitlePos, Color.White);
+            /// This is the Available Ship List Area
+            /// 
+            for (int i = 0; i < actionList.Count; i++)
+            {
+                if (thisAction == i)
+                {
+                    itemColor = Color.White;
+                    mBatch.Draw(dummyTexture, actionList[i].itemRectangle, Color.Gray);
+                }
+                else
+                    itemColor = Color.Green;
+                messageBuffer.AppendFormat(actionList[i].itemText);
+                mBatch.DrawString(spriteFont, messageBuffer,
+                                new Vector2(actionList[i].itemRectangle.X, actionList[i].itemRectangle.Y), itemColor);
+                messageBuffer = new StringBuilder();
+            }
+            /// This is the Current Selected Ship List
+            /// 
+            messageBuffer = new StringBuilder();
+            foreach (newShipStruct thisShip in shipList)
+            {
+                if (thisShip.isSelected)
+                    messageBuffer.AppendFormat(thisShip.objectAlias + "\n");
+            }
+            messageBuffer.AppendFormat("\n\n" + "[esc]" + "\n");
+            mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.White);            
         }
     }
 }

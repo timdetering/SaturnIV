@@ -100,7 +100,7 @@ namespace SaturnIV
                 //leftrightRot -= rotationSpeed * xDifference * amount;
                 pitch += .005f * yDifference * speed;
                 yaw -= .005f * xDifference * speed;
-                
+
             }
             mouseStatePrevious = mouseStateCurrent;
         }

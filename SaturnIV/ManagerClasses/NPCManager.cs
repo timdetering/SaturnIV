@@ -198,7 +198,7 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 10)))
+                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 100)))
                 {
                     thisShip.currentTarget = null;
                     //thisShip.wayPointPosition = Vector3.Zero;

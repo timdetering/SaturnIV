@@ -45,18 +45,6 @@ namespace SaturnIV
         ModelManager modelManager;
         Texture2D selectRecTex;
 
-        /// <summary>
-        /// Load Tactical Map items
-        /// </summary>
-        Model redLargePlane;
-        Model redMediumPlane;
-        Model redSmallPlane;
-        Model blueLargePlane;
-        Model blueMediumPlane;
-        Model blueSmallPlane;
-
-        float planisphereScale = 1.0f;
-
         public EditModeComponent(Game game)
             : base(game)
         {
@@ -69,16 +57,8 @@ namespace SaturnIV
         /// </summary>
         public void Initialize(ModelManager ModelManager)
         {
-            // TODO: Add your initialization code here
-         //   grid = new Grid(20000, 17000, Game.GraphicsDevice, Game);
-            modelManager = ModelManager;
-            redLargePlane = modelManager.LoadModel("Models/tacmap_items/red_large_plane");
-            redMediumPlane = modelManager.LoadModel("Models/tacmap_items/red_medium_plane");
-            redSmallPlane = modelManager.LoadModel("Models/tacmap_items/red_small_plane");
-            blueLargePlane = modelManager.LoadModel("Models/tacmap_items/blue_large_plane");
-            blueMediumPlane = modelManager.LoadModel("Models/tacmap_items/blue_medium_plane");
-            blueSmallPlane = modelManager.LoadModel("Models/tacmap_items/blue_small_plane");
-
+            // TODO: Add your initialization code here            
+            modelManager = ModelManager; 
             selectRecTex = Game.Content.Load<Texture2D>("textures/SelectionBox");
             isSelecting = false;
             fLine = new Line3D(Game.GraphicsDevice);
@@ -90,7 +70,7 @@ namespace SaturnIV
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        public void Update(GameTime gameTime, Ray currentMouseRay, Vector3 mouse3dVector, 
+        public void Update(GameTime gameTime, Vector3 mouse3dVector, 
                                     ref List<newShipStruct> objectList,bool isLClicked, bool isRClicked,bool isLDepressed, 
                                     ref NPCManager npcManager,CameraNew ourCamera, ref Viewport viewport)
         {
@@ -172,7 +152,7 @@ namespace SaturnIV
         }
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,CameraNew ourCamera
-            ,SpriteBatch spriteBatch)
+            , SpriteBatch spriteBatch, DrawQuadClass drawQuad, BasicEffect quadEffect, VertexDeclaration quadVertexDecl, Texture2D transCircleGreen)
         {
             //spriteBatch.Begin();
             // We need to fix the selection rectangle in case one of its dimensions is negative
@@ -189,68 +169,18 @@ namespace SaturnIV
                 r.Y -= r.Height;
             }
             spriteBatch.Draw(selectRecTex, r, Color.White);
-            //spriteBatch.End();
-                    
+            //spriteBatch.End();               
             foreach (newShipStruct enemy in shipList)
             {
+                Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, enemy.modelLen
+                                    , enemy.modelLen), transCircleGreen, enemy.modelPosition);
                 if (enemy.team == 0)
-                {
-                    if (enemy.objectClass == ClassesEnum.Crusier)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, blueLargePlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Frigate)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, blueMediumPlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Fighter)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, blueSmallPlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Bomber)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, blueMediumPlane, pMatrix, Color.Blue, false);
-                    }
+                {                  
                 }
                 else
-                {
-                    if (enemy.objectClass == ClassesEnum.Crusier)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, redLargePlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Frigate)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, redMediumPlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Fighter)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, redSmallPlane, pMatrix, Color.Blue, false);
-                    }
-                    else if (enemy.objectClass == ClassesEnum.Bomber)
-                    {
-                        Matrix pMatrix = Matrix.CreateWorld(enemy.modelPosition, Vector3.Forward, Vector3.Up);
-                        pMatrix *= Matrix.CreateScale(planisphereScale);
-                        modelManager.DrawModel(ourCamera, redMediumPlane, pMatrix, Color.Blue, false);
-                    }
-                }
-                 fLine.Draw(enemy.modelPosition + enemy.Direction * enemy.radius,
-                         enemy.modelPosition + enemy.Direction * 900,
-                          Color.Orange, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                
+                {                    
+                }               
                 if (enemy.isSelected)
                    {
                        groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);                      
@@ -258,9 +188,7 @@ namespace SaturnIV
                            ourCamera.projectionMatrix, Color.Yellow);
                    }
               }
-            Matrix pMatrix1 = Matrix.CreateWorld(Game1.playerShip.modelPosition, Vector3.Forward, Vector3.Up);
-            pMatrix1 *= Matrix.CreateScale(planisphereScale);
-            modelManager.DrawModel(ourCamera, redSmallPlane, pMatrix1, Color.Yellow, false);
+
             base.Draw(gameTime);
         }
         
@@ -270,7 +198,6 @@ namespace SaturnIV
             MouseState currentState = Mouse.GetState();
             BoundingSphere mouseSphere = new BoundingSphere(mouse3dVector, 15f);
             if (sphere.Intersects(mouseSphere)) return true;
-
             return false;
         }
 
@@ -281,7 +208,6 @@ namespace SaturnIV
             tempData.objectIndex = shipIndex;
             tempData.objectFileName = shipDefList[shipIndex].FileName;
             tempData.objectAlias = shipName;
-            //tempData.shipModel = modelManager.LoadModel(shipDefList[shipIndex].FileName);
             tempData.objectAgility = shipDefList[shipIndex].Agility;
             tempData.objectMass = shipDefList[shipIndex].Mass;
             tempData.objectThrust = shipDefList[shipIndex].Thrust;
@@ -296,10 +222,6 @@ namespace SaturnIV
             tempData.modelRotation = Matrix.Identity;           
             tempData.Direction = Vector3.Forward;
             tempData.Direction = HelperClass.RandomDirection();
-            //tempData.targetPosition = tempData.modelPosition + (tempData.Direction * 100000f);
-            //tempData.targetPosition.Y = new Random().Next(-2000, 2000);
-            //tempData.wayPointPosition = tempData.targetPosition;
-            //tempData.wayPointPosition.Y = new Random().Next(-2000, 2000);
             if (team > 0)
                 tempData.currentDisposition = disposition.patrol;
             else
