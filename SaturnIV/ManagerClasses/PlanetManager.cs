@@ -63,7 +63,7 @@ namespace SaturnIV
                 tempData.planetModel = LoadModel("Models/planet");
                 tempData.planetRadius = planetRadius; // Position.Next(100, planetRadiusBoundry);
                 tempData.planetPosition = position;
-                tempData.planetPosition.Y = -8000;
+                tempData.planetPosition.Y = -1000 * planetRadius;
                 tempData.planetTexture = planetTextureArray[textureID];
                 tempData.isControlled = isControlled;
                 tempData.planetName = name;
@@ -93,7 +93,7 @@ namespace SaturnIV
                 Matrix worldMatrix = Matrix.CreateScale(planet.planetRadius) * Matrix.CreateTranslation(planet.planetPosition);
                 Matrix[] transforms = new Matrix[planet.planetModel.Bones.Count];
                 planet.planetModel.CopyAbsoluteBoneTransformsTo(transforms);
-
+                
                 // Draw the model. A model can have multiple meshes, so loop.
                 foreach (ModelMesh mesh in planet.planetModel.Meshes)
                 {

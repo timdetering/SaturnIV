@@ -15,7 +15,6 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
-using TomShane.Neoforce.Controls;
 
 namespace SaturnIV
 {
@@ -48,7 +47,7 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
-        Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
+        Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;        
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         float disFromcenter;
@@ -112,6 +111,7 @@ namespace SaturnIV
         Model systemMapSphere;
         bool isFullScreen = false;
         MenuActions menuAction = MenuActions.none;
+        ResourceClass resourceClass;
 
         // Define Hud Components
         Texture2D centerHUD;
@@ -171,6 +171,8 @@ namespace SaturnIV
             skySphere = new SkySphere(this);
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
+            resourceClass = new ResourceClass();
+            resourceClass.Init(planetManager);
             ////////////Mousey Stuff
             this.IsMouseVisible = false;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
@@ -217,7 +219,6 @@ namespace SaturnIV
             cPanel.LoadPanel(Content, spriteBatch);
             rectTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             dummyTex = this.Content.Load<Texture2D>("textures//dummy");
-            shipRec = this.Content.Load<Texture2D>("textures//missiletrack");
             selectRecTex = this.Content.Load<Texture2D>("textures//SelectionBox");
             centerHUD = this.Content.Load<Texture2D>("textures//HUD/centertarget");
             targetTracker = this.Content.Load<Texture2D>("textures//HUD/target_track");
@@ -230,8 +231,8 @@ namespace SaturnIV
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 8,0, "Titan");
-            planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 4,0, "Io");
+            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan");
+            planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io");
         }
 
         private void loadMetaData()
@@ -305,6 +306,9 @@ namespace SaturnIV
             if (selectionRect != Rectangle.Empty)
                 RectangleSelect(activeShipList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix,
                     selectionRect);
+            foreach (newShipStruct tShip in activeShipList)
+                if (tShip.objectClass == ClassesEnum.Collector)
+                    resourceClass.updateResourceCollection(planetManager.planetList, tShip);
             base.Update(gameTime);
         }
 
@@ -577,7 +581,7 @@ namespace SaturnIV
                     foreach (newShipStruct thisShip in activeShipList)
                     if (thisShip.isSelected)
                     {
-                        if (thisShip.objectClass != ClassesEnum.Foundry)
+                        if (thisShip.objectClass != ClassesEnum.Station)
                             menuAction = MenuActions.action;
                         else
                         {

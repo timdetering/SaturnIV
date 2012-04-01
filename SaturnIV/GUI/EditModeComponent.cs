@@ -63,6 +63,7 @@ namespace SaturnIV
             isSelecting = false;
             fLine = new Line3D(Game.GraphicsDevice);
             selectionBB = new BoundingBox();
+            directionSphere = new BoundingSphere(Vector3.Zero,100);
             base.Initialize();
         }
 
@@ -186,6 +187,7 @@ namespace SaturnIV
                        groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);                      
                        BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
                            ourCamera.projectionMatrix, Color.Yellow);
+                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
                    }
               }
 
@@ -221,7 +223,7 @@ namespace SaturnIV
             tempData.modelPosition = mouse3dVector;
             tempData.modelRotation = Matrix.Identity;           
             tempData.Direction = Vector3.Forward;
-            tempData.Direction = HelperClass.RandomDirection();
+            //tempData.Direction = HelperClass.RandomDirection();
             if (team > 0)
                 tempData.currentDisposition = disposition.patrol;
             else

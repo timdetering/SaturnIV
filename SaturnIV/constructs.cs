@@ -80,6 +80,7 @@ namespace SaturnIV
         public float hullValue;
         public float shieldValue;
         public float radius;
+        public int techLevel;
         public Matrix worldMatrix;
         public Vector3 modelPosition;
         public Vector3 editModeOffset;
@@ -231,10 +232,29 @@ namespace SaturnIV
         {
             Fighter = 0,
             Crusier = 1,
-            Foundry = 2,
+            Capitalship = 2,
             Frigate = 3,
             Bomber = 4,
-            SWACS = 5
+            SWACS = 5,
+            Transport = 6,
+            Platform = 7,
+            Collector = 8,
+            Station = 9,
+            DryDock = 10
+        }
+
+        public enum ResourceTypes
+        {
+            Tethanium,
+            AntiMatter,
+            Metal
+        }
+
+        public class ResourceStruct
+        {
+            public ResourceTypes resourceType;
+            public int collectionTime;
+
         }
 
         public enum DirectionEnum

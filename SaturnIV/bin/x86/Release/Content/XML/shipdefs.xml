@@ -2,7 +2,7 @@
 <!-- This is the shipdefs.xml file
 	Available ships are defined here
 	The order of classes defining AI Prefs are
-	Fighter,Crusier,Capitalship,Frigate,Bomber,SWACS    
+	Fighter,Crusier,Capitalship,Frigate,Bomber,SWACS,Transport,Plaftorm,Collector,Station,Miner
 -->
 <XnaContent xmlns:Generic="System.Collections.Generic">
   <Asset Type="Generic:List[SaturnIV.shipData]">
@@ -15,15 +15,15 @@
       <Scale>1</Scale>
       <Agility>2.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Bomber</ShipClass>
+      <ShipClass>Platform</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
       <HullFactor>0.35</HullFactor>
       <hullValue>3600</hullValue>
       <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>5000 1000 4000 2000 1000 1000</EvadeDist>
-      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
-      <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
+      <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1 1 0 0 0 0 0</ChasePrefs>
       <maxDetectRange>800</maxDetectRange>
       <isStationary>true</isStationary>
       <AvailableWeapons>
@@ -51,23 +51,75 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
+      <FileName>Models//Ships/battlecrusier_bc1/battlecruiser</FileName>
+      <Type>Fleet Orvis Battlecrusier</Type>
+      <Mass>30</Mass>
+      <Thrust>5000</Thrust>
+      <SphereRadius>25</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>1.75</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Capitalship</ShipClass>
+      <ShieldFactor>0.24</ShieldFactor>
+      <HullFactor>0.35</HullFactor>
+      <hullValue>3600</hullValue>
+      <shieldValue>400</shieldValue>
+      <ShieldRegenTime>100</ShieldRegenTime>
+      <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 0 0 0 0 0 0 0 0 0</ChasePrefs>
+      <maxDetectRange>8000</maxDetectRange>
+      <isStationary>true</isStationary>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>PointDefense</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 2
+            0 0 0 2
+            0 0 0 3
+            0 0 0 3
+            0 0 0 2
+            0 0 0 2
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <weaponRange>10000</weaponRange>
+          <timer>0</timer>
+        </Item>
+        <Item>
+          <weaponType>LRM</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 3
+            0 0 0 2
+            0 0 0 2
+            0 0 0 2
+            0 0 0 2
+            0 0 0 3
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+          <weaponRange>19000</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0 </ThrusterPosition>
+    </Item>
+    <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
-      <Type>Atlas Class Frigate111</Type>
+      <Type>Atlas Class Transport Frigate</Type>
       <Mass>25</Mass>
       <Thrust>1500</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Crusier</ShipClass>
+      <ShipClass>Transport</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
 	    <HullFactor>0.35</HullFactor>
 	    <hullValue>3600</hullValue>
 	    <shieldValue>400</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 600 300 300 100 10</EvadeDist>      
-      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6</TargetPrefs>
-	    <ChasePrefs>0 0 0 0 0 0</ChasePrefs>
+      <EvadeDist>50 600 300 300 100 100 100 100 100 100 500</EvadeDist>      
+      <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
+	    <ChasePrefs>1 1 0 0 0 0 1 0 0 1 0</ChasePrefs>
       <maxDetectRange>8000</maxDetectRange>
       <isStationary>false</isStationary>
 	  <AvailableWeapons>
@@ -121,9 +173,9 @@
       <hullValue>400</hullValue>
       <shieldValue>100</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 300 300 100 10</EvadeDist>
-      <TargetPrefs>0.5 0.7 0.6 0.7 0.8 0.2</TargetPrefs>
-      <ChasePrefs>1 1 1 0 1 1</ChasePrefs>
+      <EvadeDist>50 300 300 300 100 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.5 0.7 0.6 0.7 0.8 0.2 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
       <maxDetectRange>6000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -166,9 +218,9 @@
       <hullValue>300</hullValue>
       <shieldValue>100</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 300 300 100 10</EvadeDist>
-      <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
-      <ChasePrefs>0 1 1 0 1 1</ChasePrefs>
+      <EvadeDist>50 300 300 300 100 10 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
       <maxDetectRange>6000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -211,9 +263,9 @@
 	  <hullValue>400</hullValue>
 	  <shieldValue>200</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
-    <EvadeDist>50 300 300 300 100 10</EvadeDist>
-    <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1</TargetPrefs>
-	  <ChasePrefs>1 1 1 0 1 1</ChasePrefs>
+    <EvadeDist>50 300 300 300 100 10 100 100 100 100 100 500</EvadeDist>
+    <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1 0 0 0 0 0</TargetPrefs>
+	  <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
     <maxDetectRange>6000</maxDetectRange>
     <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -256,9 +308,9 @@
 	  <hullValue>100</hullValue>
 	  <shieldValue>10</shieldValue>
     <ShieldRegenTime>100</ShieldRegenTime>
-    <EvadeDist>50 300 300 300 100 10</EvadeDist>
-    <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3</TargetPrefs>
-	  <ChasePrefs>1 1 1 1 1 0</ChasePrefs>
+    <EvadeDist>50 300 300 300 100 10 100 100 100 100 100 500</EvadeDist>
+    <TargetPrefs>0.9 0.6 0.6 0.7 0.8 0.3 0 0 0 0 0</TargetPrefs>
+	  <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
     <maxDetectRange>8000</maxDetectRange>
     <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -287,22 +339,22 @@
     </Item>
     <Item>
       <FileName>Models/Ships/fighter_m3/fighter_m3</FileName>
-      <Type>MR Streak Fighter</Type>
+      <Type>Fleet Medium Transport</Type>
       <Mass>0.75</Mass>
       <Thrust>1330</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>15.00</Agility>
       <BelongsTo>Fleet</BelongsTo>
-      <ShipClass>Fighter</ShipClass>
+      <ShipClass>Transport</ShipClass>
       <ShieldFactor>0.90</ShieldFactor>
       <HullFactor>0.85</HullFactor>
       <hullValue>400</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>50 300 300 300 100 10</EvadeDist>
-      <TargetPrefs>1 0.7 0.8 0.9 0.2 1</TargetPrefs>
-      <ChasePrefs>1 1 1 1 1 1</ChasePrefs>
+      <EvadeDist>50 300 300 300 100 10 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>1 0.7 0.8 0.9 0.2 1 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 0 0 0 0 0 0 0 0 0</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -346,9 +398,9 @@
 	    <hullValue>200</hullValue>
 	    <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
-      <EvadeDist>3500 4500 3500 2500 2500 500</EvadeDist>
-      <TargetPrefs>0.1 0.9 0.9 0.8 0.2 0.1</TargetPrefs>
-      <ChasePrefs>0 1 1 1 0 0</ChasePrefs>
+      <EvadeDist>3500 4500 3500 2500 2500 500 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.1 0.9 0.9 0.8 0.2 0.1 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -378,22 +430,22 @@
     </Item>
 		<Item>
       <FileName>Models/Ships/station_t1/station_t1</FileName>
-      <Type>Orion Ship Foundry</Type>
+      <Type>Orbital Resource Collector</Type>
       <Mass>100</Mass>
       <Thrust>0</Thrust>
       <SphereRadius>125</SphereRadius>
       <Scale>1</Scale>
       <Agility>0</Agility>
       <BelongsTo>Fleet</BelongsTo> 
-	  <ShipClass>Foundry</ShipClass>
+	  <ShipClass>Collector</ShipClass>
       <ShieldFactor>0.30</ShieldFactor>
 	  <HullFactor>0.15</HullFactor>
 	  <hullValue>3600</hullValue>
 	  <shieldValue>5400</shieldValue>
       <ShieldRegenTime>150</ShieldRegenTime>
-      <EvadeDist>15000 10000 40000 20000 100 10000</EvadeDist>
-      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3</TargetPrefs>
-      <ChasePrefs>0 0 1 0 0 0</ChasePrefs>
+      <EvadeDist>15000 10000 40000 20000 100 10000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 1 0 0 0 0 0 0 0 0</ChasePrefs>
       <maxDetectRange>5000</maxDetectRange>
       <isStationary>false</isStationary>
       <AvailableWeapons>
@@ -408,6 +460,76 @@
 	<weaponRange>5000</weaponRange>
 	<timer>0</timer>
 	</Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0</ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/station_t2/station_t2</FileName>
+      <Type>Alyssium Command Station</Type>
+      <Mass>100</Mass>
+      <Thrust>10</Thrust>
+      <SphereRadius>125</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>10</Agility>
+      <BelongsTo>Fleet</BelongsTo>
+      <ShipClass>Station</ShipClass>
+      <ShieldFactor>0.30</ShieldFactor>
+      <HullFactor>0.15</HullFactor>
+      <hullValue>3600</hullValue>
+      <shieldValue>5400</shieldValue>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>15000 10000 40000 20000 100 10000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 1 0 0 0 0 0 0 1 0</ChasePrefs>
+      <maxDetectRange>5000</maxDetectRange>
+      <isStationary>false</isStationary>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>PointDefense</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 2
+            0 0 0 3
+            0 0 0 3
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>5</FiringEnvelopeAngle>
+          <weaponRange>5000</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0</ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/transport_t1/transport_t1</FileName>
+      <Type>Eriax Attack Frigate</Type>
+      <Mass>6</Mass>
+      <Thrust>5000</Thrust>
+      <SphereRadius>125</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Crusier</ShipClass>
+      <ShieldFactor>0.30</ShieldFactor>
+      <HullFactor>0.15</HullFactor>
+      <hullValue>3600</hullValue>
+      <shieldValue>5400</shieldValue>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>15000 10000 40000 20000 100 10000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 1 1 1 1 1 1 1 1 1</ChasePrefs>
+      <maxDetectRange>5000</maxDetectRange>
+      <isStationary>false</isStationary>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>PointDefense</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 2
+            0 0 0 3
+            0 0 0 3
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>5</FiringEnvelopeAngle>
+          <weaponRange>5000</weaponRange>
+          <timer>0</timer>
+        </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0</ThrusterPosition>
     </Item>
