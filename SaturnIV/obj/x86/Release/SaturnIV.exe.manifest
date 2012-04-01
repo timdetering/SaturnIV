@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>eAYwe/nJ58PetM95f/myRdXOLVU=</dsig:DigestValue>
+        <dsig:DigestValue>gS6+g59/arKYMZrS86AIPewAeWQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -324,13 +324,13 @@
       <dsig:DigestValue>H/HiBH4rfjzN3FWKRWCS9D8LR00=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\Ships\battlecrusier_bc1\battlecruiser.xnb" size="251700">
+  <file name="Content\Models\Ships\battlecrusier_bc1\battlecruiser.xnb" size="251724">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>E2jFdQ/dMr/NspACdlX5LkXRiPI=</dsig:DigestValue>
+      <dsig:DigestValue>meU17uypF7iJ5uZgSiZFtlgtCG4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_badge_export[1].xnb" size="2612">
@@ -1230,7 +1230,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xKEvCrL9Kza48BT/49J8PNMtYOU=</dsig:DigestValue>
+      <dsig:DigestValue>z+7I6MSkMu1VblTzb/gfT9oGhMk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4373">

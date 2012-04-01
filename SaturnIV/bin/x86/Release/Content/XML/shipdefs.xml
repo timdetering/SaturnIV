@@ -53,11 +53,11 @@
     <Item>
       <FileName>Models//Ships/battlecrusier_bc1/battlecruiser</FileName>
       <Type>Fleet Orvis Battlecrusier</Type>
-      <Mass>30</Mass>
-      <Thrust>5000</Thrust>
+      <Mass>60</Mass>
+      <Thrust>1000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
-      <Agility>1.75</Agility>
+      <Agility>0.75</Agility>
       <BelongsTo>Fleet</BelongsTo>
       <ShipClass>Capitalship</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>

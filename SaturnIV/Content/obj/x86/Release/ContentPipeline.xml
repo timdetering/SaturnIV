@@ -1465,10 +1465,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\battlecruiser.xnb</Output>
-      <Time>2012-03-31T22:47:07.4559922-05:00</Time>
+      <Time>2012-03-31T23:03:15.7333745-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\battlecrusier_bc1\battlecruiser_0.xml</Key>
-        <Value>2012-03-31T22:47:25.3920181-05:00</Value>
+        <Value>2012-04-01T12:48:37.822318-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiserkineticburstcan_0.xnb</Request>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[_0.xnb</Request>
@@ -1480,7 +1480,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Release\Models\Ships\battlecrusier_bc1\battlecruiser_0.xml</Output>
-      <Time>2012-03-31T22:47:07.4559922-05:00</Time>
+      <Time>2012-03-31T23:03:15.7333745-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\battlecrusier_bc1\Hgn_battlecruiserkineticburstcannon_export[1].bmp</Source>
