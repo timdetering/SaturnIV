@@ -22,7 +22,7 @@ namespace SaturnIV
         private Grid grid;
         private Line3D fLine;
         BoundingSphere directionSphere;
-        Color sphereColor;
+        Color sphereColor = Color.Yellow;
         public bool ischangingDirection = false;
         public bool isDragging = false;
         public bool isGroupSelect = false;
@@ -67,7 +67,7 @@ namespace SaturnIV
             base.Initialize();
         }
 
-        /// <summary>
+       /// <summary>
         /// Allows the game component to update itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
@@ -77,10 +77,16 @@ namespace SaturnIV
         {
             // TODO: Add your update code here
             bool checkResult = false;
-            bool isDirectionSphere = false;            
+            bool isDirectionSphere = false;
+            sphereColor = Color.Yellow;
             mouseCurrent = Mouse.GetState();
             keyboardState = Keyboard.GetState();
             Vector3 myMouse3dVector = mouse3dVector;
+
+            isDirectionSphere = checkIsSelected(mouse3dVector, directionSphere);
+            if (isDirectionSphere)
+                isDragging = false;
+
              foreach (newShipStruct ourShip in objectList)                     
              {
                  checkResult = checkIsSelected(myMouse3dVector, ourShip.modelBoundingSphere);
@@ -98,7 +104,7 @@ namespace SaturnIV
                 isGroupSelect = false;
             }
 
-            if (isLDepressed && isStuffSelected && selectionRect == Rectangle.Empty)
+            if (isLDepressed && selectionRect == Rectangle.Empty && !isDirectionSphere && !ischangingDirection)
             {
                foreach (newShipStruct ourShip in objectList)
                {
@@ -114,17 +120,17 @@ namespace SaturnIV
             }
 
             if ((isLDepressed && isDirectionSphere && !isDragging)
-                      || (isLDepressed && ischangingDirection && !isDragging))
+                 || (isLDepressed && ischangingDirection && !isDragging))
             {
                 isDragging = false;
-                sphereColor = Color.Red;
                 ischangingDirection = true;
 
                 foreach (newShipStruct ourShip in objectList)
                 {
                     if (ourShip.isSelected)
                     {
-                        ourShip.targetPosition = mouse3dVector;
+                        sphereColor = Color.Red;
+                        ourShip.targetPosition = myMouse3dVector;
                         directionSphere.Center = ourShip.modelPosition + ourShip.Direction * lineFactor;
                         npcManager.updateShipMovement(gameTime, 5.0f, ourShip, ourCamera, true);
                         mouseOld = mouseCurrent;
@@ -151,6 +157,7 @@ namespace SaturnIV
             prevMouseState = mouseCurrent;
             base.Update(gameTime);
         }
+
 
         public void Draw(GameTime gameTime, ref List<newShipStruct> shipList,CameraNew ourCamera
             , SpriteBatch spriteBatch, DrawQuadClass drawQuad, BasicEffect quadEffect, VertexDeclaration quadVertexDecl, Texture2D transCircleGreen)
@@ -187,13 +194,13 @@ namespace SaturnIV
                        groupBS = BoundingSphere.CreateMerged(groupBS, enemy.modelBoundingSphere);                      
                        BoundingSphereRenderer.Render(enemy.modelBoundingSphere, GraphicsDevice, ourCamera.viewMatrix, 
                            ourCamera.projectionMatrix, Color.Yellow);
-                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
+                       BoundingSphereRenderer.Render(directionSphere, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Orange);
                    }
               }
 
             base.Draw(gameTime);
         }
-        
+               
         public static bool checkIsSelected(Vector3 mouse3dVector,
                 BoundingSphere sphere)
         {

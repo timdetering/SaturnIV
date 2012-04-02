@@ -739,12 +739,9 @@ namespace SaturnIV
                         spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X - 24, (int)npcship.screenCords.Y - 24, 48, 48), Color.Blue);
                 }
                 spriteBatch.End();
-                if (showGrid)
-                {
-                    Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
-                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.maxDetectRange
-                                        , npcship.maxDetectRange), bluetranscircle, npcship.modelPosition);
-                }
+                Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.modelLen *2
+                                    , npcship.modelLen * 2), bluetranscircle, npcship.modelPosition);
             }
             
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);

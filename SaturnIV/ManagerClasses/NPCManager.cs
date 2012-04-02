@@ -234,8 +234,8 @@ namespace SaturnIV
 
             if (isEdit)
                 thisShip.thrustAmount = 0.0f;
-            //if (isEdit)
-            //    thisShip.Direction = thisShip.vecToTarget + HelperClass.RandomDirection();
+            if (isEdit)
+                thisShip.Direction = thisShip.vecToTarget;
             //else
             if (!isEdit)
                 thisShip.Direction = Vector3.Normalize(Vector3.Lerp(thisShip.Direction, thisShip.vecToTarget, 
