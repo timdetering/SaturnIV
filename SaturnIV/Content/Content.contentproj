@@ -551,6 +551,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Models\Ships\eriax_frigate\eriax_frigate_f1.FBX">
+      <Name>eriax_frigate_f1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="XML\listofnames.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>listofnames</Name>
@@ -685,6 +690,13 @@
   <ItemGroup>
     <Compile Include="Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_main_export[1].bmp">
       <Name>Hgn_battlecruiser_main_export[1]</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\bluetranscircle.png">
+      <Name>bluetranscircle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

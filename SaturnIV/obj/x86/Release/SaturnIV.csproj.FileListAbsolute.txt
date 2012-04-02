@@ -138,3 +138,5 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecru
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[2]LUM.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_expor_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Hgn_battlecruiser_main_export[1].xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_frigate\eriax_frigate_f1.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bluetranscircle.xnb

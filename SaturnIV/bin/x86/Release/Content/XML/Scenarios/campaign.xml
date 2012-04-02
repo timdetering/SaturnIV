@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipIndex>10</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>2694.41479 0 24902.4434</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Vendetta</shipName>
+      <shipPosition>-2581.01758 0 23798.6055</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Ultima</shipName>
+      <shipPosition>-2635.08276 0 25093.9375</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Relentless</shipName>
+      <shipPosition>-2652.79761 0 26457.2422</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Adamant</shipName>
+      <shipPosition>6809.01953 0 23707.6973</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Stalker</shipName>
+      <shipPosition>6881.401 0 25048.4883</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>6</shipIndex>
+      <shipName>Skyhook</shipName>
+      <shipPosition>6899.298 0 26366.3613</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>7</shipIndex>
+      <shipName>Reckoning</shipName>
+      <shipPosition>1433.50842 0 29841.8965</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>7</shipIndex>
+      <shipName>Malice</shipName>
+      <shipPosition>3939.10449 0 29682.9141</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+    <Item>
+      <shipIndex>7</shipIndex>
+      <shipName>Red Gauntlet</shipName>
+      <shipPosition>2577.33325 0 29001.5313</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+  </Asset>
+</XnaContent>

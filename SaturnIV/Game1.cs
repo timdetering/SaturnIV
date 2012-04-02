@@ -47,7 +47,8 @@ namespace SaturnIV
         gameServer gServer;
         gameClient gClient;
         Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
-        Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;        
+        Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
+        Texture2D bluetranscircle;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         float disFromcenter;
@@ -112,6 +113,10 @@ namespace SaturnIV
         bool isFullScreen = false;
         MenuActions menuAction = MenuActions.none;
         ResourceClass resourceClass;
+        /// <summary>
+        /// Setup Players resource amounts
+        /// </summary>
+        int playerTethAmount, playerAMAmount, playerMtlAmount;
 
         // Define Hud Components
         Texture2D centerHUD;
@@ -119,7 +124,6 @@ namespace SaturnIV
         public static Dictionary<string, Model> modelDictionary = new Dictionary<string, Model>();
         DrawQuadClass drawQuad;
         BasicEffect quadEffect;
-        Quad tacPlaneQuad;
 
         public Game1()
         {
@@ -172,7 +176,7 @@ namespace SaturnIV
             planetManager = new PlanetManager(this);
             planetManager.Initialize();
             resourceClass = new ResourceClass();
-            resourceClass.Init(planetManager);
+            resourceClass.Init();
             ////////////Mousey Stuff
             this.IsMouseVisible = false;
             Mouse.SetPosition(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
@@ -228,11 +232,12 @@ namespace SaturnIV
             orangeTarget = this.Content.Load<Texture2D>("Models/tacmap_items/orange_target");
             planetInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/planetinfobox");
             mouseTex = this.Content.Load<Texture2D>("textures/cursor");
+            bluetranscircle = this.Content.Load<Texture2D>("Models/tacmap_items/bluetranscircle");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan");
-            planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io");
+            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.AntiMatter, 15000);
+            planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io", ResourceType.Metal, 20000);
         }
 
         private void loadMetaData()
@@ -709,7 +714,7 @@ namespace SaturnIV
             spriteBatch.Draw(selectRecTex, r, Color.White);
             if (menuAction == MenuActions.build) aMenu.drawBuildGUI(spriteBatch, medFont, buildManager);
             if (menuAction == MenuActions.action) aMenu.drawActionGUI(spriteBatch, medFont, ref activeShipList);
-            aMenu.drawMainMenu(spriteBatch, medFont);
+            if (!isEditMode) aMenu.drawMainMenu(spriteBatch, medFont);
             spriteBatch.Draw(mouseTex, new Vector2(mouseStateCurrent.X, mouseStateCurrent.Y), Color.White);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
@@ -734,6 +739,12 @@ namespace SaturnIV
                         spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X - 24, (int)npcship.screenCords.Y - 24, 48, 48), Color.Blue);
                 }
                 spriteBatch.End();
+                if (showGrid)
+                {
+                    Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.maxDetectRange
+                                        , npcship.maxDetectRange), bluetranscircle, npcship.modelPosition);
+                }
             }
             
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);

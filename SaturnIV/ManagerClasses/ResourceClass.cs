@@ -13,10 +13,21 @@ namespace SaturnIV
     class ResourceClass
     {
         PlanetManager planetManager;
-
-        public void Init(PlanetManager planetManager1)
+        List<ResourceStruct> resourceList;
+        public void Init()
         {
-            planetManager = planetManager1;
+            resourceList = new List<ResourceStruct>();
+            ResourceStruct newResource = new ResourceStruct();
+            newResource.collectionTime = 10000;
+            newResource.resourceType = ResourceType.Tethanium;
+            resourceList.Add(newResource);
+            newResource.collectionTime = 20000;
+            newResource.resourceType = ResourceType.AntiMatter;
+            resourceList.Add(newResource);
+            newResource.collectionTime = 5000;
+            newResource.resourceType = ResourceType.Metal;
+            resourceList.Add(newResource);
+
         }
         
         public void updateResourceCollection(List<planetStruct> planetList, newShipStruct tCollector)

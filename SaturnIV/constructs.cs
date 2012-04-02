@@ -242,27 +242,20 @@ namespace SaturnIV
             Station = 9,
             DryDock = 10
         }
-
-        public enum ResourceTypes
-        {
-            Tethanium,
-            AntiMatter,
-            Metal
-        }
-
-        public class ResourceStruct
-        {
-            public ResourceTypes resourceType;
-            public int collectionTime;
-
-        }
-
+        
         public enum DirectionEnum
         {
             front = 0, // Bow
             rear = 1, // Stern
             left = 2, // Port
             right = 3 // Starboard
+        }
+
+        public enum ResourceType
+        {
+            Tethanium,
+            AntiMatter,
+            Metal
         }
 
         public class planetStruct
@@ -276,7 +269,8 @@ namespace SaturnIV
             public Vector3 screenCoords;
             public string planetName;
             public bool isSelected;
-            public int initialResources;
+            public ResourceType aResource;
+            public int aResourceAmount;
         }
 
         public class planetSaveStruct
@@ -295,7 +289,13 @@ namespace SaturnIV
             public Vector3 systemMapPosition;
             public string systemMapImageFile;
             public int systemID;
-        }       
+        }
+
+        public class ResourceStruct
+        {
+            public ResourceType resourceType;
+            public int collectionTime;
+        }
 
         public enum TextBoxActions
         {

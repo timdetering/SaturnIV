@@ -74,8 +74,8 @@
         <Item>
           <weaponType>PointDefense</weaponType>
           <ModulePositionOnShip>
-            0 0 0 2
-            0 0 0 2
+            0 0 0 0
+            0 0 0 0
             0 0 0 3
             0 0 0 3
             0 0 0 2
@@ -500,7 +500,42 @@
     </Item>
     <Item>
       <FileName>Models/Ships/transport_t1/transport_t1</FileName>
-      <Type>Eriax Attack Frigate</Type>
+      <Type>Eriax Frigate</Type>
+      <Mass>6</Mass>
+      <Thrust>5000</Thrust>
+      <SphereRadius>125</SphereRadius>
+      <Scale>1</Scale>
+      <Agility>4</Agility>
+      <BelongsTo>Eriax</BelongsTo>
+      <ShipClass>Crusier</ShipClass>
+      <ShieldFactor>0.30</ShieldFactor>
+      <HullFactor>0.15</HullFactor>
+      <hullValue>3600</hullValue>
+      <shieldValue>5400</shieldValue>
+      <ShieldRegenTime>150</ShieldRegenTime>
+      <EvadeDist>15000 10000 40000 20000 100 10000 100 100 100 100 100 500</EvadeDist>
+      <TargetPrefs>0.4 0.9 0.2 1 0.2 0.3 0 0 0 0 0</TargetPrefs>
+      <ChasePrefs>0 0 1 1 1 1 1 1 1 1 1</ChasePrefs>
+      <maxDetectRange>5000</maxDetectRange>
+      <isStationary>false</isStationary>
+      <AvailableWeapons>
+        <Item>
+          <weaponType>PointDefense</weaponType>
+          <ModulePositionOnShip>
+            0 0 0 2
+            0 0 0 3
+            0 0 0 3
+          </ModulePositionOnShip>
+          <FiringEnvelopeAngle>5</FiringEnvelopeAngle>
+          <weaponRange>5000</weaponRange>
+          <timer>0</timer>
+        </Item>
+      </AvailableWeapons>
+      <ThrusterPosition>0 0 0</ThrusterPosition>
+    </Item>
+    <Item>
+      <FileName>Models/Ships/eriax_frigate/eriax_frigate_f1</FileName>
+      <Type>Eriax Crusier</Type>
       <Mass>6</Mass>
       <Thrust>5000</Thrust>
       <SphereRadius>125</SphereRadius>
