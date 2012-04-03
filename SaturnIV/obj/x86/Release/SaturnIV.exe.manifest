@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="114688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="115200">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+RAHoyOFwJh8sXyt1WRqjvtvpCc=</dsig:DigestValue>
+        <dsig:DigestValue>m9Ooaj+GxY26L1/Za6eyWQesppc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[SaturnIV.saveObject]">
+    <Item>
+      <shipIndex>9</shipIndex>
+      <shipName>Vanguard</shipName>
+      <shipPosition>51862.3828 0 1172.49548</shipPosition>
+      <shipDirection>0 0 0</shipDirection>
+      <side>0</side>
+    </Item>
+  </Asset>
+</XnaContent>

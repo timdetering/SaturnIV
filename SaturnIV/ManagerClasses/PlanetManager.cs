@@ -51,7 +51,6 @@ namespace SaturnIV
             planetTextureArray[0] = Game.Content.Load<Texture2D>("textures/planettexture1");
             planetTextureArray[1] = Game.Content.Load<Texture2D>("textures/planettexture2");
             planetTextureArray[2] = Game.Content.Load<Texture2D>("textures/planettexture3");
-
             //planetTextureArray[2] = Game.Content.Load<Texture2D>("earthplanettexture");
         }
         public void generatSpaceObjects(int textureID, Vector3 position, int planetRadius, int isControlled, string name, ResourceType rType, int rSize)
@@ -69,7 +68,7 @@ namespace SaturnIV
                 tempData.planetName = name;
                 tempData.planetBS = planetBS;
                 tempData.aResourceAmount = 20000;
-                tempData.aResource = ResourceType.Metal;
+                tempData.aResource = rType;
                 planetList.Add(tempData);
         }
 

@@ -172,12 +172,13 @@ namespace SaturnIV
             }
         }
 
-        public void drawMainMenu(SpriteBatch mBatch, SpriteFont spriteFont)
+        public void drawMainMenu(SpriteBatch mBatch, SpriteFont spriteFont, int tethAmnt, int amAmnt)
         {
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
             mBatch.DrawString(spriteFont, "F1->TacMap   G->Grid On-Off  Q->Edit Mode", mainMenuPos, Color.White);
             mBatch.Draw(resourceIconTex, resourceAreaRectange, Color.White);
+            mBatch.DrawString(spriteFont, tethAmnt.ToString(), new Vector2(resourceAreaRectange.X, resourceAreaRectange.Y), Color.White);
         }
 
         public void drawBuildGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)

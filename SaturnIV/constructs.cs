@@ -253,9 +253,9 @@ namespace SaturnIV
 
         public enum ResourceType
         {
-            Tethanium,
-            AntiMatter,
-            Metal
+            Tethanium = 0,
+            AntiMatter = 1,
+            Metal = 2
         }
 
         public class planetStruct
@@ -295,6 +295,7 @@ namespace SaturnIV
         {
             public ResourceType resourceType;
             public int collectionTime;
+            public double lastCollectTime;
         }
 
         public enum TextBoxActions

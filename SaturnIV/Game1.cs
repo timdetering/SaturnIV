@@ -46,7 +46,7 @@ namespace SaturnIV
         double lastKeyPressTime;
         gameServer gServer;
         gameClient gClient;
-        Texture2D rectTex, shipRec, selectRecTex, dummyTex, planetTexture;
+        Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
         Texture2D bluetranscircle;
         MessageClass messageClass;
@@ -236,7 +236,7 @@ namespace SaturnIV
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.AntiMatter, 15000);
+            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.Tethanium, 15000);
             planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io", ResourceType.Metal, 20000);
         }
 
@@ -312,8 +312,8 @@ namespace SaturnIV
                 RectangleSelect(activeShipList, viewport, ourCamera.projectionMatrix, ourCamera.viewMatrix,
                     selectionRect);
             foreach (newShipStruct tShip in activeShipList)
-                if (tShip.objectClass == ClassesEnum.Collector)
-                    resourceClass.updateResourceCollection(planetManager.planetList, tShip);
+                if (tShip.objectClass == ClassesEnum.Collector && !isEditMode)
+                    resourceClass.updateResourceCollection(gameTime, planetManager.planetList, tShip, playerTethAmount, playerAMAmount, playerMtlAmount);
             base.Update(gameTime);
         }
 
@@ -714,7 +714,7 @@ namespace SaturnIV
             spriteBatch.Draw(selectRecTex, r, Color.White);
             if (menuAction == MenuActions.build) aMenu.drawBuildGUI(spriteBatch, medFont, buildManager);
             if (menuAction == MenuActions.action) aMenu.drawActionGUI(spriteBatch, medFont, ref activeShipList);
-            if (!isEditMode) aMenu.drawMainMenu(spriteBatch, medFont);
+            if (!isEditMode) aMenu.drawMainMenu(spriteBatch, medFont,playerTethAmount, playerAMAmount);
             spriteBatch.Draw(mouseTex, new Vector2(mouseStateCurrent.X, mouseStateCurrent.Y), Color.White);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
@@ -846,7 +846,7 @@ namespace SaturnIV
                     {
                         spriteBatch.Draw(planetInfoTex, new Vector2(planet.screenCoords.X - 196, planet.screenCoords.Y - 187), Color.White);
                         spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X - 96, planet.screenCoords.Y - 128), Color.White);
-                        spriteBatch.DrawString(medFont, "100 Units", new Vector2(planet.screenCoords.X-148, planet.screenCoords.Y-48), Color.YellowGreen);
+                        spriteBatch.DrawString(medFont, resourceClass.resourceList[(int)planet.aResource].resourceType.ToString() + "\nDeposit", new Vector2(planet.screenCoords.X-148, planet.screenCoords.Y-48), Color.YellowGreen);
                         drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
                             planet.planetRadius*2000, planet.planetRadius*2000), transCircleGreen, planet.planetPosition);
                         //cameraTargetVec3 = planet.planetPosition;
