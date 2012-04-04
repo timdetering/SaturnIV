@@ -317,7 +317,7 @@ namespace SaturnIV
                     selectionRect);
             foreach (newShipStruct tShip in activeShipList)
                 if (tShip.objectClass == ClassesEnum.Collector && !isEditMode)
-                    resourceClass.updateResourceCollection(gameTime, planetManager.planetList, tShip, playerTethAmount, playerAMAmount, playerMtlAmount);
+                    resourceClass.updateResourceCollection(gameTime, planetManager.planetList, tShip, ref playerTethAmount, ref playerAMAmount, ref playerMtlAmount);
             base.Update(gameTime);
         }
 

@@ -31,8 +31,10 @@ namespace SaturnIV
 
         }
         
-        public void updateResourceCollection(GameTime gameTime, List<planetStruct> planetList, newShipStruct tCollector, int tethAmt,int amAmt, int mtlAmt)
+        public int updateResourceCollection(GameTime gameTime, List<planetStruct> planetList, newShipStruct tCollector,
+            ref int playerTethAmount, ref int playerAMAmount, ref int playerMtlAmount)
         {
+            int newAmount = 0;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             foreach (planetStruct cPlanet in planetList)
             {
@@ -45,10 +47,25 @@ namespace SaturnIV
                     {
                         MessageClass.messageLog.Add("(" + tCollector.objectAlias + ") Collecting Am from " + cPlanet.planetName);
                         resourceList[(int)cPlanet.aResource].lastCollectTime = currentTime;
+                        //if (tCollector.techLevel == 1)
+                            newAmount = 50;
+                        switch (cPlanet.aResource)
+                        {
+                            case ResourceType.AntiMatter:
+                                playerAMAmount += newAmount;
+                                break;
+                            case ResourceType.Tethanium:
+                                playerTethAmount += newAmount;
+                                break;
+                            case ResourceType.Metal:
+                                playerMtlAmount += newAmount;
+                                break;
+                        }
+
                     }
                 }
-
-            }            
+            }
+            return newAmount;
         }
     }
 }

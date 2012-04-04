@@ -179,6 +179,7 @@ namespace SaturnIV
             mBatch.DrawString(spriteFont, "F1->TacMap   G->Grid On-Off  Q->Edit Mode", mainMenuPos, Color.White);
             mBatch.Draw(resourceIconTex, resourceAreaRectange, Color.White);
             mBatch.DrawString(spriteFont, tethAmnt.ToString(), new Vector2(resourceAreaRectange.X, resourceAreaRectange.Y), Color.White);
+            mBatch.DrawString(spriteFont, amAmnt.ToString(), new Vector2(resourceAreaRectange.X+ 48, resourceAreaRectange.Y), Color.White);
         }
 
         public void drawBuildGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
