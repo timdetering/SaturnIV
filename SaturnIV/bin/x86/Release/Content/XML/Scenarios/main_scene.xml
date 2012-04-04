@@ -25,28 +25,28 @@
     </planetList>
     <initalObjectList>
       <Item>
-        <shipIndex>10</shipIndex>
-        <shipName>Vanguard</shipName>
+        <shipIndex>5</shipIndex>
+        <shipName>Alyssium</shipName>
         <shipPosition>35547.47 0 -10523.0918</shipPosition>
         <shipDirection>0 0 0</shipDirection>
         <side>0</side>
       </Item>
       <Item>
-        <shipIndex>6</shipIndex>
+        <shipIndex>4</shipIndex>
         <shipName>Vendetta</shipName>
         <shipPosition>35880.6 0 -18136.4688</shipPosition>
         <shipDirection>0 0 0</shipDirection>
         <side>0</side>
       </Item>
       <Item>
-        <shipIndex>6</shipIndex>
+        <shipIndex>4</shipIndex>
         <shipName>Ultima</shipName>
         <shipPosition>36793.2969 0 -16000.2676</shipPosition>
         <shipDirection>0 0 0</shipDirection>
         <side>0</side>
       </Item>
       <Item>
-        <shipIndex>6</shipIndex>
+        <shipIndex>4</shipIndex>
         <shipName>Relentless</shipName>
         <shipPosition>39134.52 0 -16198.9746</shipPosition>
         <shipDirection>0 0 0</shipDirection>

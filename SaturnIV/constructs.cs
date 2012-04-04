@@ -98,7 +98,6 @@ namespace SaturnIV
         public Vector3 wayPointPosition;
         public newShipStruct currentTarget;
         public disposition currentDisposition;
-        public disposition preEvadeDisposition;
         public Model shipModel;
         public float thrustAmount;
         public float distanceFromTarget;
@@ -177,6 +176,7 @@ namespace SaturnIV
     {
         public string FileName;
         public string Type;
+        public int TechLevel;
         public float Mass;
         public float Thrust;
         public float SphereRadius;

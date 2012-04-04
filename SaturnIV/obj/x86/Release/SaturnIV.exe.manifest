@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>elUHP997QUzQ+VPmzElvzUFde+w=</dsig:DigestValue>
+        <dsig:DigestValue>Pi5lusyOlqnqmFzH3dtMCUUK9V0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1260,22 +1260,22 @@
       <dsig:DigestValue>sSn+w0GhveYuojv/Jl20Bavyw9U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="19710">
+  <file name="Content\XML\shipdefs.xml" size="15558">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>J85K8aPzbmp7+QKT8PA+9cMhTD0=</dsig:DigestValue>
+      <dsig:DigestValue>L2Ha6rNFRzk75KwFTK6y2VFN7lk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4373">
+  <file name="Content\XML\weapondefs.xml" size="4621">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jmy4/M+5rqJ0pC6sT4AdzL6ynek=</dsig:DigestValue>
+      <dsig:DigestValue>xwHDkdT084sheNgtLFwzxrLYj8Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

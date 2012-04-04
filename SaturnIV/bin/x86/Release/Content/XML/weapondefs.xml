@@ -4,6 +4,7 @@
    <Item>
       <FileName>Models//basic_bullet</FileName>
       <Type>PointDefense</Type>
+     <TechLevel>2</TechLevel>
      <Mass>0.10</Mass>
       <Thrust>4800</Thrust>
       <SphereRadius>5</SphereRadius>
@@ -21,6 +22,7 @@
     <Item>
       <FileName>Models//basic_missile</FileName>
       <Type>SRM</Type>
+      <TechLevel>1</TechLevel>
       <Mass>0.15</Mass>
       <Thrust>420</Thrust>
       <SphereRadius>5</SphereRadius>
@@ -38,6 +40,7 @@
     <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>SRMH</Type>
+      <TechLevel>1</TechLevel>
       <Mass>0.10</Mass>
       <Thrust>350</Thrust>
       <SphereRadius>5</SphereRadius>
@@ -55,6 +58,7 @@
    <Item>
       <FileName>Models//basic_missile</FileName>
       <Type>LRM</Type>
+     <TechLevel>1</TechLevel>
       <Mass>0.15</Mass>
       <Thrust>650</Thrust>
       <SphereRadius>5</SphereRadius>
@@ -72,6 +76,7 @@
     <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>LRMH</Type>
+      <TechLevel>1</TechLevel>
       <Mass>0.25</Mass>
       <Thrust>540</Thrust>
       <SphereRadius>5</SphereRadius>
@@ -89,6 +94,7 @@
 	  <Item>
       <FileName>Models//basic_bullet</FileName>
       <Type>AutoCannon</Type>
+      <TechLevel>1</TechLevel>
       <Mass>0.15</Mass>
       <Thrust>800</Thrust>
       <SphereRadius>5</SphereRadius>      
@@ -106,6 +112,7 @@
 <Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>LargeIon</Type>
+  <TechLevel>1</TechLevel>
       <Mass>0.15</Mass>
       <Thrust>2000</Thrust>
       <SphereRadius>5</SphereRadius>      
@@ -123,6 +130,7 @@
 	<Item>
       <FileName>Models//LaserBolt2</FileName>
       <Type>MassDriver</Type>
+    <TechLevel>3</TechLevel>
       <Mass>0.25</Mass>
       <Thrust>3400</Thrust>
       <SphereRadius>5</SphereRadius>      
