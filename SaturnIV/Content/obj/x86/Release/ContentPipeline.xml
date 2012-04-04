@@ -1580,6 +1580,24 @@
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bluetranscircle.xnb</Output>
       <Time>2012-04-01T19:05:29.0968309-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\tacmap_items\building_circle.png</Source>
+      <Name>Models\tacmap_items\building_circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\building_circle.xnb</Output>
+      <Time>2012-04-03T20:11:44.2024869-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\mining_circle.png</Source>
+      <Name>Models\tacmap_items\mining_circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\mining_circle.xnb</Output>
+      <Time>2012-04-03T20:06:45.2523277-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

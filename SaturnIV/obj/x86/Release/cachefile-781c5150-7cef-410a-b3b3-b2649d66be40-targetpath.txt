@@ -126,6 +126,8 @@ Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_main_export[1]_0.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_expor_0.xnb
 Content\Models\Ships\eriax_frigate\eriax_frigate_f1.xnb
 Content\Models\tacmap_items\bluetranscircle.xnb
+Content\Models\tacmap_items\building_circle.xnb
+Content\Models\tacmap_items\mining_circle.xnb
 Content\XML\listofnames.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml

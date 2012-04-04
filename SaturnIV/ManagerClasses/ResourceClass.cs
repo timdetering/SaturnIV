@@ -37,9 +37,10 @@ namespace SaturnIV
             foreach (planetStruct cPlanet in planetList)
             {
                 //MessageClass.messageLog.Add("Updating Resource Collection from" +  cPlanet.planetName);
-                BoundingSphere extPlanetBS = new BoundingSphere(cPlanet.planetPosition, cPlanet.planetRadius * 1000);
+                BoundingSphere extPlanetBS = new BoundingSphere(cPlanet.planetPosition, cPlanet.planetRadius * 1200);
                 if (tCollector.modelBoundingSphere.Intersects(extPlanetBS))
                 {
+                    tCollector.currentDisposition = disposition.mining;
                     if (currentTime - resourceList[(int)cPlanet.aResource].lastCollectTime > resourceList[(int)cPlanet.aResource].collectionTime)
                     {
                         MessageClass.messageLog.Add("(" + tCollector.objectAlias + ") Collecting Am from " + cPlanet.planetName);

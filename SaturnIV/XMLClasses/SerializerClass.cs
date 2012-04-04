@@ -66,6 +66,78 @@ namespace SaturnIV
                 }
             }
 
+            public void exportSaveScene(List<newShipStruct> activeShipList, List<planetStruct> planetList, Vector3 startPos, string saveName)
+            {
+                List<saveObject> saveShipList = new List<saveObject>();
+                List<planetSaveStruct> savePlanetList = new List<planetSaveStruct>();
+                saveName = "main_scene";
+                // Create the data to save
+                SceneSaveStruct saveMe = new SceneSaveStruct();
+                XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                xmlSettings.Indent = true;
+
+                saveMe.startingPosition = startPos;
+
+                saveObject tmpObject;
+                foreach (newShipStruct ship in activeShipList)
+                {
+                    tmpObject = new saveObject();
+                    tmpObject.shipPosition = ship.modelPosition;
+                    tmpObject.shipDirection = ship.targetPosition;
+                    tmpObject.shipName = ship.objectAlias;
+                    tmpObject.shipIndex = ship.objectIndex;
+                    tmpObject.side = ship.team;
+                    saveShipList.Add(tmpObject);
+                }
+                saveMe.initalObjectList = saveShipList;
+
+                planetSaveStruct tmpObject2;
+                foreach (planetStruct planet in planetList)
+                {
+                    tmpObject2 = new planetSaveStruct();
+                    tmpObject2.aResource = planet.aResource;
+                    tmpObject2.aResourceAmount = planet.aResourceAmount;
+                    tmpObject2.isControlled = planet.isControlled;
+                    tmpObject2.planetPosition = planet.planetPosition;
+                    tmpObject2.planetRadius = planet.planetRadius;
+                    tmpObject2.planetTextureFile = 1;
+                    tmpObject2.planetName = planet.planetName;
+                    savePlanetList.Add(tmpObject2);
+                }
+                saveMe.planetList = savePlanetList;
+
+                using (XmlWriter xmlWriter = XmlWriter.Create("Content/XML/Scenarios/" + saveName + ".xml", xmlSettings))
+                {
+                    IntermediateSerializer.Serialize(xmlWriter, saveMe, null);
+                }
+            }
+
+            public void loadScene(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList, 
+                ref Vector3 cameraStart, PlanetManager pManager)
+            {
+                filename = "main_scene.xml";
+                    ShipList.Clear();
+                    SceneSaveStruct newScene = new SceneSaveStruct();
+                    List<saveObject> tempScenario = new List<saveObject>();
+                    List<planetSaveStruct> tPlanetList = new List<planetSaveStruct>();
+                    XmlReaderSettings xmlSettings = new XmlReaderSettings();
+                    XmlReader xmlReader = XmlReader.Create("Content/XML/Scenarios/" + filename);
+                    newScene = IntermediateSerializer.Deserialize<SceneSaveStruct>(xmlReader, null);
+                    foreach (saveObject ship in newScene.initalObjectList)
+                    {
+                        newShipStruct shipAdd = new newShipStruct();
+                        shipAdd.objectAlias = ship.shipName;
+                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
+                    }
+
+                    foreach (planetSaveStruct planet in newScene.planetList)
+                    {
+                        pManager.generatSpaceObjects(planet.planetTextureFile, planet.planetPosition, planet.planetRadius, planet.isControlled, planet.planetName,
+                            planet.aResource, planet.aResourceAmount);
+                    }
+                    cameraStart = newScene.startingPosition;
+            }
+
             public void loadScenario(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList)
             {
                 if (filename != null)

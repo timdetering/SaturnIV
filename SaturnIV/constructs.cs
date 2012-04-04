@@ -24,7 +24,9 @@ namespace SaturnIV
         idle = 2,
         moving = 3,
         defensive = 4,
-        nofire = 5
+        nofire = 5,
+        mining = 6,
+        building = 7
     }
 
     public enum MenuActions
@@ -275,11 +277,13 @@ namespace SaturnIV
 
         public class planetSaveStruct
         {
-            public string planetTextureFile;
+            public int planetTextureFile;
             public int planetRadius;
             public Vector3 planetPosition;
             public int isControlled;
             public string planetName;
+            public ResourceType aResource;
+            public int aResourceAmount;
         }
 
         public class systemStruct
@@ -333,6 +337,15 @@ namespace SaturnIV
             public Vector3 shipPosition;
             public Vector3 shipDirection;
             public int side;
+        }
+
+        public class SceneSaveStruct
+        {
+            public int sceneID;            
+            public string sceneName;                        
+            public List<planetSaveStruct> planetList;
+            public List<saveObject> initalObjectList;
+            public Vector3 startingPosition;
         }
 
         [Serializable]

@@ -48,7 +48,7 @@ namespace SaturnIV
         gameClient gClient;
         Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
-        Texture2D bluetranscircle;
+        Texture2D bluetranscircle, miningCircle, buildingCircle;
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         float disFromcenter;
@@ -233,11 +233,13 @@ namespace SaturnIV
             planetInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/planetinfobox");
             mouseTex = this.Content.Load<Texture2D>("textures/cursor");
             bluetranscircle = this.Content.Load<Texture2D>("Models/tacmap_items/bluetranscircle");
+            miningCircle = this.Content.Load<Texture2D>("Models/tacmap_items/mining_circle");
+            buildingCircle = this.Content.Load<Texture2D>("Models/tacmap_items/building_circle");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.Tethanium, 15000);
-            planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io", ResourceType.Metal, 20000);
+            //planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.Tethanium, 15000);
+            //planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io", ResourceType.Metal, 20000);
         }
 
         private void loadMetaData()
@@ -253,7 +255,9 @@ namespace SaturnIV
 
             foreach (weaponData thisWeapon in weaponDefList)
                 if (!modelDictionary.ContainsKey(thisWeapon.FileName))
-                    modelDictionary.Add(thisWeapon.FileName, Content.Load<Model>(thisWeapon.FileName));                    
+                    modelDictionary.Add(thisWeapon.FileName, Content.Load<Model>(thisWeapon.FileName));
+
+            serializerClass.loadScene("", ref activeShipList, ref shipDefList, ref cameraTargetVec3, planetManager);
         }
 
         /// <summary>
@@ -326,8 +330,11 @@ namespace SaturnIV
             {
                 foreach (newShipStruct thisShip in activeShipList)
                 {
-                    loopTimer = currentTime;
-                    npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                    if (thisShip.currentDisposition != disposition.mining && thisShip.currentDisposition != disposition.building)
+                    {
+                        loopTimer = currentTime;
+                        npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                    }
                 }
                 loopTimer = currentTime;
             }
@@ -518,8 +525,7 @@ namespace SaturnIV
                 }
                 if (keyboardState.IsKeyDown(Keys.F11) && isEditMode)
                 {
-                    drawTextbox = true;
-                    ControlPanelClass.textBoxActions = TextBoxActions.LoadScenario;
+                    serializerClass.exportSaveScene(activeShipList, planetManager.planetList, cameraTargetVec3, "blah");
                 }
 
                 if (keyboardState.IsKeyDown(Keys.D1))
@@ -731,17 +737,13 @@ namespace SaturnIV
                 if (isDebug)
                     debug(npcship);
                 spriteBatch.Begin();
-                if (!isEditMode)
-                {
-                    if (npcship.team > 0)
-                        spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X - 24, (int)npcship.screenCords.Y - 24, 48, 48), Color.Red);
-                    else
-                        spriteBatch.Draw(orangeTarget, new Rectangle((int)npcship.screenCords.X - 24, (int)npcship.screenCords.Y - 24, 48, 48), Color.Blue);
-                }
                 spriteBatch.End();
+                Texture2D whatTexture = bluetranscircle;
+                if (npcship.currentDisposition == disposition.mining) whatTexture = miningCircle;
+                if (npcship.currentDisposition == disposition.building) whatTexture = buildingCircle;
                 Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
                 drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, npcship.modelLen *2
-                                    , npcship.modelLen * 2), bluetranscircle, npcship.modelPosition);
+                                    , npcship.modelLen * 2), whatTexture, npcship.modelPosition);
             }
             
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
@@ -845,13 +847,13 @@ namespace SaturnIV
                     if (planet.isSelected && isTacmap)
                     {
                         spriteBatch.Draw(planetInfoTex, new Vector2(planet.screenCoords.X - 196, planet.screenCoords.Y - 187), Color.White);
-                        spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X - 96, planet.screenCoords.Y - 128), Color.White);
+                        spriteBatch.DrawString(medFont, planet.planetName, new Vector2(planet.screenCoords.X - 132, planet.screenCoords.Y - 110), Color.White);
                         spriteBatch.DrawString(medFont, resourceClass.resourceList[(int)planet.aResource].resourceType.ToString() + "\nDeposit", new Vector2(planet.screenCoords.X-148, planet.screenCoords.Y-48), Color.YellowGreen);
-                        drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
-                            planet.planetRadius*2000, planet.planetRadius*2000), transCircleGreen, planet.planetPosition);
+                        //drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
+                        //    planet.planetRadius*2000, planet.planetRadius*2000), transCircleGreen, planet.planetPosition);
                         //cameraTargetVec3 = planet.planetPosition;
                     }
-                    BoundingSphereRenderer.Render(planet.planetBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
+                    //BoundingSphereRenderer.Render(planet.planetBS, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
                 }
                 spriteBatch.End();
             }

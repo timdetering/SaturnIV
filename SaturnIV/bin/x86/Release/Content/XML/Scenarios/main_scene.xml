@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="SaturnIV.SceneSaveStruct">
+    <sceneID>0</sceneID>
+    <sceneName Null="true" />
+    <planetList>
+      <Item>
+        <planetTextureFile>0</planetTextureFile>
+        <planetRadius>20</planetRadius>
+        <planetPosition>55000 -12000 2000</planetPosition>
+        <isControlled>0</isControlled>
+        <planetName>New Titan</planetName>
+        <aResource>Tethanium</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+      <Item>
+        <planetTextureFile>2</planetTextureFile>
+        <planetRadius>6</planetRadius>
+        <planetPosition>170000 -6000 -30000</planetPosition>
+        <isControlled>0</isControlled>
+        <planetName>Io</planetName>
+        <aResource>Metal</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+    </planetList>
+    <initalObjectList>
+      <Item>
+        <shipIndex>10</shipIndex>
+        <shipName>Vanguard</shipName>
+        <shipPosition>35547.47 0 -10523.0918</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>
+      <Item>
+        <shipIndex>6</shipIndex>
+        <shipName>Vendetta</shipName>
+        <shipPosition>35880.6 0 -18136.4688</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>
+      <Item>
+        <shipIndex>6</shipIndex>
+        <shipName>Ultima</shipName>
+        <shipPosition>36793.2969 0 -16000.2676</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>
+      <Item>
+        <shipIndex>6</shipIndex>
+        <shipName>Relentless</shipName>
+        <shipPosition>39134.52 0 -16198.9746</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>
+      <Item>
+        <shipIndex>2</shipIndex>
+        <shipName>Adamant</shipName>
+        <shipPosition>30801.5176 0 -15056.4375</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>
+    </initalObjectList>
+    <startingPosition>36070 0 -14101.876</startingPosition>
+  </Asset>
+</XnaContent>
