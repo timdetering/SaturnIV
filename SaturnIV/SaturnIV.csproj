@@ -102,6 +102,7 @@
     <Compile Include="BloomClasses\BloomSettings.cs" />
     <Compile Include="GUI\actionMenuClass.cs" />
     <Compile Include="ManagerClasses\BuildManager.cs" />
+    <Compile Include="ManagerClasses\SyknetClass.cs" />
     <Compile Include="ManagerClasses\ResourceClass.cs" />
     <Compile Include="PrimitiveClasses\boundingspheredraw.cs" />
     <Compile Include="PrimitiveClasses\boundingFrustumRender.cs" />

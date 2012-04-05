@@ -48,7 +48,9 @@ namespace SaturnIV
         gameClient gClient;
         Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
-        Texture2D bluetranscircle, miningCircle, buildingCircle;
+        Texture2D bluetranscircle, miningCircle, buildingCircle, shipInfoTex;
+        Texture2D constructionCircle;
+        Vector2 shipInfoPos = new Vector2(1000, 512);
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
         float disFromcenter;
@@ -63,7 +65,6 @@ namespace SaturnIV
         EditModeComponent editModeClass;
         public List<newShipStruct> activeShipList = new List<newShipStruct>();
         public List<squadClass> squadList = new List<squadClass>();
-        squadClass thisSquad;
         public NPCManager npcManager;
         public PlayerManager playerManager;
         public static newShipStruct playerShip = new newShipStruct();
@@ -71,6 +72,7 @@ namespace SaturnIV
         public WeaponsManager weaponsManager;
         public SystemClass systemManager;
         public BuildManager buildManager;
+        public SkynetClass skynetClass;
         public static List<shipData> shipDefList = new List<shipData>();
         public List<weaponData> weaponDefList = new List<weaponData>();
         public SerializerClass serializerClass;
@@ -98,6 +100,9 @@ namespace SaturnIV
         bool inAMenu = false;
         bool isPaused = false;
         bool showGrid = false;
+        bool isPlacing = false;
+        bool isPlaced = false;
+        public static bool doExit = false;
         float preZoomFactor;
         public static bool drawTextbox = false;
         newShipStruct potentialTarget;
@@ -116,7 +121,7 @@ namespace SaturnIV
         /// <summary>
         /// Setup Players resource amounts
         /// </summary>
-        int playerTethAmount, playerAMAmount, playerMtlAmount;
+        int playerTethAmount, playerAMAmount;
 
         // Define Hud Components
         Texture2D centerHUD;
@@ -235,6 +240,8 @@ namespace SaturnIV
             bluetranscircle = this.Content.Load<Texture2D>("Models/tacmap_items/bluetranscircle");
             miningCircle = this.Content.Load<Texture2D>("Models/tacmap_items/mining_circle");
             buildingCircle = this.Content.Load<Texture2D>("Models/tacmap_items/building_circle");
+            shipInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/shipinfobox");
+            constructionCircle = this.Content.Load<Texture2D>("Models/tacmap_items/constructioncircle");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
@@ -317,12 +324,14 @@ namespace SaturnIV
                     selectionRect);
             foreach (newShipStruct tShip in activeShipList)
                 if (tShip.objectClass == ClassesEnum.Collector && !isEditMode)
-                    resourceClass.updateResourceCollection(gameTime, planetManager.planetList, tShip, ref playerTethAmount, ref playerAMAmount, ref playerMtlAmount);
-            base.Update(gameTime);
+                    resourceClass.updateResourceCollection(gameTime, planetManager.planetList, tShip, ref playerTethAmount, ref playerAMAmount);
+            base.Update(gameTime);            
         }
 
         protected void updateObjects(GameTime gameTime)
         {
+            if (doExit)
+                Exit();
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             if (loopTimer < 0)
                 loopTimer = currentTime;
@@ -428,7 +437,13 @@ namespace SaturnIV
                             activeShipList.Add(newShip);
                         }
                     }
-                    
+                    /// Place new Construction item
+                    /// 
+                    if (isRclicked && aMenu.isPlacing)
+                    {
+                       
+                    }
+
                     if (isEditMode && guiClass.inGui)
                     {
                         if (Gui.loadThisScenario != null && mouseStateCurrent.LeftButton == ButtonState.Released)
@@ -670,7 +685,7 @@ namespace SaturnIV
                             isLeader = true;
                         }
                 }
-            }
+            }            
             mouseStatePrevious = mouseStateCurrent;
             oldkeyboardState = keyboardState;
         }
@@ -731,6 +746,12 @@ namespace SaturnIV
 
         private void drawMainObjects(GameTime gameTime)
         {
+            if (aMenu.isPlacing)
+            {
+                Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 750 * 2
+                                    , 750 * 2), constructionCircle, mouse3dVector);
+            }
             foreach (newShipStruct npcship in activeShipList)
             {
                 modelManager.DrawModel(ourCamera, modelDictionary[npcship.objectFileName], npcship.worldMatrix, shipColor, true);
@@ -754,79 +775,37 @@ namespace SaturnIV
 
         private void DrawHUDTargets(GameTime gameTime)
         {
-            bool isDone = false;
-            StringBuilder messageBuffer = new StringBuilder();
-            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
-            Vector2 fontPos = new Vector2(0, 0);
-            foreach (newShipStruct enemy in activeShipList)
+            int sCount = 0;
+            shipInfoPos = new Vector2(1000, 384);
+            foreach (newShipStruct tShip in activeShipList)
             {
-                StringBuilder buffer = new StringBuilder();
-                if (enemy.isSelected && !isDone)
+                if (tShip.isSelected)
                 {
-                    isDone = true;
-                    int starty = 600;
-                    int timerIndex = 0;
-                    double hbarValue;
-                    int hbarwidth = 100;
-                    buffer = new StringBuilder();
-                    buffer.AppendLine(enemy.objectAlias + "\n" + enemy.objectClass + "\n" + enemy.currentDisposition);
-                    spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1000, starty - 70), Color.White);
+                    Vector2 fontPos = new Vector2(tShip.screenCords.X, tShip.screenCords.Y - 45);                    
+                    StringBuilder buffer = new StringBuilder();
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(shipInfoTex, new Rectangle((int)shipInfoPos.X, (int)shipInfoPos.Y,128,96) , Color.White);
+                    spriteBatch.DrawString(spriteFont, tShip.objectAlias, fontPos, Color.White);
+                    spriteBatch.DrawString(medFont, tShip.objectAlias.ToString() + "\n" + tShip.objectClass.ToString(), new Vector2(shipInfoPos.X + 12, shipInfoPos.Y), Color.White);
+                    spriteBatch.DrawString(medFont, "Hull:" + tShip.hullLvl.ToString() + "\n" + "Shield:" + tShip.shieldLvl.ToString() + "\n" + tShip.currentDisposition
+                                           , new Vector2(shipInfoPos.X + 12, shipInfoPos.Y + 36), Color.Yellow);
+                    spriteBatch.End();
+                    sCount++;
+                    if ((sCount % 2) == 0 && sCount > 0)
+                    {
+                        ///is Even
+                        shipInfoPos.Y += 96;
+                        shipInfoPos.X = 1000;
+                    }
+                    else
+                    {
+                        ///is Odd
+                        shipInfoPos.X += 128;
+                    }
 
-                    foreach (WeaponModule thisMod in enemy.weaponArray)
-                    {
-                        buffer = new StringBuilder();
-                        buffer.AppendLine(thisMod.weaponType + "");
-                        spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(1100, starty - 18), Color.Green);
-                        foreach (Vector4 thisWeapon in thisMod.ModulePositionOnShip)
-                        {
-                            double currentTime = gameTime.TotalGameTime.TotalMilliseconds - enemy.regenTimer[timerIndex];
-                            if (enemy.regenTimer[timerIndex] == 0)
-                                currentTime = 0;
-                            hbarValue = currentTime / weaponDefList[(int)thisMod.weaponType].regenTime * 100;
-                            timerIndex++;
-                            hbarValue = hbarValue / hbarwidth * 100;
-                            if (hbarValue > hbarwidth) hbarValue = hbarwidth;
-                            bar.DrawHbar(gameTime, spriteBatch, Color.Red, 1100, starty, hbarwidth, 10, hbarwidth);
-                            bar.DrawHbar(gameTime, spriteBatch, Color.LightBlue, 1100, starty, hbarwidth, 10, (int)hbarValue);
-                            starty += 20;
-                        }
-                        starty += 10;
-                    }
-                }
-                if (!isEditMode)
-                {
-                    switch (enemy.team)
-                    {
-                        case 0:
-                            shipColor = Color.Blue;
-                            break;
-                        case 1:
-                            shipColor = Color.Green;
-                            break;
-                    }
-                    if (enemy.isSelected)
-                        shipColor = Color.White;
-                    fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
-                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
-                    if (isDebug)
-                    {                       
-                        buffer.AppendFormat("[" + enemy.currentDisposition + "]");
-                        buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
-                        buffer.AppendFormat("[" + enemy.isEvading + "]");
-                        buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
-                        buffer.AppendFormat("[" + enemy.thrustAmount + "]");
-                        if (enemy.currentTarget != null)
-                        {
-                            buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
-                            buffer.AppendFormat("[" + enemy.currentTarget.hullLvl + "]");
-                            buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
-                        }
-                    }
-                    spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
                 }
             }
-            spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0, 0), Color.White);           
-            spriteBatch.End();
+            //spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), new Vector2(0, 0), Color.White);  
             DrawHUD(gameTime);
             DrawPlanets();
         }
@@ -874,11 +853,7 @@ namespace SaturnIV
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
             messageBuffer = new StringBuilder();
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Yellow);
-            //spriteBatch.Draw(centerHUD, new Vector2(screenCenterX - 149, screenCenterY - 155), Color.Wheat);
-
-            StringBuilder buffer = new StringBuilder();
-            buffer.AppendFormat("Ninja76");
-            spriteBatch.DrawString(spriteFont, buffer.ToString(), new Vector2(playerShip.screenCords.X - 16, playerShip.screenCords.Y - 16), Color.Gray);
+            //spriteBatch.Draw(centerHUD, new Vector2(screenCenterX - 149, screenCenterY - 155), Color.Wheat);            
             spriteBatch.End();
         }
 
@@ -954,7 +929,7 @@ namespace SaturnIV
         public void debug(newShipStruct npcship)
         {
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
-                               foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
+                foreach (BoundingFrustum bf in npcship.moduleFrustum)                        
                                  BoundingFrustumRenderer.Render(bf, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Red);
             //                   BoundingFrustumRenderer.Render(npcship.portFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
             //                    BoundingFrustumRenderer.Render(npcship.starboardFrustum, device, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.White);
@@ -993,7 +968,42 @@ namespace SaturnIV
                     moduleCount++;
                 }
             }
-
+            StringBuilder buffer = new StringBuilder();
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
+            Vector2 fontPos = new Vector2(0, 0);
+            newShipStruct enemy = npcship;
+                if (!isEditMode)
+                {
+                    switch (enemy.team)
+                    {
+                        case 0:
+                            shipColor = Color.Blue;
+                            break;
+                        case 1:
+                            shipColor = Color.Green;
+                            break;
+                    }
+                    if (enemy.isSelected)
+                        shipColor = Color.White;
+                    fontPos = new Vector2(enemy.screenCords.X, enemy.screenCords.Y - 45);
+                    buffer.AppendFormat("[" + enemy.objectAlias + "]");
+                    if (isDebug)
+                    {
+                        buffer.AppendFormat("[" + enemy.currentDisposition + "]");
+                        buffer.AppendFormat("[" + enemy.angleOfAttack + "]");
+                        buffer.AppendFormat("[" + enemy.isEvading + "]");
+                        buffer.AppendFormat("[" + enemy.currentTargetLevel + "]");
+                        buffer.AppendFormat("[" + enemy.thrustAmount + "]");
+                        if (enemy.currentTarget != null)
+                        {
+                            buffer.AppendFormat("[" + enemy.currentTarget.objectAlias + "]");
+                            buffer.AppendFormat("[" + enemy.currentTarget.hullLvl + "]");
+                            buffer.AppendFormat("[" + Vector3.Distance(enemy.currentTarget.modelPosition, enemy.modelPosition) + "]");
+                        }
+                    }
+                    spriteBatch.DrawString(spriteFontSmall, buffer.ToString(), fontPos, shipColor);
+            }
+   
         }
     }
 }

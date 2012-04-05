@@ -1598,6 +1598,42 @@
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\mining_circle.xnb</Output>
       <Time>2012-04-03T20:06:45.2523277-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\tacmap_items\bottom_menu_bar.png</Source>
+      <Name>Models\tacmap_items\bottom_menu_bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bottom_menu_bar.xnb</Output>
+      <Time>2012-04-04T19:52:26.5879473-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\construct_menubox.png</Source>
+      <Name>Models\tacmap_items\construct_menubox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\construct_menubox.xnb</Output>
+      <Time>2012-04-04T19:43:39.3274293-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\shipinfobox.png</Source>
+      <Name>Models\tacmap_items\shipinfobox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\shipinfobox.xnb</Output>
+      <Time>2012-04-04T20:26:17.3288207-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\constructioncircle.png</Source>
+      <Name>Models\tacmap_items\constructioncircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb</Output>
+      <Time>2012-04-04T21:10:45.4828129-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

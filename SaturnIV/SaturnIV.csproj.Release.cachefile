@@ -15,7 +15,9 @@ Content\Effects\GaussianBlur.xnb
 Content\Effects\BloomCombine.xnb
 Content\SmallFont.xnb
 Content\Models\Hgn_battlecruiser_main_export[1].xnb
+Content\Models\tacmap_items\constructioncircle.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_main_export[2]LUM.xnb
+Content\Models\tacmap_items\bottom_menu_bar.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_badge_export[1].xnb
 Content\Models\basic_bullet.xnb
 Content\Models\Ships\bomber_b1\COLOR_0.xnb
@@ -116,9 +118,11 @@ Content\textures\HUD\target_track.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_expor_0.xnb
 Content\textures\blackDotLarge.xnb
 Content\Models\Ships\station_t2\ilumination.xnb
+Content\Models\tacmap_items\construct_menubox.xnb
 Content\textures\planettexture1.xnb
 Content\Models\basic_missile.xnb
 Content\Models\Ships\eriax_frigate\eriax_frigate_f1.xnb
+Content\Models\tacmap_items\shipinfobox.xnb
 Content\Models\Ships\fighter_m1\color_6.xnb
 Content\Models\tacmap_items\building_circle.xnb
 Content\Models\Ships\station_t2\station_t2.xnb

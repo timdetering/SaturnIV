@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="116736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="117760">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>wpaILUjKmyYS4UPJJnFHDgMM/Ps=</dsig:DigestValue>
+        <dsig:DigestValue>AR2QJ2s3JXUgcGsI7JndFOgIGWs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -882,6 +882,15 @@
       <dsig:DigestValue>RHfLcw+EqvOvBtx6VWX4VaBfTmU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\bottom_menu_bar.xnb" size="2180">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lQcQge6CGVkvsAaji6nAf0KAx/w=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\tacmap_items\building_circle.xnb" size="83132">
     <hash>
       <dsig:Transforms>
@@ -889,6 +898,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>2qC+CXf72k+ImqUOHHLC8AOlBHo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\construct_menubox.xnb" size="4672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dyysvg4AUdDx8oYuPzg82r+I4SE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\constructioncircle.xnb" size="91858">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>o2DIGeG8S9xyw6xaOEnVrfx6AEs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\mining_circle.xnb" size="78094">
@@ -943,6 +970,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>MXv4q/I2aSB/RzEjM197rJOHQNM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\shipinfobox.xnb" size="414">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9d2YG06k98A1BblnIo0TIqmM1aE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\transplanegreen.xnb" size="28218">

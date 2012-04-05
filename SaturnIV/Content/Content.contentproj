@@ -714,6 +714,34 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\tacmap_items\bottom_menu_bar.png">
+      <Name>bottom_menu_bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\construct_menubox.png">
+      <Name>construct_menubox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\shipinfobox.png">
+      <Name>shipinfobox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\constructioncircle.png">
+      <Name>constructioncircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Scenarios\" />
     <Folder Include="XML\Systems\" />

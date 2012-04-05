@@ -32,7 +32,7 @@ namespace SaturnIV
         }
         
         public int updateResourceCollection(GameTime gameTime, List<planetStruct> planetList, newShipStruct tCollector,
-            ref int playerTethAmount, ref int playerAMAmount, ref int playerMtlAmount)
+            ref int playerTethAmount, ref int playerAMAmount)
         {
             int newAmount = 0;
             double currentTime = gameTime.TotalGameTime.TotalMilliseconds;
@@ -56,9 +56,6 @@ namespace SaturnIV
                                 break;
                             case ResourceType.Tethanium:
                                 playerTethAmount += newAmount;
-                                break;
-                            case ResourceType.Metal:
-                                playerMtlAmount += newAmount;
                                 break;
                         }
 
