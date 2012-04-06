@@ -1605,7 +1605,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bottom_menu_bar.xnb</Output>
-      <Time>2012-04-04T19:52:26.5879473-05:00</Time>
+      <Time>2012-04-05T21:28:57.5300699-05:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\construct_menubox.png</Source>
@@ -1632,7 +1632,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb</Output>
-      <Time>2012-04-04T21:10:45.4828129-05:00</Time>
+      <Time>2012-04-05T18:03:16.3688691-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

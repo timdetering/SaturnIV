@@ -101,6 +101,7 @@
     <Compile Include="BloomClasses\BloomComponent.cs" />
     <Compile Include="BloomClasses\BloomSettings.cs" />
     <Compile Include="GUI\actionMenuClass.cs" />
+    <Compile Include="GUI\ShipMenuClass.cs" />
     <Compile Include="ManagerClasses\BuildManager.cs" />
     <Compile Include="ManagerClasses\SyknetClass.cs" />
     <Compile Include="ManagerClasses\ResourceClass.cs" />
@@ -120,7 +121,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="PrimitiveClasses\gridClass.cs" />
     <Compile Include="GUI\EditModeComponent.cs" />
-    <Compile Include="GUI\guiClass.cs" />
+    <Compile Include="GUI\EditorGUIClass.cs" />
     <Compile Include="HelperClasses\HealthBarClass.cs" />
     <Compile Include="PrimitiveClasses\Line3D.cs" />
     <Compile Include="ParticleSystem\ParticleClass.cs" />

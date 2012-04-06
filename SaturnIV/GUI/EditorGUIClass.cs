@@ -45,13 +45,6 @@ namespace SaturnIV
             none
         }
 
-        public struct MenuItem
-        {
-            public string itemText;
-            public Rectangle itemRectangle;
-            public int itemIndex;
-        }
-
         public void buildShipMenu(List<shipData> shipList)
         {
             horizontalStartX = 150;

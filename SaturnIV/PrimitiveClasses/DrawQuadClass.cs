@@ -15,7 +15,7 @@ namespace SaturnIV
         
         public void DrawQuad(VertexDeclaration quadVertexDecl, BasicEffect quadEffect, Matrix View, Matrix Projection, Quad quad, Texture2D texture,Vector3 pos)
         {
-            Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = true;
+            //Game1.graphics.GraphicsDevice.RenderState.DepthBufferEnable = true;
             quadEffect.EnableDefaultLighting();            
             quadEffect.World = Matrix.CreateRotationX(MathHelper.ToRadians(-90)) * Matrix.CreateWorld(pos, Vector3.Forward, Vector3.Up);
             quadEffect.View = View;

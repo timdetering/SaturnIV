@@ -20,15 +20,6 @@ namespace SaturnIV
         double currentTime;
         float buildTime = 2000;
 
-        public class buildItem
-        {
-            public Vector3 pos;
-            public string name;
-            public int shipType;
-            public double startTime;
-            public float percentComplete;
-        }
-
         public enum BuildStates
         {
             notstarted = 0,

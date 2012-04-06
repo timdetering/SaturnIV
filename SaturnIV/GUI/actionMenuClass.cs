@@ -55,13 +55,6 @@ namespace SaturnIV
             construct
         }
 
-        public struct MenuItem
-        {
-            public string itemText;
-            public Rectangle itemRectangle;
-            public int itemIndex;
-        }
-
         public void buildMainMenu()
         {
             Vector2 pos = mainMenuPos;
@@ -145,7 +138,7 @@ namespace SaturnIV
                     if (mainMenuList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
                     {
                         thisMainAction = i;
-                        inGui = true;
+                        guiClass.inGui = true;
                         break;
                     }
                 }
@@ -159,6 +152,8 @@ namespace SaturnIV
                         break;
                 }
             }
+            /// Build Menu Checks ///
+            /// 
             if (menuAction == MenuActions.build)
             {
                 for (int i = 0; i < menuShipList.Count; i++)
@@ -166,11 +161,12 @@ namespace SaturnIV
                     if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
                     {
                         thisShip = i;
-                        inGui = true;
+                        guiClass.inGui = true;
+                        isPlacing = true;
                         break;
                     }
                 }
-                if (isLClicked)
+                if (currentMouse.RightButton == ButtonState.Pressed)
                 {
                     isPlacing = true;
                     menuAction = MenuActions.none;
@@ -179,7 +175,8 @@ namespace SaturnIV
                         newShipStruct tempShip = new newShipStruct();
                         buildManager.addBuild(thisShip, "new ship", pos);
                         isSelected = true;
-                        isPlacing = false;
+                        isPlaced = false;
+                        
                     }
                 }
             }
@@ -192,7 +189,7 @@ namespace SaturnIV
                     if (actionList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
                     {
                         thisAction = i;
-                        inGui = true;
+                        guiClass.inGui = true;
                         break;
                     }
                 }

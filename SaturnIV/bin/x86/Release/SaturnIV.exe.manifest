@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="117760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="118784">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>AR2QJ2s3JXUgcGsI7JndFOgIGWs=</dsig:DigestValue>
+        <dsig:DigestValue>oor4N4YY6X3R3ev1p2dRidWd8W4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -909,13 +909,13 @@
       <dsig:DigestValue>dyysvg4AUdDx8oYuPzg82r+I4SE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\tacmap_items\constructioncircle.xnb" size="91858">
+  <file name="Content\Models\tacmap_items\constructioncircle.xnb" size="70018">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>o2DIGeG8S9xyw6xaOEnVrfx6AEs=</dsig:DigestValue>
+      <dsig:DigestValue>XywV9j8nSy8rllJHr3HzhHUB3Qw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\mining_circle.xnb" size="78094">

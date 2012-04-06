@@ -354,4 +354,20 @@ namespace SaturnIV
             public List<string> capitalShipNames;
         }
 
+        public class buildItem
+        {
+            public Vector3 pos;
+            public string name;
+            public int shipType;
+            public double startTime;
+            public float percentComplete;
+        }
+
+        public struct MenuItem
+        {
+            public string itemText;
+            public Rectangle itemRectangle;
+            public int itemIndex;
+            public bool itemSelected;
+        }
 }
