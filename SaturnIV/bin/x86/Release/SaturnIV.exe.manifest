@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="118784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="119808">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oor4N4YY6X3R3ev1p2dRidWd8W4=</dsig:DigestValue>
+        <dsig:DigestValue>5QfH++eGqH+DXCJzVBH8ABB5e3M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -900,13 +900,13 @@
       <dsig:DigestValue>2qC+CXf72k+ImqUOHHLC8AOlBHo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\tacmap_items\construct_menubox.xnb" size="4672">
+  <file name="Content\Models\tacmap_items\construct_menubox.xnb" size="3118">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dyysvg4AUdDx8oYuPzg82r+I4SE=</dsig:DigestValue>
+      <dsig:DigestValue>lnBdgBGQeF+hZf0eQjGvZRNShaE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\constructioncircle.xnb" size="70018">
@@ -972,6 +972,15 @@
       <dsig:DigestValue>MXv4q/I2aSB/RzEjM197rJOHQNM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\redtranscircle.xnb" size="28692">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fNWYP9pCGzgBjkMPyhmBpmpzZEU=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\tacmap_items\shipinfobox.xnb" size="414">
     <hash>
       <dsig:Transforms>
@@ -979,6 +988,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>9d2YG06k98A1BblnIo0TIqmM1aE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\sphereofcontrol.xnb" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>aBfhwkcrnWIktCtKwF/PfmZWfEM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\transplanegreen.xnb" size="28218">
@@ -1296,22 +1314,22 @@
       <dsig:DigestValue>sSn+w0GhveYuojv/Jl20Bavyw9U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="15558">
+  <file name="Content\XML\shipdefs.xml" size="15719">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>L2Ha6rNFRzk75KwFTK6y2VFN7lk=</dsig:DigestValue>
+      <dsig:DigestValue>+McFczjmNjcPLmM6ebIE+8ygDl8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4621">
+  <file name="Content\XML\weapondefs.xml" size="4602">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xwHDkdT084sheNgtLFwzxrLYj8Y=</dsig:DigestValue>
+      <dsig:DigestValue>RUmQFHEhyB7UacXIq3b5Ax8Q8+Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

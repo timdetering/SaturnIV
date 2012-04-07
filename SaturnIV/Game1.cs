@@ -23,6 +23,7 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        List<systemStruct> systemList = new List<systemStruct>();
         actionMenuClass aMenu;        
         public CameraNew ourCamera;
         Vector3 defaultCameraOffset = new Vector3(10, 5000, 0);
@@ -36,7 +37,7 @@ namespace SaturnIV
         KeyboardState oldkeyboardState;
         public static MouseState mouseStateCurrent, mouseStatePrevious;
         bool isRclicked, isLclicked, isRdown, isLdown, isSelected;
-        int thisTeam;
+        int currentSystem = 0;
         public static bool isTacmap;
         Grid grid;
         Vector3 farpoint, nearpoint = new Vector3(0, 0, 0);
@@ -49,7 +50,7 @@ namespace SaturnIV
         Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
         Texture2D bluetranscircle, miningCircle, buildingCircle, shipInfoTex;
-        Texture2D constructionCircle;
+        Texture2D constructionCircle, sphereofcontrol, redtranscircle;
         Vector2 shipInfoPos = new Vector2(1000, 512);
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
@@ -103,6 +104,7 @@ namespace SaturnIV
         bool showGrid = false;
         bool isPlacing = false;
         bool isPlaced = false;
+        public static bool displayOrderMenu = false;
         public static bool doExit = false;
         float preZoomFactor;
         public static bool drawTextbox = false;
@@ -117,7 +119,7 @@ namespace SaturnIV
         Double currentTime;
         Model systemMapSphere;
         bool isFullScreen = false;
-        MenuActions menuAction = MenuActions.none;
+        public static MenuActions menuAction = MenuActions.none;
         ResourceClass resourceClass;
         /// <summary>
         /// Setup Players resource amounts
@@ -177,7 +179,7 @@ namespace SaturnIV
             editModeClass.Initialize(modelManager);
             ourExplosion = new ExplosionClass();
             ourExplosion.initExplosionClass(this);
-            grid = new Grid(Vector3.Zero, 250000, 250000, 200, 200, this);
+            grid = new Grid(Vector3.Zero, 250000, 250000, 150, 150, this);
             Gui = new guiClass();
             fLine = new Line3D(GraphicsDevice);
             skySphere = new SkySphere(this);
@@ -241,15 +243,17 @@ namespace SaturnIV
             planetInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/planetinfobox");
             mouseTex = this.Content.Load<Texture2D>("textures/cursor");
             bluetranscircle = this.Content.Load<Texture2D>("Models/tacmap_items/bluetranscircle");
+            redtranscircle = this.Content.Load<Texture2D>("Models/tacmap_items/redtranscircle");
             miningCircle = this.Content.Load<Texture2D>("Models/tacmap_items/mining_circle");
             buildingCircle = this.Content.Load<Texture2D>("Models/tacmap_items/building_circle");
             shipInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/shipinfobox");
             constructionCircle = this.Content.Load<Texture2D>("Models/tacmap_items/constructioncircle");
+            sphereofcontrol = this.Content.Load<Texture2D>("Models/tacmap_items/sphereofcontrol");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
-            //planetManager.generatSpaceObjects(0, new Vector3(55000,0,2000), 12,0, "Titan", ResourceType.Tethanium, 15000);
-            //planetManager.generatSpaceObjects(2, new Vector3(170000, 0, -30000), 6,0, "Io", ResourceType.Metal, 20000);
+            loadSystems();
+            switchSystem(0);
         }
 
         private void loadMetaData()
@@ -266,10 +270,24 @@ namespace SaturnIV
             foreach (weaponData thisWeapon in weaponDefList)
                 if (!modelDictionary.ContainsKey(thisWeapon.FileName))
                     modelDictionary.Add(thisWeapon.FileName, Content.Load<Model>(thisWeapon.FileName));
-
-            serializerClass.loadScene("", ref activeShipList, ref shipDefList, ref cameraTargetVec3, planetManager);
+            //serializerClass.loadScene("", ref activeShipList, ref shipDefList, ref cameraTargetVec3, planetManager);
         }
 
+        private void loadSystems()
+        {
+            systemManager.loadSystems(this, "main_scene.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3);
+            systemManager.loadSystems(this, "scene2.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3);
+        }
+
+        private void switchSystem(int id)
+        {
+
+            activeShipList = systemManager.systemList[id].systemShipList;
+            planetManager = systemManager.systemList[id].pManager;
+            cameraTargetVec3 = systemManager.systemList[id].lastCameraPos;
+            buildManager = systemManager.systemList[id].buildManager;
+        }
+        
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -282,7 +300,7 @@ namespace SaturnIV
         protected override void Update(GameTime gameTime)
         {
             currentTime = gameTime.TotalGameTime.TotalMilliseconds;
-            processInput(gameTime);
+            processInput(gameTime);            
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
 
             if (buildManager.buildQueueList.Count > 0)
@@ -343,7 +361,8 @@ namespace SaturnIV
                 loopTimer = currentTime;
             if (currentTime - loopTimer > 500)
             {
-                foreach (newShipStruct thisShip in activeShipList)
+                for (int i = 0; i < systemManager.systemList.Count(); i++)
+                    foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
                 {
                     if (thisShip.currentDisposition != disposition.mining && thisShip.currentDisposition != disposition.building)
                     {
@@ -353,8 +372,10 @@ namespace SaturnIV
                 }
                 loopTimer = currentTime;
             }
-            foreach (newShipStruct thisShip in activeShipList)
-                npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);
+
+            for (int i = 0; i < systemManager.systemList.Count(); i++)
+                foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
+                    npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);
 
             //playerManager.updateShipMovement(gameTime, gameSpeed, Keyboard.GetState(), playerShip, ourCamera);
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
@@ -460,7 +481,7 @@ namespace SaturnIV
                         }
                     }
 
-                    if (isRclicked && !isEditMode && isSelected)
+                    if (isRclicked && !isEditMode && isSelected && !isPlacing)
                     {
                         isInvalidArea = false;
                         //potentialTarget = null;
@@ -571,7 +592,7 @@ namespace SaturnIV
                 {
                     isServer = true;
                     isClient = false;
-                    thisTeam = 0;
+                    //thisTeam = 0;
                     string msg = "Network: Server Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gServer.initializeServer();
@@ -580,7 +601,7 @@ namespace SaturnIV
                 {
                     isServer = false;
                     isClient = true;
-                    thisTeam = 1;
+                    //thisTeam = 1;
                     string msg = "Network:Client Mode";
                     messageClass.sendSystemMsg(spriteFont, spriteBatch, msg, systemMessagePos);
                     gClient.initializeNetwork("127.0.0.1");
@@ -602,6 +623,9 @@ namespace SaturnIV
                 if (keyboardState.IsKeyDown(Keys.Escape) &&
                    !oldkeyboardState.IsKeyDown(Keys.Escape))
                 {
+                    for (int i = 0; i < activeShipList.Count(); i++)
+                        activeShipList[i].isBuilding = false;
+                    Game1.displayOrderMenu = false;
                     selectionRect = Rectangle.Empty;
                     inAMenu = false;
                     menuAction = MenuActions.none;
@@ -611,19 +635,14 @@ namespace SaturnIV
                 if (keyboardState.IsKeyDown(Keys.Space) &&
                     !oldkeyboardState.IsKeyDown(Keys.Space))
                 {
-                    menuAction = MenuActions.none;
-                    foreach (newShipStruct thisShip in activeShipList)
-                    if (thisShip.isSelected)
-                    {
-                        if (thisShip.objectClass != ClassesEnum.Station)
-                            menuAction = MenuActions.action;
-                        else
-                        {
-                            menuAction = MenuActions.build;
-                            activeFoundryPos = thisShip.modelPosition;
-                        }
-                    }
+                    if (currentSystem > systemManager.systemList.Count()-1)
+                        currentSystem = 0;
+                    systemManager.systemList[currentSystem].lastCameraPos = cameraTargetVec3;
+                    switchSystem(currentSystem);
+                    cameraTargetVec3 = systemManager.systemList[currentSystem].lastCameraPos;
+                    currentSystem++;
                 }
+
                 if (!isChat)
                 {
                     if (keyboardState.IsKeyDown(Keys.G) &&
@@ -638,19 +657,19 @@ namespace SaturnIV
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -25f * CameraNew.zoomFactor/2;
+                    cameraTargetVec3.X += -25f * CameraNew.zoomFactor ;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 25f * CameraNew.zoomFactor /2 ;
+                    cameraTargetVec3.X += 25f * CameraNew.zoomFactor  ;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 25f * CameraNew.zoomFactor /2;
+                    cameraTargetVec3.Z += 25f * CameraNew.zoomFactor ;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -25f * CameraNew.zoomFactor/2;
+                    cameraTargetVec3.Z += -25f * CameraNew.zoomFactor;
                 }
 
                 if (keyboardState.IsKeyDown(Keys.F1) &&
@@ -742,7 +761,7 @@ namespace SaturnIV
             ///
             spriteBatch.Draw(selectRecTex, r, Color.White);
             if (menuAction == MenuActions.build) aMenu.drawBuildGUI(spriteBatch, medFont, buildManager);
-            if (menuAction == MenuActions.action) aMenu.drawActionGUI(spriteBatch, medFont, ref activeShipList);
+            if (displayOrderMenu) aMenu.drawActionGUI(spriteBatch, medFont, ref activeShipList);
             if (!isEditMode) aMenu.drawMainMenu(spriteBatch, medFont,playerTethAmount, playerAMAmount);
             spriteBatch.Draw(mouseTex, new Vector2(mouseStateCurrent.X, mouseStateCurrent.Y), Color.White);
             spriteBatch.End();
@@ -762,12 +781,18 @@ namespace SaturnIV
                     debug(npcship);
                 spriteBatch.End();
                 Texture2D whatTexture = bluetranscircle;
+                if (npcship.team > 0)
+                    whatTexture = redtranscircle;
                 if (npcship.currentDisposition == disposition.mining) whatTexture = miningCircle;
                 if (npcship.currentDisposition == disposition.building) whatTexture = buildingCircle;
                 Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
                 float radiusFactor = 2;
-                if (npcship.isSelected && (npcship.objectClass == ClassesEnum.Station || npcship.objectClass == ClassesEnum.DryDock))
+                
+                if (npcship.isBuilding && (npcship.objectClass == ClassesEnum.Station || npcship.objectClass == ClassesEnum.DryDock))
+                {
                     radiusFactor = 10;
+                    whatTexture = sphereofcontrol;
+                }
                 drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
                     npcship.modelLen * radiusFactor, npcship.modelLen * radiusFactor), whatTexture, npcship.modelPosition);
             }
@@ -864,6 +889,7 @@ namespace SaturnIV
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
+                    displayOrderMenu = true;
                     o.isSelected = true;                
                 }
                 else
@@ -880,7 +906,7 @@ namespace SaturnIV
                 }
                 else
                 {
-                    o.isSelected = false;
+                    o.isSelected = false;                    
                 }
             }
         }

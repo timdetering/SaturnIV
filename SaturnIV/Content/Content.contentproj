@@ -742,6 +742,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\tacmap_items\sphereofcontrol.png">
+      <Name>sphereofcontrol</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\redtranscircle.png">
+      <Name>redtranscircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Scenarios\" />
     <Folder Include="XML\Systems\" />

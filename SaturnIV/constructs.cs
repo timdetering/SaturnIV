@@ -121,7 +121,6 @@ namespace SaturnIV
         public bool canEngageMultipleTargets;
         public bool isBuilding;
         public bool userOverride;
-        public float buildingProgress;
         public float[] EvadeDist;
         public float[] TargetPrefs;
         public bool isBehind;
@@ -286,15 +285,6 @@ namespace SaturnIV
             public int aResourceAmount;
         }
 
-        public class systemStruct
-        {
-            public string systemName;
-            public planetSaveStruct systemPlanet;
-            public Vector3 systemMapPosition;
-            public string systemMapImageFile;
-            public int systemID;
-        }
-
         public class ResourceStruct
         {
             public ResourceType resourceType;
@@ -339,6 +329,16 @@ namespace SaturnIV
             public int side;
         }
 
+        public class SceneStruct
+        {
+            public int sceneID;
+            public string sceneName;
+            public List<planetSaveStruct> planetList;
+            public List<saveObject> initalObjectList;
+            public Vector3 startingPosition;
+            public List<newShipStruct> shipList;
+        }
+
         public class SceneSaveStruct
         {
             public int sceneID;            
@@ -346,6 +346,16 @@ namespace SaturnIV
             public List<planetSaveStruct> planetList;
             public List<saveObject> initalObjectList;
             public Vector3 startingPosition;
+        }
+
+        public class systemStruct
+        {
+            public SceneSaveStruct systemScene;
+            public List<newShipStruct> systemShipList;
+            public PlanetManager pManager;
+            public Vector3 lastCameraPos;
+            public BuildManager buildManager;
+            public List<weaponStruct> activeWeaponsList;
         }
 
         [Serializable]

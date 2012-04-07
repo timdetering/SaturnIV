@@ -8,7 +8,7 @@
   <Asset Type="Generic:List[SaturnIV.shipData]">
     <Item>
       <FileName>Models//Ships/turret_2/orbital_turret</FileName>
-      <Type>Sentry Weapons Platform</Type>
+      <Type>Sentry Platform</Type>
       <TechLevel>2</TechLevel>
       <Mass>6</Mass>
       <Thrust>0</Thrust>
@@ -53,7 +53,7 @@
     </Item>
     <Item>
       <FileName>Models//Ships/battlecrusier_bc1/battlecruiser</FileName>
-      <Type>Fleet Battlecrusier</Type>
+      <Type>Battlecrusier</Type>
       <TechLevel>3</TechLevel>
       <Mass>60</Mass>
       <Thrust>1000</Thrust>
@@ -76,28 +76,37 @@
         <Item>
           <weaponType>PointDefense</weaponType>
           <ModulePositionOnShip>
-            0 0 0 0
-            0 0 0 0
-            0 0 0 3
-            0 0 0 3
-            0 0 0 2
-            0 0 0 2
+            10 0 0 1
+            20 0 0 1          
+            5 0 0 2
+            20 0 0 0
+            16 0 0 0
+            12 0 0 3
+            15 0 0 3
+            14 0 0 2
+            10 0 0 2
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>95</FiringEnvelopeAngle>
           <weaponRange>10000</weaponRange>
           <timer>0</timer>
         </Item>
         <Item>
-          <weaponType>LRM</weaponType>
+          <weaponType>SRM</weaponType>
           <ModulePositionOnShip>
             0 0 0 3
             0 0 0 2
+            0 0 0 2
+            0 0 0 0
+            0 0 0 0
+            0 0 0 0
+            0 0 0 1
+            0 0 0 1
             0 0 0 2
             0 0 0 2
             0 0 0 2
             0 0 0 3
           </ModulePositionOnShip>
-          <FiringEnvelopeAngle>20</FiringEnvelopeAngle>
+          <FiringEnvelopeAngle>90</FiringEnvelopeAngle>
           <weaponRange>19000</weaponRange>
           <timer>0</timer>
         </Item>
@@ -106,7 +115,7 @@
     </Item>
     <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
-      <Type>Fleet Frigate</Type>
+      <Type>Frigate</Type>
       <TechLevel>1</TechLevel>
       <Mass>25</Mass>
       <Thrust>1500</Thrust>
@@ -162,8 +171,8 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models/Ships/fighter_m1/fighter_m1</FileName>
-      <Type>Fleet Fighter I</Type>
+      <FileName>Models/Ships/fighter_m2/fighter_m2</FileName>
+      <Type>Fighter I</Type>
       <TechLevel>1</TechLevel>
       <Mass>0.95</Mass>
       <Thrust>1200</Thrust>
@@ -209,7 +218,7 @@
     </Item>
     <Item>
       <FileName>Models/Ships/fighter_m3/fighter_m3</FileName>
-      <Type>Fleet Transport</Type>
+      <Type>Transport</Type>
       <TechLevel>1</TechLevel>
       <Mass>0.75</Mass>
       <Thrust>1330</Thrust>
@@ -256,7 +265,7 @@
     </Item>	
     <Item>
       <FileName>Models/Ships/station_t2/station_t2</FileName>
-      <Type>Fleet Command Station</Type>
+      <Type>Command Station</Type>
       <TechLevel>3</TechLevel>
       <Mass>100</Mass>
       <Thrust>10</Thrust>
@@ -292,7 +301,7 @@
     </Item>
     <Item>
       <FileName>Models/Ships/station_t1/station_t1</FileName>
-      <Type>Orbital Mining Platform</Type>
+      <Type>Mining Platform</Type>
       <TechLevel>1</TechLevel>
       <Mass>100</Mass>
       <Thrust>0</Thrust>

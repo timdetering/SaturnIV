@@ -6,17 +6,17 @@
       <Type>PointDefense</Type>
      <TechLevel>2</TechLevel>
      <Mass>0.10</Mass>
-      <Thrust>4800</Thrust>
+      <Thrust>900</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
+      <Scale>3</Scale>
       <Agility>18</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
-      <wClass>Missile</wClass>
-      <isProjectile>1</isProjectile>
+      <wClass>Cannon</wClass>
+      <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
       <regenTime>50</regenTime>
       <damageFactor>5</damageFactor>
-      <range>90000</range>
+      <range>1700</range>
       <timeToLive>1700</timeToLive>	  
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <isHoming>0</isHoming>
       <regenTime>500</regenTime>
       <damageFactor>5</damageFactor>
-      <range>2692000</range>
+      <range>5000</range>
       <timeToLive>6000</timeToLive>	  
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <isHoming>1</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>910000</range>
+      <range>5000</range>
       <timeToLive>9000</timeToLive>	  
     </Item>
    <Item>
@@ -70,8 +70,8 @@
       <isHoming>0</isHoming>
       <regenTime>400</regenTime>
       <damageFactor>5</damageFactor>
-      <range>915000</range>
-      <timeToLive>1000</timeToLive>	  
+      <range>7000</range>
+      <timeToLive>2000</timeToLive>	  
     </Item>
     <Item>
       <FileName>Models//LaserBolt2</FileName>
@@ -88,7 +88,7 @@
       <isHoming>1</isHoming>
       <regenTime>300</regenTime>
       <damageFactor>5</damageFactor>
-      <range>925000</range>
+      <range>7500</range>
       <timeToLive>1000</timeToLive>	  
 	  </Item>
 	  <Item>
@@ -106,7 +106,7 @@
       <isHoming>0</isHoming>
       <regenTime>200</regenTime>
       <damageFactor>15</damageFactor>
-      <range>390000</range>	
+      <range>2000</range>	
       <timeToLive>1000</timeToLive>	  
     </Item>
 <Item>
@@ -124,8 +124,8 @@
       <isHoming>0</isHoming>
       <regenTime>1000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>911000</range>	
-      <timeToLive>1000</timeToLive>	  
+      <range>500</range>	
+      <timeToLive>3000</timeToLive>	  
     </Item>
 	<Item>
       <FileName>Models//LaserBolt2</FileName>
@@ -142,7 +142,7 @@
       <isHoming>0</isHoming>
       <regenTime>4000</regenTime>
       <damageFactor>35</damageFactor>
-      <range>823000</range>	
+      <range>3000</range>	
       <timeToLive>100</timeToLive>	  
     </Item>
   </Asset>

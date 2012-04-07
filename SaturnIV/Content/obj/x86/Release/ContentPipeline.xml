@@ -1614,7 +1614,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\construct_menubox.xnb</Output>
-      <Time>2012-04-04T19:43:39.3274293-05:00</Time>
+      <Time>2012-04-06T18:25:25.2159516-05:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\shipinfobox.png</Source>
@@ -1632,7 +1632,25 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb</Output>
-      <Time>2012-04-05T18:03:16.3688691-05:00</Time>
+      <Time>2012-04-06T17:15:16.1894802-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\sphereofcontrol.png</Source>
+      <Name>Models\tacmap_items\sphereofcontrol</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\sphereofcontrol.xnb</Output>
+      <Time>2012-04-06T18:27:15.0383929-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\redtranscircle.png</Source>
+      <Name>Models\tacmap_items\redtranscircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\redtranscircle.xnb</Output>
+      <Time>2012-04-06T18:37:44.666184-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="SaturnIV.SceneSaveStruct">
+    <sceneID>0</sceneID>
+    <sceneName Null="true" />
+    <planetList>
+      <Item>
+        <planetTextureFile>0</planetTextureFile>
+        <planetRadius>20</planetRadius>
+        <planetPosition>-55000 -12000 7000</planetPosition>
+        <isControlled>0</isControlled>
+        <planetName>Aria I</planetName>
+        <aResource>Tethanium</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+      <Item>
+        <planetTextureFile>2</planetTextureFile>
+        <planetRadius>16</planetRadius>
+        <planetPosition>120000 -6000 30000</planetPosition>
+        <isControlled>0</isControlled>
+        <planetName>Aria II</planetName>
+        <aResource>Metal</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+    </planetList>
+    <initalObjectList>
+      <Item>
+        <shipIndex>5</shipIndex>
+        <shipName>Alyssium</shipName>
+        <shipPosition>35547.47 0 -10523.0918</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>0</side>
+      </Item>     
+    </initalObjectList>
+    <startingPosition>36070 0 -14101.876</startingPosition>
+  </Asset>
+</XnaContent>

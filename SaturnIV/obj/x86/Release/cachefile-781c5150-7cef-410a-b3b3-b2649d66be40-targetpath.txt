@@ -132,6 +132,8 @@ Content\Models\tacmap_items\bottom_menu_bar.xnb
 Content\Models\tacmap_items\construct_menubox.xnb
 Content\Models\tacmap_items\shipinfobox.xnb
 Content\Models\tacmap_items\constructioncircle.xnb
+Content\Models\tacmap_items\sphereofcontrol.xnb
+Content\Models\tacmap_items\redtranscircle.xnb
 Content\XML\listofnames.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml

@@ -413,7 +413,7 @@ namespace SaturnIV
             {
                 //if (!thisShip.canEngageMultipleTargets)
                 if (thisShip.moduleFrustum[moduleCount].Intersects(thisShip.currentTarget.modelBoundingSphere))
-                    //if (Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition) < thisWeapon.weaponRange)
+                //if (Vector3.Distance(thisShip.modelPosition, thisShip.currentTarget.modelPosition) < thisWeapon.weaponRange)
                 {
                     for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
                     {
@@ -429,31 +429,5 @@ namespace SaturnIV
                 moduleCount++;
             }
         }
-
-//        public void cycleWeapons(newShipStruct thisShip, List<newShipStruct> otherShipList, double currentTime, WeaponsManager weaponsManager,
-//           ParticleSystem projectileTrailParticles, List<weaponData> weaponDefList)
-//        {
-//            foreach (newShipStruct otherShip in otherShipList)
-//            {
-//                foreach (WeaponModule thisWeapon in thisShip.weaponArray)
-//                {
-//                    moduleCount = 0;
-//                    for (int i = 0; i < thisWeapon.ModulePositionOnShip.Count(); i++)
-//                    {
-//                        if (thisShip.moduleFrustum[moduleCount].Intersects(otherShip.modelBoundingSphere) && thisShip.team != otherShip.team)
-//                        {
-//                            if (currentTime - thisShip.regenTimer[moduleCount] > weaponDefList[(int)thisWeapon.weaponType].regenTime)
-//                            {
-//                                weaponsManager.fireWeapon(otherShip, thisShip, ref projectileTrailParticles, ref weaponDefList, thisWeapon, i);
-//                                thisShip.regenTimer[moduleCount] = currentTime;
-//                                thisShip.isEngaging = true;
-//                                break;
-//                            }
-//                        }
-//                        moduleCount++;
-//                    }
-//                }
- //           }
- //       }
     }
 }

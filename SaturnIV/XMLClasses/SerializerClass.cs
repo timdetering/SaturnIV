@@ -112,10 +112,12 @@ namespace SaturnIV
                 }
             }
 
-            public void loadScene(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList, 
-                ref Vector3 cameraStart, PlanetManager pManager)
+            public SceneSaveStruct loadScene(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList, 
+                ref Vector3 cameraStart, ref PlanetManager pManager)
             {
-                filename = "main_scene.xml";
+                pManager.planetList.Clear();
+                ShipList.Clear();
+                //filename = "main_scene.xml";
                     ShipList.Clear();
                     SceneSaveStruct newScene = new SceneSaveStruct();
                     List<saveObject> tempScenario = new List<saveObject>();
@@ -136,6 +138,7 @@ namespace SaturnIV
                             planet.aResource, planet.aResourceAmount);
                     }
                     cameraStart = newScene.startingPosition;
+                    return newScene;
             }
 
             public void loadScenario(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList)

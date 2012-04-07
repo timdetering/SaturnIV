@@ -33,11 +33,14 @@ namespace SaturnIV
         public bool isPlacing = false;
         public bool isPlaced = false;
         Vector2 queueListPos = new Vector2(55, 600);        
-        Vector2 listPos = new Vector2(45, 450);
+        Vector2 listPos = new Vector2(40, 415);
         Vector2 listTitlePos = new Vector2(45, 425);      
-        Vector2 listRecSize = new Vector2(200, 20);
+        Vector2 listRecSize = new Vector2(75, 20);
+        Vector2 listRecSize2 = new Vector2(200, 20);
         Vector2 mainMenuPos = new Vector2(20, 900);
-        Rectangle rightSideWindowRectange = new Rectangle(10, 375, 350, 800);
+        Vector2 orderListPos = new Vector2(90, 850);
+        Rectangle rightSideWindowRectange = new Rectangle(5, 840, 700, 40);
+        Rectangle rightSideWindowRectange2 = new Rectangle(20,200, 400, 600);
         Rectangle resourceAreaRectange = new Rectangle(900, 20, 192, 62);
         Color itemColor;
         Vector4 transGray = new Vector4(255, 255, 255, 128);
@@ -74,7 +77,7 @@ namespace SaturnIV
         public void buildActionList()
         {
             actionList.Clear();
-            Vector2 pos = listPos;
+            Vector2 pos = orderListPos;
             horizontalStartX = (int)pos.X;
             verticalStartY = (int)pos.Y;
             for (int i = 0; i < actionText.Count(); i++)
@@ -83,7 +86,8 @@ namespace SaturnIV
                 tempItem.itemText = actionText[i];
                 tempItem.itemIndex = i;
                 tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, (int)listRecSize.X, (int)listRecSize.Y);
-                verticalStartY += 20;
+                horizontalStartX += 125;
+                listRecSize.X += 125;
                 actionList.Add(tempItem);
             }
         }
@@ -96,12 +100,15 @@ namespace SaturnIV
             verticalStartY = (int)pos.Y;
             for (int i=0; i < shipList.Count; i++)
             {
-                MenuItem tempItem = new MenuItem();
-                tempItem.itemText = shipList[i].Type;
-                tempItem.itemIndex = i;
-                tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, (int)listRecSize.X, (int)listRecSize.Y);
-                verticalStartY += 20;
-                menuShipList.Add(tempItem);
+                if (shipList[i].TechLevel == 1 && shipList[i].BelongsTo == "Fleet")
+                {
+                    MenuItem tempItem = new MenuItem();
+                    tempItem.itemText = shipList[i].Type;
+                    tempItem.itemIndex = i;
+                    tempItem.itemRectangle = new Rectangle(horizontalStartX, verticalStartY, (int)listRecSize2.X, (int)listRecSize2.Y);
+                    verticalStartY += 20;
+                    menuShipList.Add(tempItem);
+                }
             }
         }
  
@@ -160,7 +167,7 @@ namespace SaturnIV
                 {
                     if (menuShipList[i].itemRectangle.Contains(new Point(mouseX, mouseY)))
                     {
-                        thisShip = i;
+                        thisShip = menuShipList[i].itemIndex;
                         guiClass.inGui = true;
                         isPlacing = true;
                         break;
@@ -175,8 +182,7 @@ namespace SaturnIV
                         newShipStruct tempShip = new newShipStruct();
                         buildManager.addBuild(thisShip, "new ship", pos);
                         isSelected = true;
-                        isPlaced = false;
-                        
+                        isPlaced = false;                        
                     }
                 }
             }
@@ -209,7 +215,6 @@ namespace SaturnIV
                         case 3:
                             newOrder = disposition.idle;
                             break;
-
                     }
                     foreach (newShipStruct tShip in shipList)
                         if (tShip.isSelected)
@@ -226,41 +231,29 @@ namespace SaturnIV
             mBatch.Draw(bottomMenubarTex, mainMenuPos, Color.White);
             mBatch.Draw(resourceIconTex, resourceAreaRectange, Color.White);
             mBatch.DrawString(spriteFont, tethAmnt.ToString(), new Vector2(resourceAreaRectange.X, resourceAreaRectange.Y), Color.White);
-            mBatch.DrawString(spriteFont, amAmnt.ToString(), new Vector2(resourceAreaRectange.X+ 48, resourceAreaRectange.Y), Color.White);
-            
+            mBatch.DrawString(spriteFont, amAmnt.ToString(), new Vector2(resourceAreaRectange.X+ 48, resourceAreaRectange.Y), Color.White);            
         }
 
         public void drawBuildGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
         {            
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
-            mBatch.Draw(constructMenuTex, rightSideWindowRectange, Color.Blue);
-            mBatch.DrawString(spriteFont, "Build Menu", listTitlePos, Color.White);
+            mBatch.Draw(constructMenuTex, rightSideWindowRectange2, Color.White);
             /// This is the Available Ship List Area
             /// 
             for (int i = 0; i < menuShipList.Count; i++)
             {
-                if (thisShip == i)
+                if (thisShip == menuShipList[i].itemIndex)
                 {
-                    itemColor = Color.White;
-                    mBatch.Draw(dummyTexture, menuShipList[i].itemRectangle, Color.Gray);
+                    itemColor = Color.Yellow;
                 }
                 else
-                    itemColor = Color.Green;
+                    itemColor = Color.White;
                     messageBuffer.AppendFormat(menuShipList[i].itemText);
                     mBatch.DrawString(spriteFont, messageBuffer,
                                     new Vector2(menuShipList[i].itemRectangle.X, menuShipList[i].itemRectangle.Y), itemColor);
                     messageBuffer = new StringBuilder();
             }
-            /// This is the Current Build Queue List Area
-            /// 
-            //messageBuffer = new StringBuilder();
-            for (int i = 0; i < buildManager.buildQueueList.Count; i++)
-            {
-                //messageBuffer.AppendFormat(buildManager.buildQueueList[i].name + "\n");
-                //messageBuffer.AppendFormat("% {0} \n ", buildManager.buildQueueList[i].percentComplete);                         
-            }       
-            //mBatch.DrawString(spriteFont, messageBuffer, queueListPos, Color.White); 
         }
 
         public void drawActionGUI(SpriteBatch mBatch, SpriteFont spriteFont, ref List<newShipStruct> shipList)
@@ -268,7 +261,6 @@ namespace SaturnIV
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
             mBatch.Draw(rSideWindow, rightSideWindowRectange, Color.Blue);
-            mBatch.DrawString(spriteFont, "Issue Orders", listTitlePos, Color.White);
             for (int i = 0; i < mainMenuList.Count; i++)
             {
                 mBatch.Draw(dummyTexture, mainMenuList[i].itemRectangle, Color.White);
@@ -279,11 +271,11 @@ namespace SaturnIV
             {
                 if (thisAction == i)
                 {
-                    itemColor = Color.White;
+                    itemColor = Color.Black;
                     mBatch.Draw(dummyTexture, actionList[i].itemRectangle, Color.Gray);
                 }
                 else
-                    itemColor = Color.Green;
+                    itemColor = Color.White;
                 messageBuffer.AppendFormat(actionList[i].itemText);
                 mBatch.DrawString(spriteFont, messageBuffer,
                                 new Vector2(actionList[i].itemRectangle.X, actionList[i].itemRectangle.Y), itemColor);

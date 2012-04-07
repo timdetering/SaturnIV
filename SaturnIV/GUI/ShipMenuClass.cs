@@ -39,7 +39,15 @@ namespace SaturnIV
                     newItem.itemRectangle = cRectangle;
                     newItem.itemText = "";
                     if (newItem.itemRectangle.Intersects(new Rectangle(Mouse.GetState().X, Mouse.GetState().Y, 5, 5)))
+                    {
                         newItem.itemSelected = true;
+                        if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+                        {
+                            if (tShip.objectClass == ClassesEnum.Station || tShip.objectClass == ClassesEnum.DryDock)
+                                Game1.menuAction = MenuActions.build;                            
+                            tShip.isBuilding = true;
+                        }
+                    }
                     menuShipList.Add(newItem);
                     sCount++;
                     if ((sCount % 2) == 0 && sCount > 0)

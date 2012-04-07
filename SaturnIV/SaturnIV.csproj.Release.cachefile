@@ -102,6 +102,7 @@ Content\Models\Ships\station_t1\specular.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[1]SPEC.xnb
 Content\Fonts\SmallFont.xnb
 Content\Effects\ParticleEffect.xnb
+Content\Models\tacmap_items\redtranscircle.xnb
 Content\Models\tacmap_items\bluetranscircle.xnb
 Content\Models\tacmap_items\transplanegreen.xnb
 Content\Models\Lakerem_0.xnb
@@ -116,6 +117,7 @@ Content\Models\Ships\fighter_m2\fighter_1_bump.xnb
 Content\XML\listofnames.xml
 Content\textures\HUD\target_track.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_expor_0.xnb
+Content\Models\tacmap_items\sphereofcontrol.xnb
 Content\textures\blackDotLarge.xnb
 Content\Models\Ships\station_t2\ilumination.xnb
 Content\Models\tacmap_items\construct_menubox.xnb
