@@ -17,15 +17,15 @@ namespace SaturnIV
         {
             resourceList = new List<ResourceStruct>();
             ResourceStruct newResource = new ResourceStruct();
-            newResource.collectionTime = 9000;
+            newResource.collectionTime = 19000;
             newResource.resourceType = ResourceType.Tethanium;            
             resourceList.Add(newResource);
             newResource = new ResourceStruct();
-            newResource.collectionTime = 20000;
+            newResource.collectionTime = 30000;
             newResource.resourceType = ResourceType.AntiMatter;
             resourceList.Add(newResource);
             newResource = new ResourceStruct();
-            newResource.collectionTime = 5000;
+            newResource.collectionTime = 12000;
             newResource.resourceType = ResourceType.Metal;
             resourceList.Add(newResource);
 

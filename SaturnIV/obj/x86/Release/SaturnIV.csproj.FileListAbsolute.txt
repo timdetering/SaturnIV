@@ -148,3 +148,10 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\sh
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\sphereofcontrol.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\redtranscircle.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\specular_5.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\illumination_5.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\bump_5.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb

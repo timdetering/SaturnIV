@@ -55,8 +55,8 @@
       <FileName>Models//Ships/battlecrusier_bc1/battlecruiser</FileName>
       <Type>Battlecrusier</Type>
       <TechLevel>3</TechLevel>
-      <Mass>60</Mass>
-      <Thrust>1000</Thrust>
+      <Mass>15</Mass>
+      <Thrust>6000</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>
@@ -118,7 +118,7 @@
       <Type>Frigate</Type>
       <TechLevel>1</TechLevel>
       <Mass>25</Mass>
-      <Thrust>1500</Thrust>
+      <Thrust>6500</Thrust>
       <SphereRadius>25</SphereRadius>
       <Scale>1</Scale>
       <Agility>0.75</Agility>

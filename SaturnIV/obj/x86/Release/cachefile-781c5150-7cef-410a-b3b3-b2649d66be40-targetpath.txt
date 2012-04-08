@@ -134,6 +134,13 @@ Content\Models\tacmap_items\shipinfobox.xnb
 Content\Models\tacmap_items\constructioncircle.xnb
 Content\Models\tacmap_items\sphereofcontrol.xnb
 Content\Models\tacmap_items\redtranscircle.xnb
+Content\Models\Ships\fl_frigate_f1\bump_5.xnb
+Content\Models\Ships\fl_frigate_f1\color_5.xnb
+Content\Models\Ships\fl_frigate_f1\illumination_5.xnb
+Content\Models\Ships\fl_frigate_f1\specular_5.xnb
+Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb
+Content\Models\Ships\fl_frigate_f1\color_5_0.xnb
+Content\Models\asteroid.xnb
 Content\XML\listofnames.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml

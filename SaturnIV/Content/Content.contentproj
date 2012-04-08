@@ -556,6 +556,16 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX">
+      <Name>fl_frigate_f1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\asteroid.FBX">
+      <Name>asteroid</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="XML\listofnames.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>listofnames</Name>
@@ -751,6 +761,28 @@
   <ItemGroup>
     <Compile Include="Models\tacmap_items\redtranscircle.png">
       <Name>redtranscircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Ships\fl_frigate_f1\bump_5.jpg">
+      <Name>bump_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fl_frigate_f1\color_5.jpg">
+      <Name>color_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fl_frigate_f1\illumination_5.jpg">
+      <Name>illumination_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Models\Ships\fl_frigate_f1\specular_5.jpg">
+      <Name>specular_5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

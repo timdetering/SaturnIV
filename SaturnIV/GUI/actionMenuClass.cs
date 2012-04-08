@@ -179,10 +179,15 @@ namespace SaturnIV
                     menuAction = MenuActions.none;
                     if (isPlaced)
                     {
-                        newShipStruct tempShip = new newShipStruct();
-                        buildManager.addBuild(thisShip, "new ship", pos);
-                        isSelected = true;
-                        isPlaced = false;                        
+                        foreach (newShipStruct tShip in shipList)
+                            if ((tShip.isBuilding && tShip.objectClass == ClassesEnum.Station) 
+                                && new BoundingSphere(tShip.modelPosition,tShip.modelLen*5).Intersects(new BoundingSphere(pos,10)) == true)
+                            {
+                                newShipStruct tempShip = new newShipStruct();
+                                buildManager.addBuild(thisShip, "new ship", pos);
+                                isSelected = true;
+                                isPlaced = false;                        
+                            }
                     }
                 }
             }
@@ -261,10 +266,6 @@ namespace SaturnIV
             StringBuilder messageBuffer = new StringBuilder();
             messageBuffer = new StringBuilder();
             mBatch.Draw(rSideWindow, rightSideWindowRectange, Color.Blue);
-            for (int i = 0; i < mainMenuList.Count; i++)
-            {
-                mBatch.Draw(dummyTexture, mainMenuList[i].itemRectangle, Color.White);
-            }
             /// This is the Available Ship List Area
             /// 
             for (int i = 0; i < actionList.Count; i++)

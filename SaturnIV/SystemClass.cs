@@ -18,7 +18,8 @@ namespace SaturnIV
             newSystem.pManager.Initialize();
             newSystem.buildManager = new BuildManager();
             newSystem.systemShipList = new List<newShipStruct>();
-            newSystem.activeWeaponsList = new List<weaponStruct>();
+            newSystem.weaponsManager = new WeaponsManager(game);
+            newSystem.weaponsManager.Initialize();
             newSystem.systemScene = serialClass.loadScene(filename, ref newSystem.systemShipList, ref shipDefList, ref cameraPos, ref newSystem.pManager);
             newSystem.lastCameraPos = cameraPos;
             systemList.Add(newSystem);

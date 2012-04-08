@@ -203,7 +203,7 @@ namespace SaturnIV
                     thisShip.currentTarget = null;
                     //thisShip.wayPointPosition = Vector3.Zero;
                     thisShip.currentTargetLevel = 0;
-                    thisShip.currentDisposition = disposition.patrol;
+                    thisShip.currentDisposition = disposition.idle;
 
                 }
                     //else

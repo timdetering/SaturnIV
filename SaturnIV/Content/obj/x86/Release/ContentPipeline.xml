@@ -1652,6 +1652,98 @@
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\redtranscircle.xnb</Output>
       <Time>2012-04-06T18:37:44.666184-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\bump_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\bump_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\bump_5.xnb</Output>
+      <Time>2011-12-10T14:38:10.28125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\color_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\color_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5.xnb</Output>
+      <Time>2011-12-10T16:05:38.3125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\illumination_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\illumination_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\illumination_5.xnb</Output>
+      <Time>2011-12-10T14:35:59.171875-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\specular_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\specular_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\specular_5.xnb</Output>
+      <Time>2011-12-10T14:39:22.78125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX</Source>
+      <Name>Models\Ships\fl_frigate_f1\fl_frigate_f1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb</Output>
+      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Key>
+        <Value>2012-04-07T15:26:30.2522555-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Output>
+      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\color_5.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Output>
+      <Time>2011-12-10T16:05:38.3125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\asteroid.FBX</Source>
+      <Name>Models\asteroid</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb</Output>
+      <Time>2012-04-07T21:39:52.0834368-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Models\asteroid_0.xml</Key>
+        <Value>2012-04-07T21:39:58.3897975-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\asteroid.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Release\Models\asteroid_0.xml</Output>
+      <Time>2012-04-07T21:39:52.0834368-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

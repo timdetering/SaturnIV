@@ -355,7 +355,7 @@ namespace SaturnIV
             public PlanetManager pManager;
             public Vector3 lastCameraPos;
             public BuildManager buildManager;
-            public List<weaponStruct> activeWeaponsList;
+            public WeaponsManager weaponsManager;
         }
 
         [Serializable]

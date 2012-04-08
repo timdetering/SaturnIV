@@ -161,8 +161,6 @@ namespace SaturnIV
             ////////////Initialize Manager Classes
             modelManager = new ModelManager(this);
             modelManager.Initialize();
-            playerManager = new PlayerManager(this);
-            playerManager.Initialize();
             npcManager = new NPCManager(this);
             npcManager.Initialize();
             weaponsManager = new WeaponsManager(this);
@@ -281,11 +279,11 @@ namespace SaturnIV
 
         private void switchSystem(int id)
         {
-
             activeShipList = systemManager.systemList[id].systemShipList;
             planetManager = systemManager.systemList[id].pManager;
             cameraTargetVec3 = systemManager.systemList[id].lastCameraPos;
             buildManager = systemManager.systemList[id].buildManager;
+            weaponsManager = systemManager.systemList[id].weaponsManager;
         }
         
         /// <summary>
@@ -319,7 +317,7 @@ namespace SaturnIV
                 if (isTacmap)
                 {
                     aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList);
-                    CameraNew.offsetDistance = new Vector3(0, 2500, 1);
+                    CameraNew.offsetDistance = new Vector3(0, 5500, 1);
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
                     updateObjects(gameTime);
@@ -327,7 +325,7 @@ namespace SaturnIV
                 else
                 {
                     aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList);
-                    CameraNew.offsetDistance = new Vector3(0, 900, 1);
+                    CameraNew.offsetDistance = new Vector3(0, 1200, 1);
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
                     updateObjects(gameTime);
@@ -362,12 +360,14 @@ namespace SaturnIV
             if (currentTime - loopTimer > 500)
             {
                 for (int i = 0; i < systemManager.systemList.Count(); i++)
-                    foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
                 {
-                    if (thisShip.currentDisposition != disposition.mining && thisShip.currentDisposition != disposition.building)
+                    foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
                     {
-                        loopTimer = currentTime;
-                        npcManager.performAI(gameTime, ref weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                        if (thisShip.currentDisposition != disposition.mining && thisShip.currentDisposition != disposition.building)
+                        {
+                            loopTimer = currentTime;
+                            npcManager.performAI(gameTime, ref systemManager.systemList[i].weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                        }
                     }
                 }
                 loopTimer = currentTime;
@@ -377,7 +377,6 @@ namespace SaturnIV
                 foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
                     npcManager.updateShipMovement(gameTime, gameSpeed, thisShip, ourCamera, false);
 
-            //playerManager.updateShipMovement(gameTime, gameSpeed, Keyboard.GetState(), playerShip, ourCamera);
             weaponsManager.Update(gameTime, gameSpeed, ourExplosion);
             planetManager.Update(gameTime, modelManager, ourCamera);
             if (weaponsManager.activeWeaponList.Count > 0)
@@ -635,12 +634,12 @@ namespace SaturnIV
                 if (keyboardState.IsKeyDown(Keys.Space) &&
                     !oldkeyboardState.IsKeyDown(Keys.Space))
                 {
-                    if (currentSystem > systemManager.systemList.Count()-1)
-                        currentSystem = 0;
                     systemManager.systemList[currentSystem].lastCameraPos = cameraTargetVec3;
                     switchSystem(currentSystem);
                     cameraTargetVec3 = systemManager.systemList[currentSystem].lastCameraPos;
                     currentSystem++;
+                    if (currentSystem > systemManager.systemList.Count() - 1)
+                        currentSystem = 0;
                 }
 
                 if (!isChat)
@@ -657,19 +656,19 @@ namespace SaturnIV
             /// 
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -25f * CameraNew.zoomFactor ;
+                    cameraTargetVec3.X += -45f * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 25f * CameraNew.zoomFactor  ;
+                    cameraTargetVec3.X += 45f * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 25f * CameraNew.zoomFactor ;
+                    cameraTargetVec3.Z += 45f * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -25f * CameraNew.zoomFactor;
+                    cameraTargetVec3.Z += -45f * CameraNew.zoomFactor /2;
                 }
 
                 if (keyboardState.IsKeyDown(Keys.F1) &&
@@ -804,7 +803,7 @@ namespace SaturnIV
                                     , 750 * 2), constructionCircle, mouse3dVector);
             }            
             projectileTrailParticles.SetCamera(ourCamera.viewMatrix, ourCamera.projectionMatrix);
-            foreach (weaponStruct theList in weaponsManager.activeWeaponList)
+            foreach (weaponStruct theList in systemManager.systemList[currentSystem].weaponsManager.activeWeaponList)
                     weaponsManager.DrawLaser(device, ourCamera.viewMatrix, ourCamera.projectionMatrix, theList.objectColor, theList);            
             ourExplosion.DrawExp(gameTime, ourCamera, GraphicsDevice);
         }
