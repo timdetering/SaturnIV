@@ -1020,10 +1020,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\frigate_c1\frigate_c1.xnb</Output>
-      <Time>2012-03-28T20:56:13.1957994-05:00</Time>
+      <Time>2012-04-08T18:31:54.9805694-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\frigate_c1\frigate_c1_0.xml</Key>
-        <Value>2012-04-08T09:54:59.6280118-05:00</Value>
+        <Value>2012-04-08T18:31:59.0595873-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\ship_hull19_0.xnb</Request>
     </Item>
@@ -1217,10 +1217,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb</Output>
-      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
+      <Time>2012-04-08T18:30:05.4571616-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Key>
-        <Value>2012-04-08T09:55:29.9518624-05:00</Value>
+        <Value>2012-04-08T18:32:00.5002703-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Request>
     </Item>
@@ -1370,7 +1370,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Release\Models\Ships\frigate_c1\frigate_c1_0.xml</Output>
-      <Time>2012-03-28T20:56:13.1957994-05:00</Time>
+      <Time>2012-04-08T18:31:54.9805694-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\ship_hull19.jpg</Source>
@@ -1693,7 +1693,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Output>
-      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
+      <Time>2012-04-08T18:30:05.4571616-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\fl_frigate_f1\color_5.jpg</Source>

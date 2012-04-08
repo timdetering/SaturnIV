@@ -77,7 +77,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ap4H169Xx50RjRvFcwu8lqiO0B0=</dsig:DigestValue>
+        <dsig:DigestValue>nh+XSL8HtdqP4l3ZLCwnzV+1DBQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -702,13 +702,13 @@
       <dsig:DigestValue>sQnBBLfPUdly4g41KS+DtxGq/XY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb" size="14786">
+  <file name="Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb" size="14800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dtBvRNWwz458bDUnn9Lu9ph3daI=</dsig:DigestValue>
+      <dsig:DigestValue>OXUmEC5xuR7/chQAIiX1V3zIaxM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\fl_frigate_f1\illumination_5.xnb" size="53064">
@@ -729,13 +729,13 @@
       <dsig:DigestValue>5maYqihmx3KKHMuobejmdrcS6EI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Models\Ships\frigate_c1\frigate_c1.xnb" size="155576">
+  <file name="Content\Models\Ships\frigate_c1\frigate_c1.xnb" size="138422">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hHl3QbHc8q0L9qNRKV0Sa3w6uAc=</dsig:DigestValue>
+      <dsig:DigestValue>KM1sf7SjgpQ1xkogzvtxhs1tpSY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\Ships\ship_hull19.xnb" size="4346166">
