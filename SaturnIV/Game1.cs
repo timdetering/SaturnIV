@@ -273,8 +273,8 @@ namespace SaturnIV
 
         private void loadSystems()
         {
-            systemManager.loadSystems(this, "main_scene.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3);
-            systemManager.loadSystems(this, "scene2.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3);
+            systemManager.loadSystems(this, "main_scene.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3, currentTime);
+            //systemManager.loadSystems(this, "scene2.xml", ref serializerClass, ref shipDefList, ref cameraTargetVec3);
         }
 
         private void switchSystem(int id)
@@ -301,8 +301,6 @@ namespace SaturnIV
             processInput(gameTime);            
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
 
-            if (buildManager.buildQueueList.Count > 0)
-                buildManager.updateBuildQueue(ref shipDefList, ref activeShipList, currentTime);
             if (isEditMode)
             {
                 ourCamera.ResetCamera();
@@ -316,7 +314,7 @@ namespace SaturnIV
             else
                 if (isTacmap)
                 {
-                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList);
+                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList, currentTime);
                     CameraNew.offsetDistance = new Vector3(0, 5500, 1);
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
@@ -324,7 +322,7 @@ namespace SaturnIV
                 }
                 else
                 {
-                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList);
+                    aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList, currentTime);
                     CameraNew.offsetDistance = new Vector3(0, 1200, 1);
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
@@ -360,17 +358,25 @@ namespace SaturnIV
             if (currentTime - loopTimer > 500)
             {
                 for (int i = 0; i < systemManager.systemList.Count(); i++)
-                {
-                    foreach (newShipStruct thisShip in systemManager.systemList[i].systemShipList)
+                {                    
+                    for (int c = 0; c < systemManager.systemList[i].systemShipList.Count; c++)
                     {
-                        if (thisShip.currentDisposition != disposition.mining && thisShip.currentDisposition != disposition.building)
+                        if (systemManager.systemList[i].systemShipList[c].currentDisposition != disposition.mining 
+                            && systemManager.systemList[i].systemShipList[c].currentDisposition != disposition.building)
                         {
                             loopTimer = currentTime;
-                            npcManager.performAI(gameTime, ref systemManager.systemList[i].weaponsManager, ref projectileTrailParticles, ref weaponDefList, thisShip, activeShipList, 0, null);
+                            npcManager.performAI(gameTime, ref systemManager.systemList[i].weaponsManager, ref projectileTrailParticles, ref weaponDefList,
+                                systemManager.systemList[i].systemShipList[c], activeShipList, 0, null);
                         }
+                        /// Update Build Manager
+                        /// 
+                        if (systemManager.systemList[i].systemShipList[c].buildManager != null)
+                            systemManager.systemList[i].systemShipList[c].buildManager.updateBuildQueue(ref shipDefList, ref activeShipList, currentTime, 
+                                systemManager.systemList[i].systemShipList[c]);
                     }
                 }
                 loopTimer = currentTime;
+
             }
 
             for (int i = 0; i < systemManager.systemList.Count(); i++)
@@ -458,7 +464,7 @@ namespace SaturnIV
                             tmpShipName = rNameList.capitalShipNames[2];
                             rNameList.capitalShipNames.Remove(tmpShipName);
                             messageClass.sendSystemMsg(spriteFont, spriteBatch, tmpShipName + " Added", systemMessagePos);
-                            newShipStruct newShip = EditModeComponent.spawnNPC(myMouse3dVector, ref shipDefList,
+                            newShipStruct newShip = EditModeComponent.spawnNPC(currentTime, myMouse3dVector, ref shipDefList,
                                 tmpShipName, Gui.thisShip, Gui.thisFaction, false);
                             activeShipList.Add(newShip);
                         }
@@ -475,7 +481,7 @@ namespace SaturnIV
                     {
                         if (Gui.loadThisScenario != null && mouseStateCurrent.LeftButton == ButtonState.Released)
                         {
-                            serializerClass.loadScenario(Gui.loadThisScenario, ref activeShipList, ref shipDefList);
+                            serializerClass.loadScenario(currentTime, Gui.loadThisScenario, ref activeShipList, ref shipDefList);
                             Gui.loadThisScenario = null;
                         }
                     }
@@ -787,10 +793,10 @@ namespace SaturnIV
                 Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
                 float radiusFactor = 2;
                 
-                if (npcship.isBuilding && (npcship.objectClass == ClassesEnum.Station || npcship.objectClass == ClassesEnum.DryDock))
+                if (npcship.isBuilding && (npcship.objectClass == ClassesEnum.Station || npcship.objectClass == ClassesEnum.Constructor))
                 {
-                    radiusFactor = 10;
-                    whatTexture = sphereofcontrol;
+                    //radiusFactor = 10;
+                    //whatTexture = sphereofcontrol;
                 }
                 drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
                     npcship.modelLen * radiusFactor, npcship.modelLen * radiusFactor), whatTexture, npcship.modelPosition);
@@ -810,12 +816,19 @@ namespace SaturnIV
 
         private void DrawHUDTargets(GameTime gameTime)
         {                    
-            foreach (buildItem bItem in buildManager.buildQueueList)
-            {
-                Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
-                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 750 * 2
+            foreach (newShipStruct tShip in activeShipList)
+                if (tShip.buildManager != null)
+                foreach (buildItem bItem in tShip.buildManager.buildQueueList)
+                {
+                    Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 750 * 2
                                     , 750 * 2), constructionCircle, bItem.pos);
-            }
+                    messageBuffer = new StringBuilder();
+                    spriteBatch.Begin();
+                    messageBuffer.AppendFormat("{0}", Vector3.Distance(bItem.pos,tShip.modelPosition));
+                    spriteBatch.DrawString(medFont, messageBuffer, new Vector2(tShip.screenCords.X,tShip.screenCords.Y), Color.White);
+                    spriteBatch.End();
+                }
             shipMenuClass.DrawShipInfoMenu(spriteBatch, spriteFont, ref activeShipList);
             DrawHUD(gameTime);
             DrawPlanets();

@@ -18,38 +18,40 @@ namespace SaturnIV
         public List<buildItem> buildQueueList = new List<buildItem>();
         int cost = 10;
         double currentTime;
-        float buildTime = 2000;
-
-        public enum BuildStates
-        {
-            notstarted = 0,
-            started = 1,
-            building = 2,
-            done = 3
-        }
+        float buildTime = 1000;
 
         public void addBuild(int sType, string sName, Vector3 sPos)
         {
             buildItem buildThis = new buildItem();
-            buildThis.pos = sPos; buildThis.name = sName; buildThis.shipType = sType; buildThis.startTime = currentTime;
-            MessageClass.messageLog.Add("Adding New Ship to Foundry Build Queue at" + currentTime);
+            buildThis.buildState = BuildStates.started;
+            buildThis.pos = sPos; buildThis.name = sName; buildThis.shipType = sType; 
+            MessageClass.messageLog.Add("Adding New Ship to Foundry Build Queue");
             buildQueueList.Add(buildThis);
         }
 
-        public void updateBuildQueue(ref List<shipData> shipDefList, ref List<newShipStruct> activeShipList, double cTime)
+        public void updateBuildQueue(ref List<shipData> shipDefList, ref List<newShipStruct> activeShipList, double cTime, newShipStruct tConstructor)
         {
-            currentTime = cTime;
-            float pComplete = (float)((currentTime - buildQueueList.First().startTime) / buildTime * 100);
-            pComplete = pComplete / buildTime * 100;
-            buildQueueList.First().percentComplete = pComplete;
-            if (buildQueueList.First().percentComplete > 99)
+            if (buildQueueList.Count > 0)
             {
-                newShipStruct newShip = EditModeComponent.spawnNPC(buildQueueList.First().pos, ref shipDefList,
-                                   buildQueueList.First().name, buildQueueList.First().shipType, 0, false);
-                                newShip.wayPointPosition = buildQueueList.First().pos * 1000;
-                                newShip.currentDisposition = disposition.moving;
-                activeShipList.Add(newShip);
-                buildQueueList.Remove(buildQueueList.First());
+                if (buildQueueList.First().buildState == BuildStates.building)
+                {
+                    currentTime = cTime;
+                    if (buildQueueList.First().startTime < 1) buildQueueList.First().startTime = currentTime;                    
+                    float pComplete = (float)((currentTime - buildQueueList.First().startTime) / buildTime * 100);
+                    pComplete = pComplete / buildTime * 100;
+                    buildQueueList.First().percentComplete = pComplete;
+                    MessageClass.messageLog.Add("Build at" + pComplete);
+                    if (buildQueueList.First().percentComplete > 99)
+                    {
+                        newShipStruct newShip = EditModeComponent.spawnNPC(cTime, buildQueueList.First().pos, ref shipDefList,
+                                           buildQueueList.First().name, buildQueueList.First().shipType, 0, false);
+                        newShip.wayPointPosition = buildQueueList.First().pos * 1000;
+                        newShip.currentDisposition = disposition.moving;
+                        activeShipList.Add(newShip);
+                        buildQueueList.Remove(buildQueueList.First());
+                        tConstructor.currentDisposition = disposition.moving;
+                    }
+                }
             }
         }
     }

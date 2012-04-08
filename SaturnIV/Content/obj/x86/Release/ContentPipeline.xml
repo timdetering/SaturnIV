@@ -254,15 +254,6 @@
       <Time>2012-02-15T19:12:21.7995282-06:00</Time>
     </Item>
     <Item>
-      <Source>Thrusters\NoiseVolume.dds</Source>
-      <Name>Thrusters\NoiseVolume</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Thrusters\NoiseVolume.xnb</Output>
-      <Time>2012-02-15T19:12:20.6344615-06:00</Time>
-    </Item>
-    <Item>
       <Source>textures\redDotSmall.png</Source>
       <Name>textures\redDotSmall</Name>
       <Importer>TextureImporter</Importer>
@@ -479,15 +470,6 @@
       <Time>2010-09-02T02:22:51.359375-05:00</Time>
     </Item>
     <Item>
-      <Source>Models\Ships\station_t1\color.jpg</Source>
-      <Name>Models\Ships\station_t1\color</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t1\color.xnb</Output>
-      <Time>2010-09-02T02:21:08.765625-05:00</Time>
-    </Item>
-    <Item>
       <Source>Models\Ships\station_t1\illumination.jpg</Source>
       <Name>Models\Ships\station_t1\illumination</Name>
       <Importer>TextureImporter</Importer>
@@ -585,15 +567,6 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\bump.xnb</Output>
       <Time>2012-03-31T13:13:32.4724679-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\station_t2\color.jpg</Source>
-      <Name>Models\Ships\station_t2\color</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\color.xnb</Output>
-      <Time>2012-03-31T13:13:32.4754681-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\station_t2\ilumination.jpg</Source>
@@ -740,6 +713,123 @@
       <Time>2012-03-31T22:47:44.4611088-05:00</Time>
     </Item>
     <Item>
+      <Source>Models\tacmap_items\bluetranscircle.png</Source>
+      <Name>Models\tacmap_items\bluetranscircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bluetranscircle.xnb</Output>
+      <Time>2012-04-01T19:05:29.0968309-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\building_circle.png</Source>
+      <Name>Models\tacmap_items\building_circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\building_circle.xnb</Output>
+      <Time>2012-04-03T20:11:44.2024869-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\mining_circle.png</Source>
+      <Name>Models\tacmap_items\mining_circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\mining_circle.xnb</Output>
+      <Time>2012-04-03T20:06:45.2523277-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\bottom_menu_bar.png</Source>
+      <Name>Models\tacmap_items\bottom_menu_bar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bottom_menu_bar.xnb</Output>
+      <Time>2012-04-05T21:28:57.5300699-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\construct_menubox.png</Source>
+      <Name>Models\tacmap_items\construct_menubox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\construct_menubox.xnb</Output>
+      <Time>2012-04-06T18:25:25.2159516-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\shipinfobox.png</Source>
+      <Name>Models\tacmap_items\shipinfobox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\shipinfobox.xnb</Output>
+      <Time>2012-04-04T20:26:17.3288207-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\constructioncircle.png</Source>
+      <Name>Models\tacmap_items\constructioncircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb</Output>
+      <Time>2012-04-06T17:15:16.1894802-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\sphereofcontrol.png</Source>
+      <Name>Models\tacmap_items\sphereofcontrol</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\sphereofcontrol.xnb</Output>
+      <Time>2012-04-06T18:27:15.0383929-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\redtranscircle.png</Source>
+      <Name>Models\tacmap_items\redtranscircle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\redtranscircle.xnb</Output>
+      <Time>2012-04-06T18:37:44.666184-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\bump_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\bump_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\bump_5.xnb</Output>
+      <Time>2011-12-10T14:38:10.28125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\color_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\color_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5.xnb</Output>
+      <Time>2011-12-10T16:05:38.3125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\illumination_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\illumination_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\illumination_5.xnb</Output>
+      <Time>2011-12-10T14:35:59.171875-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\specular_5.jpg</Source>
+      <Name>Models\Ships\fl_frigate_f1\specular_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\specular_5.xnb</Output>
+      <Time>2011-12-10T14:39:22.78125-06:00</Time>
+    </Item>
+    <Item>
       <Source>Models\LaserBolt2.x</Source>
       <Name>Models\LaserBolt2</Name>
       <Importer>XImporter</Importer>
@@ -749,7 +839,7 @@
       <Time>2012-02-15T19:12:19.7144089-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\LaserBolt2_0.xml</Key>
-        <Value>2012-04-01T18:51:41.8915174-05:00</Value>
+        <Value>2012-04-08T09:54:44.8921406-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -762,7 +852,7 @@
       <Time>2012-02-15T19:12:20.6364616-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Thrusters\ThrustCylinderB_0.xml</Key>
-        <Value>2012-04-01T18:51:42.0955291-05:00</Value>
+        <Value>2012-04-08T09:54:45.0616621-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -775,7 +865,7 @@
       <Time>2012-03-09T20:50:33.5208874-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Fleet_KM100_0.xml</Key>
-        <Value>2012-04-01T18:51:43.1965921-05:00</Value>
+        <Value>2012-04-08T09:54:46.1603016-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb</Request>
     </Item>
@@ -789,7 +879,7 @@
       <Time>2012-03-28T21:16:59.4080787-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\basic_bullet_0.xml</Key>
-        <Value>2012-04-01T18:51:44.2866544-05:00</Value>
+        <Value>2012-04-08T09:54:47.2749431-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -802,7 +892,7 @@
       <Time>2012-03-28T20:52:26.4238288-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\basic_missile_0.xml</Key>
-        <Value>2012-04-01T18:51:45.4817228-05:00</Value>
+        <Value>2012-04-08T09:54:48.4465919-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Lakerem_0.xnb</Request>
     </Item>
@@ -816,7 +906,7 @@
       <Time>2012-02-15T19:12:20.5984595-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\largeSphere_0.xml</Key>
-        <Value>2012-04-01T18:51:46.6237881-05:00</Value>
+        <Value>2012-04-08T09:54:49.5872368-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -829,7 +919,7 @@
       <Time>2012-03-28T20:56:52.9480731-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_large_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:47.6748482-05:00</Value>
+        <Value>2012-04-08T09:54:50.6373701-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -842,7 +932,7 @@
       <Time>2012-03-28T19:55:19.1828018-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_medium_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:48.7409092-05:00</Value>
+        <Value>2012-04-08T09:54:51.7175073-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -855,7 +945,7 @@
       <Time>2012-03-28T19:53:50.806747-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\blue_small_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:49.7989697-05:00</Value>
+        <Value>2012-04-08T09:54:52.84165-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -868,7 +958,7 @@
       <Time>2012-03-28T21:16:23.6850355-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_large_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:50.8780314-05:00</Value>
+        <Value>2012-04-08T09:54:53.912286-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -881,7 +971,7 @@
       <Time>2012-03-28T19:55:59.432104-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_medium_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:51.9530929-05:00</Value>
+        <Value>2012-04-08T09:54:54.9584188-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -894,7 +984,7 @@
       <Time>2012-03-28T19:54:31.3080636-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\tacmap_items\red_small_plane_0.xml</Key>
-        <Value>2012-04-01T18:51:53.020154-05:00</Value>
+        <Value>2012-04-08T09:54:56.0185534-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -907,7 +997,7 @@
       <Time>2012-02-18T18:08:21.105633-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\sphere_0.xml</Key>
-        <Value>2012-04-01T18:51:54.0762144-05:00</Value>
+        <Value>2012-04-08T09:54:57.0566853-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -920,7 +1010,7 @@
       <Time>2012-02-27T18:51:36.7690915-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\planet_0.xml</Key>
-        <Value>2012-04-01T18:51:55.1522759-05:00</Value>
+        <Value>2012-04-08T09:54:58.1158198-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -933,7 +1023,7 @@
       <Time>2012-03-28T20:56:13.1957994-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\frigate_c1\frigate_c1_0.xml</Key>
-        <Value>2012-04-01T18:51:56.5723571-05:00</Value>
+        <Value>2012-04-08T09:54:59.6280118-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\ship_hull19_0.xnb</Request>
     </Item>
@@ -947,7 +1037,7 @@
       <Time>2012-03-29T21:07:08.0882158-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m1\fighter_m1_0.xml</Key>
-        <Value>2012-04-01T18:52:00.9596081-05:00</Value>
+        <Value>2012-04-08T09:55:04.3651133-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\COLOR_6_0.xnb</Request>
     </Item>
@@ -961,7 +1051,7 @@
       <Time>2012-03-29T21:07:35.1177618-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m2\fighter_m2_0.xml</Key>
-        <Value>2012-04-01T18:52:02.4196916-05:00</Value>
+        <Value>2012-04-08T09:55:05.8583029-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m2\fighter_1_0.xnb</Request>
     </Item>
@@ -975,7 +1065,7 @@
       <Time>2012-03-28T21:22:54.3733815-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\station_t1\station_t1_0.xml</Key>
-        <Value>2012-04-01T18:52:03.8117712-05:00</Value>
+        <Value>2012-04-08T09:55:07.3039865-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t1\COLOR_0.xnb</Request>
     </Item>
@@ -989,7 +1079,7 @@
       <Time>2012-03-08T20:34:20.1061975-06:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\bomber_b1\bomber_b1_0.xml</Key>
-        <Value>2012-04-01T18:52:05.1938503-05:00</Value>
+        <Value>2012-04-08T09:55:08.8411817-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\bomber_b1\COLOR_0.xnb</Request>
     </Item>
@@ -1003,7 +1093,7 @@
       <Time>2012-03-29T21:08:04.021415-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\fighter_m3\fighter_m3_0.xml</Key>
-        <Value>2012-04-01T18:52:06.5789295-05:00</Value>
+        <Value>2012-04-08T09:55:10.3108683-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m3\color_0_0.xnb</Request>
     </Item>
@@ -1017,7 +1107,7 @@
       <Time>2012-03-12T21:53:38.1635759-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\cannon_0.xml</Key>
-        <Value>2012-04-01T18:52:07.9150059-05:00</Value>
+        <Value>2012-04-08T09:55:11.6675406-05:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -1030,7 +1120,7 @@
       <Time>2012-03-29T21:06:39.0845569-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\eriax_lightbomber_legato\ship_5_0.xml</Key>
-        <Value>2012-04-01T18:52:08.9780667-05:00</Value>
+        <Value>2012-04-08T09:55:12.7516783-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb</Request>
     </Item>
@@ -1044,7 +1134,7 @@
       <Time>2012-03-29T21:06:10.3329124-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\eriax_fighter_darkstar\ship_1_0.xml</Key>
-        <Value>2012-04-01T18:52:10.3011424-05:00</Value>
+        <Value>2012-04-08T09:55:14.1013497-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb</Request>
     </Item>
@@ -1058,7 +1148,7 @@
       <Time>2012-03-29T21:08:41.2105421-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\turret_2\orbital_turret_0.xml</Key>
-        <Value>2012-04-01T18:52:11.6662205-05:00</Value>
+        <Value>2012-04-08T09:55:15.4825251-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color_0.xnb</Request>
     </Item>
@@ -1072,7 +1162,7 @@
       <Time>2012-03-30T23:29:14.4235599-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\station_t2\station_t2_0.xml</Key>
-        <Value>2012-04-01T18:52:12.9982966-05:00</Value>
+        <Value>2012-04-08T09:55:16.8181947-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\color_0.xnb</Request>
     </Item>
@@ -1086,7 +1176,7 @@
       <Time>2012-04-01T18:57:42.5711471-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\transport_t1\transport_t1_0.xml</Key>
-        <Value>2012-04-01T18:57:52.0366885-05:00</Value>
+        <Value>2012-04-08T09:55:22.6619367-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\transport_t1\blu_0.xnb</Request>
     </Item>
@@ -1100,12 +1190,52 @@
       <Time>2012-03-31T23:03:15.7333745-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\battlecrusier_bc1\battlecruiser_0.xml</Key>
-        <Value>2012-04-01T18:52:20.4037202-05:00</Value>
+        <Value>2012-04-08T09:55:24.9252241-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiserkineticburstcan_0.xnb</Request>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[_0.xnb</Request>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_main_export[1]_0.xnb</Request>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_expor_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Ships\eriax_frigate\eriax_frigate_f1.FBX</Source>
+      <Name>Models\Ships\eriax_frigate\eriax_frigate_f1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_frigate\eriax_frigate_f1.xnb</Output>
+      <Time>2012-04-01T18:56:39.4975395-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Models\Ships\eriax_frigate\eriax_frigate_f1_0.xml</Key>
+        <Value>2012-04-08T09:55:28.5731874-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX</Source>
+      <Name>Models\Ships\fl_frigate_f1\fl_frigate_f1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb</Output>
+      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Key>
+        <Value>2012-04-08T09:55:29.9518624-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\asteroid.FBX</Source>
+      <Name>Models\asteroid</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb</Output>
+      <Time>2012-04-07T21:39:52.0834368-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Release\Models\asteroid_0.xml</Key>
+        <Value>2012-04-08T09:55:31.972119-05:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Models\LaserBolt2.x</Source>
@@ -1553,154 +1683,10 @@
     </Item>
     <Item>
       <Source>Models\Ships\eriax_frigate\eriax_frigate_f1.FBX</Source>
-      <Name>Models\Ships\eriax_frigate\eriax_frigate_f1</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\eriax_frigate\eriax_frigate_f1.xnb</Output>
-      <Time>2012-04-01T18:56:39.4975395-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Release\Models\Ships\eriax_frigate\eriax_frigate_f1_0.xml</Key>
-        <Value>2012-04-01T18:57:54.9978579-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>Models\Ships\eriax_frigate\eriax_frigate_f1.FBX</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Release\Models\Ships\eriax_frigate\eriax_frigate_f1_0.xml</Output>
       <Time>2012-04-01T18:56:39.4975395-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\bluetranscircle.png</Source>
-      <Name>Models\tacmap_items\bluetranscircle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bluetranscircle.xnb</Output>
-      <Time>2012-04-01T19:05:29.0968309-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\building_circle.png</Source>
-      <Name>Models\tacmap_items\building_circle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\building_circle.xnb</Output>
-      <Time>2012-04-03T20:11:44.2024869-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\mining_circle.png</Source>
-      <Name>Models\tacmap_items\mining_circle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\mining_circle.xnb</Output>
-      <Time>2012-04-03T20:06:45.2523277-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\bottom_menu_bar.png</Source>
-      <Name>Models\tacmap_items\bottom_menu_bar</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bottom_menu_bar.xnb</Output>
-      <Time>2012-04-05T21:28:57.5300699-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\construct_menubox.png</Source>
-      <Name>Models\tacmap_items\construct_menubox</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\construct_menubox.xnb</Output>
-      <Time>2012-04-06T18:25:25.2159516-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\shipinfobox.png</Source>
-      <Name>Models\tacmap_items\shipinfobox</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\shipinfobox.xnb</Output>
-      <Time>2012-04-04T20:26:17.3288207-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\constructioncircle.png</Source>
-      <Name>Models\tacmap_items\constructioncircle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\constructioncircle.xnb</Output>
-      <Time>2012-04-06T17:15:16.1894802-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\sphereofcontrol.png</Source>
-      <Name>Models\tacmap_items\sphereofcontrol</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\sphereofcontrol.xnb</Output>
-      <Time>2012-04-06T18:27:15.0383929-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\tacmap_items\redtranscircle.png</Source>
-      <Name>Models\tacmap_items\redtranscircle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\redtranscircle.xnb</Output>
-      <Time>2012-04-06T18:37:44.666184-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\fl_frigate_f1\bump_5.jpg</Source>
-      <Name>Models\Ships\fl_frigate_f1\bump_5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\bump_5.xnb</Output>
-      <Time>2011-12-10T14:38:10.28125-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\fl_frigate_f1\color_5.jpg</Source>
-      <Name>Models\Ships\fl_frigate_f1\color_5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5.xnb</Output>
-      <Time>2011-12-10T16:05:38.3125-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\fl_frigate_f1\illumination_5.jpg</Source>
-      <Name>Models\Ships\fl_frigate_f1\illumination_5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\illumination_5.xnb</Output>
-      <Time>2011-12-10T14:35:59.171875-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\fl_frigate_f1\specular_5.jpg</Source>
-      <Name>Models\Ships\fl_frigate_f1\specular_5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\specular_5.xnb</Output>
-      <Time>2011-12-10T14:39:22.78125-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX</Source>
-      <Name>Models\Ships\fl_frigate_f1\fl_frigate_f1</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\fl_frigate_f1.xnb</Output>
-      <Time>2012-04-07T15:25:19.1271874-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Release\Models\Ships\fl_frigate_f1\fl_frigate_f1_0.xml</Key>
-        <Value>2012-04-07T15:26:30.2522555-05:00</Value>
-      </Dependency>
-      <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Ships\fl_frigate_f1\fl_frigate_f1.FBX</Source>
@@ -1723,19 +1709,6 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5_0.xnb</Output>
       <Time>2011-12-10T16:05:38.3125-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\asteroid.FBX</Source>
-      <Name>Models\asteroid</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb</Output>
-      <Time>2012-04-07T21:39:52.0834368-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Release\Models\asteroid_0.xml</Key>
-        <Value>2012-04-07T21:39:58.3897975-05:00</Value>
-      </Dependency>
     </Item>
     <Item>
       <Source>Models\asteroid.FBX</Source>

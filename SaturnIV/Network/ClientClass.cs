@@ -68,8 +68,8 @@ namespace SaturnIV
                                      MessageClass.messageLog.Add("Data: " + ch.shipName);
                                      //MessageClass.messageLog.Add("Data: " + ch.shipIndex);
                                      // netFetchList.Add(ch);
-                                     shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList,
-                                         ch.shipName, ch.shipIndex, ch.side, false));
+                                     //shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList,
+                                     //    ch.shipName, ch.shipIndex, ch.side, false));
 
                                 }
 
@@ -93,8 +93,8 @@ namespace SaturnIV
                                         MessageClass.messageLog.Add("Data: " + ch.shipName);
                                         //MessageClass.messageLog.Add("Data: " + ch.shipIndex);
                                         // netFetchList.Add(ch);
-                                        shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList, 
-                                            ch.shipName, ch.shipIndex, ch.side, false));
+                                        //shipList.Add(EditModeComponent.spawnNPC(ch.shipPosition, ref Game1.shipDefList, 
+                                        //    ch.shipName, ch.shipIndex, ch.side, false));
                                     }
                                 }                                
                                //else

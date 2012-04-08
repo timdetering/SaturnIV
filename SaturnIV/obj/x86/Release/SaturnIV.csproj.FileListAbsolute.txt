@@ -28,7 +28,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\move_icon.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\planettexture2.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\LaserBolt2.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Thrusters\NoiseVolume.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\bump_6.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\sphere.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\dummy.xnb
@@ -88,7 +87,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\effectslib.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\specular_6.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\SelectionBox.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\hbartex.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t1\color.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\illumination_6.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fighter_m1\fighter_m1.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Lidgren.Network.dll
@@ -113,7 +111,6 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\cursor.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\planetinfobox.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\color_0.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\specular.xnb
-C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\color.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\bump.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\ilumination.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\station_t2\station_t2.xnb
@@ -155,3 +152,5 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigat
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\color_5.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigate_f1\bump_5.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\Scenarios\planetdefense.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\Scenarios\main_scene.xml

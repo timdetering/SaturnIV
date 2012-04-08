@@ -209,7 +209,7 @@ namespace SaturnIV
             return false;
         }
 
-        public static newShipStruct spawnNPC(Vector3 mouse3dVector, ref List<shipData> shipDefList,
+        public static newShipStruct spawnNPC(double currentTime, Vector3 mouse3dVector, ref List<shipData> shipDefList,
                                     string shipName, int shipIndex, int team, bool isBuild)
         {
             newShipStruct tempData = new newShipStruct();
@@ -240,6 +240,10 @@ namespace SaturnIV
             tempData.currentTarget = null;
             if (tempData.objectClass == ClassesEnum.Crusier || shipDefList[shipIndex].isStationary)
                 tempData.canEngageMultipleTargets = true;
+            if (tempData.objectClass == ClassesEnum.Constructor || tempData.objectClass == ClassesEnum.Station)
+            {
+                tempData.buildManager = new BuildManager();
+            }
             tempData.Up = Vector3.Up;
             tempData.modelBB = HelperClass.ComputeBoundingBox(Game1.modelDictionary[tempData.objectFileName], tempData.modelPosition);
             tempData.modelLen = tempData.modelBB.Max.X - tempData.modelBB.Min.X;

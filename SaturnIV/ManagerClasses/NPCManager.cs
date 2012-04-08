@@ -27,7 +27,7 @@ namespace SaturnIV
         Vector3 isRight;
         int moduleCount = 0;
         public double[] regentime;
-        float lastTime;
+        float lastTime, dis;
         double timeToEvade;
         Random rand = new Random();
         double loopTimer = -1;
@@ -218,9 +218,24 @@ namespace SaturnIV
                     thisShip.currentDisposition = disposition.patrol;
             }
 
-            if (Vector3.Distance(thisShip.modelPosition, Vector3.Zero) > 1700000)
+            ///If ship is building then this overrides all above AI)
+            ///
+            if (thisShip.buildManager != null)
             {
-                //thisShip.targetPosition = HelperClass.RandomSpherePoint();
+                if (thisShip.buildManager.buildQueueList.Count() > 0)
+                {
+                    thisShip.thrustAmount = 1.0f;
+                    thisShip.wayPointPosition = thisShip.buildManager.buildQueueList.First().pos;
+                    //thisShip.currentDisposition = disposition.building;
+                    thisShip.targetPosition = thisShip.buildManager.buildQueueList.First().pos;
+                    dis = Vector3.Distance(thisShip.modelPosition, thisShip.buildManager.buildQueueList.First().pos);
+                    if (dis < 2000.0f)
+                    {
+                        thisShip.currentDisposition = disposition.building;
+                        thisShip.thrustAmount = 0.0f;
+                        thisShip.buildManager.buildQueueList.First().buildState = BuildStates.building;
+                    }
+                }
             }
         }
 

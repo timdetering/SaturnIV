@@ -131,7 +131,7 @@ namespace SaturnIV
         }
 
         public void update(MouseState currentMouse, MouseState oldMouse, BuildManager buildManager, 
-                           bool isLClicked, Vector3 pos, MenuActions menuAction, ref List<newShipStruct> shipList)
+                           bool isLClicked, Vector3 pos, MenuActions menuAction, ref List<newShipStruct> shipList, double currentTime)
         {
             isSelected = false;
             int mouseX = currentMouse.X; int mouseY = currentMouse.Y;
@@ -180,14 +180,13 @@ namespace SaturnIV
                     if (isPlaced)
                     {
                         foreach (newShipStruct tShip in shipList)
-                            if ((tShip.isBuilding && tShip.objectClass == ClassesEnum.Station) 
-                                && new BoundingSphere(tShip.modelPosition,tShip.modelLen*5).Intersects(new BoundingSphere(pos,10)) == true)
-                            {
+                            if (tShip.isBuilding && tShip.buildManager != null)                             
+                           {
                                 newShipStruct tempShip = new newShipStruct();
-                                buildManager.addBuild(thisShip, "new ship", pos);
+                                tShip.buildManager.addBuild(thisShip, "new ship", pos);
                                 isSelected = true;
                                 isPlaced = false;                        
-                            }
+                           }
                     }
                 }
             }

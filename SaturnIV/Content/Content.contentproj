@@ -236,11 +236,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Thrusters\NoiseVolume.dds">
+    <None Include="Thrusters\NoiseVolume.dds">
       <Name>NoiseVolume</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
+    </None>
     <Compile Include="Thrusters\Thrust.fx">
       <Name>Thrust</Name>
       <Importer>EffectImporter</Importer>
@@ -474,11 +474,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Models\Ships\station_t1\color.jpg">
-      <Name>color</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Models\Ships\station_t1\illumination.jpg">
       <Name>illumination</Name>
       <Importer>TextureImporter</Importer>
@@ -609,11 +604,6 @@
   <ItemGroup>
     <Compile Include="Models\Ships\station_t2\bump.jpg">
       <Name>bump</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\Ships\station_t2\color.jpg">
-      <Name>color</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -788,8 +778,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="XML\Scenarios\main_scene.xml">
+      <Name>main_scene</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="XML\Scenarios\planetdefense.xml">
+      <Name>planetdefense</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
-    <Folder Include="XML\Scenarios\" />
     <Folder Include="XML\Systems\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

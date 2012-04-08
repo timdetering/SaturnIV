@@ -112,7 +112,7 @@ namespace SaturnIV
                 }
             }
 
-            public SceneSaveStruct loadScene(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList, 
+            public SceneSaveStruct loadScene(double currentTime, string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList, 
                 ref Vector3 cameraStart, ref PlanetManager pManager)
             {
                 pManager.planetList.Clear();
@@ -129,7 +129,7 @@ namespace SaturnIV
                     {
                         newShipStruct shipAdd = new newShipStruct();
                         shipAdd.objectAlias = ship.shipName;
-                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
+                        ShipList.Add(EditModeComponent.spawnNPC(currentTime, ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
                     }
 
                     foreach (planetSaveStruct planet in newScene.planetList)
@@ -141,7 +141,7 @@ namespace SaturnIV
                     return newScene;
             }
 
-            public void loadScenario(string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList)
+            public void loadScenario(double currentTime, string filename, ref List<newShipStruct> ShipList, ref List<shipData> shipDefList)
             {
                 if (filename != null)
                 {
@@ -154,7 +154,7 @@ namespace SaturnIV
                     {
                         newShipStruct shipAdd = new newShipStruct();
                         shipAdd.objectAlias = ship.shipName;
-                        ShipList.Add(EditModeComponent.spawnNPC(ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
+                        ShipList.Add(EditModeComponent.spawnNPC(currentTime, ship.shipPosition, ref shipDefList, ship.shipName, ship.shipIndex, ship.side, false));
                     }
                 }
 

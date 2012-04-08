@@ -52,7 +52,7 @@
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>
     <Item>
-      <FileName>Models//Ships/battlecrusier_bc1/battlecruiser</FileName>
+      <FileName>Models//Ships/fl_frigate_f1/fl_frigate_f1</FileName>
       <Type>Battlecrusier</Type>
       <TechLevel>3</TechLevel>
       <Mass>15</Mass>
@@ -115,7 +115,7 @@
     </Item>
     <Item>
       <FileName>Models//Ships/frigate_c1/frigate_c1</FileName>
-      <Type>Frigate</Type>
+      <Type>Construction Ship</Type>
       <TechLevel>1</TechLevel>
       <Mass>25</Mass>
       <Thrust>6500</Thrust>
@@ -123,7 +123,7 @@
       <Scale>1</Scale>
       <Agility>0.75</Agility>
       <BelongsTo>Eriax</BelongsTo>
-      <ShipClass>Transport</ShipClass>
+      <ShipClass>Constructor</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
 	    <HullFactor>0.35</HullFactor>
 	    <hullValue>3600</hullValue>

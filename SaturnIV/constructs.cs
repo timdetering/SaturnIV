@@ -149,6 +149,7 @@ namespace SaturnIV
         public double[] regenTimer;
         public int currentWeaponMod;
         public bool isStationary;
+        public BuildManager buildManager;
     }
 
     public class weaponStruct : newShipStruct
@@ -241,7 +242,7 @@ namespace SaturnIV
             Platform = 7,
             Collector = 8,
             Station = 9,
-            DryDock = 10
+            Constructor = 10
         }
         
         public enum DirectionEnum
@@ -364,8 +365,17 @@ namespace SaturnIV
             public List<string> capitalShipNames;
         }
 
+        public enum BuildStates
+        {
+            notstarted = 0,
+            started = 1,
+            building = 2,
+            done = 3
+        }
+
         public class buildItem
         {
+            public BuildStates buildState;
             public Vector3 pos;
             public string name;
             public int shipType;

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent>
+  <Asset Type="SaturnIV.RandomNames">
+    <capitalShipNames>
+      <Item>Stormhawk</Item>
+      <Item>Senlac</Item>
+      <Item>Vanguard</Item>
+      <Item>Vendetta</Item>
+      <Item>Ultima</Item>
+      <Item>Relentless</Item>
+      <Item>Adamant</Item>
+      <Item>Stalker</Item>
+      <Item>Skyhook</Item>
+      <Item>Reckoning</Item>
+      <Item>Malice</Item>
+      <Item>Red Gauntlet</Item>
+      <Item>Nitsa</Item>
+      <Item>Kreiger</Item>
+      <Item>Hydra</Item>
+      <Item>Leonides</Item>
+      <Item>Grey Wolf</Item>
+      <Item>Freedom</Item>
+      <Item>Intrepid</Item>
+      <Item>Tyrant</Item>
+      <Item>Tecumseh</Item>
+      <Item>Inexorable</Item>
+      <Item>Devastator</Item>
+      <Item>Vengeance</Item>
+      <Item>Thunderflare</Item>
+      <Item>Red October</Item>
+      <Item>Nova Scotia</Item>
+      <Item>Manticore</Item>
+      <Item>Bismark</Item>
+      <Item>Steadfast</Item>
+      <Item>Direption</Item>
+      <Item>Adarga</Item>
+      <Item>Agonizer</Item>
+      <Item>Avarice</Item>
+      <Item>Avenger</Item>
+      <Item>Admonitor</Item>
+      <Item>Conquest</Item>
+      <Item>Crynyd</Item>
+      <Item>Courageous</Item>
+      <Item>Emancipator</Item>
+      <Item>Firestorm</Item>
+      <Item>Gorgon</Item>
+      <Item>Gnisnal</Item>
+      <Item>Gauntlet</Item>
+      <Item>Eviscerator</Item>
+	  <Item>Royal Mile</Item>
+	  <Item>Kratos</Item>
+	  <Item>Alpha 1</Item>
+	  <Item>Alpha 2</Item>
+	  <Item>Alpha 3</Item>
+	  <Item>Alpha 4</Item>
+	  <Item>Alpha 5</Item>
+      <Item>Cake</Item>
+      <Item>Inception</Item>
+      <Item>Alpha 6</Item>
+      <Item>Alpha 7</Item>
+      <Item>Alpha 8</Item>
+      <Item>Alpha 9</Item>
+      <Item>Alpha 10</Item>
+    </capitalShipNames>
+  </Asset>
+</XnaContent>

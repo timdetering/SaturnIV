@@ -43,7 +43,7 @@ namespace SaturnIV
                         newItem.itemSelected = true;
                         if (Mouse.GetState().LeftButton == ButtonState.Pressed)
                         {
-                            if (tShip.objectClass == ClassesEnum.Station || tShip.objectClass == ClassesEnum.DryDock)
+                            if (tShip.objectClass == ClassesEnum.Station || tShip.objectClass == ClassesEnum.Constructor)
                                 Game1.menuAction = MenuActions.build;                            
                             tShip.isBuilding = true;
                         }
