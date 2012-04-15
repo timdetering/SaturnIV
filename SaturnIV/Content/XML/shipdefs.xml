@@ -25,7 +25,7 @@
       <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
       <ChasePrefs>1 1 1 1 1 1 0 0 0 0 0</ChasePrefs>
-      <maxDetectRange>800</maxDetectRange>
+      <maxDetectRange>12000</maxDetectRange>
       <isStationary>true</isStationary>
       <AvailableWeapons>
         <Item>
@@ -70,7 +70,7 @@
       <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
       <ChasePrefs>0 0 0 0 0 0 0 0 0 0 0</ChasePrefs>
-      <maxDetectRange>8000</maxDetectRange>
+      <maxDetectRange>55000</maxDetectRange>
       <isStationary>true</isStationary>
       <AvailableWeapons>
         <Item>
@@ -131,8 +131,8 @@
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>50 600 300 300 100 100 100 100 100 100 500</EvadeDist>      
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
-	    <ChasePrefs>1 1 0 0 0 0 1 0 0 1 0</ChasePrefs>
-      <maxDetectRange>8000</maxDetectRange>
+	    <ChasePrefs>0 0 0 0 0 0 1 0 0 1 0</ChasePrefs>
+      <maxDetectRange>12000</maxDetectRange>
       <isStationary>false</isStationary>
 	  <AvailableWeapons>
       <Item>
@@ -189,7 +189,7 @@
     <EvadeDist>50 300 300 300 100 10 100 100 100 100 100 500</EvadeDist>
     <TargetPrefs>0.5 0.9 0.8 0.7 0.2 1 0 0 0 0 0</TargetPrefs>
 	  <ChasePrefs>1 1 1 1 1 1 1 1 1 1 1</ChasePrefs>
-    <maxDetectRange>6000</maxDetectRange>
+    <maxDetectRange>15000</maxDetectRange>
     <isStationary>false</isStationary>
       <AvailableWeapons>
       <Item>

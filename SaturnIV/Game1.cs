@@ -201,6 +201,7 @@ namespace SaturnIV
             ////////////Random Stuff             
             projectileTrailParticles = new ProjectileTrailParticleSystem(this, Content);
             aMenu = new actionMenuClass();
+            skynetClass = new SkynetClass();
             ////////////Add Components            
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
@@ -376,7 +377,6 @@ namespace SaturnIV
                     }
                 }
                 loopTimer = currentTime;
-
             }
 
             for (int i = 0; i < systemManager.systemList.Count(); i++)
@@ -388,6 +388,7 @@ namespace SaturnIV
             if (weaponsManager.activeWeaponList.Count > 0)
                 helperClass.CheckForCollision(gameTime, ref activeShipList, ref weaponsManager.activeWeaponList,
                     ref ourExplosion, ref gServer);
+            skynetClass.update(systemManager.systemList[currentSystem], ref activeShipList, ref shipDefList);
         }
 
         protected void processInput(GameTime gameTime)
@@ -798,8 +799,11 @@ namespace SaturnIV
                     //radiusFactor = 10;
                     //whatTexture = sphereofcontrol;
                 }
-                drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 
-                    npcship.modelLen * radiusFactor, npcship.modelLen * radiusFactor), whatTexture, npcship.modelPosition);
+                if (npcship.isSelected || npcship.currentDisposition == disposition.mining || npcship.currentDisposition == disposition.building)
+                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up,
+                        npcship.maxDetectRange, npcship.maxDetectRange), whatTexture, npcship.modelPosition);
+                //if (npcship.isSelected)
+                //    BoundingSphereRenderer.Render3dCircle(npcship.modelPosition, npcship.maxDetectRange / 2, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.OrangeRed);
             }
 
             if (aMenu.isPlacing)
