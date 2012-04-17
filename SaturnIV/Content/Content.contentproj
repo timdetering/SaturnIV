@@ -35,6 +35,10 @@
     </Reference>
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
     <Reference Include="System.XML" />
+    <Reference Include="TomShane.Neoforce.Importers, Version=0.6.1910.1437, Culture=neutral, PublicKeyToken=f1d905e03f113061, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Tom Shane\Neoforce Controls\Bin\TomShane.Neoforce.Importers.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="effects.fx">
@@ -778,6 +782,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Skins\Default.skin">
+      <Name>Default</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Green.skin">
+      <Name>Green</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="XML\Scenarios\main_scene.xml">
       <Name>main_scene</Name>
       <Importer>XmlImporter</Importer>
@@ -786,6 +798,14 @@
     </None>
     <None Include="XML\Scenarios\planetdefense.xml">
       <Name>planetdefense</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Layouts\CommandWindow.xml">
+      <Name>CommandWindow</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

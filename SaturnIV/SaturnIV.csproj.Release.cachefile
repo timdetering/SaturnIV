@@ -8,6 +8,7 @@ Content\textures\explo.xnb
 Content\hud_target.xnb
 Content\Models\Ships\station_t2\specular.xnb
 Content\Models\Ships\eriax_fighter_darkstar\ship_1_0.xnb
+Content\Skins\Green.skin
 Content\Models\tacmap_items\planetinfobox.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiserkineticburstcan_0.xnb
 Content\textures\GUI\textdialog1.xnb
@@ -46,6 +47,7 @@ Content\Models\LaserBolt2.xnb
 Content\Models\Ships\fighter_m1\bump_6.xnb
 Content\Models\sphere.xnb
 Content\textures\dummy.xnb
+Content\Skins\Default.skin
 Content\textures\GUI\buildmenubg.xnb
 Content\Effects\pointsprites.xnb
 Content\spacescapes\spacescape_blue.xnb
@@ -118,6 +120,7 @@ Content\textures\explosion.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Ships\ship_hull19.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[2]LUM.xnb
+Content\Layouts\CommandWindow.xml
 Content\Models\Ships\eriax_lightbomber_legato\ship_5.xnb
 Content\Models\Ships\fighter_m2\fighter_1_bump.xnb
 Content\XML\listofnames.xml

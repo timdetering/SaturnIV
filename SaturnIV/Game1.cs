@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
+using TomShane.Neoforce.Controls;
 
 namespace SaturnIV
 {
@@ -23,6 +24,9 @@ namespace SaturnIV
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        // Neoforce GUI manager
+        Manager manager;
+        NFClass nfClass = new NFClass();
         List<systemStruct> systemList = new List<systemStruct>();
         actionMenuClass aMenu;        
         public CameraNew ourCamera;
@@ -205,6 +209,14 @@ namespace SaturnIV
             ////////////Add Components            
             Components.Add(projectileTrailParticles);
             Components.Add(editModeClass);
+            // Manager setup -- we use default skin and do not 
+            // register manager as a component
+            manager = new Manager(this, graphics, "Default", false);
+            manager.Initialize();
+            // Create and assign render target for UI rendering.
+            manager.RenderTarget = new RenderTarget2D(GraphicsDevice, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight, 1, SurfaceFormat.Color, manager.RenderTargetUsage);
+            // Maximum of frames we want to render per second (applies only for Neoforce, not Game itself)
+            manager.TargetFrames = 60;
             base.Initialize();
         }
 
@@ -253,6 +265,8 @@ namespace SaturnIV
             starField.LoadStarFieldAssets(this);
             loadSystems();
             switchSystem(0);
+            nfClass.LoadCommandWindow(manager);
+            nfClass.constructionWindow(ref shipDefList, manager);
         }
 
         private void loadMetaData()
@@ -298,6 +312,7 @@ namespace SaturnIV
 
         protected override void Update(GameTime gameTime)
         {
+            manager.Update(gameTime);
             currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             processInput(gameTime);            
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
@@ -733,8 +748,10 @@ namespace SaturnIV
 
         protected override void Draw(GameTime gameTime)
         {
-            float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;
+            float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;            
             graphics.GraphicsDevice.Clear(Color.Black);
+            manager.Draw(gameTime);
+            Texture2D target = manager.RenderTarget.GetTexture();
             /// Draw system Map if systemMap mode is selected!
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);            
@@ -746,11 +763,13 @@ namespace SaturnIV
             helperClass.DrawFPS(gameTime, device, spriteBatch, spriteFont);
             DrawHUDTargets(gameTime);
             messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend);
+            spriteBatch.Draw(target, Vector2.Zero, Color.White);
+            spriteBatch.End();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch, drawQuad,quadEffect,quadVertexDecl,transCircleGreen);
-            if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);            
-
-            /// We need to fix the selection rectangle in case one of its dimensions is negative                
+            if (isEditMode) Gui.drawGUI(spriteBatch, spriteFont);
+            // We need to fix the selection rectangle in case one of its dimensions is negative                
             /// 
             Rectangle r = new Rectangle(selectionRect.X, selectionRect.Y, selectionRect.Width, selectionRect.Height);
             if (r.Width < 0)
@@ -773,7 +792,7 @@ namespace SaturnIV
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                 cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
-                activeShipList, serializerClass,300,50);
+                activeShipList, serializerClass,300,50);            
             base.Draw(gameTime);
         }
 
@@ -905,7 +924,7 @@ namespace SaturnIV
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
-                    displayOrderMenu = true;
+                    nfClass.commandWindow.Visible = true;                    
                     o.isSelected = true;                
                 }
                 else

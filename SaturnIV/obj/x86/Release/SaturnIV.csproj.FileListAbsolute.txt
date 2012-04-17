@@ -154,3 +154,7 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\fl_frigat
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\asteroid.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\Scenarios\planetdefense.xml
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\XML\Scenarios\main_scene.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\TomShane.Neoforce.Controls.dll
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Skins\Green.skin
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Skins\Default.skin
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Layouts\CommandWindow.xml

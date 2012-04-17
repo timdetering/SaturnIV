@@ -141,5 +141,8 @@ Content\Models\Ships\fl_frigate_f1\color_5_0.xnb
 Content\XML\listofnames.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml
+Content\Skins\Default.skin
+Content\Skins\Green.skin
 Content\XML\Scenarios\main_scene.xml
 Content\XML\Scenarios\planetdefense.xml
+Content\Layouts\CommandWindow.xml
