@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="122880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="124416">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b8SMbbwPus2JMVvpy9eQYsaSE6g=</dsig:DigestValue>
+        <dsig:DigestValue>WOnZ1s8KETUWvYTyqD/ijY6fekQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -237,13 +237,13 @@
       <dsig:DigestValue>kpcFPuwGnkkdk439fLr9eN5CTsg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Layouts\CommandWindow.xml" size="1684">
+  <file name="Content\Layouts\CommandWindow.xml" size="377">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0P8LpFbAFWTisfJmrhEWs69CeTI=</dsig:DigestValue>
+      <dsig:DigestValue>ujQXDsWv7+xUiITOCvVkVjc5OHs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\MedFont.xnb" size="4466">

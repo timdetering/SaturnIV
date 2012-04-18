@@ -2,45 +2,11 @@
   <Controls>
     <Control Name="frmMain" Class="Window">
       <Properties>
-        <Property Name="Left" Value="100"/>
-        <Property Name="Top" Value="100"/>
+        <Property Name="Left" Value="25"/>
+        <Property Name="Top" Value="225"/>
         <Property Name="Width" Value="215"/>
         <Property Name="Height" Value="200"/>
-      </Properties>
-      <Controls>
-        <Control Name="patrolBtn" Class="Button">
-          <Properties>
-            <Property Name="Left" Value="25"/>
-            <Property Name="Top" Value="25"/>
-            <Property Name="Width" Value="150"/>
-            <Property Name="Text" Value="Patrol"/>
-          </Properties>          
-        </Control>
-        <Control Name="engageBtn" Class="Button">
-          <Properties>
-            <Property Name="Left" Value="25"/>
-            <Property Name="Top" Value="50"/>
-            <Property Name="Width" Value="150"/>
-            <Property Name="Text" Value="Engage"/>
-          </Properties>
-        </Control>
-        <Control Name="defendBtn" Class="Button">
-          <Properties>
-            <Property Name="Left" Value="25"/>
-            <Property Name="Top" Value="75"/>
-            <Property Name="Width" Value="150"/>
-            <Property Name="Text" Value="Defend"/>
-          </Properties>
-        </Control>
-        <Control Name="holdBtn" Class="Button">
-          <Properties>
-            <Property Name="Left" Value="25"/>
-            <Property Name="Top" Value="100"/>
-            <Property Name="Width" Value="150"/>
-            <Property Name="Text" Value="Hold"/>
-          </Properties>
-        </Control>
-      </Controls>
+      </Properties>      
     </Control>
   </Controls>
 </Layout>

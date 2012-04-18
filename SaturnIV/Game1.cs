@@ -265,7 +265,7 @@ namespace SaturnIV
             starField.LoadStarFieldAssets(this);
             loadSystems();
             switchSystem(0);
-            nfClass.LoadCommandWindow(manager);
+            nfClass.LoadCommandWindow(manager,ref activeShipList);
             nfClass.constructionWindow(ref shipDefList, manager);
         }
 
@@ -316,7 +316,6 @@ namespace SaturnIV
             currentTime = gameTime.TotalGameTime.TotalMilliseconds;
             processInput(gameTime);            
             cameraTarget = Matrix.CreateWorld(cameraTargetVec3, Vector3.Forward, Vector3.Up);
-
             if (isEditMode)
             {
                 ourCamera.ResetCamera();
@@ -929,7 +928,8 @@ namespace SaturnIV
                 }
                 else
                 {
-                    o.isSelected = false;
+                    if (!nfClass.commandWindow.Visible)
+                        o.isSelected = false;
                 }
             }
             foreach (planetStruct o in planetManager.planetList)
@@ -970,7 +970,7 @@ namespace SaturnIV
                 return Vector3.Zero;
             }
         }
-
+        
         public void debug(newShipStruct npcship)
         {
             fLine.Draw(npcship.modelPosition, npcship.targetPosition, Color.Blue, ourCamera.viewMatrix, ourCamera.projectionMatrix);
