@@ -13,9 +13,10 @@ namespace SaturnIV
     {
         ListBox buildListBox;
         public Window commandWindow;
-        public Window leftPanelWindow;
+        public Window commandPanel;
+   
         // Create our buttons.
-        Button engageBtn, patrolBtn, holdBtn, cancelBtn;
+        Button engageBtn, patrolBtn, holdBtn, cancelBtn, exitBtn;
         List<newShipStruct> activeShipList = new List<newShipStruct>();
                     
         public TomShane.Neoforce.Controls.Console consoleLogWindow;
@@ -28,40 +29,62 @@ namespace SaturnIV
             commandWindow.Resizable = false;
             commandWindow.CloseButtonVisible = false;
             commandWindow.Text = "Command Window";
-            commandWindow.BackColor = Color.Blue;
+            commandWindow.Color = Color.Blue;
+            commandWindow.Alpha = 128;
+            /// Define ship Command Panel
+            /// 
+            commandPanel = new Window(manager);
+            commandPanel.Text = "Orders Window";
+            commandPanel.Visible = false;
+            commandPanel.Resizable = false;
+            commandPanel.CloseButtonVisible = false;
+            commandPanel.Color = Color.Blue;
+            commandPanel.Top = 200;
+            commandPanel.Left = 1025;
+            commandPanel.Width = 205;
+            commandPanel.Height = 175;
+            /// Define Buttons
+            /// 
             engageBtn = new Button(manager);
             engageBtn.Top = 25;
             engageBtn.Left = 25;
             engageBtn.Width = 150;
             engageBtn.Text = "Engage";
-            engageBtn.Parent = commandWindow;
+            engageBtn.Parent = commandPanel;
             patrolBtn = new Button(manager);
             patrolBtn.Top = 50;
             patrolBtn.Left = 25;
             patrolBtn.Width = 150;
             patrolBtn.Text = "Patrol";
-            patrolBtn.Parent = commandWindow;
+            patrolBtn.Parent = commandPanel;
             holdBtn = new Button(manager);
             holdBtn.Top = 75;
             holdBtn.Left = 25;
             holdBtn.Width = 150;
             holdBtn.Text = "Hold Position";
-            holdBtn.Parent = commandWindow;
+            holdBtn.Parent = commandPanel;
             cancelBtn = new Button(manager);
             cancelBtn.Top = 100;
             cancelBtn.Left = 25;
             cancelBtn.Width = 150;
             cancelBtn.Text = "Cancel";
-            cancelBtn.Parent = commandWindow;
+            cancelBtn.Parent = commandPanel;
+            ///Hook Button to Events
+            ///
             patrolBtn.Click += patrolBtn_Click;
             engageBtn.Click += engageBtn_Click;
             holdBtn.Click += holdBtn_Click;
-            cancelBtn.Click += cancelBtn_Click;
+            cancelBtn.Click += cancelBtn_Click;           
+            manager.Add(commandPanel);
 
-            manager.Add(commandWindow);
-            //manager.Add(leftPanelWindow);
-            //consoleLogWindow = new TomShane.Neoforce.Controls.Console(manager);
-            //manager.Add(consoleLogWindow);
+            /// Define main Buttons
+            /// 
+            exitBtn = new Button(manager);
+            exitBtn.Top = 925;
+            exitBtn.Left = 225;
+            exitBtn.Width = 125;
+            exitBtn.Text = "Exit";
+            manager.Add(exitBtn);
         }
 
         #region Button Handlers
@@ -72,12 +95,11 @@ namespace SaturnIV
             {
                 if (tShip.isSelected)
                 {
-
                     MessageClass.messageLog.Add("" + tShip.objectAlias); 
                     tShip.currentDisposition = disposition.engaging;
                 }
             }
-            commandWindow.Visible = false;
+            commandPanel.Visible = false;
         }
 
         void patrolBtn_Click(object sender, EventArgs e)
@@ -91,7 +113,7 @@ namespace SaturnIV
                     tShip.currentDisposition = disposition.engaging;
                 }
             }
-            commandWindow.Visible = false;
+            commandPanel.Visible = false;
         }
 
         void holdBtn_Click(object sender, EventArgs e)
@@ -105,12 +127,12 @@ namespace SaturnIV
                     tShip.currentDisposition = disposition.idle;
                 }
             }
-            commandWindow.Visible = false;
+            commandPanel.Visible = false;
         }
 
         void cancelBtn_Click(object sender, EventArgs e)
-        {           
-            commandWindow.Visible = false;
+        {
+            commandPanel.Visible = false;
         }
         #endregion
 

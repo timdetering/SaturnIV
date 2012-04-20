@@ -20,11 +20,11 @@ namespace SaturnIV
         double currentTime;
         float buildTime = 1000;
 
-        public void addBuild(int sType, string sName, Vector3 sPos)
+        public void addBuild(int sType, string sName, Vector3 sPos, int side)
         {
             buildItem buildThis = new buildItem();
             buildThis.buildState = BuildStates.started;
-            buildThis.pos = sPos; buildThis.name = sName; buildThis.shipType = sType; 
+            buildThis.pos = sPos; buildThis.name = sName; buildThis.shipType = sType; buildThis.side = side;
             MessageClass.messageLog.Add("Adding New Ship to Foundry Build Queue");
             buildQueueList.Add(buildThis);
         }
@@ -44,9 +44,9 @@ namespace SaturnIV
                     if (buildQueueList.First().percentComplete > 99)
                     {
                         newShipStruct newShip = EditModeComponent.spawnNPC(cTime, buildQueueList.First().pos, ref shipDefList,
-                                           buildQueueList.First().name, buildQueueList.First().shipType, 0, false);
-                        newShip.wayPointPosition = buildQueueList.First().pos * 1000;
-                        newShip.currentDisposition = disposition.moving;
+                                           buildQueueList.First().name, buildQueueList.First().shipType, buildQueueList.First().side, false);
+                        newShip.wayPointPosition = buildQueueList.First().pos * 75;
+                        newShip.currentDisposition = disposition.patrol;
                         activeShipList.Add(newShip);
                         buildQueueList.Remove(buildQueueList.First());
                         tConstructor.currentDisposition = disposition.moving;

@@ -74,7 +74,7 @@ namespace SaturnIV
             }
             for (int i = 0; i < tmpList.Count; i++)
             {
-                if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange * 10)
+                if (Vector3.Distance(thisShip.modelPosition, tmpList[i].modelPosition) > thisShip.maxDetectRange)
                         tmpList.Remove(tmpList[i]);
             }
             /// Find closet target

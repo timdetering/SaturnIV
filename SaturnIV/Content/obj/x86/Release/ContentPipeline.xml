@@ -719,7 +719,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\bluetranscircle.xnb</Output>
-      <Time>2012-04-01T19:05:29.0968309-05:00</Time>
+      <Time>2012-04-18T19:58:54.5945623-05:00</Time>
     </Item>
     <Item>
       <Source>Models\tacmap_items\building_circle.png</Source>
@@ -1145,10 +1145,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\orbital_turret.xnb</Output>
-      <Time>2012-03-29T21:08:41.2105421-05:00</Time>
+      <Time>2012-04-18T19:56:34.475548-05:00</Time>
       <Dependency>
         <Key>obj\x86\Release\Models\Ships\turret_2\orbital_turret_0.xml</Key>
-        <Value>2012-04-16T19:16:13.4394699-05:00</Value>
+        <Value>2012-04-18T19:56:37.7477351-05:00</Value>
       </Dependency>
       <Request>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\Ships\turret_2\color_0.xnb</Request>
     </Item>
@@ -1553,7 +1553,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Release\Models\Ships\turret_2\orbital_turret_0.xml</Output>
-      <Time>2012-03-29T21:08:41.2105421-05:00</Time>
+      <Time>2012-04-18T19:56:34.475548-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\turret_2\color.jpg</Source>

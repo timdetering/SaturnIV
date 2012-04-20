@@ -379,6 +379,7 @@ namespace SaturnIV
             public Vector3 pos;
             public string name;
             public int shipType;
+            public int side;
             public double startTime;
             public float percentComplete;
         }

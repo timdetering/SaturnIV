@@ -29,7 +29,9 @@ namespace SaturnIV
                 if (tmpList.Count() < 5 && useThisShip.buildManager.buildQueueList.Count() < 2)
                 {
                     newShipStruct tempShip = new newShipStruct();
-                    useThisShip.buildManager.addBuild(3, "new ship", HelperClass.RandomPosition(10000, 10000));
+                    Vector3 buildPosition = findPlanet(ref cSystem).planetPosition;
+                    buildPosition.Y = 0;
+                    useThisShip.buildManager.addBuild(3, "new ship", buildPosition + new Vector3(100,0,200), thisTeam);
                 }
             }
         }
@@ -43,11 +45,13 @@ namespace SaturnIV
             return null;
         }
 
-        private newShipStruct findPlanet(ref systemStruct cSystem)
+        private planetStruct findPlanet(ref systemStruct cSystem)
         {
             /// Find a Constrcutor
             foreach (planetStruct tPlanet in cSystem.pManager.planetList)
             {
+                if (tPlanet.isControlled > 0)
+                    return tPlanet;
             }
             return null;
         }

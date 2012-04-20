@@ -183,7 +183,7 @@ namespace SaturnIV
                             if (tShip.isBuilding && tShip.buildManager != null)                             
                            {
                                 newShipStruct tempShip = new newShipStruct();
-                                tShip.buildManager.addBuild(thisShip, "new ship", pos);
+                                tShip.buildManager.addBuild(thisShip, "new ship", pos, 0);
                                 isSelected = true;
                                 isPlaced = false;                        
                            }
@@ -227,17 +227,7 @@ namespace SaturnIV
                 }
             }            
         }
-
-        public void drawMainMenu(SpriteBatch mBatch, SpriteFont spriteFont, int tethAmnt, int amAmnt)
-        {
-            StringBuilder messageBuffer = new StringBuilder();
-            messageBuffer = new StringBuilder();
-            mBatch.Draw(bottomMenubarTex, mainMenuPos, Color.White);
-            mBatch.Draw(resourceIconTex, resourceAreaRectange, Color.White);
-            mBatch.DrawString(spriteFont, tethAmnt.ToString(), new Vector2(resourceAreaRectange.X, resourceAreaRectange.Y), Color.White);
-            mBatch.DrawString(spriteFont, amAmnt.ToString(), new Vector2(resourceAreaRectange.X+ 48, resourceAreaRectange.Y), Color.White);            
-        }
-
+       
         public void drawBuildGUI(SpriteBatch mBatch,SpriteFont spriteFont, BuildManager buildManager)
         {            
             StringBuilder messageBuffer = new StringBuilder();

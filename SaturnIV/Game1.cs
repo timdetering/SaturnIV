@@ -338,7 +338,7 @@ namespace SaturnIV
                 else
                 {
                     aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList, currentTime);
-                    CameraNew.offsetDistance = new Vector3(0, 1200, 1);
+                    CameraNew.offsetDistance = new Vector3(0, 600, 1);
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
                     updateObjects(gameTime);
@@ -786,12 +786,12 @@ namespace SaturnIV
             spriteBatch.Draw(selectRecTex, r, Color.White);
             if (menuAction == MenuActions.build) aMenu.drawBuildGUI(spriteBatch, medFont, buildManager);
             if (displayOrderMenu) aMenu.drawActionGUI(spriteBatch, medFont, ref activeShipList);
-            if (!isEditMode) aMenu.drawMainMenu(spriteBatch, medFont,playerTethAmount, playerAMAmount);
+            
             spriteBatch.Draw(mouseTex, new Vector2(mouseStateCurrent.X, mouseStateCurrent.Y), Color.White);
             spriteBatch.End();
             if (drawTextbox && ControlPanelClass.textBoxActions == TextBoxActions.SaveScenario)
                 cPanel.drawTextbox(spriteBatch, "Scenario: ", new Vector2(screenX / 2 - 50, screenY / 2 - 50),
-                activeShipList, serializerClass,300,50);            
+                activeShipList, serializerClass, 300, 50);            
             base.Draw(gameTime);
         }
 
@@ -817,9 +817,12 @@ namespace SaturnIV
                     //radiusFactor = 10;
                     //whatTexture = sphereofcontrol;
                 }
-                if (npcship.isSelected || npcship.currentDisposition == disposition.mining || npcship.currentDisposition == disposition.building)
+                if (npcship.isSelected || npcship.currentDisposition == disposition.mining || npcship.currentDisposition == disposition.building || npcship.team > 0)
                     drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up,
-                        npcship.maxDetectRange, npcship.maxDetectRange), whatTexture, npcship.modelPosition);
+                        npcship.maxDetectRange/2, npcship.maxDetectRange/2), whatTexture, npcship.modelPosition);
+                else
+                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up,
+                        npcship.modelLen, npcship.modelLen), transCircleGreen, npcship.modelPosition);
                 //if (npcship.isSelected)
                 //    BoundingSphereRenderer.Render3dCircle(npcship.modelPosition, npcship.maxDetectRange / 2, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.OrangeRed);
             }
@@ -923,12 +926,12 @@ namespace SaturnIV
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
-                    nfClass.commandWindow.Visible = true;                    
+                    nfClass.commandPanel.Visible = true;                    
                     o.isSelected = true;                
                 }
                 else
                 {
-                    if (!nfClass.commandWindow.Visible)
+                    if (!nfClass.commandPanel.Visible)
                         o.isSelected = false;
                 }
             }
