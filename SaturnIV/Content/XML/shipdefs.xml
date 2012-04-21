@@ -19,7 +19,7 @@
       <ShipClass>Platform</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
       <HullFactor>0.35</HullFactor>
-      <hullValue>500</hullValue>
+      <hullValue>250</hullValue>
       <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
@@ -37,17 +37,7 @@
           <FiringEnvelopeAngle>5</FiringEnvelopeAngle>
           <weaponRange>10000</weaponRange>
           <timer>0</timer>
-        </Item>
-        <Item>
-          <weaponType>LargeIon</weaponType>
-          <ModulePositionOnShip>
-            0 0 0 0
-            0 0 0 0
-          </ModulePositionOnShip>
-          <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-          <weaponRange>16000</weaponRange>
-          <timer>0</timer>
-        </Item>
+        </Item>        
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>
     </Item>

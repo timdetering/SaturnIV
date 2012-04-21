@@ -223,7 +223,7 @@ namespace SaturnIV
         public void ConfigureGraphicsManager()
         {
             screenX = 1280;
-            screenY = 1024;
+            screenY = 1080;
             graphics.PreferredBackBufferWidth = screenX;
             graphics.PreferredBackBufferHeight = screenY;
             screenCenterX = screenX / 2;
