@@ -19,8 +19,8 @@
       <ShipClass>Platform</ShipClass>
       <ShieldFactor>0.24</ShieldFactor>
       <HullFactor>0.35</HullFactor>
-      <hullValue>3600</hullValue>
-      <shieldValue>400</shieldValue>
+      <hullValue>500</hullValue>
+      <shieldValue>0</shieldValue>
       <ShieldRegenTime>100</ShieldRegenTime>
       <EvadeDist>5000 1000 4000 2000 1000 1000 100 100 100 100 100 500</EvadeDist>
       <TargetPrefs>0.9 0.5 0.4 0.8 0.2 0.6 0 0 0 0 0</TargetPrefs>
@@ -45,7 +45,7 @@
             0 0 0 0
           </ModulePositionOnShip>
           <FiringEnvelopeAngle>10</FiringEnvelopeAngle>
-          <weaponRange>9000</weaponRange>
+          <weaponRange>16000</weaponRange>
           <timer>0</timer>
         </Item>
       </AvailableWeapons>
@@ -98,9 +98,6 @@
             0 0 0 2
             0 0 0 0
             0 0 0 0
-            0 0 0 0
-            0 0 0 1
-            0 0 0 1
             0 0 0 2
             0 0 0 2
             0 0 0 2
@@ -200,7 +197,7 @@
       0 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>3400</weaponRange>
+	<weaponRange>14000</weaponRange>
 	<timer>0</timer>
       </Item>
       <Item>
@@ -210,7 +207,7 @@
 	   -4 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>2600</weaponRange>
+	<weaponRange>12000</weaponRange>
 	<timer>0</timer>
       </Item>
       </AvailableWeapons>

@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="124928">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="125440">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6gsII0i38nW0By7DGxNqQkDqjLE=</dsig:DigestValue>
+        <dsig:DigestValue>bBH425PehQTvaKpKaVCgNnGxVkY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1056,6 +1056,24 @@
       <dsig:DigestValue>9d2YG06k98A1BblnIo0TIqmM1aE=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\smlBlueTriangle.xnb" size="618">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>S9+G4cyC4uwIOiutu+C4pkud0jY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\smlRedTriangle.xnb" size="610">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>y09tJsg4C2gX7j6p9G5hJ8Nl+5M=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\tacmap_items\sphereofcontrol.xnb" size="12116">
     <hash>
       <dsig:Transforms>
@@ -1063,6 +1081,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>aBfhwkcrnWIktCtKwF/PfmZWfEM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Models\tacmap_items\targettriangle.xnb" size="15358">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>D9DhOmrdRG0b1U9YxxGvPVXyUuU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Models\tacmap_items\transplanegreen.xnb" size="28218">
@@ -1254,6 +1281,42 @@
       <dsig:DigestValue>/tMZVwATx3ywxE8xxfaLI3NeuQA=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\textures\icon_constructor.xnb" size="17404">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3MccQkex4qW+KE5twjbm7xjbYNU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\textures\icon_fighter.xnb" size="8354">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>U4yduTcSmcrrshuIdpmjRnTvOQY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\textures\icon_platform.xnb" size="8764">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+Sf1k9Cf0o7VGWpuXkn3sCB4qQA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\textures\icon_station.xnb" size="8994">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hOb9GEa8QGLpBgMFeZApCArz/Uo=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\textures\move_icon.xnb" size="1362">
     <hash>
       <dsig:Transforms>
@@ -1407,13 +1470,13 @@
       <dsig:DigestValue>uPG20euDhWPN3zi4cBkk0hHvIeQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="15730">
+  <file name="Content\XML\shipdefs.xml" size="15667">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>UFhJIbk9Ew4o6xShm7mQEdFp0Xs=</dsig:DigestValue>
+      <dsig:DigestValue>ijft/eFSf1EZCH5lJMtzv76Uv4w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\weapondefs.xml" size="4602">

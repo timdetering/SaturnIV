@@ -12,25 +12,17 @@ namespace SaturnIV
     class NFClass
     {
         ListBox buildListBox;
-        public Window commandWindow;
         public Window commandPanel;
+        public ImageBox testIcon;
    
         // Create our buttons.
         Button engageBtn, patrolBtn, holdBtn, cancelBtn, exitBtn;
         List<newShipStruct> activeShipList = new List<newShipStruct>();
                     
         public TomShane.Neoforce.Controls.Console consoleLogWindow;
-        public void LoadCommandWindow(Manager manager, ref List<newShipStruct> aShipList)
+        public void LoadCommandWindow(Game game, Manager manager, ref List<newShipStruct> aShipList)
         {
             activeShipList = aShipList;
-            manager.LayoutDirectory = "Content/Layouts";
-            commandWindow = (Window)Layout.Load(manager, "CommandWindow.xml");
-            commandWindow.Visible = false;
-            commandWindow.Resizable = false;
-            commandWindow.CloseButtonVisible = false;
-            commandWindow.Text = "Command Window";
-            commandWindow.Color = Color.Blue;
-            commandWindow.Alpha = 128;
             /// Define ship Command Panel
             /// 
             commandPanel = new Window(manager);
@@ -42,7 +34,8 @@ namespace SaturnIV
             commandPanel.Top = 200;
             commandPanel.Left = 1025;
             commandPanel.Width = 205;
-            commandPanel.Height = 175;
+            commandPanel.Height = 175;            
+
             /// Define Buttons
             /// 
             engageBtn = new Button(manager);
@@ -84,7 +77,7 @@ namespace SaturnIV
             exitBtn.Left = 225;
             exitBtn.Width = 125;
             exitBtn.Text = "Exit";
-            manager.Add(exitBtn);
+            //manager.Add(exitBtn);
         }
 
         #region Button Handlers

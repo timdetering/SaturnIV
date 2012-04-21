@@ -4,14 +4,14 @@
   <description asmv2:publisher="SaturnIV" asmv2:product="SaturnIV" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SaturnIV.exe.manifest" size="65740">
+    <dependentAssembly dependencyType="install" codebase="SaturnIV.exe.manifest" size="68536">
       <assemblyIdentity name="SaturnIV.exe" version="1.0.0.49" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qKMzfGq0wG4vAEMxZb2GOff99Po=</dsig:DigestValue>
+        <dsig:DigestValue>NtSZ957+8k4OLpfygSfBrM+gQXg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

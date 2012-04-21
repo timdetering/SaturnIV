@@ -812,6 +812,51 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\tacmap_items\targettriangle.png">
+      <Name>targettriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\smlRedTriangle.png">
+      <Name>smlRedTriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\smlBlueTriangle.png">
+      <Name>smlBlueTriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\icon_constructor.png">
+      <Name>icon_constructor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\icon_fighter.png">
+      <Name>icon_fighter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\icon_platform.png">
+      <Name>icon_platform</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\icon_station.png">
+      <Name>icon_station</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Models\Ships\cruiser_c2\" />
     <Folder Include="XML\Systems\" />
   </ItemGroup>

@@ -158,3 +158,10 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\TomShane.Neoforce.Controls.dll
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Skins\Green.skin
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Skins\Default.skin
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Layouts\CommandWindow.xml
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\targettriangle.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\smlRedTriangle.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\smlBlueTriangle.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_constructor.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_fighter.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_station.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_platform.xnb

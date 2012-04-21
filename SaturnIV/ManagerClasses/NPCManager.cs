@@ -175,7 +175,7 @@ namespace SaturnIV
             foreach (newShipStruct iShip in tmpList2)
             {
                 float distance = Vector3.Distance(thisShip.modelPosition, iShip.modelPosition);
-                if ((thisShip.currentDisposition != disposition.moving && thisShip.currentDisposition != disposition.defensive &&
+                if (!thisShip.canEngageMultipleTargets && (thisShip.currentDisposition != disposition.moving && thisShip.currentDisposition != disposition.defensive &&
                     (distance < thisShip.EvadeDist[(int)iShip.objectClass] * 2 && !thisShip.isEvading && thisShip.ChasePrefs[(int)iShip.objectClass] > 0)
                     || (thisShip.currentTarget != null && thisShip.angleOfAttack > 3.09 && distance < thisShip.EvadeDist[(int)iShip.objectClass])))
                 {

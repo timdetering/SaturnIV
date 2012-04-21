@@ -1717,6 +1717,69 @@
       <Output>obj\x86\Release\Models\asteroid_0.xml</Output>
       <Time>2012-04-07T21:39:52.0834368-05:00</Time>
     </Item>
+    <Item>
+      <Source>Models\tacmap_items\targettriangle.png</Source>
+      <Name>Models\tacmap_items\targettriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\targettriangle.xnb</Output>
+      <Time>2012-04-20T17:29:51.5491581-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\smlRedTriangle.png</Source>
+      <Name>Models\tacmap_items\smlRedTriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\smlRedTriangle.xnb</Output>
+      <Time>2012-04-20T17:51:09.0133678-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\smlBlueTriangle.png</Source>
+      <Name>Models\tacmap_items\smlBlueTriangle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\smlBlueTriangle.xnb</Output>
+      <Time>2012-04-20T17:51:46.6033552-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\icon_constructor.png</Source>
+      <Name>textures\icon_constructor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_constructor.xnb</Output>
+      <Time>2012-04-20T21:33:42.4673297-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\icon_fighter.png</Source>
+      <Name>textures\icon_fighter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_fighter.xnb</Output>
+      <Time>2012-04-20T21:33:42.4703298-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\icon_platform.png</Source>
+      <Name>textures\icon_platform</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_platform.xnb</Output>
+      <Time>2012-04-20T21:51:44.3072074-05:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\icon_station.png</Source>
+      <Name>textures\icon_station</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_station.xnb</Output>
+      <Time>2012-04-20T21:51:44.3102075-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

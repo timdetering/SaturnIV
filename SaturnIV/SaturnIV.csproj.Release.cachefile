@@ -26,6 +26,7 @@ Content\Fonts\MedFont.xnb
 Content\Models\Ships\fighter_m1\COLOR_6_0.xnb
 Content\MedFont.xnb
 Content\Models\Ships\transport_t1\blu_0.xnb
+Content\textures\icon_station.xnb
 Content\Models\cannon.xnb
 Content\spacescapes\spacescape_green.xnb
 Content\hud.xnb
@@ -46,6 +47,7 @@ Content\textures\planettexture2.xnb
 Content\Models\LaserBolt2.xnb
 Content\Models\Ships\fighter_m1\bump_6.xnb
 Content\Models\sphere.xnb
+Content\textures\icon_constructor.xnb
 Content\textures\dummy.xnb
 Content\Skins\Default.skin
 Content\textures\GUI\buildmenubg.xnb
@@ -54,6 +56,7 @@ Content\spacescapes\spacescape_blue.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_main_export[1]SPEC.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_export[1].xnb
 Content\textures\redDotSmall.xnb
+Content\textures\icon_platform.xnb
 Content\Models\tacmap_items\blue_small_plane.xnb
 Content\Models\Ships\ship_hull19_0.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiserkineticburstcannon_export[1]SPEC.xnb
@@ -98,6 +101,7 @@ Content\textures\GUI\mWindow.xnb
 Content\Models\tacmap_items\blue_large_plane.xnb
 Content\Models\Ships\bomber_b1\color.xnb
 Content\Models\tacmap_items\construct_menubox.xnb
+Content\Layouts\CommandWindow.xml
 Content\textures\fire.xnb
 Content\Models\Ships\station_t1\bump.xnb
 Content\Models\Ships\turret_2\color_0.xnb
@@ -117,10 +121,13 @@ Content\Models\tacmap_items\transplanegreen.xnb
 Content\Models\Lakerem_0.xnb
 Content\Models\Ships\station_t2\bump.xnb
 Content\textures\explosion.xnb
+Content\textures\icon_fighter.xnb
+Content\Models\tacmap_items\targettriangle.xnb
 Content\Models\km200.xTranslucent_Glass_Tinted_0.xnb
 Content\Models\Ships\ship_hull19.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[2]LUM.xnb
-Content\Layouts\CommandWindow.xml
+Content\Models\tacmap_items\smlBlueTriangle.xnb
+Content\Models\tacmap_items\smlRedTriangle.xnb
 Content\Models\Ships\eriax_lightbomber_legato\ship_5.xnb
 Content\Models\Ships\fighter_m2\fighter_1_bump.xnb
 Content\XML\listofnames.xml

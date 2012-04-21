@@ -53,8 +53,8 @@ namespace SaturnIV
         gameClient gClient;
         Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
-        Texture2D bluetranscircle, miningCircle, buildingCircle, shipInfoTex;
-        Texture2D constructionCircle, sphereofcontrol, redtranscircle;
+        Texture2D bluetranscircle, miningCircle, buildingCircle, shipInfoTex, smallRedTriangle, smallBlueTriangle;
+        Texture2D constructionCircle, sphereofcontrol, redtranscircle, orangeTriangleTex;
         Vector2 shipInfoPos = new Vector2(1000, 512);
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
@@ -181,7 +181,7 @@ namespace SaturnIV
             editModeClass.Initialize(modelManager);
             ourExplosion = new ExplosionClass();
             ourExplosion.initExplosionClass(this);
-            grid = new Grid(Vector3.Zero, 250000, 250000, 150, 150, this);
+            grid = new Grid(Vector3.Zero, 550000, 550000, 50, 50, this);
             Gui = new guiClass();
             fLine = new Line3D(GraphicsDevice);
             skySphere = new SkySphere(this);
@@ -260,12 +260,15 @@ namespace SaturnIV
             shipInfoTex = this.Content.Load<Texture2D>("Models/tacmap_items/shipinfobox");
             constructionCircle = this.Content.Load<Texture2D>("Models/tacmap_items/constructioncircle");
             sphereofcontrol = this.Content.Load<Texture2D>("Models/tacmap_items/sphereofcontrol");
+            orangeTriangleTex = this.Content.Load<Texture2D>("Models/tacmap_items/targettriangle");
+            smallRedTriangle = this.Content.Load<Texture2D>("Models/tacmap_items/smlRedTriangle");
+            smallBlueTriangle = this.Content.Load<Texture2D>("Models/tacmap_items/smlBlueTriangle");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
             loadSystems();
             switchSystem(0);
-            nfClass.LoadCommandWindow(manager,ref activeShipList);
+            nfClass.LoadCommandWindow(this, manager,ref activeShipList);
             nfClass.constructionWindow(ref shipDefList, manager);
         }
 
@@ -330,7 +333,8 @@ namespace SaturnIV
                 if (isTacmap)
                 {
                     aMenu.update(mouseStateCurrent, mouseStatePrevious, buildManager, isLclicked, mouse3dVector, menuAction, ref activeShipList, currentTime);
-                    CameraNew.offsetDistance = new Vector3(0, 5500, 1);
+                    CameraNew.offsetDistance = new Vector3(0, 6000, 1);
+                    CameraNew.zoomFactor = 75;
                     CameraNew.currentCameraMode = CameraNew.CameraMode.orbit;
                     ourCamera.Update(cameraTarget, isEditMode);
                     updateObjects(gameTime);
@@ -675,21 +679,23 @@ namespace SaturnIV
                     }
             /// Pan Camera
             /// 
+                    float panSpeed = 45;
+                    if (isTacmap) panSpeed = 90;
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    cameraTargetVec3.X += -45f * CameraNew.zoomFactor / 2;
+                    cameraTargetVec3.X += -panSpeed * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    cameraTargetVec3.X += 45f * CameraNew.zoomFactor / 2;
+                    cameraTargetVec3.X += panSpeed * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    cameraTargetVec3.Z += 45f * CameraNew.zoomFactor / 2;
+                    cameraTargetVec3.Z += panSpeed * CameraNew.zoomFactor / 2;
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    cameraTargetVec3.Z += -45f * CameraNew.zoomFactor /2;
+                    cameraTargetVec3.Z += -panSpeed * CameraNew.zoomFactor / 2;
                 }
 
                 if (keyboardState.IsKeyDown(Keys.F1) &&
@@ -806,25 +812,33 @@ namespace SaturnIV
                 spriteBatch.End();
                 Texture2D whatTexture = bluetranscircle;
                 if (npcship.team > 0)
-                    whatTexture = redtranscircle;
+                    whatTexture = orangeTriangleTex;
+                if (npcship.isSelected)
+                    whatTexture = transCircleGreen;
                 if (npcship.currentDisposition == disposition.mining) whatTexture = miningCircle;
                 if (npcship.currentDisposition == disposition.building) whatTexture = buildingCircle;
                 Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
-                float radiusFactor = 2;
-                
+                float radiusFactor = 2;               
                 if (npcship.isBuilding && (npcship.objectClass == ClassesEnum.Station || npcship.objectClass == ClassesEnum.Constructor))
                 {
                     //radiusFactor = 10;
                     //whatTexture = sphereofcontrol;
                 }
-                if (npcship.isSelected || npcship.currentDisposition == disposition.mining || npcship.currentDisposition == disposition.building || npcship.team > 0)
                     drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up,
-                        npcship.maxDetectRange/2, npcship.maxDetectRange/2), whatTexture, npcship.modelPosition);
-                else
-                    drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up,
-                        npcship.modelLen, npcship.modelLen), transCircleGreen, npcship.modelPosition);
-                //if (npcship.isSelected)
-                //    BoundingSphereRenderer.Render3dCircle(npcship.modelPosition, npcship.maxDetectRange / 2, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.OrangeRed);
+                        npcship.modelLen * radiusFactor, npcship.modelLen * radiusFactor), whatTexture, npcship.modelPosition);                    
+                if (isTacmap)
+                {
+                    spriteBatch.Begin();
+                    if (npcship.team == 0)
+                        spriteBatch.Draw(smallBlueTriangle, new Rectangle((int)npcship.screenCords.X - 12, (int)npcship.screenCords.Y - 12, 24, 24), Color.White);
+                    else
+                        spriteBatch.Draw(smallRedTriangle, new Rectangle((int)npcship.screenCords.X - 12, (int)npcship.screenCords.Y - 12, 24, 24), Color.White);
+                    spriteBatch.End();
+                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 50000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
+                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 100000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.YellowGreen);
+                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 150000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.GreenYellow);
+                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 200000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+                }
             }
 
             if (aMenu.isPlacing)
@@ -902,7 +916,8 @@ namespace SaturnIV
                                     (screenX / 6) - 150, screenCenterY + (screenY / 3)), Color.White);
             messageBuffer = new StringBuilder();
             spriteBatch.DrawString(spriteFont, messageBuffer.ToString(), systemMessagePos, Color.Yellow);
-            //spriteBatch.Draw(centerHUD, new Vector2(screenCenterX - 149, screenCenterY - 155), Color.Wheat);            
+            if (isTacmap)
+                spriteBatch.Draw(orangeTarget, new Rectangle((int)screenCenterX - 48, (int)screenCenterY - 48,96, 96), Color.White);            
             spriteBatch.End();
         }
 
