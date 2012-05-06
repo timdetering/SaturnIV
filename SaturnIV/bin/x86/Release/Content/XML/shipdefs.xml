@@ -180,25 +180,24 @@
     <isStationary>false</isStationary>
       <AvailableWeapons>
       <Item>
-	 <weaponType>SRM</weaponType>
+	 <weaponType>AutoCannon</weaponType>
 	 <ModulePositionOnShip>
 	    0 0 0 0
       0 0 0 0
-      0 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>14000</weaponRange>
-	<timer>0</timer>
-      </Item>
-      <Item>
-	 <weaponType>AutoCannon</weaponType>
+	 <weaponRange>14000</weaponRange>
+	 <timer>0</timer>
+   </Item>
+   <Item>
+	 <weaponType>SRMH</weaponType>
 	 <ModulePositionOnShip>
 	    4 0 0 0
 	   -4 0 0 0
 	 </ModulePositionOnShip>
 	 <FiringEnvelopeAngle>15</FiringEnvelopeAngle>
-	<weaponRange>12000</weaponRange>
-	<timer>0</timer>
+	 <weaponRange>12000</weaponRange>
+	 <timer>0</timer>
       </Item>
       </AvailableWeapons>
       <ThrusterPosition>0 0 0 </ThrusterPosition>

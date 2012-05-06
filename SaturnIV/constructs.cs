@@ -96,6 +96,8 @@ namespace SaturnIV
         public disposition npcDisposition;
         public Vector3 targetPosition;
         public Vector3 wayPointPosition;
+        public Vector3 wayPointPosition2;
+        public Vector3 wayPointPositionStart;
         public newShipStruct currentTarget;
         public disposition currentDisposition;
         public Model shipModel;

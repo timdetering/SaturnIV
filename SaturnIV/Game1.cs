@@ -54,7 +54,7 @@ namespace SaturnIV
         Texture2D rectTex, selectRecTex, dummyTex, planetTexture;
         Texture2D transCircleGreen, orangeTarget, mouseTex, planetInfoTex;
         Texture2D bluetranscircle, miningCircle, buildingCircle, shipInfoTex, smallRedTriangle, smallBlueTriangle;
-        Texture2D constructionCircle, sphereofcontrol, redtranscircle, orangeTriangleTex;
+        Texture2D constructionCircle, sphereofcontrol, redtranscircle, orangeTriangleTex, systemTexture;
         Vector2 shipInfoPos = new Vector2(1000, 512);
         MessageClass messageClass;
         public Vector2 systemMessagePos = new Vector2(55, 30);
@@ -263,6 +263,7 @@ namespace SaturnIV
             orangeTriangleTex = this.Content.Load<Texture2D>("Models/tacmap_items/targettriangle");
             smallRedTriangle = this.Content.Load<Texture2D>("Models/tacmap_items/smlRedTriangle");
             smallBlueTriangle = this.Content.Load<Texture2D>("Models/tacmap_items/smlBlueTriangle");
+            systemTexture = this.Content.Load<Texture2D>("Models/tacmap_items/system_texture");
             aMenu.initalize(this, ref shipDefList);
             skySphere.LoadSkySphere(this);
             starField.LoadStarFieldAssets(this);
@@ -756,7 +757,7 @@ namespace SaturnIV
             float time = (float)gameTime.TotalGameTime.TotalMilliseconds / 100.0f;            
             graphics.GraphicsDevice.Clear(Color.Black);
             manager.Draw(gameTime);
-            Texture2D target = manager.RenderTarget.GetTexture();
+            //Texture2D target = manager.RenderTarget.GetTexture();
             /// Draw system Map if systemMap mode is selected!
             skySphere.DrawSkySphere(this, ourCamera);
             starField.DrawStars(this, ourCamera);            
@@ -769,7 +770,7 @@ namespace SaturnIV
             DrawHUDTargets(gameTime);
             messageClass.sendSystemMsg(spriteFont, spriteBatch, null, systemMessagePos);
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend);
-            spriteBatch.Draw(target, Vector2.Zero, Color.White);
+            //spriteBatch.Draw(target, Vector2.Zero, Color.White);
             spriteBatch.End();
             spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.Deferred, SaveStateMode.SaveState);
             if (isEditMode) editModeClass.Draw(gameTime, ref activeShipList, ourCamera, spriteBatch, drawQuad,quadEffect,quadVertexDecl,transCircleGreen);
@@ -834,10 +835,10 @@ namespace SaturnIV
                     else
                         spriteBatch.Draw(smallRedTriangle, new Rectangle((int)npcship.screenCords.X - 12, (int)npcship.screenCords.Y - 12, 24, 24), Color.White);
                     spriteBatch.End();
-                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 50000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
-                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 100000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.YellowGreen);
-                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 150000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.GreenYellow);
-                    BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 200000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
+                    //BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 50000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Yellow);
+                    //BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 100000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.YellowGreen);
+                    //BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 150000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.GreenYellow);
+                    //BoundingSphereRenderer.Render3dCircle(Vector3.Zero, 200000, GraphicsDevice, ourCamera.viewMatrix, ourCamera.projectionMatrix, Color.Green);
                 }
             }
 
@@ -859,7 +860,7 @@ namespace SaturnIV
                 if (tShip.buildManager != null)
                 foreach (buildItem bItem in tShip.buildManager.buildQueueList)
                 {
-                    Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
+                    //Quad tacPlaneQuad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 5000, 5000);
                     drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 750 * 2
                                     , 750 * 2), constructionCircle, bItem.pos);
                     messageBuffer = new StringBuilder();
@@ -871,6 +872,9 @@ namespace SaturnIV
             shipMenuClass.DrawShipInfoMenu(spriteBatch, spriteFont, ref activeShipList);
             DrawHUD(gameTime);
             DrawPlanets();
+            Quad tacPlaneQuad1 = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 15000, 15000);
+            drawQuad.DrawQuad(quadVertexDecl, quadEffect, ourCamera.viewMatrix, ourCamera.projectionMatrix, new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 500000
+                            ,500000), systemTexture, Vector3.Zero);
         }
 
         private void DrawPlanets()

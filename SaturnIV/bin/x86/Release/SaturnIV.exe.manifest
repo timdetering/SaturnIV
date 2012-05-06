@@ -70,14 +70,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="125440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SaturnIV.exe" size="125952">
       <assemblyIdentity name="SaturnIV" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oWnezLh0JTcJr9u6TfVEucnLkyg=</dsig:DigestValue>
+        <dsig:DigestValue>sNlyfqqHUqgXmcNa42fqK2VSLSI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1083,6 +1083,15 @@
       <dsig:DigestValue>aBfhwkcrnWIktCtKwF/PfmZWfEM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Models\tacmap_items\system_texture.xnb" size="51168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>h32PTora6v3VJ2IHpeGunNfMvLs=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Models\tacmap_items\targettriangle.xnb" size="15358">
     <hash>
       <dsig:Transforms>
@@ -1128,6 +1137,15 @@
       <dsig:DigestValue>K63q1OoJIdpov3vIRSxNeGfBiwQ=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\spacescapes\gold_spacescape.xnb" size="9743242">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>seqCp6Xj7b/+VbUq3oJRwdEw7wI=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\spacescapes\pink_complex.xnb" size="2973054">
     <hash>
       <dsig:Transforms>
@@ -1135,6 +1153,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>e19WvnSa5VLmepG9SxKFe9t0e1E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\spacescapes\purple_spacescape.xnb" size="7843638">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GPNpnG/OcUOojAH6SD5xdsYZQp0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\spacescapes\spacescape_blue.xnb" size="3629912">
@@ -1153,6 +1180,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>6rF3ZjRgwmB81EjW3DEaC9mMKOw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\spacescapes\yellow_spacescape.xnb" size="9391082">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8AOBgngLxGJR+tOta3XGBDwSLiQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\textures\blackDotLarge.xnb" size="516">
@@ -1452,13 +1488,13 @@
       <dsig:DigestValue>sSn+w0GhveYuojv/Jl20Bavyw9U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\Scenarios\main_scene.xml" size="3840">
+  <file name="Content\XML\Scenarios\main_scene.xml" size="4776">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>f/s2a764wBEXkPUbGZ6Hef22X9E=</dsig:DigestValue>
+      <dsig:DigestValue>tj8FcFpxr8BAUkKQld0V9VGyK8Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\XML\Scenarios\planetdefense.xml" size="3687">
@@ -1470,22 +1506,22 @@
       <dsig:DigestValue>uPG20euDhWPN3zi4cBkk0hHvIeQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\shipdefs.xml" size="15357">
+  <file name="Content\XML\shipdefs.xml" size="15341">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>qgCUINBsaNHwqFOPSdEG4k9hxFk=</dsig:DigestValue>
+      <dsig:DigestValue>U245PgbG6gZqz13AEyN53+W+TvI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\XML\weapondefs.xml" size="4603">
+  <file name="Content\XML\weapondefs.xml" size="4606">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xw7imAqHoAwySk+GF1TKO40b/hA=</dsig:DigestValue>
+      <dsig:DigestValue>ownuTVkX6Ionx6nrQchpjCM23GQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Game.ico" size="4286">

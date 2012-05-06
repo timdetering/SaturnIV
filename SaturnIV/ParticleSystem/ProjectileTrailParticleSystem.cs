@@ -37,13 +37,13 @@ namespace SaturnIV
         {            
             settings.TextureName = "textures//smoke";
 
-            settings.MaxParticles = 600;
+            settings.MaxParticles = 3000;
 
-            settings.Duration = TimeSpan.FromSeconds(2.0);
+            settings.Duration = TimeSpan.FromSeconds(0.50);
 
             settings.DurationRandomness = 0.5f;
 
-            settings.EmitterVelocitySensitivity = 0.2f;
+            settings.EmitterVelocitySensitivity = 0.6f;
 
             settings.MinHorizontalVelocity = 20;
             settings.MaxHorizontalVelocity = 31;
@@ -52,7 +52,7 @@ namespace SaturnIV
             settings.MaxVerticalVelocity = 2;
 
             settings.MinColor = Color.White;
-            settings.MaxColor = Color.Blue;
+            settings.MaxColor = Color.Orange;
 
             settings.MinRotateSpeed = 4;
             settings.MaxRotateSpeed = 6;

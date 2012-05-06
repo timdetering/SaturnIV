@@ -165,3 +165,7 @@ C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_construc
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_fighter.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_station.xnb
 C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_platform.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\purple_spacescape.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\gold_spacescape.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\yellow_spacescape.xnb
+C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\system_texture.xnb

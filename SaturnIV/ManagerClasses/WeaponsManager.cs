@@ -40,7 +40,7 @@ namespace SaturnIV
         /// <summary>
         /// Velocity scalar to approximate drag.
         /// </summary>
-        private const float DragFactor = 0.99f;
+        private const float DragFactor = 0.97f;
 
         public static void set_mesh(ModelMesh mesh, GraphicsDevice device)
         {

@@ -145,6 +145,10 @@ Content\textures\icon_constructor.xnb
 Content\textures\icon_fighter.xnb
 Content\textures\icon_platform.xnb
 Content\textures\icon_station.xnb
+Content\spacescapes\purple_spacescape.xnb
+Content\spacescapes\gold_spacescape.xnb
+Content\spacescapes\yellow_spacescape.xnb
+Content\Models\tacmap_items\system_texture.xnb
 Content\XML\listofnames.xml
 Content\XML\shipdefs.xml
 Content\XML\weapondefs.xml

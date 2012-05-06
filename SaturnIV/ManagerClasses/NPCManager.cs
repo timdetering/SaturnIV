@@ -116,7 +116,7 @@ namespace SaturnIV
                     thisShip.currentTarget.isAlreadyEngaged = true;
                     thisShip.currentTargetLevel = thisShip.TargetPrefs[(int)thisShip.currentTarget.objectClass];
                 }
-                if (thisShip.currentDisposition == disposition.patrol)
+                if (thisShip.currentDisposition == disposition.patrol && thisShip.objectClass != ClassesEnum.Transport)
                     thisShip.currentDisposition = disposition.engaging;
             }
             /// Even if already engaged roll the dice to see if ship changes to another or better target
@@ -198,13 +198,21 @@ namespace SaturnIV
                 }
             /// End Evade Routine
             ///      
-                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 100)))
+                if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition, 100))
+                    || thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition2, 100)))
                 {
                     thisShip.currentTarget = null;
                     //thisShip.wayPointPosition = Vector3.Zero;
                     thisShip.currentTargetLevel = 0;
                     thisShip.currentDisposition = disposition.idle;
-
+                    if (thisShip.wayPointPosition2 != Vector3.Zero)
+                    {
+                        if (thisShip.modelBoundingSphere.Intersects(new BoundingSphere(thisShip.wayPointPosition2, 100)))
+                            thisShip.wayPointPosition = thisShip.wayPointPositionStart;
+                        else
+                            thisShip.wayPointPosition = thisShip.wayPointPosition2;
+                        thisShip.currentDisposition = disposition.moving;
+                    }
                 }
                     //else
                     //    thisShip.currentDisposition = disposition.engaging;

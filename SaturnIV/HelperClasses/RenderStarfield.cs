@@ -82,7 +82,7 @@ namespace SaturnIV
                 game.Content.Load<Texture2D>("textures/star"));
             vertexPosColDecl = new VertexDeclaration(game.GraphicsDevice,
                 VertexPositionColor.VertexElements);
-            generateStarField(game, 2000);
+            generateStarField(game, 500);
         }
 
          private VertexPositionTexture[] SetUpFullscreenVertices()

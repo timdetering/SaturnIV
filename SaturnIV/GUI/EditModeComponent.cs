@@ -237,6 +237,8 @@ namespace SaturnIV
                 tempData.userOverride = true;
                 tempData.currentDisposition = disposition.defensive;
             }
+            if (tempData.objectClass == ClassesEnum.Transport)            
+                tempData.currentDisposition = disposition.moving;            
             tempData.currentTarget = null;
             if (tempData.objectClass == ClassesEnum.Crusier || shipDefList[shipIndex].isStationary)
                 tempData.canEngageMultipleTargets = true;

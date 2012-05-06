@@ -7,8 +7,26 @@
       <Item>
         <planetTextureFile>0</planetTextureFile>
         <planetRadius>20</planetRadius>
-        <planetPosition>55000 -12000 2000</planetPosition>
+        <planetPosition>155000 -12000 90000</planetPosition>
+        <isControlled>1</isControlled>
+        <planetName>Stark's Landing</planetName>
+        <aResource>Tethanium</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+      <Item>
+        <planetTextureFile>2</planetTextureFile>
+        <planetRadius>6</planetRadius>
+        <planetPosition>70000 -6000 -130000</planetPosition>
         <isControlled>0</isControlled>
+        <planetName>Vega</planetName>
+        <aResource>Metal</aResource>
+        <aResourceAmount>20000</aResourceAmount>
+      </Item>
+      <Item>
+        <planetTextureFile>0</planetTextureFile>
+        <planetRadius>20</planetRadius>
+        <planetPosition>55000 -12000 2000</planetPosition>
+        <isControlled>1</isControlled>
         <planetName>New Titan</planetName>
         <aResource>Tethanium</aResource>
         <aResourceAmount>20000</aResourceAmount>
@@ -99,6 +117,13 @@
         <shipIndex>2</shipIndex>
         <shipName>Adamant</shipName>
         <shipPosition>10000 0 -190000</shipPosition>
+        <shipDirection>0 0 0</shipDirection>
+        <side>1</side>
+      </Item>
+      <Item>
+        <shipIndex>4</shipIndex>
+        <shipName>Hermes</shipName>
+        <shipPosition>12000 0 -140000</shipPosition>
         <shipDirection>0 0 0</shipDirection>
         <side>1</side>
       </Item>

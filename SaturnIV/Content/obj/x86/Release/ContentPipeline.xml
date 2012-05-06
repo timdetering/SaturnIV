@@ -1590,7 +1590,7 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\color_0.xnb</Output>
-      <Time>2010-07-13T14:21:12.0149056-05:00</Time>
+      <Time>2012-03-31T13:13:32.4754681-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Ships\transport_t1\transport_t1.FBX</Source>
@@ -1779,6 +1779,42 @@
       <Options>None</Options>
       <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\textures\icon_station.xnb</Output>
       <Time>2012-04-20T21:51:44.3102075-05:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\purple_spacescape.dds</Source>
+      <Name>spacescapes\purple_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\purple_spacescape.xnb</Output>
+      <Time>2012-04-26T20:58:20.5612041-05:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\gold_spacescape.dds</Source>
+      <Name>spacescapes\gold_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\gold_spacescape.xnb</Output>
+      <Time>2012-04-26T21:08:04.596609-05:00</Time>
+    </Item>
+    <Item>
+      <Source>spacescapes\yellow_spacescape.dds</Source>
+      <Name>spacescapes\yellow_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\spacescapes\yellow_spacescape.xnb</Output>
+      <Time>2012-04-26T21:16:07.1102072-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\tacmap_items\system_texture.png</Source>
+      <Name>Models\tacmap_items\system_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bryan\Saturn-IV\SaturnIV\bin\x86\Release\Content\Models\tacmap_items\system_texture.xnb</Output>
+      <Time>2012-05-01T19:30:15.1998652-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

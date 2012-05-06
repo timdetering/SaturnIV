@@ -810,6 +810,21 @@
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="spacescapes\yellow_spacescape.dds">
+      <Name>yellow_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="spacescapes\gold_spacescape.dds">
+      <Name>gold_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="spacescapes\purple_spacescape.dds">
+      <Name>purple_spacescape</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\tacmap_items\targettriangle.png">
@@ -852,6 +867,13 @@
     </Compile>
     <Compile Include="textures\icon_station.png">
       <Name>icon_station</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\tacmap_items\system_texture.png">
+      <Name>system_texture</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -28,6 +28,7 @@ Content\MedFont.xnb
 Content\Models\Ships\transport_t1\blu_0.xnb
 Content\textures\icon_station.xnb
 Content\Models\cannon.xnb
+Content\spacescapes\purple_spacescape.xnb
 Content\spacescapes\spacescape_green.xnb
 Content\hud.xnb
 Content\Models\largeSphere.xnb
@@ -76,6 +77,7 @@ Content\spacescapes\pink_complex.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_engine_export[1].xnb
 Content\Models\Ships\fl_frigate_f1\illumination_5.xnb
 Content\Models\Ships\fighter_m3\fighter_m3.xnb
+Content\spacescapes\gold_spacescape.xnb
 Content\textures\GUI\resourceIcons.xnb
 Content\textures\GUI\medbox.xnb
 Content\Effects\BloomExtract.xnb
@@ -86,6 +88,7 @@ Content\Models\Ships\eriax_fighter_darkstar\ship_1.xnb
 Content\Models\Ships\eriax_lightbomber_legato\ship_5_0.xnb
 Content\Fonts\LargeFont.xnb
 Content\Models\tacmap_items\mining_circle.xnb
+Content\spacescapes\yellow_spacescape.xnb
 Content\Models\Fleet_KM100.xnb
 Content\Models\tacmap_items\bottom_menu_bar.xnb
 Content\Models\Ships\battlecrusier_bc1\Hgn_battlecruiser_thruster_export[3]LUM.xnb
@@ -151,5 +154,6 @@ Content\textures\SelectionBox.xnb
 Content\textures\hbartex.xnb
 Content\Models\Ships\fighter_m2\fighter_m2.xnb
 Content\Models\Ships\frigate_c1\frigate_c1.xnb
+Content\Models\tacmap_items\system_texture.xnb
 Content\Models\Ships\fighter_m1\illumination_6.xnb
 Content\Models\Ships\fighter_m1\fighter_m1.xnb

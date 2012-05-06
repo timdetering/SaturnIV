@@ -44,7 +44,7 @@ namespace SaturnIV
 
             //TextureCube SkyboxTexture =
             //    game.Content.Load<TextureCube>("cloudMap");
-            SkyboxTexture = game.Content.Load<TextureCube>("spacescapes/spacescape_green");
+            SkyboxTexture = game.Content.Load<TextureCube>("spacescapes/gold_spacescape");
             SkySphereEffect = game.Content.Load<Effect>("Effects/SkySphere");
             SkySphereModel = game.Content.Load<Model>("Models/largeSphere"); 
             SkySphereModel.Meshes[0].MeshParts[0].Effect = SkySphereEffect.Clone(game.GraphicsDevice);

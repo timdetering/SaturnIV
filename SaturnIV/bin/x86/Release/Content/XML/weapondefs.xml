@@ -27,7 +27,7 @@
       <Thrust>420</Thrust>
       <SphereRadius>5</SphereRadius>
       <Scale>1</Scale>
-      <Agility>90</Agility>
+      <Agility>40</Agility>
 	  <BelongsTo>Fleet</BelongsTo>
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
@@ -41,18 +41,18 @@
       <FileName>Models//LaserBolt2</FileName>
       <Type>SRMH</Type>
       <TechLevel>1</TechLevel>
-      <Mass>0.10</Mass>
-      <Thrust>350</Thrust>
+      <Mass>0.45</Mass>
+      <Thrust>750</Thrust>
       <SphereRadius>5</SphereRadius>
-      <Scale>1</Scale>
-      <Agility>20</Agility>
+      <Scale>2</Scale>
+      <Agility>120</Agility>
       <BelongsTo>Fleet</BelongsTo>	  
       <wClass>Missile</wClass>
       <isProjectile>1</isProjectile>
       <isHoming>1</isHoming>
-      <regenTime>400</regenTime>
+      <regenTime>1200</regenTime>
       <damageFactor>5</damageFactor>
-      <range>5000</range>
+      <range>15000</range>
       <timeToLive>9000</timeToLive>	  
     </Item>
    <Item>
@@ -104,7 +104,7 @@
       <wClass>Cannon</wClass>	
       <isProjectile>0</isProjectile>
       <isHoming>0</isHoming>
-      <regenTime>200</regenTime>
+      <regenTime>800</regenTime>
       <damageFactor>15</damageFactor>
       <range>2000</range>	
       <timeToLive>1000</timeToLive>	  
