@@ -24,7 +24,7 @@ namespace SaturnIV
             {
                 if (tShip.objectClass == ClassesEnum.Transport)
                     if (tShip.wayPointPosition == Vector3.Zero)
-                    {
+                    { 
                         tShip.wayPointPosition2 = findPlanet(tShip.modelPosition, ref cSystem).planetPosition;                        
                         tShip.wayPointPosition.Y = 0;
                         tShip.wayPointPositionStart = cSystem.pManager.planetList[rand.Next(cSystem.pManager.planetList.Count)].planetPosition;
@@ -33,12 +33,12 @@ namespace SaturnIV
             }
             
             useThisShip = findContructor(ref shipList);
-            tmpList = shipList.Where(item => item.team != thisTeam).ToList();
+            tmpList = shipList.Where(item => item.team == thisTeam).ToList();
             tmpList = tmpList.Where(item => item.objectClass == ClassesEnum.Fighter).ToList();
             //foreach (newShipStruct tShip in shipList)
             //{
                 /// No fighers!  Build some
-                if (tmpList.Count() < 3 && useThisShip.buildManager.buildQueueList.Count() < 2)
+                if (tmpList.Count() < 2 && useThisShip.buildManager.buildQueueList.Count() < 2)
                 {
                     newShipStruct tempShip = new newShipStruct();
                     Vector3 buildPosition = findPlanet(useThisShip.modelPosition, ref cSystem).planetPosition;

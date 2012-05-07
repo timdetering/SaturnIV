@@ -650,7 +650,7 @@ namespace SaturnIV
                 {
                     for (int i = 0; i < activeShipList.Count(); i++)
                         activeShipList[i].isBuilding = false;
-                    Game1.displayOrderMenu = false;
+                    //Game1.displayOrderMenu = false;
                     selectionRect = Rectangle.Empty;
                     inAMenu = false;
                     menuAction = MenuActions.none;
@@ -945,12 +945,12 @@ namespace SaturnIV
                 Vector3 screenPos = viewport.Project(o.modelPosition, projection, view, Matrix.Identity);
                 if (selectionRect.Contains((int)screenPos.X, (int)screenPos.Y) && o.team == 0)
                 {
-                    nfClass.commandPanel.Visible = true;                    
+                    ///nfClass.commandPanel.Visible = true;                    
                     o.isSelected = true;                
                 }
                 else
                 {
-                    if (!nfClass.commandPanel.Visible)
+                    //if (!nfClass.commandPanel.Visible)
                         o.isSelected = false;
                 }
             }
